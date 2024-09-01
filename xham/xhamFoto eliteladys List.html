@@ -1,0 +1,94 @@
+<base target="_blank"><html><head><title>eliteladys</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/horny-lonely-lady-16152070"><img src="https://ic-ph-nss.xhcdn.com/a/ODcwNjA5MTg0YmVlMjdmNzhmOGExY2ZhMTRhYjlmMWM/jpeg/000/516/129/284_450.jpg"><br>Horny Lonely Lady</a> 9',
+'<a href="https://xhamster.com/photos/gallery/milfs-new-butt-plug-tail-16155694"><img src="https://ic-ph-nss.xhcdn.com/a/NmNjMThiN2ZmMGExOTVkNWJkZjEwMzA4ZDcwNDNkMjA/jpeg/000/516/167/847_450.jpg"><br>Milfs new butt plug tail</a> 6',
+'<a href="https://xhamster.com/photos/gallery/cigarette-smoking-milf-16166300"><img src="https://ic-ph-nss.xhcdn.com/a/MTdiZGVhZDExMjUxMzE4MzBiZGFkZTdjYzQ1MTgzOGI/jpeg/000/516/304/987_450.jpg"><br>Cigarette smoking Milf </a> 6',
+'<a href="https://xhamster.com/photos/gallery/sexy-cougar-16055981"><img src="https://ic-ph-nss.xhcdn.com/a/MTQwOGViZTA1MzQyNjFjNjg5ZjhlOTBjN2YwODZiZTM/jpeg/000/514/843/467_450.jpg"><br>Sexy Cougar</a> 5',
+'<a href="https://xhamster.com/photos/gallery/fat-hairy-milf-pussy-needs-a-trim-16152925"><img src="https://ic-ph-nss.xhcdn.com/a/MmRlNTJkMWQzZTEwMTlkZWE4MzNhZWU1NzVmMDEyNDc/jpeg/000/516/137/936_450.jpg"><br>Fat hairy Milf pussy needs a trim</a> 5',
+'<a href="https://xhamster.com/photos/gallery/wet-t-shirt-cougar-16156482"><img src="https://ic-ph-nss.xhcdn.com/a/YjZmZDBhZjFkNjcyZDM2ZDA0MWU1N2UxNWY5NTkzYTg/jpeg/000/516/177/302_450.jpg"><br>Wet T-Shirt Cougar</a> 4',
+'<a href="https://xhamster.com/photos/gallery/halloween-costume-time-16085359"><img src="https://ic-ph-nss.xhcdn.com/a/ZDA5OTA3NmUyZDIzY2U1M2M3MjJiM2U2NWZiYTc3OTU/jpeg/000/515/226/428_450.jpg"><br>Halloween Costume time!</a> 4',
+'<a href="https://xhamster.com/photos/gallery/big-sexy-ugly-feet-16143684"><img src="https://ic-ph-nss.xhcdn.com/a/OTcxOTQyOTE1MDRmMzE2MDBlMDZkZDVjM2M2ZmUwMGU/jpeg/000/516/027/246_450.jpg"><br>Big sexy ugly feet</a> 4',
+'<a href="https://xhamster.com/photos/gallery/poolside-milf-16147778"><img src="https://ic-ph-nss.xhcdn.com/a/ZGRmOTkxY2IxODMwYTBlMmY5NGI0Yzg0ODJlMjY2Yjk/jpeg/000/516/073/115_450.jpg"><br>Poolside Milf</a> 3',
+'<a href="https://xhamster.com/photos/gallery/naughty-at-work-16138708"><img src="https://ic-ph-nss.xhcdn.com/a/MjZkYTA4ZTU0MjMzYjkwMjU1NTE5YmE1N2ViYmIzOTQ/jpeg/000/515/960/897_450.jpg"><br>Naughty at Work</a> 3',
+'<a href="https://xhamster.com/photos/gallery/happy-47th-birthday-to-me-16141703"><img src="https://ic-ph-nss.xhcdn.com/a/NWQ5YmU5OTQzMWViN2JmMWQ5NmI1ZWFkZmEzNGY2M2Y/jpeg/000/516/000/917_450.jpg"><br>Happy 47th Birthday to me!!</a> 3',
+'<a href="https://xhamster.com/photos/gallery/creamy-wet-fat-milf-pussy-16189107"><img src="https://ic-ph-nss.xhcdn.com/a/MmQ5MDRkYmE2M2QzNTIxYzI0N2UxYWMwODI2ZWE2YTQ/jpeg/000/516/562/504_450.jpg"><br>Creamy Wet Fat Milf Pussy</a> 3',
+'<a href="https://xhamster.com/photos/gallery/cigarette-smoking-milf-in-the-pool-16163344"><img src="https://ic-ph-nss.xhcdn.com/a/ODI5MGMyZGUxZjE1YzAwMGQzYjdhY2M4YzJkNmQ5ODA/jpeg/000/516/271/317_450.jpg"><br>Cigarette smoking Milf in the Pool</a> 3',
+'<a href="https://xhamster.com/photos/gallery/cigarette-smoking-milf-16151700"><img src="https://ic-ph-nss.xhcdn.com/a/M2FmOTg4OWJhODMxMDIwN2VmZTM3YjA4NDMzMWExYjc/jpeg/000/516/124/038_450.jpg"><br>Cigarette smoking Milf </a> 3',
+'<a href="https://xhamster.com/photos/gallery/cigarette-smoking-milf-16147112"><img src="https://ic-ph-nss.xhcdn.com/a/Yjk2ZmU2MTA0Njg3NjNhMjI3ZmQ1MzljNzI3NTY5N2Y/jpeg/000/516/066/517_450.jpg"><br>Cigarette smoking Milf </a> 3',
+'<a href="https://xhamster.com/photos/gallery/american-milf-red-lace-lingerie-16064990"><img src="https://ic-ph-nss.xhcdn.com/a/NzIzMjcyOGE4NGNhZTgwN2ZhNTM3ODdjYjEyMmY5NzA/jpeg/000/514/965/032_450.jpg"><br>American Milf Red Lace Lingerie </a> 3',
+'<a href="https://xhamster.com/photos/gallery/wet-fat-mature-pussy-16189458"><img src="https://ic-ph-nss.xhcdn.com/a/ZDg3OGJhNGM3MmExYWEwM2NjNDRhNjcyNDQzYTcwNjU/jpeg/000/516/566/017_450.jpg"><br>Wet fat mature pussy</a> 2',
+'<a href="https://xhamster.com/photos/gallery/summertime-feet-16142625"><img src="https://ic-ph-nss.xhcdn.com/a/OTdlM2UyYjY2MjU0MDQxOTUxMGU3YzcwZWFhYWNiYjc/jpeg/000/516/015/191_450.jpg"><br>Summertime feet</a> 2',
+'<a href="https://xhamster.com/photos/gallery/smoking-milf-16148103"><img src="https://ic-ph-nss.xhcdn.com/a/ODJhMDliYTZjMGNiNGQ0OWQ5ZDU1NGU1MWUyYWRlNmM/jpeg/000/516/078/468_450.jpg"><br>Smoking Milf </a> 2',
+'<a href="https://xhamster.com/photos/gallery/lonely-milf-16148678"><img src="https://ic-ph-nss.xhcdn.com/a/ZTliMTU4ODI4OTgxZDllMTE0NzdjNWVlMDc4ODRhYzg/jpeg/000/516/087/603_450.jpg"><br>Lonely Milf</a> 2',
+'<a href="https://xhamster.com/photos/gallery/lonely-lady-16147475"><img src="https://ic-ph-nss.xhcdn.com/a/MWVhMzA2MTkwMTY4MGRkYzUyMmEwZTI5MTc4Yzc0MzI/jpeg/000/516/069/972_450.jpg"><br>Lonely lady</a> 2',
+'<a href="https://xhamster.com/photos/gallery/lace-lingerie-16162982"><img src="https://ic-ph-nss.xhcdn.com/a/Y2FlMTY1Yjk3YzUzZmVmY2I0NmI4MDVhY2UxMjhiMWM/jpeg/000/516/265/609_450.jpg"><br>Lace lingerie </a> 2',
+'<a href="https://xhamster.com/photos/gallery/fishnet-legs-high-heels-16053831"><img src="https://ic-ph-nss.xhcdn.com/a/MjI2OGUwMmQ4NjhlNGFhNTYzNWFjY2JkYzU0MDY2YzA/jpeg/000/514/815/266_450.jpg"><br>Fishnet legs high heels <U+0001F460> </a> 2',
+'<a href="https://xhamster.com/photos/gallery/anal-plug-16052305"><img src="https://ic-ph-nss.xhcdn.com/a/YzJjMGNmMmQ5MjVkZjMzZTU1M2ZjOWMwZGMwOGU3NjY/jpeg/000/514/778/740_450.jpg"><br>Anal Plug</a> 2',
+'<a href="https://xhamster.com/photos/gallery/real-amateur-milf-16052165"><img src="https://ic-ph-nss.xhcdn.com/a/NGNmZjlhZDY3YzJhMjNkZmUwYjQzN2Y2MDVmNzhhOTI/jpeg/000/514/776/592_450.jpg"><br>Real Amateur Milf </a> 10',
+'<a href="https://xhamster.com/photos/gallery/the-look-of-regret-16141322"><img src="https://ic-ph-nss.xhcdn.com/a/MDRhNGYzY2E1ZDI3MDBkYTkxNjY2MmQyYzFlY2UzMmU/jpeg/000/515/992/465_450.jpg"><br>The look of regret</a> 1',
+'<a href="https://xhamster.com/photos/gallery/sunshine-titties-16137400"><img src="https://ic-ph-nss.xhcdn.com/a/Y2I4NWRkZDdhN2NkNTg4ZmJiY2IwOTNhNDE4MmUwNTg/jpeg/000/515/943/706_450.jpg"><br>Sunshine titties</a> 1',
+'<a href="https://xhamster.com/photos/gallery/strong-16152444"><img src="https://ic-ph-nss.xhcdn.com/a/NzlhNWNkMjA3MDViYWE2ZjFkZDBiNmNiMTZiMmVhMTk/jpeg/000/516/133/194_450.jpg"><br>Strong </a> 1',
+'<a href="https://xhamster.com/photos/gallery/sexy-feet-16155002"><img src="https://ic-ph-nss.xhcdn.com/a/YTQ4OTY1OGE0OTRhM2ZhMGQ5ODVkMTQyOTI3NDAzYzE/jpeg/000/516/160/826_450.jpg"><br>Sexy feet</a> 1',
+'<a href="https://xhamster.com/photos/gallery/sexy-16051460"><img src="https://ic-ph-nss.xhcdn.com/a/MmUyMGZlMzljNjIzZjFkMDBlYTk2ZTk5NWRkMDY1M2M/jpeg/000/514/770/405_450.jpg"><br>Sexy</a> 1',
+'<a href="https://xhamster.com/photos/gallery/pretty-milf-16051387"><img src="https://ic-ph-nss.xhcdn.com/a/MmNhZmUwZjBmZjBhZTRlNzg0ZjcyMDIzYmEyMTBiYTA/jpeg/000/514/769/832_450.jpg"><br>Pretty Milf</a> 1',
+'<a href="https://xhamster.com/photos/gallery/naughty-milf-girl-scout-16052764"><img src="https://ic-ph-nss.xhcdn.com/a/ZGU0MjVmMGI0NjQ2MTlkZTYxODcwYmVkMWU3Njc1NDc/jpeg/000/514/783/042_450.jpg"><br>Naughty Milf Girl Scout</a> 1',
+'<a href="https://xhamster.com/photos/gallery/naughty-at-work-16051404"><img src="https://ic-ph-nss.xhcdn.com/a/NzNlN2MxOTViODFhMDMwNzI5MTBmNmY1NzFjZGY2NjE/jpeg/000/514/769/933_450.jpg"><br>Naughty at Work</a> 1',
+'<a href="https://xhamster.com/photos/gallery/messy-panties-16148954"><img src="https://ic-ph-nss.xhcdn.com/a/Y2VkOGM5M2JjNzAxODU2ZmUxZDg1YTIxZTNjOWM1MDA/jpeg/000/516/090/149_450.jpg"><br>Messy Panties</a> 1',
+'<a href="https://xhamster.com/photos/gallery/me-all-alone-16051741"><img src="https://ic-ph-nss.xhcdn.com/a/OTYxMmVhNzliMDhlYzRhNzU0MDMwM2IxYzEwYjg2ZGI/jpeg/000/514/772/686_450.jpg"><br>Me all alone</a> 1',
+'<a href="https://xhamster.com/photos/gallery/lonely-cigarette-smoking-milf-16149750"><img src="https://ic-ph-nss.xhcdn.com/a/NjBmZjY1NmQ2MmQzMzViODg3ZTI4NmM1N2IzNDljZWM/jpeg/000/516/099/479_450.jpg"><br>Lonely Cigarette smoking Milf </a> 1',
+'<a href="https://xhamster.com/photos/gallery/lingerie-16144303"><img src="https://ic-ph-nss.xhcdn.com/a/ZjVjZGQ1ODg2MzJkOTRlOGZhYTdmMDFiYzQxNTRmODQ/jpeg/000/516/036/670_450.jpg"><br>Lingerie </a> 1',
+'<a href="https://xhamster.com/photos/gallery/feeling-pretty-16143894"><img src="https://ic-ph-nss.xhcdn.com/a/MTEyODZmMmNiMDdiZDJiMzViNmY5NzcxY2MyZWE2OTU/jpeg/000/516/029/471_450.jpg"><br>Feeling pretty </a> 1',
+'<a href="https://xhamster.com/photos/gallery/fat-milf-pussy-16139441"><img src="https://ic-ph-nss.xhcdn.com/a/YzM3YzM2ZWJhYzQ2NTJmNjdmOWJkYzlmNGZkNDRlZTA/jpeg/000/515/969/338_450.jpg"><br>Fat Milf Pussy</a> 1',
+'<a href="https://xhamster.com/photos/gallery/american-milf-in-fishnet-bodysuit-16059893"><img src="https://ic-ph-nss.xhcdn.com/a/NTFkMzkyYmM2NzY5MjI2NmJjNWQ3N2FhZWRjZGYxMTY/jpeg/000/514/894/484_450.jpg"><br>American Milf in Fishnet Bodysuit </a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "eliteladys"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
