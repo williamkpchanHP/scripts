@@ -1,0 +1,63 @@
+<base target="_blank"><html><head><title>blowb00</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/bbw-german-pussy-and-big-boobs-on-couch-16132976"><img src="https://ic-ph-nss.xhcdn.com/a/OWJlMGM1OWZmZmQyNWE3YTA4MTYyNTEzN2NlMTcwNjE/jpeg/000/515/853/813_450.jpg"><br>BBW German Pussy and big boobs on Couch</a> 9',
+'<a href="https://xhamster.com/photos/gallery/anal-plug-16076639"><img src="https://ic-ph-nss.xhcdn.com/a/OTdjZTg3YzM2MmUxODdjMmViNzUwMjM4OWZjMmQwMzI/jpeg/000/515/108/668_450.jpg"><br>Anal Plug</a> 9',
+'<a href="https://xhamster.com/photos/gallery/boobs-and-pussy-16052698"><img src="https://ic-ph-nss.xhcdn.com/a/M2Y0NTJmNDVmMWY0ZDU0ZmZkZmViYTE0MjhmYmViZjY/jpeg/000/514/782/588_450.jpg"><br>Boobs and Pussy</a> 8',
+'<a href="https://xhamster.com/photos/gallery/wet-pussy-16124573"><img src="https://ic-ph-nss.xhcdn.com/a/YjkyYTg1MjRlODIxNGE5OWUyNzVhMWQwM2Q4NWJlNTM/jpeg/000/515/741/970_450.jpg"><br>Wet Pussy</a> 6',
+'<a href="https://xhamster.com/photos/gallery/playing-with-corn-16068410"><img src="https://ic-ph-nss.xhcdn.com/a/NGJmM2VkYmU5YThjYzZjYzgyNDU4YzUxNzMwOTY1OTI/jpeg/000/515/009/181_450.jpg"><br>Playing with corn</a> 6',
+'<a href="https://xhamster.com/photos/gallery/boobs-and-pussy-in-leopard-blouse-16054964"><img src="https://ic-ph-nss.xhcdn.com/a/YTk4NzQ5NzJlMGFiMjk4ZDgyYjYyZTdmZmQxMDdiYzI/jpeg/000/514/829/437_450.jpg"><br>Boobs and Pussy in  leopard blouse</a> 6',
+'<a href="https://xhamster.com/photos/gallery/big-tits-and-spread-pussy-16061334"><img src="https://ic-ph-nss.xhcdn.com/a/YTgxMDA2NjQ5YzdlZmJiMDI1MDc0ZmMxNjY1YzE3MTA/jpeg/000/514/919/117_450.jpg"><br>Big Tits and Spread pussy</a> 18',
+'<a href="https://xhamster.com/photos/gallery/maid-pics-16064750"><img src="https://ic-ph-nss.xhcdn.com/a/ZTRjMWFlNThhODM4OGNlYzE4NzA3MTI0Mzg4ZTk3NjM/jpeg/000/514/961/819_450.jpg"><br>Maid Pics</a> 17',
+'<a href="https://xhamster.com/photos/gallery/pics-of-my-big-tits-16104482"><img src="https://ic-ph-nss.xhcdn.com/a/YzAyYTc4N2E5ODRmZmYwNjM3YzhkMWRmOTZjODQ0MmY/jpeg/000/515/477/448_450.jpg"><br>Pics of my big Tits</a> 12',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "blowb00"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

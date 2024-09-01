@@ -1,0 +1,74 @@
+<base target="_blank"><html><head><title>misssarahmae</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/want-to-watch-my-pretty-pussy-cum-16038865"><img src="https://ic-ph-nss.xhcdn.com/a/NzQ3MzVkYmU1MmRiNDhmYmJkZDhmNGVhMzE5OTc5NjU/jpeg/000/514/603/290_450.jpg"><br>Want to watch my pretty pussy cum</a> 9',
+'<a href="https://xhamster.com/photos/gallery/it-taste-as-good-as-it-looks-16021003"><img src="https://ic-ph-nss.xhcdn.com/a/MWU1MWE0MDU3OWE4ZmRmMjZiYWM4MDk5ZGI2MzBjN2Q/jpeg/000/514/355/698_450.jpg"><br>It taste as good as it looks </a> 9',
+'<a href="https://xhamster.com/photos/gallery/will-you-lick-me-while-i-fuck-my-dildo-16017714"><img src="https://ic-ph-nss.xhcdn.com/a/YzZlNTIwODVmYzNhYWIwMWRkOGJiMGJlYmQzMzRkNmQ/jpeg/000/514/305/969_450.jpg"><br>Will you lick me while I fuck my dildo?</a> 8',
+'<a href="https://xhamster.com/photos/gallery/joi-wish-it-was-fatter-16066044"><img src="https://ic-ph-nss.xhcdn.com/a/MTFlOGJmYzFjNDlhYTE3MGZhMjdjMmY5MmRmZDA3YTk/jpeg/000/514/980/795_450.jpg"><br>JOI wish it was fatter </a> 8',
+'<a href="https://xhamster.com/photos/gallery/only-fans-free-account-misssarahmae1-16012564"><img src="https://ic-ph-nss.xhcdn.com/a/MmE1NjBlNzU2MjRlOWZmMDdmMzcwM2M2OGYyNDZjMzk/jpeg/000/514/238/667_450.jpg"><br>Only Fans Free Account misssarahmae1</a> 7',
+'<a href="https://xhamster.com/photos/gallery/will-you-rub-my-clit-slowly-16016197"><img src="https://ic-ph-nss.xhcdn.com/a/OTY3MmRiODRlZTdkM2I2MzhkYTE0ZTMzNzc0MDRmZDM/jpeg/000/514/284/606_450.jpg"><br>Will you rub my clit slowly?</a> 5',
+'<a href="https://xhamster.com/photos/gallery/pov-pussy-play-16012300"><img src="https://ic-ph-nss.xhcdn.com/a/N2U2MjFhZWM3M2E4YmZjZDJiNGQ4OTY0MjdhMzQ5NzA/jpeg/000/514/234/701_450.jpg"><br>POV Pussy Play</a> 5',
+'<a href="https://xhamster.com/photos/gallery/more-pictures-available-click-my-link-16000956"><img src="https://ic-ph-nss.xhcdn.com/a/ZTIxYmNkN2E0MmVkOTcyOGJiM2ZjNDViMWMzZDkzZmQ/jpeg/000/514/075/456_450.jpg"><br>More pictures available..click my link </a> 5',
+'<a href="https://xhamster.com/photos/gallery/naughty-15993846"><img src="https://ic-ph-nss.xhcdn.com/a/NzE2OGY3YzU3MDA2ZGU2Njg4OGZjODk5MjJlMDIxYzg/jpeg/000/513/964/818_450.jpg"><br>Naughty <U+0001F608> </a> 4',
+'<a href="https://xhamster.com/photos/gallery/my-favorite-position-would-have-to-be-15999606"><img src="https://ic-ph-nss.xhcdn.com/a/MWZiYTdjN2M1NWQ1NmRhZWVjZDUyMDk2MjZiMGQwZmE/jpeg/000/514/043/578_450.jpg"><br>My favorite position would have to be…</a> 4',
+'<a href="https://xhamster.com/photos/gallery/miss-sarah-mae-15993632"><img src="https://ic-ph-nss.xhcdn.com/a/ZDUyZDhhNGY5N2ZlYzZjYzE4ZWRhMmRmMWM2NzQ1ZDQ/jpeg/000/513/962/394_450.jpg"><br>Miss Sarah Mae</a> 4',
+'<a href="https://xhamster.com/photos/gallery/lil-freaky-ass-16002684"><img src="https://ic-ph-nss.xhcdn.com/a/ZmI2MmIwYTFmMjY0MDQzNTE4Zjc0NDk3NmI1ZTMwOWY/jpeg/000/514/095/398_450.jpg"><br>Lil freaky ass</a> 4',
+'<a href="https://xhamster.com/photos/gallery/let-me-be-your-naughty-girl-15993660"><img src="https://ic-ph-nss.xhcdn.com/a/ZjM4Njg3MGUzZWU0YjU4YzQyZThiYTUwMDJmYTBjMTE/jpeg/000/513/962/960_450.jpg"><br>Let me be your naughty girl <U+0001F608></a> 4',
+'<a href="https://xhamster.com/photos/gallery/it-s-more-fun-being-bad-16007488"><img src="https://ic-ph-nss.xhcdn.com/a/NzU3Y2Q3MTYwNDBjYzZkNTc1YThkNDM0NTdhYjA4NWI/jpeg/000/514/167/824_450.jpg"><br>It’s more fun being bad</a> 4',
+'<a href="https://xhamster.com/photos/gallery/do-you-think-my-pussy-s-pretty-16001237"><img src="https://ic-ph-nss.xhcdn.com/a/YzIyYzU0NDhmZGFlNTcwMmQ4ZTQzNDU3YTdkNGE2ZDA/jpeg/000/514/079/325_450.jpg"><br>Do you think my pussy’s pretty?</a> 4',
+'<a href="https://xhamster.com/photos/gallery/wanna-see-more-follow-the-link-15999603"><img src="https://ic-ph-nss.xhcdn.com/a/YTViMjgxZDZhMjExNzYxOTMyZGZlZDQwMWM4ZTQ1YTc/jpeg/000/514/043/571_450.jpg"><br>Wanna see more..follow the link</a> 2',
+'<a href="https://xhamster.com/photos/gallery/wanna-chat-15993838"><img src="https://ic-ph-nss.xhcdn.com/a/NTEyY2E3ZjdmY2YwZjFmNGQzZDM1YzllNjQ5MDlkM2Y/jpeg/000/513/964/682_450.jpg"><br>Wanna chat</a> 2',
+'<a href="https://xhamster.com/photos/gallery/you-should-cum-play-with-me-16011424"><img src="https://ic-ph-nss.xhcdn.com/a/ZjMyNDMxMjJlZTAzMDk1MjhmOTk4YjU5Mjg0N2RiYmE/jpeg/000/514/221/844_450.jpg"><br>You should cum play with me</a> 16',
+'<a href="https://xhamster.com/photos/gallery/miss-creamy-pussy-16122362"><img src="https://ic-ph-nss.xhcdn.com/a/ZjU3MGM2NDVkYjkyZWUxMTU3ODE2ZjMyZjI3NDk1ZWU/jpeg/000/515/713/344_450.jpg"><br>Miss Creamy Pussy </a> 12',
+'<a href="https://xhamster.com/photos/gallery/may-i-be-your-little-freak-16009387"><img src="https://ic-ph-nss.xhcdn.com/a/ZjliNDMwZWYxYWMyMThhYzEzZmEzZDE5ZGJmMTNkNTg/jpeg/000/514/193/304_450.jpg"><br>May I be your little freak</a> 11',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "misssarahmae"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

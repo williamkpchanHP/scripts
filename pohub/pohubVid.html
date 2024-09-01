@@ -1,0 +1,55 @@
+<base target="_blank"><html><head><title>PornHub Video</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchan.github.io/lazyload.min.js"></script>
+<script type="text/javascript" src="https://williamkpchan.github.io/mainscript.js"></script>
+<script src="https://williamkpchan.github.io/commonfunctions.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="pohubVid.js"></script>
+<script>
+  var showTopicNumber = false;
+  var topicEnd = " ";
+  var bookid = "PornHub Video"
+  var markerName = "img"
+</script>
+<style>
+body{width:100%;margin-left: 0%; font-size:22px;}
+h1, h2 {color: gold;}
+strong {color: orange;}
+pre{width:100%;}
+img{max-width:50%;}
+</style></head><body onkeypress="chkKey()"><center>
+<p id="totalbar"></p><br>
+<div id="toc"></div>
+<center>
+
+<pre id="showcase">
+</pre>
+<script>
+      for (var i = 0; i < 450; i++) {
+         randomIdx = 1 + Math.floor(Math.random() * allList.length)
+         $("#showcase").append(allList[randomIdx])
+      }
+      $("#totalbar").append("Total: " + allList.length)
+
+      $("img").click(function() {
+         imgAddr = this.src;
+         imgTail = imgAddr.replace(/^.*\)/,'');
+         imgAddr = imgAddr.replace(imgTail,'');
+
+         imgAddrStrs = "<style>body{background-color:black;}</style><center>"
+
+         var imgWindow = window.open("");
+         for(loop=1; loop < 20; loop++){
+            imgAddrStrs = imgAddrStrs + "<img src='" + imgAddr + loop + ".jpg'>";
+         }
+         imgWindow.document.write(imgAddrStrs);
+
+      })
+
+</script>
+<script src="https://williamkpchan.github.io/LibDocs/readbook.js"></script>
+<script src="imgControl.js"></script><script>var lazyLoadInstance= new LazyLoad({elements_selector:".lazy"});</script>
+</body></html>

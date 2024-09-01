@@ -1,0 +1,92 @@
+<base target="_blank"><html><head><title>muslimwifeyx</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/real-muslim-wife-me-in-arab-hijab-showing-tits-and-more-15773280"><img src="https://ic-ph-nss.xhcdn.com/a/YjA3NWY1OTNiMjZlZDdkZGI5NTlkZWMxZmY2MDNiYzM/jpeg/000/487/692/355_450.jpg"><br>REAL MUSLIM WIFE ME IN ARAB HIJAB SHOWING TITS AND MORE</a> 93',
+'<a href="https://xhamster.com/photos/gallery/real-hot-amateur-arab-nudes-sexy-pussy-selfies-tits-15932736"><img src="https://ic-ph-nss.xhcdn.com/a/ZThiNzZlNTA4ODkyOWY3M2NlNTk1YWFkOTE2NWJkNWU/jpeg/000/512/873/445_450.jpg"><br>Real HOT Amateur Arab Nudes, Sexy Pussy Selfies &amp; Tits</a> 9',
+'<a href="https://xhamster.com/photos/gallery/arab-muslim-sexy-tits-boobs-pussy-and-ass-15988881"><img src="https://ic-ph-nss.xhcdn.com/a/ZTFhNjQyNDk0ZGFkZTcxNmFhNjBmMWY4ZDk2NGZkNGQ/jpeg/000/513/884/233_450.jpg"><br>Arab Muslim Sexy Tits, Boobs, Pussy And Ass</a> 9',
+'<a href="https://xhamster.com/photos/gallery/real-horny-arabic-egypt-step-mom-showing-big-tits-behind-husband-15893151"><img src="https://ic-ph-nss.xhcdn.com/a/YTcyMWRmYzZmY2ZjMzgzZDc1NzNiN2E0OTkwYjFmYWQ/jpeg/000/511/976/197_450.jpg"><br>Real Horny Arabic Egypt Step Mom Showing Big Tits Behind Husband</a> 8',
+'<a href="https://xhamster.com/photos/gallery/real-arabmuslim-mommy-showing-pussy-ass-and-islamic-tits-15892014"><img src="https://ic-ph-nss.xhcdn.com/a/NjM1YzUzN2NhMWRkOTg3ZTI5MTU0NjNmNmQ2NDkwMjg/jpeg/000/511/952/021_450.jpg"><br>Real ArabMuslim Mommy Showing Pussy, Ass And Islamic Tits!</a> 8',
+'<a href="https://xhamster.com/photos/gallery/real-arab-muslim-wife-in-hijab-me-showing-my-nude-body-15773402"><img src="https://ic-ph-nss.xhcdn.com/a/YjIyMjcyZTczNjdmYzM3YWUxZjEwOGMxYjY0NTMxZjU/jpeg/000/486/812/746_450.jpg"><br>Real Arab Muslim Wife In Hijab (me) Showing My Nude Body!</a> 77',
+'<a href="https://xhamster.com/photos/gallery/sexy-hot-arabic-step-mom-boobs-tits-nudes-and-gone-wild-16006669"><img src="https://ic-ph-nss.xhcdn.com/a/Y2I4ZTQ4NjhhZmYzY2M4N2VjM2Q3OGQzODMwMmZkNTE/jpeg/000/514/155/476_450.jpg"><br>Sexy Hot Arabic Step Mom Boobs, Tits, Nudes And Gone Wild!</a> 7',
+'<a href="https://xhamster.com/photos/gallery/sexy-amateur-arab-in-hijab-mommy-showing-tits-ass-pussy-15897099"><img src="https://ic-ph-nss.xhcdn.com/a/MGQ3NWYxYzhjYjQ0ZDZiNmI3MmZhNThkMThkMDkwZWI/jpeg/000/512/071/450_450.jpg"><br>Sexy Amateur Arab In Hijab Mommy Showing Tits, Ass, Pussy</a> 7',
+'<a href="https://xhamster.com/photos/gallery/real-arab-sexy-amateur-nudes-ass-tits-hijab-boobs-15931800"><img src="https://ic-ph-nss.xhcdn.com/a/ZmFiYTMyMGY4YzlhOWI5OGE5Nzk4YWYzZjdmZjNlM2M/jpeg/000/512/849/549_450.jpg"><br>Real Arab Sexy Amateur Nudes, Ass, Tits, Hijab Boobs</a> 7',
+'<a href="https://xhamster.com/photos/gallery/real-amateur-milf-big-tits-ass-and-boobies-16170904"><img src="https://ic-ph-nss.xhcdn.com/a/YTMyMjk3YzAzYzRlMTFiNTU1N2NhYjJiODI0NjhmZGU/jpeg/000/516/356/948_450.jpg"><br>Real Amateur MILF Big Tits, Ass And Boobies</a> 7',
+'<a href="https://xhamster.com/photos/gallery/naughty-arabic-slutty-mom-showing-nudes-tits-pussy-and-ass-15936551"><img src="https://ic-ph-nss.xhcdn.com/a/NDlhMDFiNmEwY2U1ZThhNGZlYmM5ODdkZWQzMDc4NWM/jpeg/000/512/962/831_450.jpg"><br>Naughty Arabic Slutty Mom Showing Nudes, Tits, Pussy And Ass</a> 7',
+'<a href="https://xhamster.com/photos/gallery/amateur-milf-arab-in-niqab-gone-wild-showing-big-tits-pussy-15967865"><img src="https://ic-ph-nss.xhcdn.com/a/ZGMzMmI2YjA2YjNjY2FjN2Y5MmEwN2ViZDdhZTdlZWE/jpeg/000/513/596/544_450.jpg"><br>Amateur MILF Arab In Niqab Gone Wild Showing Big Tits, Pussy</a> 7',
+'<a href="https://xhamster.com/photos/gallery/sexy-hot-amateur-teen-ass-tits-and-pussy-in-hijab-16076126"><img src="https://ic-ph-nss.xhcdn.com/a/YzgxZjIyZDZkNjZmNmNjMTRmZjE0MGEyZTBmOTk4NjU/jpeg/000/515/102/009_450.jpg"><br>Sexy HOT Amateur Teen Ass, Tits, And Pussy In HIjab</a> 6',
+'<a href="https://xhamster.com/photos/gallery/sexy-horny-arab-muslim-wife-mom-showing-ass-tits-and-pussy-16096779"><img src="https://ic-ph-nss.xhcdn.com/a/MTU3YjIxMjU3MDU0M2MyNjNmYmE5NTlhMDk5NTRlYmY/jpeg/000/515/381/968_450.jpg"><br>Sexy horny Arab Muslim Wife mom showing ass tits and pussy</a> 6',
+'<a href="https://xhamster.com/photos/gallery/sexy-arab-milf-showing-pussy-tits-and-boobs-in-hijab-15968990"><img src="https://ic-ph-nss.xhcdn.com/a/ZTFjMjNjNTFlYTQ1Zjk4MTNjODFmNTUxNDU4MTlkMTc/jpeg/000/513/609/523_450.jpg"><br>Sexy Arab MILF Showing Pussy, Tits And Boobs In HIjab</a> 6',
+'<a href="https://xhamster.com/photos/gallery/real-hot-amateur-arab-mom-showing-ass-tits-and-boobs-15943084"><img src="https://ic-ph-nss.xhcdn.com/a/NmZiMjY0YTY0NzcwZDJiMzI0NTdlOWFmZDk1OTg0YTI/jpeg/000/513/104/016_450.jpg"><br>Real Hot Amateur Arab Mom Showing Ass, Tits And Boobs</a> 6',
+'<a href="https://xhamster.com/photos/gallery/real-horny-arab-mom-masturbates-pussy-shows-tits-and-nudes-15960235"><img src="https://ic-ph-nss.xhcdn.com/a/M2I2YWMwOTJlZWRhMDg3ZjVmNGY2ZTVkM2RkOTIxN2I/jpeg/000/513/468/242_450.jpg"><br>Real Horny Arab Mom Masturbates Pussy, Shows Tits And Nudes</a> 6',
+'<a href="https://xhamster.com/photos/gallery/muslim-step-mom-milky-boobs-pussy-and-tits-16138241"><img src="https://ic-ph-nss.xhcdn.com/a/YjgwNWEzNjA2NGQwY2YxYTA4NWYwODNjNTNlMmI5YTQ/jpeg/000/515/954/634_450.jpg"><br>Muslim Step Mom Milky Boobs, Pussy And Tits</a> 6',
+'<a href="https://xhamster.com/photos/gallery/arabian-mom-milf-pussy-boobs-big-tits-ass-selfies-15946569"><img src="https://ic-ph-nss.xhcdn.com/a/MzhjZDI5ZmU5MWM2MjUzN2I4OGQwZjQ5ZGQzMWJlOGY/jpeg/000/513/173/563_450.jpg"><br>Arabian Mom MILF Pussy, Boobs, Big Tits, Ass Selfies</a> 6',
+'<a href="https://xhamster.com/photos/gallery/amateur-muslim-pussy-ass-tits-and-nudes-15953693"><img src="https://ic-ph-nss.xhcdn.com/a/MjljNDliNWI2MzJkMjVmNDc3MTYzNTBiNTc1ZjRmYjA/jpeg/000/513/308/144_450.jpg"><br>Amateur Muslim Pussy, Ass, Tits And Nudes</a> 6',
+'<a href="https://xhamster.com/photos/gallery/sexy-hot-arab-in-hijab-showing-creamy-pussy-ass-and-tits-15937791"><img src="https://ic-ph-nss.xhcdn.com/a/MGIyYWMzM2FhYWY4NjI3YjgwYzY4YjNhN2Q4NGZhYmM/jpeg/000/512/987/769_450.jpg"><br>Sexy HOT Arab In Hijab Showing Creamy Pussy, Ass And Tits</a> 5',
+'<a href="https://xhamster.com/photos/gallery/sexy-arab-islam-muslim-arab-boobs-tits-and-pussy-play-15916291"><img src="https://ic-ph-nss.xhcdn.com/a/MDMwNGYyZjhiZWNhNGY5MmFmNmIxZmFhZmFmYTE0YTQ/jpeg/000/512/506/692_450.jpg"><br>Sexy Arab Islam Muslim Arab Boobs, Tits, And Pussy Play!</a> 5',
+'<a href="https://xhamster.com/photos/gallery/horny-arab-mom-showing-pussy-ass-tits-and-boobs-16080680"><img src="https://ic-ph-nss.xhcdn.com/a/NTQ5OWRmYWQ5MDg4NDA0YTUwNTI4OTczN2UzZTZjNzQ/jpeg/000/515/165/882_450.jpg"><br>Horny Arab Mom Showing Pussy, Ass, Tits And Boobs</a> 5',
+'<a href="https://xhamster.com/photos/gallery/real-amateur-arab-step-mom-in-hijab-showing-ass-tits-pussy-16014032"><img src="https://ic-ph-nss.xhcdn.com/a/MDM0YTdiOTgwNDg0MGViYmNkMDUzNDQ2ZGZhNmJhZDc/jpeg/000/514/258/073_450.jpg"><br>Real Amateur Arab Step Mom In Hijab Showing Ass, Tits, Pussy</a> 4',
+'<a href="https://xhamster.com/photos/gallery/amateur-slut-arab-in-hijab-shows-big-tits-muslim-pussy-etc-16155902"><img src="https://ic-ph-nss.xhcdn.com/a/YmIxYWYzMDFiNTVlNjYzNGIxYjhkZTZhYmNmMTA3NzM/jpeg/000/516/170/305_450.jpg"><br>Amateur Slut Arab In Hijab Shows Big Tits, Muslim Pussy etc</a> 31',
+'<a href="https://xhamster.com/photos/gallery/sexy-muslim-hijab-arab-big-tits-boobs-pussy-and-nudies-15984498"><img src="https://ic-ph-nss.xhcdn.com/a/YzI4MTRhODk3NzIyMjJhYTgyNmNmYjI0ZmQ3YzZkOTA/jpeg/000/513/830/242_450.jpg"><br>Sexy Muslim Hijab Arab Big Tits, Boobs, Pussy And Nudies</a> 3',
+'<a href="https://xhamster.com/photos/gallery/sexy-hot-muslim-arab-mature-milf-big-tits-pussy-in-hijab-16115765"><img src="https://ic-ph-nss.xhcdn.com/a/ZDNlYTkzNjgyNDU5YjQxZjQyN2NhZWFlNjg3MjI3OGQ/jpeg/000/515/624/357_450.jpg"><br>Sexy Hot Muslim Arab Mature MILF Big Tits, Pussy In Hijab</a> 3',
+'<a href="https://xhamster.com/photos/gallery/hijab-hot-milf-muslim-in-iran-showing-big-tits-and-pussy-16164890"><img src="https://ic-ph-nss.xhcdn.com/a/OWU3ZmQwZDQ2YzU0OTgwNDlhMzY2YjIyNzg0ZjIwMGI/jpeg/000/516/288/141_450.jpg"><br>Hijab HOT Milf Muslim In Iran Showing Big Tits And PUssy</a> 26',
+'<a href="https://xhamster.com/photos/gallery/milf-hijab-showing-fat-pussy-tits-ass-pussy-on-webcam-16151388"><img src="https://ic-ph-nss.xhcdn.com/a/ODE0N2FjYjQ0MjRhNTU4OGNlMjEzYThmMTJjMjRlNzc/jpeg/000/516/119/455_450.jpg"><br>MILF Hijab Showing Fat Pussy, Tits, Ass, Pussy On Webcam</a> 21',
+'<a href="https://xhamster.com/photos/gallery/sexy-muslim-mom-nudies-ass-tits-15890727"><img src="https://ic-ph-nss.xhcdn.com/a/NDIxOGY3ZDI2NjM4Yjk1YzdiNzUyNTZhNmZmNzFlNDU/jpeg/000/511/925/676_450.jpg"><br>Sexy Muslim Mom, Nudies, Ass, Tits!</a> 2',
+'<a href="https://xhamster.com/photos/gallery/sexy-muslim-mom-boobs-tits-pussy-and-nudes-15890723"><img src="https://ic-ph-nss.xhcdn.com/a/YTlmNjdhODVmNmNjOGJiODIwYTA1MGYwNWM5YzZlNmU/jpeg/000/511/925/633_450.jpg"><br>Sexy Muslim Mom Boobs, Tits, Pussy and Nudes</a> 2',
+'<a href="https://xhamster.com/photos/gallery/sexy-hot-arabic-muslim-islam-wife-nude-pics-pussy-and-tits-15912883"><img src="https://ic-ph-nss.xhcdn.com/a/OTY4MWM1OThhYmM4ZTU5NWE4NmZkY2Y3ZGRkNmJjMzQ/jpeg/000/512/416/893_450.jpg"><br>Sexy Hot Arabic Muslim Islam Wife Nude Pics, Pussy And Tits</a> 19',
+'<a href="https://xhamster.com/photos/gallery/sexy-arabic-turk-showing-tight-pussy-ass-and-tits-15898314"><img src="https://ic-ph-nss.xhcdn.com/a/YmJiMDEyYzY4Yzg4MzFhY2ZhYjFmNDczMTA1OWVhOTE/jpeg/000/512/099/422_450.jpg"><br>Sexy Arabic Turk Showing Tight Pussy, Ass And Tits</a> 15',
+'<a href="https://xhamster.com/photos/gallery/real-horny-arab-wife-in-hijab-nudes-pussy-naked-selfies-15955572"><img src="https://ic-ph-nss.xhcdn.com/a/M2E2Yjc3MTE3ODYxNDhkMGI4ODFkNzdlMTc2NGQwMDI/jpeg/000/513/360/764_450.jpg"><br>Real Horny Arab Wife In Hijab Nudes, pussy, naked selfies</a> 14',
+'<a href="https://xhamster.com/photos/gallery/step-mom-arab-in-hijab-pussy-tits-and-ass-pictures-15922133"><img src="https://ic-ph-nss.xhcdn.com/a/ZGViN2UxMmI4NmU1MjBiNWMxNDMxNDljZGI3NjM2MGU/jpeg/000/512/630/550_450.jpg"><br>Step Mom Arab In Hijab Pussy, Tits And Ass Pictures!</a> 12',
+'<a href="https://xhamster.com/photos/gallery/real-horny-milf-arab-shows-tits-pussy-and-ass-in-niqab-16135174"><img src="https://ic-ph-nss.xhcdn.com/a/ZjEyODVlYTM1MTFiMDBiYTQ1MzU0YTI1MzE5YzNiNDY/jpeg/000/515/912/642_450.jpg"><br>Real Horny MILF Arab Shows Tits, Pussy And Ass In Niqab</a> 11',
+'<a href="https://xhamster.com/photos/gallery/real-hot-nudes-of-arab-slut-ass-arab-pussy-and-muslim-tits-15940673"><img src="https://ic-ph-nss.xhcdn.com/a/N2FkODQ1MWU5MzNlY2E5ZjkxNTgwOTc3ZjE0YzQ5NTM/jpeg/000/513/052/315_450.jpg"><br>Real Hot Nudes OF Arab Slut, Ass, Arab Pussy And Muslim Tits</a> 10',
+'<a href="https://xhamster.com/photos/gallery/sexy-arab-slut-mommy-in-hijab-nudies-15890729"><img src="https://ic-ph-nss.xhcdn.com/a/ZTdiN2ZhZGI4MTU0NjlmMWFjZGQ0YzU5ZDI2N2JhYTE/jpeg/000/511/925/770_450.jpg"><br>Sexy Arab Slut Mommy In Hijab Nudies</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "muslimwifeyx"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

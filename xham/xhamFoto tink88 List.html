@@ -1,0 +1,65 @@
+<base target="_blank"><html><head><title>tink88</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/tink88-used-panties-15895699"><img src="https://ic-ph-nss.xhcdn.com/a/ZGU2ZDdmNmRlYmY1MDkyY2UxMjE0OTY3ZDNiZjc4MDI/jpeg/000/512/037/935_450.jpg"><br>Tink88 used panties </a> 7',
+'<a href="https://xhamster.com/photos/gallery/tink88-15940446"><img src="https://ic-ph-nss.xhcdn.com/a/NTZiYjdjZTAxYjc1NDNlYjY4NzNkYzdhYmRhN2NkZDM/jpeg/000/513/047/784_450.jpg"><br>Tink88</a> 66',
+'<a href="https://xhamster.com/photos/gallery/tink-88-16143392"><img src="https://ic-ph-nss.xhcdn.com/a/NzZkNGEyMDE5ODYxYTEzMmU0MmRmYjcyNTE5YzY5YjE/jpeg/000/516/024/195_450.jpg"><br>Tink 88</a> 5',
+'<a href="https://xhamster.com/photos/gallery/tink-12947229"><img src="https://ic-ph-nss.xhcdn.com/a/OGNiNjEwMzc3NzUzMDVhZDk5OGFlOGQyZjU4NTdlYzQ/jpeg/000/333/179/688_450.jpg"><br>Tink </a> 4',
+'<a href="https://xhamster.com/photos/gallery/tink88-16150947"><img src="https://ic-ph-nss.xhcdn.com/a/MTE5YjhiODA2MjVkYmZlYWRlMTg1YjlhOTFjNTdmZTM/jpeg/000/516/115/072_450.jpg"><br>Tink88 </a> 3',
+'<a href="https://xhamster.com/photos/gallery/tink88-14727999"><img src="https://ic-ph-nss.xhcdn.com/a/MjJiNWJmODUyZGQ5NTc5YmRlNzY4MzBkYWNmNTE2Mzc/jpeg/000/427/714/617_450.jpg"><br>Tink88</a> 28',
+'<a href="https://xhamster.com/photos/gallery/tink88-14728042"><img src="https://ic-ph-nss.xhcdn.com/a/MTAwYmRiNGVmNWNhZTg1OWY5YTk4ZjhlZDBkOWE3YWU/jpeg/000/427/716/311_450.jpg"><br>Tink88</a> 26',
+'<a href="https://xhamster.com/photos/gallery/new-videos-on-only-fans-tink88-16184835"><img src="https://ic-ph-nss.xhcdn.com/a/Y2UwMGQ1MDZjNjQ1YWVkYTJlY2U5NzY3ODg4OGM0ZjM/jpeg/000/516/506/878_450.jpg"><br>New videos on only fans tink88</a> 12',
+'<a href="https://xhamster.com/photos/gallery/tink88-bad-dragon-fun-15895696"><img src="https://ic-ph-nss.xhcdn.com/a/ZTdjOWUxYmNkMzhkMWJkNTY1NmZmMmYxNDdiZjQzNjI/jpeg/000/512/037/879_450.jpg"><br>Tink88 Bad Dragon fun </a> 10',
+'<a href="https://xhamster.com/photos/gallery/tink88-16100684"><img src="https://ic-ph-nss.xhcdn.com/a/OWEzNGU1N2U0M2RlOTVhMWI0N2YzZjZlZDZmYWJiMDM/jpeg/000/515/427/521_450.jpg"><br>Tink88 </a> 10',
+'<a href="https://xhamster.com/photos/gallery/https-onlyfans-com-tink88-16062473"><img src="https://ic-ph-nss.xhcdn.com/a/YmFjODQ1MmI0YmUxNzBkNjkxNDk4M2FlMzQwMDE3Y2U/jpeg/000/514/932/414_450.jpg"><br>https://onlyfans.com/tink88</a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "tink88"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

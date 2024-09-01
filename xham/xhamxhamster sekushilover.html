@@ -1,0 +1,136 @@
+<base target="_blank"><html><head><title>sekushilover85</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black:; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+img {max-width: 100%;}
+div {width: 33%; display:inline-block; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">sekushilover85</div>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'sekushi-lover-fave-korean-erotic-sex-scenes-part-1-8005533"><img src="https://ic-vt-nss.xhcdn.com/a/ODc0ZjFmMTAxZTM4ZTQ0NTAyYzhlYjE3ZGE5MzI2ZGQ/s(w:320,h:180),jpeg/008/005/533/v2/320x180.207.jpg"><br>Sekushi Lover - Fave Korean Erotic Sex Scenes: Part 1',
+'sekushilover-30-minutes-of-rock-hard-boners-in-movies-13148834"><img src="https://ic-vt-nss.xhcdn.com/a/YzRlMTcwOWFiM2VhZTUwYTU0YWMyMTM4MTNjN2JlNDk/s(w:320,h:180),jpeg/013/148/834/1280x720.2.jpg"><br>SekushiLover - 30 Minutes of Rock-Hard Boners in Movies',
+'sekushilover-a-natalie-dormer-tribute-8532466"><img src="https://ic-vt-nss.xhcdn.com/a/NmRkZTg2MTBhZDgxMjMzOTQzYzA4ZDQzOThiMTM0YjA/s(w:320,h:180),jpeg/008/532/466/1280x720.1.jpg"><br>SekushiLover - A Natalie Dormer Tribute',
+'sekushilover-amazon-warrior-doggy-loop-8201353"><img src="https://ic-vt-nss.xhcdn.com/a/NmY1Y2U0ZWFkZGMwMTMwMTBmMzhjZjQ2NDE1NDI5ZTY/s(w:320,h:180),jpeg/008/201/353/1280x720.7.jpg"><br>SekushiLover - Amazon Warrior Doggy Loop',
+'sekushilover-anal-loop-joyce-oliveira-8201347"><img src="https://ic-vt-nss.xhcdn.com/a/ZGVjMjk3MWY5ODJhY2Y5NDg3MWI1ZDc1ZmY3ZjU1NjY/s(w:320,h:180),jpeg/008/201/347/1280x720.2.jpg"><br>SekushiLover - Anal Loop: Joyce Oliveira',
+'sekushilover-anal-tempting-japan-buttholes-part-1-7477740"><img src="https://ic-vt-nss.xhcdn.com/a/YTEyMzVkNmRiM2MxMWZmYjc1MGQyOTBjYmMxNzA0NjA/s(w:320,h:180),jpeg/007/477/740/1280x720.1.jpg"><br>SekushiLover - Anal-Tempting Japan Buttholes: Part 1',
+'sekushilover-ass-vs-ass-series-2-8397166"><img src="https://ic-vt-nss.xhcdn.com/a/YWYxYTM3MWZiNTVjNzQwM2EzOTQ3NjljMzVmOWFlMTM/s(w:320,h:180),jpeg/008/397/166/1280x720.9.jpg"><br>SekushiLover - Ass vs Ass: Series 2',
+'sekushilover-black-widow-vs-nude-scarlett-8497064"><img src="https://ic-vt-nss.xhcdn.com/a/NTVhZTZkM2M2MTQ5YWQ1YzRmMWMxYmJjN2QzOTMyNmI/s(w:320,h:180),jpeg/008/497/064/v2/320x180.208.jpg"><br>SekushiLover - Black Widow vs Nude Scarlett',
+'sekushilover-bottomless-is-the-new-topless-11131652"><img src="https://ic-vt-nss.xhcdn.com/a/YzY0NjNlODliMDQ2OTllNTM0ZGVlMzAzYjI1ZDNkNGY/s(w:320,h:180),jpeg/011/131/652/v2/320x180.203.jpg"><br>SekushiLover - Bottomless is the new Topless',
+'sekushilover-bouncing-celebrity-titties-titties-8333013"><img src="https://ic-vt-nss.xhcdn.com/a/YmFlZWM0ZGZkMDVkZWQwNTM0YWZkMWUxNjAxMTU2YTY/s(w:320,h:180),jpeg/008/333/013/v2/320x180.201.jpg"><br>SekushiLover - Bouncing Celebrity Titties! Titties!',
+'sekushilover-celeb-collage-jessica-biel-8300280"><img src="https://ic-vt-nss.xhcdn.com/a/ODdiMWUxYjczY2RlMDUyMWI1ZDhmZmFjYTM4YWNhODY/s(w:320,h:180),jpeg/008/300/280/1280x720.7.jpg"><br>SekushiLover - Celeb Collage: Jessica Biel',
+'sekushilover-celeb-collage-juno-temple-8300292"><img src="https://ic-vt-nss.xhcdn.com/a/MjhiOWYxMzFiNGZiYjRlZDU1MzUzZDkyNTk1MDU1YzU/s(w:320,h:180),jpeg/008/300/292/1280x720.2.jpg"><br>SekushiLover - Celeb Collage: Juno Temple',
+'sekushilover-celeb-collage-loop-emily-browning-8201369"><img src="https://ic-vt-nss.xhcdn.com/a/MzMzNDQ1N2MzMTVjOTAzYTEyYzQ1NDA0YzkyODA1ZmQ/s(w:320,h:180),jpeg/008/201/369/1280x720.9.jpg"><br>SekushiLover - Celeb Collage Loop: Emily Browning',
+'sekushilover-celeb-collage-loop-emily-ratajowski-8201366"><img src="https://ic-vt-nss.xhcdn.com/a/ZTM1OGY2MWM4ZGEzMDhiMTYzNmJlZGVlZDA4NTJlMTc/s(w:320,h:180),jpeg/008/201/366/1280x720.4.jpg"><br>SekushiLover - Celeb Collage Loop: Emily Ratajowski',
+'sekushilover-celeb-doggy-loop-halle-berry-8201327"><img src="https://ic-vt-nss.xhcdn.com/a/MzQ5OWE2ZTQ5MjUxOTM2MTRmOGI2YThmNWY1NWM2NWM/s(w:320,h:180),jpeg/008/201/327/1280x720.8.jpg"><br>SekushiLover - Celeb Doggy Loop: Halle Berry',
+'sekushilover-celeb-doggy-loop-kate-mara-8201331"><img src="https://ic-vt-nss.xhcdn.com/a/YTVlNzE2OGMxMWYyYTY2NWZlZWEwMjc4ZmFjN2Q5MzQ/s(w:320,h:180),jpeg/008/201/331/1280x720.2.jpg"><br>SekushiLover - Celeb Doggy Loop: Kate Mara',
+'sekushilover-celeb-fap-challenge-jessica-biel-7612929"><img src="https://ic-vt-nss.xhcdn.com/a/ODdjNzZjZjJlMThlYzAzNDA4NDJkZTkxNDVhYTUxN2Q/s(w:320,h:180),jpeg/007/612/929/1280x720.9.jpg"><br>SekushiLover - Celeb Fap Challenge: Jessica Biel',
+'sekushilover-celeb-fap-challenge-nicki-minaj-7679480"><img src="https://ic-vt-nss.xhcdn.com/a/YjY1ODZjMzJlOGNiZWViNjhkZWQ5MTI5NmM2N2JhNjc/s(w:320,h:180),jpeg/007/679/480/v2/320x180.214.jpg"><br>SekushiLover - Celeb Fap Challenge: Nicki Minaj',
+'sekushilover-celeb-nude-tribute-nicole-kidman-8266540"><img src="https://ic-vt-nss.xhcdn.com/a/ZDQ3ZWZjMzYxZGJhOTg3Nzk3MzIzOTRkNDQwNjFlNDI/s(w:320,h:180),jpeg/008/266/540/1280x720.10.jpg"><br>SekushiLover - Celeb Nude Tribute: Nicole Kidman',
+'sekushilover-celeb-nude-tribute-scarlett-johansson-8266536"><img src="https://ic-vt-nss.xhcdn.com/a/MmVkYjIzNGFkMzc0OTBiMWY1NjExZTk2MjQ1ZGU3YzQ/s(w:320,h:180),jpeg/008/266/536/1280x720.4.jpg"><br>SekushiLover - Celeb Nude Tribute: Scarlett Johansson',
+'sekushilover-celebrites-walking-butt-ass-naked-10268489"><img src="https://ic-vt-nss.xhcdn.com/a/YTBkMGFmY2QyYWYwYTFiYTYzODliNjJhMTdlNmZkN2U/s(w:320,h:180),jpeg/010/268/489/v2/320x180.241.jpg"><br>SekushiLover - Celebrites Walking Butt-Ass Naked',
+'sekushilover-celebrities-i-crave-anal-sex-for-9150037"><img src="https://ic-vt-nss.xhcdn.com/a/NWZjODZhOGRhOTcwZTZjNTkwNjZiZDYwNTc5ZjU1ODA/s(w:320,h:180),jpeg/009/150/037/v2/320x180.214.jpg"><br>SekushiLover - Celebrities I Crave Anal Sex For',
+'sekushilover-celebrities-shaving-their-hairy-bushes-8962816"><img src="https://ic-vt-nss.xhcdn.com/a/NmM1ZWYyODU3ZGJmYTMxMDI4NTkyY2U1NTM3ZThkZjA/s(w:320,h:180),jpeg/008/962/816/v2/320x180.207.jpg"><br>SekushiLover - Celebrities Shaving Their Hairy Bushes',
+'sekushilover-celebrities-turned-pornstars-9759590"><img src="https://ic-vt-nss.xhcdn.com/a/YjIyYWZkOWMwMjk5ODY0YTYwOGFiY2IxYjRiOTBhNjM/s(w:320,h:180),jpeg/009/759/590/v2/320x180.217.jpg"><br>SekushiLover - Celebrities Turned Pornstars',
+'sekushilover-celebrity-ass-rimming-scenes-8990078"><img src="https://ic-vt-nss.xhcdn.com/a/YzYzYjdmYzRhNzg1ZGYyNjRjNDA2Y2RlOWY5MjgzZDU/s(w:320,h:180),jpeg/008/990/078/v2/320x180.212.jpg"><br>SekushiLover - Celebrity Ass Rimming Scenes',
+'sekushilover-celebrity-ass-vs-ass-series-1-8364641"><img src="https://ic-vt-nss.xhcdn.com/a/NTcyNGJhZTc3NTFhMjRmYjlhYWNhMjUzYzVlMjQxMDM/s(w:320,h:180),jpeg/008/364/641/1280x720.5.jpg"><br>SekushiLover -  Celebrity Ass vs Ass Series 1',
+'sekushilover-celebrity-clothed-vs-unclothed-5-9674599"><img src="https://ic-vt-nss.xhcdn.com/a/MTM2MTljYmM2YjkyYzMxYTkzODg2NTdhMmExZjJjMzY/s(w:320,h:180),jpeg/009/674/599/v2/320x180.210.jpg"><br>SekushiLover - Celebrity Clothed vs Unclothed 5',
+'sekushilover-celebrity-clothed-vs-unclothed-6-10818376"><img src="https://ic-vt-nss.xhcdn.com/a/OWVkMTFjZjQ5ZjlkODRmZGZmMTFjMTE4ZWNiOGUwMGY/s(w:320,h:180),jpeg/010/818/376/v2/320x180.224.jpg"><br>SekushiLover - Celebrity Clothed vs Unclothed 6',
+'sekushilover-celebrity-clothed-vs-unclothed-part-1-8392257"><img src="https://ic-vt-nss.xhcdn.com/a/MzNkODA5MDk3Mjc2NmExZGYyMzY1OWVjNjJhMzBmZTU/s(w:320,h:180),jpeg/008/392/257/1280x720.5.jpg"><br>SekushiLover - Celebrity Clothed vs Unclothed: Part 1',
+'sekushilover-celebrity-clothed-vs-unclothed-part-2-8497240"><img src="https://ic-vt-nss.xhcdn.com/a/Y2FkN2ZiODRkMjk0MWU5M2Q0ZTQ3ZmM1ODQ3ZmZmNWQ/s(w:320,h:180),jpeg/008/497/240/v2/320x180.222.jpg"><br>SekushiLover - Celebrity Clothed vs Unclothed: Part 2',
+'sekushilover-celebrity-clothed-vs-unclothed-part-3-9028454"><img src="https://ic-vt-nss.xhcdn.com/a/MGI5MWY4OGMzOGE3MTE4ZjY5ZDViODlkNjI3OWRiZmM/s(w:320,h:180),jpeg/009/028/454/v2/320x180.201.jpg"><br>SekushiLover - Celebrity Clothed vs Unclothed: Part 3',
+'sekushilover-celebrity-clothed-vs-unclothed-part-4-9067206"><img src="https://ic-vt-nss.xhcdn.com/a/NWM1NDVlNTliZTE5ZmM2Y2M3NWZiNTcyNmVhNjE0NzE/s(w:320,h:180),jpeg/009/067/206/v2/320x180.205.jpg"><br>SekushiLover - Celebrity Clothed vs Unclothed: Part 4',
+'sekushilover-celebrity-clothed-vs-unclothed-part-7-14260931"><img src="https://ic-vt-nss.xhcdn.com/a/MzU1M2M1Mjc4Yjk1YTU4ODdjN2M5ZWI0MmM1NGJjZjY/s(w:320,h:180),jpeg/014/260/931/v2/320x180.233.jpg"><br>SekushiLover - Celebrity Clothed vs Unclothed: Part 7',
+'sekushilover-celebrity-doggystyle-tribute-1-8541382"><img src="https://ic-vt-nss.xhcdn.com/a/NGUzM2UyNjFlNDUyMzljZjM1YjNiMWU4MTJlNjNlNGI/s(w:320,h:180),jpeg/008/541/382/1280x720.3.jpg"><br>SekushiLover - Celebrity Doggystyle Tribute 1',
+'sekushilover-celebrity-girl-on-girl-kissing-10347969"><img src="https://ic-vt-nss.xhcdn.com/a/NWIwYTA4ODYxNGQ5ZTIxMjMxZjE4YWE5Mjg2ODI4NTE/s(w:320,h:180),jpeg/010/347/969/v2/320x180.214.jpg"><br>SekushiLover - Celebrity Girl on Girl Kissing',
+'sekushilover-celebrity-handjobs-in-slow-motion-9868082"><img src="https://ic-vt-nss.xhcdn.com/a/N2I2MmQxNGI5NzQzYTA1ZDJlYzQzYTY3M2Y2YzUzNGY/s(w:320,h:180),jpeg/009/868/082/v2/320x180.259.jpg"><br>SekushiLover - Celebrity Handjobs in Slow Motion',
+'sekushilover-celebrity-hard-spanking-scenes-8643947"><img src="https://ic-vt-nss.xhcdn.com/a/M2JlY2QwMmYzYTM3ZmRhMzc5OWYyNGMzNGY3YWQ4YjU/s(w:320,h:180),jpeg/008/643/947/v2/320x180.210.jpg"><br>SekushiLover - Celebrity Hard Spanking Scenes',
+'sekushilover-celebrity-pussy-eating-scenes-10046309"><img src="https://ic-vt-nss.xhcdn.com/a/OWFjMTU5NDRmN2RmOTQ3Nzg4NmY3MzFmZTIyMmY0ZWI/s(w:320,h:180),jpeg/010/046/309/v2/320x180.231.jpg"><br>SekushiLover - Celebrity Pussy Eating Scenes',
+'sekushilover-celebrity-talk-mode-vs-slut-mode-11802924"><img src="https://ic-vt-nss.xhcdn.com/a/MTNjMWY2NzcyMjFjNjE4NjY2N2JmMTQ0MWEwMGEwZjY/s(w:320,h:180),jpeg/011/802/924/v2/320x180.241.jpg"><br>SekushiLover - Celebrity Talk Mode vs Slut Mode',
+'sekushilover-celebrity-threesome-sex-scenes-1-8832401"><img src="https://ic-vt-nss.xhcdn.com/a/OWRhOTBhMzIwMGNmYjY4NDc5NWU0YTgwY2UxMTVhYzU/s(w:320,h:180),jpeg/008/832/401/v2/320x180.212.jpg"><br>SekushiLover - Celebrity Threesome Sex Scenes 1',
+'sekushilover-celebrity-tits-vs-tits-series-1-8364644"><img src="https://ic-vt-nss.xhcdn.com/a/ZjQzY2FiMjdkNDA0MTgxMTMwZDNmNDg4OTg3N2Y5ODA/s(w:320,h:180),jpeg/008/364/644/v2/320x180.206.jpg"><br>SekushiLover - Celebrity Tits vs Tits: Series 1',
+'sekushilover-celebrity-tits-vs-tits-series-2-8397160"><img src="https://ic-vt-nss.xhcdn.com/a/NWM4NjNlNjU1MDAxNTJmZTMxMGJhOWRkMDBhNDA2YTM/s(w:320,h:180),jpeg/008/397/160/1280x720.2.jpg"><br>SekushiLover - Celebrity Tits vs Tits: Series 2',
+'sekushilover-cowgirl-vs-cowgirl-series-1-8804173"><img src="https://ic-vt-nss.xhcdn.com/a/OTgzNWQ1NTZjZjY0MzZkODkzNjMwZDVhYWQ3NTg3NzM/s(w:320,h:180),jpeg/008/804/173/v2/320x180.201.jpg"><br>SekushiLover - Cowgirl vs Cowgirl: Series 1',
+'sekushilover-cunnilingus-with-a-view-part-5-7409945"><img src="https://ic-vt-nss.xhcdn.com/a/MGI0OTZkZGY0NmE1N2Y4M2U1YzI0MWE1ZWVjNTY0Zjg/s(w:320,h:180),jpeg/007/409/945/1280x720.9.jpg"><br>SekushiLover - Cunnilingus with a View: Part 5',
+'sekushilover-denise-richards-big-tits-fondled-8266551"><img src="https://ic-vt-nss.xhcdn.com/a/NjkzZGQyMDU4OTZiZjRmYjdiYmFhOTg4MDc2YzFkZGI/s(w:320,h:180),jpeg/008/266/551/v2/320x180.209.jpg"><br>SekushiLover - Denise Richards Big Tits Fondled',
+'sekushilover-disney-elsa-vs-naked-elsa-8333032"><img src="https://ic-vt-nss.xhcdn.com/a/MzE5ODcyZmJjZGFkNTRiMjY2YjVhMmZhMTY5ZjAwNDE/s(w:320,h:180),jpeg/008/333/032/1280x720.10.jpg"><br>SekushiLover - DIsney Elsa vs Naked Elsa',
+'sekushilover-explicit-cowgirl-sex-scenes-in-movies-tv-xhHTMQ3"><img src="https://ic-vt-nss.xhcdn.com/a/N2Q1ZTUwYjdiNzFlMDRiZjZhZDAzMjFmYjJlOTY2Nzc/s(w:320,h:180),jpeg/015/065/621/1280x720.8.jpg"><br>SekushiLover - Explicit Cowgirl Sex Scenes in Movies & TV',
+'sekushilover-explicit-full-frontal-movie-scenes-in-slo-mo-xhRLkmi"><img src="https://ic-vt-nss.xhcdn.com/a/YjU0ZWE0NDMzYmFjOTc1NTdlNGM1M2UyOTIyNzZkYWU/s(w:320,h:180),jpeg/019/043/065/1280x720.1.jpg"><br>SekushiLover - Explicit Full Frontal Movie Scenes in Slo-Mo',
+'sekushilover-explicit-movie-erection-scenes-in-slow-motion-xho6CAH"><img src="https://ic-vt-nss.xhcdn.com/a/ODQ2NzkzYzYyZGU4NDU5YTA1YjcyODRhOGY5OWI3Mzk/s(w:320,h:180),jpeg/016/738/337/v2/320x180.251.jpg"><br>SekushiLover - Explicit Movie, Erection Scenes in Slow Motion',
+'sekushilover-fave-celeb-moaning-scenes-part-1-8300295"><img src="https://ic-vt-nss.xhcdn.com/a/YmE1Yjc2Y2EwYTQ0NGMxNTMyMTkwYjhlZWI4NzhmMmE/s(w:320,h:180),jpeg/008/300/295/v2/320x180.212.jpg"><br>SekushiLover - Fave Celeb Moaning Scenes: Part 1',
+'sekushilover-fave-celeb-tape-blowjobs-7540352"><img src="https://ic-vt-nss.xhcdn.com/a/ZmFhMzJiZDAzYTQ4NjBmZGQ3NGE2MTIyYTlmYWMxMmQ/s(w:320,h:180),jpeg/007/540/352/v2/320x180.249.jpg"><br>SekushiLover - Fave Celeb Tape Blowjobs',
+'sekushilover-fave-celebrity-doggystyle-gifs-part-1-8071608"><img src="https://ic-vt-nss.xhcdn.com/a/NjcxYzc1OTkxMzAyMjE3NWQyNjQxOGZmNWQzYmY3MTk/s(w:320,h:180),jpeg/008/071/608/v2/320x180.219.jpg"><br>SekushiLover - Fave Celebrity Doggystyle Gifs: Part 1',
+'sekushilover-fave-celebrity-rough-sex-scenes-part-1-8556790"><img src="https://ic-vt-nss.xhcdn.com/a/NWY5YmRkM2RlM2VhMWEwZTZhN2YzMDk1ZWM0ZGQzOWM/s(w:320,h:180),jpeg/008/556/790/1280x720.7.jpg"><br>SekushiLover - Fave Celebrity Rough Sex Scenes: Part 1',
+'sekushilover-fave-ecchi-gifs-prison-school-part-1-8071584"><img src="https://ic-vt-nss.xhcdn.com/a/MWJlZmRhOTNkMzEwMTBkMDZjNDE5ZTUwY2YxZTUwYTk/s(w:320,h:180),jpeg/008/071/584/v2/320x180.206.jpg"><br>SekushiLover - Fave Ecchi Gifs: Prison School Part 1',
+'sekushilover-fave-ecchi-gifs-prison-school-part-2-8364664"><img src="https://ic-vt-nss.xhcdn.com/a/YWNhYjUzMjYyN2MwYTJkNmNhNmM1M2JkZGE5MjYzNzU/s(w:320,h:180),jpeg/008/364/664/v2/320x180.213.jpg"><br>SekushiLover - Fave Ecchi Gifs: Prison School: Part 2',
+'sekushilover-fave-hot-celeb-gifs-sfw-edition-7679487"><img src="https://ic-vt-nss.xhcdn.com/a/OWE3YjI4ZGQ4YmNhNjc2Yjg3YWU3MjlmOTUyM2FjMTA/s(w:320,h:180),jpeg/007/679/487/1280x720.6.jpg"><br>SekushiLover - Fave Hot Celeb Gifs: SFW Edition',
+'sekushilover-fave-korean-erotic-sex-scenes-part-2-8071615"><img src="https://ic-vt-nss.xhcdn.com/a/MjU1OTFmN2I3YjFhNzVkYjNjZTc2MzhiYWVmOTdkYTM/s(w:320,h:180),jpeg/008/071/615/1280x720.3.jpg"><br>SekushiLover - Fave Korean Erotic Sex Scenes: Part 2',
+'sekushilover-fave-korean-sex-scenes-part-3-8201356"><img src="https://ic-vt-nss.xhcdn.com/a/NGM1OTFkNzcyYTUxYjJiNTNkYjMxYjhiNWQ5YWRmNDg/s(w:320,h:180),jpeg/008/201/356/v2/320x180.225.jpg"><br>SekushiLover - Fave Korean Sex Scenes: Part 3',
+'sekushilover-fave-movie-gifs-blue-is-the-warmest-color-8071578"><img src="https://ic-vt-nss.xhcdn.com/a/YzQxMDc1Yzg0ZjViYmMyMjJhNDRiMmI1Mjg2NTQ3MzE/s(w:320,h:180),jpeg/008/071/578/1280x720.9.jpg"><br>SekushiLover - Fave Movie Gifs: Blue is the Warmest Color',
+'sekushilover-fave-nude-celeb-gifs-part-2-7612940"><img src="https://ic-vt-nss.xhcdn.com/a/YWY5MjdhZmYwOGY2ZmFjYzc3ZjJjNDYxM2E3MzQ0MTk/s(w:320,h:180),jpeg/007/612/940/1280x720.2.jpg"><br>SekushiLover - Fave Nude Celeb Gifs: Part 2',
+'sekushilover-fave-top-8-celebs-that-love-anal-sex-11584578"><img src="https://ic-vt-nss.xhcdn.com/a/YTgxNzA5NzIyODlkMDBhMjM1M2YzM2EwY2JlZjc4N2I/s(w:320,h:180),jpeg/011/584/578/1280x720.1.jpg"><br>SekushiLover - Fave Top 8 Celebs That Love Anal Sex',
+'sekushilover-five-movie-sex-scenes-part-1-7409957"><img src="https://ic-vt-nss.xhcdn.com/a/NDdjYTY4MzFlN2ZlZjQ5NDJiMzYyYmVlNjE4NGExYzM/s(w:320,h:180),jpeg/007/409/957/1280x720.2.jpg"><br>SekushiLover - Five Movie Sex Scenes: Part 1',
+'sekushilover-hottest-explicit-lesbian-sex-scenes-9034530"><img src="https://ic-vt-nss.xhcdn.com/a/NjI5YzQxNTZjN2IzYTUyOGZkZGVlOWYxM2M3OWMzOWY/s(w:320,h:180),jpeg/009/034/530/v2/320x180.241.jpg"><br>SekushiLover - Hottest Explicit Lesbian Sex Scenes',
+'sekushilover-incredible-ejaculation-movie-scenes-11094048"><img src="https://ic-vt-nss.xhcdn.com/a/NzY3ZGJiMzMwYjQ4ZjRmM2I2NzM0ZWFhNzQzNDNjNDY/s(w:320,h:180),jpeg/011/094/048/v2/320x180.243.jpg"><br>SekushiLover - Incredible Ejaculation Movie Scenes',
+'sekushilover-jillian-murray-talk-vs-clit-rub-8792465"><img src="https://ic-vt-nss.xhcdn.com/a/ZjJlNDc1YWU2YzdlZjY3MzU3N2I3NjhlMjA2Y2U3Y2E/s(w:320,h:180),jpeg/008/792/465/v2/320x180.211.jpg"><br>SekushiLover - Jillian Murray Talk vs Clit Rub',
+'sekushilover-jumanji-ruby-roundhouse-naked-9168932"><img src="https://ic-vt-nss.xhcdn.com/a/NDhjZmM0YWViMjkwMjNmMzlhZDRjN2NhYTlmMTI5MGI/s(w:320,h:180),jpeg/009/168/932/v2/320x180.206.jpg"><br>SekushiLover - Jumanji: Ruby Roundhouse Naked',
+'sekushilover-kristanna-loken-talk-vs-nude-selfies-8570925"><img src="https://ic-vt-nss.xhcdn.com/a/MjQ5OTk1NzQyZmRiNzhkYzM0Mjg5MmIwOGQ2OTQ4N2Q/s(w:320,h:180),jpeg/008/570/925/v2/320x180.205.jpg"><br>SekushiLover - Kristanna Loken Talk vs Nude Selfies',
+'sekushilover-luckiest-male-young-actors-ever-8857925"><img src="https://ic-vt-nss.xhcdn.com/a/ODk5NDE3MTRlYjFhZWQ0NWY1NGYyZjA3M2YwODM4NDE/s(w:320,h:180),jpeg/008/857/925/v2/320x180.266.jpg"><br>SekushiLover - Luckiest Male Young Actors Ever!!',
+'sekushilover-nicole-kidman-talk-vs-nude-scenes-8715229"><img src="https://ic-vt-nss.xhcdn.com/a/ZWUwNmYzYTFiNzAyYTBmMmU5M2FkNjYzNjFkMzA2Njc/s(w:320,h:180),jpeg/008/715/229/1280x720.4.jpg"><br>SekushiLover - Nicole Kidman Talk vs Nude Scenes',
+'sekushilover-only-in-japan-part-3-7409933"><img src="https://ic-vt-nss.xhcdn.com/a/MGVlYjY3ZjZlYWQzMGIxMDQxMmUxZWFiODg4YjEwNTA/s(w:320,h:180),jpeg/007/409/933/v2/320x180.214.jpg"><br>SekushiLover - Only In Japan: Part 3',
+'sekushilover-only-in-japan-part-5-7612936"><img src="https://ic-vt-nss.xhcdn.com/a/NjdkOGRmMmFjNjc0ODE1M2E3NmRlNzdkZGIyODViYWU/s(w:320,h:180),jpeg/007/612/936/1280x720.10.jpg"><br>SekushiLover - Only In Japan: Part 5',
+'sekushilover-peekaboo-i-can-see-her-butthole-8949434"><img src="https://ic-vt-nss.xhcdn.com/a/OGU4MmJlOGQ5N2JiNzc2YTM3NzE5MDE0YjYwZWJkODM/s(w:320,h:180),jpeg/008/949/434/1280x720.3.jpg"><br>SekushiLover - Peekaboo: I Can See Her Butthole',
+'sekushilover-prison-school-ecchi-gifs-part-3-8455412"><img src="https://ic-vt-nss.xhcdn.com/a/NzBmZDliZTJkZGFkYWJjYzY4NjVmYzAxNjJjMzFjMWQ/s(w:320,h:180),jpeg/008/455/412/v2/320x180.210.jpg"><br>SekushiLover - Prison School Ecchi Gifs: Part 3',
+'sekushilover-prison-school-ecchi-gifs-part-4-8493176"><img src="https://ic-vt-nss.xhcdn.com/a/ZTU4Y2JlYjgwYTcyMzM4NDM5OTEzNWU4NTJiYTEyOGU/s(w:320,h:180),jpeg/008/493/176/v2/320x180.214.jpg"><br>SekushiLover - Prison School Ecchi Gifs: Part 4',
+'sekushilover-rank-these-nude-wwe-diva-selfies-8266550"><img src="https://ic-vt-nss.xhcdn.com/a/MDcwOTc1M2IwNTJjZTNkYTE3OGVlYjMwMWQ5MzI2MTI/s(w:320,h:180),jpeg/008/266/550/v2/320x180.214.jpg"><br>SekushiLover - Rank These Nude WWE Diva Selfies',
+'sekushilover-thats-it-im-moving-to-france-8643990"><img src="https://ic-vt-nss.xhcdn.com/a/YTM4NTQ3ZWJjNWJlNjk0MWQyMzYxMmZmZjcwODMyMjc/s(w:320,h:180),jpeg/008/643/990/v2/320x180.203.jpg"><br>SekushiLover: That\'s It! I\'m Moving To France',
+'sekushilover-the-very-best-of-phat-ass-naked-celebrities-10954470"><img src="https://ic-vt-nss.xhcdn.com/a/ZTA0YmQzOThlNDExNGQ1OWMwOGQ2YzM5ZTBmNDJhODQ/s(w:320,h:180),jpeg/010/954/470/v2/320x180.217.jpg"><br>SekushiLover - The Very Best of Phat Ass Naked Celebrities',
+'sekushilover-top-10-explicit-female-masturbation-scenes-12641420"><img src="https://ic-vt-nss.xhcdn.com/a/MTBhYzQzMDczYWIzNjBkNmE5MTJmM2U3NTQ5NDQ2Yjc/s(w:320,h:180),jpeg/012/641/420/v2/320x180.233.jpg"><br>SekushiLover - Top 10 Explicit Female Masturbation Scenes',
+'sekushilover-top-10-explicit-rough-doggy-style-sex-scenes-11312591"><img src="https://ic-vt-nss.xhcdn.com/a/NzQxOTAxYjRkMTdhMWEyMGFkNTcyZDhiZjg3YTU2ZWU/s(w:320,h:180),jpeg/011/312/591/v2/320x180.229.jpg"><br>SekushiLover - Top 10 Explicit Rough Doggy-Style Sex Scenes',
+'sekushilover-top-10-interracial-movie-tv-sex-scenes-12218024"><img src="https://ic-vt-nss.xhcdn.com/a/ZTg0MTBlMTk5NmQ3ZTgwMjM2ZWYzM2VmZTVlOWI0Mzk/s(w:320,h:180),jpeg/012/218/024/v2/320x180.262.jpg"><br>SekushiLover - Top 10 Interracial Movie & TV Sex Scenes',
+'sekushilover-top-10-real-movie-penetration-sex-scenes-11185056"><img src="https://ic-vt-nss.xhcdn.com/a/NDZjNDkzZGY2MWU3ZDVhNjM5YTYyYjdiMDAxOTU3YTU/s(w:320,h:180),jpeg/011/185/056/v2/320x180.226.jpg"><br>SekushiLover - Top 10 Real Movie Penetration Sex Scenes',
+'sekushilover-tribute-to-italian-nude-scenes-8397205"><img src="https://ic-vt-nss.xhcdn.com/a/YTMyMjM4Y2YwNzkwODJiZWVjYjgxOTdhMDA5Y2E2OWY/s(w:320,h:180),jpeg/008/397/205/v2/320x180.205.jpg"><br>SekushiLover - Tribute to Italian Nude Scenes',
+'sekushilover-who-rides-dick-the-best-part-1-8300274"><img src="https://ic-vt-nss.xhcdn.com/a/MWRmNTI0ZDhjMjU0NTQ3MDZmNmE5Y2ViMzc0NDk0MWM/s(w:320,h:180),jpeg/008/300/274/v2/320x180.211.jpg"><br>SekushiLover - Who Rides Dick The Best: Part 1',
+'sekushilover-who-sucks-dick-the-best-part-1-8300283"><img src="https://ic-vt-nss.xhcdn.com/a/MWE0MWYyZjYyMDNjMTc0YTE0NDcxYTk4NzhkNWJlNDM/s(w:320,h:180),jpeg/008/300/283/v2/320x180.241.jpg"><br>SekushiLover - Who Sucks Dick The Best: Part 1',
+'sekushilover-wonder-womans-blowjob-skills-8443779"><img src="https://ic-vt-nss.xhcdn.com/a/NTRjMmE1OThiZjQ3ZmM0YThhYTJiZDliMDk2YmI2MWQ/s(w:320,h:180),jpeg/008/443/779/v2/320x180.210.jpg"><br>SekushiLover - Wonder Woman\'s Blowjob Skills',
+];
+lineHeader = '<div><a href="https://xhamster.com/videos/'
+lineTail = '</a></div>'
+showRange = 60
+bookid = "sekushilover85"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

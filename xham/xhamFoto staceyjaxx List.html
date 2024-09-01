@@ -1,0 +1,73 @@
+<base target="_blank"><html><head><title>staceyjaxx</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/hotel-fun-15945182"><img src="https://ic-ph-nss.xhcdn.com/a/ZjNmMDc1YzY0YzRmNWIyZGNmMTU1ZjcwZDJmM2Y2MzA/jpeg/000/513/149/938_450.jpg"><br>Hotel fun</a> 5',
+'<a href="https://xhamster.com/photos/gallery/stacey-loves-spreading-her-thick-thighs-15895802"><img src="https://ic-ph-nss.xhcdn.com/a/ZDZkZmRjYTM4YzRkOTlkODczOTJiNGYwMDAzMGUyZTU/jpeg/000/512/040/662_450.jpg"><br>Stacey loves spreading her thick thighs</a> 46',
+'<a href="https://xhamster.com/photos/gallery/stacey-loves-her-basque-and-stockings-16092476"><img src="https://ic-ph-nss.xhcdn.com/a/OGMyNGIyZTE4YWEwMzE1NjhkMjMyYTM5MjhlNjgyNzA/jpeg/000/515/323/332_450.jpg"><br>Stacey loves her basque and stockings</a> 45',
+'<a href="https://xhamster.com/photos/gallery/stacey-loves-spreading-her-ass-15898195"><img src="https://ic-ph-nss.xhcdn.com/a/ZjEyNjQ1Y2RkOGVmMWRlNGUwYzNkNjFkYzAxNTYyNjM/jpeg/000/512/096/852_450.jpg"><br>Stacey loves spreading her ass</a> 37',
+'<a href="https://xhamster.com/photos/gallery/fun-in-the-sun-pt2-16187187"><img src="https://ic-ph-nss.xhcdn.com/a/MTgwNGQ5NTBlODQ4ZmUyYjg4YWVmYWQxYTFiNDUxNWE/jpeg/000/516/536/999_450.jpg"><br>Fun in the sun Pt2</a> 33',
+'<a href="https://xhamster.com/photos/gallery/stacey-loves-her-dildos-15896141"><img src="https://ic-ph-nss.xhcdn.com/a/MjA0ZWQxYTg4MmY4YTJmZTY5YjlkZjc2M2ZhMTA1MjI/jpeg/000/512/048/128_450.jpg"><br>Stacey loves her dildos</a> 27',
+'<a href="https://xhamster.com/photos/gallery/staceys-favourite-cock-15896617"><img src="https://ic-ph-nss.xhcdn.com/a/ODVlNTRmZDQ1NDg1ZWI3OTllZjdiODgxZGM5NDg2ZDk/jpeg/000/512/059/909_450.jpg"><br>Staceys favourite cock</a> 26',
+'<a href="https://xhamster.com/photos/gallery/stacey-loves-her-tight-pvc-catsuit-15967062"><img src="https://ic-ph-nss.xhcdn.com/a/M2FkMDUzZDgzZTZlOGVhNmIwOGVmNjI5MDU3N2ZmMWU/jpeg/000/513/586/065_450.jpg"><br>Stacey loves her tight PVC catsuit</a> 25',
+'<a href="https://xhamster.com/photos/gallery/fun-in-the-sun-pt-1-16181931"><img src="https://ic-ph-nss.xhcdn.com/a/YzVhNmE5ZGRhZWExY2VlMmFjZjE1NzlhZjY2MDUyZDc/jpeg/000/516/473/775_450.jpg"><br>Fun in the Sun Pt 1</a> 25',
+'<a href="https://xhamster.com/photos/gallery/bondage-and-boobs-16127977"><img src="https://ic-ph-nss.xhcdn.com/a/MDE4NzFjMmE5ZDBlNThjZGYxZWM3NTE3MTI3NDhiYjk/jpeg/000/515/783/974_450.jpg"><br>Bondage and Boobs</a> 25',
+'<a href="https://xhamster.com/photos/gallery/stacey-loves-jacks-cum-everywhere-15928097"><img src="https://ic-ph-nss.xhcdn.com/a/MTVmOWViODY5NzU3NDA3NmMxNjJkMmI3NWFjYTJjNmQ/jpeg/000/512/762/394_450.jpg"><br>Stacey loves Jacks cum everywhere</a> 24',
+'<a href="https://xhamster.com/photos/gallery/first-time-tied-up-16013123"><img src="https://ic-ph-nss.xhcdn.com/a/NjE1YjkzMjEyMTAyZjNmMTZhOTM2ZTE2NWJmNjE1OGY/jpeg/000/514/245/320_450.jpg"><br>First time tied up</a> 2',
+'<a href="https://xhamster.com/photos/gallery/stacey-surely-is-xh-greatest-milf-15984369"><img src="https://ic-ph-nss.xhcdn.com/a/M2FmYjMwZGMzODE1YzhmYWRmMjVjY2IzMTc5MDQyODg/jpeg/000/513/828/510_450.jpg"><br>Stacey surely is XH greatest MILF</a> 19',
+'<a href="https://xhamster.com/photos/gallery/staceys-huge-amazing-boobs-1-15895068"><img src="https://ic-ph-nss.xhcdn.com/a/MDJhMWJkNWEwY2E4YzM0YjFhNDllNzVlMDdkOTZjYzM/jpeg/000/512/024/234_450.jpg"><br>Staceys Huge Amazing Boobs 1</a> 14',
+'<a href="https://xhamster.com/photos/gallery/stacey-loves-sucking-cock-15895426"><img src="https://ic-ph-nss.xhcdn.com/a/NTBmYWVmZmM1MzdmOWU4NGZlZWUwYmVmZjM2NzZlODE/jpeg/000/512/031/952_450.jpg"><br>Stacey loves sucking cock</a> 13',
+'<a href="https://xhamster.com/photos/gallery/uk-milf-wife-in-sexy-white-bodystocking-15926095"><img src="https://ic-ph-nss.xhcdn.com/a/Y2RiMDhlYjIwMDE3ODdjNmQwNzQ4NTJjZTRhOGFkOTk/jpeg/000/512/716/735_450.jpg"><br>UK MILF Wife in sexy white bodystocking</a> 12',
+'<a href="https://xhamster.com/photos/gallery/stacey-lives-her-shoes-and-boots-15904487"><img src="https://ic-ph-nss.xhcdn.com/a/OGZjMGJjNGYzZTY1Mzg3YTgzODE2MDIyMzczMjI1NDI/jpeg/000/512/232/925_450.jpg"><br>Stacey lives her shoes and boots</a> 11',
+'<a href="https://xhamster.com/photos/gallery/stacey-loves-80s-retro-lingerie-and-heels-15956554"><img src="https://ic-ph-nss.xhcdn.com/a/ZTBiZGMzNTY2NDBkZTE1ZmIyNmNjOTc4ZjQ3ZmJjYzA/jpeg/000/513/385/075_450.jpg"><br>Stacey loves 80s retro lingerie and heels</a> 10',
+'<a href="https://xhamster.com/photos/gallery/staceys-amazing-huge-boobs-15893445"><img src="https://ic-ph-nss.xhcdn.com/a/YzE4ZWVhZmQ0NWE1OTc4YzJkZGU5ZWYxZmFmZmM2MGU/jpeg/000/511/985/454_450.jpg"><br>Staceys Amazing Huge Boobs</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "staceyjaxx"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

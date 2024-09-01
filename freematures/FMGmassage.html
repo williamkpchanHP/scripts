@@ -1,0 +1,137 @@
+<base target="_blank"><html><head><title>massage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 100%;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">massage</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'2020/05/gqFJ5wPt/gqFJ5wPt-1',
+'2020/05/gqFJ5wPt/gqFJ5wPt-2',
+'2020/05/gqFJ5wPt/gqFJ5wPt-3',
+'2020/05/gqFJ5wPt/gqFJ5wPt-4',
+'2020/05/gqFJ5wPt/gqFJ5wPt-5',
+'2020/05/gqFJ5wPt/gqFJ5wPt-6',
+'2020/05/gqFJ5wPt/gqFJ5wPt-7',
+'2020/05/gqFJ5wPt/gqFJ5wPt-8',
+'2020/05/gqFJ5wPt/gqFJ5wPt-9',
+'2020/05/gqFJ5wPt/gqFJ5wPt-10',
+'2020/05/gqFJ5wPt/gqFJ5wPt-11',
+'2020/05/gqFJ5wPt/gqFJ5wPt-12',
+'2020/05/gqFJ5wPt/gqFJ5wPt-13',
+'2020/05/gqFJ5wPt/gqFJ5wPt-14',
+'2020/05/gqFJ5wPt/gqFJ5wPt-15',
+'2020/10/Pbp4V2cS/Pbp4V2cS-1',
+'2020/10/Pbp4V2cS/Pbp4V2cS-2',
+'2020/10/Pbp4V2cS/Pbp4V2cS-3',
+'2020/10/Pbp4V2cS/Pbp4V2cS-4',
+'2020/10/Pbp4V2cS/Pbp4V2cS-5',
+'2020/10/Pbp4V2cS/Pbp4V2cS-6',
+'2020/10/Pbp4V2cS/Pbp4V2cS-7',
+'2020/10/Pbp4V2cS/Pbp4V2cS-8',
+'2020/10/Pbp4V2cS/Pbp4V2cS-9',
+'2020/10/Pbp4V2cS/Pbp4V2cS-10',
+'2020/10/Pbp4V2cS/Pbp4V2cS-11',
+'2020/10/Pbp4V2cS/Pbp4V2cS-12',
+'2020/10/Pbp4V2cS/Pbp4V2cS-13',
+'2020/10/Pbp4V2cS/Pbp4V2cS-14',
+'2020/10/Pbp4V2cS/Pbp4V2cS-15',
+'2021/03/uRR5XmtA/uRR5XmtA-1',
+'2021/03/uRR5XmtA/uRR5XmtA-2',
+'2021/03/uRR5XmtA/uRR5XmtA-3',
+'2021/03/uRR5XmtA/uRR5XmtA-4',
+'2021/03/uRR5XmtA/uRR5XmtA-5',
+'2021/03/uRR5XmtA/uRR5XmtA-6',
+'2021/03/uRR5XmtA/uRR5XmtA-7',
+'2021/03/uRR5XmtA/uRR5XmtA-8',
+'2021/03/uRR5XmtA/uRR5XmtA-9',
+'2021/03/uRR5XmtA/uRR5XmtA-10',
+'2021/03/uRR5XmtA/uRR5XmtA-11',
+'2021/03/uRR5XmtA/uRR5XmtA-12',
+'2021/03/uRR5XmtA/uRR5XmtA-13',
+'2021/03/uRR5XmtA/uRR5XmtA-14',
+'2021/03/uRR5XmtA/uRR5XmtA-15',
+'2021/12/DKTAcHA7/DKTAcHA7-1',
+'2021/12/DKTAcHA7/DKTAcHA7-2',
+'2021/12/DKTAcHA7/DKTAcHA7-3',
+'2021/12/DKTAcHA7/DKTAcHA7-4',
+'2021/12/DKTAcHA7/DKTAcHA7-5',
+'2021/12/DKTAcHA7/DKTAcHA7-6',
+'2021/12/DKTAcHA7/DKTAcHA7-7',
+'2021/12/DKTAcHA7/DKTAcHA7-8',
+'2021/12/DKTAcHA7/DKTAcHA7-9',
+'2021/12/DKTAcHA7/DKTAcHA7-10',
+'2021/12/DKTAcHA7/DKTAcHA7-11',
+'2021/12/DKTAcHA7/DKTAcHA7-12',
+'2021/12/DKTAcHA7/DKTAcHA7-13',
+'2021/12/DKTAcHA7/DKTAcHA7-14',
+'2021/12/DKTAcHA7/DKTAcHA7-15',
+'2022/05/j9fiRFJ9/j9fiRFJ9-1',
+'2022/05/j9fiRFJ9/j9fiRFJ9-2',
+'2022/05/j9fiRFJ9/j9fiRFJ9-3',
+'2022/05/j9fiRFJ9/j9fiRFJ9-4',
+'2022/05/j9fiRFJ9/j9fiRFJ9-5',
+'2022/05/j9fiRFJ9/j9fiRFJ9-6',
+'2022/05/j9fiRFJ9/j9fiRFJ9-7',
+'2022/05/j9fiRFJ9/j9fiRFJ9-8',
+'2022/05/j9fiRFJ9/j9fiRFJ9-9',
+'2022/05/j9fiRFJ9/j9fiRFJ9-10',
+'2022/05/j9fiRFJ9/j9fiRFJ9-11',
+'2022/05/j9fiRFJ9/j9fiRFJ9-12',
+'2022/05/j9fiRFJ9/j9fiRFJ9-13',
+'2022/05/j9fiRFJ9/j9fiRFJ9-14',
+'2022/05/j9fiRFJ9/j9fiRFJ9-15',
+'',
+];
+lineHeader = '<img src="http://freematuresgallery.com/pics/'
+lineTail = '.jpg">'
+bookid = "massage"
+showRange = 60
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

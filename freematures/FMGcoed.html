@@ -1,0 +1,302 @@
+<base target="_blank"><html><head><title>coed</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 100%;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">coed</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'2020/10/K9xgN3Dn/K9xgN3Dn-1',
+'2020/10/K9xgN3Dn/K9xgN3Dn-2',
+'2020/10/K9xgN3Dn/K9xgN3Dn-3',
+'2020/10/K9xgN3Dn/K9xgN3Dn-4',
+'2020/10/K9xgN3Dn/K9xgN3Dn-5',
+'2020/10/K9xgN3Dn/K9xgN3Dn-6',
+'2020/10/K9xgN3Dn/K9xgN3Dn-7',
+'2020/10/K9xgN3Dn/K9xgN3Dn-8',
+'2020/10/K9xgN3Dn/K9xgN3Dn-9',
+'2020/10/K9xgN3Dn/K9xgN3Dn-10',
+'2020/10/K9xgN3Dn/K9xgN3Dn-11',
+'2020/10/K9xgN3Dn/K9xgN3Dn-12',
+'2020/10/K9xgN3Dn/K9xgN3Dn-13',
+'2020/10/K9xgN3Dn/K9xgN3Dn-14',
+'2020/10/K9xgN3Dn/K9xgN3Dn-15',
+'2020/11/G9rqLZ4A/G9rqLZ4A-1',
+'2020/11/G9rqLZ4A/G9rqLZ4A-2',
+'2020/11/G9rqLZ4A/G9rqLZ4A-3',
+'2020/11/G9rqLZ4A/G9rqLZ4A-4',
+'2020/11/G9rqLZ4A/G9rqLZ4A-5',
+'2020/11/G9rqLZ4A/G9rqLZ4A-6',
+'2020/11/G9rqLZ4A/G9rqLZ4A-7',
+'2020/11/G9rqLZ4A/G9rqLZ4A-8',
+'2020/11/G9rqLZ4A/G9rqLZ4A-9',
+'2020/11/G9rqLZ4A/G9rqLZ4A-10',
+'2020/11/G9rqLZ4A/G9rqLZ4A-11',
+'2020/11/G9rqLZ4A/G9rqLZ4A-12',
+'2020/11/G9rqLZ4A/G9rqLZ4A-13',
+'2020/11/G9rqLZ4A/G9rqLZ4A-14',
+'2020/11/G9rqLZ4A/G9rqLZ4A-15',
+'2020/11/r3cBiD2f/r3cBiD2f-1',
+'2020/11/r3cBiD2f/r3cBiD2f-2',
+'2020/11/r3cBiD2f/r3cBiD2f-3',
+'2020/11/r3cBiD2f/r3cBiD2f-4',
+'2020/11/r3cBiD2f/r3cBiD2f-5',
+'2020/11/r3cBiD2f/r3cBiD2f-6',
+'2020/11/r3cBiD2f/r3cBiD2f-7',
+'2020/11/r3cBiD2f/r3cBiD2f-8',
+'2020/11/r3cBiD2f/r3cBiD2f-9',
+'2020/11/r3cBiD2f/r3cBiD2f-10',
+'2020/11/r3cBiD2f/r3cBiD2f-11',
+'2020/11/r3cBiD2f/r3cBiD2f-12',
+'2020/11/r3cBiD2f/r3cBiD2f-13',
+'2020/11/r3cBiD2f/r3cBiD2f-14',
+'2020/11/r3cBiD2f/r3cBiD2f-15',
+'2021/02/rCu2DviB/rCu2DviB-1',
+'2021/02/rCu2DviB/rCu2DviB-2',
+'2021/02/rCu2DviB/rCu2DviB-3',
+'2021/02/rCu2DviB/rCu2DviB-4',
+'2021/02/rCu2DviB/rCu2DviB-5',
+'2021/02/rCu2DviB/rCu2DviB-6',
+'2021/02/rCu2DviB/rCu2DviB-7',
+'2021/02/rCu2DviB/rCu2DviB-8',
+'2021/02/rCu2DviB/rCu2DviB-9',
+'2021/02/rCu2DviB/rCu2DviB-10',
+'2021/02/rCu2DviB/rCu2DviB-11',
+'2021/02/rCu2DviB/rCu2DviB-12',
+'2021/02/rCu2DviB/rCu2DviB-13',
+'2021/02/rCu2DviB/rCu2DviB-14',
+'2021/02/rCu2DviB/rCu2DviB-15',
+'2021/09/7tePHf8F/7tePHf8F-1',
+'2021/09/7tePHf8F/7tePHf8F-2',
+'2021/09/7tePHf8F/7tePHf8F-3',
+'2021/09/7tePHf8F/7tePHf8F-4',
+'2021/09/7tePHf8F/7tePHf8F-5',
+'2021/09/7tePHf8F/7tePHf8F-6',
+'2021/09/7tePHf8F/7tePHf8F-7',
+'2021/09/7tePHf8F/7tePHf8F-8',
+'2021/09/7tePHf8F/7tePHf8F-9',
+'2021/09/7tePHf8F/7tePHf8F-10',
+'2021/09/7tePHf8F/7tePHf8F-11',
+'2021/09/7tePHf8F/7tePHf8F-12',
+'2021/09/7tePHf8F/7tePHf8F-13',
+'2021/09/7tePHf8F/7tePHf8F-14',
+'2021/09/7tePHf8F/7tePHf8F-15',
+'2021/10/oB2CoDbA/oB2CoDbA-1',
+'2021/10/oB2CoDbA/oB2CoDbA-2',
+'2021/10/oB2CoDbA/oB2CoDbA-3',
+'2021/10/oB2CoDbA/oB2CoDbA-4',
+'2021/10/oB2CoDbA/oB2CoDbA-5',
+'2021/10/oB2CoDbA/oB2CoDbA-6',
+'2021/10/oB2CoDbA/oB2CoDbA-7',
+'2021/10/oB2CoDbA/oB2CoDbA-8',
+'2021/10/oB2CoDbA/oB2CoDbA-9',
+'2021/10/oB2CoDbA/oB2CoDbA-10',
+'2021/10/oB2CoDbA/oB2CoDbA-11',
+'2021/10/oB2CoDbA/oB2CoDbA-12',
+'2021/10/oB2CoDbA/oB2CoDbA-13',
+'2021/10/oB2CoDbA/oB2CoDbA-14',
+'2021/10/oB2CoDbA/oB2CoDbA-15',
+'2022/07/hG26PghG/hG26PghG-1',
+'2022/07/hG26PghG/hG26PghG-2',
+'2022/07/hG26PghG/hG26PghG-3',
+'2022/07/hG26PghG/hG26PghG-4',
+'2022/07/hG26PghG/hG26PghG-5',
+'2022/07/hG26PghG/hG26PghG-6',
+'2022/07/hG26PghG/hG26PghG-7',
+'2022/07/hG26PghG/hG26PghG-8',
+'2022/07/hG26PghG/hG26PghG-9',
+'2022/07/hG26PghG/hG26PghG-10',
+'2022/07/hG26PghG/hG26PghG-11',
+'2022/07/hG26PghG/hG26PghG-12',
+'2022/07/hG26PghG/hG26PghG-13',
+'2022/07/hG26PghG/hG26PghG-14',
+'2022/07/hG26PghG/hG26PghG-15',
+'2022/09/L3c8z9Zt/L3c8z9Zt-1',
+'2022/09/L3c8z9Zt/L3c8z9Zt-2',
+'2022/09/L3c8z9Zt/L3c8z9Zt-3',
+'2022/09/L3c8z9Zt/L3c8z9Zt-4',
+'2022/09/L3c8z9Zt/L3c8z9Zt-5',
+'2022/09/L3c8z9Zt/L3c8z9Zt-6',
+'2022/09/L3c8z9Zt/L3c8z9Zt-7',
+'2022/09/L3c8z9Zt/L3c8z9Zt-8',
+'2022/09/L3c8z9Zt/L3c8z9Zt-9',
+'2022/09/L3c8z9Zt/L3c8z9Zt-10',
+'2022/09/L3c8z9Zt/L3c8z9Zt-11',
+'2022/09/L3c8z9Zt/L3c8z9Zt-12',
+'2022/09/L3c8z9Zt/L3c8z9Zt-13',
+'2022/09/L3c8z9Zt/L3c8z9Zt-14',
+'2022/09/L3c8z9Zt/L3c8z9Zt-15',
+'2022/11/8pHeZoou/8pHeZoou-1',
+'2022/11/8pHeZoou/8pHeZoou-2',
+'2022/11/8pHeZoou/8pHeZoou-3',
+'2022/11/8pHeZoou/8pHeZoou-4',
+'2022/11/8pHeZoou/8pHeZoou-5',
+'2022/11/8pHeZoou/8pHeZoou-6',
+'2022/11/8pHeZoou/8pHeZoou-7',
+'2022/11/8pHeZoou/8pHeZoou-8',
+'2022/11/8pHeZoou/8pHeZoou-9',
+'2022/11/8pHeZoou/8pHeZoou-10',
+'2022/11/8pHeZoou/8pHeZoou-11',
+'2022/11/8pHeZoou/8pHeZoou-12',
+'2022/11/8pHeZoou/8pHeZoou-13',
+'2022/11/8pHeZoou/8pHeZoou-14',
+'2022/11/8pHeZoou/8pHeZoou-15',
+'2022/11/MCac4BSk/MCac4BSk-1',
+'2022/11/MCac4BSk/MCac4BSk-2',
+'2022/11/MCac4BSk/MCac4BSk-3',
+'2022/11/MCac4BSk/MCac4BSk-4',
+'2022/11/MCac4BSk/MCac4BSk-5',
+'2022/11/MCac4BSk/MCac4BSk-6',
+'2022/11/MCac4BSk/MCac4BSk-7',
+'2022/11/MCac4BSk/MCac4BSk-8',
+'2022/11/MCac4BSk/MCac4BSk-9',
+'2022/11/MCac4BSk/MCac4BSk-10',
+'2022/11/MCac4BSk/MCac4BSk-11',
+'2022/11/MCac4BSk/MCac4BSk-12',
+'2022/11/MCac4BSk/MCac4BSk-13',
+'2022/11/MCac4BSk/MCac4BSk-14',
+'2022/11/MCac4BSk/MCac4BSk-15',
+'2022/12/6e6K4Wj7/6e6K4Wj7-1',
+'2022/12/6e6K4Wj7/6e6K4Wj7-2',
+'2022/12/6e6K4Wj7/6e6K4Wj7-3',
+'2022/12/6e6K4Wj7/6e6K4Wj7-4',
+'2022/12/6e6K4Wj7/6e6K4Wj7-5',
+'2022/12/6e6K4Wj7/6e6K4Wj7-6',
+'2022/12/6e6K4Wj7/6e6K4Wj7-7',
+'2022/12/6e6K4Wj7/6e6K4Wj7-8',
+'2022/12/6e6K4Wj7/6e6K4Wj7-9',
+'2022/12/6e6K4Wj7/6e6K4Wj7-10',
+'2022/12/6e6K4Wj7/6e6K4Wj7-11',
+'2022/12/6e6K4Wj7/6e6K4Wj7-12',
+'2022/12/6e6K4Wj7/6e6K4Wj7-13',
+'2022/12/6e6K4Wj7/6e6K4Wj7-14',
+'2022/12/6e6K4Wj7/6e6K4Wj7-15',
+'2023/07/xrzrmq3S/xrzrmq3S-1',
+'2023/07/xrzrmq3S/xrzrmq3S-2',
+'2023/07/xrzrmq3S/xrzrmq3S-3',
+'2023/07/xrzrmq3S/xrzrmq3S-4',
+'2023/07/xrzrmq3S/xrzrmq3S-5',
+'2023/07/xrzrmq3S/xrzrmq3S-6',
+'2023/07/xrzrmq3S/xrzrmq3S-7',
+'2023/07/xrzrmq3S/xrzrmq3S-8',
+'2023/07/xrzrmq3S/xrzrmq3S-9',
+'2023/07/xrzrmq3S/xrzrmq3S-10',
+'2023/07/xrzrmq3S/xrzrmq3S-11',
+'2023/07/xrzrmq3S/xrzrmq3S-12',
+'2023/07/xrzrmq3S/xrzrmq3S-13',
+'2023/07/xrzrmq3S/xrzrmq3S-14',
+'2023/07/xrzrmq3S/xrzrmq3S-15',
+'2023/08/73aftRAy/73aftRAy-1',
+'2023/08/73aftRAy/73aftRAy-2',
+'2023/08/73aftRAy/73aftRAy-3',
+'2023/08/73aftRAy/73aftRAy-4',
+'2023/08/73aftRAy/73aftRAy-5',
+'2023/08/73aftRAy/73aftRAy-6',
+'2023/08/73aftRAy/73aftRAy-7',
+'2023/08/73aftRAy/73aftRAy-8',
+'2023/08/73aftRAy/73aftRAy-9',
+'2023/08/73aftRAy/73aftRAy-10',
+'2023/08/73aftRAy/73aftRAy-11',
+'2023/08/73aftRAy/73aftRAy-12',
+'2023/08/73aftRAy/73aftRAy-13',
+'2023/08/73aftRAy/73aftRAy-14',
+'2023/08/73aftRAy/73aftRAy-15',
+'2023/08/RJ62BPam/RJ62BPam-1',
+'2023/08/RJ62BPam/RJ62BPam-2',
+'2023/08/RJ62BPam/RJ62BPam-3',
+'2023/08/RJ62BPam/RJ62BPam-4',
+'2023/08/RJ62BPam/RJ62BPam-5',
+'2023/08/RJ62BPam/RJ62BPam-6',
+'2023/08/RJ62BPam/RJ62BPam-7',
+'2023/08/RJ62BPam/RJ62BPam-8',
+'2023/08/RJ62BPam/RJ62BPam-9',
+'2023/08/RJ62BPam/RJ62BPam-10',
+'2023/08/RJ62BPam/RJ62BPam-11',
+'2023/08/RJ62BPam/RJ62BPam-12',
+'2023/08/RJ62BPam/RJ62BPam-13',
+'2023/08/RJ62BPam/RJ62BPam-14',
+'2023/08/RJ62BPam/RJ62BPam-15',
+'2023/10/P6VaRBm9/P6VaRBm9-1',
+'2023/10/P6VaRBm9/P6VaRBm9-2',
+'2023/10/P6VaRBm9/P6VaRBm9-3',
+'2023/10/P6VaRBm9/P6VaRBm9-4',
+'2023/10/P6VaRBm9/P6VaRBm9-5',
+'2023/10/P6VaRBm9/P6VaRBm9-6',
+'2023/10/P6VaRBm9/P6VaRBm9-7',
+'2023/10/P6VaRBm9/P6VaRBm9-8',
+'2023/10/P6VaRBm9/P6VaRBm9-9',
+'2023/10/P6VaRBm9/P6VaRBm9-10',
+'2023/10/P6VaRBm9/P6VaRBm9-11',
+'2023/10/P6VaRBm9/P6VaRBm9-12',
+'2023/10/P6VaRBm9/P6VaRBm9-13',
+'2023/10/P6VaRBm9/P6VaRBm9-14',
+'2023/10/P6VaRBm9/P6VaRBm9-15',
+'2023/11/dPf0s1za/dPf0s1za-1',
+'2023/11/dPf0s1za/dPf0s1za-2',
+'2023/11/dPf0s1za/dPf0s1za-3',
+'2023/11/dPf0s1za/dPf0s1za-4',
+'2023/11/dPf0s1za/dPf0s1za-5',
+'2023/11/dPf0s1za/dPf0s1za-6',
+'2023/11/dPf0s1za/dPf0s1za-7',
+'2023/11/dPf0s1za/dPf0s1za-8',
+'2023/11/dPf0s1za/dPf0s1za-9',
+'2023/11/dPf0s1za/dPf0s1za-10',
+'2023/11/dPf0s1za/dPf0s1za-11',
+'2023/11/dPf0s1za/dPf0s1za-12',
+'2023/11/dPf0s1za/dPf0s1za-13',
+'2023/11/dPf0s1za/dPf0s1za-14',
+'2023/11/dPf0s1za/dPf0s1za-15',
+'',
+];
+lineHeader = '<img src="http://freematuresgallery.com/pics/'
+lineTail = '.jpg">'
+bookid = "coed"
+showRange = 60
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

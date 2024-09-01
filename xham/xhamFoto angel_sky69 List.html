@@ -1,0 +1,167 @@
+<base target="_blank"><html><head><title>angel_sky69</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/handjob-15920007"><img src="https://ic-ph-nss.xhcdn.com/a/YmQzZjBlNWExNjVhNmJmNjkyMDQ3ZDI1Y2JmMTcxNGQ/jpeg/000/512/587/611_450.jpg"><br>Handjob </a> 9',
+'<a href="https://xhamster.com/photos/gallery/couple-masturbating-15925091"><img src="https://ic-ph-nss.xhcdn.com/a/Y2MxZDU0ZjViYmVmYTdiNzM3M2ViNDMwZDgwNmMxMjk/jpeg/000/512/695/504_450.jpg"><br>Couple masturbating</a> 9',
+'<a href="https://xhamster.com/photos/gallery/ass-to-mouth-strap-on-15898228"><img src="https://ic-ph-nss.xhcdn.com/a/OTAzNTVkY2RlN2Q2MzAzZGNjYjUxODE3ZjQ3NWU2YzI/jpeg/000/512/097/480_450.jpg"><br>Ass to mouth strap on</a> 9',
+'<a href="https://xhamster.com/photos/gallery/18-november-2022-15962071"><img src="https://ic-ph-nss.xhcdn.com/a/ODBhYWI5YzhiNDMxODc2YzZlNDc5N2FlY2E2ZjFlNWM/jpeg/000/513/497/492_450.jpg"><br>18 november 2022</a> 9',
+'<a href="https://xhamster.com/photos/gallery/10-juin-2022-15905413"><img src="https://ic-ph-nss.xhcdn.com/a/YjI5MmVmOTBiZjljZmFjNTFhOTYwMDE1ODQwZmU2NWI/jpeg/000/512/255/494_450.jpg"><br>10 juin 2022</a> 9',
+'<a href="https://xhamster.com/photos/gallery/watch-her-pee-15918293"><img src="https://ic-ph-nss.xhcdn.com/a/NjEzNTExM2Q4MmVhMjZiOTdiNWVjZThlOGUzYmQwYmE/jpeg/000/512/550/213_450.jpg"><br>Watch her pee</a> 8',
+'<a href="https://xhamster.com/photos/gallery/my-man-eats-his-cum-15926791"><img src="https://ic-ph-nss.xhcdn.com/a/Njk5YmM5Mjg1MGMxYjg5Mzg0NWM1Y2JiZTNkZjdhOGI/jpeg/000/512/732/698_450.jpg"><br>My man eats his cum</a> 8',
+'<a href="https://xhamster.com/photos/gallery/madames-pretty-little-ass-15812223"><img src="https://ic-ph-nss.xhcdn.com/a/ZDM5ODg0N2ExMGM4NDRlMTcxMjVkMzdkODNmNWY2MjU/jpeg/000/507/448/284_450.jpg"><br>Madame&#039;s pretty little ass</a> 8',
+'<a href="https://xhamster.com/photos/gallery/foot-massage-15913213"><img src="https://ic-ph-nss.xhcdn.com/a/NzliODNkYjZkNjMyNjY4MTMxNjdkYzQyYmY2MGRiZDA/jpeg/000/512/423/702_450.jpg"><br>Foot massage </a> 8',
+'<a href="https://xhamster.com/photos/gallery/anal-creampie-15901755"><img src="https://ic-ph-nss.xhcdn.com/a/NmJkMmE3ZWRhNzFmYzMyYmE0MDVlNWViNDIzNDAxOWY/jpeg/000/512/173/496_450.jpg"><br>Anal creampie </a> 8',
+'<a href="https://xhamster.com/photos/gallery/a-little-golden-shower-15919642"><img src="https://ic-ph-nss.xhcdn.com/a/MmQ4NDI5Y2E5Mjc0Yjg2OGMwMjYyMzcyNDVhMjc4MDg/jpeg/000/512/580/051_450.jpg"><br>A little golden shower?</a> 8',
+'<a href="https://xhamster.com/photos/gallery/26-mai-2022-15900593"><img src="https://ic-ph-nss.xhcdn.com/a/ZTM1MDJkZWVhMTIyNDQwMjU2YTcwMzM3ZjM2YzdlMDc/jpeg/000/512/147/637_450.jpg"><br>26 mai 2022</a> 8',
+'<a href="https://xhamster.com/photos/gallery/great-cumshot-15904100"><img src="https://ic-ph-nss.xhcdn.com/a/MjBlNmYzOTg4YjcyODQyNGU0ZjY1MTQ0MGM0ZmE1YTg/jpeg/000/512/224/018_450.jpg"><br>Great cumshot</a> 73',
+'<a href="https://xhamster.com/photos/gallery/blowjob-15900595"><img src="https://ic-ph-nss.xhcdn.com/a/MmM0NGEwN2JhMDc0ZDBlNDliMjMzOWM1ZDU0MTdlNDc/jpeg/000/512/147/662_450.jpg"><br>Blowjob </a> 70',
+'<a href="https://xhamster.com/photos/gallery/solo-girl-masturbating-15812419"><img src="https://ic-ph-nss.xhcdn.com/a/MmMyODJiYWZjMzQzNGY4MDdmNjY2YTA0MjBiMWRiNDI/jpeg/000/507/492/995_450.jpg"><br>Solo girl masturbating</a> 7',
+'<a href="https://xhamster.com/photos/gallery/sensual-sensation-on-my-husband-15924459"><img src="https://ic-ph-nss.xhcdn.com/a/MTliYzYzMzkxM2UwNzYzNTZkYWQ1YzQ5ZDllZTIyNmU/jpeg/000/512/683/467_450.jpg"><br>Sensual sensation on my husband</a> 7',
+'<a href="https://xhamster.com/photos/gallery/mr-rimming-girl-15802689"><img src="https://ic-ph-nss.xhcdn.com/a/NDIxMGJiNGUwYTVhOGE4ZTY1NDM5OGY3MWNkOWM3ODA/jpeg/000/503/800/006_450.jpg"><br>Mr rimming Girl</a> 7',
+'<a href="https://xhamster.com/photos/gallery/miss-nude-and-sexy-15920367"><img src="https://ic-ph-nss.xhcdn.com/a/MmEwYTA2Yzc4MTRlYmQ3MmI0Y2EyYjllYzlhZGU1NDQ/jpeg/000/512/594/937_450.jpg"><br>Miss nude and sexy</a> 7',
+'<a href="https://xhamster.com/photos/gallery/june-2-2022-15902976"><img src="https://ic-ph-nss.xhcdn.com/a/NDllNmU0MjExOGFiMzYwMmI3OTJmMWZiNWM3ODRmN2Q/jpeg/000/512/199/547_450.jpg"><br>June 2, 2022</a> 7',
+'<a href="https://xhamster.com/photos/gallery/double-penetration-masturbation-15802581"><img src="https://ic-ph-nss.xhcdn.com/a/ZDI5ZWFlYjBhMWY1N2I5MmEyZjBkZGQxOGY3ZTFkYzc/jpeg/000/503/743/321_450.jpg"><br>Double penetration masturbation</a> 7',
+'<a href="https://xhamster.com/photos/gallery/cumshot-15813937"><img src="https://ic-ph-nss.xhcdn.com/a/Mjk2OGJkNDYzZWVjMWI2MDY3ZjZhMjk2Yjk4ZTNjZWY/jpeg/000/507/955/847_450.jpg"><br>Cumshot</a> 7',
+'<a href="https://xhamster.com/photos/gallery/couple-masturbation-15814549"><img src="https://ic-ph-nss.xhcdn.com/a/NDQxYTQwNWU0N2U3ZTk2ZWIxZTE2YzJhOTFmYzIzYjg/jpeg/000/508/114/660_450.jpg"><br>Couple masturbation </a> 7',
+'<a href="https://xhamster.com/photos/gallery/april-2023-16020751"><img src="https://ic-ph-nss.xhcdn.com/a/YTNiMzg2ZWYzYjQ3N2E2NTNkMDFjZDliYmQ1OTkxOGU/jpeg/000/514/350/077_450.jpg"><br>April 2023</a> 7',
+'<a href="https://xhamster.com/photos/gallery/angels-beautiful-little-tits-15923136"><img src="https://ic-ph-nss.xhcdn.com/a/NTk4YTM0OTZhNzM3YjVmYTNlNjZlNTJlMzhjMmZjMTI/jpeg/000/512/650/831_450.jpg"><br>Angel&#039;s beautiful little tits</a> 7',
+'<a href="https://xhamster.com/photos/gallery/11-november-2022-15964931"><img src="https://ic-ph-nss.xhcdn.com/a/YTI3MzAzZDE3NDI1NDczZmFkMmYzZjY1ZWQ2OWJhNzQ/jpeg/000/513/548/706_450.jpg"><br>11 november 2022</a> 7',
+'<a href="https://xhamster.com/photos/gallery/02-december-2022-15967474"><img src="https://ic-ph-nss.xhcdn.com/a/MDdkNTI2NDM3OGNiYjg0NTQ3MDBhM2Y0YTk1MzhjODc/jpeg/000/513/591/096_450.jpg"><br>02 december 2022</a> 7',
+'<a href="https://xhamster.com/photos/gallery/vaginal-penetration-15917564"><img src="https://ic-ph-nss.xhcdn.com/a/YzZjYmQ1MWRhYzJmNjFhOWRjNTFhMWVhZWI5YTg3Mjc/jpeg/000/512/535/808_450.jpg"><br>Vaginal penetration</a> 64',
+'<a href="https://xhamster.com/photos/gallery/hot-sperme-in-my-pussy-15902132"><img src="https://ic-ph-nss.xhcdn.com/a/NzEwNDE3NzU5MjFkNjA1YjRlYjJhYTE1YTZkYTI1YjA/jpeg/000/512/181/208_450.jpg"><br>Hot sperme in my pussy </a> 60',
+'<a href="https://xhamster.com/photos/gallery/miss-nude-and-sexy-15802148"><img src="https://ic-ph-nss.xhcdn.com/a/YjgzZjQ1ZTkxZDI5MzRiMzk4YzJkZjQwZGQzMzFmZjU/jpeg/000/503/491/651_450.jpg"><br>Miss nude and sexy</a> 6',
+'<a href="https://xhamster.com/photos/gallery/mai-12-2024-16147872"><img src="https://ic-ph-nss.xhcdn.com/a/YTE5ZDFhY2FiYjA1YjJhYWNkMDY1NzA2NjRlN2E5MzQ/jpeg/000/516/074/030_450.jpg"><br>Mai 12, 2024</a> 6',
+'<a href="https://xhamster.com/photos/gallery/23-jun-2022-15909663"><img src="https://ic-ph-nss.xhcdn.com/a/NzkxNzgwYTI3ODQ2YTgwZWEwZjlmOWNlYjZlYjk2NWM/jpeg/000/512/346/335_450.jpg"><br>23 Jun 2022</a> 6',
+'<a href="https://xhamster.com/photos/gallery/my-beautiful-pussy-15927092"><img src="https://ic-ph-nss.xhcdn.com/a/NTYyOTAxZjM4YTI1MGRjZDY2ZTU0NTMxODhmOGI3ZGM/jpeg/000/512/738/479_450.jpg"><br>My beautiful pussy</a> 5',
+'<a href="https://xhamster.com/photos/gallery/january-15-2023-15984089"><img src="https://ic-ph-nss.xhcdn.com/a/MzAwN2I4ZDdhM2U5OTAxZDMxYTFmMDQ0MTU1NzkyOTc/jpeg/000/513/814/273_450.jpg"><br>January 15 2023</a> 5',
+'<a href="https://xhamster.com/photos/gallery/january-15-2023-15984088"><img src="https://ic-ph-nss.xhcdn.com/a/NWI1ZDFmY2U0MWJiMjMzMWQ4ZGQ4YjRkM2I2ZTM5M2Q/jpeg/000/513/814/266_450.jpg"><br>January 15 2023</a> 5',
+'<a href="https://xhamster.com/photos/gallery/he-sucks-the-strap-on-15922503"><img src="https://ic-ph-nss.xhcdn.com/a/YzZlOGY5MzYwYTQzZjZiZjljMzZkOWU1ZTU1ZTUzNDM/jpeg/000/512/637/345_450.jpg"><br>He sucks the strap on</a> 5',
+'<a href="https://xhamster.com/photos/gallery/good-cum-15917896"><img src="https://ic-ph-nss.xhcdn.com/a/OTdjYzZiY2ViZjIwM2I3YzQ2Yzc2MGQxZTk4MWQ1YWU/jpeg/000/512/542/533_450.jpg"><br>Good cum</a> 5',
+'<a href="https://xhamster.com/photos/gallery/golden-shower-15811492"><img src="https://ic-ph-nss.xhcdn.com/a/ZmUzOTk4OWVlYWZmODZiZDc1MjcwODIxN2I4NjY1ZGU/jpeg/000/507/222/309_450.jpg"><br>Golden Shower</a> 5',
+'<a href="https://xhamster.com/photos/gallery/19-december-2022-15974514"><img src="https://ic-ph-nss.xhcdn.com/a/ZTBhYzJjNTY4OTg5Zjg5Y2M2OTdiN2ZlZjlhYzJkMGM/jpeg/000/513/669/127_450.jpg"><br>19 december 2022</a> 5',
+'<a href="https://xhamster.com/photos/gallery/12-mai-2022-15895832"><img src="https://ic-ph-nss.xhcdn.com/a/NDRkMjE1ZWU4NjMxZTc2M2UxN2FlNzhmMzhmMDdiYTU/jpeg/000/512/041/125_450.jpg"><br>12 mai 2022</a> 5',
+'<a href="https://xhamster.com/photos/gallery/11-october-2022-15959587"><img src="https://ic-ph-nss.xhcdn.com/a/YzMxZWIxNTUxZDE1YzFhYjE3NGE4YjkwYjFiMDJlZWI/jpeg/000/513/453/641_450.jpg"><br>11 october 2022</a> 5',
+'<a href="https://xhamster.com/photos/gallery/photo-f-vrier-2023-15997944"><img src="https://ic-ph-nss.xhcdn.com/a/ZTdiY2FiYzVmMmIyMDZiYzg0YjI4OGZkNmEyZTZlN2M/jpeg/000/514/019/886_450.jpg"><br>Photo février 2023</a> 40',
+'<a href="https://xhamster.com/photos/gallery/squirting-and-orgasm-15814011"><img src="https://ic-ph-nss.xhcdn.com/a/MDgzZDlmNzE3MTlmMjVhYzkwOTFhNzFhYjNiMzE2MzA/jpeg/000/507/975/764_450.jpg"><br>Squirting and orgasm</a> 4',
+'<a href="https://xhamster.com/photos/gallery/she-loves-big-balls-15921023"><img src="https://ic-ph-nss.xhcdn.com/a/ZmZmYTFlZmZjMTQ1N2QxMTU3MmVjZWM3ZDE2MjQxYTk/jpeg/000/512/608/976_450.jpg"><br>She loves big balls</a> 4',
+'<a href="https://xhamster.com/photos/gallery/pic-5-mai-2022-15893521"><img src="https://ic-ph-nss.xhcdn.com/a/N2I1YjYzODc4OWQ2OTJiMzYwNzA0ZTNlYzYyMWNlNDE/jpeg/000/511/987/112_450.jpg"><br>Pic 5 mai 2022</a> 4',
+'<a href="https://xhamster.com/photos/gallery/nice-shaved-pussy-15929424"><img src="https://ic-ph-nss.xhcdn.com/a/YjllYTg1NDFiOGI1NTliMGU2OTAxZGNkM2Y5NmZkNWY/jpeg/000/512/794/747_450.jpg"><br>Nice shaved pussy</a> 4',
+'<a href="https://xhamster.com/photos/gallery/licking-nipple-girl-15812636"><img src="https://ic-ph-nss.xhcdn.com/a/NWMwMWFkZGRiYTRkMWRhOTU1ZGEzMGMyZDlmMTJlNTc/jpeg/000/507/550/619_450.jpg"><br>Licking nipple girl </a> 4',
+'<a href="https://xhamster.com/photos/gallery/lick-armpits-15893043"><img src="https://ic-ph-nss.xhcdn.com/a/ZmM3MWFlNTJiYjMwMjJkMzA5ZmQ4MTFjNTA5ODJlNGU/jpeg/000/511/974/069_450.jpg"><br>Lick armpits</a> 4',
+'<a href="https://xhamster.com/photos/gallery/guy-sucking-strapon-15813717"><img src="https://ic-ph-nss.xhcdn.com/a/MTYwMTQzMzc0YTg3NWZkNzg4MzZlMTNiYjVmN2Y5MWM/jpeg/000/507/886/426_450.jpg"><br>Guy sucking strapon</a> 4',
+'<a href="https://xhamster.com/photos/gallery/good-footjob-15913549"><img src="https://ic-ph-nss.xhcdn.com/a/ZWQ1Y2VhNjEzOTk1NTQ2MmQ0MjViNzFlNWE3YjU3NzI/jpeg/000/512/431/288_450.jpg"><br>Good footjob</a> 4',
+'<a href="https://xhamster.com/photos/gallery/girl-pissing-15806487"><img src="https://ic-ph-nss.xhcdn.com/a/YzU0Y2Y1Y2M0NjJhOWM3ZGMwZDY3NGI2YjdlNDE4MzI/jpeg/000/505/568/559_450.jpg"><br>Girl pissing </a> 4',
+'<a href="https://xhamster.com/photos/gallery/24-january-2023-15987972"><img src="https://ic-ph-nss.xhcdn.com/a/MDIxMTA5OWU2M2EzNTYzYzQzNDAzNjJjZDc1NThiMTM/jpeg/000/513/873/593_450.jpg"><br>24 January 2023</a> 4',
+'<a href="https://xhamster.com/photos/gallery/21-december-2022-15975147"><img src="https://ic-ph-nss.xhcdn.com/a/OTIxZGIwMmVkNzlkZGE4ZDZmZmI2NjUxMjljNzNmMDY/jpeg/000/513/675/779_450.jpg"><br>21 december 2022</a> 4',
+'<a href="https://xhamster.com/photos/gallery/20-december-2022-15974820"><img src="https://ic-ph-nss.xhcdn.com/a/ZDBjNzYyMzVjMzNiNjJiOGIwNTM2NGY5MjVmYmNkYTk/jpeg/000/513/672/544_450.jpg"><br>20 december 2022</a> 4',
+'<a href="https://xhamster.com/photos/gallery/lick-my-ass-bb-15920689"><img src="https://ic-ph-nss.xhcdn.com/a/ZGJlNjA4MzM4MDNkOGRhZGMxNTU5N2Q4ZDUwM2E1OTU/jpeg/000/512/601/895_450.jpg"><br>Lick my ass bb</a> 34',
+'<a href="https://xhamster.com/photos/gallery/i-love-toy-with-my-ass-and-my-pussy-15925457"><img src="https://ic-ph-nss.xhcdn.com/a/Yzk4NWUzMGVlZjEwNDM0NDc2YTc2YzU1NzQ2MTBhOGM/jpeg/000/512/702/831_450.jpg"><br>I love toy with my ass and my pussy</a> 34',
+'<a href="https://xhamster.com/photos/gallery/september-9-2022-15938874"><img src="https://ic-ph-nss.xhcdn.com/a/Njk2YTA3N2FmZmM2MjZiNWVjZjQzY2MzNWM3OGI1NDA/jpeg/000/513/011/183_450.jpg"><br>September 9, 2022</a> 3',
+'<a href="https://xhamster.com/photos/gallery/my-tits-15927464"><img src="https://ic-ph-nss.xhcdn.com/a/M2ZmNmM2N2E2ZDIzYTc5MGU0NmI4ZDZmZjcxMjRmMGQ/jpeg/000/512/747/409_450.jpg"><br>My tits</a> 3',
+'<a href="https://xhamster.com/photos/gallery/my-pussy-15815814"><img src="https://ic-ph-nss.xhcdn.com/a/YmM2MWNkZGFlNjNjZWMxMTcwZGNlNzdjOTQzODQ0NzE/jpeg/000/508/479/134_450.jpg"><br>My pussy</a> 3',
+'<a href="https://xhamster.com/photos/gallery/lick-nipple-boyfriends-15812344"><img src="https://ic-ph-nss.xhcdn.com/a/N2Y1Nzc2NDhkODg2MWNiYWQ5ODA3MzU5ZjAyOTYwMzE/jpeg/000/507/470/343_450.jpg"><br>Lick nipple boyfriends</a> 3',
+'<a href="https://xhamster.com/photos/gallery/le-queue-de-mon-copain-15904717"><img src="https://ic-ph-nss.xhcdn.com/a/MzY1MjZkODQ5YTRjZWUyZWYyYTUwY2I0ZTVhZTcxNDE/jpeg/000/512/239/345_450.jpg"><br>Le queue de mon copain </a> 3',
+'<a href="https://xhamster.com/photos/gallery/footcum-15909017"><img src="https://ic-ph-nss.xhcdn.com/a/ZjBhNWUxYzIwZjQ4MTdiN2FiZDliZTYxNjg5Yjg3MTY/jpeg/000/512/331/383_450.jpg"><br>Footcum</a> 3',
+'<a href="https://xhamster.com/photos/gallery/11-septembre-2022-15936374"><img src="https://ic-ph-nss.xhcdn.com/a/MTdhZjViMzkzZjdmZmFiZDIzODFlNjdlNWE3NTAxNWM/jpeg/000/512/958/106_450.jpg"><br>11 septembre 2022</a> 3',
+'<a href="https://xhamster.com/photos/gallery/my-creamy-pussy-15902412"><img src="https://ic-ph-nss.xhcdn.com/a/MGRhYjVjMTFmMTY2MjI4ZmE1NDUyZTkxMjUxZjU1N2U/jpeg/000/512/188/249_450.jpg"><br>My creamy pussy</a> 28',
+'<a href="https://xhamster.com/photos/gallery/blowjob-15809945"><img src="https://ic-ph-nss.xhcdn.com/a/M2IzMDExZmJjNjk5N2MyZDdjNzVlODcyMGJhZGYzOTM/jpeg/000/506/762/224_450.jpg"><br>Blowjob </a> 28',
+'<a href="https://xhamster.com/photos/gallery/creampie-in-pussy-15806884"><img src="https://ic-ph-nss.xhcdn.com/a/YWZlZjZmMGIyMGIwYWNhOWQzMGNmYTM1MGQzYjA5ZmM/jpeg/000/505/732/265_450.jpg"><br>Creampie in pussy</a> 25',
+'<a href="https://xhamster.com/photos/gallery/un-deux-ou-plus-de-doigt-dans-ma-chatte-15908549"><img src="https://ic-ph-nss.xhcdn.com/a/ZDhjYjI1ODE3YmE5ODlmMWJmNmU3ZjAwYWJjYzk2MGY/jpeg/000/512/322/276_450.jpg"><br>Un, deux ou plus de doigt dans ma chatte </a> 24',
+'<a href="https://xhamster.com/photos/gallery/strapon-15929745"><img src="https://ic-ph-nss.xhcdn.com/a/OTkzNWVlMDgyMGViNWE2Zjg3MTU1MjE1NTAwNGVkZmQ/jpeg/000/512/802/287_450.jpg"><br>Strapon </a> 23',
+'<a href="https://xhamster.com/photos/gallery/my-wifes-pretty-ass-15895830"><img src="https://ic-ph-nss.xhcdn.com/a/OTcxNDA3N2FmYWRhYjI1NmIwNzFhYjQ0YjIxNmMwODM/jpeg/000/512/041/111_450.jpg"><br>My wife&#039;s pretty ass!</a> 23',
+'<a href="https://xhamster.com/photos/gallery/les-pieds-de-angel-15909341"><img src="https://ic-ph-nss.xhcdn.com/a/MDM5NjkwYWU3MDc1MjAxOWUxODAwOGI2YTI2MWMzMTU/jpeg/000/512/338/808_450.jpg"><br>Les pieds de Angel </a> 23',
+'<a href="https://xhamster.com/photos/gallery/he-loves-getting-fucked-with-a-strapon-15932194"><img src="https://ic-ph-nss.xhcdn.com/a/OGU0MzZjMDUyYjJkMDcyYzZhZWVmZGFlM2FiNjQwNjk/jpeg/000/512/861/423_450.jpg"><br>He loves getting fucked with a strapon</a> 23',
+'<a href="https://xhamster.com/photos/gallery/cum-in-mouth-15902981"><img src="https://ic-ph-nss.xhcdn.com/a/ODQ4YjgzYzVhM2I0OGM4N2I1M2JkNDYyZWVmNjIxYWM/jpeg/000/512/199/566_450.jpg"><br>Cum in mouth</a> 23',
+'<a href="https://xhamster.com/photos/gallery/fuck-my-ass-bb-15917232"><img src="https://ic-ph-nss.xhcdn.com/a/NDM2NmYwOTNmMThlMWY3NGQ5ZjgxOTQ3NDcyZmFlOWM/jpeg/000/512/528/798_450.jpg"><br>Fuck my ass BB</a> 22',
+'<a href="https://xhamster.com/photos/gallery/foot-fetish-and-footjob-15805545"><img src="https://ic-ph-nss.xhcdn.com/a/MDU2NmUwNzkzYzMyODk2YzVkZjJiZDAyMGZiOTI2NDc/jpeg/000/505/141/555_450.jpg"><br>Foot Fetish and Footjob</a> 22',
+'<a href="https://xhamster.com/photos/gallery/strapon-ass-to-mouth-15804846"><img src="https://ic-ph-nss.xhcdn.com/a/MmViOWJiYjY2YjYyMGRhYmIxMjlkMDZmNTA2MjhlMTQ/jpeg/000/504/800/923_450.jpg"><br>Strapon Ass To Mouth</a> 2',
+'<a href="https://xhamster.com/photos/gallery/my-nipple-and-breast-15812698"><img src="https://ic-ph-nss.xhcdn.com/a/Y2M4YjVjNTdjZjg3NzhiZWY4ZjUyZDIyODhjODdjMjQ/jpeg/000/508/446/396_450.jpg"><br>My nipple and breast</a> 2',
+'<a href="https://xhamster.com/photos/gallery/mai-13-2024-16148254"><img src="https://ic-ph-nss.xhcdn.com/a/MjhkNTA4NGQwMTg3Y2NmZGJiZDE5ZDM2ZWYyMzM4ZDg/jpeg/000/516/080/255_450.jpg"><br>Mai 13, 2024</a> 2',
+'<a href="https://xhamster.com/photos/gallery/ho-yeah-baby-15906346"><img src="https://ic-ph-nss.xhcdn.com/a/NGNmZmEzMjMzM2RmMDZjOTYxOGRhNDg1NzkyYjM2YTI/jpeg/000/512/275/524_450.jpg"><br>Ho yeah baby</a> 2',
+'<a href="https://xhamster.com/photos/gallery/handjob-15816096"><img src="https://ic-ph-nss.xhcdn.com/a/ZTk3ZTU3MDk2MmJiN2ZkNmI5ZWVmNDRkYWRjNTVjNjY/jpeg/000/508/563/257_450.jpg"><br>Handjob</a> 2',
+'<a href="https://xhamster.com/photos/gallery/girl-rimming-boy-15816034"><img src="https://ic-ph-nss.xhcdn.com/a/MzFlZTg5ZGU4Yzk0OWYzM2JjOGMxYjU4ZDM0ODJmZTg/jpeg/000/508/539/869_450.jpg"><br>Girl rimming boy</a> 2',
+'<a href="https://xhamster.com/photos/gallery/foot-licking-15909662"><img src="https://ic-ph-nss.xhcdn.com/a/NWEwZGU5YWQwZGIyZjMwZjRlYjJlMWFhMDRiZWNkODY/jpeg/000/512/346/326_450.jpg"><br>Foot licking</a> 2',
+'<a href="https://xhamster.com/photos/gallery/fingering-pussy-15815796"><img src="https://ic-ph-nss.xhcdn.com/a/OTllMGUxMmQzNWEwOGZjN2UzNjFkZjI0NmEzY2QxNmY/jpeg/000/508/471/519_450.jpg"><br>Fingering pussy</a> 2',
+'<a href="https://xhamster.com/photos/gallery/facial-cumshot-15809610"><img src="https://ic-ph-nss.xhcdn.com/a/ZWE3ODNlYmJjMmMwNGFiOTlkNWZkNzk3NTBjOGQyOGY/jpeg/000/506/648/153_450.jpg"><br>Facial cumshot</a> 2',
+'<a href="https://xhamster.com/photos/gallery/double-penetration-15816366"><img src="https://ic-ph-nss.xhcdn.com/a/MjI2M2U5N2QwZmVmOTA5M2JlNWMzNWVkMWY5OTNkMDA/jpeg/000/508/628/250_450.jpg"><br>Double penetration</a> 2',
+'<a href="https://xhamster.com/photos/gallery/dick-mr-bend-and-not-bend-15807781"><img src="https://ic-ph-nss.xhcdn.com/a/ZTVmODM3ZjI2YjdlMTlmMmM1YTY4N2FmZDAyZDM2MjA/jpeg/000/506/096/363_450.jpg"><br>Dick Mr. bend and not bend</a> 2',
+'<a href="https://xhamster.com/photos/gallery/cum-in-mouth-15816005"><img src="https://ic-ph-nss.xhcdn.com/a/MmJjZDQ5NTMxOTY1ZDU2N2YxNDViOGExNzNiMTNjYWE/jpeg/000/508/530/098_450.jpg"><br>Cum in mouth </a> 2',
+'<a href="https://xhamster.com/photos/gallery/creampie-anal-15802591"><img src="https://ic-ph-nss.xhcdn.com/a/MTljNjI0MTQxM2JkM2UzNmE4YTNiYzU1MjU0YmJmMGU/jpeg/000/503/749/592_450.jpg"><br>Creampie Anal</a> 2',
+'<a href="https://xhamster.com/photos/gallery/boyfriend-masturbating-15813491"><img src="https://ic-ph-nss.xhcdn.com/a/YTYzY2M0NWY2NGRmMjFjMGM0NWU4MTZiMjZkNTViNmU/jpeg/000/507/803/433_450.jpg"><br>Boyfriend masturbating</a> 2',
+'<a href="https://xhamster.com/photos/gallery/angel-and-sky-15923458"><img src="https://ic-ph-nss.xhcdn.com/a/NWU0Y2QxZmZkZTY3ZTlhMDJjM2ZkZTM3YmYxMmNiYzE/jpeg/000/512/659/207_450.jpg"><br>Angel And Sky </a> 19',
+'<a href="https://xhamster.com/photos/gallery/photomontage-15932882"><img src="https://ic-ph-nss.xhcdn.com/a/YTk1ZDJkZmFmNGNjMzBkM2Y0ZDY5MzU3NzQ0YjlhYjc/jpeg/000/512/876/428_450.jpg"><br>Photomontage</a> 15',
+'<a href="https://xhamster.com/photos/gallery/girlfriend-riimming-boyfriends-15918595"><img src="https://ic-ph-nss.xhcdn.com/a/NWVlNjRkYmQ3NmUwNjAxMzFiZGExYzhmZGQ4NzAyNjI/jpeg/000/512/557/553_450.jpg"><br>Girlfriend Riimming boyfriends</a> 15',
+'<a href="https://xhamster.com/photos/gallery/facial-sur-angel-15907095"><img src="https://ic-ph-nss.xhcdn.com/a/OTA0MTE3ZGFlYmQyMmFjZGE4NzY1YjQyMzkyMmFiODE/jpeg/000/512/291/172_450.jpg"><br>Facial sur Angel</a> 15',
+'<a href="https://xhamster.com/photos/gallery/angel-fingering-her-ass-15907406"><img src="https://ic-ph-nss.xhcdn.com/a/ZmRhMDk2YjI1MDBjZDc1MzQ2YjY0MDg3YjcxMjg3Mzc/jpeg/000/512/297/784_450.jpg"><br>Angel fingering her ass</a> 15',
+'<a href="https://xhamster.com/photos/gallery/anal-fuck-15802574"><img src="https://ic-ph-nss.xhcdn.com/a/ODgzOThmMDA0ZDZmY2E4YWRkNTFlODk1NDg0ZjYxZmY/jpeg/000/503/739/632_450.jpg"><br>Anal fuck</a> 15',
+'<a href="https://xhamster.com/photos/gallery/my-man-tastes-my-pussy-15904405"><img src="https://ic-ph-nss.xhcdn.com/a/NTZhZDM5ZjNkZjhkN2RiZGNjMjBmYTI2NzFiNGJmOGI/jpeg/000/512/231/345_450.jpg"><br>My man tastes my pussy</a> 14',
+'<a href="https://xhamster.com/photos/gallery/january-22-2023-15986365"><img src="https://ic-ph-nss.xhcdn.com/a/YzQxODhlNTIwNWVkMWQzODZmOGIyMTI4MTFhMTdiYWY/jpeg/000/513/856/773_450.jpg"><br>January 22, 2023</a> 14',
+'<a href="https://xhamster.com/photos/gallery/girl-masturbation-anal-and-pussy-15906803"><img src="https://ic-ph-nss.xhcdn.com/a/NWY5Y2U0YzJkYzUzMzRlODBlODAyYjcxZmJiYjYyODQ/jpeg/000/512/284/775_450.jpg"><br>Girl masturbation anal and pussy</a> 14',
+'<a href="https://xhamster.com/photos/gallery/fuck-pussy-15814401"><img src="https://ic-ph-nss.xhcdn.com/a/YjNhYTM4NjMyYjQ3NDgxYjE5YjFkYTU1YThmMTNhMzg/jpeg/000/508/076/983_450.jpg"><br>Fuck pussy</a> 14',
+'<a href="https://xhamster.com/photos/gallery/squirting-15932467"><img src="https://ic-ph-nss.xhcdn.com/a/NzJlZGI5Mzk1ODJlZWE4YzQ1Y2I3YjdmMWViMDk4ODU/jpeg/000/512/868/279_450.jpg"><br>Squirting</a> 13',
+'<a href="https://xhamster.com/photos/gallery/february-3-2023-15990509"><img src="https://ic-ph-nss.xhcdn.com/a/NjlkOWQzNDIzMWI0YzAyZjhkNTZjNWE0Yzg3NjM4NmI/jpeg/000/513/910/596_450.jpg"><br>February 3, 2023</a> 13',
+'<a href="https://xhamster.com/photos/gallery/18-december-2022-15974190"><img src="https://ic-ph-nss.xhcdn.com/a/Njg2YTFjNGU2ODIxMzhmODJlNzhhYzY0NDQyOTYxNjk/jpeg/000/513/666/116_450.jpg"><br>18 december 2022</a> 13',
+'<a href="https://xhamster.com/photos/gallery/10-f-vrier-2023-16001853"><img src="https://ic-ph-nss.xhcdn.com/a/MTU5YzdmYzI1NThhN2JkZDY1ZGE5ZjVmNDZiYzk3OTY/jpeg/000/514/085/838_450.jpg"><br>10 février 2023</a> 13',
+'<a href="https://xhamster.com/photos/gallery/mademoiselle-in-sexy-lingerie-15813736"><img src="https://ic-ph-nss.xhcdn.com/a/NzYxNzVlYzdhNzJiMzc2MjU0ZjRkZWJiOTJjNmI0MWI/jpeg/000/507/891/799_450.jpg"><br>Mademoiselle in sexy lingerie</a> 12',
+'<a href="https://xhamster.com/photos/gallery/lingerie-and-sex-toy-15929073"><img src="https://ic-ph-nss.xhcdn.com/a/YWVjNzEwMWMwMzMxZTAxOWM1ZTY2N2JkZmYzNTFjNWE/jpeg/000/512/787/166_450.jpg"><br>Lingerie and sex toy</a> 12',
+'<a href="https://xhamster.com/photos/gallery/lick-pussy-15808145"><img src="https://ic-ph-nss.xhcdn.com/a/OTY0NmY0Mzg4ZTAzOGFmZmQzMmQ1NGNlMTQ0MDA2YWQ/jpeg/000/506/218/631_450.jpg"><br>Lick pussy</a> 12',
+'<a href="https://xhamster.com/photos/gallery/girl-strapon-guys-15804844"><img src="https://ic-ph-nss.xhcdn.com/a/YzU0M2IyMTc2ZWZiZGE3NTZjZmMyOGZhNmJjNjhlY2Y/jpeg/000/504/800/752_450.jpg"><br>Girl Strapon Guys</a> 12',
+'<a href="https://xhamster.com/photos/gallery/march-20-2023-16005155"><img src="https://ic-ph-nss.xhcdn.com/a/NWNlMmY5NDc3ZTA2NDhjZWJjZjczMDBmZDkwYjdjMWM/jpeg/000/514/132/943_450.jpg"><br>March 20, 2023</a> 11',
+'<a href="https://xhamster.com/photos/gallery/19-mai-2022-15898230"><img src="https://ic-ph-nss.xhcdn.com/a/M2NmMjk0YTM5YWU1Y2E1ZDI3YzVlMzYzMmJjZjk0YzQ/jpeg/000/512/097/505_450.jpg"><br>19 mai 2022</a> 11',
+'<a href="https://xhamster.com/photos/gallery/mai-2023-16022696"><img src="https://ic-ph-nss.xhcdn.com/a/Mzc1YTBiOTA1ZmQ5NWI0NTc4MTQ0NzBmOGNhNTBkYjE/jpeg/000/514/378/311_450.jpg"><br>Mai 2023</a> 10',
+'<a href="https://xhamster.com/photos/gallery/doggystyle-15809580"><img src="https://ic-ph-nss.xhcdn.com/a/M2QzN2M1MDk0NzU1OWIzNDg0NGZiN2VmNWRlNjQ4NTI/jpeg/000/506/638/647_450.jpg"><br>Doggystyle</a> 10',
+'<a href="https://xhamster.com/photos/gallery/doggy-15905414"><img src="https://ic-ph-nss.xhcdn.com/a/ZTBkODViOGMxMmNjYjcyODlkNmQ4OTY0OTBmMmM1MGE/jpeg/000/512/255/532_450.jpg"><br>Doggy </a> 10',
+'<a href="https://xhamster.com/photos/gallery/06-jun-2022-15907405"><img src="https://ic-ph-nss.xhcdn.com/a/MWU0YmFlN2NmNjRjOWJlZTk0NDMwZWU5YmNmZDdkNGM/jpeg/000/512/297/765_450.jpg"><br>06 Jun 2022</a> 10',
+'<a href="https://xhamster.com/photos/gallery/angel-and-sky-15814515"><img src="https://ic-ph-nss.xhcdn.com/a/ZmExYjQ3ZDUzMTE2MWE5ZmExNDAyYzJiMjdlYTUwMTg/jpeg/000/508/106/738_450.jpg"><br>Angel and Sky</a> 1',
+'<a href="https://xhamster.com/photos/gallery/16-octobre-2022-15949015"><img src="https://ic-ph-nss.xhcdn.com/a/ZTljODQ5NGE1OTg0MjhlZTFjMTRmZjBhOGQwNjk5MDE/jpeg/000/513/222/590_450.jpg"><br>16 octobre 2022</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "angel_sky69"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

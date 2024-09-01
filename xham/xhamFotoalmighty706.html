@@ -1,0 +1,68 @@
+<base target="_blank"><html><head><title>almighty706</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/almighty-bitch-like-2-show-2-15805461"><img src="https://ic-ph-nss.xhcdn.com/a/YzcxMWI5NDRjMDRmNGMzZGUxNGY1NTc0ZTRmYzg0NzA/jpeg/000/507/127/418_450.jpg"><br>Almighty Bitch Like 2 Show 2</a> 91',
+'<a href="https://xhamster.com/photos/gallery/my-bbc-15805309"><img src="https://ic-ph-nss.xhcdn.com/a/OGQ1NDQ3NGEzY2JiNDA0ODc4NzIyZWE4YTRiODU4NjI/jpeg/000/505/057/532_450.jpg"><br>My BBC</a> 9',
+'<a href="https://xhamster.com/photos/gallery/chubby-milf-15965015"><img src="https://ic-ph-nss.xhcdn.com/a/ZGMwOWU3NzhhOWRmNTllNjc2YmE0ZGY2YWIxZmZlYTQ/jpeg/000/513/550/190_450.jpg"><br>Chubby Milf </a> 8',
+'<a href="https://xhamster.com/photos/gallery/xhamster-wifes-2-15807157"><img src="https://ic-ph-nss.xhcdn.com/a/MzFkZGY5YTdkMTBmY2Y4N2E3MjI2NTUzN2I4YmIyNDE/jpeg/000/505/853/386_450.jpg"><br>Xhamster Wifes 2</a> 5',
+'<a href="https://xhamster.com/photos/gallery/me-and-you-15344639"><img src="https://ic-ph-nss.xhcdn.com/a/MGNjNTM5NGIwZTA4NTI4YmU4YzM5YTc2MzI5MDVhMWI/jpeg/000/461/647/572_450.jpg"><br>Me and you</a> 5',
+'<a href="https://xhamster.com/photos/gallery/sluts-15308794"><img src="https://ic-ph-nss.xhcdn.com/a/MTliZmQwZWE2MzcxMjJkMTFhMjNjYjVlMjZhZTg2NDc/jpeg/000/459/670/252_450.jpg"><br>Sluts</a> 4',
+'<a href="https://xhamster.com/photos/gallery/anonymous-15809369"><img src="https://ic-ph-nss.xhcdn.com/a/NWRlYmFhYmNkOWE4NTY1MzFkNTllNTY0NWVjZjBhODQ/jpeg/000/506/585/537_450.jpg"><br>Anonymous</a> 3',
+'<a href="https://xhamster.com/photos/gallery/spun-15782525"><img src="https://ic-ph-nss.xhcdn.com/a/YjdlOWViOGM3MmQ1ZDZjMzMxZmUxMzY0M2YwZjU0M2Y/jpeg/000/505/118/036_450.jpg"><br>Spun</a> 27',
+'<a href="https://xhamster.com/photos/gallery/monkey-15809410"><img src="https://ic-ph-nss.xhcdn.com/a/Mjk4NzY4NWFiZTMxOTUwMjdmYTllNjc1MzhmNmNhNDY/jpeg/000/506/598/388_450.jpg"><br>Monkey</a> 20',
+'<a href="https://xhamster.com/photos/gallery/random-15190636"><img src="https://ic-ph-nss.xhcdn.com/a/MDIyYmY3NGIwOWU4MTBmN2FjNDQyODk3NDMwODdiMzc/jpeg/000/459/668/938_450.jpg"><br>Random</a> 2',
+'<a href="https://xhamster.com/photos/gallery/spun-fun-15788490"><img src="https://ic-ph-nss.xhcdn.com/a/NjA2YzM5Njk5MDQ3NWNhZGU3NzM0NmYxMTE1ZjIwNWU/jpeg/000/496/419/750_450.jpg"><br>Spun Fun</a> 11',
+'<a href="https://xhamster.com/photos/gallery/pierced-and-meaty-15805455"><img src="https://ic-ph-nss.xhcdn.com/a/MmIxMjc4Njg2NGYxZDQwNzA0YjMxMWM3NTY0MTAwODQ/jpeg/000/505/116/386_450.jpg"><br>Pierced And Meaty</a> 10',
+'<a href="https://xhamster.com/photos/gallery/almighty-bitch-like-to-show-15805457"><img src="https://ic-ph-nss.xhcdn.com/a/Zjg0MjZlYjA2YWRjZDNlZWVlYzIyMTk1YWEyN2JkNjU/jpeg/000/505/116/992_450.jpg"><br>Almighty Bitch Like To Show</a> 10',
+'<a href="https://xhamster.com/photos/gallery/call-me-slut-daddy-15811577"><img src="https://ic-ph-nss.xhcdn.com/a/NjY4OWNkNDc3OWQ1NjQ1NDIyMWJkNWEyOGM1NjVkYmU/jpeg/000/507/250/805_450.jpg"><br>Call Me Slut Daddy</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "almighty706"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

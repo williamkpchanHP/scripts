@@ -1,0 +1,99 @@
+<base target="_blank"><html><head><title>pornstar=alby-daor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<link rel="stylesheet" href="../imgcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+
+<body onkeypress="chkKey()">
+<br>
+<center>
+<p class="tip-number">pornstar=alby-daor</p>
+<p class="js-tip"></p>
+<br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'126/56dbfaef1f5539037ac583a66157b1ba-1',
+'126/56dbfaef1f5539037ac583a66157b1ba-10',
+'126/56dbfaef1f5539037ac583a66157b1ba-11',
+'126/56dbfaef1f5539037ac583a66157b1ba-12',
+'126/56dbfaef1f5539037ac583a66157b1ba-13',
+'126/56dbfaef1f5539037ac583a66157b1ba-14',
+'126/56dbfaef1f5539037ac583a66157b1ba-15',
+'126/56dbfaef1f5539037ac583a66157b1ba-16',
+'126/56dbfaef1f5539037ac583a66157b1ba-2',
+'126/56dbfaef1f5539037ac583a66157b1ba-3',
+'126/56dbfaef1f5539037ac583a66157b1ba-4',
+'126/56dbfaef1f5539037ac583a66157b1ba-5',
+'126/56dbfaef1f5539037ac583a66157b1ba-6',
+'126/56dbfaef1f5539037ac583a66157b1ba-7',
+'126/56dbfaef1f5539037ac583a66157b1ba-8',
+'126/56dbfaef1f5539037ac583a66157b1ba-9',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-1',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-10',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-11',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-12',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-13',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-14',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-15',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-16',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-2',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-3',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-4',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-5',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-6',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-7',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-8',
+'243/9c52b0b302e15f052d3b3b4e3db79d4f-9',
+'466/cc511556cfa4564426c48b9651991fd6-1',
+'466/cc511556cfa4564426c48b9651991fd6-10',
+'466/cc511556cfa4564426c48b9651991fd6-11',
+'466/cc511556cfa4564426c48b9651991fd6-12',
+'466/cc511556cfa4564426c48b9651991fd6-13',
+'466/cc511556cfa4564426c48b9651991fd6-14',
+'466/cc511556cfa4564426c48b9651991fd6-15',
+'466/cc511556cfa4564426c48b9651991fd6-2',
+'466/cc511556cfa4564426c48b9651991fd6-3',
+'466/cc511556cfa4564426c48b9651991fd6-4',
+'466/cc511556cfa4564426c48b9651991fd6-5',
+'466/cc511556cfa4564426c48b9651991fd6-6',
+'466/cc511556cfa4564426c48b9651991fd6-7',
+'466/cc511556cfa4564426c48b9651991fd6-8',
+'466/cc511556cfa4564426c48b9651991fd6-9',
+'535/95af90ec741ac76de703b0921286d611-1',
+'535/95af90ec741ac76de703b0921286d611-10',
+'535/95af90ec741ac76de703b0921286d611-11',
+'535/95af90ec741ac76de703b0921286d611-12',
+'535/95af90ec741ac76de703b0921286d611-13',
+'535/95af90ec741ac76de703b0921286d611-14',
+'535/95af90ec741ac76de703b0921286d611-15',
+'535/95af90ec741ac76de703b0921286d611-16',
+'535/95af90ec741ac76de703b0921286d611-2',
+'535/95af90ec741ac76de703b0921286d611-3',
+'535/95af90ec741ac76de703b0921286d611-4',
+'535/95af90ec741ac76de703b0921286d611-5',
+'535/95af90ec741ac76de703b0921286d611-6',
+'535/95af90ec741ac76de703b0921286d611-7',
+'535/95af90ec741ac76de703b0921286d611-8',
+'535/95af90ec741ac76de703b0921286d611-9',
+];
+lineHeader = '<img src="https://cdn.nudexxx.pics/content/galleries/'
+lineTail = '-full.jpg">'
+showRange = 80
+bookid = "pornstar=alby-daor"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
+

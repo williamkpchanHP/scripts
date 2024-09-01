@@ -1,0 +1,99 @@
+<base target="_blank"><html><head><title>pornstar=ryan-smiles</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<link rel="stylesheet" href="../imgcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+
+<body onkeypress="chkKey()">
+<br>
+<center>
+<p class="tip-number">pornstar=ryan-smiles</p>
+<p class="js-tip"></p>
+<br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'506/7a24d8c4a81d813e24cc385839493106-1',
+'506/7a24d8c4a81d813e24cc385839493106-10',
+'506/7a24d8c4a81d813e24cc385839493106-11',
+'506/7a24d8c4a81d813e24cc385839493106-12',
+'506/7a24d8c4a81d813e24cc385839493106-13',
+'506/7a24d8c4a81d813e24cc385839493106-14',
+'506/7a24d8c4a81d813e24cc385839493106-15',
+'506/7a24d8c4a81d813e24cc385839493106-16',
+'506/7a24d8c4a81d813e24cc385839493106-2',
+'506/7a24d8c4a81d813e24cc385839493106-3',
+'506/7a24d8c4a81d813e24cc385839493106-4',
+'506/7a24d8c4a81d813e24cc385839493106-5',
+'506/7a24d8c4a81d813e24cc385839493106-6',
+'506/7a24d8c4a81d813e24cc385839493106-7',
+'506/7a24d8c4a81d813e24cc385839493106-8',
+'506/7a24d8c4a81d813e24cc385839493106-9',
+'772/bca2bd9b85df83af1b64a40348360fbf-1',
+'772/bca2bd9b85df83af1b64a40348360fbf-10',
+'772/bca2bd9b85df83af1b64a40348360fbf-11',
+'772/bca2bd9b85df83af1b64a40348360fbf-12',
+'772/bca2bd9b85df83af1b64a40348360fbf-13',
+'772/bca2bd9b85df83af1b64a40348360fbf-14',
+'772/bca2bd9b85df83af1b64a40348360fbf-15',
+'772/bca2bd9b85df83af1b64a40348360fbf-16',
+'772/bca2bd9b85df83af1b64a40348360fbf-2',
+'772/bca2bd9b85df83af1b64a40348360fbf-3',
+'772/bca2bd9b85df83af1b64a40348360fbf-4',
+'772/bca2bd9b85df83af1b64a40348360fbf-5',
+'772/bca2bd9b85df83af1b64a40348360fbf-6',
+'772/bca2bd9b85df83af1b64a40348360fbf-7',
+'772/bca2bd9b85df83af1b64a40348360fbf-8',
+'772/bca2bd9b85df83af1b64a40348360fbf-9',
+'774/ccf839a9c979bca39b59a132d4eea3b3-1',
+'774/ccf839a9c979bca39b59a132d4eea3b3-10',
+'774/ccf839a9c979bca39b59a132d4eea3b3-11',
+'774/ccf839a9c979bca39b59a132d4eea3b3-12',
+'774/ccf839a9c979bca39b59a132d4eea3b3-13',
+'774/ccf839a9c979bca39b59a132d4eea3b3-14',
+'774/ccf839a9c979bca39b59a132d4eea3b3-15',
+'774/ccf839a9c979bca39b59a132d4eea3b3-16',
+'774/ccf839a9c979bca39b59a132d4eea3b3-2',
+'774/ccf839a9c979bca39b59a132d4eea3b3-3',
+'774/ccf839a9c979bca39b59a132d4eea3b3-4',
+'774/ccf839a9c979bca39b59a132d4eea3b3-5',
+'774/ccf839a9c979bca39b59a132d4eea3b3-6',
+'774/ccf839a9c979bca39b59a132d4eea3b3-7',
+'774/ccf839a9c979bca39b59a132d4eea3b3-8',
+'774/ccf839a9c979bca39b59a132d4eea3b3-9',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-1',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-10',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-11',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-12',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-13',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-14',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-15',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-2',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-3',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-4',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-5',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-6',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-7',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-8',
+'778/4ec1520aebf7696c27cc9cbc3383e8f8-9',
+];
+lineHeader = '<img src="https://cdn.nudexxx.pics/content/galleries/'
+lineTail = '-full.jpg">'
+showRange = 63
+bookid = "pornstar=ryan-smiles"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
+

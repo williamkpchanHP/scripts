@@ -1,0 +1,223 @@
+<base target="_blank"><html><head><title>jamdown26Batch: 161</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:100%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">jamdown26Batch: 161</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/pictures-of-us-16005447</k>',
+'NDBhZjFiYjNkYmY4MDAwZDI2ZGIyYWMxMzRiNTM0YTU/jpeg/000/514/136/944',
+'NzY3ZjZkNzAwNjBhNWI3YTk2MjY3NzE5ZDI0ODUxZmI/jpeg/000/514/136/943',
+'ZDUxNmEwYzdlOGMyYzIyMzAxMzZlOWI0MWNmZmIxY2Q/jpeg/000/514/136/942',
+'MDQyYzI3NDRjY2FmMDE0YWQ0NWVjYmYxYWE3NTc3ZWI/jpeg/000/514/136/941',
+'ODIyZmUyNmVjMzdiM2ViOGE0NjJlNTk2NTRlZjgxMjc/jpeg/000/514/136/940',
+'MmE0ODFjNDg1MzVjOGE5ODU3MzUxMzI2YzEzNDZjNGM/jpeg/000/514/136/939',
+'MzNlMTk0OTgxMmQ5OTNhMjFhYmY0YTdjNTNkNjk2ZWY/jpeg/000/514/136/933',
+'<k>https://xhamster.com/photos/gallery/me-at-work-16052770</k>',
+'NzEzMDhlMjllNTdlODFlOGQyZGI1ODM0OGQ5MzJjNzc/jpeg/000/514/783/075',
+'YjRmODMxOGE0ZTM0YWZkMDdkMTE0YWM5NDBiYTEyMjc/jpeg/000/514/783/074',
+'MmVkZTliZGMwMWM3Zjk4NDk5NjdmOWM1YjIzOTZiOGE/jpeg/000/514/783/073',
+'MjBjYTBlODk0NWEwY2E1NjYxYzY3YjIyZTMwYjk0YjI/jpeg/000/514/783/072',
+'MjZkNzljMDg5YmVjOTk1MmExNTg2NzM4ODEzNjQ3YzQ/jpeg/000/514/783/071',
+'NzUwOGNlNWJiMDlhMzQ4OWVlMDQyMjM5NzMyODk3ZmY/jpeg/000/514/783/070',
+'YWQ1YTk0NTZhYjUzMTE1ZmE2ZmM0MDY5Nzg5ZmE3MDk/jpeg/000/514/783/069',
+'<k>https://xhamster.com/photos/gallery/pissing-16059318</k>',
+'NWM0MmNiZWEyYWE2NWIwZTI3Yzk4MmRiYzlkMzM3OWQ/jpeg/000/514/886/925',
+'MmZhMzU5ZDM5N2JlZmZlMjljNTliMzY4ZmI4NTJkZDM/jpeg/000/514/886/924',
+'NWNhODQwZmMwZThlY2U1NjYwZThiOWVhZGQzMGUwZDU/jpeg/000/514/886/923',
+'MjU2MmU0NDM4MWE1MDcxYTcyYjk2MTQyMzdlY2RjNTY/jpeg/000/514/886/922',
+'NDgyNGNiMmE5NGQyZGQ4Zjc5ZGQ2NDBlZDc5ZTkzODg/jpeg/000/514/886/921',
+'<k>https://xhamster.com/photos/gallery/leaving-the-house-to-hang-out-at-the-park-16066012</k>',
+'MjMwYmQyMTM2NTBiY2M0Y2Y3YjI5YjM1M2IzNTE1MDg/jpeg/000/514/980/443',
+'MzNjNGZhYjhkOTVlMmMwNTgzY2ZiZjlkYTk4MmMzNjk/jpeg/000/514/980/441',
+'MThlZjVlNGZiYTM4ODkyYzk0YzkyMzk2NGQ3YzNiZjY/jpeg/000/514/980/440',
+'NzM5MmY0ZGNiNTZiYmY0YWFmNTM4MDNkOTg1N2IyZDY/jpeg/000/514/980/438',
+'NzQ5YTFlZDM3MzhiOGE4NzI5ODI2YzAxMjBhNTMzMTA/jpeg/000/514/980/437',
+'<k>https://xhamster.com/photos/gallery/dressing-up-16066013</k>',
+'YThmNzJkNDE0ODAyNWU3ZWNlOTBiYmE0MjUyZGVjYTA/jpeg/000/514/980/449',
+'ZTIwNTk3N2M5ZjBiNDRiODQ2OWMyODU0YTljZTRhYzY/jpeg/000/514/980/448',
+'ZWM0OWU2Zjk4ODk5Mjk2YWQ5ZTBjOTczNTRiNTY1YzQ/jpeg/000/514/980/447',
+'YTNhZGIzNzM0ODk3Y2FjNWJkOGZkNWM1NmRmYjY5OTE/jpeg/000/514/980/446',
+'MDE1ZWM4M2VjOWZhODRmNDcxYjQyODA4MTRmNDVlZjk/jpeg/000/514/980/445',
+'<k>https://xhamster.com/photos/gallery/meat-for-your-appetite-16050878</k>',
+'ZDZmMTE0ZDc4NjJiZjcwYzRkNTUzZjliNGQ0MGRmYjA/jpeg/000/514/764/338',
+'M2UyMzNiNGVmNzRhYjQxMTBkYzk2NTFhNzE3OTM4NmU/jpeg/000/514/764/337',
+'YjljZWM3N2UwZTY4YWE4YTJjMzgyNWExODgyYTFiYjE/jpeg/000/514/764/336',
+'ZGE5MjZmODFhYWQ1NTIzNDkwYTFjMzc1NmE1MWVlZjI/jpeg/000/514/764/321',
+'ZGQzY2MxM2YyMjk0NGJiNmE2YjY2MmQwYmE3MWNlYmQ/jpeg/000/514/764/320',
+'YzE4ZjM4ZjVhNDZkODIyZDg0MzUxMDg5NmEwOTU5NTY/jpeg/000/514/764/335',
+'NDVjYTRiNjYyZTViYTE5MTRmMjRkYzZhYzQyN2E5MjI/jpeg/000/514/764/319',
+'M2Y2NjIxZDM0NjM4OWI1YjMyZWM4ZjE3N2E1ODNiNjQ/jpeg/000/514/764/318',
+'OGNjODNkZWJjNWFjMjU1OWJmNWVjYTkyMzc2MmJhMWE/jpeg/000/514/764/334',
+'NzA5ZmJkYzFmYjE2ZDQwMmFmNGI4YjhhN2IyMzNiZWI/jpeg/000/514/764/333',
+'NGQ3N2JlZmRjMjU5MDg0ZTU5NjdmMTg1MWNmNmNkYTA/jpeg/000/514/764/316',
+'YTliZDhhNWY0NTUzYTJlNTI3NTYzZWM2MDJmZTkyOGE/jpeg/000/514/764/315',
+'OGQ0M2E3MmNhMTE1MGE1NGNmZDgwMDhjYTFiZmY5OGU/jpeg/000/514/764/314',
+'MWQwZTI3MGVjMTdkYjkyYzc2YWVlODY2Zjg4ZTIyN2U/jpeg/000/514/764/332',
+'OTU0NTk4ZjVmZTdlNDA5NTA4MGZhZDQzNTYyYjJjM2M/jpeg/000/514/764/313',
+'Y2RmODViMTJjOTdmOTk0ZmI2MTliOGE0MThmN2EyZGM/jpeg/000/514/764/331',
+'NGEyYzhhNmVmNGJiMzE4Njc2ZWMwY2M5NzY5M2U4NzE/jpeg/000/514/764/312',
+'ZDNmNTU1Y2JmZDgxYjIxN2U3YjJmN2QxMTAzZDdjZjQ/jpeg/000/514/764/330',
+'ZDUzMWU4NmE3ZDBhYTQ4ZWU4YTBkODQ0YWYwZTY5ODk/jpeg/000/514/764/329',
+'OGQwNDA1OTczYjI1YTQzODA3OWJlMDdiNjY5ZDhjMjE/jpeg/000/514/764/311',
+'NWUwY2JmMWRhYzZjMDY2ZTJkZmZiZmJjODg1OTBlODU/jpeg/000/514/764/328',
+'ZjJiZjM4OWYxMzdjMTVlYzIyMGEwY2NhNGU4ZTIzNjQ/jpeg/000/514/764/310',
+'NjA1ODMxMjg4N2QwNGUyODljNDcxY2JjMDk5Yzk3ZWY/jpeg/000/514/764/309',
+'N2YzNDgyYTk1NTViOGQ1YTNmZmE5NjU1OTU0MDNhNzM/jpeg/000/514/764/308',
+'ZGFiZjE0NmUxOGUwNzAyNGU3MGNmZGUwZmU1OTlhZTY/jpeg/000/514/764/307',
+'NTgxNTI5MGY0NGU2ZjAzYzBiNTAzNDM2ZjlkOWNmOTU/jpeg/000/514/764/306',
+'MWZkNjFjOGMzYzc4YzcxYmFkNThhYzE5OTdhYTI0NzY/jpeg/000/514/764/305',
+'M2ZlNGMzNDRmYzdhNjcwM2FkNzVhYjIwZWM4YzIxYWM/jpeg/000/514/764/304',
+'MjRjMGEwMTMyOTAwYzk1NDU5NzM1M2EwNTYwY2Y5NjE/jpeg/000/514/764/303',
+'N2MwNWVhMjUxODNiZDcwYTEyMDBjZjFiMmRjYjZkYzg/jpeg/000/514/764/302',
+'ZGE4NDhjNWU3YmI2YjRmYWQwNWQ0NGE4Mzc1YWZjZjY/jpeg/000/514/764/301',
+'<k>https://xhamster.com/photos/gallery/more-of-the-good-stuff-16077920</k>',
+'YmQ0NDA3OWQ1NDcwYTBhMjFkMDVlOTFkZDUwMGVhNjU/jpeg/000/515/127/119',
+'YmE2Mjg5ZmJjNmQ4ZDkzZTRhM2JiZmI5M2E5ZDA4ZGM/jpeg/000/515/127/118',
+'ZjViMjQwZDc0NDljNjZjNDI1ZTBlYzU2MTYxYjYzMjI/jpeg/000/515/127/117',
+'NTc0MTBmMTViODcyMzNjZjBlMDBmZWY3OTc3MGM0Yzc/jpeg/000/515/127/116',
+'MGY2NzdjNjgwNjVmZDE3NmY0ZjFkYzI3YzlmNDU2MWQ/jpeg/000/515/127/115',
+'MzQ3ZGM3YTdiOTRmNzQxZmVlN2NkMjAzZDZjODMxYWU/jpeg/000/515/127/114',
+'ODBkOTRlZTJiYTU0OWQ1MjU4NjljMmMwMWQxYTMwNTk/jpeg/000/515/127/113',
+'Y2U2NDM5ZWFmYmU5MTI0ZjY1ZTBhY2VlN2Q5ZjllMjc/jpeg/000/515/127/112',
+'NTA3NmM3ZWU2MDUzZWJkNDEyMzAyMzdiMTgxNWY0MmI/jpeg/000/515/127/111',
+'NzJkZGUyMDdhY2RkZmM4ODM3OTlhZGRkN2RiYTJkYzY/jpeg/000/515/127/110',
+'NzdhOGNmY2QwMWM5ODY4ODk1YTI2ZmI2NDAzYjRhMmM/jpeg/000/515/127/109',
+'NDM5MjE5NjcwOGIzY2YyMWZjMzA2NzdiYzk4MzM5YzQ/jpeg/000/515/127/108',
+'ZTU1MGFjNmVlNWQwZTc4OWNhMjMxZjA4ZjQxODBjNTU/jpeg/000/515/127/107',
+'YTk2ZjM0ODZhZTVlYmY3OTNhMzU4ZDMwM2FhYzkyMjA/jpeg/000/515/127/106',
+'MWZjYWE0OTIxZTJkMGNjOGY4YjA4ZmM0NjYwZTI5ZTE/jpeg/000/515/127/105',
+'NTgxYzg3OTRmZmQyN2E5ZDdhYWU1MDE1YmIxZTBmNTQ/jpeg/000/515/127/104',
+'NzJhOTQ3YWE4NGFjZDZhNGMzMjcyZTFiZjU1MjM3YzI/jpeg/000/515/127/103',
+'NjAzNzM3MmU5YmExZDg3YmMzY2FlNDUwZTlkM2RjZjA/jpeg/000/515/127/102',
+'NjA4OTdhYWViZmNhNDg1OTNjYWI2Nzg5N2RhOTQyOGI/jpeg/000/515/127/101',
+'Y2E1OWY3ZmY4MDU1NGVjZTc5NjJmMGRmZWQ1ODVmZWE/jpeg/000/515/127/100',
+'OTlhYzIxMjljNjkwM2MzNDA1OTIwNjU5ODgwYThkNTI/jpeg/000/515/127/099',
+'MTM4YzhmNDU1NzI5Nzc0YWVmYzVmNTNiZTZkOTU5YWY/jpeg/000/515/127/098',
+'NjJhZWY0OTgzYjJlMmE1OTk2MWRiZWRjZjY0YTExN2Y/jpeg/000/515/127/097',
+'MzA0YWEyODdjMDZlNDU5NmUyMWU2ZTk3YzI4NDA4OWQ/jpeg/000/515/127/096',
+'<k>https://xhamster.com/photos/gallery/jerking-off-black-cock-cumming-on-sex-dolls-with-big-load-15972217</k>',
+'ZjhkNDA2NDNkNDIxZTM2MmFlZmE2NmI0NGNjOTgzMGI/jpeg/000/513/644/627',
+'YjU2MTNjNWI0M2I5MTY0NGY1MWIwYmQ2MGE2ZmFjOTQ/jpeg/000/513/644/626',
+'<k>https://xhamster.com/photos/gallery/black-cock-jerking-off-lots-of-cum-big-load-15972822</k>',
+'NTM5YjA1OTc0MjljNzgwNjE4MTE0NjA3Njk3YmYyNWI/jpeg/000/513/649/287',
+'ZjE4N2QwZDA1NjAxODU3MzQzMDA3Y2I1MDFiZmJkOTY/jpeg/000/513/649/286',
+'<k>https://xhamster.com/photos/gallery/pictures-to-wet-your-appetite-16052616</k>',
+'Mjg0NjIyODc2NzA2ZGIyYTM2NzRiN2E4OTJlMTg3Zjg/jpeg/000/514/781/723',
+'NTNhY2Q5OGM0YjZjNzg3OWE0MDYxZmZlMGY1ZDg2MDA/jpeg/000/514/781/721',
+'MTI0NjhlNjFkMDdmZmRhMjRiMGMyOWRhOGY4YzIyZjA/jpeg/000/514/781/720',
+'N2U4ODAxZmYzYmY4ODNkNWI3ZTRjNDdkODY3ZGZmY2E/jpeg/000/514/781/718',
+'NzQwMGU1NGIxZGY1MGM3YWJkYTE2OWFlODY3YzkxY2Y/jpeg/000/514/781/701',
+'MWVlMjIyZDA0ZTdjMDQ1MTI5MjAxN2E3MGJhMzRhOWI/jpeg/000/514/781/697',
+'ZmYxOWU4YWFhMGVkNjUyZjk3MGYwY2U1YWE3Mjk2YWM/jpeg/000/514/781/695',
+'MWEzYzgxMGYzZjNkNjI0MzE5NjBjOTVlNDBlOTcyZTY/jpeg/000/514/781/694',
+'MjA4ODljNmU1Mzg2MDRlMjM5YjM5NzhhYzRjNjA4ZTQ/jpeg/000/514/781/736',
+'NzU5NWM3MjJlMmUzZjYzOWExNmRhZjYyY2ExZGRjNTE/jpeg/000/514/781/735',
+'NmU2ZDk2OGUxMzQ1NWI3ZjM3MmI3YTdjMTQzYjY1ZDM/jpeg/000/514/781/734',
+'M2EzZTQ0N2NlNDIxNzNlZGNkM2YwNzU3MmZjYWFiNzY/jpeg/000/514/781/733',
+'MzYyMjBkOWUyNjAxZDkyZGVmZWVkZTZlYjhmMjE1YWM/jpeg/000/514/781/732',
+'<k>https://xhamster.com/photos/gallery/me-at-work-2-16052783</k>',
+'NGEwZTk4ZjQyN2I1NTY2YjhkNDRlNDRjZjhhMTlkN2Y/jpeg/000/514/783/185',
+'YTU5YTQ5NTgyMWZlZjQ5MTAxYTA5OWU2ODRjZDdkNWY/jpeg/000/514/783/184',
+'YWIxOGJjYmE0NjViM2VmNmRjYmM5NTkxYzA4YzFiYmE/jpeg/000/514/783/183',
+'OWYxODkxNWI3NzMyM2Y2YmZiNjUyMjNlZjNkY2RhZjM/jpeg/000/514/783/182',
+'MDQyMDJjYWEzNmM5YTBkN2QzMDE3ZWUwNjA2MzlhMTI/jpeg/000/514/783/181',
+'YTYwZDljYmJiNTdjMjc4OGUxMDc5ZDMxZGM4YWYxN2E/jpeg/000/514/783/180',
+'OWE4MGNhNTUzYTM4M2M0M2UyMDJiOWFlOGMyNzJmOTU/jpeg/000/514/783/179',
+'YWRlNWZjMTU4NzAyN2VlMjE0NzM4OTZhYWI2MjJlOGQ/jpeg/000/514/783/178',
+'OGExYzI4YmU5MzNlZjA0ZDNhYmMyY2U4Y2FkN2Q1N2U/jpeg/000/514/783/177',
+'NDZjMGIyM2RlZGEwODMwOWM2NzNmMjE4NmQzZWNkOTc/jpeg/000/514/783/176',
+'OGU0ZGYyOGNhZGMxM2EyZTM3N2QzZDYwNWY0OTNkOGQ/jpeg/000/514/783/175',
+'<k>https://xhamster.com/photos/gallery/collection-of-our-work-16024074</k>',
+'MTgzOWQyNmZiMzYxOWEzNjdjMzIwZmQ1YzI5NGRmMmE/jpeg/000/514/395/287',
+'YjNiNWJiNDA2NmJhZWRmYmFmNDM1ZjU2Mzk5ZDZjYjQ/jpeg/000/514/395/286',
+'OTJjZTRjNjYwNDk5MmYzZTU2OGM4ODI2NzkxMmNhYmE/jpeg/000/514/395/285',
+'YjMyMjAzMzJmMGVkMWZiNGYyM2ZkZDYzM2ZmNTI4MDI/jpeg/000/514/395/284',
+'ZjllYzcxZjk4ZTk4NjYzMmQwM2ZlY2UxMzdlYzYyNjM/jpeg/000/514/395/283',
+'MzJlN2ZhNjNlY2VkNjA3ZGQ0OGVkMTczZjkyY2JhYjI/jpeg/000/514/395/282',
+'ZWFjNjQ3MTkzM2E5YmQ3OTZmMmE1YzA4OGRlZWI1OGE/jpeg/000/514/395/281',
+'ZGQyNzIyMzg2NmY3OWQ4YWQ3Mzc1MjA4Y2JlOWM5MjQ/jpeg/000/514/395/280',
+'YzhmYzZmMzNkZTI2NjI4OGJmZGQxMzg4ZTI4NTMzN2Q/jpeg/000/514/395/279',
+'NzU2YzZhODQ5MWQ5N2U5YTVjOGE0ODM0YjJjZmYzZjQ/jpeg/000/514/395/278',
+'M2RiZGJhNWQwMjRhZWZmZTdlYmIwOWMzNDc5MTU0OTI/jpeg/000/514/395/277',
+'<k>https://xhamster.com/photos/gallery/pictures-of-my-tool-15897776</k>',
+'ODY1ODA2NzljMzVlMDhiMGFjOGFmY2MzYTllZDM1MzU/jpeg/000/512/087/951',
+'NWJmNmZhZjE1ZmRmZjE0ZmYwNDE3ODRmNDQwNzc1MTA/jpeg/000/512/087/950',
+'YTIzNDU4NzlhZWU1YjI4ZGE2YmIyMGZiZjIzZWZmMzE/jpeg/000/512/087/949',
+'MDcwYTJlMjAyYTljYjcwNGVhZTVhYjZiN2M0ODJmZjA/jpeg/000/512/087/948',
+'ZjJkMzQ1YmZlOWQ3YjRkNWY3YjM2NGE1NmM0NzEzYWQ/jpeg/000/512/087/947',
+'NmVkNjY5YmU5YTI0N2FkZjViOGZjYzI4ODhiNDMzNmM/jpeg/000/512/087/946',
+'MDQ0MzU0YTA5MWE5MDQ4Mzg1YzFiZTI3MjliOWNiMDM/jpeg/000/512/087/945',
+'MGIwMzZiMmZmMjExNjk1ZGNmNDQ0ZGE3NDMwOTk0ZmU/jpeg/000/512/087/944',
+'NzBjOGFiNGI0OTQ1NTljMDRmZTc5Nzg0NDQzMzI2Mjg/jpeg/000/512/087/943',
+'NjBlNDg3YWMyN2Y3ZmVlOGFjOGE5M2E2NTM1YzFmNTQ/jpeg/000/512/087/942',
+'<k>https://xhamster.com/photos/gallery/food-for-your-hunger-16056984</k>',
+'MDc5YmY3OTQ4ODc4ZGZlZDExNWE1ZTgxOTI4MjliNWY/jpeg/000/514/858/315',
+'YjVmZTAyOTMyNDZlOTFkZWM4NGNmNjRiZmFjYjJkMDM/jpeg/000/514/858/314',
+'NjA3NTI3MjNhMzNiYmM2YTJkNmFiYzllNDhhNTFiNzQ/jpeg/000/514/858/313',
+'Yjc0YmU5MjYyYzY3Mzc3MjY1OTdjYzZlZjdjMTgxOTI/jpeg/000/514/858/312',
+'NTQ0OWQ4MDJiYjEzMGNiMTJjOTE2MWZjMDRkMTk3N2E/jpeg/000/514/858/311',
+'NWIyMjExMGZiOWIxN2Y2NzViZDg3YmFmYTMyZmNkYTQ/jpeg/000/514/858/310',
+'NTVhZDZjYmZiOTg5NzM1MmVlMDBhMmExMjdlNGE1NzE/jpeg/000/514/858/309',
+'YTI3NDM4NWRjODllOTAwYzZmZGYwYzYyNjk1NGM3ZTM/jpeg/000/514/858/308',
+'OTc2NWNiZGNmOTYyNzJjNTFmMzgyZTNmZmM3NDJhMzc/jpeg/000/514/858/307',
+'MDQ1YWUzNDViMTA5OTFhZjk2N2QwMjc0YTEyOTE0NzY/jpeg/000/514/858/306',
+'<k>https://xhamster.com/photos/gallery/me-loving-the-volume-thickness-of-of-my-sperm-15897778</k>',
+'ZWE3NTFkMGM1YjVlYmM4MmZmYzVmOTYxZTUxMzAxN2U/jpeg/000/512/088/000',
+'<k>https://xhamster.com/photos/gallery/jerking-off-black-cock-to-loads-of-cum-15970114</k>',
+'MWZiMTA0NmJkZGJkNDdmMzk3YzZjYWY2OTZmZjA3MTk/jpeg/000/513/624/625',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "jamdown26Batch: 161"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

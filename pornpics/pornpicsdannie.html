@@ -1,0 +1,158 @@
+<base target="_blank"><html><head><title>dannie</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">dannie</div>
+<center>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'5/97/88090515/88090515_001_b911',
+'5/97/88090515/88090515_002_934b',
+'5/97/88090515/88090515_003_d196',
+'5/97/88090515/88090515_004_49bc',
+'5/97/88090515/88090515_005_bb1d',
+'5/97/88090515/88090515_006_bb1d',
+'5/97/88090515/88090515_007_bec6',
+'5/97/88090515/88090515_008_ea59',
+'5/97/88090515/88090515_009_2208',
+'5/97/88090515/88090515_010_255c',
+'5/97/88090515/88090515_011_d995',
+'5/97/88090515/88090515_012_64db',
+'5/97/88090515/88090515_013_71b3',
+'5/97/88090515/88090515_014_5689',
+'5/97/88090515/88090515_015_5689',
+'5/97/88090515/88090515_016_7034',
+'5/146/88430873/88430873_001_923c',
+'5/146/88430873/88430873_002_2c18',
+'5/146/88430873/88430873_003_e148',
+'5/146/88430873/88430873_004_0175',
+'5/146/88430873/88430873_005_0175',
+'5/146/88430873/88430873_006_7fa3',
+'5/146/88430873/88430873_007_9c1f',
+'5/146/88430873/88430873_008_9c1f',
+'5/146/88430873/88430873_009_1e21',
+'5/146/88430873/88430873_010_1e21',
+'5/146/88430873/88430873_011_152a',
+'5/146/88430873/88430873_012_3082',
+'5/146/88430873/88430873_013_5f59',
+'5/146/88430873/88430873_014_fad5',
+'5/146/88430873/88430873_015_fad5',
+'5/146/88430873/88430873_016_98f8',
+'7/54/32165440/32165440_002_bc5e',
+'7/54/32165440/32165440_004_eff6',
+'7/54/32165440/32165440_008_43be',
+'7/54/32165440/32165440_010_449a',
+'7/54/32165440/32165440_013_40f7',
+'7/54/32165440/32165440_018_6c40',
+'7/54/32165440/32165440_021_f3da',
+'7/54/32165440/32165440_024_a179',
+'7/54/32165440/32165440_027_7d80',
+'7/54/32165440/32165440_028_0f65',
+'7/54/32165440/32165440_031_dc77',
+'7/54/32165440/32165440_034_b444',
+'7/54/32165440/32165440_035_48c5',
+'7/54/32165440/32165440_037_0f68',
+'7/54/32165440/32165440_040_4ad6',
+'7/54/32165440/32165440_044_c4e0',
+'7/54/32165440/32165440_048_53c6',
+'7/54/32165440/32165440_049_fc8e',
+'7/54/32165440/32165440_052_963d',
+'7/54/32165440/32165440_054_3fda',
+'7/54/32165440/32165440_056_c561',
+'1/269/16660209/16660209_001_5544',
+'1/269/16660209/16660209_002_ceeb',
+'1/269/16660209/16660209_003_d67f',
+'1/269/16660209/16660209_004_d67f',
+'1/269/16660209/16660209_005_1cb0',
+'1/269/16660209/16660209_006_1af6',
+'1/269/16660209/16660209_007_4f97',
+'1/269/16660209/16660209_008_4f97',
+'1/269/16660209/16660209_009_f540',
+'1/269/16660209/16660209_010_de5a',
+'1/170/82161146/82161146_001_582a',
+'1/170/82161146/82161146_002_aff3',
+'1/170/82161146/82161146_003_e630',
+'1/170/82161146/82161146_004_ef15',
+'1/170/82161146/82161146_005_4960',
+'1/170/82161146/82161146_006_e566',
+'1/170/82161146/82161146_007_12e2',
+'1/170/82161146/82161146_008_c395',
+'1/170/82161146/82161146_009_46f8',
+'1/170/82161146/82161146_010_c80d',
+'1/170/82161146/82161146_011_9050',
+'1/170/82161146/82161146_012_e91e',
+'1/170/82161146/82161146_013_2dbc',
+'1/170/82161146/82161146_014_6467',
+'1/170/82161146/82161146_015_7811',
+'7/243/38266343/38266343_004_d2e1',
+'7/243/38266343/38266343_013_24b6',
+'7/243/38266343/38266343_016_edb1',
+'7/243/38266343/38266343_022_daa1',
+'7/243/38266343/38266343_030_e922',
+'7/243/38266343/38266343_037_23ac',
+'7/243/38266343/38266343_045_5a08',
+'7/243/38266343/38266343_054_3992',
+'7/243/38266343/38266343_062_22ae',
+'7/243/38266343/38266343_068_7105',
+'7/243/38266343/38266343_077_ab7b',
+'7/243/38266343/38266343_084_b0b8',
+'7/243/38266343/38266343_092_350c',
+'7/243/38266343/38266343_100_0280',
+'7/243/38266343/38266343_103_4ca3',
+'7/243/38266343/38266343_106_7d50',
+'7/243/38266343/38266343_113_b1b4',
+'1/3/27358002/27358002_001_8ed4',
+'1/3/27358002/27358002_002_cd24',
+'1/3/27358002/27358002_003_dbb2',
+'1/3/27358002/27358002_004_49db',
+'1/3/27358002/27358002_005_ecf3',
+'1/3/27358002/27358002_006_6e01',
+'1/3/27358002/27358002_007_9aa8',
+'1/3/27358002/27358002_008_9aa8',
+'1/3/27358002/27358002_009_6fbb',
+'1/3/27358002/27358002_010_a8d6',
+];
+lineHeader = '<img src="https://cdni.pornpics.com/1280/'
+lineTail = '.jpg">'
+showRange = 60
+bookid = "dannie"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

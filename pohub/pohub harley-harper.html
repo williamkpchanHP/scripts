@@ -1,0 +1,80 @@
+<base target="_blank"><html><head><title>harley-harper</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">harley-harper</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'64ac30379b1b6"><img src="https://ei.phncdn.com/videos/202307/10/435211441/original/(m=eafTGgaaaa)(mh=EfnTV3fdE22XSpmq)16.jpg"><br>ANALIZED - Russian, Group ANAL Sex Double Penetration',
+'6508994448229"><img src="https://ei.phncdn.com/videos/202309/18/439658191/original/(m=eafTGgaaaa)(mh=xctBjX-yNkOF7G47)11.jpg"><br>Pretty Day Pretty Sluttt',
+'6518209f50fb0"><img src="https://ei.phncdn.com/videos/202309/30/440369651/original/(m=eafTGgaaaa)(mh=eG7ZPYMQp7MhuMlp)2.jpg"><br>PRETTY ASS FAT PUSSY',
+'652194280bcd1"><img src="https://ei.phncdn.com/videos/202310/07/440795441/original/(m=eafTGgaaaa)(mh=kO8s9TlCmgZB_ob4)4.jpg"><br>GOOD HELPER OR NO ?',
+'653f4828432e3"><img src="https://ei.phncdn.com/videos/202310/30/442101811/original/(m=eafTGgaaaa)(mh=4khRASOVG8Vb16Ym)10.jpg"><br>NEED YOUR FACE !',
+'653f4cf059c33"><img src="https://ei.phncdn.com/videos/202310/30/442102331/original/(m=eafTGgaaaa)(mh=E3wJYJcTKa4C9GKX)12.jpg"><br>WHOS COMING TO SPLASH MOUNTAIN?',
+'655e0d02b617b"><img src="https://ei.phncdn.com/videos/202311/22/443453871/original/(m=eafTGgaaaa)(mh=_meYaB6icj-h0zrJ)10.jpg"><br>UNLOAD RIGHT HERE',
+'656aea2f1104c"><img src="https://ei.phncdn.com/videos/202312/02/444022201/original/(m=eafTGgaaaa)(mh=KsVmkzEIMH_WoV8X)11.jpg"><br>WETTER THAN YOUR WIFE',
+'6588dd569bd9b"><img src="https://ei.phncdn.com/videos/202312/25/445355651/original/(m=eafTGgaaaa)(mh=X-JlcnBdiRb5Nc5R)12.jpg"><br>WISH YOU WERE HERE <U+0001F4A6>',
+'6593c76b41f1d"><img src="https://ei.phncdn.com/videos/202401/02/445778831/original/(m=eafTGgaaaa)(mh=mR9R6mfw_w_Kmqa9)5.jpg"><br>Happy New Year',
+'6599f81bc4895"><img src="https://ei.phncdn.com/videos/202401/07/446057241/original/(m=eafTGgaaaa)(mh=o6PxToLLJQolmDRQ)11.jpg"><br>PUSSY PRETTY FACE PRETTY',
+'65a637c38e1c5"><img src="https://ei.phncdn.com/videos/202401/16/446590311/original/(m=eafTGgaaaa)(mh=E7lJmPAQ1kHJAJKt)9.jpg"><br>LAssume The Position',
+'65ad1ce17b75a"><img src="https://ei.phncdn.com/videos/202401/21/446882561/original/(m=eafTGgaaaa)(mh=7MfxKk9e4ckwY0cV)13.jpg"><br>Is it fat enough for you?',
+'65b4d63857ce0"><img src="https://ei.phncdn.com/videos/202401/27/447210401/original/(m=eafTGgaaaa)(mh=sy28KXKE3p3fp3ks)14.jpg"><br>WOULD YOU CLEAN THIS UP ??',
+'65bda33340fa0"><img src="https://ei.phncdn.com/videos/202402/03/447577271/original/(m=eafTGgaaaa)(mh=IWiW8pzpPFQTJ31z)11.jpg"><br>Pretty from top to bottom',
+'65c77948cf180"><img src="https://ei.phncdn.com/videos/202402/10/447955101/original/(m=eafTGgaaaa)(mh=t_0ZFztCl9pkJ90R)10.jpg"><br>????Pulling Out ?????',
+'65ddf0db9848e"><img src="https://ei.phncdn.com/videos/202402/27/448774211/original/(m=eafTGgaaaa)(mh=oJivpeut_zYaDYGy)14.jpg"><br>NEW DAY NEW SLUTTT',
+'65e57e5653f84"><img src="https://ei.phncdn.com/videos/202403/04/449053551/original/(m=eafTGgaaaa)(mh=UoeIjdiLfEcxFaLp)3.jpg"><br>Need A Hard Cock To Bounce ON',
+'65ee9bf745003"><img src="https://ei.phncdn.com/videos/202403/11/449391661/original/(m=eafTGgaaaa)(mh=Hab6_PHui604-F-H)5.jpg"><br>Need the real D',
+'65f7d52f7a7bc"><img src="https://ei.phncdn.com/videos/202403/18/449727561/original/(m=eafTGgaaaa)(mh=nbwIo2UhVo5yfgFZ)12.jpg"><br>Plz fuck my holes in the sunlight',
+'6609cff99bc67"><img src="https://ei.phncdn.com/videos/202403/31/450434501/original/(m=eafTGgaaaa)(mh=KEY5ep6PFo1GmwvU)3.jpg"><br>You like redheads or no ?',
+'66150001e6fa8"><img src="https://ei.phncdn.com/videos/202404/09/450832531/original/(m=eafTGgaaaa)(mh=0LtBiE8ZdGzUAc4A)12.jpg"><br>USE THIS PUSSY UP',
+'6625264a63e8a"><img src="https://ei.phncdn.com/videos/202404/21/451382841/original/(m=eafTGgaaaa)(mh=jrF9cU1-9m5CUubD)2.jpg"><br>Would you record or help my pussy?',
+'662a19ffd911a"><img src="https://ei.phncdn.com/videos/202404/25/451564091/original/(m=q5RH8IZbeafTGgaaaa)(mh=6l9nHgbftzw7MEFh)0.jpg"><br>be a good stepson and make a massage to your stepmother',
+'662afc5d81187"><img src="https://ei.phncdn.com/videos/202404/26/451594691/original/(m=eafTGgaaaa)(mh=TRsiSQhOFDHfQ7lP)8.jpg"><br>I Want Your Mouth Ready On Your Knees',
+'66338a2fce117"><img src="https://ei.phncdn.com/videos/202405/02/451904151/thumbs_10/(m=eafTGgaaaa)(mh=2HLK95il9BVMuOW0)13.jpg"><br>Oops, this hot stepmom fucked her stepson again',
+'6638c0cb33175"><img src="https://ei.phncdn.com/videos/202405/06/452085411/original/(m=eafTGgaaaa)(mh=gFgGgK68-tWX9i3X)8.jpg"><br>Daddy I Need You',
+'ph62a9b9b126c2d"><img src="https://ei.phncdn.com/videos/202206/15/409971011/thumbs_5/(m=eafTGgaaaa)(mh=NHFTQJECVuhibUpk)1.jpg"><br>Three girlfriends fuck themselves in mouth and pussy - Sofia Simens, Lesya Moon, Bloom Lambie',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "harley-harper"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

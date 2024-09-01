@@ -1,0 +1,88 @@
+<base target="_blank"><html><head><title>viproduction</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/grandma-enters-the-cellar-and-finds-old-husband-fucking-gran-15875785"><img src="https://ic-ph-nss.xhcdn.com/a/OWZhYWNiMzcwZWM3OTUzOTFlYTJiMzUyZmJkNzZkMzM/jpeg/000/511/648/837_450.jpg"><br>Grandma enters the cellar and finds old husband fucking gran</a> 66',
+'<a href="https://xhamster.com/photos/gallery/the-doctor-has-to-try-the-new-nurse-and-this-blondie-gets-fu-15875787"><img src="https://ic-ph-nss.xhcdn.com/a/MjQ5OTQ5YzEyYTljZjg4MmUxZjk4NGQ5YmI2OTJiNjk/jpeg/000/511/648/943_450.jpg"><br>The doctor has to try the new nurse and this blondie gets fu</a> 65',
+'<a href="https://xhamster.com/photos/gallery/the-doctor-loves-to-fuck-her-patients-hard-cocks-and-drink-t-15874742"><img src="https://ic-ph-nss.xhcdn.com/a/MDRkNzliZTNkN2EyOTQ5NDMzNTgzOTlkNjg5NGU2OWU/jpeg/000/511/630/624_450.jpg"><br>The doctor loves to fuck her patients hard cocks and drink t</a> 63',
+'<a href="https://xhamster.com/photos/gallery/the-old-lady-discovers-a-boy-masturbating-15875779"><img src="https://ic-ph-nss.xhcdn.com/a/MWY3M2UxN2Y3ZThlMTk5ZmEwNTI3N2ZiYTE1YTk4MGM/jpeg/000/511/648/669_450.jpg"><br>The old lady discovers a boy masturbating</a> 60',
+'<a href="https://xhamster.com/photos/gallery/young-stepdaughter-catches-old-adoptive-parents-having-sex-a-15874045"><img src="https://ic-ph-nss.xhcdn.com/a/OGIwMDFkNmMxMTJkNmMxOTI5NGVlMWU4NDc4MzQ1OTM/jpeg/000/511/619/036_450.jpg"><br>Young stepdaughter catches old adoptive parents having sex a</a> 55',
+'<a href="https://xhamster.com/photos/gallery/his-car-breaks-down-and-an-elderly-man-offers-to-repair-it-i-15874066"><img src="https://ic-ph-nss.xhcdn.com/a/MmNmMzYwMzM0YmEyYmVmNDM0YmM2ZTBiYjc4OTExNzI/jpeg/000/511/619/370_450.jpg"><br>His car breaks down and an elderly man offers to repair it i</a> 54',
+'<a href="https://xhamster.com/photos/gallery/they-fuck-first-outdoors-and-then-in-a-country-cottage-15873354"><img src="https://ic-ph-nss.xhcdn.com/a/M2VlMzc5ZGQ0NGJmNTJkMjA4ZmI2YTc4Zjg2ODJjZWY/jpeg/000/511/607/164_450.jpg"><br>They fuck first outdoors and then in a country cottage</a> 47',
+'<a href="https://xhamster.com/photos/gallery/the-young-blonde-fucks-the-teacher-first-and-then-her-secret-15874033"><img src="https://ic-ph-nss.xhcdn.com/a/ZWM3ZDJiNDQ5MjM4Y2JlZWJhYzNkYWVkZTIyYWJjMGE/jpeg/000/511/618/732_450.jpg"><br>The young blonde fucks the teacher first and then her secret</a> 47',
+'<a href="https://xhamster.com/photos/gallery/despite-being-hospitalized-the-old-gentleman-is-craving-fre-15874029"><img src="https://ic-ph-nss.xhcdn.com/a/ODY5MmJlYmIwZDNlZTVmYzkxYzk3MmViOWM2ZmE2NDg/jpeg/000/511/618/613_450.jpg"><br>Despite being hospitalized, the old gentleman is craving fre</a> 43',
+'<a href="https://xhamster.com/photos/gallery/brunette-street-whore-agrees-to-fuck-in-first-time-video-1-15874026"><img src="https://ic-ph-nss.xhcdn.com/a/ZmIwYjVmZDMyMmYwOTI2YTIxMmFlOTY0M2I4ODQxMjA/jpeg/000/511/618/596_450.jpg"><br>Brunette street whore agrees to fuck in first time video # 1</a> 43',
+'<a href="https://xhamster.com/photos/gallery/two-young-exhibitionists-enjoy-fucking-around-the-city-15874042"><img src="https://ic-ph-nss.xhcdn.com/a/ZjFhNTU1OGU2N2E1Yjc5N2E1YTEwMmE5OWZkMTEzODI/jpeg/000/511/618/914_450.jpg"><br>Two young exhibitionists enjoy fucking around the city</a> 41',
+'<a href="https://xhamster.com/photos/gallery/a-horny-young-girl-gets-fucked-outdoors-by-an-older-man-15874747"><img src="https://ic-ph-nss.xhcdn.com/a/ZmUwZTUyOGM5MzJlM2U3NDc3YzcwMTVmM2Q5ZGQwN2I/jpeg/000/511/630/784_450.jpg"><br>A horny young girl gets fucked outdoors by an older man</a> 41',
+'<a href="https://xhamster.com/photos/gallery/the-lame-old-gentleman-gets-a-young-blonde-escorted-home-15874016"><img src="https://ic-ph-nss.xhcdn.com/a/MTY2YWUxNTE0NzZhN2M2NTc2MTgyNDM1OTRjYzg1ZmE/jpeg/000/511/618/323_450.jpg"><br>The lame old gentleman gets a young blonde escorted home</a> 39',
+'<a href="https://xhamster.com/photos/gallery/the-blonde-nurse-masturbates-with-a-big-black-phallus-in-fro-15874745"><img src="https://ic-ph-nss.xhcdn.com/a/NDI1YTg2YjhhNzkzNWE3MGRhMGM5Y2NjZjkyMzMyZjU/jpeg/000/511/630/730_450.jpg"><br>The blonde nurse masturbates with a big black phallus in fro</a> 39',
+'<a href="https://xhamster.com/photos/gallery/a-very-horny-and-horny-milf-gets-fucked-by-her-gynecologist-15875782"><img src="https://ic-ph-nss.xhcdn.com/a/YzJmMzA4ZGZlOGY3ZGEzNzNiYWUxNzlkODQ4NWNkYzM/jpeg/000/511/648/756_450.jpg"><br>A very horny and horny MILF gets fucked by her gynecologist</a> 39',
+'<a href="https://xhamster.com/photos/gallery/blonde-milf-with-natural-tits-gets-her-pussy-and-ass-fucked-15874749"><img src="https://ic-ph-nss.xhcdn.com/a/NmFiM2U1ZjUxMGJjMzA3MjlhZjYwZDI5NmI1MGE2ZTM/jpeg/000/511/630/871_450.jpg"><br>Blonde MILF with natural tits gets her pussy and ass fucked </a> 38',
+'<a href="https://xhamster.com/photos/gallery/the-gynecologist-fucks-his-blonde-nurse-who-loves-to-masturb-15874752"><img src="https://ic-ph-nss.xhcdn.com/a/ZDAwYmVlZGQwNTQxMmQyYTQ4Nzk5NTA5YzY5ODY5ZmI/jpeg/000/511/630/941_450.jpg"><br>The gynecologist fucks his blonde nurse who loves to masturb</a> 37',
+'<a href="https://xhamster.com/photos/gallery/the-two-recently-engaged-boys-have-group-sex-in-the-family-15874046"><img src="https://ic-ph-nss.xhcdn.com/a/ZDA5NWFjZTYxMmM5NjkxZmYwZjk3OTQwZDM0Zjk3NjA/jpeg/000/511/619/108_450.jpg"><br>The two recently engaged boys have group sex in the family</a> 35',
+'<a href="https://xhamster.com/photos/gallery/he-fucks-a-young-slut-in-the-country-and-then-at-home-too-15875780"><img src="https://ic-ph-nss.xhcdn.com/a/MjBiYTlmOTA0ZDczZTU5NWMyMDA5N2JiYzQ1ZWJkNjA/jpeg/000/511/648/700_450.jpg"><br>He fucks a young slut in the country and then at home too</a> 33',
+'<a href="https://xhamster.com/photos/gallery/doctors-secretary-gets-fucked-hard-and-cum-on-pussyv-15874064"><img src="https://ic-ph-nss.xhcdn.com/a/MWQ1ZjQ0M2E5Y2E1NTAwZTNiNDI0NDY4YzA2YmQ1YTQ/jpeg/000/511/619/297_450.jpg"><br>Doctor&#039;s secretary gets fucked hard and cum on pussyv</a> 33',
+'<a href="https://xhamster.com/photos/gallery/the-young-girl-meets-an-elderly-married-couple-fucking-in-th-15874744"><img src="https://ic-ph-nss.xhcdn.com/a/YmVmY2E1NDk3ZGE5YzgzODdhODYxNDgyOTYzOTk2YTE/jpeg/000/511/630/702_450.jpg"><br>The young girl meets an elderly married couple fucking in th</a> 32',
+'<a href="https://xhamster.com/photos/gallery/she-goes-to-pray-at-her-husbands-grave-and-then-fucks-with-15874059"><img src="https://ic-ph-nss.xhcdn.com/a/NDMzMTQ3ZmEzODljMTk3ZTM2YTA0ODE1NjU3MzAxODc/jpeg/000/511/619/246_450.jpg"><br>She goes to pray at her husband&#039;s grave and then fucks with </a> 29',
+'<a href="https://xhamster.com/photos/gallery/the-old-soldier-dreams-of-a-young-brunette-sucking-his-cock-15874058"><img src="https://ic-ph-nss.xhcdn.com/a/MTI2ZWY1MDEwNzlhNWZkMzdiZTA2Y2FjZGZjOTRlZmQ/jpeg/000/511/619/202_450.jpg"><br>The old soldier dreams of a young brunette sucking his cock</a> 28',
+'<a href="https://xhamster.com/photos/gallery/an-older-couple-meet-a-young-blonde-strolling-around-the-man-15874750"><img src="https://ic-ph-nss.xhcdn.com/a/MTFmMGUyY2Q2M2E5NDZmYzgyYzI4ZGVkOWZkMmRkZGI/jpeg/000/511/630/898_450.jpg"><br>An older couple meet a young blonde strolling around the man</a> 27',
+'<a href="https://xhamster.com/photos/gallery/the-brunette-nurse-with-nice-natural-tits-fucks-the-patient-15874072"><img src="https://ic-ph-nss.xhcdn.com/a/MjhjYjhkMDYwYzM0ZTJmMzUzMjlmYzIwMGQ2ZGQ1NjY/jpeg/000/511/619/401_450.jpg"><br>The brunette nurse with nice natural tits fucks the patient </a> 26',
+'<a href="https://xhamster.com/photos/gallery/the-fan-doesnt-work-and-the-girl-calls-an-elderly-technicia-15874737"><img src="https://ic-ph-nss.xhcdn.com/a/Y2YzYjU2Nzc0ZmQ0N2NjYTc5NGQxNjE5MDY0OGJlOTU/jpeg/000/511/630/558_450.jpg"><br>The fan doesn&#039;t work and the girl calls an elderly technicia</a> 24',
+'<a href="https://xhamster.com/photos/gallery/the-blonde-milf-gives-a-deep-blowjob-and-then-gets-fucked-in-15874043"><img src="https://ic-ph-nss.xhcdn.com/a/MDcxYTVmNGY0ZWJjODI2OTY1MjE0ZmQ4YzRiMzk4NDc/jpeg/000/511/618/978_450.jpg"><br>The blonde milf gives a deep blowjob and then gets fucked in</a> 24',
+'<a href="https://xhamster.com/photos/gallery/the-professor-is-angry-with-the-young-student-but-he-knows-15873366"><img src="https://ic-ph-nss.xhcdn.com/a/MDUxNDdjMDlmMmVjNjIyOGQ3NTI3MWNjMThkNTRmMjc/jpeg/000/511/607/944_450.jpg"><br>The professor is angry with the young student, but he knows </a> 180',
+'<a href="https://xhamster.com/photos/gallery/the-young-niece-goes-to-visit-her-old-uncle-in-the-country-h-15873363"><img src="https://ic-ph-nss.xhcdn.com/a/MWY2ODRlMWJmNmIyM2RjNWMwZWExMjk2YjEzNDRiOWE/jpeg/000/511/607/750_450.jpg"><br>The young niece goes to visit her old uncle in the country h</a> 172',
+'<a href="https://xhamster.com/photos/gallery/wife-catches-her-husband-fucking-the-cleaning-lady-15873358"><img src="https://ic-ph-nss.xhcdn.com/a/OWFlMTE3MjIwMjA3YjFmZTg0MTAxMGJiYzdmYTI1ZWI/jpeg/000/511/607/410_450.jpg"><br>Wife catches her husband fucking the cleaning lady</a> 163',
+'<a href="https://xhamster.com/photos/gallery/at-the-bus-stop-the-slut-really-wants-to-fuck-with-a-strang-15874738"><img src="https://ic-ph-nss.xhcdn.com/a/NjlkMWFkOTQxNTQwMDFhMDA2MDcwYzQzMDFhMjFhNWE/jpeg/000/511/630/589_450.jpg"><br>At the bus stop, the slut really wants to fuck with a strang</a> 15',
+'<a href="https://xhamster.com/photos/gallery/two-elderly-gentlemen-get-a-young-girl-to-accompany-them-and-15873359"><img src="https://ic-ph-nss.xhcdn.com/a/YjhhZWFjODcwNTM4MmQ3YTgzOGI5OWFhODcxZWVjMmY/jpeg/000/511/607/479_450.jpg"><br>Two elderly gentlemen get a young girl to accompany them and</a> 141',
+'<a href="https://xhamster.com/photos/gallery/blomde-girls-fucks-a-young-slut-in-the-country-and-then-at-h-15874748"><img src="https://ic-ph-nss.xhcdn.com/a/OTQ5OWJmMGIxZWRhODIzMWZlOTk2NTFlMDI4ODMwYTg/jpeg/000/511/630/822_450.jpg"><br>Blomde girls fucks a young slut in the country and then at h</a> 12',
+'<a href="https://xhamster.com/photos/gallery/he-offers-the-blonde-a-nice-slush-and-takes-her-to-fuck-near-15874022"><img src="https://ic-ph-nss.xhcdn.com/a/MWViOGE2NDE2Y2RjZTVkZmFmNWI2M2E0YzI3YWM0NDg/jpeg/000/511/618/516_450.jpg"><br>He offers the blonde a nice slush and takes her to fuck near</a> 104',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "viproduction"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

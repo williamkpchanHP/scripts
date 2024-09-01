@@ -1,0 +1,97 @@
+<base target="_blank"><html><head><title>pornstar=harmony-wonder</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<link rel="stylesheet" href="../imgcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+
+<body onkeypress="chkKey()">
+<br>
+<center>
+<p class="tip-number">pornstar=harmony-wonder</p>
+<p class="js-tip"></p>
+<br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-1',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-10',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-11',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-12',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-13',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-14',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-15',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-2',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-3',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-4',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-5',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-6',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-7',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-8',
+'238/b1c03f1f0b0dcd688fd4c9bb19c70460-9',
+'357/86060adae0eed8e0c28f9b33c31a74b0-1',
+'357/86060adae0eed8e0c28f9b33c31a74b0-10',
+'357/86060adae0eed8e0c28f9b33c31a74b0-11',
+'357/86060adae0eed8e0c28f9b33c31a74b0-12',
+'357/86060adae0eed8e0c28f9b33c31a74b0-13',
+'357/86060adae0eed8e0c28f9b33c31a74b0-14',
+'357/86060adae0eed8e0c28f9b33c31a74b0-15',
+'357/86060adae0eed8e0c28f9b33c31a74b0-2',
+'357/86060adae0eed8e0c28f9b33c31a74b0-3',
+'357/86060adae0eed8e0c28f9b33c31a74b0-4',
+'357/86060adae0eed8e0c28f9b33c31a74b0-5',
+'357/86060adae0eed8e0c28f9b33c31a74b0-6',
+'357/86060adae0eed8e0c28f9b33c31a74b0-7',
+'357/86060adae0eed8e0c28f9b33c31a74b0-8',
+'357/86060adae0eed8e0c28f9b33c31a74b0-9',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-1',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-10',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-11',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-12',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-13',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-14',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-15',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-16',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-2',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-3',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-4',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-5',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-6',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-7',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-8',
+'466/faee8fd851fdb5369ddce8c2fd4552ca-9',
+'763/1bb589c65c527c44216d39ce678baf6c-1',
+'763/1bb589c65c527c44216d39ce678baf6c-10',
+'763/1bb589c65c527c44216d39ce678baf6c-11',
+'763/1bb589c65c527c44216d39ce678baf6c-12',
+'763/1bb589c65c527c44216d39ce678baf6c-13',
+'763/1bb589c65c527c44216d39ce678baf6c-14',
+'763/1bb589c65c527c44216d39ce678baf6c-15',
+'763/1bb589c65c527c44216d39ce678baf6c-2',
+'763/1bb589c65c527c44216d39ce678baf6c-3',
+'763/1bb589c65c527c44216d39ce678baf6c-4',
+'763/1bb589c65c527c44216d39ce678baf6c-5',
+'763/1bb589c65c527c44216d39ce678baf6c-6',
+'763/1bb589c65c527c44216d39ce678baf6c-7',
+'763/1bb589c65c527c44216d39ce678baf6c-8',
+'763/1bb589c65c527c44216d39ce678baf6c-9',
+];
+lineHeader = '<img src="https://cdn.nudexxx.pics/content/galleries/'
+lineTail = '-full.jpg">'
+showRange = 61
+bookid = "pornstar=harmony-wonder"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
+

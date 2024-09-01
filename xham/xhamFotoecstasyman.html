@@ -1,0 +1,78 @@
+<base target="_blank"><html><head><title>ecstasyman</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-just-walking-through-the-park-16089942"><img src="https://ic-ph-nss.xhcdn.com/a/YzQzNWY0YWNiZTY0YTgxNzM0Mjc3ZTU2YTk2MDZkNDk/jpeg/000/515/291/150_450.jpg"><br>Annabel Miller: just walking through the park ...</a> 8',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-halloween-kiss-or-cheek-16084552"><img src="https://ic-ph-nss.xhcdn.com/a/MjQzMTZjMzY2MGYxZjhkNzc5NzQwYmI1NmNiNTlmY2M/jpeg/000/515/215/641_450.jpg"><br>Annabel Miller Halloween: Kiss or Cheek!</a> 8',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-literature-in-the-garden-16081385"><img src="https://ic-ph-nss.xhcdn.com/a/NDQwMzY2M2IyMmEyZjhhZjU0NzEzZDU3ODU3MTFiMDM/jpeg/000/515/175/982_450.jpg"><br>Annabel Miller: Literature in the garden</a> 8',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-application-for-harem-16077637"><img src="https://ic-ph-nss.xhcdn.com/a/MTNkNDMyOGIxYjY4ZWNiYzI4YjY4M2RkZjI2ZDMxZGE/jpeg/000/515/123/888_450.jpg"><br>Annabel Miller: Application for harem</a> 8',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-flowers-and-herbs-16066309"><img src="https://ic-ph-nss.xhcdn.com/a/NGM5ZTZkOWMwNzBlY2Q5MTlmZDU4NjgyYjljMjFhNTc/jpeg/000/514/983/703_450.jpg"><br>Annabel Miller:flowers and herbs</a> 8',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-isle-of-angels-16022957"><img src="https://ic-ph-nss.xhcdn.com/a/ZTJmYjU4NjhhMzUzNWE2ZGM3OGJhNzJiZDQ3M2EzZjU/jpeg/000/514/383/439_450.jpg"><br>Annabel Miller: Isle of angels</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-nude-stretching-outdoors-15989862"><img src="https://ic-ph-nss.xhcdn.com/a/MTExNGQ3MWVlYWE4MzA4NjdjZTIwOGZlMDQ5OGU0YzQ/jpeg/000/513/899/982_450.jpg"><br>Annabel Miller: nude stretching outdoors</a> 12',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-a-suite-in-venice-15985504"><img src="https://ic-ph-nss.xhcdn.com/a/YTE1YWJkOGQzOTk2ZDA0ZWZhYmMxMjczZWJmODZmM2U/jpeg/000/513/846/254_450.jpg"><br>Annabel Miller: a suite in Venice</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-im-your-mediterranean-breakfast-15982420"><img src="https://ic-ph-nss.xhcdn.com/a/ZjJmZGZlOGUyY2ViZjNjY2FiNTkzOGQ4Njk5NDEyYTg/jpeg/000/513/782/325_450.jpg"><br>Annabel Miller: I&#039;m your Mediterranean breakfast</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-tai-chi-exercises-non-nude-but-hot-15980115"><img src="https://ic-ph-nss.xhcdn.com/a/YjMwYWViYzk4ZDMxODMxODQ2ZDExY2JhMWZiZWIzOTI/jpeg/000/513/746/860_450.jpg"><br>Annabel Miller: tai chi exercises, non nude but hot</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-a-merry-christmas-to-you-15974334"><img src="https://ic-ph-nss.xhcdn.com/a/MmRhMTMyMTYzYmY5M2U4NzkwYmE1ZmU1ZjdmNmU0NjM/jpeg/000/513/667/147_450.jpg"><br>Annabel Miller: A merry christmas to you!</a> 1',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-mature-white-skinny-hot-15973992"><img src="https://ic-ph-nss.xhcdn.com/a/Y2E3N2VjM2Q1OTkxZjcyMmMyMWE0ZTZkM2IzZmRkZTg/jpeg/000/513/663/853_450.jpg"><br>Annabel Miller: mature, white, skinny, hot</a> 13',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-sun-on-my-butt-15960764"><img src="https://ic-ph-nss.xhcdn.com/a/ZmJlYzc5YmFlNTUxN2IwODk5NzhhMjI4OWRjMmVhZDQ/jpeg/000/513/476/992_450.jpg"><br>Annabel Miller: sun on my butt</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-a-distinguished-lady-and-a-pumpkin-15956175"><img src="https://ic-ph-nss.xhcdn.com/a/YjQ0ZWI4NmExMGM3ZjM3MGEyMGY5NTM5NzIzMDg5MGQ/jpeg/000/513/381/741_450.jpg"><br>Annabel Miller: a distinguished lady and a pumpkin</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-gallery-my-secret-halloween-party-15954492"><img src="https://ic-ph-nss.xhcdn.com/a/Y2ZlMjE3MzE3MDM2NzM1MDJhMzJlMjM3OTg5Yjg3MDA/jpeg/000/513/330/294_450.jpg"><br>Annabel Miller gallery: My secret Halloween party</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-lets-celebrate-the-labia-15942694"><img src="https://ic-ph-nss.xhcdn.com/a/MGNkMzNiZTA2MDljM2JmYmU5MmY4NTNlZGI5MGY3ZDI/jpeg/000/513/096/072_450.jpg"><br>Annabel Miller: Let&#039;s celebrate the labia!</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-spending-time-with-my-boobs-15938815"><img src="https://ic-ph-nss.xhcdn.com/a/MDllZTM3NWRmMjViMzg3MWQ3ZjkzMTljMmYyNjRkYmU/jpeg/000/513/010/065_450.jpg"><br>Annabel Miller: Spending time with my boobs!</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-a-hot-hot-summer-15932400"><img src="https://ic-ph-nss.xhcdn.com/a/OTQ1MDgwYWNiYzFmMjlkMTE3ZDhmN2RhNGYwOGZmOTY/jpeg/000/512/867/317_450.jpg"><br>Annabel Miller: a hot, hot summer</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-seduced-by-the-sun-god-himself-15929695"><img src="https://ic-ph-nss.xhcdn.com/a/MDI4NDFhOWU0OTFhNGQwNjZkNzNhM2U3MzEzMWMwNzM/jpeg/000/512/801/180_450.jpg"><br>Annabel Miller: Seduced by the sun god himself!</a> 10',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-i-want-to-ride-15927813"><img src="https://ic-ph-nss.xhcdn.com/a/NzU1ZGI1N2JiNjc3NWMxNzZhYzM4YzQ0MjIxNDc1ZTI/jpeg/000/512/755/403_450.jpg"><br>Annabel Miller: I want to ride ...</a> 12',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-hugging-big-old-trees-15926759"><img src="https://ic-ph-nss.xhcdn.com/a/ZmI2ZDRjY2ZjZmIzMTNiMzAwNDNjOWFiYTU5MGZiYWQ/jpeg/000/512/731/944_450.jpg"><br>Annabel Miller: hugging big old trees</a> 12',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-oxygen-flash-in-the-middle-of-the-forest-15899762"><img src="https://ic-ph-nss.xhcdn.com/a/NWY1NTc4MTc0ZTNiZDk0NDE2ZjU5Y2FmNTY4MzdjMmQ/jpeg/000/512/129/064_450.jpg"><br>Annabel Miller: oxygen flash in the middle of the forest</a> 12',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-naked-amongst-big-old-trees-15899755"><img src="https://ic-ph-nss.xhcdn.com/a/MTFkMjgyMjY2NjgxOWY1MTlmZTZjNzQ0MGQ3Y2ZlZDc/jpeg/000/512/129/014_450.jpg"><br>Annabel Miller: naked amongst big old trees</a> 16',
+'<a href="https://xhamster.com/photos/gallery/annabel-miller-my-prison-fantasy-15899207"><img src="https://ic-ph-nss.xhcdn.com/a/ZjMwM2E1MjkzNzg3MWJmYWI4M2VjNzkyM2U3MTNmNGE/jpeg/000/512/116/376_450.jpg"><br>Annabel Miller: my prison fantasy</a> 12',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "ecstasyman"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

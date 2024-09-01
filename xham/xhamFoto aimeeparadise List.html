@@ -1,0 +1,92 @@
+<base target="_blank"><html><head><title>aimeeparadise</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 22px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+div {display:inline-block; width:55%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<center>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/my-mature-secretary-is-my-personal-whore-16090742"><img src="https://ic-ph-nss.xhcdn.com/a/MTBmYmFjZjkyOGNjMjc4ODFiYWQzMzJiMWM5NDUwNDk/jpeg/000/515/300/773_450.jpg"><br>My mature secretary is my personal whore .!. ))</a> 92',
+'<a href="https://xhamster.com/photos/gallery/my-mature-cocksucker-wife-in-the-bathroom-16093699"><img src="https://ic-ph-nss.xhcdn.com/a/NjA4NDBiNjI4YWVhNTI3NmIwYWFlMjRkYmI4NTBmMGQ/jpeg/000/515/337/452_450.jpg"><br>My mature cocksucker wife in the bathroom... )))</a> 76',
+'<a href="https://xhamster.com/photos/gallery/my-dick-is-in-the-mouth-of-my-favorite-mature-slut-16076222"><img src="https://ic-ph-nss.xhcdn.com/a/MjM2NGY4NWM0OGUyYzEzYmQzYmEwNjU2MDFkZjJhYTU/jpeg/000/515/103/919_450.jpg"><br>My dick is in the mouth of my favorite mature slut... ))</a> 61',
+'<a href="https://xhamster.com/photos/gallery/aimee-hot-milf-cock-in-the-mouth-of-a-mature-beauty-16148795"><img src="https://ic-ph-nss.xhcdn.com/a/Mzc3MTc3NzEzM2ZhNzk1ZmJkMGFjZDczZTNmNDBiZTk/jpeg/000/516/088/553_450.jpg"><br>Aimee Hot MILF - Cock in the mouth of a mature beauty))</a> 60',
+'<a href="https://xhamster.com/photos/gallery/aimee-hot-milf-the-queen-of-married-cocksuckers-16146857"><img src="https://ic-ph-nss.xhcdn.com/a/ZDg3NGJmYWYxODRjYWJiNjhkNzA0Mzk4ZTgzMjQ4OGM/jpeg/000/516/064/213_450.jpg"><br>Aimee Hot MILF - the Queen of married cocksuckers.!. </a> 53',
+'<a href="https://xhamster.com/photos/gallery/beautiful-mature-bitch-in-a-lilac-dressing-gown-and-without-16016698"><img src="https://ic-ph-nss.xhcdn.com/a/MzY3NGNmN2UwMDA5NDRiNWRkOTYzOWIxMmVkMTkwZWM/jpeg/000/514/291/058_450.jpg"><br>Beautiful mature bitch in a lilac dressing gown and without </a> 48',
+'<a href="https://xhamster.com/photos/gallery/sometimes-my-mature-bitch-wife-likes-kitsch-16022769"><img src="https://ic-ph-nss.xhcdn.com/a/N2NiZGI1Nzg1ZTI4ZTU4MGEwN2QxNmVhZGI3YzY3YjA/jpeg/000/514/379/426_450.jpg"><br>Sometimes my mature bitch wife likes kitsch ))</a> 42',
+'<a href="https://xhamster.com/photos/gallery/aimee-hot-milf-mature-beautiful-bitch-with-naked-cunt-16010858"><img src="https://ic-ph-nss.xhcdn.com/a/ZDQ1MjQwOGExMGU1MWNiZTQyNzk0NzQ5OGNjYjgxYzg/jpeg/000/514/215/070_450.jpg"><br>Aimee Hot MILF - mature beautiful bitch with naked cunt... )</a> 42',
+'<a href="https://xhamster.com/photos/gallery/hot-cougar-milf-her-cunt-and-dick-in-her-mouth-16074776"><img src="https://ic-ph-nss.xhcdn.com/a/ZWY5MTg5NjJhMDJiMjNmMzI1YjU3MGIzZjkxZjcyYzg/jpeg/000/515/086/328_450.jpg"><br>Hot cougar MILF, her cunt and dick in her mouth... ))</a> 40',
+'<a href="https://xhamster.com/photos/gallery/happy-new-year-aimeeparadise-peter-stone-16103747"><img src="https://ic-ph-nss.xhcdn.com/a/ZWM2YjI3ZmZhNjhjMGI0MjEzODNhMzBhOTIyMmM0NTM/jpeg/000/515/467/846_450.jpg"><br>Happy New Year! (AimeeParadise &amp; Peter Stone).</a> 39',
+'<a href="https://xhamster.com/photos/gallery/aimee-hot-milf-blowjob-master-class-by-best-russian-whore-16008635"><img src="https://ic-ph-nss.xhcdn.com/a/ZTU3ZGQ1ZGQzMDdkMzk1M2Y5MzYwY2RlZDVlZDkxY2Y/jpeg/000/514/183/928_450.jpg"><br>Aimee Hot MILF - blowjob master-class by best russian whore!</a> 39',
+'<a href="https://xhamster.com/photos/gallery/busty-aimee-hot-milf-dildo-in-her-asshole-16024855"><img src="https://ic-ph-nss.xhcdn.com/a/NjgwYTU4ZWY1NzAxM2U0N2YzZjJjNjM1ZDU1MWMzODk/jpeg/000/514/405/480_450.jpg"><br>Busty Aimee Hot MILF &amp; dildo in her asshole... )))</a> 36',
+'<a href="https://xhamster.com/photos/gallery/adorable-mature-bitch-in-latex-and-nipple-clamps-16019024"><img src="https://ic-ph-nss.xhcdn.com/a/ZDBkMjE5OTc5YThmYTNmZDFmNjA4Y2FlMTgwNGE0NWE/jpeg/000/514/330/223_450.jpg"><br>Adorable mature bitch in latex and nipple clamps ))</a> 35',
+'<a href="https://xhamster.com/photos/gallery/mature-bitch-aimee-hot-milf-likes-to-posing-16023100"><img src="https://ic-ph-nss.xhcdn.com/a/YTQwNGY0MDUyYjBkZDllMjc4Y2QyMjVkMmVkNDY2ZDA/jpeg/000/514/385/272_450.jpg"><br>Mature bitch Aimee Hot MILF likes to posing ))</a> 32',
+'<a href="https://xhamster.com/photos/gallery/a-cool-mature-bitch-in-a-black-negligee-16008522"><img src="https://ic-ph-nss.xhcdn.com/a/YjJmNDRmOTk4YzhlNDMxZDYwZTZiNGFjNDlkMDJjODI/jpeg/000/514/182/403_450.jpg"><br>A cool mature bitch in a black negligee...</a> 32',
+'<a href="https://xhamster.com/photos/gallery/magic-mature-slut-aimee-and-funny-light-bulbs-16009721"><img src="https://ic-ph-nss.xhcdn.com/a/MzViZmM5YTJlYjVmZTdkNDkyYjc2NTljOTYyNTYwYjA/jpeg/000/514/197/811_450.jpg"><br>Magic mature slut Aimee and funny light bulbs ))</a> 29',
+'<a href="https://xhamster.com/photos/gallery/my-personal-mature-slut-with-her-legs-spread-16140769"><img src="https://ic-ph-nss.xhcdn.com/a/MDE0NDA2OGNjN2QwZTM5YjZhMzAyZmJiYjM2YTBmZGQ/jpeg/000/515/983/951_450.jpg"><br>My personal mature slut with her legs spread))</a> 28',
+'<a href="https://xhamster.com/photos/gallery/my-mature-whore-in-a-red-negligee-with-a-dick-in-her-mouth-16092454"><img src="https://ic-ph-nss.xhcdn.com/a/NDljMTNhNTg5MzdmMTc3YjU4YjAzZDVjY2QwMzA5ZTA/jpeg/000/515/322/889_450.jpg"><br>My mature whore in a red negligee &amp; with a dick in her mouth</a> 28',
+'<a href="https://xhamster.com/photos/gallery/charming-mature-slut-shows-off-her-big-boobs-and-cunt-16014919"><img src="https://ic-ph-nss.xhcdn.com/a/MTUzNTYzMzMxMzU3Y2EwMmM4YmMzY2VhZTgxNmZjMzA/jpeg/000/514/268/341_450.jpg"><br>Charming mature slut shows off her big boobs and cunt ))</a> 28',
+'<a href="https://xhamster.com/photos/gallery/sly-mature-lady-and-flower-16008421"><img src="https://ic-ph-nss.xhcdn.com/a/MDA5NzM0MmE0ODczZWUzMTM3NGFmNDc3MzFiOWVhMDg/jpeg/000/514/181/087_450.jpg"><br>Sly mature lady and flower... ))</a> 27',
+'<a href="https://xhamster.com/photos/gallery/aimee-hot-milf-nipple-clamps-16014351"><img src="https://ic-ph-nss.xhcdn.com/a/ZTc1Nzc3YWEwZWYzMWQ5ODYyMWM3OWZiZDM1MTc1NmU/jpeg/000/514/262/361_450.jpg"><br>Aimee Hot MILF &amp; nipple clamps...</a> 26',
+'<a href="https://xhamster.com/photos/gallery/the-blowjobs-of-my-adult-girl-16026546"><img src="https://ic-ph-nss.xhcdn.com/a/MGUyZTAwOGZiZjY0YTk4MGJjOGNlZWU1MTQxMWY4OTE/jpeg/000/514/435/137_450.jpg"><br>The blowjobs of my adult girl...</a> 23',
+'<a href="https://xhamster.com/photos/gallery/if-the-mature-lady-is-in-red-then-the-lady-wants-to-fuck-16028695"><img src="https://ic-ph-nss.xhcdn.com/a/MWZjMDAxYWYxMjc1OGNlMWYwZWE5MmRhODg0NzNjMTY/jpeg/000/514/464/263_450.jpg"><br>If the mature lady is in red, then the lady wants to fuck)))</a> 23',
+'<a href="https://xhamster.com/photos/gallery/my-sweet-mature-bitch-undresses-and-plays-with-a-dildo-16039478"><img src="https://ic-ph-nss.xhcdn.com/a/MGFmMzUwYmJmZWZmMmE3OTk0ZDBiYTU1OGY1ODA4NjQ/jpeg/000/514/609/882_450.jpg"><br>My sweet mature bitch undresses and plays with a dildo ))</a> 22',
+'<a href="https://xhamster.com/photos/gallery/cool-mature-bitch-with-big-boobs-shows-her-cunt-to-the-world-16037041"><img src="https://ic-ph-nss.xhcdn.com/a/YzhjMjA1ZmZmNWQ4M2QzMDI4ZWU4NjA4NzdhNjQyNDU/jpeg/000/514/569/678_450.jpg"><br>Cool mature bitch with big boobs shows her cunt to the world</a> 22',
+'<a href="https://xhamster.com/photos/gallery/mature-bitch-and-balloons-16008270"><img src="https://ic-ph-nss.xhcdn.com/a/NmM0ODIwNjgzYjM1YmRiZTk4NTU1NTUyYTMwOGQ1NTQ/jpeg/000/514/179/021_450.jpg"><br>Mature bitch and balloons... ))</a> 21',
+'<a href="https://xhamster.com/photos/gallery/aimee-hot-milf-dreamy-mature-bitch-16016071"><img src="https://ic-ph-nss.xhcdn.com/a/NzAyNzU3NWEwMzc1NzlmNjZlN2JlZTBlYTI5YmZkYTM/jpeg/000/514/283/102_450.jpg"><br>Aimee Hot MILF - dreamy mature bitch ))</a> 21',
+'<a href="https://xhamster.com/photos/gallery/funny-mature-girl-aimee-hot-milf-16008124"><img src="https://ic-ph-nss.xhcdn.com/a/ZGI3YTczZTU1MTI5YzBkOWNmN2QwYWVlYjFhMmY4OGY/jpeg/000/514/177/130_450.jpg"><br>Funny mature girl Aimee-Hot-MILF...</a> 19',
+'<a href="https://xhamster.com/photos/gallery/aimeeparadise-lovely-mature-santa-girl-16102674"><img src="https://ic-ph-nss.xhcdn.com/a/MmU1ODhmYjBlYzFlZWQ1NjA1ZjRhMWU1MjNlZGIwY2E/jpeg/000/515/453/170_450.jpg"><br>AimeeParadise - Lovely Mature Santa Girl... ))</a> 19',
+'<a href="https://xhamster.com/photos/gallery/aimee-hot-milf-leather-latex-handcuffs-16008781"><img src="https://ic-ph-nss.xhcdn.com/a/YTNhMjg5MWRlMjA3MWM3MDEyNWJiYjZjZTZjZTkzN2E/jpeg/000/514/185/339_450.jpg"><br> Aimee Hot MILF - leather, latex, handcuffs... ))</a> 19',
+'<a href="https://xhamster.com/photos/gallery/my-wife-her-cunt-and-my-dick-in-her-throat-16041200"><img src="https://ic-ph-nss.xhcdn.com/a/NzNmYjFjYzZiZjAzMWYzYWJkZGUyYTcxYTdkMmIwZDU/jpeg/000/514/631/434_450.jpg"><br>My wife, her cunt and my dick in her throat!</a> 18',
+'<a href="https://xhamster.com/photos/gallery/charming-mature-slut-with-a-mysterious-look-naked-cunt-16024392"><img src="https://ic-ph-nss.xhcdn.com/a/NmRkNzI0MDI1NjAxMzAyMjRmNGZjYTE3ZmYzNTZiZWI/jpeg/000/514/400/063_450.jpg"><br>Charming mature slut with a mysterious look &amp; naked cunt ))</a> 18',
+'<a href="https://xhamster.com/photos/gallery/my-slut-wife-aimeeparadise-and-her-magical-shaved-cunt-16075235"><img src="https://ic-ph-nss.xhcdn.com/a/Y2NjMjQwZmE1N2E1N2EyN2M1YTExNWUwNTA5NzFmMGU/jpeg/000/515/092/622_450.jpg"><br>My slut wife AimeeParadise and her magical shaved cunt...</a> 17',
+'<a href="https://xhamster.com/photos/gallery/my-sweet-mature-whore-16019766"><img src="https://ic-ph-nss.xhcdn.com/a/MWY3YjZlYWNmNjhkM2Q1OWI4M2ZhM2JhMDc5ZTUwMTM/jpeg/000/514/338/670_450.jpg"><br>My sweet mature whore))</a> 16',
+'<a href="https://xhamster.com/photos/gallery/my-mature-secretary-is-a-cool-bitch-16156190"><img src="https://ic-ph-nss.xhcdn.com/a/Mzk0MDU4NjY5NzgzYzlkY2Q2OTNmNWIwNmE4NDJkNTE/jpeg/000/516/174/381_450.jpg"><br>My mature secretary is a cool bitch!</a> 15',
+'<a href="https://xhamster.com/photos/gallery/hands-behind-your-back-bitch-16069034"><img src="https://ic-ph-nss.xhcdn.com/a/NDYzMjU1YmZhNWI5ODFjODJkYWEwOWU1ZDE0MDdhODY/jpeg/000/515/016/358_450.jpg"><br>Hands behind your back, bitch!</a> 14',
+'<a href="https://xhamster.com/photos/gallery/my-star-girl-makes-faces-in-chicago-style-16058491"><img src="https://ic-ph-nss.xhcdn.com/a/ZGE2NmI2MzBjZjQwZTkyOGY3MDBiMjgwOWEzM2I2NGI/jpeg/000/514/877/636_450.jpg"><br>My star girl makes faces in Chicago style))</a> 12',
+'<a href="https://xhamster.com/photos/gallery/adult-girls-also-love-to-suck-candy-16025443"><img src="https://ic-ph-nss.xhcdn.com/a/MTExODhhMzkxNjFjNzc0NzE1MzRiODU3ZTQwMTJkOTI/jpeg/000/514/422/330_450.jpg"><br>Adult girls also love to suck candy))</a> 12',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 38
+bookid = "aimeeparadise"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

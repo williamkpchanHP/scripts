@@ -1,0 +1,72 @@
+<base target="_blank"><html><head><title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/photoset-silent-night-16102689"><img src="https://ic-ph-nss.xhcdn.com/a/ZmUyNWFiMzNiZWQ3OTkwNDg4MGQyZmMyNjJhY2Y0OTA/jpeg/000/515/453/308_450.jpg"><br>Photoset - Silent Night</a> 10',
+'<a href="https://xhamster.com/photos/gallery/photoset-base-balls-16050838"><img src="https://ic-ph-nss.xhcdn.com/a/ZTNjOGRkODRlMDBkYWU2YjQzNzY2OGI4YjQxYjA1MWU/jpeg/000/514/764/081_450.jpg"><br>Photoset: Base Balls</a> 12',
+'<a href="https://xhamster.com/photos/gallery/me-16035153"><img src="https://ic-ph-nss.xhcdn.com/a/YTZlZWZiMDc1ZDMwOWMyNjYzZDE2MWFiYWU5ZDAyOGU/jpeg/000/514/547/783_450.jpg"><br>Me :-)</a> 5',
+'<a href="https://xhamster.com/photos/gallery/sunny-chocolat-spring-fields-15993253"><img src="https://ic-ph-nss.xhcdn.com/a/MDBlYTVhN2FjYzZkNzc0MTUxNjU4YjYwYjdkNzdkNWI/jpeg/000/513/957/417_450.jpg"><br>Sunny Chocolat: Spring Fields</a> 12',
+'<a href="https://xhamster.com/photos/gallery/set-asia-top-15923559"><img src="https://ic-ph-nss.xhcdn.com/a/NTYxNmU0OGM2MDE1M2Y3OTE2OTY0ZmEwYTMyYzM5MjE/jpeg/000/512/662/008_450.jpg"><br>Set: Asia Top</a> 12',
+'<a href="https://xhamster.com/photos/gallery/library-girl-15908113"><img src="https://ic-ph-nss.xhcdn.com/a/YzVhZDU4YjUzOTY2MWVhZTYxMTEzY2RjOWJlNDg3YmU/jpeg/000/512/313/068_450.jpg"><br>Library Girl</a> 10',
+'<a href="https://xhamster.com/photos/gallery/set-welcome-autumn-15895684"><img src="https://ic-ph-nss.xhcdn.com/a/OWVkZjNkYmUwMDNiNmFkZTdmNmJmYjljNzU2ZWMyNmE/jpeg/000/512/037/466_450.jpg"><br>Set: Welcome Autumn</a> 10',
+'<a href="https://xhamster.com/photos/gallery/micro-bikini-15893619"><img src="https://ic-ph-nss.xhcdn.com/a/ODdiNTgwYWJmNTVmYWU2Njk2OWE5NmFhMzZlYzJlMTM/jpeg/000/511/989/781_450.jpg"><br>Micro Bikini</a> 5',
+'<a href="https://xhamster.com/photos/gallery/bathroom-15893144"><img src="https://ic-ph-nss.xhcdn.com/a/YzY2Yjk4ZDYzZDI2MDU1YjIyNWM5OWVkMzdlOWNhYzY/jpeg/000/511/976/070_450.jpg"><br>Bathroom</a> 55',
+'<a href="https://xhamster.com/photos/gallery/sunny-chocolat-gamer-girl-15807674"><img src="https://ic-ph-nss.xhcdn.com/a/NmZiYWY1ZTU3YWUzOTljMDc2MzgwNmI2NzM4YmNhNTU/jpeg/000/506/055/959_450.jpg"><br>Sunny Chocolat - Gamer Girl</a> 11',
+'<a href="https://xhamster.com/photos/gallery/sunny-chocolat-white-dreams-15805878"><img src="https://ic-ph-nss.xhcdn.com/a/MjM5ZTIyYTNiOWYwZGQwZTM0NDIwNWZlM2MyNmI4MjU/jpeg/000/505/298/605_450.jpg"><br>Sunny Chocolat - White Dreams</a> 11',
+'<a href="https://xhamster.com/photos/gallery/sunny-chocolat-cozy-valentine-15785522"><img src="https://ic-ph-nss.xhcdn.com/a/MzkxNjVlNzdlNTliNzRhZDE0MWMyNDg1Mjk0MjdmOTY/jpeg/000/494/575/873_450.jpg"><br>Sunny Chocolat: Cozy Valentine</a> 10',
+'<a href="https://xhamster.com/photos/gallery/boobs-15786902"><img src="https://ic-ph-nss.xhcdn.com/a/MjUzZjI5MzQxZTNkYWI1MTc1MjRhMmRkMWZjMGVlYzQ/jpeg/000/495/460/248_450.jpg"><br>Boobs</a> 1',
+'<a href="https://xhamster.com/photos/gallery/news-15786187"><img src="https://ic-ph-nss.xhcdn.com/a/YTA2YzcxYzk2NWU1NTQyYjM3NGNmZjhjNGNkYTMyYmU/jpeg/000/495/028/433_450.jpg"><br>News</a> 2',
+'<a href="https://xhamster.com/photos/gallery/sunny-chocolat-miners-room-15786104"><img src="https://ic-ph-nss.xhcdn.com/a/MDI2MzYxNzViNDFiZGI0YTI4ZTk1ODZiY2JhNDI5NmU/jpeg/000/494/991/154_450.jpg"><br>Sunny Chocolat: Miners Room</a> 11',
+'<a href="https://xhamster.com/photos/gallery/summer-vibes-15802543"><img src="https://ic-ph-nss.xhcdn.com/a/ZDU1NTE4YzUxMzMzY2Y5N2FjM2I5NTAwOWYwZDJiOGM/jpeg/000/503/727/112_450.jpg"><br>Summer Vibes</a> 7',
+'<a href="https://xhamster.com/photos/gallery/random-stuff-15791471"><img src="https://ic-ph-nss.xhcdn.com/a/OWE3MTM5MjU3YTAzZjVlOWUxNzBhYjk3YjlhN2Q4OGM/jpeg/000/498/010/798_450.jpg"><br>Random Stuff</a> 1',
+'<a href="https://xhamster.com/photos/gallery/just-me-15788138"><img src="https://ic-ph-nss.xhcdn.com/a/NTc3NTNiMGY1MjIxMTdmZGZmMThiNzcxZGIxMTQzYjc/jpeg/000/496/219/178_450.jpg"><br>Just me</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = ""
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

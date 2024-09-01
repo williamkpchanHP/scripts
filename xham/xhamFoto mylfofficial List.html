@@ -1,0 +1,106 @@
+<base target="_blank"><html><head><title>mylfofficial</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/riley-reyes-working-up-a-pussy-sweat-15821588"><img src="https://ic-ph-nss.xhcdn.com/a/NmYwYWIxYjM1MzY1ZWIwMGFmY2UxYTA0NGM0OTExOTg/jpeg/000/509/688/930_450.jpg"><br>Riley Reyes - Working Up A Pussy Sweat</a> 99',
+'<a href="https://xhamster.com/photos/gallery/london-river-tour-de-milf-15822063"><img src="https://ic-ph-nss.xhcdn.com/a/YWI5OWZmYTQ1ZDliYjg3NWFlYTgxMmVmYzRkMTA5OTk/jpeg/000/509/760/389_450.jpg"><br>London River - Tour De MILF</a> 92',
+'<a href="https://xhamster.com/photos/gallery/linda-gonzalez-coachs-massage-15806624"><img src="https://ic-ph-nss.xhcdn.com/a/NGY3Mzc1OGExYTA1YjE3MzUyZWY1MDI1NjIxMzMxMjM/jpeg/000/505/634/454_450.jpg"><br>Linda Gonzalez - Coach&#039;s Massage</a> 70',
+'<a href="https://xhamster.com/photos/gallery/rachael-cavalli-her-magic-healing-titties-15816352"><img src="https://ic-ph-nss.xhcdn.com/a/NzdmNjdhZWU3ZGY0M2Y2Y2Y4NjA3MDVjMzExNzlmNWQ/jpeg/000/508/626/304_450.jpg"><br>Rachael Cavalli - Her Magic Healing Titties</a> 199',
+'<a href="https://xhamster.com/photos/gallery/miss-raquel-gym-partner-15810077"><img src="https://ic-ph-nss.xhcdn.com/a/MmI3NzY0ZmQ4YWM3YzQwZjZlMDRjMzJiMjhkNWNlNjU/jpeg/000/506/790/126_450.jpg"><br>Miss Raquel - Gym Partner</a> 199',
+'<a href="https://xhamster.com/photos/gallery/misha-maver-full-service-trainer-15809544"><img src="https://ic-ph-nss.xhcdn.com/a/ZGI4M2E5ODhlMGQxZmY0MWQ5YWYxNWVlMTE0ZGFmMWU/jpeg/000/506/632/075_450.jpg"><br>Misha Maver - Full Service Trainer</a> 199',
+'<a href="https://xhamster.com/photos/gallery/kitana-lure-after-yoga-stretches-15806458"><img src="https://ic-ph-nss.xhcdn.com/a/N2ZjNWIzN2IzNWRmNWJkMTE4ODA4ZTMyNGY0MzUxZDU/jpeg/000/505/556/822_450.jpg"><br>Kitana Lure - After Yoga Stretches</a> 199',
+'<a href="https://xhamster.com/photos/gallery/katrina-moreno-lower-body-assist-15808144"><img src="https://ic-ph-nss.xhcdn.com/a/NzdmMjg5NGE3NTE1YmVmMWM1NmU4NTYwZjMzMjQzOGQ/jpeg/000/506/218/731_450.jpg"><br>Katrina Moreno - Lower Body Assist</a> 199',
+'<a href="https://xhamster.com/photos/gallery/jaimie-vine-yoga-master-muff-blaster-15811991"><img src="https://ic-ph-nss.xhcdn.com/a/ODU5MWZiMzQ0YTAyNTk3OTM4OWY0YjgwMzhlY2U5NDg/jpeg/000/507/370/815_450.jpg"><br>Jaimie Vine - Yoga Master Muff Blaster</a> 199',
+'<a href="https://xhamster.com/photos/gallery/ivy-secret-backyard-workout-bang-15812605"><img src="https://ic-ph-nss.xhcdn.com/a/YjhkMmNiNDQ3ZTEwODgzYThlNWNmYzBjMzRmODIzZmQ/jpeg/000/507/540/261_450.jpg"><br>Ivy Secret - Backyard Workout Bang</a> 199',
+'<a href="https://xhamster.com/photos/gallery/havana-bleu-cum-covered-latina-booty-shaker-15811700"><img src="https://ic-ph-nss.xhcdn.com/a/NzAxZjFiY2Y4MWNlYmVlNDE1Nzg1YTg5OGYyZmMxZmI/jpeg/000/507/290/421_450.jpg"><br>Havana Bleu - Cum Covered Latina Booty Shaker</a> 199',
+'<a href="https://xhamster.com/photos/gallery/chanel-preston-post-workout-pussy-from-a-thiccy-15812241"><img src="https://ic-ph-nss.xhcdn.com/a/MDU0M2RlODc1Yjk3N2M0OWE2MGZlMzYxZmQyNDQ0MmU/jpeg/000/507/451/714_450.jpg"><br>Chanel Preston - Post Workout Pussy From A Thiccy</a> 199',
+'<a href="https://xhamster.com/photos/gallery/britney-amber-mammary-motivation-15821099"><img src="https://ic-ph-nss.xhcdn.com/a/YjRjN2Q2NDUwN2U5ZGMwYzU5MWM5YjRkYWZiOTI1YTY/jpeg/000/509/619/668_450.jpg"><br>Britney Amber - Mammary Motivation</a> 199',
+'<a href="https://xhamster.com/photos/gallery/anissa-kate-sweat-15810346"><img src="https://ic-ph-nss.xhcdn.com/a/YzkxZmViMzZlOWZkZjE5YzZiMDZhZWYwNGQwYzM0Yzk/jpeg/000/506/875/761_450.jpg"><br>Anissa Kate - Sweat</a> 199',
+'<a href="https://xhamster.com/photos/gallery/aaliyah-love-fitness-queen-penetration-15810679"><img src="https://ic-ph-nss.xhcdn.com/a/ZDg4ZmMzMjkxNWVkYzk1YTY2OGEyOWY5MWRjZWVhYWM/jpeg/000/506/953/358_450.jpg"><br>Aaliyah Love - Fitness Queen Penetration</a> 199',
+'<a href="https://xhamster.com/photos/gallery/katie-morgan-after-yoga-15807887"><img src="https://ic-ph-nss.xhcdn.com/a/OTFjZTA2Nzk1YjIxYjM5YTgxMGRmNjRmZWJjMjk5ZGY/jpeg/000/506/134/761_450.jpg"><br>Katie Morgan - After Yoga</a> 196',
+'<a href="https://xhamster.com/photos/gallery/candy-alexa-the-right-motivation-15809807"><img src="https://ic-ph-nss.xhcdn.com/a/N2I4MDg0ZDE1NWFkNWRkMDc3MmYzNDY3NGY0NWIwY2U/jpeg/000/506/711/686_450.jpg"><br>Candy Alexa - The Right Motivation</a> 196',
+'<a href="https://xhamster.com/photos/gallery/lilian-stone-fitness-boss-babe-15808424"><img src="https://ic-ph-nss.xhcdn.com/a/NjhjYmE3YTYzYjQ3OTE1Njg2OWNlMzc3MTNiMzdiZTE/jpeg/000/506/298/011_450.jpg"><br>Lilian Stone - Fitness Boss Babe</a> 195',
+'<a href="https://xhamster.com/photos/gallery/brandi-love-cycling-move-15807669"><img src="https://ic-ph-nss.xhcdn.com/a/NTNjZTNjNjUxNjg0MmIzYTQyYWUzMDFmNjNiNGI4ZmM/jpeg/000/506/054/557_450.jpg"><br>Brandi Love - Cycling Move</a> 194',
+'<a href="https://xhamster.com/photos/gallery/valentina-bellucci-fap-to-the-future-15805157"><img src="https://ic-ph-nss.xhcdn.com/a/YjY4NTBiNTM2N2YwMzEyODNmY2E0OTkwZGQ5ODZjZjc/jpeg/000/504/948/999_450.jpg"><br>Valentina Bellucci - Fap To The Future</a> 166',
+'<a href="https://xhamster.com/photos/gallery/rose-monroe-x-rated-exercise-15822689"><img src="https://ic-ph-nss.xhcdn.com/a/OGEwOGIzNzc3ODViYWQyYzA0NDYyNDYwYWNiMzBmYWM/jpeg/000/509/851/211_450.jpg"><br>Rose Monroe - X Rated Exercise</a> 163',
+'<a href="https://xhamster.com/photos/gallery/robbin-banx-extra-personal-training-15811458"><img src="https://ic-ph-nss.xhcdn.com/a/Zjk5NjlkZDliZDllMjZjNzRhMjgzNTNiNzU5MzhjZmE/jpeg/000/507/211/052_450.jpg"><br>Robbin Banx - Extra Personal Training</a> 163',
+'<a href="https://xhamster.com/photos/gallery/penny-barber-tricky-poses-15806846"><img src="https://ic-ph-nss.xhcdn.com/a/NWI4Yjg2OGNiNGZmNTIzNTE1ZjVhODE4OGQwZGNlMzk/jpeg/000/505/715/059_450.jpg"><br>Penny Barber - Tricky Poses</a> 157',
+'<a href="https://xhamster.com/photos/gallery/mia-linz-do-you-even-lift-hoe-15816657"><img src="https://ic-ph-nss.xhcdn.com/a/MzFhMWMxZWNiNjkxZDI5YzljMjdlNmJmOTgzMWJjZDM/jpeg/000/508/713/292_450.jpg"><br>Mia Linz - Do You Even Lift, Hoe?</a> 152',
+'<a href="https://xhamster.com/photos/gallery/silvia-dellai-and-eveline-dellai-seeing-double-15803214"><img src="https://ic-ph-nss.xhcdn.com/a/ZDdiMGRjMDk3ZDk3MjQ4MjhmN2EwMTQxM2E1MGUzYjU/jpeg/000/504/048/950_450.jpg"><br>Silvia Dellai and Eveline Dellai - Seeing Double</a> 150',
+'<a href="https://xhamster.com/photos/gallery/nadia-white-next-level-workout-15804471"><img src="https://ic-ph-nss.xhcdn.com/a/MDM1ZWRlOTVkMTQzMGRmYmM1ZDE5ZThmZWI2YjQ4YjQ/jpeg/000/504/618/215_450.jpg"><br>Nadia White - Next Level Workout</a> 150',
+'<a href="https://xhamster.com/photos/gallery/nadia-white-next-level-workout-15803218"><img src="https://ic-ph-nss.xhcdn.com/a/NDNhMDYzZWRiYjdiODUyYmExN2VjMWFjMGVlZWIwNTY/jpeg/000/504/050/792_450.jpg"><br>Nadia White - Next Level Workout</a> 150',
+'<a href="https://xhamster.com/photos/gallery/kira-perez-and-nadia-white-guest-pass-15803225"><img src="https://ic-ph-nss.xhcdn.com/a/ZGNhZDFlNzJiMjdiMTQ1ZGViOWZkNDM2MzE1ZjgyZWE/jpeg/000/504/051/863_450.jpg"><br>Kira Perez and Nadia White - Guest Pass</a> 150',
+'<a href="https://xhamster.com/photos/gallery/kaylynn-keys-and-crystal-rush-gifts-from-our-stepmoms-15803220"><img src="https://ic-ph-nss.xhcdn.com/a/M2YwNzQ2MTkxYTZmNWFhZmQyNjNiMzgxNzI1ZDA4YjE/jpeg/000/504/051/195_450.jpg"><br>Kaylynn Keys and Crystal Rush - Gifts From Our Stepmoms</a> 150',
+'<a href="https://xhamster.com/photos/gallery/kayla-paige-high-intensity-workout-15820566"><img src="https://ic-ph-nss.xhcdn.com/a/NTcxODgzZWFmMmRmNTUwZjJhMzFmMTFiYzM2NDYxZTM/jpeg/000/509/545/619_450.jpg"><br>Kayla Paige - High-Intensity Workout</a> 150',
+'<a href="https://xhamster.com/photos/gallery/jennifer-white-she-works-her-ass-off-15805325"><img src="https://ic-ph-nss.xhcdn.com/a/NTdlMzQ2NDRjZGQ0MGM3MWJjNTc2OWEwMTE0MjZmYjM/jpeg/000/505/068/297_450.jpg"><br>Jennifer White - She Works Her Ass Off</a> 150',
+'<a href="https://xhamster.com/photos/gallery/cory-chase-a-patriots-work-15803210"><img src="https://ic-ph-nss.xhcdn.com/a/OTY2MDE5ZjRjZDVhNDM4MjBhMTY3OGE5OGM1MzUzMWE/jpeg/000/504/047/878_450.jpg"><br>Cory Chase - A Patriots Work</a> 150',
+'<a href="https://xhamster.com/photos/gallery/cathy-e-helping-out-my-stepgran-15803224"><img src="https://ic-ph-nss.xhcdn.com/a/Mjc1YjMwOTIwYTE4Mzc4NmRmYWE5ZmE0ODA5ZTY2ODg/jpeg/000/504/051/593_450.jpg"><br>Cathy E - Helping Out My Stepgran</a> 150',
+'<a href="https://xhamster.com/photos/gallery/caitlin-bell-divorced-and-ready-15803961"><img src="https://ic-ph-nss.xhcdn.com/a/MGY4ODg1ZDRhYjNhOWFlYzI1NjY0M2ZiZWE5MDEyMjk/jpeg/000/504/383/162_450.jpg"><br>Caitlin Bell - Divorced and Ready</a> 150',
+'<a href="https://xhamster.com/photos/gallery/blondie-bombshell-blonde-busty-and-oiled-15803209"><img src="https://ic-ph-nss.xhcdn.com/a/NTNmNTBjOTE0YjE2N2ZjNzk5ZDE2NzM0NjBmZjdkZTM/jpeg/000/504/047/393_450.jpg"><br>Blondie Bombshell - Blonde, Busty and Oiled</a> 150',
+'<a href="https://xhamster.com/photos/gallery/lily-love-bending-over-15805574"><img src="https://ic-ph-nss.xhcdn.com/a/OGIxOThiMTk2ZGVjZTEwMmM1ODQxYzQzZmEzMmU1ODc/jpeg/000/505/150/658_450.jpg"><br>Lily Love - Bending Over</a> 149',
+'<a href="https://xhamster.com/photos/gallery/gogo-fukme-a-busty-premiere-15804336"><img src="https://ic-ph-nss.xhcdn.com/a/MWQyZWUzNDI1NWFkNWQ5NDU1OTdiYTk1NzlhODE3MDc/jpeg/000/504/545/268_450.jpg"><br>GoGo FukMe - A Busty Premiere</a> 148',
+'<a href="https://xhamster.com/photos/gallery/charlie-valentine-new-on-set-15803211"><img src="https://ic-ph-nss.xhcdn.com/a/OTdjNDIzODhjNWU1NzkzOGEwYWQzYWU4N2M1MWRiZjU/jpeg/000/504/048/105_450.jpg"><br>Charlie Valentine - New on Set</a> 148',
+'<a href="https://xhamster.com/photos/gallery/nina-elle-the-hottest-milf-gym-bod-15813456"><img src="https://ic-ph-nss.xhcdn.com/a/YjVhMDczNmUzMjRmZjZmNWQ5ODVhY2VjNTM2ZTM1NjQ/jpeg/000/507/791/258_450.jpg"><br>Nina Elle - The Hottest MILF Gym Bod</a> 146',
+'<a href="https://xhamster.com/photos/gallery/briana-banderas-what-i-have-to-do-15808707"><img src="https://ic-ph-nss.xhcdn.com/a/Y2EzM2VlODMxNjY4YzNlMjQ0YTIxZDFmYzYyMmM5NjU/jpeg/000/506/381/014_450.jpg"><br>Briana Banderas - What I Have To Do</a> 145',
+'<a href="https://xhamster.com/photos/gallery/canela-skin-fit-thick-and-juicy-15805755"><img src="https://ic-ph-nss.xhcdn.com/a/Yjc3YWY3ZTVlOTRlZmUxNDU4MDk2YmNmMWQ1NTI1NTA/jpeg/000/505/223/323_450.jpg"><br>Canela Skin - Fit, Thick and Juicy</a> 144',
+'<a href="https://xhamster.com/photos/gallery/susy-gala-hot-pre-sex-shower-15803226"><img src="https://ic-ph-nss.xhcdn.com/a/OTU1ODBhY2Q5NGNlMTJjZTE5NTIzMGQ3NmY1OTQxNzg/jpeg/000/504/052/166_450.jpg"><br>Susy Gala - Hot Pre Sex Shower</a> 142',
+'<a href="https://xhamster.com/photos/gallery/myss-alessandra-way-more-than-yoga-15807032"><img src="https://ic-ph-nss.xhcdn.com/a/YWRiZmExN2U4ODhlMDkzNzdjN2NmNTEyNTZhMTBiZWU/jpeg/000/505/798/631_450.jpg"><br>Myss Alessandra - Way More Than Yoga</a> 137',
+'<a href="https://xhamster.com/photos/gallery/ana-foxxx-barbell-badonkadonk-15818303"><img src="https://ic-ph-nss.xhcdn.com/a/MmIzZjJlMjkwYThhMDM0NTFkZDlhYjA4NWY5YjY1Mjc/jpeg/000/509/218/588_450.jpg"><br>Ana Foxxx - Barbell Badonkadonk</a> 136',
+'<a href="https://xhamster.com/photos/gallery/lexi-luna-peeping-tom-gets-rewarded-15806277"><img src="https://ic-ph-nss.xhcdn.com/a/MWJjNTdkYzc1NjIwMmVmYjFmMmE5NzAzYjQ2YWNjNzk/jpeg/000/505/470/858_450.jpg"><br>Lexi Luna - Peeping Tom Gets Rewarded</a> 134',
+'<a href="https://xhamster.com/photos/gallery/lexi-luna-cardio-cum-lover-15814538"><img src="https://ic-ph-nss.xhcdn.com/a/MTQ3YWEzYjcwZTA4M2ZiM2MyNDk4ODc2ZWIzNzllNWE/jpeg/000/508/113/256_450.jpg"><br>Lexi Luna - Cardio Cum Lover</a> 129',
+'<a href="https://xhamster.com/photos/gallery/ivy-lebelle-milf-spandex-sex-15815350"><img src="https://ic-ph-nss.xhcdn.com/a/MmM4ZGRiYmExODkwOTk4Y2NjMTA4Nzk3NThmNDg1NTE/jpeg/000/508/355/028_450.jpg"><br>Ivy Lebelle - MILF Spandex Sex</a> 129',
+'<a href="https://xhamster.com/photos/gallery/chanel-preston-and-krissy-lynn-jerking-up-a-sweat-15818011"><img src="https://ic-ph-nss.xhcdn.com/a/ZTIyZjcwMDM0MjgzYjZkYTkwZDY3NmJjMDc3NGQ1NGE/jpeg/000/509/135/594_450.jpg"><br>Chanel Preston and Krissy Lynn - Jerking Up A Sweat</a> 127',
+'<a href="https://xhamster.com/photos/gallery/reagan-foxx-bod-of-a-demigoddess-15816013"><img src="https://ic-ph-nss.xhcdn.com/a/NmVjMDBhYmU3MzI1NmRhOTE3MTM4ZjhmMzljYTUwMmE/jpeg/000/508/533/388_450.jpg"><br>Reagan Foxx - Bod Of A Demigoddess</a> 126',
+'<a href="https://xhamster.com/photos/gallery/nikki-delano-cumplimentary-milf-massage-15817756"><img src="https://ic-ph-nss.xhcdn.com/a/YTMwNTNmYzg3MGQ0OTRhNzk1ODUyMWVkMmFmYTczYmE/jpeg/000/509/056/321_450.jpg"><br>Nikki Delano - Cumplimentary MILF Massage</a> 123',
+'<a href="https://xhamster.com/photos/gallery/sara-jay-pain-and-stuff-her-ing-15804145"><img src="https://ic-ph-nss.xhcdn.com/a/NGNiOTY3ZjJlNTcyNTEyYjE4NmUzMTRiMDVlNWNhYWM/jpeg/000/504/463/828_450.jpg"><br>Sara Jay - Pain and Stuff-Her-ing</a> 115',
+'<a href="https://xhamster.com/photos/gallery/marie-mccray-tending-to-the-poon-15818676"><img src="https://ic-ph-nss.xhcdn.com/a/YjgyMDBhNTI3YzJiNDQ2NDI0MTk0MTBiNzJhOTRiZTQ/jpeg/000/509/301/492_450.jpg"><br>Marie McCray - Tending To The Poon</a> 106',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "mylfofficial"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

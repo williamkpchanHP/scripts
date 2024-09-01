@@ -1,0 +1,134 @@
+<base target="_blank"><html><head><title>Milky-Marie</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">Milky-Marie</div>
+<center>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'7/484/82690969/82690969_002_f493',
+'7/484/82690969/82690969_006_36e5',
+'7/484/82690969/82690969_011_550d',
+'7/484/82690969/82690969_016_24fd',
+'7/484/82690969/82690969_020_bcd5',
+'7/484/82690969/82690969_022_4274',
+'7/484/82690969/82690969_027_3b3b',
+'7/484/82690969/82690969_032_3363',
+'7/484/82690969/82690969_033_f229',
+'7/484/82690969/82690969_040_6072',
+'7/484/82690969/82690969_043_1b87',
+'7/484/82690969/82690969_046_4ad8',
+'7/484/82690969/82690969_051_44f9',
+'7/484/82690969/82690969_053_60a0',
+'7/484/82690969/82690969_057_93f6',
+'7/484/82690969/82690969_061_7783',
+'7/484/82690969/82690969_066_c258',
+'7/484/82690969/82690969_069_a6bb',
+'7/484/82690969/82690969_072_a282',
+'7/484/82690969/82690969_073_162d',
+'7/484/55164685/55164685_003_1b61',
+'7/484/55164685/55164685_006_ff72',
+'7/484/55164685/55164685_010_2bc2',
+'7/484/55164685/55164685_011_1000',
+'7/484/55164685/55164685_013_8654',
+'7/484/55164685/55164685_018_6321',
+'7/484/55164685/55164685_022_4a03',
+'7/484/55164685/55164685_027_1498',
+'7/484/55164685/55164685_029_eac4',
+'7/484/55164685/55164685_033_2c31',
+'7/484/55164685/55164685_038_9b47',
+'7/484/55164685/55164685_043_c864',
+'7/484/55164685/55164685_044_6d56',
+'7/484/55164685/55164685_047_5c24',
+'7/484/55164685/55164685_051_81c2',
+'7/484/55164685/55164685_053_9dab',
+'7/484/55164685/55164685_058_9f6f',
+'7/484/55164685/55164685_061_463c',
+'7/484/55164685/55164685_062_cb0e',
+'7/484/55164685/55164685_066_5eb6',
+'7/484/55164685/55164685_068_f518',
+'7/484/92001676/92001676_003_8e19',
+'7/484/92001676/92001676_008_bfda',
+'7/484/92001676/92001676_009_804c',
+'7/484/92001676/92001676_014_9359',
+'7/484/92001676/92001676_017_d6ec',
+'7/484/92001676/92001676_023_40c5',
+'7/484/92001676/92001676_026_a0ff',
+'7/484/92001676/92001676_032_3fc3',
+'7/484/92001676/92001676_033_953a',
+'7/484/92001676/92001676_040_15ab',
+'7/484/92001676/92001676_041_3cab',
+'7/484/92001676/92001676_046_242b',
+'7/484/92001676/92001676_047_0dc1',
+'7/484/92001676/92001676_051_6a37',
+'7/484/92001676/92001676_055_336d',
+'7/484/92001676/92001676_057_acb8',
+'7/484/92001676/92001676_059_ad32',
+'7/484/92001676/92001676_063_f1cb',
+'7/484/92001676/92001676_066_082c',
+'7/484/92001676/92001676_068_7371',
+'7/484/34204120/34204120_002_bce3',
+'7/484/34204120/34204120_008_3a5e',
+'7/484/34204120/34204120_011_cb9f',
+'7/484/34204120/34204120_013_fbba',
+'7/484/34204120/34204120_020_b86b',
+'7/484/34204120/34204120_022_97f1',
+'7/484/34204120/34204120_028_8b7b',
+'7/484/34204120/34204120_031_4e31',
+'7/484/34204120/34204120_036_3fb0',
+'7/484/34204120/34204120_038_36d0',
+'7/484/34204120/34204120_042_fb26',
+'7/484/34204120/34204120_047_1333',
+'7/484/34204120/34204120_049_c381',
+'7/484/34204120/34204120_054_5a1d',
+'7/484/34204120/34204120_060_4ab8',
+'7/484/34204120/34204120_063_9d34',
+'7/484/34204120/34204120_064_dac2',
+'7/484/34204120/34204120_067_f180',
+'7/484/34204120/34204120_072_a546',
+'7/484/34204120/34204120_074_e428',
+];
+lineHeader = '<img src="https://cdni.pornpics.com/1280/'
+lineTail = '.jpg">'
+showRange = 80
+bookid = "Milky-Marie"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<base target="_blank"><html><head><title>emily-lynne</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">emily-lynne</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'641db7d81f02c"><img src="https://ei.phncdn.com/videos/202303/24/428091621/original/(m=qTPKJIYbeafTGgaaaa)(mh=izixhh_1wYP4kCr8)0.jpg"><br>Step Daughter Maria Kazi Sneaks Into Step Parents Bed To Fuck Her Step Dad - FamilyStrokes',
+'651e008fbdfee"><img src="https://ei.phncdn.com/videos/202310/05/440640521/original/(m=eafTGgaaaa)(mh=3uqPTCjkxqkTXtt-)16.jpg"><br>Rip My Stockings Fuck and Cum BIG Booty',
+'65d5c8aece9a5"><img src="https://ei.phncdn.com/videos/202402/21/448474401/original/(m=qTHZ49YbeafTGgaaaa)(mh=xJHC-_lCOSTwAWHe)0.jpg"><br>ModelMedia Asia - I went to my brothers house for dinner and fucked his wife',
+'65f3413711625"><img src="https://ei.phncdn.com/videos/202403/14/449572261/thumbs_35/(m=eafTGgaaaa)(mh=E0JgUZcAuvY77uLi)10.jpg"><br>Fast & Furious: Fucking in the back seat',
+'65fdc40d7bc63"><img src="https://ei.phncdn.com/videos/202403/22/449971941/thumbs_5/(m=eafTGgaaaa)(mh=93kiCSRRV_FtgUUE)16.jpg"><br>Fucking Sexy British Blonde Babe - Frances Bentley In Car',
+'66072a0621895"><img src="https://ei.phncdn.com/videos/202403/29/450333851/thumbs_10/(m=eafTGgaaaa)(mh=Q_5if6WQeJjE1XLM)12.jpg"><br>Loving Couple in Empty Apartment - Rimming, Amazon, Reverse Cowgirl, Cumplay',
+'ph58979cce3dff6"><img src="https://ei.phncdn.com/videos/201702/05/105005982/original/(m=eafTGgaaaa)(mh=bsfe-MmdSG0fRqzB)10.jpg"><br>Emily Lynne - While You Were Working Teaser [HD]',
+'ph59772774289f8"><img src="https://ei.phncdn.com/videos/201707/25/125820821/original/(m=eafTGgaaaa)(mh=g0N6Nm-DdoGM80XY)13.jpg"><br>Super Cute Teen Emily JOI',
+'ph59a69ad2ed4c0"><img src="https://ei.phncdn.com/videos/201708/30/130587401/original/(m=eafTGgaaaa)(mh=gCJgSuZAiWhnA7yM)15.jpg"><br>Emilylynne dildo riding at birthday',
+'ph59ef433f14428"><img src="https://ei.phncdn.com/videos/201710/24/138255572/original/(m=eafTGgaaaa)(mh=FeKLxSw1UFIV6jyy)5.jpg"><br>Emilylynne - Masturbation In Dress - (Blue Dress)',
+'ph5a2c3f7b73978"><img src="https://ei.phncdn.com/videos/201712/09/144733762/original/(m=eafTGgaaaWavb)(mh=Syw3GmZaeS3aKoL0)14.jpg"><br>Emilylynne fucked with Strap-On',
+'ph5aa93a2e1d48a"><img src="https://ei.phncdn.com/videos/201803/14/158117262/original/(m=eafTGgaaaa)(mh=zCamHAC7-AycfPwG)8.jpg"><br>Emilylyne squirts',
+'ph5d6ef7cadb8f5"><img src="https://ei.phncdn.com/videos/201909/03/246059951/original/(m=q9Y2L3UbeafTGgaaaa)(mh=N2_f8PBOysoXFuHR)0.jpg"><br>BACHELORETTE PARTY ORGY! Cheating Wife Deepthroats & Fucks The Stripper',
+'ph5dba4be33aa3c"><img src="https://ei.phncdn.com/videos/201910/31/258344752/original/(m=eafTGgaaaa)(mh=6hg6P9w45kSeU6DI)6.jpg"><br>School Girl Fuck Doll at Your Service',
+'ph5de5b8f916ff2"><img src="https://ei.phncdn.com/videos/201912/03/265848882/original/(m=eafTGgaaaa)(mh=xSqPEGgSIdjdQ2vr)12.jpg"><br>Call Of Booty - riding dick white gaming',
+'ph5e1e184951daf"><img src="https://ei.phncdn.com/videos/202001/14/276632241/original/(m=eafTGgaaaa)(mh=kiYXaYCJio9DtJMt)7.jpg"><br>dirty talking girlfriend squirts and begs for your cum',
+'ph5e890eefe0e7a"><img src="https://ei.phncdn.com/videos/202004/04/300298072/original/(m=eafTGgaaaa)(mh=KAlHYvI1kJW0RyYi)11.jpg"><br>Phat ass pawg emily lynne',
+'ph5eb1f980539a6"><img src="https://ei.phncdn.com/videos/202005/05/310723531/original/(m=eafTGgaaaa)(mh=7OWAi8tUT5E_A3Nb)15.jpg"><br>My First Cream Pie',
+'ph5fd4cd15c1940"><img src="https://ei.phncdn.com/videos/202012/12/378218942/original/(m=eafTGgaaaa)(mh=ZP7kYxB-LNU87lIn)7.jpg"><br>big ass twerks nude',
+'ph6042da1f2c94c"><img src="https://ei.phncdn.com/videos/202103/06/384692132/original/(m=eafTGgaaaa)(mh=xxSD_PuqMPkjaWLg)14.jpg"><br>obsess over my ass upskirt joi Emily Lynne',
+'ph6042db60a2c93"><img src="https://ei.phncdn.com/videos/202103/06/384692352/original/(m=eafTGgaaaa)(mh=qLHE4JFrQNbsw_fZ)8.jpg"><br>Winter Bad Dragon fucking in snow',
+'ph605f701a9dc15"><img src="https://ei.phncdn.com/videos/202103/27/385768341/original/(m=eafTGgaaaa)(mh=k20J1_b6rxSdF0RS)12.jpg"><br>amazing first Assjob JOI - ass grinding twerking and riding',
+'ph606b64a2d0d4b"><img src="https://ei.phncdn.com/videos/202104/05/386183331/original/(m=eafTGgaaaa)(mh=UKQZXkyGpV1twD8W)10.jpg"><br>Emily Lynne FIRST EVER BOOBS JOI jerk off for my natural tiddies',
+'ph60cc92f59dd85"><img src="https://ei.phncdn.com/videos/202106/18/389811231/original/(m=eafTGgaaaa)(mh=oV_RUreQRf_cnr5n)9.jpg"><br>don’t cum challenge! submissive slut begs for your load',
+'ph60dcbd024b229"><img src="https://ei.phncdn.com/videos/202106/30/390459491/original/(m=eafTGgaaaa)(mh=9X66zrnxfa3OkZcC)8.jpg"><br>Talking Dirty While Riding Cock',
+'ph60dcbe73501d8"><img src="https://ei.phncdn.com/videos/202106/30/390459761/original/(m=eafTGgaaaa)(mh=KbtMz3rvYJ-IU3Fs)8.jpg"><br>POV big booty slut rides cock barefoot',
+'ph60dcbf8e9bacb"><img src="https://ei.phncdn.com/videos/202106/30/390460041/original/(m=eafTGgaaaa)(mh=awyjuxhSDTPH54JL)13.jpg"><br>slutty girlfriend demands your cock right now',
+'ph60dcc09e50965"><img src="https://ei.phncdn.com/videos/202106/30/390460231/original/(m=eafTGgaaaa)(mh=6G88MsNbhRaxX3lE)15.jpg"><br>I love watching you jerk off JOI',
+'ph60dcc18a0e55d"><img src="https://ei.phncdn.com/videos/202106/30/390462101/original/(m=eafTGgaaaa)(mh=fPwm4djxx6w7EdAK)2.jpg"><br>girlfriend damands your cock doggystyle',
+'ph60dccdb6733a3"><img src="https://ei.phncdn.com/videos/202106/30/390462541/original/(m=eafTGgaaaa)(mh=N4xg46G-VcZrapUQ)7.jpg"><br>twerking and bouncing on bad dragon dick',
+'ph6165cca84149e"><img src="https://ei.phncdn.com/videos/202110/12/396252651/original/(m=eafTGgaaaa)(mh=K-uugfaXQb3e2CsU)7.jpg"><br>NUDE TIKTOK COMPILATION VIDEOS',
+'ph61cc27e601fe6"><img src="https://ei.phncdn.com/videos/202112/29/400400831/original/(m=qJ6M88WbeafTGgaaaa)(mh=UAQo0HvwGm4jbqzy)0.jpg"><br>Fast hard fuck with a schoolgirl in pantyhose - Bellamurr',
+'ph62195e0e607bc"><img src="https://ei.phncdn.com/videos/202202/26/403720911/original/(m=eafTGgaaaa)(mh=b7XyPOGejTJjbV2J)11.jpg"><br>Risky Outdoor Balcony!! Big ass twerk & Creamy pussy fuck',
+'ph624256b0d253b"><img src="https://ei.phncdn.com/videos/202203/29/405493441/original/(m=eafTGgaaaa)(mh=NM1hiUBqOR4p_Bwl)13.jpg"><br>POV rough doggystyle fuck machine + threesome roleplay Jerk Off For My HUGE ASS!!',
+'ph624623c489e92"><img src="https://ei.phncdn.com/videos/202203/31/405665531/original/(m=eafTGgaaaa)(mh=8LsKDEa3YCwMRDg4)8.jpg"><br>Call of Booty Big Booty Riding while gaming',
+'ph62bf22ffd0b16"><img src="https://ei.phncdn.com/videos/202207/01/410950541/original/(m=eafTGgaaaa)(mh=Lvi_WKwXKisbMPp6)16.jpg"><br>DANCING BEAR - Horny Ladies Enthralled By Parade Of Swinging Big Dicks!',
+'ph63a9df991485f"><img src="https://ei.phncdn.com/videos/202212/26/422112191/original/(m=eafTGgaaaa)(mh=SHnbyU8yPFPIT9Yt)16.jpg"><br>slimthick cock hungry slut wakes up horny rides and sucks your cock',
+'ph63a9e44f23ce2"><img src="https://ei.phncdn.com/videos/202212/26/422112781/original/(m=eafTGgaaaa)(mh=zPmeNk8ziGniCFJ5)13.jpg"><br>UP CLOSE! Extra wet PINK pussy fingering - use to satisfy your dick',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "emily-lynne"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

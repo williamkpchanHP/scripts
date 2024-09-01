@@ -1,0 +1,112 @@
+<base target="_blank"><html><head><title>pornstar=karma-rx</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<link rel="stylesheet" href="../imgcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+
+<body onkeypress="chkKey()">
+<br>
+<center>
+<p class="tip-number">pornstar=karma-rx</p>
+<p class="js-tip"></p>
+<br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'323/a8f900557ba2d89a23c5d3335a0322bb-1',
+'323/a8f900557ba2d89a23c5d3335a0322bb-10',
+'323/a8f900557ba2d89a23c5d3335a0322bb-11',
+'323/a8f900557ba2d89a23c5d3335a0322bb-12',
+'323/a8f900557ba2d89a23c5d3335a0322bb-13',
+'323/a8f900557ba2d89a23c5d3335a0322bb-14',
+'323/a8f900557ba2d89a23c5d3335a0322bb-15',
+'323/a8f900557ba2d89a23c5d3335a0322bb-2',
+'323/a8f900557ba2d89a23c5d3335a0322bb-3',
+'323/a8f900557ba2d89a23c5d3335a0322bb-4',
+'323/a8f900557ba2d89a23c5d3335a0322bb-5',
+'323/a8f900557ba2d89a23c5d3335a0322bb-6',
+'323/a8f900557ba2d89a23c5d3335a0322bb-7',
+'323/a8f900557ba2d89a23c5d3335a0322bb-8',
+'323/a8f900557ba2d89a23c5d3335a0322bb-9',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-1',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-10',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-11',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-12',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-13',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-14',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-15',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-2',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-3',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-4',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-5',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-6',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-7',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-8',
+'622/7dba9dbcfdee4cca71c0400be503b9b2-9',
+'742/0880c3cf8e22368652e70204a9b0268a-1',
+'742/0880c3cf8e22368652e70204a9b0268a-10',
+'742/0880c3cf8e22368652e70204a9b0268a-11',
+'742/0880c3cf8e22368652e70204a9b0268a-12',
+'742/0880c3cf8e22368652e70204a9b0268a-13',
+'742/0880c3cf8e22368652e70204a9b0268a-14',
+'742/0880c3cf8e22368652e70204a9b0268a-15',
+'742/0880c3cf8e22368652e70204a9b0268a-16',
+'742/0880c3cf8e22368652e70204a9b0268a-2',
+'742/0880c3cf8e22368652e70204a9b0268a-3',
+'742/0880c3cf8e22368652e70204a9b0268a-4',
+'742/0880c3cf8e22368652e70204a9b0268a-5',
+'742/0880c3cf8e22368652e70204a9b0268a-6',
+'742/0880c3cf8e22368652e70204a9b0268a-7',
+'742/0880c3cf8e22368652e70204a9b0268a-8',
+'742/0880c3cf8e22368652e70204a9b0268a-9',
+'755/d613612e88fac59a31af57e4484f4873-1',
+'755/d613612e88fac59a31af57e4484f4873-10',
+'755/d613612e88fac59a31af57e4484f4873-11',
+'755/d613612e88fac59a31af57e4484f4873-12',
+'755/d613612e88fac59a31af57e4484f4873-13',
+'755/d613612e88fac59a31af57e4484f4873-14',
+'755/d613612e88fac59a31af57e4484f4873-15',
+'755/d613612e88fac59a31af57e4484f4873-2',
+'755/d613612e88fac59a31af57e4484f4873-3',
+'755/d613612e88fac59a31af57e4484f4873-4',
+'755/d613612e88fac59a31af57e4484f4873-5',
+'755/d613612e88fac59a31af57e4484f4873-6',
+'755/d613612e88fac59a31af57e4484f4873-7',
+'755/d613612e88fac59a31af57e4484f4873-8',
+'755/d613612e88fac59a31af57e4484f4873-9',
+'951/18ddc60482f6a1be74d61fd08525a7d6-1',
+'951/18ddc60482f6a1be74d61fd08525a7d6-10',
+'951/18ddc60482f6a1be74d61fd08525a7d6-11',
+'951/18ddc60482f6a1be74d61fd08525a7d6-12',
+'951/18ddc60482f6a1be74d61fd08525a7d6-13',
+'951/18ddc60482f6a1be74d61fd08525a7d6-14',
+'951/18ddc60482f6a1be74d61fd08525a7d6-15',
+'951/18ddc60482f6a1be74d61fd08525a7d6-2',
+'951/18ddc60482f6a1be74d61fd08525a7d6-3',
+'951/18ddc60482f6a1be74d61fd08525a7d6-4',
+'951/18ddc60482f6a1be74d61fd08525a7d6-5',
+'951/18ddc60482f6a1be74d61fd08525a7d6-6',
+'951/18ddc60482f6a1be74d61fd08525a7d6-7',
+'951/18ddc60482f6a1be74d61fd08525a7d6-8',
+'951/18ddc60482f6a1be74d61fd08525a7d6-9',
+];
+lineHeader = '<img src="https://cdn.nudexxx.pics/content/galleries/'
+lineTail = '-full.jpg">'
+showRange = 76
+bookid = "pornstar=karma-rx"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
+

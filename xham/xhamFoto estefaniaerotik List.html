@@ -1,0 +1,79 @@
+<base target="_blank"><html><head><title>estefaniaerotik</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/looking-for-sperm-three-hole-fuck-silo-in-black-lingerie-15908938"><img src="https://ic-ph-nss.xhcdn.com/a/ZmU0OGJlMmIwNmRhOGJhYmZkMjY5NzJhYTNmOTIxYzA/jpeg/000/512/329/919_450.jpg"><br>Looking for sperm. Three hole fuck silo in black lingerie.</a> 9',
+'<a href="https://xhamster.com/photos/gallery/my-freshly-fingered-wife-cunt-16031136"><img src="https://ic-ph-nss.xhcdn.com/a/N2E5ZmM0MDJmZmRmYzAzY2RjY2NlMjFkMWU0MDE4MmI/jpeg/000/514/497/702_450.jpg"><br>My freshly fingered wife cunt.</a> 8',
+'<a href="https://xhamster.com/photos/gallery/my-cunt-all-alone-in-the-sperm-rain-16031115"><img src="https://ic-ph-nss.xhcdn.com/a/NTQyM2E2NWUyMGM4MWUxMTFhMWQ4MDBkMWY3OTQ3ZTc/jpeg/000/514/497/550_450.jpg"><br>My cunt all alone in the sperm rain</a> 8',
+'<a href="https://xhamster.com/photos/gallery/cunt-goes-bathing-in-cum-do-you-want-to-follow-up-15892529"><img src="https://ic-ph-nss.xhcdn.com/a/NGQ2NGVmOTE4OGRiOWNjN2E0OTRlMjY0NzBlM2ExMjE/jpeg/000/511/962/728_450.jpg"><br>Cunt goes bathing in cum. Do you want to follow up???</a> 8',
+'<a href="https://xhamster.com/photos/gallery/my-floating-milk-tits-15998105"><img src="https://ic-ph-nss.xhcdn.com/a/ZmU2MjEyODExMTYyNjRjNDhjODNlOWNhMWZjOWFmODA/jpeg/000/514/021/537_450.jpg"><br>My floating milk tits.</a> 7',
+'<a href="https://xhamster.com/photos/gallery/please-rate-my-cunt-16028049"><img src="https://ic-ph-nss.xhcdn.com/a/ZjE2YjgzODYyOGUyNDZkYTZjYzUyM2RlZTlkZGJjOTA/jpeg/000/514/455/208_450.jpg"><br>Please rate my cunt.</a> 6',
+'<a href="https://xhamster.com/photos/gallery/estefaniaerotica-my-cunt-is-prepared-to-fuck-15901423"><img src="https://ic-ph-nss.xhcdn.com/a/YzY1NjM1Yzc5NmUwNThmZDU5YTU4NmQ5NDEwNDUwZTU/jpeg/000/512/165/831_450.jpg"><br>EstefaniaErotica My cunt is prepared to fuck</a> 6',
+'<a href="https://xhamster.com/photos/gallery/a-picture-collection-of-estefaniaerotica-breasts-15891343"><img src="https://ic-ph-nss.xhcdn.com/a/ODg0YTcyNzc4ZDU1OGJkZjEzYmQ2Yzc3Y2U5M2UyMDQ/jpeg/000/511/940/152_450.jpg"><br>A picture collection of EstefaniaErotica breasts</a> 5',
+'<a href="https://xhamster.com/photos/gallery/mare-looking-for-a-hard-cock-fuck-me-get-me-pregnant-15908939"><img src="https://ic-ph-nss.xhcdn.com/a/OWUxMTUyYTI4MWYzNGUwMDEyMTk4YmM4ZjgwMDUzYjc/jpeg/000/512/329/952_450.jpg"><br>Mare looking for a hard cock. Fuck me, get me pregnant.</a> 4',
+'<a href="https://xhamster.com/photos/gallery/the-divine-ass-by-estefaniaerotica-15892533"><img src="https://ic-ph-nss.xhcdn.com/a/NGNkYzAyZjcwM2U5NTZlMjNlMzg4NWJhZTRmYzI1ODk/jpeg/000/511/962/835_450.jpg"><br>The divine ass by EstefaniaErotica</a> 3',
+'<a href="https://xhamster.com/photos/gallery/my-wonderful-giant-fuck-ass-loaded-with-sperm-15969031"><img src="https://ic-ph-nss.xhcdn.com/a/OGZlZWIyY2EyMjExZmM1NjEyODQ4NjM0ZDA2ZjA1ZjU/jpeg/000/513/610/104_450.jpg"><br>My wonderful giant fuck ass loaded with sperm</a> 3',
+'<a href="https://xhamster.com/photos/gallery/u-like-my-freshly-fucked-mom-cunt-pumped-full-of-sperm-16031110"><img src="https://ic-ph-nss.xhcdn.com/a/ZDZiOTA5NmQ5ZWI3ZTQyOTU4MjkzNGVmYmJjZWU1MmY/jpeg/000/514/497/489_450.jpg"><br>U like --&gt; My freshly fucked mom cunt pumped full of sperm.</a> 2',
+'<a href="https://xhamster.com/photos/gallery/im-a-bad-kitten-can-you-please-punish-me-16031130"><img src="https://ic-ph-nss.xhcdn.com/a/OWFiZWVhZDk0YTQ3Mjg4NDlmNTFlYTdkNGQ4MDMxNDM/jpeg/000/514/497/643_450.jpg"><br>I&#039;m a bad kitten. can you please punish me!!!</a> 2',
+'<a href="https://xhamster.com/photos/gallery/estefaniaerotica-sexy-snapshots-15891351"><img src="https://ic-ph-nss.xhcdn.com/a/OTk2Mzc2NGU3OTAxZDk0ODNiMzc0NGQ1MTFhOTQ0ZDY/jpeg/000/511/940/313_450.jpg"><br>EstefaniaErotica sexy snapshots</a> 2',
+'<a href="https://xhamster.com/photos/gallery/estefania-in-incredible-outfits-16106972"><img src="https://ic-ph-nss.xhcdn.com/a/MWZjODVjNGZiNmNkODZhOTVjZWM0MmFkYThkOGZiN2U/jpeg/000/515/511/343_450.jpg"><br>Estefania in incredible outfits</a> 2',
+'<a href="https://xhamster.com/photos/gallery/estefaniaerotica-cumshot-compilation-15901429"><img src="https://ic-ph-nss.xhcdn.com/a/MzE1MjNlNmQxZTBiZDgwZjE0OTBiMmIzYmU0OTRkODg/jpeg/000/512/165/968_450.jpg"><br>EstefaniaErotica Cumshot compilation</a> 17',
+'<a href="https://xhamster.com/photos/gallery/estefaniaerotica-blows-kenhcores-cock-15892537"><img src="https://ic-ph-nss.xhcdn.com/a/M2M0OWM2Y2YxNjA2NjU4MzQ0Y2U4OWIwNzMxZDcyOTY/jpeg/000/511/962/898_450.jpg"><br>EstefaniaErotica blows KenHCore&#039;s cock.</a> 17',
+'<a href="https://xhamster.com/photos/gallery/pov-photos-of-estefaniaeroticas-juicy-milf-cunt-15892530"><img src="https://ic-ph-nss.xhcdn.com/a/NWFhYjc2YTRjNTdkNGJiYTIzMDQ2NzRiNDQzMDQ1Y2U/jpeg/000/511/962/773_450.jpg"><br>POV photos of EstefaniaErotica&#039;s juicy milf cunt.</a> 16',
+'<a href="https://xhamster.com/photos/gallery/estefaniaerotica-loves-her-g-spot-dildo-pussypics-15891350"><img src="https://ic-ph-nss.xhcdn.com/a/NGJkZmNhODUwOWQzZDZjMTdiOTdhNzRkZTMyNDNhOTk/jpeg/000/511/940/265_450.jpg"><br>EstefaniaErotica loves her G-Spot dildo - PussyPics</a> 11',
+'<a href="https://xhamster.com/photos/gallery/beautiful-milk-cartons-my-big-natural-breasts-16026506"><img src="https://ic-ph-nss.xhcdn.com/a/MjA3MzA3NmUwMmFlOGVkODA0YTE4ODU2NmI1ZGY2ZTU/jpeg/000/514/434/807_450.jpg"><br>Beautiful milk cartons. My big natural breasts.</a> 11',
+'<a href="https://xhamster.com/photos/gallery/we-wish-you-a-sparkling-second-advent-15967870"><img src="https://ic-ph-nss.xhcdn.com/a/MzIzYjJlNTNkMTc0OWEyODZkMjAzMmI4YTY4YWU3OTk/jpeg/000/513/596/571_450.jpg"><br>We wish you a sparkling second advent</a> 1',
+'<a href="https://xhamster.com/photos/gallery/spieglein-spieglein-an-der-wand-15968614"><img src="https://ic-ph-nss.xhcdn.com/a/MjVlZDQ3ZTA3YTQxNDU3NzNjMDQyMGE1ZTM3ZjM5NmM/jpeg/000/513/603/334_450.jpg"><br>Spieglein Spieglein an der Wand...</a> 1',
+'<a href="https://xhamster.com/photos/gallery/milf-estefaniaerotica-gets-a-pussy-cum-shower-15901803"><img src="https://ic-ph-nss.xhcdn.com/a/Y2ZiOWQxMjU2YTk3M2JiNzM4NDAyNmE4YzYyMzU5ZjE/jpeg/000/512/174/247_450.jpg"><br>Milf EstefaniaErotica gets a pussy cum shower</a> 1',
+'<a href="https://xhamster.com/photos/gallery/a-big-tit-cum-load-15981768"><img src="https://thumb-p3.xhcdn.com/a/6nzRFUzYdVLC2WOX6zT0Sg/000/513/768/953_240.gif"><br>A Big Tit-Cum-Load</a> 1',
+'<a href="https://xhamster.com/photos/gallery/a-big-tit-cum-load-15981759"><img src="https://thumb-p1.xhcdn.com/a/t2NYvttZ9nYd0SoNUggGYA/000/513/768/881_240.gif"><br>A Big Tit-Cum-Load</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "estefaniaerotik"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

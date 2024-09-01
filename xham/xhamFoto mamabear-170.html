@@ -1,0 +1,132 @@
+<base target="_blank"><html><head><title>mamabear-1Batch: 70</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">mamabear-1Batch: 70</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/mamas-boobs-2-16103751</k>',
+'Mzk5MzhmOWI5ZGVjNjZiOTQ2MTEyM2FlNzZmOTRhYjI/jpeg/000/515/467/901',
+'OWJiN2Q3MDAxY2I0MjU0MmU4OGU2MTc4OGEyYmY1OTA/jpeg/000/515/467/889',
+'NGI4Yjc1YTkwY2NjNDZmZGY2MmNkYjI0N2Y1NThkOWU/jpeg/000/515/467/898',
+'YzkxN2U2NDBjYzRhYTY3ODk1YWFkOTBhOTA5MjJmNmU/jpeg/000/515/467/897',
+'ZTEyZTc2ZjA4ODZiYTlhYzFlNzkxMjRhZDk2NTJkOTA/jpeg/000/515/467/895',
+'ZTg1OTY3ZDI2ZTUxZDQwMTM5ZmNkYWE1MmQyOWYwZDk/jpeg/000/515/467/894',
+'YThhY2M0YWM0MWYyMzgwOWU0OWZhOGU5NTEwMDJlNzI/jpeg/000/515/467/896',
+'NjUzMmQwOGExZTJhMjlhOTgxZGVhMzJhYWZiOWIxNGM/jpeg/000/515/467/900',
+'OWU0MWFkYmI5MzJjODFhYTA4YzYyY2I5NjMxMDZkZmI/jpeg/000/515/467/899',
+'<k>https://xhamster.com/photos/gallery/mamas-boobs-16010018</k>',
+'NTQ0YTg2YjcxMDBhMzQxMGZlM2ExNGY3MThkNTE0NTk/jpeg/000/514/201/901',
+'MzllOTJkYzI5NDAyNjNkNDY0NmIyNjY0MTRmNjAyNzM/jpeg/000/514/201/900',
+'N2QwMjNjYjNmZjdlNGZkZDFiZDEzMDAyZGEwMDYwNzM/jpeg/000/514/201/899',
+'MTA3ZTFlMWQ1ZDc0OTEzZDE0NjM2ZGEwNDE0ZWQ3ZTA/jpeg/000/514/201/897',
+'NWJhNDM2YzIxYTBiMzI0YWU1YjE4MWNmZTY2Yjk2OTI/jpeg/000/514/201/885',
+'Njg1OWNkZGZjODZmYzA5YzM1YWFmMWVkZWRjZjAxZjE/jpeg/000/514/201/877',
+'YThlZTg5YTI5NTBhZGZlODU0ZjEwZjk3NWE2NzI2ZGY/jpeg/000/514/201/866',
+'NDg5YjliOWRjNmI2OGNjZDYxMGUwNThlYmUxNDRkMWU/jpeg/000/514/201/859',
+'N2YxYTdkZWUwZTNmYWM4MTg3MWRlZGU0NDRkOGM2ZjI/jpeg/000/514/201/858',
+'YTAzYzMzZmU1OTNiNmNhYmMzNTUzZjdmMDNlOTE1ZDg/jpeg/000/514/201/857',
+'NjY2ZTZmMmI5YWQ4ODQ1MGY4NTNmMzJhZjQ0YmRmMGY/jpeg/000/514/201/856',
+'ZjBiYjM3OWU1YzUzZDM1NGJjMzY1MTA5NjExOTBlZGI/jpeg/000/514/201/855',
+'Y2UzNTIzOWZlNzhmMzA0ODE3YjkzZTVlMzhiYWQ1ZmE/jpeg/000/514/201/854',
+'NWQzODQxMDJiYTZhNGVjYmI4MTYwODE2OGU1M2IyMzY/jpeg/000/514/201/853',
+'MjJlZWJiZjQ5ZjBlZGYyNTI5OWMyNmRjZmVjYjU5NGM/jpeg/000/514/201/852',
+'MWIyYjllZmQ5MjFkYmIwNzFiNzc2NDk2ODYxNjA1YWU/jpeg/000/514/201/851',
+'ZTNmZWNhOGRhYjZlMmE5ZmQ1NmM5YjMzNjVhNWQ5YTM/jpeg/000/514/201/850',
+'MjRmMTY0ZmEwODcwN2Q2MDI0NzhiMjYyNmJmYzZlNmY/jpeg/000/514/201/849',
+'MmY2NzM2MzAwODExYjRmMTQyMmRlZmQwZGQxZjlkNTQ/jpeg/000/514/201/848',
+'ZWRlNmUzODQyMjc2ZDE0MzYxYjM0Y2IyMGUxZDc5MWY/jpeg/000/514/201/847',
+'ZGUyNWEyM2I2NWUxZDI5MDZiZjRhNjM3NjM2YjAxYmQ/jpeg/000/514/201/846',
+'YmU0NTczZjUxMjJkMDEzYzBhMjg4NDJmNmRkZTI4Mzk/jpeg/000/514/201/845',
+'YmY2MjNkODVkNTUzNjZjMjQ0MDBkM2RkNjE4NDQ2ZWI/jpeg/000/514/201/844',
+'YzM2ZTNkMDRmMmQ2ZWI5ZWExYzhiZmI1MTc4NTcwMWY/jpeg/000/514/201/843',
+'ZTNmNDJkN2MwNDY5MjkwOTc1ZGFhODBiZTk2Mjc3OTU/jpeg/000/514/201/842',
+'YzdmYjMxYWU0MDc2YzJmNTkxYzE5NmQyNjQ1OWI3MzM/jpeg/000/514/201/841',
+'NDZkODdhYmU4NDk4NThkNWJkOTUwZGUyNGRiODgzN2Y/jpeg/000/514/201/832',
+'N2M1NTU3MGVlY2UzYWM5YTQ2MmFlNzM2ZDU1NWVhOGE/jpeg/000/514/201/831',
+'<k>https://xhamster.com/photos/gallery/mamas-pussy-16014722</k>',
+'YWE3MzRhNTU0NmM0YmM4NTQxZDAxMjMwMTMxMWM3MGU/jpeg/000/514/266/472',
+'MzVkMThiYmIzMGI4N2RmMzFiZjA0NWQ3ZDhlMTM3YWY/jpeg/000/514/266/471',
+'ZGQ0M2JkOThlMWYzM2MwZDYwMTE0MjRmZWFhN2U2MzM/jpeg/000/514/266/470',
+'NDNmYWY2NjZhMmM3NDFiNDA4MWM1NTllZTU0MDNlNTY/jpeg/000/514/266/469',
+'YjIzZDQ3OTg5N2NmMDQ4ZTI0YjkwNjIzNTEyODE4NTU/jpeg/000/514/266/467',
+'ZmQ2OGQxNWJjNjVkNTA2ODQ2MjUwNTk3NzY4YTZhNzU/jpeg/000/514/266/466',
+'Njk3ODIxYmI2NmQ4ZmNhODMwNTBiYTg3Yzk3ZTYzODc/jpeg/000/514/266/465',
+'YmY4ZTA0YjcwZGI5OTllNDE1ZGYyMTI3N2I0MWI4ZWY/jpeg/000/514/266/464',
+'M2M5MDNmNzA4YzFiYjA0YzEyNGJmZjJjZmJiNjJjZGU/jpeg/000/514/266/463',
+'ZWE3OTE4OGNmNjY5NDc1Zjg2ZDc1NzNiODBkZTg2OTU/jpeg/000/514/266/461',
+'OWI3ZmQyMDI1YzVmMzdjNjhlMzVhNDc4NGY2ZjkyNGU/jpeg/000/514/266/460',
+'ZWEwMGJiMTdjOWZhZDczNjBiNzU0M2RjY2EyMmY2YTY/jpeg/000/514/266/459',
+'YmFlYzc3N2JiODI4MTliODY4MTE1YTI2Y2RiNTEwNzM/jpeg/000/514/266/458',
+'Y2I2ODgxZDFlZDRhYjdkODAwYmJmMTZlMzI0ZmM3ODI/jpeg/000/514/266/457',
+'NTRjMTY2M2M0ZWMxOTAxODMwNTFlMmI1NmU2YThmNTI/jpeg/000/514/266/456',
+'ZTBkNThkNjkzYmEzMGIyYmFlNWZlZjdlMmI0ZTFmMWE/jpeg/000/514/266/455',
+'YTQ0YWI1M2Q0MTdmMjg2NDFkMDZkYWFmMWZkNjU4MmQ/jpeg/000/514/266/454',
+'MzNiYWFjN2FjYjliODdjYjdiNTUxOTc1MTU5NzhkZTE/jpeg/000/514/266/453',
+'OTg5YzJmNjg1OWJiOGVmZjRhODk3NmIwY2JmY2E5YjE/jpeg/000/514/266/452',
+'MzQ1OTdhMmU5NWEyM2I4MWVlZTk2MGI0OGM2MjVhNjk/jpeg/000/514/266/451',
+'MGQzMzRhMDc1ZWNmNmYyZDA2N2M3Y2E1YTMxNWM2NDM/jpeg/000/514/266/450',
+'ZDgyYmQxYzlmMjg1YTMyMWRhNjFkMjU4NzJjMmMzZDc/jpeg/000/514/266/449',
+'NGNhNjBlZTZjNDE4Yzk1ZjRhMjU4MDMyODNkMTEyN2U/jpeg/000/514/266/448',
+'MWNmZDQ0MGJjZDAzZGYyMGY4ZGQ0MGQ4MzFjYjYyZWU/jpeg/000/514/266/447',
+'NmQwMTlkZmE5NzIxOTZlZmRhOTJhZTdmMWU5NWI5MWE/jpeg/000/514/266/446',
+'OTRiNDhjZTNiMjVhZjVmZTI5NjliN2IyZTY2NTYzZWE/jpeg/000/514/266/424',
+'<k>https://xhamster.com/photos/gallery/pool-fun-16127001</k>',
+'ZGRkYmVkZTY5MDBlMzRhNjhjMzIyMmY0ZTJiOTVlYzA/jpeg/000/515/771/332',
+'<k>https://xhamster.com/photos/gallery/mamas-pussy-16020440</k>',
+'ZTRlNmQ1N2IyNjNlZDNkNjkzZjYzMWQ0Yzk1YWQ4YzU/jpeg/000/514/346/184',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "mamabear-1Batch: 70"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

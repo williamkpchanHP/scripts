@@ -1,0 +1,66 @@
+<base target="_blank"><html><head><title>SPECTORBASS63</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/buggs-sexy-pics-16080805"><img src="https://ic-ph-nss.xhcdn.com/a/ZDVhMjdhODdmYzg5MjgxYjM4N2YyMmQ1NTQ4MDgwOTQ/jpeg/000/515/167/961_450.jpg"><br>Buggs sexy pics</a> 11',
+'<a href="https://xhamster.com/photos/gallery/naked-buggs-16064101"><img src="https://ic-ph-nss.xhcdn.com/a/NjFkMmExZTgxYzVlYzE4ZTVmYzQ1NjY4ZWNhOGJhOGE/jpeg/000/514/953/165_450.jpg"><br>Naked Buggs</a> 7',
+'<a href="https://xhamster.com/photos/gallery/buggs-n-boobs-16060066"><img src="https://ic-ph-nss.xhcdn.com/a/MGM1MmY2ODFiYjI0YzM3MjIzYWVlYWEwNGYwZGZhMTE/jpeg/000/514/900/636_450.jpg"><br>Buggs N Boobs</a> 8',
+'<a href="https://xhamster.com/photos/gallery/lots-of-buggs-16059668"><img src="https://ic-ph-nss.xhcdn.com/a/NjZlZTAwMzY3ODg4ZjhlNDg2NWUzNTVjYjNkZTliMzU/jpeg/000/514/891/551_450.jpg"><br>Lots of Buggs</a> 34',
+'<a href="https://xhamster.com/photos/gallery/pics-of-buggs-16038262"><img src="https://ic-ph-nss.xhcdn.com/a/MWVjOTY4ODUwNjE3ODk1YWJhMzdjYTk5NDRiYmViM2Q/jpeg/000/514/597/336_450.jpg"><br>Pics of Buggs</a> 11',
+'<a href="https://xhamster.com/photos/gallery/buggs-pics-16035605"><img src="https://ic-ph-nss.xhcdn.com/a/YWMzNTc0YzJhZDNmZGIyZjVmNzNmZTNjODNlZWExMGY/jpeg/000/514/553/000_450.jpg"><br>Buggs pics</a> 23',
+'<a href="https://xhamster.com/photos/gallery/just-buggs-16001132"><img src="https://ic-ph-nss.xhcdn.com/a/ODJiNzhkZWRhNmM4ZmM4NWE5YWU2MzVhOGU3MTNmOGM/jpeg/000/514/077/869_450.jpg"><br>Just Buggs</a> 12',
+'<a href="https://xhamster.com/photos/gallery/buggs-n-bass-15995205"><img src="https://ic-ph-nss.xhcdn.com/a/MGViMmE2MDcxNmRjNTBiMTY5M2QyODE1ZjVhMDRiZjQ/jpeg/000/513/980/267_450.jpg"><br>Buggs n Bass</a> 10',
+'<a href="https://xhamster.com/photos/gallery/buggs-pics-15907093"><img src="https://ic-ph-nss.xhcdn.com/a/YjA3NjBhNmRlMTQ5ZDA3OTdkZTg5YWZhNTg4ZmYyOGQ/jpeg/000/512/291/158_450.jpg"><br>Buggs pics</a> 8',
+'<a href="https://xhamster.com/photos/gallery/buggs-pics-3-15899825"><img src="https://ic-ph-nss.xhcdn.com/a/MDMyNThhZjE2N2Q4NjZlMTQ1NjQzNzNhMWZkOWI0OWQ/jpeg/000/512/130/257_450.jpg"><br>Buggs Pics #3</a> 17',
+'<a href="https://xhamster.com/photos/gallery/buggs-being-buggs-15898784"><img src="https://ic-ph-nss.xhcdn.com/a/OWY0YzA0YTIzOTNlN2VjMTdiM2MzZmFlOGEyOWMxNTY/jpeg/000/512/108/987_450.jpg"><br>Buggs being Buggs</a> 29',
+'<a href="https://xhamster.com/photos/gallery/buggs-15897492"><img src="https://ic-ph-nss.xhcdn.com/a/YzZlZGQ0MTVlYWUwODVjNDJiMmFjM2Y5YmVlMTFkZGY/jpeg/000/512/081/080_450.jpg"><br>Buggs</a> 11',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "SPECTORBASS63"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

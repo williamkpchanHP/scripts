@@ -1,0 +1,75 @@
+<base target="_blank"><html><head><title>magic_woman</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/some-more-pics-for-my-darling-16109614"><img src="https://ic-ph-nss.xhcdn.com/a/ZWZiYjc4NjVlOGJmZDZkYzJhOGU3YzI1OTAwMDBkNDU/jpeg/000/515/547/812_450.jpg"><br>Some more pics for my darling </a> 9',
+'<a href="https://xhamster.com/photos/gallery/some-more-magic-for-all-my-fans-16160005"><img src="https://ic-ph-nss.xhcdn.com/a/MDU4M2Q5NTAxYmEyYWRlMWQxNzhmZTkxYTI3MjMzZTk/jpeg/000/516/225/497_450.jpg"><br>Some more Magic for all my fans</a> 9',
+'<a href="https://xhamster.com/photos/gallery/for-all-my-fans-16076042"><img src="https://ic-ph-nss.xhcdn.com/a/ODNjYmYyY2QyMzhlNTBmYWJkYWExZDNhNjQ1YzE1Mzk/jpeg/000/515/101/014_450.jpg"><br>For all my Fans</a> 9',
+'<a href="https://xhamster.com/photos/gallery/endlich-mal-wieder-was-neues-von-mir-16103710"><img src="https://ic-ph-nss.xhcdn.com/a/MWRmMjAxMmY4N2NhNDkwZjYxYWNjZmI0NzRjNzcyYWU/jpeg/000/515/467/480_450.jpg"><br>Endlich mal wieder was Neues von mir</a> 8',
+'<a href="https://xhamster.com/photos/gallery/beautiful-magic-woman-16111751"><img src="https://ic-ph-nss.xhcdn.com/a/MjMyYWU0MTQ0MWIwNTRhNzlmYTNkOWMwOGE2NzI3MGE/jpeg/000/515/573/269_450.jpg"><br>Beautiful Magic_Woman </a> 8',
+'<a href="https://xhamster.com/photos/gallery/another-pumped-pussy-16117771"><img src="https://ic-ph-nss.xhcdn.com/a/ZDIyMDkwZjg0MDExZTA3YTA3ZDBmMDk3YTUwMGQ4YjM/jpeg/000/515/652/911_450.jpg"><br>Another pumped Pussy</a> 8',
+'<a href="https://xhamster.com/photos/gallery/its-a-kind-of-magic-16075379"><img src="https://ic-ph-nss.xhcdn.com/a/ZTQ1YmZmN2QxZjZiZDJiZjU2OTBhOGJkYjZmNzkwNmU/jpeg/000/515/094/421_450.jpg"><br>Its a Kind of Magic</a> 7',
+'<a href="https://xhamster.com/photos/gallery/do-you-like-my-hot-body-16121117"><img src="https://ic-ph-nss.xhcdn.com/a/Y2EwN2E1MDMwNjZkYzE4OWZkNDJiMzQwYjZlMzdjMTI/jpeg/000/515/696/682_450.jpg"><br>Do you like my hot Body?</a> 7',
+'<a href="https://xhamster.com/photos/gallery/pumped-pussy-16079288"><img src="https://ic-ph-nss.xhcdn.com/a/YTk1MGMzMjRhMGQwM2M3YTdiNjgwNDE0ZGNlOTY0MTE/jpeg/000/515/141/556_450.jpg"><br>Pumped Pussy</a> 6',
+'<a href="https://xhamster.com/photos/gallery/the-hottest-pussy-in-the-world-16148360"><img src="https://ic-ph-nss.xhcdn.com/a/ZDdhZDA3NWRmNGYwYTJlOTIzYmM1MmRmY2FmNTk4ODI/jpeg/000/516/081/934_450.jpg"><br>The hottest pussy in the world</a> 4',
+'<a href="https://xhamster.com/photos/gallery/hairy-hot-pussy-16174811"><img src="https://ic-ph-nss.xhcdn.com/a/N2U0ZjM3YjE1ZjQyZmQyYjhlNTA5YjlmNzQyMDA1OGY/jpeg/000/516/399/649_450.jpg"><br>Hairy hot Pussy</a> 4',
+'<a href="https://xhamster.com/photos/gallery/in-my-vacation-16116046"><img src="https://ic-ph-nss.xhcdn.com/a/MmRhNGMyODQ0NjI4YTlkNmUyNDkxMzdkZWVkYjcyYTg/jpeg/000/515/630/846_450.jpg"><br>In my vacation</a> 23',
+'<a href="https://xhamster.com/photos/gallery/magic-woman-in-hot-black-dessous-just-for-my-fans-16118403"><img src="https://ic-ph-nss.xhcdn.com/a/ZWM4MDgwMGU1Njk2MTE5YzcyMmE0ZTE1MDA1YmQ3MmI/jpeg/000/515/660/351_450.jpg"><br>Magic_Woman in hot Black dessous Just for my fans</a> 16',
+'<a href="https://xhamster.com/photos/gallery/rainbow-bbw-16136734"><img src="https://ic-ph-nss.xhcdn.com/a/YmZjNTA0MzRiY2QzMjNiMDkxOTcxNmMyM2QyOWFlNTc/jpeg/000/515/935/461_450.jpg"><br>Rainbow BBW</a> 15',
+'<a href="https://xhamster.com/photos/gallery/lady-in-red-16140046"><img src="https://ic-ph-nss.xhcdn.com/a/NTQxY2VlYjlmYjYxMDRlYzRlZWUzMzQ2ODliYzA5MTM/jpeg/000/515/976/094_450.jpg"><br>Lady in Red</a> 14',
+'<a href="https://xhamster.com/photos/gallery/i-am-so-horny-16129824"><img src="https://ic-ph-nss.xhcdn.com/a/MWRjZTUwOTU2MTVkZTRjZGUxNjg5ZGRkZDk2ZGUzM2I/jpeg/000/515/804/753_450.jpg"><br>I am so horny </a> 13',
+'<a href="https://xhamster.com/photos/gallery/sexy-milf-in-pink-16127006"><img src="https://ic-ph-nss.xhcdn.com/a/M2I5M2E3NDUzOTVmMmU3MjE1NWNkMzc4MGVmMjQ0ZDA/jpeg/000/515/771/353_450.jpg"><br>Sexy Milf in pink</a> 11',
+'<a href="https://xhamster.com/photos/gallery/who-wants-to-marry-me-in-this-dress-16125828"><img src="https://ic-ph-nss.xhcdn.com/a/ZWUzMGYwNjEyNzI5ZDM2OTgxODlkZDZhMTFlODkzYjc/jpeg/000/515/757/467_450.jpg"><br>Who wants to marry me in this dress???</a> 10',
+'<a href="https://xhamster.com/photos/gallery/just-me-15995909"><img src="https://ic-ph-nss.xhcdn.com/a/YzE4MDUzNDEyZjExMTRjYTY3MGVkN2JmYzEyMDJjMGY/jpeg/000/513/989/139_450.jpg"><br>Just me</a> 10',
+'<a href="https://xhamster.com/photos/gallery/for-someone-special-16109609"><img src="https://ic-ph-nss.xhcdn.com/a/MjA0NjRmOTI1NThmYWUzZDQwNzBhOTcyYzRmZWY1Mzc/jpeg/000/515/547/800_450.jpg"><br>For someone special</a> 10',
+'<a href="https://xhamster.com/photos/gallery/black-and-white-16167512"><img src="https://ic-ph-nss.xhcdn.com/a/MGI3OTNmYmQ1YjE4NmE0N2I2YzRiYmU3YjNhZjUxMTk/jpeg/000/516/320/228_450.jpg"><br>Black and White</a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "magic_woman"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

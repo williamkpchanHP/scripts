@@ -1,0 +1,87 @@
+<base target="_blank"><html><head><title>theasiawet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">theasiawet</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'63d2b59e2e801"><img src="https://ei.phncdn.com/videos/202301/26/424173871/thumbs_5/(m=eafTGgaaaa)(mh=T8fe3gIYKo7Acp2m)10.jpg"><br>SUCKING AND LICKING THAT PUSSY ON LOOP',
+'642e2ad20d277"><img src="https://ei.phncdn.com/videos/202304/06/428958321/thumbs_13/(m=eafTGgaaaa)(mh=MgFtYexi3SChIFYf)15.jpg"><br>NAUGHTY BLASIAN TAKES A RIDE TO SQUIRT OUTSIDE',
+'6438485343799"><img src="https://ei.phncdn.com/videos/202304/13/429460051/original/(m=eafTGgaaaWavb)(mh=vtWuU5Avlq5E0i09)10.jpg"><br>NAKED ASS AT WALMART',
+'6445fa28c75ee"><img src="https://ei.phncdn.com/videos/202304/24/430145441/original/(m=eafTGgaaaa)(mh=I9IakQJDVszeTO_S)11.jpg"><br>CAUGHT SQUIRTING AT WORK (ON LOOP)',
+'644f12e69ea7a"><img src="https://ei.phncdn.com/videos/202305/01/430631001/thumbs_9/(m=eafTGgaaaa)(mh=YYLCHUP9twLf3RN4)2.jpg"><br>CAUGHT SQUIRTING AT WORK',
+'64e00dee80888"><img src="https://ei.phncdn.com/videos/202308/19/437700991/original/(m=eafTGgaaaa)(mh=rfvbtYcat7DS4I62)7.jpg"><br>4K BUBBLE BATH DILDO FUCK',
+'650de8014283c"><img src="https://ei.phncdn.com/videos/202309/22/439922591/thumbs_1/(m=eafTGgaaaa)(mh=tDdCvo-oHNJ5YrqH)4.jpg"><br>YOU KNOW YOU WANT THIS PUSSY PT2',
+'650de8014283c&pkey=301287271"><img src="https://ei.phncdn.com/videos/202309/22/439922591/thumbs_1/(m=eafTGgaaaa)(mh=tDdCvo-oHNJ5YrqH)4.jpg"><br>YOU KNOW YOU WANT THIS PUSSY PT2',
+'660b0f218a4b6"><img src="https://ei.phncdn.com/videos/202404/01/450484091/original/(m=eafTGgaaaa)(mh=9y0ogIch3cW6Z8W-)11.jpg"><br>BLONDE SLUT TWERKING NAKED',
+'660c872d5c30c"><img src="https://ei.phncdn.com/videos/202404/02/450541691/original/(m=q5NOZHZbeafTGgaaaa)(mh=Q0AKKEQBdrFDYfzz)0.jpg"><br>Hot Babe Gets Fucked Hard By A Hard Dick - Anny Walker',
+'6614bb414dd53"><img src="https://ei.phncdn.com/videos/202404/09/450824771/original/(m=eafTGgaaaa)(mh=K891AZhJ_TbXQxOK)14.jpg"><br>HOT EBONY ALMOST CAUGHT BY ROOMMATE - VIRTUAL 1 ON 1 SHOWS',
+'661bff5569dd3"><img src="https://ei.phncdn.com/videos/202404/14/451064031/original/(m=eafTGgaaaa)(mh=g5Ajo21jyWKE-bhl)12.jpg"><br>DTW016-女學生的到府半套服務',
+'6631c44d09687"><img src="https://ei.phncdn.com/videos/202405/01/451836681/original/(m=eafTGgaaaa)(mh=4ekY22ue1xfg4Sou)14.jpg"><br>FULL VERSION ON ONLYFANS',
+'6631d7e141aef"><img src="https://ei.phncdn.com/videos/202405/01/451841581/original/(m=qR_WNJZbeafTGgaaaa)(mh=XGacczDKTYsjQCFg)0.jpg"><br>Listen to me, Stepsister! In This Outfit Just for My Dick, not For Work, Whore!',
+'6633c2312d514"><img src="https://ei.phncdn.com/videos/202405/02/451911131/original/(m=qU26NJZbeafTGgaaaa)(mh=Ai4muQF_F72gMxvu)0.jpg"><br>FAMILY XXX - Horny College Stepsis Masturbates in Class Dreaming of Her Bro To Fuck Her',
+'ph6022b52d29127"><img src="https://ei.phncdn.com/videos/202102/09/383290692/thumbs_3/(m=eafTGgaaaa)(mh=sHOqEGtXYprmK9px)6.jpg"><br>EBONY PUSSY SQUIRTS FOR YOU (Like & Subscribe)',
+'ph60aeaef124f3d"><img src="https://ei.phncdn.com/videos/202105/26/388648171/thumbs_7/(m=eafTGgaaaa)(mh=mgOLX03Z-xg56uwq)1.jpg"><br>TEASING MY PUSSY TO LESBIAN PORN (Subscribe)',
+'ph60ef9804ba647"><img src="https://ei.phncdn.com/videos/202107/15/391249371/thumbs_4/(m=eafTGgaaaa)(mh=rR_JsmatF_P7dhj0)1.jpg"><br>LOUD MOANS EBONY CUMS ON HUGE DILDO ',
+'ph617b231923b4e"><img src="https://ei.phncdn.com/videos/202110/28/397147601/thumbs_1/(m=eafTGgaaaa)(mh=REVhi2_GiAKtzkxX)10.jpg"><br>THE BEST SQUIRT EVER (Subscribe)',
+'ph619acf1f6f2e6"><img src="https://ei.phncdn.com/videos/202111/21/398436441/original/(m=eafTGgaaaa)(mh=xPhXIuJpk623VCcI)3.jpg"><br>BLONDE EBONY GODDESS DILDO SUCK & FUCK (Like & Subscribe) NOW ON ONLY FANS!',
+'ph61d295f65b76b"><img src="https://ei.phncdn.com/videos/202201/03/400654711/original/(m=eafTGgaaaa)(mh=oypHjxYh5e1eUnUQ)10.jpg"><br>CHOCOLATE FEET LOVERS JOI',
+'ph62232c78f17c5"><img src="https://ei.phncdn.com/videos/202203/05/404116211/original/(m=eafTGgaaaa)(mh=DmbErgq85pyotK7o)12.jpg"><br>PRETTY EBONY SPREADS & GAPES ASSHOLE ON LOOP',
+'ph62232c78f17c5&pkey=301287441"><img src="https://ei.phncdn.com/videos/202203/05/404116211/original/(m=eafTGgaaaa)(mh=DmbErgq85pyotK7o)12.jpg"><br>PRETTY EBONY SPREADS & GAPES ASSHOLE ON LOOP',
+'ph62b4387c3c8fa"><img src="https://ei.phncdn.com/videos/202206/23/410457841/original/(m=eafTGgaaaa)(mh=AnfM6tusiG5q0sQ7)3.jpg"><br>PINK DILDO MIRROR FUCK',
+'ph62cbcce323118"><img src="https://ei.phncdn.com/videos/202207/11/411534031/thumbs_15/(m=eafTGgaaaa)(mh=X7l58EvGErcP-ZeQ)11.jpg"><br>LIME GREEN G-STRING MIRROR FUCK',
+'ph62e9ec7a1c440"><img src="https://ei.phncdn.com/videos/202208/03/412946321/thumbs_10/(m=eafTGgaaaa)(mh=_KUFGSBEVfvUXNtr)1.jpg"><br>WET ASS PUSSY',
+'ph62f5d683daeb0"><img src="https://ei.phncdn.com/videos/202208/12/413515831/thumbs_1/(m=eafTGgaaaa)(mh=6hzIjVhRrdYCEC-i)3.jpg"><br>AT THE WASHATERIA TWERKING NAKED',
+'ph62f5d683daeb0&pkey=301287441"><img src="https://ei.phncdn.com/videos/202208/12/413515831/thumbs_1/(m=eafTGgaaaa)(mh=6hzIjVhRrdYCEC-i)3.jpg"><br>AT THE WASHATERIA TWERKING NAKED',
+'ph6345f5b52ddc0"><img src="https://ei.phncdn.com/videos/202210/11/417365431/original/(m=eafTGgaaaa)(mh=P-ynk80IVC7BdaNv)11.jpg"><br>THE WET TWERK IN PINK THONG',
+'ph6345f5b52ddc0&pkey=301287441"><img src="https://ei.phncdn.com/videos/202210/11/417365431/original/(m=eafTGgaaaa)(mh=P-ynk80IVC7BdaNv)11.jpg"><br>THE WET TWERK IN PINK THONG',
+'ph635341a7764f0"><img src="https://ei.phncdn.com/videos/202210/22/418014181/thumbs_10/(m=eafTGgaaaa)(mh=zekBMud7hFqQNkJ0)14.jpg"><br>THE WET TWERK IN BLACK G-STRING',
+'ph636c6e8c912cd"><img src="https://ei.phncdn.com/videos/202211/10/419233921/thumbs_1/(m=eafTGgaaaa)(mh=0jVhx8_WXphC4VBn)12.jpg"><br>ITS BETTER WHEN WE CUM TOGETHER',
+'ph6386699f5d03b"><img src="https://ei.phncdn.com/videos/202211/29/420474071/original/(m=q2G664XbeafTGgaaaa)(mh=2xzR7D7ND2BEyifO)0.jpg"><br>LESBIAN PINK PARADISE',
+'ph63a3c5f676f53"><img src="https://ei.phncdn.com/videos/202212/22/421859141/original/(m=eafTGgaaaa)(mh=3gtmvqf-itv2UTBb)11.jpg"><br>LET ME SQUIRT ON YOUR FACE',
+'ph63cf22fb5e2e1"><img src="https://ei.phncdn.com/videos/202301/24/423988321/thumbs_70/(m=eafTGgaaaa)(mh=vCzLSWwYIUY9buP5)6.jpg"><br>A HO LOT OF LESBIAN COMPILATION',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "theasiawet"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

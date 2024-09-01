@@ -1,0 +1,109 @@
+<base target="_blank"><html><head><title>sleepyhollow24</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/shower-15979016"><img src="https://ic-ph-nss.xhcdn.com/a/NjYyODNhZDFhNjhhMmViMmNjNjUyMDY0YWZjODAxN2M/jpeg/000/513/733/219_450.jpg"><br>Shower</a> 9',
+'<a href="https://xhamster.com/photos/gallery/naughty-15971360"><img src="https://ic-ph-nss.xhcdn.com/a/OTJjOGE1NDA5MmRmMWFmOTYxYjJmMzliMGRlZGU0OTg/jpeg/000/513/637/272_450.jpg"><br>Naughty </a> 9',
+'<a href="https://xhamster.com/photos/gallery/horny-mommy-16090870"><img src="https://ic-ph-nss.xhcdn.com/a/OGQ4OTQwZjQ1NTU0NmM0MWQ4MGFmMjhmYWQwM2I5NjU/jpeg/000/515/301/978_450.jpg"><br>Horny Mommy</a> 83',
+'<a href="https://xhamster.com/photos/gallery/mommy-s-milk-15969743"><img src="https://ic-ph-nss.xhcdn.com/a/NTY3NTE2N2QyYWI5ZGY3OWUzMDZjOGI3ZjI0YTBmYWQ/jpeg/000/513/619/723_450.jpg"><br>Mommy’s Milk</a> 8',
+'<a href="https://xhamster.com/photos/gallery/hot-shower-15975575"><img src="https://ic-ph-nss.xhcdn.com/a/ZWU3MjUwYTZhYzk5Y2IxYTU2OGYzYWM2NDYyNDk3YzA/jpeg/000/513/682/150_450.jpg"><br>Hot Shower</a> 8',
+'<a href="https://xhamster.com/photos/gallery/horny-milf-16111128"><img src="https://ic-ph-nss.xhcdn.com/a/MDlmNWY4ZWMxYTMzNTJkZjdiZjQ2YWNlODZhMTYxMmI/jpeg/000/515/564/855_450.jpg"><br>Horny MILF </a> 8',
+'<a href="https://xhamster.com/photos/gallery/wet-shower-15974248"><img src="https://ic-ph-nss.xhcdn.com/a/OWZhNzVkZjliNWE3Njk5NGY0NjZhZGNkMTUwNGRjNGI/jpeg/000/513/666/526_450.jpg"><br>Wet Shower</a> 7',
+'<a href="https://xhamster.com/photos/gallery/horny-princess-15980819"><img src="https://ic-ph-nss.xhcdn.com/a/N2Q0NGRiMjU4MWU5NzM5OGM3NjM4NmJmMWU1MWFmODY/jpeg/000/513/755/143_450.jpg"><br>Horny Princess</a> 7',
+'<a href="https://xhamster.com/photos/gallery/horny-milf-16097221"><img src="https://ic-ph-nss.xhcdn.com/a/MTg4NWJiNTk0ZjdiODkxMjBlZWE0ODU1MTIzYTMxZTM/jpeg/000/515/386/677_450.jpg"><br>Horny Milf</a> 7',
+'<a href="https://xhamster.com/photos/gallery/horny-milf-15982052"><img src="https://ic-ph-nss.xhcdn.com/a/ZDExNTI2ZmE0ZWZlZjU1NTU1MzBhYjNkOGMzNjgyN2M/jpeg/000/513/771/966_450.jpg"><br>Horny MILF</a> 7',
+'<a href="https://xhamster.com/photos/gallery/daddy-s-girl-15968566"><img src="https://ic-ph-nss.xhcdn.com/a/MmZhZTgyY2U2YmVlMDc1YTI5N2UwYzlkZDdiODY1ZmE/jpeg/000/513/602/692_450.jpg"><br>Daddy’s Girl</a> 56',
+'<a href="https://xhamster.com/photos/gallery/horny-fertile-milf-16093040"><img src="https://ic-ph-nss.xhcdn.com/a/Y2ViNjMyNjk4N2RjZGQzN2Y3ZTU5NDgxMmFmZTc5ZjQ/jpeg/000/515/329/806_450.jpg"><br>Horny Fertile Milf</a> 40',
+'<a href="https://xhamster.com/photos/gallery/pillow-humping-16097011"><img src="https://ic-ph-nss.xhcdn.com/a/NDE4NWUzYjEzOWUzNWYzNzllMjkyMTY3YmRjMTdjM2M/jpeg/000/515/384/292_450.jpg"><br>Pillow Humping</a> 4',
+'<a href="https://xhamster.com/photos/gallery/horny-mommy-16093409"><img src="https://ic-ph-nss.xhcdn.com/a/YzhiNTMwZGJlYTE1MzUyYjYyZGE0YjdkYjg5MzY5Mjc/jpeg/000/515/333/900_450.jpg"><br>Horny Mommy</a> 37',
+'<a href="https://xhamster.com/photos/gallery/daddy-s-girl-16098531"><img src="https://ic-ph-nss.xhcdn.com/a/ZmI1MmYxMWUzNTRjODIxNGMyY2Q2ZjdmNTY0MjQyMjU/jpeg/000/515/401/255_450.jpg"><br>Daddy’s Girl</a> 31',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-15999986"><img src="https://ic-ph-nss.xhcdn.com/a/MWNkYTI0MGFkNzUxZjkwZWFlMWFiNjdiMWI4M2Y3MmQ/jpeg/000/514/050/160_450.jpg"><br>Sexy Lingerie </a> 30',
+'<a href="https://xhamster.com/photos/gallery/horny-mommy-16110730"><img src="https://ic-ph-nss.xhcdn.com/a/MWYxN2M1ZTJlYjliYzNkMDI3ZTFlMGZjNGVhMGI3YjY/jpeg/000/515/559/849_450.jpg"><br>Horny Mommy</a> 3',
+'<a href="https://xhamster.com/photos/gallery/horny-milf-16091214"><img src="https://ic-ph-nss.xhcdn.com/a/NmU4NGMwN2VkOWI1NTk1NmQyZWE4ZjI4MGJiN2RkZjA/jpeg/000/515/306/369_450.jpg"><br>Horny MILF </a> 26',
+'<a href="https://xhamster.com/photos/gallery/school-girl-16088519"><img src="https://ic-ph-nss.xhcdn.com/a/NjczMTk5NmQzZjhhNmUyNjEyNzhkMTg4ODk3Y2I0ZGU/jpeg/000/515/273/952_450.jpg"><br>School Girl </a> 24',
+'<a href="https://xhamster.com/photos/gallery/horny-princess-15969821"><img src="https://ic-ph-nss.xhcdn.com/a/OTMxOWQzYTNhMzUzYjhkMWFkYTYzZjI0M2FjODU1YmY/jpeg/000/513/621/016_450.jpg"><br>Horny Princess</a> 24',
+'<a href="https://xhamster.com/photos/gallery/horny-milf-16095903"><img src="https://ic-ph-nss.xhcdn.com/a/ZGUyZmU0Mjk4MGYzY2QyODQwN2JjOTkwNjQ0OTFiYzY/jpeg/000/515/371/868_450.jpg"><br>Horny Milf </a> 24',
+'<a href="https://xhamster.com/photos/gallery/daddy-s-girl-15968172"><img src="https://ic-ph-nss.xhcdn.com/a/NzlkMzhiNTExNzE2ZjFkMWUyMTY1NzI5MjE1OTQxZTU/jpeg/000/513/600/057_450.jpg"><br>Daddy’s girl</a> 23',
+'<a href="https://xhamster.com/photos/gallery/locker-room-milf-16088521"><img src="https://ic-ph-nss.xhcdn.com/a/NDIwZTc4OWU1MGU5Y2U2YjYxNTliNjUxNDVlODhhZDI/jpeg/000/515/273/969_450.jpg"><br>Locker Room Milf</a> 22',
+'<a href="https://xhamster.com/photos/gallery/horny-milf-16088518"><img src="https://ic-ph-nss.xhcdn.com/a/NGEyYTgwOTNhODdlMWJhY2Q2NDAwNjVlZWU2OGY5MzM/jpeg/000/515/273/940_450.jpg"><br>Horny Milf</a> 21',
+'<a href="https://xhamster.com/photos/gallery/horny-mommy-16092276"><img src="https://ic-ph-nss.xhcdn.com/a/NTMyMjk1OWM3ODZhYmEzMDBlYTI4NmQ4NzZhZDIxZDk/jpeg/000/515/320/817_450.jpg"><br>Horny Mommy</a> 20',
+'<a href="https://xhamster.com/photos/gallery/daddy-princess-15968570"><img src="https://ic-ph-nss.xhcdn.com/a/MzcwNGMwNzU0Y2Y1MzY4ZWJiNmQxMTg1NDgwMmMxNzM/jpeg/000/513/602/777_450.jpg"><br>Daddy/ Princess</a> 20',
+'<a href="https://xhamster.com/photos/gallery/horny-mommy-16096747"><img src="https://ic-ph-nss.xhcdn.com/a/YjMyYWI2MWQ1YzJjODMyOWU0MjIwZmNhOTA1YmI3Yzg/jpeg/000/515/381/661_450.jpg"><br>Horny Mommy</a> 2',
+'<a href="https://xhamster.com/photos/gallery/horny-milf-16097339"><img src="https://ic-ph-nss.xhcdn.com/a/ZDAxNjMyMDY3MzcwNWRkNWYzYTFlODI4NTllNjcxODA/jpeg/000/515/387/754_450.jpg"><br>Horny Milf </a> 2',
+'<a href="https://xhamster.com/photos/gallery/horny-milf-16097338"><img src="https://ic-ph-nss.xhcdn.com/a/M2MyOTQwMzY1YjY5ZjVhZjI2ZDU4N2M2NWFkNGMzNzg/jpeg/000/515/387/752_450.jpg"><br>Horny Milf</a> 2',
+'<a href="https://xhamster.com/photos/gallery/gothic-milf-16088529"><img src="https://ic-ph-nss.xhcdn.com/a/MTNlYTI4YmJiZmE3ZTliMjRjMDA0MDNmNzljOGJmZGQ/jpeg/000/515/274/079_450.jpg"><br>Gothic Milf</a> 19',
+'<a href="https://xhamster.com/photos/gallery/bondage-15969745"><img src="https://ic-ph-nss.xhcdn.com/a/ZTJjMWYzZWZhMmE1MzI0YjFhZGVmYjZlZWNmZDNmZTQ/jpeg/000/513/619/739_450.jpg"><br>Bondage </a> 19',
+'<a href="https://xhamster.com/photos/gallery/sexy-pics-15994810"><img src="https://ic-ph-nss.xhcdn.com/a/NDY0ZTVmNTNjNzhjYWY4YWM3YjEyMmYyMTRmZDE4ZTE/jpeg/000/513/975/299_450.jpg"><br>Sexy Pics</a> 18',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-15995511"><img src="https://ic-ph-nss.xhcdn.com/a/YjAzNjA3OTUwOTQ3YzJjNjRlYTRiMzY5ODZmMzJkNmY/jpeg/000/513/984/481_450.jpg"><br>Sexy Lingerie </a> 18',
+'<a href="https://xhamster.com/photos/gallery/horny-mommy-16091578"><img src="https://ic-ph-nss.xhcdn.com/a/OTgwMmNhYjBhY2U0OWExZTkzNzIxM2E2YTkzOTYyNTM/jpeg/000/515/311/191_450.jpg"><br>Horny Mommy</a> 17',
+'<a href="https://xhamster.com/photos/gallery/closer-15985808"><img src="https://ic-ph-nss.xhcdn.com/a/ZTg4NjkwYjE4YjkzNTBhMGNiOGQxYzZhYzUzYzFkZDk/jpeg/000/513/850/019_450.jpg"><br>Closer!</a> 17',
+'<a href="https://xhamster.com/photos/gallery/bdsm-play-15983941"><img src="https://ic-ph-nss.xhcdn.com/a/M2QzNGE1Y2I4MjdlMGM4MWYwZjAwZWU0N2FmYTFkYWU/jpeg/000/513/809/101_450.jpg"><br>BDSM Play</a> 16',
+'<a href="https://xhamster.com/photos/gallery/wet-bikini-16088526"><img src="https://ic-ph-nss.xhcdn.com/a/NTBkOGYwMmYxNDA2ZDMyMzJiNTgyMDliZDBiMDk3Mjc/jpeg/000/515/274/027_450.jpg"><br>Wet Bikini </a> 15',
+'<a href="https://xhamster.com/photos/gallery/shower-sex-16098530"><img src="https://ic-ph-nss.xhcdn.com/a/Y2I3ZWRlZDA3MTgyNTY1NDIzZDU5NzUyY2IzMGQyMDQ/jpeg/000/515/401/210_450.jpg"><br>Shower Sex</a> 15',
+'<a href="https://xhamster.com/photos/gallery/hot-shower-15987746"><img src="https://ic-ph-nss.xhcdn.com/a/YWJmYWY5YzM0NGJmNDNjYmM4MDk5MzM5OTQyNGQxZjA/jpeg/000/513/871/256_450.jpg"><br>Hot Shower</a> 15',
+'<a href="https://xhamster.com/photos/gallery/horny-15969049"><img src="https://ic-ph-nss.xhcdn.com/a/OTM4YmQyODNiNmY2YWRhN2JhYzU0MDE4ZTQ3ZmI3M2Y/jpeg/000/513/610/258_450.jpg"><br>Horny</a> 15',
+'<a href="https://xhamster.com/photos/gallery/holiday-hoe-16101620"><img src="https://ic-ph-nss.xhcdn.com/a/Yzg5YjA2ZDE0YjNlMWZhOTMzODZhN2I5MDIxMzExZjA/jpeg/000/515/438/227_450.jpg"><br>Holiday Hoe</a> 15',
+'<a href="https://xhamster.com/photos/gallery/daddy-s-girl-15991231"><img src="https://ic-ph-nss.xhcdn.com/a/YTVhMTUwMDQyMTk2MzA1ZjhkODEzNWYxZTZhM2JiM2E/jpeg/000/513/931/702_450.jpg"><br>Daddy’s Girl</a> 15',
+'<a href="https://xhamster.com/photos/gallery/horny-mommy-16088528"><img src="https://ic-ph-nss.xhcdn.com/a/MzE3NDQ4MDdlYmJhNzI2MDYyNGUwNGFiODEyYTk1ZmY/jpeg/000/515/274/046_450.jpg"><br>Horny Mommy</a> 14',
+'<a href="https://xhamster.com/photos/gallery/daddy-princess-play-15973978"><img src="https://ic-ph-nss.xhcdn.com/a/Y2JkMDRjMTI4ZDYxYWI4MmM5YThjMWIyZGFmZTQ2NzU/jpeg/000/513/663/766_450.jpg"><br>Daddy/Princess Play</a> 14',
+'<a href="https://xhamster.com/photos/gallery/close-ups-16107848"><img src="https://ic-ph-nss.xhcdn.com/a/ZjUxMjVjM2QzNTgwZGZjYTNmNzI5ZDIzM2U2MWQ1YzU/jpeg/000/515/523/927_450.jpg"><br>Close Ups! </a> 14',
+'<a href="https://xhamster.com/photos/gallery/horny-ariel-16088525"><img src="https://ic-ph-nss.xhcdn.com/a/ZmQxODNlMzQ3MWU2MGU3NDllMWZlMWYxZTcwZDMyNDQ/jpeg/000/515/274/026_450.jpg"><br>Horny Ariel </a> 13',
+'<a href="https://xhamster.com/photos/gallery/shower-fun-16100720"><img src="https://ic-ph-nss.xhcdn.com/a/YmE3OWIxNTNkYWM5NGYyYmJmZGZmZGFlNTNjZWJhNDA/jpeg/000/515/427/950_450.jpg"><br>Shower Fun </a> 12',
+'<a href="https://xhamster.com/photos/gallery/sexy-pics-15993778"><img src="https://ic-ph-nss.xhcdn.com/a/MTNiMmI3MzkwYWIzNGFjY2RhZjk1NTAxNDFhMjA0ZGU/jpeg/000/513/964/306_450.jpg"><br>Sexy Pics</a> 12',
+'<a href="https://xhamster.com/photos/gallery/naked-and-wet-15980737"><img src="https://ic-ph-nss.xhcdn.com/a/YTg1YWZiOTBjOTM1M2ZkODljMmEwYmUzNTBlZGU0YTk/jpeg/000/513/754/466_450.jpg"><br>Naked and Wet</a> 12',
+'<a href="https://xhamster.com/photos/gallery/daddy-s-girl-15991785"><img src="https://ic-ph-nss.xhcdn.com/a/YWU5NGZmYTcyNDkyYWMyODg5ODdiMWIwNTFkZDY3ZmU/jpeg/000/513/938/172_450.jpg"><br>Daddy’s Girl</a> 12',
+'<a href="https://xhamster.com/photos/gallery/strip-tease-15990205"><img src="https://ic-ph-nss.xhcdn.com/a/NzEzMTkzZjBkNzQwNmRjYzY3ODJkYjFhMWY2ZGVhMWU/jpeg/000/513/904/977_450.jpg"><br>Strip Tease</a> 10',
+'<a href="https://xhamster.com/photos/gallery/pregnant-milf-16112713"><img src="https://ic-ph-nss.xhcdn.com/a/MTRjZGIzNDA3OTRiYjg5MmRmNzkzYzcyZDU0ZDRmNWU/jpeg/000/515/585/190_450.jpg"><br>Pregnant Milf</a> 10',
+'<a href="https://xhamster.com/photos/gallery/hot-shower-15996097"><img src="https://ic-ph-nss.xhcdn.com/a/MmY2ZWZjODExYTcxMWQ0YTljYjI1YTdmODA2Mzk3MjI/jpeg/000/513/991/095_450.jpg"><br>Hot shower </a> 10',
+'<a href="https://xhamster.com/photos/gallery/role-play-15983859"><img src="https://ic-ph-nss.xhcdn.com/a/ODlmOGUwZDZmNDY0OWY5Njg0YmI3N2E4M2Y2YWI2OTg/jpeg/000/513/807/481_450.jpg"><br>Role play </a> 1',
+'<a href="https://xhamster.com/photos/gallery/belly-button-16103081"><img src="https://ic-ph-nss.xhcdn.com/a/YzE4OGVkYzI2MjU0YjE3NmVkYjM0YWIyZDM3NzI2ZmE/jpeg/000/515/458/341_450.jpg"><br>Belly Button </a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "sleepyhollow24"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

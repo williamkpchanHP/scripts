@@ -1,0 +1,374 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><base target=_blank><style>body { margin: 0%; font-size: 24px; background-color: #000000; color: #109030;}a { text-decoration: none; color: #28B8B8;}a:visited { color: #389898;}A:hover { color: yellow;}A:focus { color: red;}code { color: pink; background-color: #001500}pre { color: gray; background-color: #001010}</style>
+<center>
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width"/>
+<title>shuffle images</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+
+
+<style>
+body {
+  background-color: black;
+}
+html {
+height: 100%;
+  overflow:   scroll;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+body {
+ margin: auto;
+ width: 100%;
+ background-color: #000000;
+ color: #20C030;
+}
+img { width: 100%; display: block; margin-left: auto; margin-right: auto;}
+</style>
+
+</head>
+<body onkeypress="chkKey()">
+<div class="imagearea"> </div>
+<script>
+function chkKey() {
+  var testkey = getChar(event);
+  if(testkey == 'b'){ backward();}
+  if(testkey == 'f'){ foreward();}
+  if(testkey == 'p'){ pause();}
+  if(testkey == 'c'){ continU();}
+}
+
+function getChar(event) {
+  if (event.which!=0 && event.charCode!=0) {
+
+    return String.fromCharCode(event.which)
+  } else {
+    return null // special key
+  }
+}
+
+var ImgList = [
+'<img src="http://www.sex-histories.net/8/bix7/ci_001.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_002.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_003.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_004.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_005.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_006.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_007.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_008.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_009.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_010.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_011.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_012.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_013.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_014.jpg">',
+'<img src="http://www.sex-histories.net/8/bix7/ci_015.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_001.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_002.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_003.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_004.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_005.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_006.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_007.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_008.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_009.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_010.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_011.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_012.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_013.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_014.jpg">',
+'<img src="http://www.sex-histories.net/8/gjs6/ci_015.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_001.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_002.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_003.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_004.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_005.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_006.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_007.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_008.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_009.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_010.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_011.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_012.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_013.jpg">',
+
+
+'<img src="http://www.sex-histories.net/8/jbv7/ci_014.jpg">',
+'<img src="http://www.sex-histories.net/8/jbv7/ci_015.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_001.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_002.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_003.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_004.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_005.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_006.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_007.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_008.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_009.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_010.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_011.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_012.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_013.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_014.jpg">',
+'<img src="http://www.sex-histories.net/9/bfy1/ci_015.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626001.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626002.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626003.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626004.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626005.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626006.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626007.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626008.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626009.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626010.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626011.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626012.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626013.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626014.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626015.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776001.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776002.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776003.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776004.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776005.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776006.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776007.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776008.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776009.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776010.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776011.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776012.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776013.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776014.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776015.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/bCWk4m/lal002002006776016.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955001.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955002.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955003.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955004.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955005.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955006.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955007.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955008.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955009.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955010.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955011.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955012.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955013.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955014.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955015.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955016.jpg">',
+'<img src="http://auntjudys.atkingdom-network.com/secure/content/l/lal008/273199/3000/lal008SFP_273199094.jpg?h=96c8008b5452ccd200d7e17a2aa21f6f&site=4">',
+'<img src="http://auntjudys.atkingdom-network.com/secure/content/l/lal008/273199/3000/lal008SFP_273199047.jpg?h=b765aeeb51755a681931bbdaf545a276&site=4">',
+'<img src="http://auntjudys.atkingdom-network.com/secure/content/l/lal008/273199/3000/lal008SFP_273199081.jpg?h=af67653bcb42c72ca06726145357ac1f&site=4">',
+
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955001.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955002.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955003.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955004.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955005.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955006.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955007.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955008.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955009.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955010.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955011.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955012.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955013.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955014.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955015.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/HKnXw1/lal002002006955016.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934001.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934002.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934003.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934004.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934005.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934006.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934007.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934008.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934009.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934010.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934011.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934012.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934013.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934014.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/eUIu5h/lal002002006934015.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626001.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626002.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626003.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626004.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626005.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626006.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626007.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626008.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626009.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626010.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626011.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626012.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626013.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626014.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/aTBWpd/lal002002006626015.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726001.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726002.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726003.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726004.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726005.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726006.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726007.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726008.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726009.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726010.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726011.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726012.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726013.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726014.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726015.jpg">',
+'<img src="http://galleries.allover30.com/mature/LalaBond/q3zUU7/lal002002006726016.jpg">',
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_02big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_03big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_04big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_05big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_06big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_07big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_08big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_09big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_10big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_11big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_12big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_13big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_14big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_15big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146776_16big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_02big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_03big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_04big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_05big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_06big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_07big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_08big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_09big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_10big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_11big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_12big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_13big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_14big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_15big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-07-22/146775_16big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_02big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_03big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_04big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_05big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_06big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_07big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_08big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_09big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_10big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_11big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_12big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_13big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_14big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_15big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2013-05-31/104261_16big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_02big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_03big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_04big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_05big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_06big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_07big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_08big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_09big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_10big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_11big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_12big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_13big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_14big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_15big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-10-28/158077_16big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_02big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_03big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_04big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_05big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_06big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_07big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_08big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_09big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_10big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_11big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_12big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_13big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_14big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_15big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147906_16big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_02big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_03big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_04big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_05big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_06big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_07big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_08big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_09big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_10big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_11big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_12big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_13big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_14big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_15big.jpg'>",
+"<img src='https://cdn.pornpics.com/pics/2014-08-07/147904_16big.jpg'>",
+];
+
+// Tip Limit counter
+	var listLen = ImgList.length, timer = 25000;
+
+// Generate a number
+function shuffle(array) {
+    var i = ImgList.length, j = 0, temp;
+    while (i--) {
+        j = Math.floor(Math.random() * (i+1)); temp = ImgList[i];
+        ImgList[i] = ImgList[j]; ImgList[j] = temp;
+    }
+    return ImgList;
+}
+
+ImgList = shuffle(Array.from(Array(ImgList.length).keys()));
+
+function changeImg() {
+	if (listLen >= ImgList.length - 1) {
+		listLen = 0;
+	} else if (listLen < 0) {
+		listLen = ImgList.length - 1;
+	} else {
+		listLen = listLen + 1;
+	};
+	showImg();
+};
+function backward() {
+	listLen = listLen - 2;
+	changeImg();
+}
+function foreward() {
+	changeImg();
+}
+function pause() {
+	clearInterval(myVar);
+}
+function continU() {
+	myVar = setInterval(changeImg, timer);
+	foreward();
+}
+function showImg() {
+	var thePointerImg = document.querySelector('.imagearea');
+	thePointerImg.innerHTML = ImgList[listLen];
+	console.log(ImgList[listLen]);
+}
+changeImg();
+var myVar = setInterval(changeImg, timer);
+document.body.style.cursor = "none"
+
+</script>
+
+</body>
+</html>

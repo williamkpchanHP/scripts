@@ -1,0 +1,65 @@
+<base target="_blank"><html><head><title>elizabethsoulmate0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/just-showing-my-big-mommy-heavy-bbw-saggy-breasts-off-again-15790362"><img src="https://ic-ph-nss.xhcdn.com/a/ZGJhNzdmNzY1OTE4MjEyZTY0NWJkYzA3ZDBkMWNiMGU/jpeg/000/497/408/246_450.jpg"><br>Just showing my big mommy heavy bbw saggy breasts off, again</a> 6',
+'<a href="https://xhamster.com/photos/gallery/flashing-in-toilets-at-wor-15788094"><img src="https://ic-ph-nss.xhcdn.com/a/Njk4NzMyMDdjM2NhNzEyZTc2ODRkYzBhODczYjQ1NjY/jpeg/000/496/190/168_450.jpg"><br>Flashing in toilets at wor</a> 6',
+'<a href="https://xhamster.com/photos/gallery/anatomy-of-a-big-brown-bbw-nipple-close-up-and-natural-15788389"><img src="https://ic-ph-nss.xhcdn.com/a/ZDM4YzlkZDUyYjAwMWRmZGY5MTNiYTdhOTViMGQ0ZmI/jpeg/000/496/351/620_450.jpg"><br>Anatomy of a big brown bbw nipple close up and natural </a> 6',
+'<a href="https://xhamster.com/photos/gallery/flashing-in-public-toilets-15788095"><img src="https://ic-ph-nss.xhcdn.com/a/NDhlMWY5OWFmOWNmYjE5NWNlMThkY2FlNzMyYWYyODA/jpeg/000/496/770/248_450.jpg"><br>Flashing in public toilets</a> 5',
+'<a href="https://xhamster.com/photos/gallery/bbw-meaty-hairy-pussy-lips-swollen-clit-huge-labia-15790738"><img src="https://ic-ph-nss.xhcdn.com/a/OGQwZGQ0Y2Y4YjVlY2YwYmM2NWRlZGZlMTBiZmRiMzc/jpeg/000/497/599/293_450.jpg"><br>BBW meaty hairy pussy lips. Swollen clit. Huge labia.</a> 5',
+'<a href="https://xhamster.com/photos/gallery/big-nipples-bbw-with-huge-pendulous-titties-need-sucking-15787701"><img src="https://ic-ph-nss.xhcdn.com/a/Y2ExYzI3NWQ4NGVjMjVlY2NiOTdhOTMzYjg3MzRmYjY/jpeg/000/495/960/642_450.jpg"><br>Big nipples bbw with huge pendulous titties need sucking</a> 4',
+'<a href="https://xhamster.com/photos/gallery/bbw-hairy-meaty-pussy-with-big-labia-needs-eating-15790087"><img src="https://ic-ph-nss.xhcdn.com/a/NmY4NjhkNWYwODRkNjUzY2I4N2I1M2M3NTc2MWExMDg/jpeg/000/497/265/969_450.jpg"><br>Bbw hairy meaty pussy with big labia needs eating</a> 4',
+'<a href="https://xhamster.com/photos/gallery/mommy-needs-to-breastfeed-15787475"><img src="https://ic-ph-nss.xhcdn.com/a/OGMyZTQ1OWE5YmIwMjQyN2QyMGY3OGExYmViNDc5Zjk/jpeg/000/495/871/422_450.jpg"><br>Mommy needs to breastfeed</a> 21',
+'<a href="https://xhamster.com/photos/gallery/my-big-fat-white-ass-needs-a-face-to-sit-on-and-smother-15795188"><img src="https://ic-ph-nss.xhcdn.com/a/ZTRiYzk2MmQ2Yzg3Mjg5ZThjMzQxOThmZGM5YjNmYmM/jpeg/000/499/888/383_450.jpg"><br>My big fat white ass needs a face to sit on and smother</a> 2',
+'<a href="https://xhamster.com/photos/gallery/mature-pussy-with-huge-labia-needs-hairy-cunt-shaving-15787499"><img src="https://ic-ph-nss.xhcdn.com/a/NWUwMmEwMTFiNTE4NTgxMTA1YzNkZWM0MzRjMDMyZDQ/jpeg/000/495/985/061_450.jpg"><br>Mature pussy with huge labia needs hairy cunt shaving</a> 14',
+'<a href="https://xhamster.com/photos/gallery/my-big-round-heavy-bbw-tits-squashed-against-glass-table-15788139"><img src="https://ic-ph-nss.xhcdn.com/a/NzliYmIwOGFlYjhjNDI0M2RkNzI3NTVmYzZjYWM2ZWU/jpeg/000/496/221/904_450.jpg"><br>My big round heavy bbw tits Squashed against glass table </a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "elizabethsoulmate0"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

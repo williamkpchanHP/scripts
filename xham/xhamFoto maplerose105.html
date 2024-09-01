@@ -1,0 +1,167 @@
+<base target="_blank"><html><head><title>mapleroseBatch: 105</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:100%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">mapleroseBatch: 105</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/maplerose-shows-pussy-and-ass-15943950</k>',
+'OTczNDNkMTI2OTFhZmI2ZDlhZmNhOWY5MzMyZTc2MTU/jpeg/000/513/123/092',
+'YmZhZGVmNDdiOGMzNWNkYzUxM2FlZmQ0NWM1OWFkMjI/jpeg/000/513/123/090',
+'Yzk5ZWZkMDhmN2FkYWUzYTBlYmQzN2QyODI1Zjk1Njk/jpeg/000/513/123/089',
+'MDJjMzAwMjAxMGRjM2YwN2E0YTIzYTg5MDAyZDk2YTQ/jpeg/000/513/123/086',
+'YzI3OTZiNzg3YTMzYWIwZjA0ZDM1ZTk4YTQ3NWNjODA/jpeg/000/513/123/085',
+'NzIyZTdjMzk0ZGFmZmRlYWMyMzk3ZmIzYWQ3ODZkMzY/jpeg/000/513/123/082',
+'NTkzNDY4NmE5ZDJjNTExYTcyNzY5ZWM3NWRiNDcwOTY/jpeg/000/513/123/081',
+'NjM1ZTg5OGJiOWJjMWUwZmEwYWQ4MmRmNDMyZWEzYmI/jpeg/000/513/123/080',
+'<k>https://xhamster.com/photos/gallery/showing-off-in-lingerie-15958540</k>',
+'NjBkZTFhNmU1Mjk2ZGRiMmRkYTZjOTBlM2RmZmNiZGE/jpeg/000/513/430/765',
+'YTVhY2I0OGUwMTFhNTJkNzQxYjhiNDk4Njc4MDhlZTk/jpeg/000/513/430/764',
+'ZDFjZjIxODJmNmE5ZmQwZTY4NWRlYmU1NjJlM2EzOGE/jpeg/000/513/430/763',
+'M2E2NmZmMjZiNmM5OGE1ODQzYzY4MDlmODUzNTAzNjM/jpeg/000/513/430/762',
+'OGFjODhiZTMzZDk3MjZkYmQ1MGUwODBjZDQ3MTljNGU/jpeg/000/513/430/761',
+'NmUwNDBiNjIwYTc2M2E3NzMyYTc0NjVmZjU5MmVmZGQ/jpeg/000/513/430/760',
+'MmJkM2JmZGM4ZTMzMWMyMzAzMjgyNjIxMWE5MTBkYmQ/jpeg/000/513/430/759',
+'YWY3OTQ0ZmE5Yjk4NTk1ODhjMTk1MGQ2OTY4ZDJmOTY/jpeg/000/513/430/758',
+'OTI1YmU0YzcxMzU4YjIxZWZmMGU5NzkyMjQ2Y2VlZDk/jpeg/000/513/430/757',
+'YjcyNzdhMWJlMTIxOWQzOGI3Yjk2NmYwNTk2NTRkNzY/jpeg/000/513/430/756',
+'ODIwMjgyMjc1ZTRjNjIzYzVhNGU1NTZmNWRmZTI1NTM/jpeg/000/513/430/755',
+'Y2MxYzc4MjYzM2JmMzc1YmM4MzAxNDA3OGUxMDM0M2Q/jpeg/000/513/430/754',
+'Y2M2YTU5ODI4YzkyMTEwMzQzZGViY2NkNjhkYzFhZWU/jpeg/000/513/430/753',
+'NzkxMWFjYTc1OGIyZTgyZGZhMjFkODg0ODdiNTNhZGY/jpeg/000/513/430/752',
+'YzQ2MTgyYTM2YTY4NmE1N2FiOGY1NjFjMGM0NTdiZjg/jpeg/000/513/430/751',
+'YjA3YWUyZTAyZDQ0MjVlOTVjYzMxYTEwNmU5MjM2M2Y/jpeg/000/513/430/750',
+'YmVkODYzYjdhYjFlNjViZjAwNjU1Yzg4Yjg3ZTcxZjg/jpeg/000/513/430/749',
+'MmE3NDNjNWJmNGJlMThlZmY2NTI0NWM0NzllZmY2N2Y/jpeg/000/513/430/747',
+'M2VkMTVmYjQ1OTg4NjRjNmYwNmE3ZjkzYTNkNWFiYjE/jpeg/000/513/430/746',
+'MGU1NTIxYzVhOTZiZDg1N2I1ODNhNzE1YmY1NDgxYTc/jpeg/000/513/430/745',
+'MTU1YmE0MjU3ZWQ1ODU1YjlmYTNlZTA0MzMyMzM5ZTA/jpeg/000/513/430/744',
+'MmFmYTA5ODRhOGJmZTVlZDQ1Y2ExZWMyYjEyMzBmMmM/jpeg/000/513/430/743',
+'NjIwNTc2OWIxNGYyZGJkYTkxZDM5ZTk5ZmM3NGJmZWU/jpeg/000/513/430/742',
+'ZGEzZGI1NWNmMDA3MDFiYzgyYzI3ODAzZDU3YTUzMTA/jpeg/000/513/430/741',
+'NTRiNGVhZjdkZGIxYTQ1OGU0ZDc0OWIwOGFmZjY5ODU/jpeg/000/513/430/740',
+'NjBjNzY2YTRkMzFmNDVhNTJjOWEyNjAxMjViMTRjOGU/jpeg/000/513/430/739',
+'YjVkNjdhMGJjNzZkZDE2NzZkZjVlMDcyMDczMzEyNTI/jpeg/000/513/430/738',
+'OTQ2NzMzODk1NDViZGZmNzk2ODJhZTE4Mzg0MWE2MTA/jpeg/000/513/430/737',
+'MDM3Yzk4ZmI0ZjE4YzFiYjA2ODdjZGM1OGVjY2NjNTk/jpeg/000/513/430/736',
+'ZTM1YTZjYzk4YjVlZDZhYmRkNTk0ZGJlYmUxYjRlNTA/jpeg/000/513/430/735',
+'ZGJmMzM3ZmE3ZTIzOGY4NTZlODVkMjk2OGMwMzQyNjA/jpeg/000/513/430/734',
+'MGFiY2E4ZTRiMGJmYWM3YTFkYWJhMDE0NzFlNzQ5NDI/jpeg/000/513/430/733',
+'MzMzN2JkMmRjOWU2ZGYzMmY5NjAzNTg3YzNmNjI5ZmQ/jpeg/000/513/430/732',
+'MTNlY2FhZTg2MzNlNDRjNTU0N2YwODYzMTZjMTg2MjY/jpeg/000/513/430/731',
+'Yjc1MjQ2YzVjOWM0MTdmMzM4ZmZlYzYxOGI1OGY1MTI/jpeg/000/513/430/730',
+'ZTM3MTZmMWVkOTNhNmNmNTVlYzQ5MWU5YWQxNTcwZTM/jpeg/000/513/430/729',
+'NjcxMzEzMDI2MTBmNDMwMjM3YzIzMmFkOWI0NTEwMTU/jpeg/000/513/430/728',
+'ZDdmZTUyZDhhMDJiMDkxYjhmOWEyNzM1OThmNGE1OGY/jpeg/000/513/430/727',
+'N2E3ZWYxYzVlOTRkZGY2MzZjOWIwZDhlMWU0N2QyMmY/jpeg/000/513/430/726',
+'ZTk0OGFlYjNjNjU3ZDM0YjdkMjI2MGNkNGNhOWZhM2E/jpeg/000/513/430/725',
+'ZGQxYzNlODMyZTk3Njc3MzY3MDk0ZWYwNzQwYTUwNDg/jpeg/000/513/430/724',
+'ZmUzYWRkM2ZiZDlkMDQwZGRlNzg0MTlmN2JkOGY4OTk/jpeg/000/513/430/723',
+'MmU3YWJiM2M3MDk2MzcyZWQ4NjA3MDc3MTJiZTdjYWM/jpeg/000/513/430/722',
+'ZGM4NTQ4MTczN2ZkZGJmNjEzY2VhYWM4NDA3NTE0NGU/jpeg/000/513/430/721',
+'NjY2MzA2NzcyYTg2NDY1YmYxNWU0NjFlODJiNjZkNWY/jpeg/000/513/430/720',
+'MmYxMGVkMjczMTY5MDNlYjMzNDljOWRkNTE3YjNjM2U/jpeg/000/513/430/719',
+'NzliMWUzYjNkM2ZmOWZjZmQyN2JmNWRlYmEyOTQ3Njg/jpeg/000/513/430/718',
+'MjliNjEyMzU5NWFjYjIxZDQyODFhZDY4MGZmOTdiMzU/jpeg/000/513/430/717',
+'MmI4OTM0ZGE2MzE2MDhiYjRjMmZjYmY2NTBjMTRiZWE/jpeg/000/513/430/716',
+'OGFjNWFjNTQzOTFkZGFmY2IzMzU3ZDY4ZDZmMTBhNzA/jpeg/000/513/430/715',
+'YTZmNGVhMDA1ZjMwY2UzNDA4YjliMzM1ZjVjM2VhZTI/jpeg/000/513/430/714',
+'NDc2OWRmNDQ1MGQ0NDNjYjlkZmVmZjBkN2FiMWMzODk/jpeg/000/513/430/713',
+'ZjA0NzE2ODA5YzRhNmJjMWVlOWZiY2ViOGNlYWFmZTM/jpeg/000/513/430/712',
+'YWU5NmIwZTAwZGE1NTE1MWYzMGQ2YmM3ODk3OTVhNjQ/jpeg/000/513/430/711',
+'ODkwMjhhODE0MDY0MmQ3YzIxOWIwMTBlNmE4ZTM1M2M/jpeg/000/513/430/710',
+'ZDNhMDBkNTk2OTYzZjZjNGEyYTdkODM2N2RhMzYwMzg/jpeg/000/513/430/709',
+'<k>https://xhamster.com/photos/gallery/maplerose-showing-off-her-tits-15943922</k>',
+'ODU1MmVmOWEyNDNiNmE3NTg5NzFlOTlmMzVhMDAyY2Q/jpeg/000/513/122/621',
+'ZDgwZjU4MzIzYTdjMWUyMzQwNTUwOGJjYmFiYTdiNTE/jpeg/000/513/122/620',
+'YzYwMTkxNjNiNjdmMzk1YzVhOWMzZDYzMzA0NjZiYjM/jpeg/000/513/122/619',
+'YjY3YWY1ZjM4MGNiYzcyMzhmMTBjM2I2MTRiMzVmOWM/jpeg/000/513/122/618',
+'MGExYzhiZWNkMjE3NzU4NmViMWZmZGE4NzQ2ZDFiZWU/jpeg/000/513/122/617',
+'ZTJmMjRiYjZjMjFhNGZkMzM0MTdjMWFmZTUwOWMxYjE/jpeg/000/513/122/616',
+'MTliODViMjQwZTE3MGJiZjZkNTBhYTVhNjI3MjU5MTQ/jpeg/000/513/122/615',
+'NjgzMzY4ZjEzYTEyNzQ3NzdkOTY3N2M1YjQ0ZjJkNjM/jpeg/000/513/122/614',
+'Y2NkOTBiZTRmNWE0OTBlYjVmOTIyZGI1ZmNlYjdjNTM/jpeg/000/513/122/613',
+'NTQxNmJlNjI5OWIxOGJmZTQzYjA1OTc2NWY5MWFiNTg/jpeg/000/513/122/611',
+'NjRkYTE3MWI5MGFhYTFhOGJjNmYxNDYyNGU2NjM1NDM/jpeg/000/513/122/610',
+'Njg1YWQ5OGYwZTQwNjRmN2U5NjY3NzNjNDQ2MjA5ZWQ/jpeg/000/513/122/609',
+'MjVkMTFmOTcwM2RhYTY1ZGUxNmQ3NWQ5NzM1OWRkNTk/jpeg/000/513/122/608',
+'YmVlNGQwNDdjOGZkNWNlMmFlODgzYmJkN2YwMGUzNzY/jpeg/000/513/122/607',
+'OTM0MDZlMjVjOTNhNTQwNzMyMzg5MDhjMzg1MGEyMTk/jpeg/000/513/122/606',
+'NmIwNjBmNDNkMGQwZjMwN2Q3YWY2MDA2NWQwNTRjODY/jpeg/000/513/122/605',
+'NWRkZTMwOWU4Zjk5NWYxNzhjOGVlMzMzNTU4YjcyNGU/jpeg/000/513/122/604',
+'MzFmZWU2ODdlNmE2Nzk3NjI0ZGNkNGQ4MDJkY2RkYzQ/jpeg/000/513/122/603',
+'NWJkNGE1YTE0ZGYzMzZlOGE0MTRjMGExMGY0NzBiNGI/jpeg/000/513/122/602',
+'YTIwNjNkNzI1ZTE1NWZhZDQxZThiNDRiNjA1NGY5MmU/jpeg/000/513/122/601',
+'NDIxYWU1ODU3ZGEwOTBjNzE0ZWQ3ZDBkMDJiNmYwNTU/jpeg/000/513/122/600',
+'ODBjZTU0YzExMWUxNTk4NDdlMjI4NmI4MGRhZmJlNjU/jpeg/000/513/122/599',
+'Mzg3YTViOGM1OTUwZmE2ZTE1MmYwOTQ5YmI3MGM0N2M/jpeg/000/513/122/597',
+'Mzg5ODg1MGNmZjdmYmM4MTE1YmYzYTY3ZGIxMGZkNTc/jpeg/000/513/122/596',
+'MWY3YWYxOTg2NjQ0YzM4MmQxYmMyMzkyZTljYThkNzg/jpeg/000/513/122/595',
+'YjNiNGI1YjEyMjE5ZjQxODczNjAyNGE5MTliZDBiMmY/jpeg/000/513/122/594',
+'NzRkOWRiZjcyM2Q3NmNjN2VkY2U0Yzk2YjFlMTM5Y2Q/jpeg/000/513/122/593',
+'YWQ4ZmRkYzM3NmI2YjkzMjVhODg3YjA0OTQ1MDc5ZDM/jpeg/000/513/122/592',
+'NzBjNDAwYjJhMWVmMGM4NGY3Mzk1ZDE0YjgxZmE1OWI/jpeg/000/513/122/591',
+'MTFlYjNkNDVjNjNiNWE0MWYxN2IzMDMzY2MyMWUyMTY/jpeg/000/513/122/590',
+'NjZjN2IwN2FiODRlMDhmNGQ5ZWZkY2JlNjBiNDEzYmQ/jpeg/000/513/122/589',
+'YjhlMWI0N2RjMjQ3YzRmZjZhMjExY2MxMjBiNmIyZWM/jpeg/000/513/122/588',
+'MmNmNmQ0ZTBhNWVhNTU5NTU3NGM1MjIwN2Q1ZGY3Mjc/jpeg/000/513/122/587',
+'MDQxOTE5NzVhZDM0Mzk5OGMxNjg2ZGEyYjYxOTFiZDQ/jpeg/000/513/122/586',
+'ODU4NDE1ZGRjNzQ1ZjBiZWJhNTdlY2FmNDk3NTA1N2I/jpeg/000/513/122/585',
+'OTMxOGNhYjUxYTc5NDkyODRhNjk1OGMzOWUxN2Q0NTA/jpeg/000/513/122/584',
+'MjU0YmYzODIyZWQzNDU4ZTg2MzQ3YTg2NjZkNjFiZmI/jpeg/000/513/122/583',
+'MjhkYjUwNmFjOWZkYmNjM2FiYjczNzhiNzI4N2Y1NGQ/jpeg/000/513/122/582',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "mapleroseBatch: 105"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

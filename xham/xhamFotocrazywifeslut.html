@@ -1,0 +1,65 @@
+<base target="_blank"><html><head><title>crazywifeslut</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/slave-master-girl-15797127"><img src="https://ic-ph-nss.xhcdn.com/a/ZDUwM2RmMzlkNTcyNGNhN2U1MTRlZDQ0YjA1N2E3MWE/jpeg/000/500/888/458_450.jpg"><br>Slave master girl </a> 8',
+'<a href="https://xhamster.com/photos/gallery/pisswhore-15796840"><img src="https://ic-ph-nss.xhcdn.com/a/ZTRmMzQ0NDA5NTZhNTliNmUzYTBkM2ZhMDg2ZmZjZDQ/jpeg/000/500/727/108_450.jpg"><br>Pisswhore </a> 8',
+'<a href="https://xhamster.com/photos/gallery/humiliated-cunt-15796544"><img src="https://ic-ph-nss.xhcdn.com/a/NWE4MTc3YzA5MGVmMGNlNGMzZDBmNWYwMTYxMGE5ZGQ/jpeg/000/500/574/525_450.jpg"><br>Humiliated cunt</a> 6',
+'<a href="https://xhamster.com/photos/gallery/my-huuuuuuuge-cunt-15904572"><img src="https://ic-ph-nss.xhcdn.com/a/MmJhNGI4MmQyNTdhZmMxMDdlZjYzZTZkMTkwOTQ1ZTg/jpeg/000/512/235/088_450.jpg"><br>My huuuuuuuge CUNT</a> 2',
+'<a href="https://xhamster.com/photos/gallery/gaped-and-stretched-holes-15805223"><img src="https://ic-ph-nss.xhcdn.com/a/MzU0ZWIzZjZlZWY2NWFkZjE1NWYxNDkwZDY5OTc0MWU/jpeg/000/505/019/632_450.jpg"><br>Gaped and stretched HOLES </a> 17',
+'<a href="https://xhamster.com/photos/gallery/double-fisting-fun-15801182"><img src="https://ic-ph-nss.xhcdn.com/a/MTNhNDlmZDA4YzI4OGU3YmI3Nzg0ZDY3N2Y5NzUyNjg/jpeg/000/503/017/632_450.jpg"><br>Double fisting fun</a> 15',
+'<a href="https://xhamster.com/photos/gallery/daddy-treated-me-like-a-piece-of-meat-15807797"><img src="https://ic-ph-nss.xhcdn.com/a/NmMwZGU0MDQ1YzM4ODFkMTQ2ZDEwYmQ3YjAwZjZkMTE/jpeg/000/506/101/538_450.jpg"><br>Daddy treated me like a piece of meat </a> 15',
+'<a href="https://xhamster.com/photos/gallery/crazywifeslut-wrecked-holes-15957810"><img src="https://ic-ph-nss.xhcdn.com/a/NGJmNDY1ZDZkMmY2YmFkMTE2NmE1ZTQ4MTRjNTYxODQ/jpeg/000/513/414/653_450.jpg"><br>CrazyWifeSlut Wrecked holes</a> 12',
+'<a href="https://xhamster.com/photos/gallery/dirty-schoolgirl-15809965"><img src="https://ic-ph-nss.xhcdn.com/a/YzYyNWFmMzc2Y2JjOWQ5OWJlOTUzNGI1YTM2NTg2Zjk/jpeg/000/506/770/577_450.jpg"><br>Dirty schoolgirl </a> 11',
+'<a href="https://xhamster.com/photos/gallery/before-and-after-15798759"><img src="https://ic-ph-nss.xhcdn.com/a/ZGRmZjJhMmZkMWYxYmVkOGFjNGMwOTViOTQ4ZWFjMGQ/jpeg/000/501/687/705_450.jpg"><br>Before and after</a> 10',
+'<a href="https://xhamster.com/photos/gallery/crazywifeslut-pure-gape-16058279"><img src="https://ic-ph-nss.xhcdn.com/a/NzUxM2Y0NDkzZTE4NzUwYjE5N2IxNWYyOWZhMjA2NmE/jpeg/000/514/874/737_450.jpg"><br>CrazyWifeSlut PURE GAPE</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "crazywifeslut"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

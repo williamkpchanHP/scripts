@@ -1,0 +1,110 @@
+<base target="_blank"><html><head><title>simonelive1Batch: 48</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:100%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">simonelive1Batch: 48</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/cunt-16021744</k>',
+'NzYyNzg5MzZiMjUwOTI1MmEwMDMxNmY4YzE5NTViZTY/jpeg/000/514/367/231',
+'ZjMwNWEzNzE5ZjgxOWI2ZWZjMjg1YjhiMDE5NWUwMTY/jpeg/000/514/367/230',
+'YzA0ZTIyODgyZTZmYjVhYzFlYjgyNDg5ODdiMDEzZTg/jpeg/000/514/367/229',
+'NTdiN2M4ZDgwMjRhOTQ4YWE4NWUwZTk3MDc3YmQ3ODg/jpeg/000/514/367/228',
+'Mzc0NTQ5ZDViNWY1YTZlNzQzMTA5MGUyOGNiMzNjYjY/jpeg/000/514/367/227',
+'MzcyNTgxZjM3MjdmZjBhMzNjNmIwMDI2NTVmNzc4NTk/jpeg/000/514/367/226',
+'OGI4Zjc4ZjY1OWEzNTJkYWQzNWMxMDcxNTQwMzk0ZWQ/jpeg/000/514/367/225',
+'<k>https://xhamster.com/photos/gallery/pictures-for-heilbutti-16123503</k>',
+'MDAwZTg5MGM1YjkwYTM5ZThiMWI1OGE1MWI3NzU4YzU/jpeg/000/515/726/584',
+'M2ZjZmE0M2YwZTNlMjEyYjBmMmU4NDcwMTU5MzJkM2E/jpeg/000/515/726/583',
+'YjlmODhjM2UyZWI2ZDMxMDUyZDc1ZDRhZmExNjQ2MTc/jpeg/000/515/726/582',
+'ODY2YmE4OTM2MWE5YWNlN2VhNGRkZjAwZmEyMzc3ZTU/jpeg/000/515/726/581',
+'ZjRiOWVhOGEwOWY1ZWRjNmU4NTIzYmUxZjUyNzE5MDQ/jpeg/000/515/726/580',
+'NGU3NTA0OTY1NmUzZDg2YjBkZGQ5NTVmOTk3ZjJjOWE/jpeg/000/515/726/578',
+'<k>https://xhamster.com/photos/gallery/wish-images-for-budy8219-16040402</k>',
+'Mjg0MGYxN2MzMWJjOWMwYzdlYjA5MzliYzYyNDNiMGE/jpeg/000/514/621/093',
+'NmM0NjFlZTliYjFlZmRjYTkwZDFlMjE1NTBjMWZjYzI/jpeg/000/514/621/092',
+'MjEzNGRmNGMyZDNlYWUzYzYxYjRlOWFkZDQ5ZDI0OGQ/jpeg/000/514/621/091',
+'Mzc3NDczMDJmZmNjZGQ3ZjgyODY3NmEyZDM1ZjIzZmI/jpeg/000/514/621/090',
+'YmQxZDQwYWIyZDYyNjMwOWZkN2Y2NGM0ZmUyZGE5N2E/jpeg/000/514/621/089',
+'<k>https://xhamster.com/photos/gallery/catsuit-2-16066170</k>',
+'NTc0M2NlZTBmNjA3YTM1NjRkYjRiZjYwODMzY2E3OTk/jpeg/000/514/982/307',
+'ZDcwZmQ2ZDRhYTRiYjljNDI3MmUyNmI4YTc4ODlmNjM/jpeg/000/514/982/306',
+'NWUzNjY2M2YyYjU3MmJjYjdkOTViMmZkMTc3YjE2NGU/jpeg/000/514/982/302',
+'ZjZmMDU2Yjc3NjIyZjNhNTUzNGYwOGQ1MGUzMWMxNzc/jpeg/000/514/982/301',
+'M2QzY2YyZWQ3NzE4ZTI1ZGQxNjdjZmRkM2JhZWEyODU/jpeg/000/514/982/298',
+'OTUyMTJkNzk5OGYwOWQwNGUxZGRkZGU1MzZmNGM2ZWY/jpeg/000/514/982/297',
+'YzE5YTQ0YTk1MDkwNjJiYzZiNThiOWNkMDI5YTYxM2E/jpeg/000/514/982/296',
+'ZWFmYjg5Y2EzMzA2NDZhMjNjZTJmYjAyYTM4NGQyNGQ/jpeg/000/514/982/305',
+'YTNlNWUxZjE2ZDJkZWJkNjAyOWI0NWViM2ZmYTg5YzA/jpeg/000/514/982/303',
+'NDZhODMxMDdjNWE2MmNjMDIxYWNmMWJhNzVmZjQ5NDE/jpeg/000/514/982/300',
+'NzYxOGQ3ZDgzMDc1MDlhNDQ4NzhhYWU5NTViMmI5NzE/jpeg/000/514/982/299',
+'NDMyZWM4MjA4NzBlNzc4NDFmYTE1MjE4YTU3OGRlM2U/jpeg/000/514/982/295',
+'<k>https://xhamster.com/photos/gallery/cucumber-16026245</k>',
+'YzA2OTRlNWVkYWEyMmQxMzMwODcyMDgzOWZkYjRmZWE/jpeg/000/514/432/023',
+'NDc1MWZiNTM3NDU5MDkwNDFkMWJiNDE4YmEwYjEyNmI/jpeg/000/514/432/022',
+'MjhjMTFmMjI2YTVmZGNjY2QzZDI4YzdkYmQzNDA4NjY/jpeg/000/514/432/021',
+'NTc4MGYzYzlmMjUzOWEzN2MyOTlkNzQ4YzQ0NThhMDM/jpeg/000/514/432/020',
+'OTZkNTMxMTk3M2M2MWJjZWNkOGQ5ZGU3YmY3MDY4NGU/jpeg/000/514/432/019',
+'NzdmOTdiZGZhNGQ1NzI2YmFiMWFhZjRmYzY0NTBmOTI/jpeg/000/514/432/018',
+'OWQ5MGI4ZGNlNGMzOWRjYzNmOWVkMWM3NTA2MTdmNTc/jpeg/000/514/432/017',
+'M2EyYTdjYTU3YjRhODBhNTg5NzRkYjFmMmY2NjdhZWE/jpeg/000/514/432/016',
+'M2IxNzA1ZjY1NzUzN2QxMDRkMWFkNzQxODEyNDYzNTE/jpeg/000/514/432/015',
+'YTMxNTg4MmZlMTJlMGZlNGZlMDk1MzA4YjQwNjdlMjc/jpeg/000/514/432/014',
+'MThlZjBkNDQzY2IwOTA2ODNiMzY2N2MyNzQ0ZjU5NzM/jpeg/000/514/432/013',
+'<k>https://xhamster.com/photos/gallery/catsuit-16017757</k>',
+'N2M3NTRkN2U4MzkyY2ViNjczMDBjNGQzMTc2ODFkMWU/jpeg/000/514/306/507',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "simonelive1Batch: 48"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

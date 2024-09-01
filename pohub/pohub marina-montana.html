@@ -1,0 +1,88 @@
+<base target="_blank"><html><head><title>marina-montana</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">marina-montana</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'1604351352"><img src="https://ei.phncdn.com/videos/201401/31/22584692/original/(m=eafTGgaaaa)(mh=2n9RJfllcnmJ3h3b)15.jpg"><br>Extremely pierced milf pussy',
+'6430fb7231c64"><img src="https://ei.phncdn.com/videos/202304/08/429099111/original/(m=qT9JIJYbeafTGgaaaa)(mh=Ub5ri4yotsu0fO8B)0.jpg"><br>pierced german milf rough gangbanged',
+'64799e5882e5a"><img src="https://ei.phncdn.com/videos/202306/02/432738291/original/(m=eafTGgaaaa)(mh=EiSA_eWef4JEyF8w)4.jpg"><br>Cumshoot Compilation Germany Actress Part 3',
+'64886544cd058"><img src="https://ei.phncdn.com/videos/202306/13/433464751/original/(m=q_R34OYbeafTGgaaaa)(mh=4C9MbmF-hmP1fvfT)0.jpg"><br>TeamSkeet - Horny Stud Slides His Thick Cock Between Fit Beauty Octavia Reds Bouncy Natural Boobs',
+'64a32943b10f8"><img src="https://ei.phncdn.com/videos/202307/03/434780211/original/(m=qKJZNQYbeafTGgaaaa)(mh=RBY2pN_r9k7ACNa6)0.jpg"><br>German MILF Marina Montana Gets Her Pierced Pussy Eaten By Hot 20yo Girl Linda Leclair',
+'64b6b276b68f7"><img src="https://ei.phncdn.com/videos/202307/18/435727841/original/(m=eafTGgaaaa)(mh=6rEdpFlt80SqQKw7)5.jpg"><br>Stefan Steel fute o milfana in dus',
+'64eec060554e0"><img src="https://ei.phncdn.com/videos/202308/30/438412331/original/(m=eafTGgaaaa)(mh=xcokHoPBTAT7Qovl)15.jpg"><br>destroyed by a brazilian monster cock',
+'65cf6fa6ebf83"><img src="https://ei.phncdn.com/videos/202402/16/448238891/original/(m=qQPG-8YbeafTGgaaaa)(mh=xrzus0nEOAUyaQ3i)0.jpg"><br>MILFED - The Best Prescription In Town Is A Dose Of Naughty Nurse Gogo Fukme And A Horny Jenna Starr',
+'65d86d4512dbe"><img src="https://ei.phncdn.com/videos/202402/23/448575531/original/(m=eafTGgaaaa)(mh=omB5qE-jjl4hUFIy)16.jpg"><br>Morning Sex With Beautiful Stacy Cruz & Charlie Red Full Scene',
+'65e31e07537d8"><img src="https://ei.phncdn.com/videos/202403/02/448970531/original/(m=q6XYN_YbeafTGgaaaa)(mh=FRAogjN5LIIxn-mP)0.jpg"><br>Would you like to taste my squirting? Splash from the anal too<U+0001F4A6>',
+'955818623"><img src="https://ei.phncdn.com/videos/201601/20/66557541/original/(m=eafTGgaaaa)(mh=CNiyHiXtZpgIZU7W)10.jpg"><br>busty extreme pierced Milf gets massive banged',
+'javascript:void(0)"><img src="https://ei.phncdn.com/videos/201911/19/262680982/original/(m=qQ3MN9UbeafTGgaaaa)(mh=w_dITEt2tajQAObO)0.jpg"><br>extreme labia pierced german milf rough fisted',
+'javascript:void(0)"><img src="https://ei.phncdn.com/videos/202106/27/390276381/original/(m=eafTGgaaaa)(mh=_gG2A7iRqif4-UGc)4.jpg"><br>Marina Angel fucks her friends cock and invites him over to enjoy her pussy',
+'javascript:void(0)"><img src="https://ei.phncdn.com/videos/202107/30/392148941/original/(m=qQXWPWWbeafTGgaaaa)(mh=Q1aGtTi-rU0jGE2C)0.jpg"><br>Babe Loves Going To Play With Her Pierced Pussy',
+'javascript:void(0)"><img src="https://ei.phncdn.com/videos/202111/04/397493741/original/(m=eafTGgaaaa)(mh=QjGEAQlb6P6FUu-c)15.jpg"><br>Mature woman with piercings fucks a man with a big beard (MY PERVERTED STEP FAMILY Scene 03)',
+'javascript:void(0)"><img src="https://ei.phncdn.com/videos/202111/08/397703561/original/(m=eafTGgaaaa)(mh=KZiItrkPG25o46Q7)16.jpg"><br>Mature fucks a man in the kitchen (NAUGHTY BUSTY MILFS Marina Montana & Dominic Ross)',
+'ph5b69a6e19e972"><img src="https://ei.phncdn.com/videos/201808/07/177653241/original/(m=eafTGgaaaa)(mh=TMajswm3m6PFwtLp)3.jpg"><br>extreme pierced milf rough banged',
+'ph5c7bdadbbe98d"><img src="https://ei.phncdn.com/videos/201903/03/210978051/original/(m=eafTGgaaaa)(mh=u8flsOc9A8sR1P-V)10.jpg"><br>pierced milf ass fucked by a black monster cock',
+'ph5cb9f53228f42"><img src="https://ei.phncdn.com/videos/201904/19/219153121/original/(m=eafTGgaaaa)(mh=jrJS6TYz3Iy4O2hh)6.jpg"><br>german monstercock gangbang with bengala',
+'ph5d4a661b2657b"><img src="https://ei.phncdn.com/videos/201908/07/240145711/original/(m=q2-700UbeafTGgaaaa)(mh=SqY2mgCCFAkDqPJ-)0.jpg"><br>monster cock anal with kidbengala',
+'ph5d998a1610fcb"><img src="https://ei.phncdn.com/videos/201910/06/253052001/original/(m=qQ4JZ5UbeafTGgaaaa)(mh=c_3o8DPB58dn5ulJ)0.jpg"><br>monstercock oktoberfest groupsex orgy',
+'ph5dd625a5b30a9"><img src="https://ei.phncdn.com/videos/201911/21/263132652/original/(m=qHTRS9UbeafTGgaaaa)(mh=F13pCJsWtCZg7BYp)0.jpg"><br>extreme labia pierced milf rough fisted',
+'ph5e0d8cba59961"><img src="https://ei.phncdn.com/videos/202001/02/273171711/original/(m=qRHM7GVbeafTGgaaaa)(mh=TUgBQ4AifU77JJZ3)0.jpg"><br>mom ass destroyed by a black monster',
+'ph5e26e032e95fa"><img src="https://ei.phncdn.com/videos/202001/21/278255611/original/(m=eafTGgaaaa)(mh=XJ_xizivCQIUV1PA)10.jpg"><br>Facial on Marina Montana',
+'ph5e6c788bb1519"><img src="https://ei.phncdn.com/videos/202003/14/292787841/original/(m=qHXG5MVbeafTGgaaaa)(mh=KrBjDloHl-A8Vd60)0.jpg"><br>stepmoms pussy stretched to the limit',
+'ph5e804ec41cb94"><img src="https://ei.phncdn.com/videos/202003/29/298006051/original/(m=q331GOVbeafTGgaaaa)(mh=fafvENATcWlMzgrL)0.jpg"><br>interracial therapy party orgy',
+'ph5f7035549e3d1"><img src="https://ei.phncdn.com/videos/202009/27/355385422/original/(m=qOWUG3VbeafTGgaaaa)(mh=C-vgegpd1hUlL3an)0.jpg"><br>pierced rough double anal fucked',
+'ph5f7b26904c5c9"><img src="https://ei.phncdn.com/videos/202010/05/357983302/original/(m=q2ON87VbeafTGgaaaa)(mh=47OQoPGIhBMt8JN9)0.jpg"><br>Busty German Housewife likes it rough',
+'ph5fd1c4e544440"><img src="https://ei.phncdn.com/videos/202012/10/378075272/original/(m=qI2ZJ9VbeafTGgaaaa)(mh=qVHrB8VkME2VNuWH)0.jpg"><br>stepmom ass destroyed by a monster cock',
+'ph604f5c0ada38e"><img src="https://ei.phncdn.com/videos/202103/15/385154361/original/(m=qSR9GLWbeafTGgaaaa)(mh=kMRPd25IeavSfOYE)0.jpg"><br>MatureNL - Blonde Mature Friends Having a Naughty Lesbian Affair At Home',
+'ph60863dbf51995"><img src="https://ei.phncdn.com/videos/202104/26/387139241/original/(m=q5-1SOWbeafTGgaaaa)(mh=cfScObbO_BulGUmf)0.jpg"><br>pierced milf deep double anal fucked',
+'ph60d94993a6abc"><img src="https://ei.phncdn.com/videos/202106/28/390313281/original/(m=eafTGgaaaa)(mh=c9IDmwKDsevvb73i)14.jpg"><br>interracial lederhosen party orgy',
+'ph6134c5586120c"><img src="https://ei.phncdn.com/videos/202109/05/394177851/original/(m=eafTGgaaaa)(mh=--KAmb2Pgzxb-v9b)7.jpg"><br>Stefan Steel o fute pe Marina Montana Milf din Germania',
+'ph61aa17c6e5a4f"><img src="https://ei.phncdn.com/videos/202112/03/399067531/original/(m=q7M576WbeafTGgaaaa)(mh=PAE7RXEdwMQOUn-K)0.jpg"><br>Hot Girl Eating Marina Montanas Pierced Pussy With Passion',
+'ph62831fd21c6c6"><img src="https://ei.phncdn.com/videos/202205/17/408230711/original/(m=qOOSMOXbeafTGgaaaa)(mh=0gx9wVhWgrrMEoMO)0.jpg"><br>Marina Montana double ass fucked',
+'ph636352f26eba7"><img src="https://ei.phncdn.com/videos/202211/03/418777601/original/(m=qYYKN2XbeafTGgaaaa)(mh=SAVIuoCx_SFkdqdF)0.jpg"><br>Milf ass destroyed by monstercock',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "marina-montana"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

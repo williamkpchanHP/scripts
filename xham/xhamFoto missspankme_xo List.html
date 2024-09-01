@@ -1,0 +1,71 @@
+<base target="_blank"><html><head><title>missspankme_xo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/closeups-of-my-tight-little-pussy-and-asshole-12465794"><img src="https://ic-ph-nss.xhcdn.com/a/NTQ3MWFjMzYxZmM3NDMyY2FlYTllNTM1MjY2NDg5NGI/jpeg/000/306/997/290_450.jpg"><br>Closeups of my tight little Pussy and Asshole</a> 9',
+'<a href="https://xhamster.com/photos/gallery/posing-in-my-tiniest-skirt-14833456"><img src="https://ic-ph-nss.xhcdn.com/a/ZDU1MmMwMTZlMWI5Y2ZiMTZmMjVlZTk2NzkzNmVkMGQ/jpeg/000/433/520/791_450.jpg"><br>Posing in my tiniest skirt!</a> 8',
+'<a href="https://xhamster.com/photos/gallery/obedience-training-mistress-trains-her-slut-15461600"><img src="https://ic-ph-nss.xhcdn.com/a/ODA5MDQ4MTE2NzBiNzFhNGNlYTllMzgzZjNlZDk1NGY/jpeg/000/468/173/946_450.jpg"><br>Obedience Training.. Mistress trains her slut</a> 7',
+'<a href="https://xhamster.com/photos/gallery/the-moment-when-my-tight-asshole-reaches-that-anal-stretch-15957475"><img src="https://thumb-p2.xhcdn.com/a/MjpoacjCIEFPf0usXD2UMg/000/513/405/982_240.gif"><br>The moment when my tight asshole reaches that anal stretch</a> 5',
+'<a href="https://xhamster.com/photos/gallery/my-tight-anal-rosebud-collection-12-hours-with-my-plug-in-14552273"><img src="https://ic-ph-nss.xhcdn.com/a/M2RlNDI1YjBjZjdiMmY2MDliMzdkNGVlODNlNjFjNGI/jpeg/000/417/907/860_450.jpg"><br>My Tight Anal Rosebud collection! 12 hours with my plug in!</a> 5',
+'<a href="https://xhamster.com/photos/gallery/playing-dress-up-in-my-skimpy-clothes-12465851"><img src="https://ic-ph-nss.xhcdn.com/a/MTQ4ZjFlZjY2NmFlYzNkM2ZiZjljZGE1NGQ0MjU5YTE/jpeg/000/306/999/122_450.jpg"><br>Playing Dress Up In My Skimpy Clothes </a> 20',
+'<a href="https://xhamster.com/photos/gallery/my-tiny-bikinis-can-barely-contain-my-huge-young-tits-15810647"><img src="https://ic-ph-nss.xhcdn.com/a/ZDU2OTg4OTkyZTYyZDM5NWVhNjdhYTMyZjRkM2Q0Yjk/jpeg/000/506/946/214_450.jpg"><br>My tiny bikini&#039;s can barely contain my huge young tits</a> 20',
+'<a href="https://xhamster.com/photos/gallery/slut-in-trainings-tight-asshole-is-being-taught-how-to-gape-15811539"><img src="https://ic-ph-nss.xhcdn.com/a/NjQzMTRlODUwYzM1MWE2MzEyYTI3YjkyOTk5N2YzZTU/jpeg/000/507/241/940_450.jpg"><br>Slut in trainings tight asshole is being taught how to gape!</a> 18',
+'<a href="https://xhamster.com/photos/gallery/big-natural-breasts-slut-waiting-to-be-fucked-on-the-sofa-15921189"><img src="https://ic-ph-nss.xhcdn.com/a/ZTg4YTVkYzg4OGIwZWZhYWE2YjIyOWYzZDk2ZGUyN2M/jpeg/000/512/612/641_450.jpg"><br>Big Natural Breasts Slut waiting to be fucked on the sofa</a> 17',
+'<a href="https://xhamster.com/photos/gallery/my-mistresss-favourite-snaps-of-me-14833425"><img src="https://ic-ph-nss.xhcdn.com/a/ZDY1ZjE2YTMwODhiMmQ1MmU1NmQyMmI1ZmMwMmM2MTQ/jpeg/000/433/519/527_450.jpg"><br>My Mistress&#039;s Favourite Snaps of Me</a> 15',
+'<a href="https://xhamster.com/photos/gallery/flashing-the-neighbours-in-italy-12454590"><img src="https://ic-ph-nss.xhcdn.com/a/ZmUxYmI0Y2MwZDMyZjE2MzVjYzUyN2UxMDk3YzBiMDM/jpeg/000/306/413/318_450.jpg"><br>Flashing the neighbours in Italy</a> 13',
+'<a href="https://xhamster.com/photos/gallery/strapon-bitch-whos-ready-to-take-my-cock-14128675"><img src="https://ic-ph-nss.xhcdn.com/a/YmY1NzAzMDkzNGQ0MGYyYjQxZDZiZjk1OTUwNGZhZTY/jpeg/000/394/907/790_450.jpg"><br>Strapon Bitch - who&#039;s ready to take my cock?</a> 12',
+'<a href="https://xhamster.com/photos/gallery/my-puffy-pumped-pussy-and-huge-tied-tits-13408970"><img src="https://ic-ph-nss.xhcdn.com/a/M2VhN2JhYTA4MWJmNjRiNzNmYTE3Y2YzMTdiZDYyZTA/jpeg/000/356/662/992_450.jpg"><br>My Puffy Pumped Pussy and Huge Tied Tits</a> 12',
+'<a href="https://xhamster.com/photos/gallery/bath-time-with-soaking-big-titted-brit-15613713"><img src="https://ic-ph-nss.xhcdn.com/a/ZDBlNGE4MTBjZThmZTE3MjZjZTZiNWMzZWQ5NmJlNWY/jpeg/000/476/867/120_450.jpg"><br>Bath Time with Soaking Big Titted Brit</a> 12',
+'<a href="https://xhamster.com/photos/gallery/naughty-big-titted-nurse-is-ready-for-her-check-up-15921187"><img src="https://ic-ph-nss.xhcdn.com/a/OTA3NDY1NmI3MjM4MWEyNmFjMzRkNzdlYzgyZmYxNDg/jpeg/000/512/612/635_450.jpg"><br>Naughty Big Titted Nurse is ready for her check-up</a> 11',
+'<a href="https://xhamster.com/photos/gallery/me-being-a-lonely-little-slut-12454660"><img src="https://ic-ph-nss.xhcdn.com/a/NzA2NGVjOTMwYmE3YTE5ZDJjNDBjNGE3Mzc4ZDg0NTc/jpeg/000/306/416/693_450.jpg"><br>Me being a lonely little slut!! </a> 11',
+'<a href="https://xhamster.com/photos/gallery/bound-gagged-and-plugged-for-mistresss-pleasure-14565771"><img src="https://ic-ph-nss.xhcdn.com/a/ZTk0OTAzMjA2MjExMDE2YmVhNWJjYzBmYWI0OWY1YTg/jpeg/000/418/609/584_450.jpg"><br>Bound, gagged and plugged for Mistress&#039;s pleasure</a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "missspankme_xo"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

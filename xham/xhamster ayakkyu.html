@@ -1,0 +1,118 @@
+<base target="_blank"><html><head><title>ayakkyu69</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display: inline-block; width:50%;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">ayakkyu69</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'2-meter-cord-insertion-into-the-urethra-xhBhpYx"><img src="https://ic-vt-nss.xhcdn.com/a/OTM4NTdhZDhkNGMzZjIzNjUzMWZmYzllYzYzMGJiY2I/s(w:320,h:180),jpeg/023/192/597/v2/320x180.208.jpg"><br>2 meter cord insertion into the urethra',
+'a-pear-in-agony-in-the-pussy-xh1hBw2"><img src="https://ic-vt-nss.xhcdn.com/a/NzU4NGQ1MTJmNDRhMTI0YjRmNjVhYTBlOTNkYjE5YTA/s(w:526,h:298),jpeg/024/313/282/1280x720.17079845.jpg"><br>A pear in agony in the pussy',
+'a-whisk-in-the-pussy-xhyvFzQ"><img src="https://ic-vt-nss.xhcdn.com/a/OTkxZTViMTRjY2RlZTA3OTA3NGYwNTA3ZTVhMDAyNDU/s(w:320,h:180),jpeg/023/275/159/v2/320x180.206.jpg"><br>A whisk in the pussy',
+'all-hole-masturbation-xhhkACw"><img src="https://ic-vt-nss.xhcdn.com/a/NGI3ZWI4MGU5MzkzMzg4ODEwYTM0OTIzYTUzZGRmMjA/s(w:320,h:180),jpeg/024/255/383/v2/320x180.209.jpg"><br>All-hole masturbation',
+'an-anguish-pear-xhN7Ycs"><img src="https://ic-vt-nss.xhcdn.com/a/ZjE2ZWNkNTczNDM2YmJjZWQzMDdkNTlmNmYxZTJiNzU/s(w:320,h:180),jpeg/024/325/049/v2/320x180.209.jpg"><br>An anguish pear',
+'anal-extension-xh2HnPC"><img src="https://ic-vt-nss.xhcdn.com/a/NmIwNTIxZGEwZWU2MzM1YTMzYjEwOGQ2YzY0YTY2MjE/s(w:320,h:180),jpeg/019/787/919/1280x720.7.jpg"><br>Anal extension',
+'anal-masturbation-xhbJ8nC"><img src="https://ic-vt-nss.xhcdn.com/a/NDU4MDBmMjdlY2M3NGIyMjBiN2Q4NGQ1MDE1MjE4ZGM/s(w:320,h:180),jpeg/023/185/389/v2/320x180.213.jpg"><br>Anal masturbation',
+'anal-opene-xhvHOv6"><img src="https://ic-vt-nss.xhcdn.com/a/MTkxNTkwMzVlZThjOWM4ODY1YjEzMDUyYjAxYzUzMGU/s(w:320,h:180),jpeg/024/326/601/v2/320x180.206.jpg"><br>Anal opene',
+'anal-stick-insertion-into-the-urethra-xhpOySt"><img src="https://ic-vt-nss.xhcdn.com/a/NmNkMWU4OWExOGM1Mjk1OTJhYTVkOGM2MWU1MGNjYmI/s(w:320,h:180),jpeg/023/251/208/v2/320x180.208.jpg"><br>Anal stick insertion into the urethra',
+'anal-vibe-xhcZvdz"><img src="https://ic-vt-nss.xhcdn.com/a/ODZmM2I3NzQ4ODRiOTAzMzc2OTI0MTgwOTdhYjNkNDc/s(w:320,h:180),jpeg/023/326/956/v2/320x180.212.jpg"><br>Anal vibe',
+'anal-xhqazJl"><img src="https://ic-vt-nss.xhcdn.com/a/M2Q0Y2ZlOWFlYWM3OTRkMWY2NmU0MmNiZDQwZDg0ZDE/s(w:320,h:180),jpeg/024/254/787/v2/320x180.207.jpg"><br>Anal',
+'bladder-paint-injection-xh0UZIo"><img src="https://ic-vt-nss.xhcdn.com/a/Y2M2NGMxNzkxYjUwNzA0ZmExYTgxY2YxYTY4YzNjMWU/s(w:320,h:180),jpeg/023/326/948/v2/320x180.213.jpg"><br>Bladder paint injection',
+'cervical-observation-in-cusco-xhlBztH"><img src="https://ic-vt-nss.xhcdn.com/a/ODhkMTEyMzkxODViZTg0N2FiODQxZmU4NmZjY2I4MjI/s(w:526,h:298),jpeg/024/313/315/1280x720.17080253.jpg"><br>Cervical observation in Cusco',
+'clitoris-piercing-xhBvcG1"><img src="https://ic-vt-nss.xhcdn.com/a/OGExYzU1OGRiMGVkNWY0Y2I4MmM4ODY0YzczMzQyODg/s(w:320,h:180),jpeg/023/329/953/v2/320x180.239.jpg"><br>Clitoris piercing',
+'drill-in-the-pussy-xhFnViM"><img src="https://ic-vt-nss.xhcdn.com/a/YmY0NzQ0YTIxYmU4ZDU0ZjRlYjc2MjhmMjY1MGU4NjE/s(w:320,h:180),jpeg/023/894/796/v2/320x180.207.jpg"><br>Drill in the pussy',
+'i-put-a-2kg-weight-on-the-piercing-and-lifted-it-up-xhMYeLu"><img src="https://ic-vt-nss.xhcdn.com/a/YjYzNzk1NzYxYmViOWYwYzA1ODVmNWU4ZjZhMzcxZTc/s(w:320,h:180),jpeg/024/278/970/v2/320x180.205.jpg"><br>I put a 2kg weight on the piercing and lifted it up.',
+'i-put-a-pen-in-it-after-a-long-time-xhhSZYC"><img src="https://ic-vt-nss.xhcdn.com/a/MWU2YWZkNTU3NTRhYTk1ZjQzODZhMzdkNWFlZTQwZWM/s(w:320,h:180),jpeg/024/230/635/v2/320x180.204.jpg"><br>I put a pen in it after a long time.',
+'i-put-a-pen-in-the-vagina-to-the-limit-xhnoiBt"><img src="https://ic-vt-nss.xhcdn.com/a/ZDRmODI0NmYxNDY1OGM2M2Y2MTM3ZWRiZDkyZmE0YWI/s(w:320,h:180),jpeg/020/033/488/1280x720.6.jpg"><br>I put a pen in the vagina to the limit.',
+'ice-stick-in-the-uret-xhPzEsz"><img src="https://ic-vt-nss.xhcdn.com/a/YzU4YjAyZGI5NGQyNWIzMDVlODhlMTQ2NDViYmRhODY/s(w:320,h:180),jpeg/024/067/585/v2/320x180.205.jpg"><br>Ice stick in the uret',
+'insert-4-in-the-pussy-xhwPVAl"><img src="https://ic-vt-nss.xhcdn.com/a/ZTllMTIyNjExZWM4MDNmMTk2NzEyMGFkMWMzMmI1YjY/s(w:320,h:180),jpeg/023/629/431/v2/320x180.206.jpg"><br>Insert 4 in the pussy',
+'insert-a-balloon-into-the-pussy-and-make-it-burst-xhvZ21K"><img src="https://ic-vt-nss.xhcdn.com/a/MmM3Y2NkMzczNmNmMWY4MjdmNDIyNjE3OGZlZTIzOGU/s(w:320,h:180),jpeg/023/959/648/v2/320x180.201.jpg"><br>Insert a balloon into the pussy and make it burst',
+'insert-a-silicone-tube-into-the-pussy-xhhzArj"><img src="https://ic-vt-nss.xhcdn.com/a/Y2Q3ZmFlNWUxYTMxOGViMGNkNDk0YjQzNzEwNzg5MDU/s(w:320,h:180),jpeg/023/236/377/v2/320x180.213.jpg"><br>Insert a silicone tube into the pussy',
+'insert-disposable-chopsticks-into-the-uterine-mouth-xhNJlP0"><img src="https://ic-vt-nss.xhcdn.com/a/YzNiYjc1YjU2ZjQxMGQ4YmFkOTc3ODIzMTkyNzJmNmY/s(w:320,h:180),jpeg/023/270/697/v2/320x180.213.jpg"><br>Insert disposable chopsticks into the uterine mouth',
+'inserted-in-urethra-7-xhMi03Z"><img src="https://ic-vt-nss.xhcdn.com/a/Mjc0OTY4MTRmZDZhZjIyNDBkNzZiMWRmODg3OGM5NDI/s(w:320,h:180),jpeg/019/535/770/1280x720.9.jpg"><br>Inserted in urethra 7',
+'manko-brush-xhmWRq4"><img src="https://ic-vt-nss.xhcdn.com/a/ZGUyNmE0YWExOTk5MjU1MTVmNzNmZGE2MTZkY2Y4OWY/s(w:320,h:180),jpeg/024/065/829/v2/320x180.212.jpg"><br>Manko brush',
+'manko-chuck-installation-xhtoTXw"><img src="https://ic-vt-nss.xhcdn.com/a/YmNhY2NmOGY4YzJjZWIxNzU1YzZjYTc0N2QxNDZlMWU/s(w:320,h:180),jpeg/023/186/952/v2/320x180.208.jpg"><br>Manko chuck installation',
+'manko-medical-stapler-xhkZFLf"><img src="https://ic-vt-nss.xhcdn.com/a/Y2Q0ZDMyYTc3ZmU4YWRkN2I0MTExMmU2ZDZlYzI1MDI/s(w:320,h:180),jpeg/023/183/302/v2/320x180.211.jpg"><br>Manko Medical stapler',
+'manko-square-wood-insertion-xhGlfBY"><img src="https://ic-vt-nss.xhcdn.com/a/ZTEzMGIwNWJjNTc1YmEwMzAwY2IwMTg3NGE5YjQxYzk/s(w:320,h:180),jpeg/023/185/382/v2/320x180.203.jpg"><br>Manko square wood insertion',
+'manko-thumbtacks-and-dildos-xhXb13s"><img src="https://ic-vt-nss.xhcdn.com/a/NTA0ODNlM2YzZGMyNDM1NjQyM2YxOGI5MjQzZjcxNmE/s(w:320,h:180),jpeg/023/293/036/v2/320x180.216.jpg"><br>Manko, thumbtacks and dildos',
+'masturbation-after-suction-xht8AXE"><img src="https://ic-vt-nss.xhcdn.com/a/NmRkMGU4Y2M0NjFjMGNjMGNlNTA0NjcxOTBkMjAxODU/s(w:320,h:180),jpeg/023/186/927/v2/320x180.204.jpg"><br>Masturbation after suction',
+'masturbation-xh9dmMh"><img src="https://ic-vt-nss.xhcdn.com/a/YmU2MTYyYmIxZTk1NmQ2ZGRiN2M2OWRmMzRhZTg0MjA/s(w:320,h:180),jpeg/024/254/844/v2/320x180.211.jpg"><br>Masturbation',
+'nipple-earrings-xhX6xXQ"><img src="https://ic-vt-nss.xhcdn.com/a/MmMwN2MyOWM4MDJjOGRiNjQwZWRlOTY1NDIzYzU3MDA/s(w:320,h:180),jpeg/023/361/174/v2/320x180.202.jpg"><br>Nipple earrings',
+'open-the-pussy-chuck-and-insert-an-anal-stick-into-the-urethra-xhe1kIK"><img src="https://ic-vt-nss.xhcdn.com/a/MGUxYTZhNDA1ODBiZmJiMTNlYzUxNDdkODk3YzU0ZTk/s(w:320,h:180),jpeg/023/186/663/v2/320x180.207.jpg"><br>Open the pussy chuck and insert an anal stick into the urethra',
+'perforated-plug-in-the-pussy-xhi5ylb"><img src="https://ic-vt-nss.xhcdn.com/a/MWVlZGExOGVmZGJkMjEyZmQ5ZGFlYzExM2E3ZWM5ZTE/s(w:320,h:180),jpeg/024/313/276/v2/320x180.208.jpg"><br>Perforated plug in the pussy',
+'pop-up-anal-stick-xh0Hqda"><img src="https://ic-vt-nss.xhcdn.com/a/NGVmMTZmNjAyYWIwZDk0MzE4NTM3OWVkMDY1NTVhZjA/s(w:320,h:180),jpeg/023/185/394/v2/320x180.209.jpg"><br>Pop-up anal stick',
+'princess-albertina-xhqXZmE"><img src="https://ic-vt-nss.xhcdn.com/a/NDhiNzY2N2ZmMWU4ZTU4Y2RhOTQyNDE5MzU0ZDVkZmQ/s(w:320,h:180),jpeg/024/338/408/v2/320x180.210.jpg"><br>Princess Albertina',
+'pussy-opene-xhdQsZ6S"><img src="https://ic-vt-nss.xhcdn.com/a/MjM1N2ZmYjliZTU2ZTA4MTgzMmFhYTE2M2Q5MzQyNzU/s(w:320,h:180),jpeg/024/326/596/v2/320x180.205.jpg"><br>Pussy opene',
+'pussy-sucking-xh7TuCC"><img src="https://ic-vt-nss.xhcdn.com/a/ZWI4ZGViN2U5ODA2ZjA1ZjU1MjZlNDUyYmNiYzQwNzM/s(w:320,h:180),jpeg/023/185/603/v2/320x180.209.jpg"><br>Pussy sucking',
+'put-a-thumbtack-in-your-pussy-and-insert-a-vibrator-xhEf67b"><img src="https://ic-vt-nss.xhcdn.com/a/MTE3MGIwZGRiYTEwMmMxNjQyYTU5ODA5YzhlYjYwNDM/s(w:320,h:180),jpeg/023/186/069/v2/320x180.204.jpg"><br>Put a thumbtack in your pussy and insert a vibrator',
+'put-a-thumbtack-in-your-pussy-and-stir-it-with-a-whisk-xhdrXdx"><img src="https://ic-vt-nss.xhcdn.com/a/MGRmNWMwYjE5MGI0ZTQ2YjBiNzI4NmRkMDQxOWZhOGU/s(w:320,h:180),jpeg/024/118/863/v2/320x180.212.jpg"><br>Put a thumbtack in your pussy and stir it with a whisk',
+'put-detergent-in-the-bladder-and-wash-it-xhRVuxL"><img src="https://ic-vt-nss.xhcdn.com/a/NjhkZDVlMDEwOThkNjA4OGE3M2Q1YTZkYzVjM2Q4NTM/s(w:320,h:180),jpeg/023/621/975/v2/320x180.203.jpg"><br>Put detergent in the bladder and wash it.',
+'puyo-puyo-ball-insertion-xhOaPja"><img src="https://ic-vt-nss.xhcdn.com/a/N2JhZjM2ZDVkMmE4OGU1NmU1YWU4ZTE2NDM3NjMwZWE/s(w:320,h:180),jpeg/023/959/559/v2/320x180.215.jpg"><br>Puyo Puyo ball insertion',
+'puyo-puyo-ball-release-xhdlmn9"><img src="https://ic-vt-nss.xhcdn.com/a/NDU4Yzc2ODJmMTQwMDc1ZGIzODY0ZmE1NjZlNDY0ZDY/s(w:320,h:180),jpeg/023/186/060/v2/320x180.210.jpg"><br>Puyo Puyo ball release',
+'puyo-puyo-ball-release-xhvXcip"><img src="https://ic-vt-nss.xhcdn.com/a/NTllMTYxZWFjYWZkMzZhZDhhYTAzMDIyZGUwMzNmNDU/s(w:320,h:180),jpeg/023/186/051/v2/320x180.206.jpg"><br>Puyo Puyo ball release',
+'safety-pin-for-inner-lavia-xhhoI4k"><img src="https://ic-vt-nss.xhcdn.com/a/NDhmZWM0NDkzYTg3OTU5ZmJlODc4MjMyNjk5MWJlYmY/s(w:320,h:180),jpeg/024/279/452/v2/320x180.232.jpg"><br>Safety pin for inner lavia',
+'slime-in-the-pussy-xhGi4tK"><img src="https://ic-vt-nss.xhcdn.com/a/OGE1ZGI0NGVkODNmYTYwNjRhM2U0YThlOTc1MjA3NzU/s(w:320,h:180),jpeg/023/255/144/v2/320x180.214.jpg"><br>Slime in the pussy',
+'spawning-xhg5jyn"><img src="https://ic-vt-nss.xhcdn.com/a/N2Y2ZWRlN2EzNDRhNmE1ODI2YWI2MzExOTMwNjE3OTE/s(w:320,h:180),jpeg/023/307/036/v2/320x180.205.jpg"><br>Spawning',
+'stretched-urethral-mouth-xhniFqb"><img src="https://ic-vt-nss.xhcdn.com/a/MDA2ZDNmNzZlMTI4ZWE4NDU4MWUxZjI0MWEwNTkyOGM/s(w:320,h:180),jpeg/024/279/311/v2/320x180.201.jpg"><br>Stretched urethral mouth',
+'thread-through-the-nipple-xhIeOYo"><img src="https://ic-vt-nss.xhcdn.com/a/ZWI4Mzc4ZDRjMmYwOWM3ZTRmZThmOTQ5OGU2NTEwODE/s(w:320,h:180),jpeg/023/251/216/v2/320x180.206.jpg"><br>Thread through the nipple',
+'three-in-the-vagina-xhXVaN5"><img src="https://ic-vt-nss.xhcdn.com/a/NGFhZjVjZmNjOTMzNTQ3NjE3NGM0Yzc3YjdhZDM1ODU/s(w:320,h:180),jpeg/019/660/932/1280x720.2.jpg"><br>Three in the vagina.',
+'urethal-anarstick-xh0TCPm"><img src="https://ic-vt-nss.xhcdn.com/a/YWQ0YjhmZjVhYjM3OTAwMTMxNmRkYjZiOGU1Y2ZlOTY/s(w:320,h:180),jpeg/019/816/797/1280x720.2.jpg"><br>Urethal anarstick',
+'urethral-2-meter-cord-insertion-xhdt5fy"><img src="https://ic-vt-nss.xhcdn.com/a/NjAyM2IxYjJmNDQyY2MyOTBkMDVmYTE0MWMwOGVhODM/s(w:320,h:180),jpeg/023/973/832/v2/320x180.204.jpg"><br>Urethral 2 meter cord insertion',
+'urethral-bladder-polishing-xhmTV8E"><img src="https://ic-vt-nss.xhcdn.com/a/Yzk4ZDdiMWU2ZjQ1ZDU5ZDZhY2JlMTY4YjUzNzUzZWY/s(w:320,h:180),jpeg/024/233/576/v2/320x180.210.jpg"><br>Urethral bladder polishing',
+'urethral-brush-xhOIgVt"><img src="https://ic-vt-nss.xhcdn.com/a/ODFiMzdmNjcyMjRjNTNjMGIyMjEzYTlmYWM3NTg4OWQ/s(w:320,h:180),jpeg/023/361/169/v2/320x180.210.jpg"><br>Urethral brush',
+'urethral-incision-xh5u6Br"><img src="https://ic-vt-nss.xhcdn.com/a/MDAzZDgzMjFmYTc2NzEzYTZiNmIzMzJhZjRkZDcwMWE/s(w:320,h:180),jpeg/023/326/972/v2/320x180.202.jpg"><br>Urethral incision',
+'urethral-piercing-xhsyrT7"><img src="https://ic-vt-nss.xhcdn.com/a/ZmEwOTIwMzBhZjEyMWNkZjA2OTE4MjFkZTkxY2QxOWE/s(w:320,h:180),jpeg/024/153/225/v2/320x180.226.jpg"><br>Urethral piercing',
+'urethral-pussy-stapler-xhGZPXl"><img src="https://ic-vt-nss.xhcdn.com/a/MGE0NDk3OTI1MTZlMjNlYjdlNjcyZGUxYTdkNGUzMDQ/s(w:320,h:180),jpeg/023/273/866/v2/320x180.205.jpg"><br>Urethral pussy stapler',
+'urethral-stapler-xhSklAy"><img src="https://ic-vt-nss.xhcdn.com/a/MDZhNzAxZTA3MGFlY2UzMTcxMTEyNTE3MWNlY2Y5OWM/s(w:320,h:180),jpeg/023/216/758/v2/320x180.211.jpg"><br>Urethral stapler',
+'urethral-test-tube-xhodaiQK"><img src="https://ic-vt-nss.xhcdn.com/a/OTc4NGQ1N2E5ZjA0YTM5YjE4YjViOGVjYzYyMzk3ZDE/s(w:320,h:180),jpeg/023/270/340/v2/320x180.208.jpg"><br>Urethral test tube',
+'vagina-candles-xhzNw8y"><img src="https://ic-vt-nss.xhcdn.com/a/OTAzOTBjNGZjODY0Nzk5NGUxYWNjOGUyODczYzY3YjM/s(w:320,h:180),jpeg/019/849/497/1280x720.9.jpg"><br>Vagina candles',
+'vagina-endoscope-xhyiIRZ"><img src="https://ic-vt-nss.xhcdn.com/a/ZGQ2ZDM1ZjI5MjgxMjBiOTk4NDI4YTRiYTRhYmEwYTg/s(w:320,h:180),jpeg/023/183/235/v2/320x180.203.jpg"><br>Vagina endoscope',
+'vagina-expansion-xhMu2dx"><img src="https://ic-vt-nss.xhcdn.com/a/OTk5NTUxODNkMTBhMmY2YWQxNDIyNjc5ZDY4MjRlM2I/s(w:320,h:180),jpeg/019/814/956/1280x720.4.jpg"><br>Vagina expansion',
+'vagina-sewing-xhK0HNo"><img src="https://ic-vt-nss.xhcdn.com/a/YTI3MWQxOTkwNmU4YzQ2YjE0NmJlNzBlM2EzMDQzMDk/s(w:320,h:180),jpeg/019/817/497/1280x720.7.jpg"><br>Vagina sewing',
+'vaginal-eagle-xh9hWN0"><img src="https://ic-vt-nss.xhcdn.com/a/NDY5OGJhODczZWJkMzFmMTAyM2Y0YTk2M2Y2ZmJkODA/s(w:320,h:180),jpeg/020/321/477/1280x720.9.jpg"><br>Vaginal eagle',
+'whisk-on-the-pussy-large-version-xhKTyVs"><img src="https://ic-vt-nss.xhcdn.com/a/YTQxYmI3YWFlYzNhODc5NWZmNTYxZTBmY2ViZGE4ODU/s(w:320,h:180),jpeg/023/293/720/v2/320x180.205.jpg"><br>Whisk on the pussy, large version',
+];
+lineHeader = '<div><a href="https://xhamster.com/videos/'
+lineTail = '</a></div>'
+showRange = 60
+bookid = "ayakkyu69"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

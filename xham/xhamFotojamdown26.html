@@ -1,0 +1,70 @@
+<base target="_blank"><html><head><title>jamdown26</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/more-of-the-good-stuff-16077920"><img src="https://ic-ph-nss.xhcdn.com/a/ODM5YmIzNjdhNzQ3OWZhNDc5OGFjYzUzOTFmNzIwOTY/jpeg/000/515/127/109_450.jpg"><br>More of the good stuff</a> 24',
+'<a href="https://xhamster.com/photos/gallery/dressing-up-16066013"><img src="https://ic-ph-nss.xhcdn.com/a/YjAyOWY1NWU4MWUyODEwMjNmNjEwZWNkN2UwOGI1MzM/jpeg/000/514/980/446_450.jpg"><br>Dressing up</a> 5',
+'<a href="https://xhamster.com/photos/gallery/leaving-the-house-to-hang-out-at-the-park-16066012"><img src="https://ic-ph-nss.xhcdn.com/a/MzI2ZWI5NjA3MTc3YzE5MTY1ZjFmNmEwNWNlMGFmNjQ/jpeg/000/514/980/443_450.jpg"><br>Leaving the house to hang out at the park </a> 5',
+'<a href="https://xhamster.com/photos/gallery/pissing-16059318"><img src="https://ic-ph-nss.xhcdn.com/a/YmViYzk2NTI3OGZmZTA4MTc5NDc4ODIxZmNiYTRjOWY/jpeg/000/514/886/923_450.jpg"><br>Pissing</a> 5',
+'<a href="https://xhamster.com/photos/gallery/food-for-your-hunger-16056984"><img src="https://ic-ph-nss.xhcdn.com/a/MGJhYTNhNzc2ZWVjYzJjNTI1N2M2ZTRmYTU2Zjk1ZmM/jpeg/000/514/858/314_450.jpg"><br>Food for your hunger </a> 10',
+'<a href="https://xhamster.com/photos/gallery/me-at-work-2-16052783"><img src="https://ic-ph-nss.xhcdn.com/a/NGVlMzZjYmMyMmJlMWMwN2YxYWFlZGYwYmM5ZjlhNTM/jpeg/000/514/783/180_450.jpg"><br>Me at work (2)</a> 11',
+'<a href="https://xhamster.com/photos/gallery/me-at-work-16052770"><img src="https://ic-ph-nss.xhcdn.com/a/OWJmZWNhOWIxNTJiZjVhODFjM2Y1N2VjMGIwZGFjZTM/jpeg/000/514/783/070_450.jpg"><br>Me at work </a> 7',
+'<a href="https://xhamster.com/photos/gallery/pictures-to-wet-your-appetite-16052616"><img src="https://ic-ph-nss.xhcdn.com/a/NDAzNDUzMjc4MTExZmMxMWE4MWZkYmI5NzZmNTc3NmM/jpeg/000/514/781/695_450.jpg"><br>Pictures to wet your appetite </a> 13',
+'<a href="https://xhamster.com/photos/gallery/meat-for-your-appetite-16050878"><img src="https://ic-ph-nss.xhcdn.com/a/MWZiMzVhOGExYzhhM2JiOWNlOTU1MTViZDJiZTJmNzI/jpeg/000/514/764/334_450.jpg"><br>Meat for your appetite </a> 31',
+'<a href="https://xhamster.com/photos/gallery/collection-of-our-work-16024074"><img src="https://ic-ph-nss.xhcdn.com/a/OTNhMjA5ZWY4NDA2ZTJiMjJjNWQyMjQ1MzlkNDA1YTg/jpeg/000/514/395/282_450.jpg"><br>Collection of our work </a> 11',
+'<a href="https://xhamster.com/photos/gallery/pictures-of-us-16005447"><img src="https://ic-ph-nss.xhcdn.com/a/ZDY0YTY0ZDliZmRiYzAwOWE3YTEwM2M0N2EyMGRhM2I/jpeg/000/514/136/933_450.jpg"><br>Pictures of us </a> 7',
+'<a href="https://xhamster.com/photos/gallery/black-cock-jerking-off-lots-of-cum-big-load-15972822"><img src="https://ic-ph-nss.xhcdn.com/a/YjJkNDg2Zjk1MmUzNzM5NzAwY2YxZDdkNWI5YTBiOTY/jpeg/000/513/649/286_450.jpg"><br>Black Cock Jerking off Lots Of Cum, Big Load</a> 2',
+'<a href="https://xhamster.com/photos/gallery/jerking-off-black-cock-cumming-on-sex-dolls-with-big-load-15972217"><img src="https://ic-ph-nss.xhcdn.com/a/ZjExMGY1MjQwODNkZmZmYTY3MDYwMzlkODAxYmIwNjc/jpeg/000/513/644/627_450.jpg"><br>Jerking Off Black Cock &amp; Cumming On Sex Dolls With Big Load</a> 2',
+'<a href="https://xhamster.com/photos/gallery/jerking-off-black-cock-to-loads-of-cum-15970114"><img src="https://ic-ph-nss.xhcdn.com/a/YmZhYjRiZTI2ZjY0MDhkZGQ2NGVjYjcyOTA1NjVhODg/jpeg/000/513/624/625_450.jpg"><br>Jerking Off Black Cock To Loads Of Cum</a> 1',
+'<a href="https://xhamster.com/photos/gallery/me-loving-the-volume-thickness-of-of-my-sperm-15897778"><img src="https://ic-ph-nss.xhcdn.com/a/MTg1NTcxYzIwZjVkMWYyMDI5ZGZlOTFkNzExYmZmNjY/jpeg/000/512/088/000_450.jpg"><br>Me Loving The Volume &amp; Thickness Of Of My Sperm</a> 1',
+'<a href="https://xhamster.com/photos/gallery/pictures-of-my-tool-15897776"><img src="https://ic-ph-nss.xhcdn.com/a/NWQ2NWRhYmU3NTVkMjY0ZGQ1N2Y0ZWJmY2Q1MGQ1Yzk/jpeg/000/512/087/944_450.jpg"><br>Pictures of my tool</a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "jamdown26"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

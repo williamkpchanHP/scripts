@@ -1,0 +1,90 @@
+<base target="_blank"><html><head><title>radiants_two</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/undress-me-16117930"><img src="https://ic-ph-nss.xhcdn.com/a/MWM3YzM2MWI5MTQxNmUzMmY3ZGE2MjE1NWM1Y2RjNzY/jpeg/000/515/655/072_450.jpg"><br>Undress me</a> 9',
+'<a href="https://xhamster.com/photos/gallery/just-me-16100551"><img src="https://ic-ph-nss.xhcdn.com/a/ZmVlNGFiMjZkY2MzNTJmODU2YTVkZmVlMTcyMTllOGU/jpeg/000/515/425/892_450.jpg"><br>Just me</a> 9',
+'<a href="https://xhamster.com/photos/gallery/pussy-close-up-16121291"><img src="https://ic-ph-nss.xhcdn.com/a/MzdlMDkxMzdlNGUyZDU2MTdjZmY0MDIzYzQwNDhiZTU/jpeg/000/515/699/291_450.jpg"><br>PUSSY CLOSE UP</a> 8',
+'<a href="https://xhamster.com/photos/gallery/more-fishnet-tights-16125982"><img src="https://ic-ph-nss.xhcdn.com/a/YjE3N2IzZWJkYzQwYjg1YjJmMzcxYTExZWJlOTc1ZmQ/jpeg/000/515/758/926_450.jpg"><br>More fishnet tights<U+0001F970></a> 8',
+'<a href="https://xhamster.com/photos/gallery/jess-hot-album-16130003"><img src="https://ic-ph-nss.xhcdn.com/a/ZDdmNzUzM2U3MDZhZGNmOGU4ZjgxOTRiM2JmMjllNzQ/jpeg/000/515/806/524_450.jpg"><br>JESS HOT ALBUM</a> 8',
+'<a href="https://xhamster.com/photos/gallery/teen-open-pussy-16112129"><img src="https://ic-ph-nss.xhcdn.com/a/Yzg1N2M4YjVhMmQyYzM2ZGFjZjgwMTY0Nzg1YWUxNzA/jpeg/000/515/578/623_450.jpg"><br>TEEN OPEN PUSSY</a> 7',
+'<a href="https://xhamster.com/photos/gallery/teen-naked-body-16121289"><img src="https://ic-ph-nss.xhcdn.com/a/ODEzOGUwZTBkMWFkMjRjMWZmNjFjMWVjNzllN2Q0NDA/jpeg/000/515/699/279_450.jpg"><br>Teen naked body</a> 7',
+'<a href="https://xhamster.com/photos/gallery/panty-tease-16178444"><img src="https://ic-ph-nss.xhcdn.com/a/ZmUyNjMwZDBkMjc1ZWVhZDFkODcyNmZmOWI0NDVkMWM/jpeg/000/516/436/593_450.jpg"><br>panty tease</a> 7',
+'<a href="https://xhamster.com/photos/gallery/my-beauty-16125981"><img src="https://ic-ph-nss.xhcdn.com/a/ZTFkOTdlMTYxNzE3MTRhYWY0Zjk3YmViNzIxY2JjZmE/jpeg/000/515/758/915_450.jpg"><br>MY BEAUTY</a> 7',
+'<a href="https://xhamster.com/photos/gallery/can-you-handle-me-16125983"><img src="https://ic-ph-nss.xhcdn.com/a/MTEzOGQzMDI4YTg4Yzg1NThkNTZkYzE1OGM2OThlZTY/jpeg/000/515/758/936_450.jpg"><br>CAN YOU HANDLE ME?</a> 7',
+'<a href="https://xhamster.com/photos/gallery/ari-asshole-16110409"><img src="https://ic-ph-nss.xhcdn.com/a/Zjk3MmM2OTBmMWU0ODM2ZDJlYzU1YWE4OGVjY2E4OGI/jpeg/000/515/556/491_450.jpg"><br>Ari asshole</a> 7',
+'<a href="https://xhamster.com/photos/gallery/your-dinner-served-16125976"><img src="https://ic-ph-nss.xhcdn.com/a/ODFiYWE5YzBkNjc0NTA4MTRkOTg4ZTU5OWM5MzQzYTQ/jpeg/000/515/758/853_450.jpg"><br>Your dinner served<U+0001F496></a> 6',
+'<a href="https://xhamster.com/photos/gallery/spoil-me-16125978"><img src="https://ic-ph-nss.xhcdn.com/a/NDFlNDcwNTJhNzgyNGRmZjZmYjkyOWIzMzM2MGY3MWE/jpeg/000/515/758/868_450.jpg"><br>Spoil me</a> 6',
+'<a href="https://xhamster.com/photos/gallery/school-girl-16183377"><img src="https://ic-ph-nss.xhcdn.com/a/ZGYwMTA2MGEwMmRhMTc2MDU5YzNlNjZmZmM2ZGVmY2I/jpeg/000/516/490/752_450.jpg"><br>school girl</a> 6',
+'<a href="https://xhamster.com/photos/gallery/pussy-16105480"><img src="https://ic-ph-nss.xhcdn.com/a/NWYzOWFlZGFiNjk4NmQ0MmQ3NmZjMjdkMTZhZmI0YmE/jpeg/000/515/491/926_450.jpg"><br>PUSSY </a> 6',
+'<a href="https://xhamster.com/photos/gallery/nudes-stockings-16121292"><img src="https://ic-ph-nss.xhcdn.com/a/ZGZkZTMzMDFjN2MwNzI1OThhNzI5MTU5NGZiZGM0ODU/jpeg/000/515/699/303_450.jpg"><br>nudes + stockings</a> 6',
+'<a href="https://xhamster.com/photos/gallery/nudes-pussy-16107371"><img src="https://ic-ph-nss.xhcdn.com/a/ZGM0NDUwYTk0ODFiOTI1NmY3MDYzNmEzODlhODRjNzY/jpeg/000/515/517/851_450.jpg"><br>Nudes Pussy</a> 6',
+'<a href="https://xhamster.com/photos/gallery/nudes-16120740"><img src="https://ic-ph-nss.xhcdn.com/a/ZWRjMDE2M2Y4YmYwOTk1ODc3MzlmN2FkNDY0NzgwMWI/jpeg/000/515/692/377_450.jpg"><br>Nudes </a> 6',
+'<a href="https://xhamster.com/photos/gallery/nudes-16117526"><img src="https://ic-ph-nss.xhcdn.com/a/ODU0YTkxMGZiNDMxNjgwMWM2NTFlNTNlM2RhNTRiODM/jpeg/000/515/649/539_450.jpg"><br>Nudes</a> 6',
+'<a href="https://xhamster.com/photos/gallery/foot-fetish-16110983"><img src="https://ic-ph-nss.xhcdn.com/a/YTQxOTRlMzMyMzk3ZWYzOWJkNjUzOWI2OGNiNWFlZmU/jpeg/000/515/563/331_450.jpg"><br>FOOT FETISH</a> 6',
+'<a href="https://xhamster.com/photos/gallery/cream-pussy-16112137"><img src="https://ic-ph-nss.xhcdn.com/a/ZDkxNDZkNTEyMjI2YmExMzA1NDllNjI4YWVhMjJjNzA/jpeg/000/515/578/725_450.jpg"><br>cream pussy</a> 6',
+'<a href="https://xhamster.com/photos/gallery/baribie-16183373"><img src="https://ic-ph-nss.xhcdn.com/a/OWI3MDc2YjhlZjdhMDU1OGEyZmRhZDM5OWFhNGRiMDA/jpeg/000/516/490/739_450.jpg"><br>Baribie</a> 6',
+'<a href="https://xhamster.com/photos/gallery/undres-me-16120353"><img src="https://ic-ph-nss.xhcdn.com/a/MzBmZWZhZTRkMzhkNDU2ZTljOTQxNDczODg0YTQ0N2U/jpeg/000/515/686/702_450.jpg"><br>Undres me</a> 5',
+'<a href="https://xhamster.com/photos/gallery/shower-time-16178440"><img src="https://ic-ph-nss.xhcdn.com/a/YWM1YjMwNTVjZjBlNzE5NjAyOTg3MWI5NmU4ZGU0YjI/jpeg/000/516/436/533_450.jpg"><br>Shower time</a> 5',
+'<a href="https://xhamster.com/photos/gallery/shcool-girl-16178442"><img src="https://ic-ph-nss.xhcdn.com/a/MDhmODdiYjAxYTJlZDRmYjM4ZGIwNTkyNmQ3MDE3OTE/jpeg/000/516/436/551_450.jpg"><br>shcool girl</a> 5',
+'<a href="https://xhamster.com/photos/gallery/just-me-16120354"><img src="https://ic-ph-nss.xhcdn.com/a/MzFiMTE3NTI2YWE1MWQ5ZTY0MTViZDY1ODJjNjA3ZjA/jpeg/000/515/686/705_450.jpg"><br>Just me</a> 5',
+'<a href="https://xhamster.com/photos/gallery/ari-pussy-16109192"><img src="https://ic-ph-nss.xhcdn.com/a/ODFhYTM1Nzc4YTM1ZDIyMTQ2ZTQwYmQ5Y2M2OTY1NDY/jpeg/000/515/541/708_450.jpg"><br>Ari pussy</a> 5',
+'<a href="https://xhamster.com/photos/gallery/feet-16100553"><img src="https://ic-ph-nss.xhcdn.com/a/MDBhYTQ4ZGYwNjNkMjMxZjc1MjNhYWI1NGZkNTA5ZTY/jpeg/000/515/425/901_450.jpg"><br>Feet</a> 3',
+'<a href="https://xhamster.com/photos/gallery/nudes-16100550"><img src="https://ic-ph-nss.xhcdn.com/a/NThhNGMzNDRiZTQ2MjNjMmRlM2MwYmJkMjNlMDY3OGY/jpeg/000/515/425/850_450.jpg"><br>Nudes</a> 15',
+'<a href="https://xhamster.com/photos/gallery/perfect-fuck-teen-16110980"><img src="https://ic-ph-nss.xhcdn.com/a/MjQ0MjYwOWFlMTAxMDlkMWY4OTA1ZWQ2ZDYwZjliMjM/jpeg/000/515/563/295_450.jpg"><br>Perfect Fuck Teen</a> 14',
+'<a href="https://xhamster.com/photos/gallery/jussy-pussy-16110979"><img src="https://ic-ph-nss.xhcdn.com/a/MzVkMDEwOTQ0YTA2ZTA0MmZkOGM4MmIzZWQzMTQ1NDM/jpeg/000/515/563/275_450.jpg"><br>JUSSY PUSSY</a> 14',
+'<a href="https://xhamster.com/photos/gallery/jess-sweet-pussy-16155548"><img src="https://ic-ph-nss.xhcdn.com/a/MmZhYzA2M2FmYzgwOThmYzNiMDA3ZWQ2YjI4OGMwNDE/jpeg/000/516/166/608_450.jpg"><br>JESS SWEET PUSSY</a> 11',
+'<a href="https://xhamster.com/photos/gallery/doggy-pussy-fuck-16110982"><img src="https://ic-ph-nss.xhcdn.com/a/ZmYxZjlkNGUwMWYzYzkyNWNkMDcwM2JlZDNkZTQzNzU/jpeg/000/515/563/323_450.jpg"><br>DOGGY-PUSSY-FUCK</a> 11',
+'<a href="https://xhamster.com/photos/gallery/nudes-pic-16112135"><img src="https://ic-ph-nss.xhcdn.com/a/NTM3NGNhMzBkOTBjZDBmMzA3NTA3ZGE5NDhjYjVjNWE/jpeg/000/515/578/716_450.jpg"><br>nudes pic</a> 10',
+'<a href="https://xhamster.com/photos/gallery/ass-hole-16112131"><img src="https://ic-ph-nss.xhcdn.com/a/NmU5NGRkYThhMjdiY2JhZDM2MDI1MTg3OWYzNzdmMWM/jpeg/000/515/578/641_450.jpg"><br>ass hole</a> 10',
+'<a href="https://xhamster.com/photos/gallery/new-16099994"><img src="https://ic-ph-nss.xhcdn.com/a/Mzk0OGRkMmI1ZGViYzY4ZTJiZWY5N2YzZDk2NTcxODA/jpeg/000/515/418/872_450.jpg"><br>new</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "radiants_two"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

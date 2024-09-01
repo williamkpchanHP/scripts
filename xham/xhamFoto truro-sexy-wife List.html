@@ -1,0 +1,108 @@
+<base target="_blank"><html><head><title>truro-sexy-wife</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/ready-to-be-fucked-13708562"><img src="https://ic-ph-nss.xhcdn.com/a/YzRlZjc2YWFlOTgwZDUwODliNzBmNjgxM2NjOGUwZTU/jpeg/000/374/435/954_450.jpg"><br>Ready to be fucked.</a> 9',
+'<a href="https://xhamster.com/photos/gallery/sploshing-food-sex-10783671"><img src="https://ic-ph-nss.xhcdn.com/a/NDhiNzQ5OTJjNGIzYjYwMmI2YWEwM2UzMDEzNTY5OGM/jpeg/000/225/855/399_450.jpg"><br>Sploshing food sex</a> 8',
+'<a href="https://xhamster.com/photos/gallery/julie-cunningham-patterned-pantyhose-10723022"><img src="https://ic-ph-nss.xhcdn.com/a/ZDZmNjExMjA0NWU2ZmNjOGQxYmE2YTExZGJiZTEwOTE/jpeg/000/223/134/756_450.jpg"><br>Julie Cunningham patterned pantyhose</a> 8',
+'<a href="https://xhamster.com/photos/gallery/julie-cunningham-big-tits-15783330"><img src="https://ic-ph-nss.xhcdn.com/a/MzEyZmMxNDU1NzFiNGU1NjZlODRkZWYwYTdhNDIyYTQ/jpeg/000/492/980/134_450.jpg"><br>Julie Cunningham BIG TITS</a> 8',
+'<a href="https://xhamster.com/photos/gallery/game-night-abandoned-building-fun-15783331"><img src="https://ic-ph-nss.xhcdn.com/a/Yjg5MTczNTc2YzVmNjU4Y2FiYTBlMWI3ODBiM2Q3ZjY/jpeg/000/492/980/421_450.jpg"><br>Game night abandoned building fun</a> 8',
+'<a href="https://xhamster.com/photos/gallery/cleaning-the-kitchen-in-heels-crotchless-tights-12425720"><img src="https://ic-ph-nss.xhcdn.com/a/ODE3YzY1NTA1YWQ4ODM0NmU3NzU0ZDYzNjQ1YTM2MTQ/jpeg/000/304/948/385_450.jpg"><br>Cleaning the kitchen in heels &amp; crotchless tights</a> 8',
+'<a href="https://xhamster.com/photos/gallery/a-few-mountain-lockdown-photos-14556143"><img src="https://ic-ph-nss.xhcdn.com/a/NjI0YWM1ZjA5NjQyMTZlZmRhZjA4NTQ0MTFjNDk4NWQ/jpeg/000/418/120/138_450.jpg"><br>A few mountain lockdown photos</a> 8',
+'<a href="https://xhamster.com/photos/gallery/tying-up-my-tits-for-a-webcam-session-15775497"><img src="https://ic-ph-nss.xhcdn.com/a/NGYxZDI1MzgyYjAzMTg5MGVkNmU3NmVlOWNhYTllZWU/jpeg/000/488/101/787_450.jpg"><br>Tying up my tits for a webcam session</a> 7',
+'<a href="https://xhamster.com/photos/gallery/my-1st-lesbian-sex-12101760"><img src="https://ic-ph-nss.xhcdn.com/a/MmUxYmQ4MzVlYzdjNGYwYzAwZTMwZjYxMmE3MjQ1MTE/jpeg/000/288/881/882_450.jpg"><br>My 1st Lesbian sex</a> 7',
+'<a href="https://xhamster.com/photos/gallery/just-a-few-tits-14404827"><img src="https://ic-ph-nss.xhcdn.com/a/MjAxZTJjZWM5NTY1NmEwZjU3NTA4MDkzZmIwZWEwMDI/jpeg/000/409/953/455_450.jpg"><br>Just a few tits</a> 7',
+'<a href="https://xhamster.com/photos/gallery/julie-cunninghma-naughty-nurse-15955730"><img src="https://ic-ph-nss.xhcdn.com/a/NDZkZmRkZDM0OWJiMDJkNTQ2NWMxOWRiMWM1ZDRhM2Q/jpeg/000/513/363/761_450.jpg"><br>Julie Cunninghma Naughty Nurse</a> 7',
+'<a href="https://xhamster.com/photos/gallery/julie-cunningham-chained-to-a-tree-15929278"><img src="https://ic-ph-nss.xhcdn.com/a/ZjQxMTAxMmYzNTgyNTAwZDYzN2ZjMmJiYzk0NDEyYzE/jpeg/000/512/791/866_450.jpg"><br>Julie Cunningham Chained To A Tree</a> 7',
+'<a href="https://xhamster.com/photos/gallery/a-pair-of-black-knickers-for-a-fan-15776147"><img src="https://ic-ph-nss.xhcdn.com/a/OWQwMmYwNGE0MTQ1MzQxMTZiOWYxZTMyMmY3MGU5MDg/jpeg/000/488/534/985_450.jpg"><br>A pair of black knickers for a fan</a> 7',
+'<a href="https://xhamster.com/photos/gallery/we-played-a-fun-abduction-role-play-game-recently-13948270"><img src="https://ic-ph-nss.xhcdn.com/a/Y2I3ZTNjNjUyNzJhMDE0YTJjMWQxMTFhOGM2Zjg0NTU/jpeg/000/385/352/555_450.jpg"><br>We played a fun abduction role play game recently</a> 6',
+'<a href="https://xhamster.com/photos/gallery/road-strip-15922111"><img src="https://ic-ph-nss.xhcdn.com/a/NTUxYTA3Y2NjNmQ2MTg3N2MyMTM2ZjI4NjNkOTc4MGI/jpeg/000/512/629/829_450.jpg"><br>Road strip</a> 6',
+'<a href="https://xhamster.com/photos/gallery/nude-sunbathing-no-sunscreen-lol-part-2-15802045"><img src="https://ic-ph-nss.xhcdn.com/a/MzIwMGE2Njg4MmI1MzMzYWI3OTIyYjBmNWRiN2VlYjg/jpeg/000/503/440/241_450.jpg"><br>nude sunbathing no sunscreen lol PART 2</a> 6',
+'<a href="https://xhamster.com/photos/gallery/julie-cunningham-playing-outside-15802115"><img src="https://ic-ph-nss.xhcdn.com/a/M2RmYmVkMmNlZDMwMzQxOGMxZWVjODk3ZDhhNDRlZDc/jpeg/000/503/473/110_450.jpg"><br>Julie Cunningham playing outside</a> 6',
+'<a href="https://xhamster.com/photos/gallery/cleaning-the-kitchen-in-heels-crotchless-tights-part-2-12431499"><img src="https://ic-ph-nss.xhcdn.com/a/YjhmNjllMjhkYTEyNjdlOTAzODgzZTQxMDU4Mjk5ZDk/jpeg/000/305/228/424_450.jpg"><br> Cleaning the kitchen in heels &amp; crotchless tights PART 2</a> 6',
+'<a href="https://xhamster.com/photos/gallery/sexy-amateur-milfs-feet-in-tights-playing-in-thick-mud-14879126"><img src="https://ic-ph-nss.xhcdn.com/a/ZmZlMmI1MTI5NzRhZTk1N2ZiOTk4ODFkNzU5MjZiYWY/jpeg/000/435/961/549_450.jpg"><br>Sexy amateur MILF&#039;s feet in tights playing in thick mud</a> 5',
+'<a href="https://xhamster.com/photos/gallery/me-stripping-in-public-13604680"><img src="https://ic-ph-nss.xhcdn.com/a/MTJiY2QxZDlhYWY0OWE2Mjc2MDBhMWU2NDIwODBkMjQ/jpeg/000/366/771/457_450.jpg"><br>Me stripping in public </a> 5',
+'<a href="https://xhamster.com/photos/gallery/julie-cunningham-sexy-hotel-photos-15-oct-18-10773531"><img src="https://ic-ph-nss.xhcdn.com/a/ZDY4NzBlMTBhMjQ4ZjY4NWNkYTlhMWJkZTAwYmUzY2E/jpeg/000/225/381/599_450.jpg"><br>Julie Cunningham sexy hotel photos 15 Oct 18</a> 5',
+'<a href="https://xhamster.com/photos/gallery/julie-cunningham-nudist-fig-leaves-15776714"><img src="https://ic-ph-nss.xhcdn.com/a/NzNmMTNkYmQ3MmJhODIwNTEyMTViNmNiYzliNmJmZWE/jpeg/000/488/902/608_450.jpg"><br>Julie Cunningham Nudist Fig Leaves</a> 5',
+'<a href="https://xhamster.com/photos/gallery/flashing-in-cornwall-2019-12385215"><img src="https://ic-ph-nss.xhcdn.com/a/MjU4MmFmYmU5YWIyYzc4YjljOTIzZWM2ZDMxYWJlYzU/jpeg/000/302/812/752_450.jpg"><br>Flashing in Cornwall 2019</a> 5',
+'<a href="https://xhamster.com/photos/gallery/any-fans-in-south-america-15899652"><img src="https://ic-ph-nss.xhcdn.com/a/MmRmOTlhOWUwOWE4YjFhYTczNTlkMmUzMjEwMjc2MmI/jpeg/000/512/127/083_450.jpg"><br>Any fans in South America?</a> 5',
+'<a href="https://xhamster.com/photos/gallery/some-stripping-in-the-sun-14104595"><img src="https://ic-ph-nss.xhcdn.com/a/MDMwZjI1M2UwMjFkNWUxODJhZTA5NWE5ZTg2OTI3YjM/jpeg/000/393/591/521_450.jpg"><br>Some stripping in the sun</a> 4',
+'<a href="https://xhamster.com/photos/gallery/some-fun-on-a-quiet-road-last-night-10736685"><img src="https://ic-ph-nss.xhcdn.com/a/OTc4OTM1ZTgwNGU1ZjY4MTc0MGRiMGVmZTdhNDRjNTE/jpeg/000/223/739/799_450.jpg"><br>Some fun on a quiet road last night :-)</a> 4',
+'<a href="https://xhamster.com/photos/gallery/see-i-did-it-12782285"><img src="https://ic-ph-nss.xhcdn.com/a/MDRmOWVmZDFmMTFmMzk0N2NlOTcxNmU4Yzk0YzBmYTA/jpeg/000/324/399/753_450.jpg"><br>See I did it...</a> 4',
+'<a href="https://xhamster.com/photos/gallery/just-me-stripping-15779885"><img src="https://ic-ph-nss.xhcdn.com/a/YzE1ZmMwMGVjMzdiY2FhZDlmYzNmOTJmNDk2MDhiYWU/jpeg/000/490/869/863_450.jpg"><br>Just me stripping</a> 4',
+'<a href="https://xhamster.com/photos/gallery/juilie-cunningham-black-stockings-15891114"><img src="https://ic-ph-nss.xhcdn.com/a/NDBhZDQ5MjlkYTc2ODQ0MDM1MzA2ZWZmM2QzNGUzMmQ/jpeg/000/511/935/263_450.jpg"><br>Juilie Cunningham Black Stockings</a> 4',
+'<a href="https://xhamster.com/photos/gallery/fans-images-of-me-13941200"><img src="https://ic-ph-nss.xhcdn.com/a/NzljMDY0NTU0ZmZiNjkzYjMwZjdkZGJiZWU4OTgyZmY/jpeg/000/384/926/969_450.jpg"><br>Fan&#039;s images of me</a> 4',
+'<a href="https://xhamster.com/photos/gallery/playing-outside-with-a-big-toy-15796449"><img src="https://ic-ph-nss.xhcdn.com/a/ZDViZmYzYzA4MTEwNWYxZDAwMDBlOGEzODYxNjhkODY/jpeg/000/500/521/505_450.jpg"><br>Playing outside with a big toy</a> 3',
+'<a href="https://xhamster.com/photos/gallery/nude-sunbathing-no-sunscreen-lol-15798683"><img src="https://ic-ph-nss.xhcdn.com/a/ZmQ1Zjg4OWI4MjAwOTAxNTRhMTNlNGM4MGY5MDkyNGE/jpeg/000/501/648/880_450.jpg"><br>Nude sunbathing no sunscreen lol</a> 3',
+'<a href="https://xhamster.com/photos/gallery/bored-so-heres-my-tits-what-do-you-think-15785706"><img src="https://ic-ph-nss.xhcdn.com/a/YjFiOTY0ZTUyZTA4N2QzMTlmMDE1ODIyMWI3ZmM0N2Q/jpeg/000/494/714/097_450.jpg"><br>Bored, so here&#039;s my tits, what do you think???</a> 3',
+'<a href="https://xhamster.com/photos/gallery/a-few-photos-of-me-naked-at-a-public-lake-recently-15098198"><img src="https://ic-ph-nss.xhcdn.com/a/NDU1ZThjMzY4ZWFhMjkwOWI5NGYzMjJmNTI2NWNlODI/jpeg/000/448/091/853_450.jpg"><br>A few photos of me naked at a public lake recently.</a> 3',
+'<a href="https://xhamster.com/photos/gallery/a-courgette-challenge-14483941"><img src="https://ic-ph-nss.xhcdn.com/a/OTA5Mzg1MzA0YTZmNTQ5MzRlNzE5NDdkMzRlM2U4M2E/jpeg/000/431/487/625_450.jpg"><br>A courgette challenge</a> 25',
+'<a href="https://xhamster.com/photos/gallery/julie-cunningham-big-tits-bondage-in-lingerie-15785708"><img src="https://ic-ph-nss.xhcdn.com/a/MTVkY2IzMTU2ZDg3MjY1MjI4NjRjYjFiMGZhMWY5ODQ/jpeg/000/494/716/273_450.jpg"><br>Julie Cunningham BIG TITS Bondage in Lingerie</a> 22',
+'<a href="https://xhamster.com/photos/gallery/julie-cunningham-doggy-positions-15155685"><img src="https://ic-ph-nss.xhcdn.com/a/YmY2NWVhOTA0ZjdiZjdmYTZkYmQ4MTA1ZmI0NTE0YmE/jpeg/000/451/308/673_450.jpg"><br>Julie Cunningham Doggy positions</a> 20',
+'<a href="https://xhamster.com/photos/gallery/dirty-julie-cunningham-15787025"><img src="https://ic-ph-nss.xhcdn.com/a/Mjc4ODRlMjYzMWI3M2M5NGUxMzQwZDcyZjQ4ZGVhNzk/jpeg/000/495/524/894_450.jpg"><br>Dirty Julie Cunningham</a> 2',
+'<a href="https://xhamster.com/photos/gallery/my-new-french-maids-uniform-julie-cunningham-11342819"><img src="https://ic-ph-nss.xhcdn.com/a/M2FlNTYzYmQ0NDhlODdkOTZjZTM1ZjliM2VlN2I3MjQ/jpeg/000/251/642/963_450.jpg"><br>My New French Maids Uniform - Julie Cunningham</a> 17',
+'<a href="https://xhamster.com/photos/gallery/just-a-couple-of-rude-photos-11280922"><img src="https://ic-ph-nss.xhcdn.com/a/YzYyZmJhMjA0ZTE4N2Y1MjEzMTQ1N2U2YTZjNjQ4Njg/jpeg/000/248/800/150_450.jpg"><br>Just a couple of rude photos </a> 17',
+'<a href="https://xhamster.com/photos/gallery/some-outside-photos-15929712"><img src="https://ic-ph-nss.xhcdn.com/a/YmVlZDg1Nzg4ZjYxZTlhYzgzNjAxZjM5MDk2MDMyODA/jpeg/000/512/801/625_450.jpg"><br>Some outside photos</a> 15',
+'<a href="https://xhamster.com/photos/gallery/julie-cunningham-playing-at-dogging-spot-15790477"><img src="https://ic-ph-nss.xhcdn.com/a/MGU2MTVhMzAwYzY0Y2Q4ZTM0MGY3ZTI3OGJlMzUyNWQ/jpeg/000/497/471/240_450.jpg"><br>Julie Cunningham playing at dogging spot</a> 15',
+'<a href="https://xhamster.com/photos/gallery/day-trip-in-the-mountains-julie-gets-naked-in-public-11916096"><img src="https://ic-ph-nss.xhcdn.com/a/YzFiZjZiYTQ1NzQyNmI0MThiZGE0NjY1NDg5NWRjM2E/jpeg/000/279/512/744_450.jpg"><br>Day trip in the mountains. Julie gets naked in public.</a> 14',
+'<a href="https://xhamster.com/photos/gallery/pussy-shaving-baby-oil-massage-julie-cunningham-10620918"><img src="https://ic-ph-nss.xhcdn.com/a/ZWYyOTA2ZTYwM2UzZmU4ODQ3OGFhOWY4NjNlNTE4MTU/jpeg/000/218/776/852_450.jpg"><br>Pussy shaving &amp; baby oil massage Julie Cunningham</a> 13',
+'<a href="https://xhamster.com/photos/gallery/outdoor-bondage-big-tits-15783529"><img src="https://ic-ph-nss.xhcdn.com/a/M2RlNjkyNDE2NTA5ZDk2YmJjNmUxYzM0N2U1NzZhMTU/jpeg/000/493/120/182_450.jpg"><br>Outdoor bondage Big Tits</a> 12',
+'<a href="https://xhamster.com/photos/gallery/tied-up-in-the-woods-mrs-julie-cunningham-10723324"><img src="https://ic-ph-nss.xhcdn.com/a/ZGI1NGQ4ZDg0NjAzMTQwOTg0Y2U2YWI3Mjg1MDI4NmI/jpeg/000/223/147/771_450.jpg"><br>Tied up in the woods. Mrs Julie Cunningham</a> 11',
+'<a href="https://xhamster.com/photos/gallery/me-using-a-pussy-pump-11184902"><img src="https://ic-ph-nss.xhcdn.com/a/YzU0OGVjYzMxMzkyYjA0NjE0YTIwYTQ2YjM1NDFkZTc/jpeg/000/244/356/167_450.jpg"><br>Me using a pussy pump</a> 11',
+'<a href="https://xhamster.com/photos/gallery/me-in-public-some-rude-some-nude-julie-cunningham-uk-milf-10620899"><img src="https://ic-ph-nss.xhcdn.com/a/MDc5YzhkYzM5OTc3MzUzMzY3OTBiNTA0ZGY5MjBhZjY/jpeg/000/218/776/282_450.jpg"><br>Me in public some rude some nude. Julie Cunningham UK MILF</a> 11',
+'<a href="https://xhamster.com/photos/gallery/bondage-in-a-hotel-room-today-xxx-10823100"><img src="https://ic-ph-nss.xhcdn.com/a/MGRlZmYzM2EzMGRjMjIzYTYwZTY2NjE3Mjg2ZWJmYjY/jpeg/000/227/656/919_450.jpg"><br>Bondage in a Hotel room today xxx</a> 10',
+'<a href="https://xhamster.com/photos/gallery/my-alienware-laptop-with-my-images-video-has-died-oh-no-14253387"><img src="https://ic-ph-nss.xhcdn.com/a/Nzk3NjQ0MTM4Yzc5MTFlZTcxMmUzMDZkM2Q4OTAyMzM/jpeg/000/401/668/483_450.jpg"><br>My Alienware laptop with my images &amp; video has died, oh no!</a> 1',
+'<a href="https://xhamster.com/photos/gallery/june-2020-sexy-army-outside-photos-15795541"><img src="https://ic-ph-nss.xhcdn.com/a/NjRmZDg5NTYyZmFiM2IwMGQ5YjRmMmQ4NzUyYzg4ZTQ/jpeg/000/500/035/656_450.jpg"><br>June 2020 Sexy army outside photos </a> 1',
+'<a href="https://xhamster.com/photos/gallery/julie-cunningham-nudist-beach-15802861"><img src="https://ic-ph-nss.xhcdn.com/a/MGZmNTNjODI0N2I4YWQ5ZmU0YWZiMWE3MTdiNzkyMzA/jpeg/000/503/892/093_450.jpg"><br>Julie Cunningham nudist beach</a> 1',
+'<a href="https://xhamster.com/photos/gallery/im-back-more-to-come-soon-15772736"><img src="https://ic-ph-nss.xhcdn.com/a/ZWQ2NzUzNDNiM2Q0YThlNzY4NTEyZDkyMGJjMWI5Zjk/jpeg/000/486/254/965_450.jpg"><br>I&#039;m back - more to come soon.</a> 1',
+'<a href="https://xhamster.com/photos/gallery/25th-nov-18-had-a-great-threesome-last-night-10981709"><img src="https://ic-ph-nss.xhcdn.com/a/MzQxZDJhYTkyMDUzNTMzMjdjOTc3MmVlZTBlZTI3NDE/jpeg/000/234/850/690_450.jpg"><br>25th Nov 18 Had a great threesome last night :-)</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "truro-sexy-wife"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

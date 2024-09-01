@@ -1,0 +1,90 @@
+<base target="_blank"><html><head><title>Julia-North</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">Julia-North</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'64e73b844a1b5"><img src="https://ei.phncdn.com/videos/202308/24/438047101/original/(m=eafTGgaaaa)(mh=Bmqjy-PeLRte8MYr)14.jpg"><br>Live Gangbang with MILF Pornstar Julia North',
+'64e74ca583e03"><img src="https://ei.phncdn.com/videos/202308/24/438048711/original/(m=qP3WXUYbeafTGgaaaa)(mh=lx7C5IybyLK4I2Ov)0.jpg"><br>Dirty anal fisting bat famous milf pornstar Julia North',
+'64e75e6deece6"><img src="https://ei.phncdn.com/videos/202308/24/438057291/original/(m=eafTGgaaaa)(mh=Qdey6tOeNobCOJsq)3.jpg"><br>POV threesome with a pornstar Julia North',
+'64e8a8e82d426"><img src="https://ei.phncdn.com/videos/202308/25/438116501/thumbs_5/(m=eafTGgaaaa)(mh=59AanQkIHScsT2yv)4.jpg"><br>Men made her drink their piss after hard gang bang',
+'64e8ba7b80920"><img src="https://ei.phncdn.com/videos/202308/25/438117931/original/(m=eafTGgaaaa)(mh=ykoiAO7ncKVe1QrJ)3.jpg"><br>Mommy squirts after a huge dildo in her big ass',
+'64e8e1e1f295b"><img src="https://ei.phncdn.com/videos/202308/25/438128901/original/(m=eafTGgaaaa)(mh=_84BOGXYzosO-n1v)14.jpg"><br>Julia North used as human toilet in public',
+'64f2f6cabde93"><img src="https://ei.phncdn.com/videos/202309/02/438615451/thumbs_10/(m=eafTGgaaaa)(mh=DdEfyWT--dzjOqth)2.jpg"><br>Julia North teaches you how to properly cook your ass for huge cocks',
+'64f2fc4ee39c1"><img src="https://ei.phncdn.com/videos/202309/02/438616361/original/(m=qR3YMVYbeafTGgaaaa)(mh=FylhtP4APCL3lhVW)0.jpg"><br>Anal, fisting, masturbation, smoking and squirting from juicy milf in sexy lingerie',
+'64f2fc4ee39c1&pkey=239357501"><img src="https://ei.phncdn.com/videos/202309/02/438616361/original/(m=qR3YMVYbeafTGgaaaa)(mh=FylhtP4APCL3lhVW)0.jpg"><br>Anal, fisting, masturbation, smoking and squirting from juicy milf in sexy lingerie',
+'64f2fc4ee39c1&pkey=289244731"><img src="https://ei.phncdn.com/videos/202309/02/438616361/original/(m=qR3YMVYbeafTGgaaaa)(mh=FylhtP4APCL3lhVW)0.jpg"><br>Anal, fisting, masturbation, smoking and squirting from juicy milf in sexy lingerie',
+'64f301709c7f2"><img src="https://ei.phncdn.com/videos/202309/02/438617021/original/(m=q62UMVYbeafTGgaaaa)(mh=SST80IPEpZHND3zf)0.jpg"><br>Stretching anal with colored big dildos with squirt',
+'64f30c356befe"><img src="https://ei.phncdn.com/videos/202309/02/438619451/original/(m=eafTGgaaaa)(mh=Z9V2OmVXSt4eni73)12.jpg"><br>Hard kinky daddies domination with lots of sex toys over pornstar',
+'64f30c356befe&pkey=239357501"><img src="https://ei.phncdn.com/videos/202309/02/438619451/original/(m=eafTGgaaaa)(mh=Z9V2OmVXSt4eni73)12.jpg"><br>Hard kinky daddies domination with lots of sex toys over pornstar',
+'64f30c356befe&pkey=289244731"><img src="https://ei.phncdn.com/videos/202309/02/438619451/original/(m=eafTGgaaaa)(mh=Z9V2OmVXSt4eni73)12.jpg"><br>Hard kinky daddies domination with lots of sex toys over pornstar',
+'64f31794e3fc2"><img src="https://ei.phncdn.com/videos/202309/02/438620021/original/(m=eafTGgaaaa)(mh=QtSzlglYh1wqi_kY)3.jpg"><br>Live meeting in a hotel room of a pornstar and her fan',
+'64f3227f4a2cd"><img src="https://ei.phncdn.com/videos/202309/02/438624281/original/(m=q1HVOVYbeafTGgaaaa)(mh=J6nU7BwqzXEGPSkH)0.jpg"><br>The Complete Adventures of Julia North and Her Holes in Cancun 2023',
+'64f3227f4a2cd&pkey=239357501"><img src="https://ei.phncdn.com/videos/202309/02/438624281/original/(m=q1HVOVYbeafTGgaaaa)(mh=J6nU7BwqzXEGPSkH)0.jpg"><br>The Complete Adventures of Julia North and Her Holes in Cancun 2023',
+'64f3227f4a2cd&pkey=289244731"><img src="https://ei.phncdn.com/videos/202309/02/438624281/original/(m=q1HVOVYbeafTGgaaaa)(mh=J6nU7BwqzXEGPSkH)0.jpg"><br>The Complete Adventures of Julia North and Her Holes in Cancun 2023',
+'659ff19b45070"><img src="https://ei.phncdn.com/videos/202401/11/446328371/original/(m=qKU--5YbeafTGgaaaa)(mh=MO989gr1-mLKNivJ)0.jpg"><br>SHAME4K. Good Neighborly Relations!',
+'65a43606f0f15"><img src="https://ei.phncdn.com/videos/202401/14/446509431/thumbs_10/(m=eafTGgaaaa)(mh=zJ_dEHNokYc_C5SJ)14.jpg"><br>Aunt Judys XXX - Horny MILF Housewife Julia North Brings Home a Stud from the Club',
+'65b10d13282d7"><img src="https://ei.phncdn.com/videos/202401/24/447051251/original/(m=qLY9I7YbeafTGgaaaa)(mh=D4Vmld5ky27j0GpW)0.jpg"><br>SHAME4K. Car Cuck',
+'65b6b283c9160"><img src="https://ei.phncdn.com/videos/202401/28/447279891/thumbs_10/(m=eafTGgaaaa)(mh=ZuRf0_9Iac712hEZ)4.jpg"><br>Aunt Judys - A Hot Yoga Workout with Gorgeous MILF Julia North',
+'65c23774db77c"><img src="https://ei.phncdn.com/videos/202402/06/447751621/original/(m=qI4XK8YbeafTGgaaaa)(mh=aqdQ26E-oEFQrPhP)0.jpg"><br>TUTOR4K. Deep learning of reproductive system',
+'65dbba032f19e"><img src="https://ei.phncdn.com/videos/202402/25/448690701/original/(m=eafTGgaaaa)(mh=ZGx69IWUqMEI6TX2)7.jpg"><br>Judys XXX - Horny Office MILF Julia North Catches a Perv Watching Her Masturbate',
+'65fc4525a346d"><img src="https://ei.phncdn.com/videos/202403/21/449907431/thumbs_10/(m=eafTGgaaaa)(mh=QvJK7GRCRF7sZX5z)4.jpg"><br>Julia North exposes her anal hole for Tommys  dick',
+'6640d5ecd66c8"><img src="https://ei.phncdn.com/videos/202405/12/452364471/original/(m=qNX3HKZbeafTGgaaaa)(mh=CJLWx1aqOA5fDVln)0.jpg"><br>POV Amateur Orgy! Reislin Takes Two dicks after party and gets a Creampie!',
+'664350c13314a"><img src="https://ei.phncdn.com/videos/202405/14/452446021/original/(m=qL39MKZbeafTGgaaaa)(mh=jjXOwVYUnk78Cp5l)0.jpg"><br>SHAME4K. Someone to Rev Her Engines',
+'66457c90ce7ff"><img src="https://ei.phncdn.com/videos/202405/16/452524871/original/(m=qQGMLMZbeafTGgaaaa)(mh=dQGsLw9gN6E2hKFZ)0.jpg"><br>Sweetie Fox And Diana Rider Masturbate With Dildos And Dream About A Real Dick',
+'666145070e0b9"><img src="https://ei.phncdn.com/videos/202406/06/453446712/original/(m=eafTGgaaaa)(mh=elIy68LMNBP44OLZ)16.jpg"><br>Julia North MILF Nylon Dildo Fuck in Stockings and Suspenders',
+'ph5ebf2e46175e0"><img src="https://ei.phncdn.com/videos/202005/16/314245801/original/(m=qY7W_RVbeafTGgaaaa)(mh=r9ysopO6uYoCwY7n)0.jpg"><br>Car Wash Slut Blake Eden Fucked Rough & Creampied In The Bed Of A Truck',
+'ph61dc04dc2066e"><img src="https://ei.phncdn.com/videos/202201/10/401058911/original/(m=q9LO49WbeafTGgaaaa)(mh=NUC1wW-0X4PsIePd)0.jpg"><br>Fake Taxi European MILF Julia North Wants an Affair',
+'ph62ff84ce92607"><img src="https://ei.phncdn.com/videos/202208/19/413973151/original/(m=qQ70MWXbeafTGgaaaa)(mh=hhOnopn4Ff4k1olz)0.jpg"><br>PASCALSSUBSLUTS - Ukrainian MILF Julia North Fucked Roughly',
+'ph6358f2fe209fa"><img src="https://ei.phncdn.com/videos/202210/26/418280191/original/(m=qH6M01XbeafTGgaaaa)(mh=K8aTKasCJu156LOY)0.jpg"><br>PASCALSSUBSLUTS - MILF Julia North Dominated And Hard Fucked',
+'ph63859dfaefded"><img src="https://ei.phncdn.com/videos/202211/29/420433361/original/(m=qX2SR4XbeafTGgaaaa)(mh=6xSBWzxuFoiBe2U9)0.jpg"><br>gilf extreme rough anal fist fucked',
+'ph638de0f74d961"><img src="https://ei.phncdn.com/videos/202212/05/420829861/thumbs_5/(m=eafTGgaaaa)(mh=Qgg2krYFbdAjMAzJ)8.jpg"><br>Anal fisting pornstar milf Julia North',
+'ph638de1084001f"><img src="https://ei.phncdn.com/videos/202212/05/420828321/original/(m=eafTGgaaaa)(mh=z7cChSh0EUc6zCW0)12.jpg"><br>Mom Julia North decided to go through a porn casting from LutrosWorld',
+'ph638defde0712b"><img src="https://ei.phncdn.com/videos/202212/05/420830401/original/(m=eafTGgaaaa)(mh=uKRQXYo3maS8rIXR)7.jpg"><br>Trailer - Juicy threesome Julia North, Mya Quinn with Aofficialxx',
+'ph63c7e05a03ef3"><img src="https://ei.phncdn.com/videos/202301/18/423602012/original/(m=eafTGgaaaa)(mh=0SdTaVVMRrl87fw9)10.jpg"><br>ModelMedia Asia-MDHS-0003-Model Super Sexual Lesson School-Anniversary Celebration-Ji Yan Xi-Lin Yan',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "Julia-North"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

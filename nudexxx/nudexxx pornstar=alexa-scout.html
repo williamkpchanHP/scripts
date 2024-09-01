@@ -1,0 +1,100 @@
+<base target="_blank"><html><head><title>pornstar=alexa-scout</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<link rel="stylesheet" href="../imgcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+
+<body onkeypress="chkKey()">
+<br>
+<center>
+<p class="tip-number">pornstar=alexa-scout</p>
+<p class="js-tip"></p>
+<br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'363/2c27c9269280e83732a4a6a5dd7906e2-1',
+'363/2c27c9269280e83732a4a6a5dd7906e2-10',
+'363/2c27c9269280e83732a4a6a5dd7906e2-11',
+'363/2c27c9269280e83732a4a6a5dd7906e2-12',
+'363/2c27c9269280e83732a4a6a5dd7906e2-13',
+'363/2c27c9269280e83732a4a6a5dd7906e2-14',
+'363/2c27c9269280e83732a4a6a5dd7906e2-15',
+'363/2c27c9269280e83732a4a6a5dd7906e2-16',
+'363/2c27c9269280e83732a4a6a5dd7906e2-2',
+'363/2c27c9269280e83732a4a6a5dd7906e2-3',
+'363/2c27c9269280e83732a4a6a5dd7906e2-4',
+'363/2c27c9269280e83732a4a6a5dd7906e2-5',
+'363/2c27c9269280e83732a4a6a5dd7906e2-6',
+'363/2c27c9269280e83732a4a6a5dd7906e2-7',
+'363/2c27c9269280e83732a4a6a5dd7906e2-8',
+'363/2c27c9269280e83732a4a6a5dd7906e2-9',
+'505/c5e1055949ff82dcfd35c6190814fcaf-1',
+'505/c5e1055949ff82dcfd35c6190814fcaf-10',
+'505/c5e1055949ff82dcfd35c6190814fcaf-11',
+'505/c5e1055949ff82dcfd35c6190814fcaf-12',
+'505/c5e1055949ff82dcfd35c6190814fcaf-13',
+'505/c5e1055949ff82dcfd35c6190814fcaf-14',
+'505/c5e1055949ff82dcfd35c6190814fcaf-15',
+'505/c5e1055949ff82dcfd35c6190814fcaf-16',
+'505/c5e1055949ff82dcfd35c6190814fcaf-2',
+'505/c5e1055949ff82dcfd35c6190814fcaf-3',
+'505/c5e1055949ff82dcfd35c6190814fcaf-4',
+'505/c5e1055949ff82dcfd35c6190814fcaf-5',
+'505/c5e1055949ff82dcfd35c6190814fcaf-6',
+'505/c5e1055949ff82dcfd35c6190814fcaf-7',
+'505/c5e1055949ff82dcfd35c6190814fcaf-8',
+'505/c5e1055949ff82dcfd35c6190814fcaf-9',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-1',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-10',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-11',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-12',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-13',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-14',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-15',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-16',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-2',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-3',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-4',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-5',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-6',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-7',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-8',
+'835/2efd50ab0cbbf0ce245169b09e3e02d2-9',
+'937/b7fdb810cac3d624749478f51fdb9527-1',
+'937/b7fdb810cac3d624749478f51fdb9527-10',
+'937/b7fdb810cac3d624749478f51fdb9527-11',
+'937/b7fdb810cac3d624749478f51fdb9527-12',
+'937/b7fdb810cac3d624749478f51fdb9527-13',
+'937/b7fdb810cac3d624749478f51fdb9527-14',
+'937/b7fdb810cac3d624749478f51fdb9527-15',
+'937/b7fdb810cac3d624749478f51fdb9527-16',
+'937/b7fdb810cac3d624749478f51fdb9527-2',
+'937/b7fdb810cac3d624749478f51fdb9527-3',
+'937/b7fdb810cac3d624749478f51fdb9527-4',
+'937/b7fdb810cac3d624749478f51fdb9527-5',
+'937/b7fdb810cac3d624749478f51fdb9527-6',
+'937/b7fdb810cac3d624749478f51fdb9527-7',
+'937/b7fdb810cac3d624749478f51fdb9527-8',
+'937/b7fdb810cac3d624749478f51fdb9527-9',
+];
+lineHeader = '<img src="https://cdn.nudexxx.pics/content/galleries/'
+lineTail = '-full.jpg">'
+showRange = 80
+bookid = "pornstar=alexa-scout"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
+

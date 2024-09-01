@@ -1,0 +1,79 @@
+<base target="_blank"><html><head><title>mollyvip</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/sexy-school-baby-16068746"><img src="https://ic-ph-nss.xhcdn.com/a/YzBjYTZlYzk0NDBkOWFhNDBjZjA5NzJkZWYzMzkwNGQ/jpeg/000/515/012/991_450.jpg"><br>Sexy school baby</a> 9',
+'<a href="https://xhamster.com/photos/gallery/posing-on-the-chair-16070568"><img src="https://ic-ph-nss.xhcdn.com/a/OGIzNzMxYWJmODljN2NmODM1OTMyMDIxZDhjMmJhMzc/jpeg/000/515/034/089_450.jpg"><br>Posing on the chair</a> 9',
+'<a href="https://xhamster.com/photos/gallery/in-red-bodystockings-16070569"><img src="https://ic-ph-nss.xhcdn.com/a/YTUyZWQ1MzM1ZGJhNDI0NmNiZDdjZjQ5OTZkY2QzNmQ/jpeg/000/515/034/105_450.jpg"><br>In red bodystockings</a> 9',
+'<a href="https://xhamster.com/photos/gallery/squirting-pussy-16069009"><img src="https://ic-ph-nss.xhcdn.com/a/NjlkY2E5OGNkMjdiNmRiMDJhYzA3NDM3ZDg2YjRmZGM/jpeg/000/515/016/110_450.jpg"><br>Squirting pussy </a> 8',
+'<a href="https://xhamster.com/photos/gallery/sexy-new-red-thongs-16103446"><img src="https://ic-ph-nss.xhcdn.com/a/Yzg2ODQ5ZWMwNGYxYjdkMDgxYTUxYWZlNDI3OTAxODI/jpeg/000/515/463/352_450.jpg"><br>Sexy new red thongs</a> 8',
+'<a href="https://xhamster.com/photos/gallery/neon-yellow-16109177"><img src="https://ic-ph-nss.xhcdn.com/a/YjdkNzkyZTZmYzUzMTRhMTI3NmRjNWY0NWNjZTQ0NjQ/jpeg/000/515/541/569_450.jpg"><br>Neon yellow</a> 6',
+'<a href="https://xhamster.com/photos/gallery/small-tits-16069014"><img src="https://ic-ph-nss.xhcdn.com/a/Y2U0NjVmYzEwYjk1OGIzZTRiZDFhNjc0NTMwMDVjYzU/jpeg/000/515/016/168_450.jpg"><br>Small tits </a> 4',
+'<a href="https://xhamster.com/photos/gallery/christmas-sexy-baby-16100168"><img src="https://ic-ph-nss.xhcdn.com/a/NDA2ZWFhZGM4N2EwNzZkNjgwMWVmYmM5YTcxYWFhY2U/jpeg/000/515/420/520_450.jpg"><br>Christmas sexy baby</a> 37',
+'<a href="https://xhamster.com/photos/gallery/devilgirl-in-pink-16068735"><img src="https://ic-ph-nss.xhcdn.com/a/NTJiN2U2M2E3NzA2NGY5MDhmMGVmODAxOGIxMTYyODI/jpeg/000/515/012/832_450.jpg"><br>Devilgirl in pink</a> 22',
+'<a href="https://xhamster.com/photos/gallery/christmas-sexy-doll-16100166"><img src="https://ic-ph-nss.xhcdn.com/a/YTdiZmYwY2IzMzIzYTA1NDdhODc0N2E1Mzc4NTg0YWM/jpeg/000/515/420/459_450.jpg"><br>Christmas sexy doll</a> 21',
+'<a href="https://xhamster.com/photos/gallery/sexy-red-i-love-it-16109174"><img src="https://ic-ph-nss.xhcdn.com/a/YTgyOTU2OTJjNzg2NzA1MDc2YzJmMWM0MzhlY2E0MWQ/jpeg/000/515/541/543_450.jpg"><br>Sexy red, i love it</a> 17',
+'<a href="https://xhamster.com/photos/gallery/my-wet-pussy-16070548"><img src="https://ic-ph-nss.xhcdn.com/a/ZTAxNWIxNTM1ZTc0NDIzZmFjN2M0MGY2MTJiOWVlNWM/jpeg/000/515/033/904_450.jpg"><br>My wet pussy </a> 17',
+'<a href="https://xhamster.com/photos/gallery/in-pink-sexy-stocking-16075562"><img src="https://ic-ph-nss.xhcdn.com/a/ODBhYTJiMDViY2FhODkxZTE0MmYxYjM5MmY2MTQ3YjI/jpeg/000/515/096/283_450.jpg"><br>In pink sexy stocking</a> 17',
+'<a href="https://xhamster.com/photos/gallery/blue-bodystocking-16075561"><img src="https://ic-ph-nss.xhcdn.com/a/OWZiNGY2MjI1YmUwYTg0ZjA3YTEwYWNhYzRjM2U5ZWI/jpeg/000/515/096/258_450.jpg"><br>Blue bodystocking</a> 16',
+'<a href="https://xhamster.com/photos/gallery/red-dress-and-stockings-16068743"><img src="https://ic-ph-nss.xhcdn.com/a/Mjc0MWU1ZTk0NjNhZDA3MjYxN2RlMjY1NWQ5ZWZkNWI/jpeg/000/515/012/967_450.jpg"><br>Red dress and stockings</a> 15',
+'<a href="https://xhamster.com/photos/gallery/playing-with-cucumber-16069017"><img src="https://ic-ph-nss.xhcdn.com/a/ODBmNGEwNmQ0NWJkYjAxZGI3YTYwMDRjY2FkYzc4ZjI/jpeg/000/515/016/208_450.jpg"><br>Playing with cucumber </a> 14',
+'<a href="https://xhamster.com/photos/gallery/in-shower-16070571"><img src="https://ic-ph-nss.xhcdn.com/a/ZjMzYjUxYWMxNTAyZmUwMTAyNmI5NDVkZjc4MzY4MTk/jpeg/000/515/034/121_450.jpg"><br>In shower</a> 14',
+'<a href="https://xhamster.com/photos/gallery/banana-playing-16068737"><img src="https://ic-ph-nss.xhcdn.com/a/MDVlMTVkN2I5NGQyYjJiMTYyM2Q2OThmNTkwMzIwOTc/jpeg/000/515/012/854_450.jpg"><br>Banana playing</a> 14',
+'<a href="https://xhamster.com/photos/gallery/sexy-posing-on-bed-16070551"><img src="https://ic-ph-nss.xhcdn.com/a/M2ZkZDQwNzYxMWFjZjFmNGVhNDk0NmMzODNlODg4ZmQ/jpeg/000/515/033/920_450.jpg"><br>Sexy posing on bed</a> 12',
+'<a href="https://xhamster.com/photos/gallery/sexy-skirt-chool-girl-16068739"><img src="https://ic-ph-nss.xhcdn.com/a/YzI4MTZhNTRmMmYzYmMzY2I4NzI0YWNkZTBhZjU0OTE/jpeg/000/515/012/935_450.jpg"><br>Sexy skirt chool girl</a> 11',
+'<a href="https://xhamster.com/photos/gallery/my-big-clit-and-pussy-posing-16070559"><img src="https://ic-ph-nss.xhcdn.com/a/NzY5ZjdmNDQzYTI1NzYyZWEwN2I5MDMzMjQzYjgyNWU/jpeg/000/515/033/972_450.jpg"><br>My big clit and pussy posing</a> 11',
+'<a href="https://xhamster.com/photos/gallery/clit-torture-with-vibrators-16070567"><img src="https://ic-ph-nss.xhcdn.com/a/ODU0ZmRiODY4NDg3ZGRjOGE1NjA4M2NjYTBjOTUyMGU/jpeg/000/515/034/087_450.jpg"><br>Clit torture with vibrators</a> 11',
+'<a href="https://xhamster.com/photos/gallery/anal-and-double-penetration-with-dildo-16070563"><img src="https://ic-ph-nss.xhcdn.com/a/NmFmNTQzYTI3ZjEyOWI5NDU1YzBhZDZhOWE2MmI5YTk/jpeg/000/515/034/052_450.jpg"><br>Anal and double penetration with dildo</a> 11',
+'<a href="https://xhamster.com/photos/gallery/sexy-pink-16103150"><img src="https://ic-ph-nss.xhcdn.com/a/ZTgzZTExMmVhYjdiYzk2ZjIyMzhiZDUxMjUwNTg4NjE/jpeg/000/515/459/297_450.jpg"><br>Sexy pink</a> 10',
+'<a href="https://xhamster.com/photos/gallery/posing-on-the-camera-in-red-dress-16069016"><img src="https://ic-ph-nss.xhcdn.com/a/Yzk2ODRlYmMzYjVhM2RmMDRkNDQwOGYzOGE3OGM3NWY/jpeg/000/515/016/197_450.jpg"><br>Posing on the camera in red dress </a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "mollyvip"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

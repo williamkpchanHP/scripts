@@ -1,0 +1,68 @@
+<base target="_blank"><html><head><title>unusual_people</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-9-record-female-ejaculation-16162724"><img src="https://ic-ph-nss.xhcdn.com/a/YmM3MmIyOWIwNGU5MmU0ZWVkZGZlNTA4YTg4NTJiMTQ/jpeg/000/516/262/624_450.jpg"><br>Unusual Award N.9: Record – Female Ejaculation</a> 8',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-10-record-world-beautiful-transgender-wom-16162726"><img src="https://ic-ph-nss.xhcdn.com/a/ODBlMzY1Mjk2NjhkMzM4MjQ2ZDRjNzc4ZTc3ZjI4N2U/jpeg/000/516/262/662_450.jpg"><br>Unusual Award N.10: Record - World Beautiful Transgender Wom</a> 8',
+'<a href="https://xhamster.com/photos/gallery/unusual-people-previews-16103808"><img src="https://ic-ph-nss.xhcdn.com/a/MDYxMGVjYmIwZWQxYTNmM2EyZGQwZDQ0NDU2ZjZmNjQ/jpeg/000/515/468/758_450.jpg"><br>Unusual People previews</a> 6',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-13-extreme-proportions-in-african-woman-16162751"><img src="https://ic-ph-nss.xhcdn.com/a/NzI3NTc0MDVmZjA3NjY1OTRjZWM0M2I1YjQ5ZjBiODE/jpeg/000/516/262/839_450.jpg"><br>Unusual Award N.13: Extreme Proportions in African Woman</a> 6',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-4-woman-has-three-breasts-and-penis-16109339"><img src="https://ic-ph-nss.xhcdn.com/a/OTVmZmViZjMwM2ZjNjZlMWJiMDNlNDQzNzZjZGRkZjc/jpeg/000/515/544/181_450.jpg"><br>Unusual Award N.4: Woman Has Three Breasts and Penis</a> 13',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-6-the-worlds-largest-penis-42cm-16-5-in-16109341"><img src="https://ic-ph-nss.xhcdn.com/a/ODRhMjRiNDUzZTczNzY4MmRiNzM5MzUzNTlhNzcwYmQ/jpeg/000/515/544/209_450.jpg"><br>Unusual Award N.6: The World&#039;s Largest Penis 42cm (16.5 in)</a> 12',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-5-woman-with-the-worlds-largest-breasts-16109340"><img src="https://ic-ph-nss.xhcdn.com/a/ZThjZTZkZTVjNjk1NTAyMjkyMmExMjlkNWM5NjBjYzA/jpeg/000/515/544/193_450.jpg"><br>Unusual Award N.5: Woman with the World&#039;s Largest Breasts</a> 12',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-3-girl-models-record-pubic-hair-phenomena-16109337"><img src="https://ic-ph-nss.xhcdn.com/a/NTMwOTRlMzAyY2Y3NWIxYTg1M2IzNDIyYzI3OWQyNGQ/jpeg/000/515/544/152_450.jpg"><br>Unusual Award N.3 Girl Model&#039;s Record Pubic Hair Phenomena</a> 12',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-2-amazing-born-penis-anomaly-in-girl-superm-16109335"><img src="https://ic-ph-nss.xhcdn.com/a/NzAxYWY0ZmY4ZDZiMTc1Y2QzZWNjMjYxNGNhYWFlNGU/jpeg/000/515/544/092_450.jpg"><br>Unusual Award N.2: Amazing Born-Penis Anomaly in Girl Superm</a> 12',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-12-worlds-largest-erect-clitoris-16162749"><img src="https://ic-ph-nss.xhcdn.com/a/NDM1YjEwMjE4ZGM2NTQ2ZGVjODJmNmIwNjczNmI4ZGU/jpeg/000/516/262/810_450.jpg"><br>Unusual Award N.12: World&#039;s Largest Erect Clitoris</a> 12',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-11-most-extreme-cosmetic-surgeries-16162729"><img src="https://ic-ph-nss.xhcdn.com/a/NDNmOGY3ZTMyM2JhNWE5Y2I0Mjc2MzFiOWYyYWM1ZGE/jpeg/000/516/262/681_450.jpg"><br>Unusual Award N.11: Most Extreme Cosmetic Surgeries</a> 12',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-1-presence-of-a-7-inch-penis-in-female-16109332"><img src="https://ic-ph-nss.xhcdn.com/a/YjA0MTgzZjk0MDkzZWNlNjNjMDEwZmU2MjM3ODFlZDc/jpeg/000/515/544/062_450.jpg"><br>Unusual Award N.1: Presence of a 7-inch Penis in Female</a> 12',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-8-case-of-colossal-vaginal-dimensions-16116115"><img src="https://ic-ph-nss.xhcdn.com/a/MDk2NmE2NzM1MjUxNzMxNjVlNGM1ZmY5ZGQ1YWI5Yjc/jpeg/000/515/631/409_450.jpg"><br>Unusual Award N.8: Case Of Colossal Vaginal Dimensions</a> 11',
+'<a href="https://xhamster.com/photos/gallery/unusual-award-n-7-unique-penis-anomaly-in-mature-friends-16109342"><img src="https://ic-ph-nss.xhcdn.com/a/YjMyZjk3YjQwZDJiMGJiMjBmMzk4YjQxOWI0ODkxNjg/jpeg/000/515/544/227_450.jpg"><br>Unusual Award N.7: Unique Penis Anomaly in Mature Friends</a> 11',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "unusual_people"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

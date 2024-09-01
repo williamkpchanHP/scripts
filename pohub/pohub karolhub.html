@@ -1,0 +1,111 @@
+<base target="_blank"><html><head><title>karolhub</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">karolhub</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'63ea5fe79c8e6"><img src="https://ei.phncdn.com/videos/202302/13/425393311/thumbs_10/(m=eafTGgaaaa)(mh=Ls7dLytICLG1HeGl)8.jpg"><br>Follada en hotel como me gusta (escucha cm grito)',
+'63fae5b957d5e"><img src="https://ei.phncdn.com/videos/202302/26/426255121/original/(m=eafTGgaaaa)(mh=qCWxh1KS7mh-K3Ht)12.jpg"><br>Blowjob to my classmate',
+'6424aa0b775a4"><img src="https://ei.phncdn.com/videos/202303/29/428463551/original/(m=eafTGgaaaa)(mh=IVEZXWuIUJpn5kvr)11.jpg"><br>Me invita a salir un fan y la termino mamando como nunca',
+'6451911ae4700"><img src="https://ei.phncdn.com/videos/202305/02/430761561/thumbs_12/(m=eafTGgaaaa)(mh=Zo9FMsG4p1w9Bk_W)7.jpg"><br>Un rápidito con mi mejor amigo (le aplasto las bolas con mi culo)',
+'6463cf59ca612"><img src="https://ei.phncdn.com/videos/202305/16/431680891/thumbs_5/(m=eafTGgaaaa)(mh=_g9Fe1kJejubphtU)10.jpg"><br>Mi jefe me encuentra jugando en un viaje de negocios y me termina follando (mira cm sale mi leche)',
+'647172282dca0"><img src="https://ei.phncdn.com/videos/202305/27/432345461/thumbs_20/(m=eafTGgaaaa)(mh=5_vTzvYQWWxpD4tN)9.jpg"><br>Sexo al amanecer (me hace venir varias veces )',
+'6498f58e79b1a"><img src="https://ei.phncdn.com/videos/202306/26/434283921/original/(m=eafTGgaaaa)(mh=1-7jzh-gJamoeThG)16.jpg"><br>Sex at dawn (fucking with my boyfriends best friend)',
+'650e72c24c88e"><img src="https://ei.phncdn.com/videos/202309/23/439944921/original/(m=eafTGgaaaa)(mh=icyOifGBwvFS_Lig)5.jpg"><br>Aceite en mi gran culo ( mira como brilla)',
+'652ba8f9738a7"><img src="https://ei.phncdn.com/videos/202310/15/441233771/original/(m=q8NM5YYbeafTGgaaaa)(mh=2dXrrjSQ1bFNzGJe)0.jpg"><br>You told me you were going to leave him alone - Spitting, slapped, doggystyle and double cum',
+'652e1ebec4275"><img src="https://ei.phncdn.com/videos/202310/17/441340071/original/(m=eafTGgaaaa)(mh=E_zhMrFYljo6jZmA)13.jpg"><br>Im very hot (my best friend left me waiting and cant give him his gift',
+'6555923765adb"><img src="https://ei.phncdn.com/videos/202311/16/443080371/original/(m=eafTGgaaaa)(mh=fl2ArPgD9KsJWD-D)10.jpg"><br>Mi vecina no tiene para la renta y me paga con su cuerpo',
+'6556aa9a0d2fa"><img src="https://ei.phncdn.com/videos/202311/17/443132211/original/(m=q7R5T1YbeafTGgaaaa)(mh=mb67sBTUab4QlyPQ)0.jpg"><br>My younger stepsister made me cum twice after sex and blowjob',
+'656b624f19a6d"><img src="https://ei.phncdn.com/videos/202312/02/444039331/thumbs_10/(m=eafTGgaaaa)(mh=oRyI6qcpfCsUeslL)1.jpg"><br>Sexo con mi jefe y le pido aumento de sueldo, me deja complacida',
+'656d55114893d"><img src="https://ei.phncdn.com/videos/202312/04/444120371/original/(m=eafTGgaaaa)(mh=v7IYtf8L4L0O_CGJ)10.jpg"><br>Romantic sex with my boyfriend (makes me orgasm)',
+'6586271ba972f"><img src="https://ei.phncdn.com/videos/202312/23/445254021/original/(m=eafTGgaaaa)(mh=g53IZ_8kcx0WllGK)12.jpg"><br>Me invita mi jefe a la casa y termina follandome rico ( alumna follada)',
+'6590ef49adf68"><img src="https://ei.phncdn.com/videos/202312/31/445684011/original/(m=eafTGgaaaa)(mh=VH6IrAkMAbtQGD-o)8.jpg"><br>I invite my teacher to my house to help me study (ends up fucking me)',
+'659886322b97c"><img src="https://ei.phncdn.com/videos/202401/05/445995501/original/(m=eafTGgaaaa)(mh=oFwA8_5Etzkcv3f_)16.jpg"><br>Sex for money, (makes me several positions) rich',
+'65a20bf8862e4"><img src="https://ei.phncdn.com/videos/202401/13/446426271/original/(m=eafTGgaaaa)(mh=39T9_U4X9wbdN0N_)13.jpg"><br>After school I love to fuck (listen to my screams)',
+'65ab3f38bc87b"><img src="https://ei.phncdn.com/videos/202401/20/446818101/original/(m=eafTGgaaaa)(mh=TFy4Kz0pZ0q3ab0a)10.jpg"><br>Roommate fucks me too hard and makes me scream',
+'65b67a3c3f5c2"><img src="https://ei.phncdn.com/videos/202401/28/447269831/original/(m=eafTGgaaaa)(mh=s2txequrlcOx3x4a)1.jpg"><br>Very hot fucking wife pays me off with a fuck',
+'65c13f93beccc"><img src="https://ei.phncdn.com/videos/202402/05/447711651/original/(m=qZ51L8YbeafTGgaaaa)(mh=BVOGy-_GdsTj92Je)0.jpg"><br>I woke her up after a big dream and we ended up fucking',
+'65c859267bcd4"><img src="https://ei.phncdn.com/videos/202402/11/447984351/original/(m=qH8NZ8YbeafTGgaaaa)(mh=P29_qLifxW7XvgAY)0.jpg"><br>I bring sugar to my neighbor and end up fucking her.',
+'65cf4dd6e704b"><img src="https://ei.phncdn.com/videos/202402/16/448234681/thumbs_60/(m=eafTGgaaaa)(mh=aVmtgRBfkQgQfaZ-)4.jpg"><br>Creampie compilation of my most popular videos',
+'65cf6fa6ebf83"><img src="https://ei.phncdn.com/videos/202402/16/448238891/original/(m=qQPG-8YbeafTGgaaaa)(mh=xrzus0nEOAUyaQ3i)0.jpg"><br>MILFED - The Best Prescription In Town Is A Dose Of Naughty Nurse Gogo Fukme And A Horny Jenna Starr',
+'65d16606c0bf4"><img src="https://ei.phncdn.com/videos/202402/18/448310821/original/(m=qX79Y9YbeafTGgaaaa)(mh=BsA5yH9Ps3pRx2zz)0.jpg"><br>Friend gets new job and I celebrate her fucking her ass',
+'65dac598e05ac"><img src="https://ei.phncdn.com/videos/202402/25/448659741/original/(m=qGW619YbeafTGgaaaa)(mh=dKVlkdhOsJQFOb5P)0.jpg"><br>Keeping my sisters bff warm with my dick in a snowy cabin',
+'65deb152210b3"><img src="https://ei.phncdn.com/videos/202402/28/448806821/original/(m=eafTGgaaaa)(mh=aHrEu5G16GCtKw6o)13.jpg"><br>Puse una cámara para ver a mi esposa que hacía cuando salía a trabajar',
+'65dee1843b7e9"><img src="https://ei.phncdn.com/videos/202402/28/448812421/original/(m=qSV7-9YbeafTGgaaaa)(mh=SLm6_GlxD8nz1aok)0.jpg"><br>Black Girl Gives White Guy A Chance - Amari Anne - Perfect Girlfriend - Alex Adams',
+'65f105afb5e82"><img src="https://ei.phncdn.com/videos/202403/13/449484761/original/(m=q30ON-YbeafTGgaaaa)(mh=ECUUW4DRM4tiu-Ph)0.jpg"><br>Fucking my girlfriends best friend',
+'65f3a2f5f04c8"><img src="https://ei.phncdn.com/videos/202403/15/449585291/original/(m=q4W7O-YbeafTGgaaaa)(mh=fz2TpdJa5BgkFDS1)0.jpg"><br>MILFS milki lactation, gets fucked secretly by her husband',
+'65f8d13c166c2"><img src="https://ei.phncdn.com/videos/202403/18/449765691/original/(m=q4GLY-YbeafTGgaaaa)(mh=5kwrKVm87tVWWVX-)0.jpg"><br>Horny milf gets fucked until milk comes out of her tits.',
+'ph61f736b965b89"><img src="https://ei.phncdn.com/videos/202201/31/402232291/original/(m=eafTGgaaaa)(mh=r_unJob-Jc50BXqO)4.jpg"><br>Babe consigue orgasmos con una almohada',
+'ph6228de908c747"><img src="https://ei.phncdn.com/videos/202203/09/404353451/original/(m=eafTGgaaaa)(mh=Wui1lXp0iFC0-Rso)6.jpg"><br>estudiante latina jodidamente caliente (audio espa<U+00F1>ol)',
+'ph622d272d58b1c"><img src="https://ei.phncdn.com/videos/202203/12/404539291/original/(m=eafTGgaaaa)(mh=purjoasevCXpRZ7E)2.jpg"><br>Me follo a mi compa<U+00F1>ero de cuarto después del GYM',
+'ph624265897e228"><img src="https://ei.phncdn.com/videos/202203/29/405494101/original/(m=eafTGgaaaa)(mh=rs57iHC5-xwgKJiE)1.jpg"><br>Sexo después de fiesta con joven culona',
+'ph625a1d299db30"><img src="https://ei.phncdn.com/videos/202204/16/406452711/original/(m=eafTGgaaaa)(mh=u2crsPUeB9kaYnLS)7.jpg"><br>Follando con el novio de mi mejor amiga (se viene en chorro)',
+'ph6260c3a7252ba"><img src="https://ei.phncdn.com/videos/202204/21/406723161/original/(m=eafTGgaaaa)(mh=gMn2VlKzUaVwPdv-)13.jpg"><br>Fucking After the gym Edith my new Thong ( i hace an orgasm)',
+'ph626756e60d4d1"><img src="https://ei.phncdn.com/videos/202204/26/407007111/thumbs_5/(m=eafTGgaaaa)(mh=cpq_16A9R1zxntXW)1.jpg"><br>Fucking with my neighbor gives me how i love it most (Wait for the end)',
+'ph62675cdd84b85"><img src="https://ei.phncdn.com/videos/202204/26/407008301/thumbs_10/(m=eafTGgaaaa)(mh=uOX7JYyBSXlMu_V8)11.jpg"><br>Rich sentones that my college roommate gives me (listen how she does it)',
+'ph628eb35b4e6d3"><img src="https://ei.phncdn.com/videos/202205/25/408766931/original/(m=eafTGgaaaa)(mh=SkBot1qPIStQyhRC)12.jpg"><br>Fucking my boss on a business trip',
+'ph62a416ac565d3"><img src="https://ei.phncdn.com/videos/202206/11/409711901/original/(m=eafTGgaaaa)(mh=Mq6NspvJU35w6lAS)5.jpg"><br>A quickie before my parents arrive',
+'ph62c35621b3675"><img src="https://ei.phncdn.com/videos/202207/04/411141151/original/(m=eafTGgaaaa)(mh=LdeSGv5BUcig-dtr)16.jpg"><br>I premiere my new lingerie (I end up honoring my photographer)',
+'ph62ce2e5d29a19"><img src="https://ei.phncdn.com/videos/202207/13/411650611/thumbs_5/(m=eafTGgaaaa)(mh=il3DHn2wdBY6CjhH)8.jpg"><br>Follando con mi amigo en el sofa',
+'ph62d8d685536d8"><img src="https://ei.phncdn.com/videos/202207/21/412144771/thumbs_10/(m=eafTGgaaaa)(mh=ENwYUM7DDy3WZdBg)16.jpg"><br>Delicious girl with a perfect ass is fucked by her boss in the office',
+'ph62f061fd75d59"><img src="https://ei.phncdn.com/videos/202208/08/413250271/thumbs_5/(m=eafTGgaaaa)(mh=FcjJUizn4An_4LJ-)6.jpg"><br>roommate gets fucked by her boyfriends friend',
+'ph62fe77664115a"><img src="https://ei.phncdn.com/videos/202208/18/413923611/original/(m=eafTGgaaaa)(mh=TrZOEVfL21S2saVZ)15.jpg"><br>El mejor amigo de mi novio me folla por la boca ',
+'ph630948484c85e"><img src="https://ei.phncdn.com/videos/202208/26/414452171/original/(m=eafTGgaaaa)(mh=C21Kgi8E7UfLB6Mt)9.jpg"><br>Infiel cabalga de espadas a su mejor amigo',
+'ph630d32f9e24a3"><img src="https://ei.phncdn.com/videos/202208/29/414634661/original/(m=eafTGgaaaa)(mh=VR5tA-KwCk89AQTP)3.jpg"><br>Sexo amateur (se excita cuando le nalgeo)',
+'ph630d38b0e4c44"><img src="https://ei.phncdn.com/videos/202208/29/414635531/original/(m=eafTGgaaaa)(mh=3H6J2bedqemcaIh4)1.jpg"><br>Me invita a ver pelis en su casa y me termina follando (parte 1)',
+'ph630d39f925e12"><img src="https://ei.phncdn.com/videos/202208/29/414635991/original/(m=eafTGgaaaa)(mh=P4x3TKV62d6XlgM-)2.jpg"><br>Me invita a su casa y me folla parte 2',
+'ph630d3e24cb212"><img src="https://ei.phncdn.com/videos/202208/29/414636971/original/(m=eafTGgaaaa)(mh=mzAjTg8t5znb0aTo)2.jpg"><br>Just waking up and getting fucked by her lover',
+'ph6328ef13b1f97"><img src="https://ei.phncdn.com/videos/202209/19/415925811/thumbs_5/(m=eafTGgaaaa)(mh=8O8vFnh0TonkExnj)4.jpg"><br>Vecina Cachonda es follada por todos lados ( escúchala como se queja)',
+'ph633b23f727b08"><img src="https://ei.phncdn.com/videos/202210/03/416785021/original/(m=eafTGgaaaa)(mh=Qcs5lHJpHXkPhCra)6.jpg"><br>listen how my roommate moans (you will not resist)',
+'ph6359e7ee198a6"><img src="https://ei.phncdn.com/videos/202210/27/418331191/thumbs_10/(m=eafTGgaaaa)(mh=O0uHO45msYaug9SO)4.jpg"><br>Sex in a country house with my neighbor',
+'ph636876714d68d"><img src="https://ei.phncdn.com/videos/202211/07/419025031/thumbs_10/(m=eafTGgaaaa)(mh=JFov4O-q275Mh3Vd)14.jpg"><br>Escucha cómo gime la mejor amiga de mi novia ',
+'ph63855a5c30b4a"><img src="https://ei.phncdn.com/videos/202211/29/420422681/thumbs_5/(m=eafTGgaaaa)(mh=DK26cqcVQwiMuQPt)1.jpg"><br>Cute Korean ABG Knows How to Suck and Fuck Chinese Dick',
+'ph6387c789bfaa4"><img src="https://ei.phncdn.com/videos/202211/30/420541571/thumbs_15/(m=eafTGgaaaa)(mh=3eXxo6qtonIKi_km)3.jpg"><br>Follando con mi mejor amigo después de clases ( me vengo )',
+'ph6390b8c7e8c8e"><img src="https://ei.phncdn.com/videos/202212/07/420969501/thumbs_10/(m=eafTGgaaaa)(mh=BUo135Y4XDnRnWia)5.jpg"><br>Follando con mi jefe después del GYM (escucha los gemidos)',
+'ph63b327585c3bc"><img src="https://ei.phncdn.com/videos/202301/02/422533741/thumbs_10/(m=eafTGgaaaa)(mh=Afh3n8iZwiiZMuWP)15.jpg"><br>Follando como me encanta (mira cm rebota)',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "karolhub"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

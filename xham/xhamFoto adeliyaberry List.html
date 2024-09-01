@@ -1,0 +1,66 @@
+<base target="_blank"><html><head><title>adeliyaberry</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/big-ass-oiled-up-and-ready-amateur-teen-shows-what-she-got-16068187"><img src="https://ic-ph-nss.xhcdn.com/a/YjA2NTA0MmYwODE4NmVlMzRkYzYyYzczYWJmYWNkY2I/jpeg/000/515/006/084_450.jpg"><br>Big ass oiled up and ready! Amateur teen shows what she got</a> 9',
+'<a href="https://xhamster.com/photos/gallery/barely-legal-with-small-tits-an-big-ass-taking-a-bubble-bath-16041143"><img src="https://ic-ph-nss.xhcdn.com/a/NjA0OWU2YmM1NWE5MjIxMjMyNTQ5MjRmNWJiYTRjMzE/jpeg/000/514/630/833_450.jpg"><br>Barely legal with small tits an big ass taking a bubble bath</a> 9',
+'<a href="https://xhamster.com/photos/gallery/amateur-redhead-petite-teen-with-natural-firm-boobs-16023149"><img src="https://ic-ph-nss.xhcdn.com/a/N2QxZWEyNTc2OTgzZjUzZDg4NDQwNjZiNTYzMjhkMDU/jpeg/000/514/385/834_450.jpg"><br>Amateur Redhead petite teen with natural firm boobs! </a> 7',
+'<a href="https://xhamster.com/photos/gallery/petite-teen-taking-a-soapy-bath-tiny-tits-and-shaved-pussy-16093000"><img src="https://ic-ph-nss.xhcdn.com/a/NTRiZmUwMjM1ZjA0YTQ1YmZiOTEzYmQzYjY0YWQ0YzU/jpeg/000/515/329/110_450.jpg"><br>Petite teen taking a soapy bath. Tiny tits and shaved pussy</a> 37',
+'<a href="https://xhamster.com/photos/gallery/petite-stepsister-show-off-big-firm-tits-huge-ass-pussy-16093003"><img src="https://ic-ph-nss.xhcdn.com/a/MzkwZWVjYzZhZDY4OWE2MmZhMDcyNDRiM2M2YzM0NmI/jpeg/000/515/329/182_450.jpg"><br>Petite stepsister show off! Big firm tits, huge ass, pussy!</a> 21',
+'<a href="https://xhamster.com/photos/gallery/amateur-petite-but-big-tits-teen-undressing-sexy-underwear-16025597"><img src="https://ic-ph-nss.xhcdn.com/a/NzMwNjU2MTIwYjRiMzIzZjE5ODk1NTI5YWM3YWI1NzY/jpeg/000/514/423/660_450.jpg"><br>Amateur, petite but big tits teen undressing sexy underwear!</a> 21',
+'<a href="https://xhamster.com/photos/gallery/petite-amateur-teen-having-shower-soapy-big-tits-and-ass-16021820"><img src="https://ic-ph-nss.xhcdn.com/a/ODAxM2RiMTAwMDNlZWEzZWEzOWI3M2UyYmQ1Y2NlN2Q/jpeg/000/514/367/958_450.jpg"><br>Petite Amateur teen having shower! Soapy big tits and ass! </a> 12',
+'<a href="https://xhamster.com/photos/gallery/amateur-bdsm-slave-petite-teen-slave-with-big-tits-and-ass-16022407"><img src="https://ic-ph-nss.xhcdn.com/a/ZjA2Yjc2ZjU1Yzc3YWJkNjE0NGVmNjc5YTYyOGQ2OGY/jpeg/000/514/374/237_450.jpg"><br>Amateur BDSM slave! Petite teen slave with big tits and ass!</a> 12',
+'<a href="https://xhamster.com/photos/gallery/redhead-teen-beauty-big-firm-boobs-petite-body-and-pussy-16022209"><img src="https://ic-ph-nss.xhcdn.com/a/NjQ3Y2M3MTRjNzllNGEyYzRlYzg4MDY0YjQyNDdlMDI/jpeg/000/514/371/711_450.jpg"><br>Redhead teen beauty! Big firm boobs, petite body and pussy! </a> 11',
+'<a href="https://xhamster.com/photos/gallery/big-ass-babysitter-wants-to-play-spreading-butt-and-pussy-16022412"><img src="https://ic-ph-nss.xhcdn.com/a/YWQ0ZTYyZGQzY2I2NmM0NGVjZWU1NWE4ODQ3YjI0MjA/jpeg/000/514/374/302_450.jpg"><br>Big ass babysitter wants to play! Spreading butt and pussy!</a> 11',
+'<a href="https://xhamster.com/photos/gallery/amateur-teen-with-natural-big-tits-shows-off-pussy-and-ass-16068194"><img src="https://ic-ph-nss.xhcdn.com/a/ZWE1YWIwZmNlYTNkYWE4NTdmMjczN2VjZTljMWMyMjY/jpeg/000/515/006/155_450.jpg"><br>Amateur teen with natural big tits, shows off pussy and ass</a> 10',
+'<a href="https://xhamster.com/photos/gallery/amateur-girl-with-pigtails-shows-big-tits-thick-ass-pussy-16069197"><img src="https://ic-ph-nss.xhcdn.com/a/ZTE4ZDVmZmMzZDFmMDFmOGI4YmRlYTQyOGRkZmFiYzk/jpeg/000/515/018/144_450.jpg"><br>Amateur girl with pigtails shows big tits, thick ass, pussy</a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "adeliyaberry"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

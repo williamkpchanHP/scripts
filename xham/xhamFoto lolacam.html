@@ -1,0 +1,259 @@
+<base target="_blank"><html><head><title>batch file: 197</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">batch file: 197</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/fucking-in-the-sun-16148771</k>',
+'ODE5OGU2NjhjOTc0ZWFlZGE2MDlhMzVjM2JmZjFlNmQ/jpeg/000/516/088/397',
+'ZTE5ZDgyMWFkMzViNDU2OWM2NTU5OGNkYzM4NWFmODY/jpeg/000/516/088/396',
+'Y2Q2OWQ1Yjc3OWIxMTA3NDNlYmMxYWY5MWFmMDZjY2I/jpeg/000/516/088/395',
+'MWU5Mzc5NjkzODIyOWZkMGZlYjQxZjc2Mzk1Nzg4MTQ/jpeg/000/516/088/394',
+'OTc1OGM4ZDMzMmM4ZTRjZmY5OWMxZjQ1MTc3OTliZTY/jpeg/000/516/088/393',
+'<k>https://xhamster.com/photos/gallery/doggy-in-white-open-crotch-16121197</k>',
+'YTQyYWU3YTMyM2QxMmJmZmVmNTgyOTFjY2NiMzlhOTM/jpeg/000/515/697/972',
+'YzVmY2Y3MDU2ZTVmYTkzMTNjZWZlZWQ1ODJkMjhjYjY/jpeg/000/515/697/971',
+'NGE0N2EzYWI4ZDk0YzE0YjlmNjkyMGVlYzZkYjY4ZDA/jpeg/000/515/697/970',
+'ZDEwNzkzNzk4ZDkzZTVlN2UzMTk0ZmQwNGJiMjAxOGM/jpeg/000/515/697/969',
+'NTc1OTdiNGRhNmFjOWNkYThiZGQxOGNhZDAwNmQzZWM/jpeg/000/515/697/968',
+'<k>https://xhamster.com/photos/gallery/fishnet-tits-16110836</k>',
+'NWM3YjAyZjZmZmYwM2E2YTJjNGRhNDQ1OTE1OTdkODg/jpeg/000/515/561/344',
+'YmRjYTg5NWEwYjMwYmRmYzU5YTM1MjQxNDA3MTNkMTY/jpeg/000/515/561/343',
+'ZGU4OGE3NGNjY2UwZGQ3ZGIzZGU2MWNjMmI3MTg5YmI/jpeg/000/515/561/342',
+'NDgzMGUyNTNjNjRhN2U2M2FhYWJiM2UyNjkzYmVhODk/jpeg/000/515/561/341',
+'NDQ3YTIxZTQxYmRiOGVjNTg4M2U5OTY5NTBkZGM4MjE/jpeg/000/515/561/340',
+'<k>https://xhamster.com/photos/gallery/closeup-vibe-in-pussy-16098341</k>',
+'OWE1ZDcxNjY3ZGE5YmYwZWQwMTRmNWIwYjg1MjhhZjc/jpeg/000/515/399/376',
+'MmM1NGYwMWJlZjlhMWY0ZWU1Njc3MTBiN2NhNGM3ZmQ/jpeg/000/515/399/374',
+'YmQ1NDcyYjc0Y2FlNjI5NWI1MTIwN2M1OGU3NTU1M2U/jpeg/000/515/399/371',
+'YzM0ODgwM2RhNmZjNzI1ZTM2YmI5MzRlNjczYzU5OGI/jpeg/000/515/399/370',
+'MzUxZjFmZWExNGI0MDFiMzJkMWI0MWM3MDc5YmE2Nzc/jpeg/000/515/399/369',
+'<k>https://xhamster.com/photos/gallery/ass-in-leather-pants-16096813</k>',
+'NTEzMWZkNGZlODBkNzVlNTk3N2ZlMDdjMDRkYmFjMzg/jpeg/000/515/382/278',
+'MDYzNjc1NTA2YTcwZGVlYjk1YTcyYzVmZDU2YjNkN2U/jpeg/000/515/382/276',
+'NjRmZjE4MDFlZmU1MzZkM2NjNDc0NzVjNTU1N2YzYzU/jpeg/000/515/382/275',
+'ZjQ4NTVmZmUxMjU0YjdhNzEwNjYyNjQ4YjA0NWQ4YTQ/jpeg/000/515/382/274',
+'ZmM0ZjkzMGU4YWU3Mzk2Mzk2MjI4NmYxNmQxOTI4NzI/jpeg/000/515/382/273',
+'<k>https://xhamster.com/photos/gallery/doggy-fuck-16092524</k>',
+'ZmVkNTJmYzkxZTYwZmI5NTAzNDk1NmM5NzI0MGI2ZjM/jpeg/000/515/323/880',
+'OWRiNTViZDRmMGE1ZTIwN2FkMjg0ZTQ1Nzg1YWE0ZGU/jpeg/000/515/323/879',
+'ZTk1MDI3NTdhMzM4ZjZiOWMyZjI4NWQ1NTJlYmNhODc/jpeg/000/515/323/878',
+'MGEyMWUyODI5ZTUzZWZjOTY0ZTI1OWI5YTNmZDRiZTI/jpeg/000/515/323/877',
+'MmFjNjEyNTYwODA2MDRjNDAyMzlhZGQyOTI2ODQ3YWU/jpeg/000/515/323/876',
+'<k>https://xhamster.com/photos/gallery/ass-flash-in-red-latex-16088327</k>',
+'YTRlYjgzNTU2MmUxYTg4MzVhOTJmNTM1ZTQ1YjczNzU/jpeg/000/515/271/707',
+'MWVlMjQ4NzZmM2JhNGYzMTI1OTg1MDZhMjZlY2M4ZTc/jpeg/000/515/271/706',
+'MzM5Zjk3Mjc2MTdiZmVjMWZmOThjZDIyYjIyZmYzN2M/jpeg/000/515/271/705',
+'NWJlNWYyYjQzN2Q1NzIwNWY5YWFmMTU0NTE2MDFmYjI/jpeg/000/515/271/704',
+'NTg2NjI1ZjU4NmNkMTBmOGQzM2QzNDA3MTA3YTVkYzg/jpeg/000/515/271/703',
+'<k>https://xhamster.com/photos/gallery/closeup-oily-pussy-16087064</k>',
+'NDc0ZGZmNjQyYjllY2I3ZWNjZjczNTVmYTcyNGY5ZmQ/jpeg/000/515/255/838',
+'NDU0MjU2ZDIxMTExY2UzMzlkYjJjNjYxNDJiNzc3NjY/jpeg/000/515/255/837',
+'NTBmNzQwOTYwZWI1ZTg5MTBkYTI3NjNhYjQ1YjFmMDc/jpeg/000/515/255/836',
+'ODUyOGJmNTE4YmI0M2EwMGM0ZWVmODhhMzZhM2FhNTg/jpeg/000/515/255/835',
+'YTM1OWUxNWY3MjM4ZGM0ODQzNGY4ZGJkNWUxMzg2NmE/jpeg/000/515/255/834',
+'<k>https://xhamster.com/photos/gallery/black-toy-ride-16083282</k>',
+'MzAzNGJhNWY5ZTQ2YjIyMTRkMTk1MzMzY2Q4ZTJmODE/jpeg/000/515/199/346',
+'MWYwYjVkZDYzNjFhMmUyZmY0ZDQyZGE1ODBjZjFkYzY/jpeg/000/515/199/345',
+'ODMxNTE2N2ExOTEzYTJhNzk2MTI3ODdkMThhYjljYjQ/jpeg/000/515/199/344',
+'YzBhNjVkYjBkZTVhY2E0ZWZkMWIwMmEyNGUyNTQ5OWI/jpeg/000/515/199/343',
+'NjA0Njg0MmE4Zjc5NjAxZTBlZmIxOGE3NDI0NTkwM2E/jpeg/000/515/199/342',
+'<k>https://xhamster.com/photos/gallery/masturbation-in-fishnet-top-16081859</k>',
+'NDhjMTY4ODFiNzBjOThhMzk2OGZkNzM3ZTA4MzI1OWM/jpeg/000/515/181/145',
+'MmY0NGI1YmRkMmExNWRlYWMwYWM2YWU1MGMzNmFjMDU/jpeg/000/515/181/144',
+'Y2ZmZWNlY2E5NmE2ZWMzNDUyMDk4Y2RiMjExNGI1ZTk/jpeg/000/515/181/143',
+'MGQ3OGU3ODNiNjdjZjBjYzc1YzhlZTNmYjNiYmEwMWQ/jpeg/000/515/181/142',
+'YzA4ZTJjMmNjODhhNzVlNDk0NTU3MzRjMjcyNjE0ZmI/jpeg/000/515/181/141',
+'<k>https://xhamster.com/photos/gallery/open-16080049</k>',
+'YTk3ZDQ5ZTE1ZDRjYzM3NDQzM2Y1NDdlYzhjZjMzZGY/jpeg/000/515/151/098',
+'YjNmOGQzY2NkYTU3YTQ0YjBlYzEwM2E1MzRlZmUyNTY/jpeg/000/515/151/097',
+'Y2U3MzM2ODgxMGQwZTQyYTU4ZmRkYjkwYTA0N2RkN2M/jpeg/000/515/151/096',
+'ZGMyM2ZjZjZlMTY3MWQzMzNhY2Q5YmE0Zjc3ZDg5Y2Y/jpeg/000/515/151/095',
+'ODIxMmVmMDk2NmE0ZGIxYWM1OTllMzNlNjhiYjRjMTY/jpeg/000/515/151/093',
+'<k>https://xhamster.com/photos/gallery/open-in-green-socks-16076458</k>',
+'OWVjMjNhZTA3MzgxMDg4MDM2MmI4MGM3YmI5ZjZlNDc/jpeg/000/515/106/686',
+'MjNjMmQ1OWQ3MzQzNmNkYzc5NmRlNjlkMzBkZDJhMjg/jpeg/000/515/106/685',
+'ODgyMjU2MWM3NDBjMjk1OGE4NDU4ZjFmMzFhYmQ0YWQ/jpeg/000/515/106/684',
+'ZTQwZWEzZjI5NmMzZmQ2MzU4MzU1NzhhY2IzOGY3YTg/jpeg/000/515/106/683',
+'MmQ3MTFmNGM4ZGIwZDcwNGI5YjU2ZjM4YzBiODQxNmQ/jpeg/000/515/106/682',
+'<k>https://xhamster.com/photos/gallery/fuck-in-open-crotch-16074758</k>',
+'MDVhYjBiMjEzMmUxYmFiMjg0YjcwNjg3M2JhYjI1ZDg/jpeg/000/515/086/159',
+'NzBhZDM4Yzc2MWU2MmNlYzQwODhmZDg5Y2U1NjAyMzE/jpeg/000/515/086/158',
+'YTAwOTFmODk1M2FiODczODJjNDEzZjA1YmUxZDc2YTk/jpeg/000/515/086/157',
+'Y2I2YTBmMjNjMDdmYzJlOTg2Y2RhMjY2N2RjNmFlNDA/jpeg/000/515/086/156',
+'ZjVhMjIzMDdlMTQ0YjNmMDNkYTQ4ODdhNDZjNzMxZTM/jpeg/000/515/086/155',
+'<k>https://xhamster.com/photos/gallery/fuckin-drippin-16073307</k>',
+'ODdiODEzMTlkZTg1OTg3YWJmZWIxZDQxMjk1ZmE2MWM/jpeg/000/515/066/265',
+'ZTc2M2JmOWUzNjhkNzgxM2U0YTdjNDljMjk1ZmQ3Njc/jpeg/000/515/066/264',
+'ZDcyMzQzZmUyYzIzNmViOThhMDQwZDc5OWY5NDJlNDQ/jpeg/000/515/066/263',
+'ODQ3NzdkMTU4OWNlMmY1ODYxM2NkNTkyZmM5OTAzYWY/jpeg/000/515/066/262',
+'ZmI2MTk0MWFlMGIwMWFlMGZlZjZiZTU5NjNkZTM2ZjI/jpeg/000/515/066/261',
+'NjY0ZmFlZjYxMDc1MDU0YTIxZjkyMGZjZWEyOWQ1NjE/jpeg/000/515/066/260',
+'<k>https://xhamster.com/photos/gallery/neon-bikini-16070066</k>',
+'OThhYzY3NjEwZDZlODA2YzNiNThhZDMwNDI5NmY1NTY/jpeg/000/515/029/275',
+'ZjI5MTQ2ODMwYmI0MDExZWIxM2Q2OWIxYmIyMWQ5N2Q/jpeg/000/515/029/274',
+'ZDBiYjI5YjlhYzI0ZWZhZDc5YTcxZGQ4ZGY1ODJkODA/jpeg/000/515/029/273',
+'NWNkOTgxYzU3YjkyOWFlNmI3ZTM3Y2Q4Yzg5MWE1NTg/jpeg/000/515/029/272',
+'ZmFkZTEzODgyOThjYWFkNjhjNTE4ZTdkOTJiODk4NGQ/jpeg/000/515/029/270',
+'<k>https://xhamster.com/photos/gallery/horny-in-the-bathroom-16065115</k>',
+'MDBhNGViOGM4MzBjYzlmZWQwM2UxNGJmMzRlYjNmNzA/jpeg/000/514/966/159',
+'ODg3NmUwOGJkMDc4ZjEzMWI3MjkxYjUxOTJiMzc3ZDE/jpeg/000/514/966/158',
+'ZDUyMjVhYzc3YTYyZGJjOGE2NDQ5ZDEwNzNlZWQ5NjI/jpeg/000/514/966/157',
+'ODBlOTBhNWViYTJiOWViMDQ0OTRmM2ExODIyOGNhNTg/jpeg/000/514/966/156',
+'MmI2YzIwNjlhNWE5MTAzMDE2YzViM2ZhOWM5MDBjODQ/jpeg/000/514/966/155',
+'<k>https://xhamster.com/photos/gallery/green-bodystocking-16063291</k>',
+'NjcwZmVmNjg3OGFiMmM3YTdlZGJjMTI0MDcyMjc5NDg/jpeg/000/514/944/580',
+'MWJjOWFkMzRkMmE0NjlkYTQzOTg3MzNhYjAwY2I1NTM/jpeg/000/514/944/579',
+'ZGZjNTQxYzJhMzEzZjI0OGQ2MzJmNjA1MzMxMTZlZDc/jpeg/000/514/944/578',
+'ZTRmMDQ5NTBkNGUxMjFmMzhhNjU0ZjFjNTlhYzllNjU/jpeg/000/514/944/577',
+'<k>https://xhamster.com/photos/gallery/shiny-blue-outfit-16063287</k>',
+'Y2QwYzQzYzMxM2JmZDk1YzFjNWMxNjMzNDQ0MDgzNzc/jpeg/000/514/944/569',
+'NmFmMTBjY2QzM2UzYzM2MTJiODU5MGUwZjE3N2JjYWE/jpeg/000/514/944/568',
+'OWMyZjc5NDYzMGZjYjg5MDY0ZmFmZWIyYjJlZjNjYWU/jpeg/000/514/944/567',
+'NTgwNTE2ZGE3MTkyMGI4N2E0OGRiYWZkZWM1M2Q2YjM/jpeg/000/514/944/566',
+'OWY4MDdmZmZkZmUzMjIwNTljMTc3NzE1ZTQ1NzMxMDE/jpeg/000/514/944/565',
+'<k>https://xhamster.com/photos/gallery/open-crotch-lingerie-16053691</k>',
+'N2E3YmRkNTM3ZmNkZTcyOWFjZjBiMjYyOWNjYjkyNjM/jpeg/000/514/813/128',
+'ZjMzZmM3MjYzOWJjNGI3OWEzYmMxMWJkYTdkZGQyYjE/jpeg/000/514/813/127',
+'MTMxN2ZkOWMxZTg0NTE4MzM0NTM5NDdjNWQ0NzU1Zjc/jpeg/000/514/813/126',
+'ZmJiNGFjZDM4M2JjZTg0M2RlMThkMzQ4MTZkYTE5OTY/jpeg/000/514/813/125',
+'NWEwNTQyMDk0NGM0NzQ1ZGU4MTE4MzNmNWI3NTFjYzI/jpeg/000/514/813/124',
+'ZTViMzMxNGVhMTMxNTI0YmVmZWIzZjE2OGI3OTkzMWU/jpeg/000/514/813/123',
+'<k>https://xhamster.com/photos/gallery/soles-in-your-face-16051693</k>',
+'MjIxN2YxZDQ2OGU2MzM5N2VjMDA4ZGE1M2I2NTk0NjA/jpeg/000/514/772/270',
+'NGUyMDc1MzJjMDk4NzkzMjk3YTcwMDU2NzM3NTdkZDY/jpeg/000/514/772/269',
+'NjkxNjEyYjI1ODlkN2Q5MWUwMWM5OWFiZWU4MGUyMjU/jpeg/000/514/772/268',
+'ZmViMTU3MzkxZWM1MTUzYjQzMzJkY2ZiZjc0NmFkMjk/jpeg/000/514/772/267',
+'ODI4NGY2ZmJkOWM1MmI4YTk1NjEwNTcwYTJhNjI2NGE/jpeg/000/514/772/266',
+'MWM4OGNlYTM2MzE2NDQyMGQ3Yzc5MDM5MTkxOGNhMTE/jpeg/000/514/772/265',
+'<k>https://xhamster.com/photos/gallery/leather-shorts-outside-16051691</k>',
+'Y2QyNDI2Y2ZmODQ5Mjk5ZTU4OTMyNTc5ZWQ2ODgwZWI/jpeg/000/514/772/257',
+'ZmMwNGNmYTdjNTFlYjU4M2RiZDU2OWYyNGE4OWM5ZjY/jpeg/000/514/772/256',
+'NDUwZTE2YWZiMTQxOGJkNjQ3MjNiOTcxZDU4OGZhMDA/jpeg/000/514/772/255',
+'NGZhZDlkNzY1YjY3ZjVmMDRmZmY2NzU1MDc2ZmJhYWM/jpeg/000/514/772/254',
+'ODVhYzEwODBiNGE3ZDkxNDk0ZTI3MjVlNTE4ZWYwYWU/jpeg/000/514/772/253',
+'NWQ1NTY5MDUxMzNmYjkyNzYwZDI3NmQ4YTQ2YjRjNTI/jpeg/000/514/772/252',
+'MmQyMjk3MGE1MGIzYzQwMTdmMmZmM2FhOWUxOWVhZTE/jpeg/000/514/772/251',
+'<k>https://xhamster.com/photos/gallery/undressing-in-the-kitchen-16048329</k>',
+'NjI5MzY3ZTI4NTU2OTc1ODUxYzUwNjI5MTA0NjYwNjc/jpeg/000/514/733/234',
+'MTkxMDJlYWU2ZTJjOGZlNTA4MDg1ZDVmNGMxNTYzYzM/jpeg/000/514/733/233',
+'YTNiNTA1NThlYjJhNjU4NWFmZmFiMGRlNjhiOTRiZTM/jpeg/000/514/733/232',
+'MTRlMmE4ZTliY2M5MTVhYjg3NjQ5MzJjZjQ0ZjNkZDI/jpeg/000/514/733/231',
+'OWNlZWUzYWY5YzQwZjFjNjczZDAxNzg1NTMwZjMzZTk/jpeg/000/514/733/230',
+'Mzc0YWY4Y2EwZmZmODhmNzYxNGVmZDQ4MmYyNTZlOTU/jpeg/000/514/733/228',
+'<k>https://xhamster.com/photos/gallery/jeans-shorts-and-lingerie-16047492</k>',
+'Yjk2YjBlN2VlN2ZlZDIyZDM0YzZkNDhmMzEzNDQzMjY/jpeg/000/514/725/513',
+'MDRiOWZmMTM5NTI5NGEyNzgxZGMyMDlhZjgyODBmMTY/jpeg/000/514/725/512',
+'ZjExYmY1YjI0NjNjYTQ3NWMzNjQ1YmQxOWNhMDc1OGQ/jpeg/000/514/725/511',
+'ZDc5OTc2OWM1MmYyNmY1OTBiZWUzNWEzYmExMzRkZGM/jpeg/000/514/725/510',
+'MzRiYzNjZDY5OTUwOTYyZjAyZDU4ZGEwMjUxZTE4MGU/jpeg/000/514/725/509',
+'OTgzZGI2ZDgzZTQyYzJiMzgwNTUyN2FiNTI1NDY0MDc/jpeg/000/514/725/508',
+'MDEzMTcyZGVlM2FhMjQ4NjY4ZTU3MmU5YTkwOTYxOGI/jpeg/000/514/725/507',
+'ZjY4MzZiMjI2ODA3NzQ1NWM4NDJhNGM2YmYyZDBhYWE/jpeg/000/514/725/506',
+'<k>https://xhamster.com/photos/gallery/slippers-in-the-park-16044852</k>',
+'YmRmYTIxNTcyMDIxNjJmYjA4MTIxMWUwYzE4ODZkZDg/jpeg/000/514/679/426',
+'MjkzZmE1NjdlZTg2ODA3OTI2YTE2ZWIxYzFhYWQ4Yzg/jpeg/000/514/679/425',
+'OTVmMjYzMGFjYmRlNmJlNzA1ODM2ZTA3YTYwNTJkM2I/jpeg/000/514/679/424',
+'MGIzZDg3ZGY4ODZjZWU3NWNmZTRkODdhODg5OWE3Yzc/jpeg/000/514/679/423',
+'YWE2ZTU2OWM0NTRmZTJjMGFiZThlZGJjNzZkODRiMDQ/jpeg/000/514/679/422',
+'NjAwNjE0YmZlMzUzOWNkODljZThhMjI1ZjdiYWM2MWI/jpeg/000/514/679/421',
+'<k>https://xhamster.com/photos/gallery/in-the-kitchen-16038552</k>',
+'ZGU0MjFmNTQ1ODNhMjdkZDQ3MTBkZGY1NWVlNDUxOTM/jpeg/000/514/600/055',
+'OWIzMzI2N2I5NTI2YWY2MDlmYjg4NjY3MTJhZTY1Mzg/jpeg/000/514/600/054',
+'OWRkMzI3ZmE1M2RkZmVmZTQwNDY5N2ExOTBiNDJlZjk/jpeg/000/514/600/053',
+'MWMyYjgyY2UzYmE1ZDZhMDJhNGFlMzc1YjEwOTQ4NjQ/jpeg/000/514/600/051',
+'ZmEwYWM3MmY3Yjg4NTdhMzFlOTdhZjUyYzE0OGNjNDQ/jpeg/000/514/600/050',
+'<k>https://xhamster.com/photos/gallery/no-panties-under-striped-skirt-16035961</k>',
+'ZGYzMWE3ZDk3OWMxZGEzMjQ1YTEwMzhhYjEwMjhhOWY/jpeg/000/514/557/725',
+'ZDgwMjdhM2NlM2MxMGQxYWU4ZDA3ZjI4YTk3OGNmMjY/jpeg/000/514/557/724',
+'NWZlNjYzMGI0N2ZlNjIyNjg3MWE2MjU0MTM2N2I3MDk/jpeg/000/514/557/723',
+'YjAxN2E3M2E1MmViOWM2MTIyYjQ2YTUxNmQ1MTZhMWI/jpeg/000/514/557/722',
+'NGEyMGE0Nzc4MTdiMDJjYzFkZTMxODdkNTAwMzc4YzY/jpeg/000/514/557/721',
+'MzFmYzNlOGEwNGNkYTQ2MTQzZGJkNmE5NzE4N2QwNmM/jpeg/000/514/557/720',
+'<k>https://xhamster.com/photos/gallery/by-the-window-16032768</k>',
+'NDQ2NTEyMjc0NWI0YTg3NmYxNzM1NTFjMDE3OTJkNzg/jpeg/000/514/519/159',
+'N2M5OGY0ZTUwMTk1YTQ2NDJkY2I2ZDYwZWIyYzdhMmQ/jpeg/000/514/519/157',
+'YWJjMWFjNmM5YTg1N2RjZGIzNTY4YWRlMjc3OWYxYWM/jpeg/000/514/519/156',
+'ODMwMDU5NDY4ODVhMGZiODQzMTBhOGVlM2E1NWUwZmY/jpeg/000/514/519/155',
+'ZTM2OWRmOTJhNjMwYWIxOGVjYWMyZWZiYjEyNzM3MDI/jpeg/000/514/519/154',
+'<k>https://xhamster.com/photos/gallery/topless-lotioning-16031891</k>',
+'YWY2NzBkNTM1MTc0ODIxZjRkNTI5MTYzNzZkYTUzMTc/jpeg/000/514/505/942',
+'YTU1YmU0NWYxODMyM2FkZDliYjFlYzlkOTk2ZjZkMzM/jpeg/000/514/505/941',
+'NGY0ZDdlNjZkZjJjOTIxZTU5ZTg4MjQ4YmFjZDNlMjM/jpeg/000/514/505/940',
+'OWYyODQxYjM0ZTFmY2ZmMTFmZmQ2OTEyOGFlNjhiMWQ/jpeg/000/514/505/939',
+'ZjViZWFjZWY1MjE5MTQxM2EyZGYzYWMxYWJhYmFmZmE/jpeg/000/514/505/938',
+'NDZjNGJmNzZiODFhNDdkNTM2MDNiMjAwY2IzOWI4NzE/jpeg/000/514/505/937',
+'OWM1YjQwMGU1ZWRkMGYxOGRhZDUyYjYzOGJlZDVlMGM/jpeg/000/514/505/936',
+'ZDMwZDQ4NjhkOTE3YmFkYTYxM2YxZmMyODczY2VkZmE/jpeg/000/514/505/935',
+'<k>https://xhamster.com/photos/gallery/boob-flash-in-the-wind-16029087</k>',
+'OTUzZjRiZGMyYWQ0ZmRhOTJjNzBmY2M2YTYzMzY3MjM/jpeg/000/514/469/031',
+'N2E3YmZiZTU1ODcxMjMwZDUzMTgwM2ZkYTg3Zjk4MWI/jpeg/000/514/469/030',
+'NmVjYTVkZTU2YzM4YjBhNWY4MzlkMDA5OWQ2ZTI2OGU/jpeg/000/514/469/029',
+'<k>https://xhamster.com/photos/gallery/black-bodystocking-16026192</k>',
+'NWJiYThkNzJmMTVlN2M4YzY1ZTk4MzFhNjJjMDRiYTA/jpeg/000/514/431/560',
+'ZGQ5NGNkY2VlZmVmMWIwZjE5NmMyZjk0OTQyNDFkY2U/jpeg/000/514/431/559',
+'Y2YwZGFlYjg3NjZhODFlYTJkMjdkMWE5NDYzZWI3MWQ/jpeg/000/514/431/558',
+'<k>https://xhamster.com/photos/gallery/blue-lace-16021872</k>',
+'Y2NiOWE2N2JiODU0YTNlMjVkZDYzMTY1MDQ3NWI1ODY/jpeg/000/514/368/492',
+'ZmI5MWFiOTE3NzBkNGY0YTI5YmM0YWU1MDJmMzliZjc/jpeg/000/514/368/491',
+'NjM2NGQzMDljMWE4NWM2NmY1ZGM2NjMyODM2N2M1YWY/jpeg/000/514/368/490',
+'<k>https://xhamster.com/photos/gallery/white-16019075</k>',
+'MmMzYThmMTdmMDg0Yjc4N2NhMmJkNzIzYmJjMmIwODQ/jpeg/000/514/330/738',
+'<k>https://xhamster.com/photos/gallery/boots-and-lace-16017859</k>',
+'ZDE4OGQzZjY0NjZkYmFhYTgwNmFiNDAxZjNkZTUwNWI/jpeg/000/514/307/603',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "batch file: 197"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

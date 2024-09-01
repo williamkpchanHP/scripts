@@ -1,0 +1,126 @@
+<base target="_blank"><html><head><title>brie+bently</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 100%;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">brie+bently</div>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'7/135/57617414/57617414_008_1257',
+'7/135/57617414/57617414_016_8ff0',
+'7/135/57617414/57617414_023_1463',
+'7/135/57617414/57617414_024_6106',
+'7/135/57617414/57617414_028_cd7d',
+'7/135/57617414/57617414_036_e19f',
+'7/135/57617414/57617414_043_4339',
+'7/135/57617414/57617414_053_62e9',
+'7/135/57617414/57617414_060_5284',
+'7/135/57617414/57617414_066_808e',
+'7/135/57617414/57617414_075_3af5',
+'7/135/57617414/57617414_085_4d32',
+'7/135/57617414/57617414_092_f72a',
+'7/135/57617414/57617414_099_c8b4',
+'7/135/57617414/57617414_101_dbef',
+'7/135/57617414/57617414_113_9f65',
+'7/135/57617414/57617414_121_940c',
+'7/135/57617414/57617414_127_e32b',
+'7/135/57617414/57617414_133_50d2',
+'7/135/57617414/57617414_140_4319',
+'7/135/57617414/57617414_148_b85b',
+'7/125/90068353/90068353_001_fbab',
+'7/125/90068353/90068353_008_e2a1',
+'7/125/90068353/90068353_012_1064',
+'7/125/90068353/90068353_017_361b',
+'7/125/90068353/90068353_024_06b2',
+'7/125/90068353/90068353_029_f797',
+'7/125/90068353/90068353_033_98c1',
+'7/125/90068353/90068353_040_fd37',
+'7/125/90068353/90068353_042_91c9',
+'7/125/90068353/90068353_048_a568',
+'7/125/90068353/90068353_051_ad6a',
+'7/125/90068353/90068353_058_84d2',
+'7/125/90068353/90068353_064_a560',
+'7/125/90068353/90068353_065_b2e5',
+'7/125/90068353/90068353_066_bf80',
+'7/125/90068353/90068353_071_da96',
+'7/125/90068353/90068353_079_f299',
+'7/125/90068353/90068353_082_4692',
+'7/125/90068353/90068353_090_6a4b',
+'7/125/90068353/90068353_092_d878',
+'7/125/90068353/90068353_095_1f10',
+'1/321/52772368/52772368_001_a0be',
+'1/321/52772368/52772368_002_2d99',
+'1/321/52772368/52772368_003_f4a9',
+'1/321/52772368/52772368_004_bf5b',
+'1/321/52772368/52772368_005_7180',
+'1/321/52772368/52772368_006_f758',
+'1/321/52772368/52772368_007_f758',
+'1/321/52772368/52772368_008_978b',
+'1/321/52772368/52772368_009_92a6',
+'1/321/52772368/52772368_010_1427',
+'1/321/52772368/52772368_011_8872',
+'1/321/52772368/52772368_012_32bd',
+'1/321/52772368/52772368_013_32bd',
+'1/321/52772368/52772368_014_b78d',
+'1/321/52772368/52772368_015_f978',
+'1/321/52772368/52772368_016_89a3',
+'1/267/76002467/76002467_001_ca9d',
+'1/267/76002467/76002467_002_28f4',
+'1/267/76002467/76002467_003_ee48',
+'1/267/76002467/76002467_004_9539',
+'1/267/76002467/76002467_005_d73c',
+'1/267/76002467/76002467_006_41c2',
+'1/267/76002467/76002467_007_66bd',
+'1/267/76002467/76002467_008_81df',
+'1/267/76002467/76002467_009_ff69',
+'1/267/76002467/76002467_010_cebb',
+'1/267/76002467/76002467_011_8753',
+'1/267/76002467/76002467_012_5a1b',
+'1/267/76002467/76002467_013_ddea',
+'1/267/76002467/76002467_014_04db',
+'1/267/76002467/76002467_015_7d77',
+'1/267/76002467/76002467_016_eff8',
+];
+lineHeader = '<img src="https://cdni.pornpics.com/1280/'
+lineTail = '.jpg">'
+showRange = 60
+bookid = "brie+bently"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

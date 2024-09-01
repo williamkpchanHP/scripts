@@ -1,0 +1,21 @@
+# can be used here too http://www.51shucheng.com/lishi/kangxidadi
+# <ul class="list">
+# <ul class="paging">
+
+setwd("C:/Users/user/mpg/Text/programs/ahref/mylivec")
+theList = readLines("mylivec.txt")
+
+sink("output.html")
+for (i in 1:length(theList)){
+
+thepage = readLines(theList[i])
+linnum=grep('<ul class="list">', thepage)
+thepage = thepage[-(1:(linnum-1))]
+
+linnuml=grep('<ul class="paging">', thepage)
+thepage = thepage[-(linnuml:length(thepage))]
+
+cat(thepage)
+}
+sink()
+

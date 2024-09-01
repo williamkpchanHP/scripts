@@ -1,0 +1,137 @@
+<base target="_blank"><html><head><title>latex</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 100%;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">latex</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'2019/09/PpErT8Dw/PpErT8Dw-1',
+'2019/09/PpErT8Dw/PpErT8Dw-2',
+'2019/09/PpErT8Dw/PpErT8Dw-3',
+'2019/09/PpErT8Dw/PpErT8Dw-4',
+'2019/09/PpErT8Dw/PpErT8Dw-5',
+'2019/09/PpErT8Dw/PpErT8Dw-6',
+'2019/09/PpErT8Dw/PpErT8Dw-7',
+'2019/09/PpErT8Dw/PpErT8Dw-8',
+'2019/09/PpErT8Dw/PpErT8Dw-9',
+'2019/09/PpErT8Dw/PpErT8Dw-10',
+'2019/09/PpErT8Dw/PpErT8Dw-11',
+'2019/09/PpErT8Dw/PpErT8Dw-12',
+'2019/09/PpErT8Dw/PpErT8Dw-13',
+'2019/09/PpErT8Dw/PpErT8Dw-14',
+'2019/09/PpErT8Dw/PpErT8Dw-15',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-1',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-2',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-3',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-4',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-5',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-6',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-7',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-8',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-9',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-10',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-11',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-12',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-13',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-14',
+'2020/05/Cz8rJ25Q/Cz8rJ25Q-15',
+'2020/12/V9ovZZEN/V9ovZZEN-1',
+'2020/12/V9ovZZEN/V9ovZZEN-2',
+'2020/12/V9ovZZEN/V9ovZZEN-3',
+'2020/12/V9ovZZEN/V9ovZZEN-4',
+'2020/12/V9ovZZEN/V9ovZZEN-5',
+'2020/12/V9ovZZEN/V9ovZZEN-6',
+'2020/12/V9ovZZEN/V9ovZZEN-7',
+'2020/12/V9ovZZEN/V9ovZZEN-8',
+'2020/12/V9ovZZEN/V9ovZZEN-9',
+'2020/12/V9ovZZEN/V9ovZZEN-10',
+'2020/12/V9ovZZEN/V9ovZZEN-11',
+'2020/12/V9ovZZEN/V9ovZZEN-12',
+'2020/12/V9ovZZEN/V9ovZZEN-13',
+'2020/12/V9ovZZEN/V9ovZZEN-14',
+'2020/12/V9ovZZEN/V9ovZZEN-15',
+'2021/02/fCD7bVZ6/fCD7bVZ6-1',
+'2021/02/fCD7bVZ6/fCD7bVZ6-2',
+'2021/02/fCD7bVZ6/fCD7bVZ6-3',
+'2021/02/fCD7bVZ6/fCD7bVZ6-4',
+'2021/02/fCD7bVZ6/fCD7bVZ6-5',
+'2021/02/fCD7bVZ6/fCD7bVZ6-6',
+'2021/02/fCD7bVZ6/fCD7bVZ6-7',
+'2021/02/fCD7bVZ6/fCD7bVZ6-8',
+'2021/02/fCD7bVZ6/fCD7bVZ6-9',
+'2021/02/fCD7bVZ6/fCD7bVZ6-10',
+'2021/02/fCD7bVZ6/fCD7bVZ6-11',
+'2021/02/fCD7bVZ6/fCD7bVZ6-12',
+'2021/02/fCD7bVZ6/fCD7bVZ6-13',
+'2021/02/fCD7bVZ6/fCD7bVZ6-14',
+'2021/02/fCD7bVZ6/fCD7bVZ6-15',
+'2022/01/DTWkM2x3/DTWkM2x3-1',
+'2022/01/DTWkM2x3/DTWkM2x3-2',
+'2022/01/DTWkM2x3/DTWkM2x3-3',
+'2022/01/DTWkM2x3/DTWkM2x3-4',
+'2022/01/DTWkM2x3/DTWkM2x3-5',
+'2022/01/DTWkM2x3/DTWkM2x3-6',
+'2022/01/DTWkM2x3/DTWkM2x3-7',
+'2022/01/DTWkM2x3/DTWkM2x3-8',
+'2022/01/DTWkM2x3/DTWkM2x3-9',
+'2022/01/DTWkM2x3/DTWkM2x3-10',
+'2022/01/DTWkM2x3/DTWkM2x3-11',
+'2022/01/DTWkM2x3/DTWkM2x3-12',
+'2022/01/DTWkM2x3/DTWkM2x3-13',
+'2022/01/DTWkM2x3/DTWkM2x3-14',
+'2022/01/DTWkM2x3/DTWkM2x3-15',
+'',
+];
+lineHeader = '<img src="http://freematuresgallery.com/pics/'
+lineTail = '.jpg">'
+bookid = "latex"
+showRange = 60
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

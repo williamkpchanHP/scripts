@@ -1,0 +1,97 @@
+<base target="_blank"><html><head><title>pornstar=alex-more</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<link rel="stylesheet" href="../imgcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+
+<body onkeypress="chkKey()">
+<br>
+<center>
+<p class="tip-number">pornstar=alex-more</p>
+<p class="js-tip"></p>
+<br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'220/b47d906808a42c31654b6c12ecd32a2d-1',
+'220/b47d906808a42c31654b6c12ecd32a2d-10',
+'220/b47d906808a42c31654b6c12ecd32a2d-11',
+'220/b47d906808a42c31654b6c12ecd32a2d-12',
+'220/b47d906808a42c31654b6c12ecd32a2d-13',
+'220/b47d906808a42c31654b6c12ecd32a2d-14',
+'220/b47d906808a42c31654b6c12ecd32a2d-15',
+'220/b47d906808a42c31654b6c12ecd32a2d-2',
+'220/b47d906808a42c31654b6c12ecd32a2d-3',
+'220/b47d906808a42c31654b6c12ecd32a2d-4',
+'220/b47d906808a42c31654b6c12ecd32a2d-5',
+'220/b47d906808a42c31654b6c12ecd32a2d-6',
+'220/b47d906808a42c31654b6c12ecd32a2d-7',
+'220/b47d906808a42c31654b6c12ecd32a2d-8',
+'220/b47d906808a42c31654b6c12ecd32a2d-9',
+'620/349602c1c9583e3226185adea32d240a-1',
+'620/349602c1c9583e3226185adea32d240a-10',
+'620/349602c1c9583e3226185adea32d240a-11',
+'620/349602c1c9583e3226185adea32d240a-12',
+'620/349602c1c9583e3226185adea32d240a-13',
+'620/349602c1c9583e3226185adea32d240a-14',
+'620/349602c1c9583e3226185adea32d240a-15',
+'620/349602c1c9583e3226185adea32d240a-2',
+'620/349602c1c9583e3226185adea32d240a-3',
+'620/349602c1c9583e3226185adea32d240a-4',
+'620/349602c1c9583e3226185adea32d240a-5',
+'620/349602c1c9583e3226185adea32d240a-6',
+'620/349602c1c9583e3226185adea32d240a-7',
+'620/349602c1c9583e3226185adea32d240a-8',
+'620/349602c1c9583e3226185adea32d240a-9',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-1',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-10',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-11',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-12',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-13',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-14',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-15',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-2',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-3',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-4',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-5',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-6',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-7',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-8',
+'642/f0d400b56eeffba7b1d7ba6bab63d9d4-9',
+'780/ae0afca7cffde8c55a95e380aad96391-1',
+'780/ae0afca7cffde8c55a95e380aad96391-10',
+'780/ae0afca7cffde8c55a95e380aad96391-11',
+'780/ae0afca7cffde8c55a95e380aad96391-12',
+'780/ae0afca7cffde8c55a95e380aad96391-13',
+'780/ae0afca7cffde8c55a95e380aad96391-14',
+'780/ae0afca7cffde8c55a95e380aad96391-15',
+'780/ae0afca7cffde8c55a95e380aad96391-16',
+'780/ae0afca7cffde8c55a95e380aad96391-2',
+'780/ae0afca7cffde8c55a95e380aad96391-3',
+'780/ae0afca7cffde8c55a95e380aad96391-4',
+'780/ae0afca7cffde8c55a95e380aad96391-5',
+'780/ae0afca7cffde8c55a95e380aad96391-6',
+'780/ae0afca7cffde8c55a95e380aad96391-7',
+'780/ae0afca7cffde8c55a95e380aad96391-8',
+'780/ae0afca7cffde8c55a95e380aad96391-9',
+];
+lineHeader = '<img src="https://cdn.nudexxx.pics/content/galleries/'
+lineTail = '-full.jpg">'
+showRange = 80
+bookid = "pornstar=alex-more"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
+

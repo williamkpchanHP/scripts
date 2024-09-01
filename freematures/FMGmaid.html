@@ -1,0 +1,272 @@
+<base target="_blank"><html><head><title>maid</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 100%;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">maid</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'2019/05/9h4F5qLo/9h4F5qLo-1',
+'2019/05/9h4F5qLo/9h4F5qLo-2',
+'2019/05/9h4F5qLo/9h4F5qLo-3',
+'2019/05/9h4F5qLo/9h4F5qLo-4',
+'2019/05/9h4F5qLo/9h4F5qLo-5',
+'2019/05/9h4F5qLo/9h4F5qLo-6',
+'2019/05/9h4F5qLo/9h4F5qLo-7',
+'2019/05/9h4F5qLo/9h4F5qLo-8',
+'2019/05/9h4F5qLo/9h4F5qLo-9',
+'2019/05/9h4F5qLo/9h4F5qLo-10',
+'2019/05/9h4F5qLo/9h4F5qLo-11',
+'2019/05/9h4F5qLo/9h4F5qLo-12',
+'2019/05/9h4F5qLo/9h4F5qLo-13',
+'2019/05/9h4F5qLo/9h4F5qLo-14',
+'2019/05/9h4F5qLo/9h4F5qLo-15',
+'2019/05/Wk4N4hW6/Wk4N4hW6-1',
+'2019/05/Wk4N4hW6/Wk4N4hW6-2',
+'2019/05/Wk4N4hW6/Wk4N4hW6-3',
+'2019/05/Wk4N4hW6/Wk4N4hW6-4',
+'2019/05/Wk4N4hW6/Wk4N4hW6-5',
+'2019/05/Wk4N4hW6/Wk4N4hW6-6',
+'2019/05/Wk4N4hW6/Wk4N4hW6-7',
+'2019/05/Wk4N4hW6/Wk4N4hW6-8',
+'2019/05/Wk4N4hW6/Wk4N4hW6-9',
+'2019/05/Wk4N4hW6/Wk4N4hW6-10',
+'2019/05/Wk4N4hW6/Wk4N4hW6-11',
+'2019/05/Wk4N4hW6/Wk4N4hW6-12',
+'2019/05/Wk4N4hW6/Wk4N4hW6-13',
+'2019/05/Wk4N4hW6/Wk4N4hW6-14',
+'2019/05/Wk4N4hW6/Wk4N4hW6-15',
+'2019/07/Fg6u6cU8/Fg6u6cU8-1',
+'2019/07/Fg6u6cU8/Fg6u6cU8-2',
+'2019/07/Fg6u6cU8/Fg6u6cU8-3',
+'2019/07/Fg6u6cU8/Fg6u6cU8-4',
+'2019/07/Fg6u6cU8/Fg6u6cU8-5',
+'2019/07/Fg6u6cU8/Fg6u6cU8-6',
+'2019/07/Fg6u6cU8/Fg6u6cU8-7',
+'2019/07/Fg6u6cU8/Fg6u6cU8-8',
+'2019/07/Fg6u6cU8/Fg6u6cU8-9',
+'2019/07/Fg6u6cU8/Fg6u6cU8-10',
+'2019/07/Fg6u6cU8/Fg6u6cU8-11',
+'2019/07/Fg6u6cU8/Fg6u6cU8-12',
+'2019/07/Fg6u6cU8/Fg6u6cU8-13',
+'2019/07/Fg6u6cU8/Fg6u6cU8-14',
+'2019/07/Fg6u6cU8/Fg6u6cU8-15',
+'2019/09/5dMdAtoC/5dMdAtoC-1',
+'2019/09/5dMdAtoC/5dMdAtoC-2',
+'2019/09/5dMdAtoC/5dMdAtoC-3',
+'2019/09/5dMdAtoC/5dMdAtoC-4',
+'2019/09/5dMdAtoC/5dMdAtoC-5',
+'2019/09/5dMdAtoC/5dMdAtoC-6',
+'2019/09/5dMdAtoC/5dMdAtoC-7',
+'2019/09/5dMdAtoC/5dMdAtoC-8',
+'2019/09/5dMdAtoC/5dMdAtoC-9',
+'2019/09/5dMdAtoC/5dMdAtoC-10',
+'2019/09/5dMdAtoC/5dMdAtoC-11',
+'2019/09/5dMdAtoC/5dMdAtoC-12',
+'2019/09/5dMdAtoC/5dMdAtoC-13',
+'2019/09/5dMdAtoC/5dMdAtoC-14',
+'2019/09/5dMdAtoC/5dMdAtoC-15',
+'2020/05/JxdL7bv4/JxdL7bv4-1',
+'2020/05/JxdL7bv4/JxdL7bv4-2',
+'2020/05/JxdL7bv4/JxdL7bv4-3',
+'2020/05/JxdL7bv4/JxdL7bv4-4',
+'2020/05/JxdL7bv4/JxdL7bv4-5',
+'2020/05/JxdL7bv4/JxdL7bv4-6',
+'2020/05/JxdL7bv4/JxdL7bv4-7',
+'2020/05/JxdL7bv4/JxdL7bv4-8',
+'2020/05/JxdL7bv4/JxdL7bv4-9',
+'2020/05/JxdL7bv4/JxdL7bv4-10',
+'2020/05/JxdL7bv4/JxdL7bv4-11',
+'2020/05/JxdL7bv4/JxdL7bv4-12',
+'2020/05/JxdL7bv4/JxdL7bv4-13',
+'2020/05/JxdL7bv4/JxdL7bv4-14',
+'2020/05/JxdL7bv4/JxdL7bv4-15',
+'2020/08/eaKc8qe6/eaKc8qe6-1',
+'2020/08/eaKc8qe6/eaKc8qe6-2',
+'2020/08/eaKc8qe6/eaKc8qe6-3',
+'2020/08/eaKc8qe6/eaKc8qe6-4',
+'2020/08/eaKc8qe6/eaKc8qe6-5',
+'2020/08/eaKc8qe6/eaKc8qe6-6',
+'2020/08/eaKc8qe6/eaKc8qe6-7',
+'2020/08/eaKc8qe6/eaKc8qe6-8',
+'2020/08/eaKc8qe6/eaKc8qe6-9',
+'2020/08/eaKc8qe6/eaKc8qe6-10',
+'2020/08/eaKc8qe6/eaKc8qe6-11',
+'2020/08/eaKc8qe6/eaKc8qe6-12',
+'2020/08/eaKc8qe6/eaKc8qe6-13',
+'2020/08/eaKc8qe6/eaKc8qe6-14',
+'2020/08/eaKc8qe6/eaKc8qe6-15',
+'2020/10/chiL23rQ/chiL23rQ-1',
+'2020/10/chiL23rQ/chiL23rQ-2',
+'2020/10/chiL23rQ/chiL23rQ-3',
+'2020/10/chiL23rQ/chiL23rQ-4',
+'2020/10/chiL23rQ/chiL23rQ-5',
+'2020/10/chiL23rQ/chiL23rQ-6',
+'2020/10/chiL23rQ/chiL23rQ-7',
+'2020/10/chiL23rQ/chiL23rQ-8',
+'2020/10/chiL23rQ/chiL23rQ-9',
+'2020/10/chiL23rQ/chiL23rQ-10',
+'2020/10/chiL23rQ/chiL23rQ-11',
+'2020/10/chiL23rQ/chiL23rQ-12',
+'2020/10/chiL23rQ/chiL23rQ-13',
+'2020/10/chiL23rQ/chiL23rQ-14',
+'2020/10/chiL23rQ/chiL23rQ-15',
+'2020/12/Uj8RGSh6/Uj8RGSh6-1',
+'2020/12/Uj8RGSh6/Uj8RGSh6-2',
+'2020/12/Uj8RGSh6/Uj8RGSh6-3',
+'2020/12/Uj8RGSh6/Uj8RGSh6-4',
+'2020/12/Uj8RGSh6/Uj8RGSh6-5',
+'2020/12/Uj8RGSh6/Uj8RGSh6-6',
+'2020/12/Uj8RGSh6/Uj8RGSh6-7',
+'2020/12/Uj8RGSh6/Uj8RGSh6-8',
+'2020/12/Uj8RGSh6/Uj8RGSh6-9',
+'2020/12/Uj8RGSh6/Uj8RGSh6-10',
+'2020/12/Uj8RGSh6/Uj8RGSh6-11',
+'2020/12/Uj8RGSh6/Uj8RGSh6-12',
+'2020/12/Uj8RGSh6/Uj8RGSh6-13',
+'2020/12/Uj8RGSh6/Uj8RGSh6-14',
+'2020/12/Uj8RGSh6/Uj8RGSh6-15',
+'2021/02/8h5nNhCQ/8h5nNhCQ-1',
+'2021/02/8h5nNhCQ/8h5nNhCQ-2',
+'2021/02/8h5nNhCQ/8h5nNhCQ-3',
+'2021/02/8h5nNhCQ/8h5nNhCQ-4',
+'2021/02/8h5nNhCQ/8h5nNhCQ-5',
+'2021/02/8h5nNhCQ/8h5nNhCQ-6',
+'2021/02/8h5nNhCQ/8h5nNhCQ-7',
+'2021/02/8h5nNhCQ/8h5nNhCQ-8',
+'2021/02/8h5nNhCQ/8h5nNhCQ-9',
+'2021/02/8h5nNhCQ/8h5nNhCQ-10',
+'2021/02/8h5nNhCQ/8h5nNhCQ-11',
+'2021/02/8h5nNhCQ/8h5nNhCQ-12',
+'2021/02/8h5nNhCQ/8h5nNhCQ-13',
+'2021/02/8h5nNhCQ/8h5nNhCQ-14',
+'2021/02/8h5nNhCQ/8h5nNhCQ-15',
+'2021/10/7UvT5ZZi/7UvT5ZZi-1',
+'2021/10/7UvT5ZZi/7UvT5ZZi-2',
+'2021/10/7UvT5ZZi/7UvT5ZZi-3',
+'2021/10/7UvT5ZZi/7UvT5ZZi-4',
+'2021/10/7UvT5ZZi/7UvT5ZZi-5',
+'2021/10/7UvT5ZZi/7UvT5ZZi-6',
+'2021/10/7UvT5ZZi/7UvT5ZZi-7',
+'2021/10/7UvT5ZZi/7UvT5ZZi-8',
+'2021/10/7UvT5ZZi/7UvT5ZZi-9',
+'2021/10/7UvT5ZZi/7UvT5ZZi-10',
+'2021/10/7UvT5ZZi/7UvT5ZZi-11',
+'2021/10/7UvT5ZZi/7UvT5ZZi-12',
+'2021/10/7UvT5ZZi/7UvT5ZZi-13',
+'2021/10/7UvT5ZZi/7UvT5ZZi-14',
+'2021/10/7UvT5ZZi/7UvT5ZZi-15',
+'2021/10/m6DArx2H/m6DArx2H-1',
+'2021/10/m6DArx2H/m6DArx2H-2',
+'2021/10/m6DArx2H/m6DArx2H-3',
+'2021/10/m6DArx2H/m6DArx2H-4',
+'2021/10/m6DArx2H/m6DArx2H-5',
+'2021/10/m6DArx2H/m6DArx2H-6',
+'2021/10/m6DArx2H/m6DArx2H-7',
+'2021/10/m6DArx2H/m6DArx2H-8',
+'2021/10/m6DArx2H/m6DArx2H-9',
+'2021/10/m6DArx2H/m6DArx2H-10',
+'2021/10/m6DArx2H/m6DArx2H-11',
+'2021/10/m6DArx2H/m6DArx2H-12',
+'2021/10/m6DArx2H/m6DArx2H-13',
+'2021/10/m6DArx2H/m6DArx2H-14',
+'2021/10/m6DArx2H/m6DArx2H-15',
+'2022/06/7Yf5DCc/7Yf5DCc-1',
+'2022/06/7Yf5DCc/7Yf5DCc-2',
+'2022/06/7Yf5DCc/7Yf5DCc-3',
+'2022/06/7Yf5DCc/7Yf5DCc-4',
+'2022/06/7Yf5DCc/7Yf5DCc-5',
+'2022/06/7Yf5DCc/7Yf5DCc-6',
+'2022/06/7Yf5DCc/7Yf5DCc-7',
+'2022/06/7Yf5DCc/7Yf5DCc-8',
+'2022/06/7Yf5DCc/7Yf5DCc-9',
+'2022/06/7Yf5DCc/7Yf5DCc-10',
+'2022/06/7Yf5DCc/7Yf5DCc-11',
+'2022/06/7Yf5DCc/7Yf5DCc-12',
+'2022/06/7Yf5DCc/7Yf5DCc-13',
+'2022/06/7Yf5DCc/7Yf5DCc-14',
+'2022/06/7Yf5DCc/7Yf5DCc-15',
+'2023/08/NWSVTcT3/NWSVTcT3-1',
+'2023/08/NWSVTcT3/NWSVTcT3-2',
+'2023/08/NWSVTcT3/NWSVTcT3-3',
+'2023/08/NWSVTcT3/NWSVTcT3-4',
+'2023/08/NWSVTcT3/NWSVTcT3-5',
+'2023/08/NWSVTcT3/NWSVTcT3-6',
+'2023/08/NWSVTcT3/NWSVTcT3-7',
+'2023/08/NWSVTcT3/NWSVTcT3-8',
+'2023/08/NWSVTcT3/NWSVTcT3-9',
+'2023/08/NWSVTcT3/NWSVTcT3-10',
+'2023/08/NWSVTcT3/NWSVTcT3-11',
+'2023/08/NWSVTcT3/NWSVTcT3-12',
+'2023/08/NWSVTcT3/NWSVTcT3-13',
+'2023/08/NWSVTcT3/NWSVTcT3-14',
+'2023/08/NWSVTcT3/NWSVTcT3-15',
+'2024/03/E9igwPQ3/E9igwPQ3-1',
+'2024/03/E9igwPQ3/E9igwPQ3-2',
+'2024/03/E9igwPQ3/E9igwPQ3-3',
+'2024/03/E9igwPQ3/E9igwPQ3-4',
+'2024/03/E9igwPQ3/E9igwPQ3-5',
+'2024/03/E9igwPQ3/E9igwPQ3-6',
+'2024/03/E9igwPQ3/E9igwPQ3-7',
+'2024/03/E9igwPQ3/E9igwPQ3-8',
+'2024/03/E9igwPQ3/E9igwPQ3-9',
+'2024/03/E9igwPQ3/E9igwPQ3-10',
+'2024/03/E9igwPQ3/E9igwPQ3-11',
+'2024/03/E9igwPQ3/E9igwPQ3-12',
+'2024/03/E9igwPQ3/E9igwPQ3-13',
+'2024/03/E9igwPQ3/E9igwPQ3-14',
+'2024/03/E9igwPQ3/E9igwPQ3-15',
+'',
+];
+lineHeader = '<img src="http://freematuresgallery.com/pics/'
+lineTail = '.jpg">'
+bookid = "maid"
+showRange = 60
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,139 @@
+<base target="_blank"><html><head><title>ameliermoreau</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/my-plane-15980361"><img src="https://ic-ph-nss.xhcdn.com/a/MTJkZDM0ZjMwZmUxOGQ4MzBiNTJhMDhjYTdlZmM0NzA/jpeg/000/513/749/161_450.jpg"><br>My Plane</a> 9',
+'<a href="https://xhamster.com/photos/gallery/dorothy-underneath-15815770"><img src="https://ic-ph-nss.xhcdn.com/a/NDQ1MDVjYmU4ZmU4NDQ4OTIyYmI4ZjgxMmYwMTBjY2M/jpeg/000/508/463/983_450.jpg"><br>Dorothy Underneath</a> 9',
+'<a href="https://xhamster.com/photos/gallery/am-lies-seduction-photo-sh0ot-2010-nyc-15993557"><img src="https://ic-ph-nss.xhcdn.com/a/ZWZmN2NlZDFjMmZmYzFhZTlmMjBhMTkwMTlhOTE4MDY/jpeg/000/513/961/149_450.jpg"><br>Amélie&#039;s Seduction Photo Sh0ot 2010 NYC</a> 9',
+'<a href="https://xhamster.com/photos/gallery/am-lie-mediterranean-15984962"><img src="https://ic-ph-nss.xhcdn.com/a/NTMyN2RjNDM2MmJlYmFiMjA3NTczMzRjYTY5ZTliMDM/jpeg/000/513/837/069_450.jpg"><br>Amélie Mediterranean</a> 9',
+'<a href="https://xhamster.com/photos/gallery/vixen-15813289"><img src="https://ic-ph-nss.xhcdn.com/a/ZTk5YjkwY2FhOTQwYmQyZjFhODE3OWY3ZWNhZTY0MTQ/jpeg/000/507/742/647_450.jpg"><br>Vixen</a> 8',
+'<a href="https://xhamster.com/photos/gallery/the-restored-polaroids-of-me-15809832"><img src="https://ic-ph-nss.xhcdn.com/a/YzhjN2Q0YmNlMzE0ZWFjMTliOGM4OTdlOGQyNzUyNWU/jpeg/000/506/720/971_450.jpg"><br>The Restored Polaroids of Me</a> 8',
+'<a href="https://xhamster.com/photos/gallery/the-dance-15810769"><img src="https://ic-ph-nss.xhcdn.com/a/NTRiMDlhYTBjZjc1ZTllOGE3ZGE1ZDcxMmEwMGYzMTU/jpeg/000/506/986/544_450.jpg"><br>The Dance</a> 8',
+'<a href="https://xhamster.com/photos/gallery/white-top-pink-lingerie-15813266"><img src="https://ic-ph-nss.xhcdn.com/a/OGEzMzAyYjE3MTdiYTBjMGMxY2U0MTdlOWRjZmU1ZTM/jpeg/000/507/734/567_450.jpg"><br>White Top, Pink Lingerie</a> 7',
+'<a href="https://xhamster.com/photos/gallery/the-two-eiffel-towers-16055485"><img src="https://ic-ph-nss.xhcdn.com/a/ZGFmZTcyN2U3ZmEzYWU4ODk1NjIwMjk0OGFhZGNhNTI/jpeg/000/514/836/462_450.jpg"><br>The Two Eiffel Towers</a> 7',
+'<a href="https://xhamster.com/photos/gallery/fun-with-cocks-15812562"><img src="https://ic-ph-nss.xhcdn.com/a/Nzk1MTMyZWNiNTE1MjVmZTcyMGYzYTRiZGNiMmQxYWY/jpeg/000/507/531/998_450.jpg"><br>Fun with Cocks</a> 7',
+'<a href="https://xhamster.com/photos/gallery/am-lie-st-john-usvi-2-15993200"><img src="https://ic-ph-nss.xhcdn.com/a/NWFkMzRjZWVkZmNiNWNlMTM0NGY4ODg2M2M1NDM4OTM/jpeg/000/513/956/629_450.jpg"><br> Amélie St John USVI 2</a> 7',
+'<a href="https://xhamster.com/photos/gallery/which-ride-15981560"><img src="https://ic-ph-nss.xhcdn.com/a/NDZkMDdlMDIxOGE3MzZkMTUxYjUzM2Y0NDAzOTg0MGI/jpeg/000/513/766/789_450.jpg"><br>Which Ride ?</a> 6',
+'<a href="https://xhamster.com/photos/gallery/not-dorothy-from-oz-15815773"><img src="https://ic-ph-nss.xhcdn.com/a/ZDU1OTJmYmY1NDI0ZjQyYTY1Zjk1ZWUyMjAxNzAzNTM/jpeg/000/508/464/371_450.jpg"><br>Not Dorothy From OZ</a> 6',
+'<a href="https://xhamster.com/photos/gallery/leather-15809648"><img src="https://ic-ph-nss.xhcdn.com/a/MjM2MzdhNzM4NDkwYjE2NTVjN2I4NmE0ZGY4ZDYwZDU/jpeg/000/506/658/559_450.jpg"><br>Leather</a> 6',
+'<a href="https://xhamster.com/photos/gallery/am-lies-red-sheer-photo-shoot-2016-ny-15994533"><img src="https://ic-ph-nss.xhcdn.com/a/MDRmN2M4YTdkZjYzOTkwYWI3NjlhMWMyMzI1ZDBiM2Q/jpeg/000/513/972/393_450.jpg"><br>Amélie&#039;s Red Sheer Photo Shoot 2016 NY</a> 6',
+'<a href="https://xhamster.com/photos/gallery/am-lies-red-and-black-photo-shoot-2019-upstate-ny-15998872"><img src="https://ic-ph-nss.xhcdn.com/a/MTM1MjVlOTBiMjg2MzMyNDY3ZmZkMGVhMjg4NWMxMTg/jpeg/000/514/034/568_450.jpg"><br>Amélie&#039;s Red and Black Photo Shoot 2019 Upstate NY</a> 6',
+'<a href="https://xhamster.com/photos/gallery/am-lie-upstate-new-york-15984593"><img src="https://ic-ph-nss.xhcdn.com/a/ZmY3Njk0MzE0MmJlN2UzNWM0MjY4NTk1NDE1NDRkZjA/jpeg/000/513/831/711_450.jpg"><br>Amélie Upstate New York</a> 6',
+'<a href="https://xhamster.com/photos/gallery/am-lie-israel-15987059"><img src="https://ic-ph-nss.xhcdn.com/a/MzRmOWU5MThkMjIyMmIxMGYxOWFjYWUxZTgxMjRjZTk/jpeg/000/513/864/422_450.jpg"><br>Amélie Israel</a> 6',
+'<a href="https://xhamster.com/photos/gallery/pink-ties-15813046"><img src="https://ic-ph-nss.xhcdn.com/a/NWVlM2JlOTAyYzYzMjMyMGNjMGQ0NTJjZDNhYzVmNDQ/jpeg/000/507/659/840_450.jpg"><br>Pink Ties</a> 5',
+'<a href="https://xhamster.com/photos/gallery/major-a-r-moreau-15948465"><img src="https://ic-ph-nss.xhcdn.com/a/MjUxOGU5N2I5YWVmMWI5MDRmZTNiMDNhMGVhYWEwMTU/jpeg/000/513/211/540_450.jpg"><br>Major A.R. Moreau</a> 5',
+'<a href="https://xhamster.com/photos/gallery/cuffed-nude-15813954"><img src="https://ic-ph-nss.xhcdn.com/a/MDJlODZlNzYzNjZlMDAzOTM1MGVkNWYyM2ZmNzlhN2M/jpeg/000/507/960/419_450.jpg"><br>Cuffed Nude</a> 5',
+'<a href="https://xhamster.com/photos/gallery/cocksucking-16003620"><img src="https://ic-ph-nss.xhcdn.com/a/ZjJiY2Y0MTE0OWViZDM2MGY1ZmIyODFhNWY2MmE3YTQ/jpeg/000/514/108/977_450.jpg"><br>Cocksucking</a> 5',
+'<a href="https://xhamster.com/photos/gallery/am-lies-shimmer-photo-shoot-1-2014-florida-15993953"><img src="https://ic-ph-nss.xhcdn.com/a/YzYwMmEzY2IwN2RmNmZkZjU2MWI5YjA4OWU0YTBhNTM/jpeg/000/513/965/878_450.jpg"><br>Amélie&#039;s Shimmer Photo Shoot 1 2014 Florida</a> 5',
+'<a href="https://xhamster.com/photos/gallery/am-lies-just-a-slip-photo-shoot-2018-ny-16000386"><img src="https://ic-ph-nss.xhcdn.com/a/MmMxZDQ5Y2Y4ZTdlNzc1NTFlNjcyNzA5MDMzODI3MjU/jpeg/000/514/055/037_450.jpg"><br>Amélie&#039;s Just A Slip Photo Shoot 2018 NY</a> 5',
+'<a href="https://xhamster.com/photos/gallery/am-lies-chain-halter-photo-shoot-2020-ny-15999728"><img src="https://ic-ph-nss.xhcdn.com/a/YmQwNmJjNGEwMzU0MDAxZmZjNzEwM2QxNDI4ZGYxYjU/jpeg/000/514/045/272_450.jpg"><br>Amélie&#039;s Chain Halter Photo Shoot 2020 NY</a> 5',
+'<a href="https://xhamster.com/photos/gallery/am-lie-on-top-16004285"><img src="https://ic-ph-nss.xhcdn.com/a/MDBlODMwYjZiZWVhODM5ZDUwNTVlMDVjYzQ2NWUxMzY/jpeg/000/514/122/131_450.jpg"><br>Amélie On Top</a> 5',
+'<a href="https://xhamster.com/photos/gallery/am-lie-before-filming-upstate-ny-15987449"><img src="https://ic-ph-nss.xhcdn.com/a/ODFjZTIzZjIwZDY0ZmI4NTlmNjc1ZDQ1MzFmZTc3MWE/jpeg/000/513/868/424_450.jpg"><br>Amélie Before Filming Upstate NY</a> 5',
+'<a href="https://xhamster.com/photos/gallery/spring-blooms-16136732"><img src="https://ic-ph-nss.xhcdn.com/a/YWM3NzE1OWY3MmJkNGQ5MjMwNTBjYjgwODczMTE4MzU/jpeg/000/515/935/452_450.jpg"><br>Spring Blooms</a> 4',
+'<a href="https://xhamster.com/photos/gallery/old-film-photos-of-me-15809789"><img src="https://ic-ph-nss.xhcdn.com/a/MTg5MmJmMjU1ZmE0NWY4MGZiZjk2ZjY5Njc2ODM5OTM/jpeg/000/506/706/526_450.jpg"><br>Old Film Photos of Me</a> 4',
+'<a href="https://xhamster.com/photos/gallery/date-night-upstate-ny-2022-15948461"><img src="https://ic-ph-nss.xhcdn.com/a/NDE4ZWNlNjFkZjcxYTZiZTVmOWJhYjg4MDQyMmY0ZGM/jpeg/000/513/211/522_450.jpg"><br>Date Night - Upstate NY -2022</a> 4',
+'<a href="https://xhamster.com/photos/gallery/black-leather-15977578"><img src="https://ic-ph-nss.xhcdn.com/a/NTkyMTRlYTE1NDhlMjY1MmQ5MTFiNzUwZGRlY2RkMDA/jpeg/000/513/714/691_450.jpg"><br>Black Leather</a> 4',
+'<a href="https://xhamster.com/photos/gallery/amelie-how-many-strokes-was-that-16074946"><img src="https://ic-ph-nss.xhcdn.com/a/ZDExM2E1ZDEzNGRhOTMxODg3MjE2NGViOWU2MDAxMWM/jpeg/000/515/089/320_450.jpg"><br>Amelie, How Many Strokes Was That ?</a> 4',
+'<a href="https://xhamster.com/photos/gallery/amelie-gagged-and-waiting-16159768"><img src="https://ic-ph-nss.xhcdn.com/a/ODI3ODZhNjRiMWM2ZjkxYWM2NWM0ZjY3NmZkZTE2Mzg/jpeg/000/516/220/028_450.jpg"><br>Amelie Gagged and Waiting</a> 4',
+'<a href="https://xhamster.com/photos/gallery/am-lies-vintage-style-photo-shoot-1-2019-ny-16003087"><img src="https://ic-ph-nss.xhcdn.com/a/ZjFmYTUwN2I0OTZkOWI0ZjljNWZiM2M4Mzg0NWIyYTQ/jpeg/000/514/100/562_450.jpg"><br>Amélie&#039;s Vintage Style Photo Shoot 1 2019 NY</a> 4',
+'<a href="https://xhamster.com/photos/gallery/am-lies-summer-soon-france-1994-16035044"><img src="https://ic-ph-nss.xhcdn.com/a/M2E3MzFhNjljODc1NzhhZGQ4YzlkYzJjZjY5MDY5NDQ/jpeg/000/514/546/130_450.jpg"><br>Amélie&#039;s Summer Soon France 1994</a> 4',
+'<a href="https://xhamster.com/photos/gallery/am-lies-leather-jacket-photoshoot-2022-ny-16002363"><img src="https://ic-ph-nss.xhcdn.com/a/YTI2NTdlYjM5MWVhMDY2N2ZkNzI4NGUwYjI5ZmUzNzk/jpeg/000/514/091/650_450.jpg"><br>Amélie&#039;s Leather Jacket Photoshoot 2022 NY</a> 4',
+'<a href="https://xhamster.com/photos/gallery/am-lies-hold-the-pose-photo-shoot-florida-2017-15999447"><img src="https://ic-ph-nss.xhcdn.com/a/YzM5NmY5OTNmYjlhZTUxZjg2OWNjYWQ4NmE3MTkxYjE/jpeg/000/514/041/581_450.jpg"><br>Amélie&#039;s Hold the Pose Photo Shoot Florida 2017</a> 4',
+'<a href="https://xhamster.com/photos/gallery/am-lie-riyadh-saudi-arabia-15983904"><img src="https://ic-ph-nss.xhcdn.com/a/NzFmMWNlN2IyNDE3MzUzYjEzZTgxYTJiNzA1YTczODU/jpeg/000/513/808/005_450.jpg"><br>Amélie Riyadh Saudi Arabia</a> 4',
+'<a href="https://xhamster.com/photos/gallery/am-lie-kenya-15986793"><img src="https://ic-ph-nss.xhcdn.com/a/MjYwZDk4MDM5MjMzNTU5MzU4NjE4NmM5YmMxYmI3MGU/jpeg/000/513/861/293_450.jpg"><br>Amélie Kenya</a> 4',
+'<a href="https://xhamster.com/photos/gallery/50-degree-water-lake-ontario-15983530"><img src="https://ic-ph-nss.xhcdn.com/a/NzEyM2I2ODU2ZDIxYmRiMTJlOWE0NTc1NjdjY2RhZjk/jpeg/000/513/802/017_450.jpg"><br>50 Degree Water Lake Ontario</a> 4',
+'<a href="https://xhamster.com/photos/gallery/summer-solstice-2023-am-lie-france-1994-16037823"><img src="https://ic-ph-nss.xhcdn.com/a/NmUwNThhYjhmNzI0OGIwMjgzMDFkZGY2MDg5NmU0OWU/jpeg/000/514/582/815_450.jpg"><br>Summer Solstice 2023 - Amélie France 1994</a> 3',
+'<a href="https://xhamster.com/photos/gallery/fishnet-15982310"><img src="https://ic-ph-nss.xhcdn.com/a/NzhkYjhhYmRkYmNlMDMwNDI2OGQ5MjVmYmQzMTM3ZmM/jpeg/000/513/781/061_450.jpg"><br>Fishnet</a> 3',
+'<a href="https://xhamster.com/photos/gallery/another-rainy-day-am-lie-2020-16057381"><img src="https://ic-ph-nss.xhcdn.com/a/ZGYzNDA4NTY1YzZjNzI5YTliMDdlZjFmOTI4YTQ5NjU/jpeg/000/514/863/889_450.jpg"><br>Another Rainy Day - Amélie - 2020</a> 3',
+'<a href="https://xhamster.com/photos/gallery/amelies-ranch-jackson-hole-wyoming-1-4-2024-16108042"><img src="https://ic-ph-nss.xhcdn.com/a/NmU5NmMzYTgzNzExZThiZDk2OGRjYTBjODkwNDNmODM/jpeg/000/515/526/702_450.jpg"><br>Amelie&#039;s Ranch Jackson Hole, Wyoming 1.4.2024</a> 3',
+'<a href="https://xhamster.com/photos/gallery/am-lies-hooded-photo-shoot-upstate-ny-15999258"><img src="https://ic-ph-nss.xhcdn.com/a/NjU2ZmU2NTczNmY2NzU5Mjg3M2UyYWFjYTU5MTM1NjY/jpeg/000/514/039/443_450.jpg"><br>Amélie&#039;s Hooded Photo Shoot Upstate NY</a> 3',
+'<a href="https://xhamster.com/photos/gallery/am-lies-2023-cadillac-esv-v-series-nj-15995178"><img src="https://ic-ph-nss.xhcdn.com/a/YmE2OWJiZDI4NWNkODQ0ZjQ0MjU1NzQ5ZDEzZTllMWI/jpeg/000/513/979/743_450.jpg"><br>Amélie&#039;s 2023 Cadillac ESV  V-Series  NJ</a> 3',
+'<a href="https://xhamster.com/photos/gallery/am-lies-2012-mini-r58s-0-16053822"><img src="https://ic-ph-nss.xhcdn.com/a/ZDVmZTQ4OGMzNWM0NzJjYjI5NzRlOTkwN2E4YmJlMzg/jpeg/000/514/815/139_450.jpg"><br>Amélie&#039;s 2012 Mini R58&#039;s 0</a> 3',
+'<a href="https://xhamster.com/photos/gallery/am-lie-fucking-upstate-ny-2023-16009818"><img src="https://ic-ph-nss.xhcdn.com/a/NjFmYzE5ZDJlYjUzZTQxNmI4NjczNjhkMjU0Y2YxMzc/jpeg/000/514/199/189_450.jpg"><br>Amélie Fucking Upstate NY 2023</a> 3',
+'<a href="https://xhamster.com/photos/gallery/open-wide-amelie-15810656"><img src="https://ic-ph-nss.xhcdn.com/a/OWIzNGIyMTA4NDI1Nzg3OWRiMzUwNDY4NDM0YjljMmU/jpeg/000/506/947/276_450.jpg"><br>Open Wide Amelie</a> 28',
+'<a href="https://xhamster.com/photos/gallery/coffee-tea-or-me-15813030"><img src="https://ic-ph-nss.xhcdn.com/a/MDMyOWMzM2I4N2M2YTgyZmQ4ZTU5ZTg0NmE1YjI1MDI/jpeg/000/507/652/564_450.jpg"><br>Coffee, Tea Or Me</a> 23',
+'<a href="https://xhamster.com/photos/gallery/rainy-fall-days-15810227"><img src="https://ic-ph-nss.xhcdn.com/a/ZmE0MDljMTRlZDgyMDA0OTdjNzIzOGQ5ZmJhNjM1NmE/jpeg/000/506/838/570_450.jpg"><br>Rainy Fall Days</a> 22',
+'<a href="https://xhamster.com/photos/gallery/the-two-eiffel-towers-part-2-16153416"><img src="https://ic-ph-nss.xhcdn.com/a/NjdmMzI2Mzk4YmE0YzhhYzg3ZTFjZGVjZTBiM2YzYzU/jpeg/000/516/142/802_450.jpg"><br>The Two Eiffel Towers Part 2</a> 2',
+'<a href="https://xhamster.com/photos/gallery/the-promise-of-spring-16129290"><img src="https://ic-ph-nss.xhcdn.com/a/NDNjMGUxZTYxZTRhMDkyZTMzMTYyMzlkYjY4YTE0NjA/jpeg/000/515/798/820_450.jpg"><br>The Promise of Spring</a> 2',
+'<a href="https://xhamster.com/photos/gallery/need-am-lie-as-a-cook-16039871"><img src="https://ic-ph-nss.xhcdn.com/a/ZWM2MWZlOTQ0OWRkZTY3OWZhZTYyMGVjYTg2YzY0ZDY/jpeg/000/514/616/030_450.jpg"><br>Need Amélie as a Cook !!</a> 2',
+'<a href="https://xhamster.com/photos/gallery/my-piercings-16052537"><img src="https://ic-ph-nss.xhcdn.com/a/ZGQ4MjJhODg1MzBjNzMzYzU5NTg5ZTVmMDhlMjRjNDI/jpeg/000/514/780/922_450.jpg"><br>My Piercings</a> 2',
+'<a href="https://xhamster.com/photos/gallery/cuffed-15809801"><img src="https://ic-ph-nss.xhcdn.com/a/ZWIwMjVlZTk3Zjk2NDFmNDI3ZTUzYzU0YjA3NTE4ODA/jpeg/000/506/710/155_450.jpg"><br>Cuffed</a> 2',
+'<a href="https://xhamster.com/photos/gallery/amelie-grand-teton-national-park-wyoming-2024-16112353"><img src="https://ic-ph-nss.xhcdn.com/a/ZGM2Mjk3MjIzYjZiMzQzMGVhYWNkNmI0MjJjY2EzMDk/jpeg/000/515/581/555_450.jpg"><br>Amelie Grand Teton National Park Wyoming 2024</a> 2',
+'<a href="https://xhamster.com/photos/gallery/am-lie-ny-beach-1987-15993186"><img src="https://ic-ph-nss.xhcdn.com/a/NTY1Y2E5OGJlODExNjRkMDE3OGUzZGQ2ZGJhYWNmZDI/jpeg/000/513/956/484_450.jpg"><br>Amélie NY Beach 1987</a> 2',
+'<a href="https://xhamster.com/photos/gallery/am-lie-eilat-israel-15983563"><img src="https://ic-ph-nss.xhcdn.com/a/ZTEyY2ZhODY3MGViYjA3YjZlOWM5YWRjMTg3MmQwMzY/jpeg/000/513/802/315_450.jpg"><br>Amélie Eilat Israel</a> 2',
+'<a href="https://xhamster.com/photos/gallery/st-john-usvi-1-15988864"><img src="https://ic-ph-nss.xhcdn.com/a/MGE0MjcxOWZhNTY0YTYwNDI3Y2Y2YzlhNzE1ZDk3ODI/jpeg/000/513/883/985_450.jpg"><br>St John USVI 1</a> 19',
+'<a href="https://xhamster.com/photos/gallery/reflective-15810041"><img src="https://ic-ph-nss.xhcdn.com/a/NjA3YzdjNDJhNTA1Y2Q4NDY3MDlkOTFjZmI4YzliNGM/jpeg/000/506/781/779_450.jpg"><br>Reflective</a> 16',
+'<a href="https://xhamster.com/photos/gallery/am-lies-ann-klein-runway-jacket-photo-shoot-15996231"><img src="https://ic-ph-nss.xhcdn.com/a/NGUyNWZiZjYzYmM2NjExNDhhMWNiMDcyYTk1OGVmMmI/jpeg/000/513/992/716_450.jpg"><br>Amélie&#039;s Ann Klein Runway Jacket Photo Shoot</a> 12',
+'<a href="https://xhamster.com/photos/gallery/snow-fucking-white-15810942"><img src="https://ic-ph-nss.xhcdn.com/a/ZDljNmI4Nzg4OWVmMTVhNjg0YTkzYjhlZDgyMmZjNjU/jpeg/000/507/030/590_450.jpg"><br>Snow Fucking White</a> 11',
+'<a href="https://xhamster.com/photos/gallery/am-lie-wyoming-15987044"><img src="https://ic-ph-nss.xhcdn.com/a/YjNmZjA1YWQ3MmE5NmJhZjNiZWNhMTQ2NTJjOTY4ZTM/jpeg/000/513/864/297_450.jpg"><br>Amélie Wyoming</a> 11',
+'<a href="https://xhamster.com/photos/gallery/am-lie-summer-upstate-ny-15990653"><img src="https://ic-ph-nss.xhcdn.com/a/MDBmZDA5YzBhMjljOWU3MTBjNmE0NDk4Y2VlNmNlMjU/jpeg/000/513/916/954_450.jpg"><br>Amélie Summer Upstate NY</a> 10',
+'<a href="https://xhamster.com/photos/gallery/the-two-buttes-16052035"><img src="https://ic-ph-nss.xhcdn.com/a/OWYzMTNjNGRjZjNjNmVmZjY3ODU0YjM3NGJkY2RlNmU/jpeg/000/514/775/460_450.jpg"><br>The Two Buttes</a> 1',
+'<a href="https://xhamster.com/photos/gallery/spank-me-16136745"><img src="https://ic-ph-nss.xhcdn.com/a/ODI2M2RjNTljNjA1YmViYjJhZjg0NTljNDBlN2Y2MGU/jpeg/000/515/935/551_450.jpg"><br>Spank Me</a> 1',
+'<a href="https://xhamster.com/photos/gallery/remove-before-flight-16169168"><img src="https://ic-ph-nss.xhcdn.com/a/OWE4NzhkODA3ZWRiYWRlZWFmMmI2ZjY1MTNlYzYyMmY/jpeg/000/516/339/667_450.jpg"><br>Remove Before Flight</a> 1',
+'<a href="https://xhamster.com/photos/gallery/my-hairy-pussy-16149221"><img src="https://ic-ph-nss.xhcdn.com/a/NjFlNGIwZjBjYzk2MjM5YmVjNTgwODM5ZmExMDIxOWQ/jpeg/000/516/093/743_450.jpg"><br>My Hairy Pussy</a> 1',
+'<a href="https://xhamster.com/photos/gallery/how-to-fuck-in-jackson-hole-wyoming-1-6-2024-16108065"><img src="https://ic-ph-nss.xhcdn.com/a/MGVkOWU3YzM5MTFlNTJhNzdkNGY1ZDIxMjZjN2FlY2U/jpeg/000/515/526/773_450.jpg"><br>How to FUCK in Jackson Hole Wyoming 1.6.2024</a> 1',
+'<a href="https://xhamster.com/photos/gallery/amelies-jeep-grand-teton-national-park-wyoming-2024-16151238"><img src="https://ic-ph-nss.xhcdn.com/a/YmEyY2M1MjEzMTRiNTM1ZTM1NzBlZTM5MWE5MjZiOTk/jpeg/000/516/118/235_450.jpg"><br>Amelie&#039;s Jeep Grand Teton National Park Wyoming 2024</a> 1',
+'<a href="https://xhamster.com/photos/gallery/amelies-jeep-grand-teton-national-park-wyoming-2024-16115445"><img src="https://ic-ph-nss.xhcdn.com/a/ZjczMDNmOTlmYzgyYTkwNWM4N2NiYmIwNGNjMWViNzk/jpeg/000/515/617/873_450.jpg"><br>Amelie&#039;s Jeep Grand Teton National Park Wyoming 2024</a> 1',
+'<a href="https://xhamster.com/photos/gallery/amelie-ranch-hand-16129300"><img src="https://ic-ph-nss.xhcdn.com/a/OGI1NDNmMDEzZGM4ODI2Y2YyMjI5NDg1NzlkMzE5NWM/jpeg/000/515/798/965_450.jpg"><br>Amelie Ranch Hand</a> 1',
+'<a href="https://xhamster.com/photos/gallery/amelie-on-her-knees-grand-tetons-16150269"><img src="https://ic-ph-nss.xhcdn.com/a/YmI4MTUxYjE5M2UwNTY4YzQ3YmQ5NTQ0MjZiZTM4ZDI/jpeg/000/516/105/190_450.jpg"><br>Amelie on Her Knees Grand Tetons</a> 1',
+'<a href="https://xhamster.com/photos/gallery/amelie-is-built-for-the-super-duty-wyoming-2024-16118262"><img src="https://ic-ph-nss.xhcdn.com/a/YTBjZDFmNGMyMTg0MDVlMjFjYTcwYzU0N2JmNGQzNDg/jpeg/000/515/658/855_450.jpg"><br>Amelie Is Built For The Super Duty Wyoming 2024</a> 1',
+'<a href="https://xhamster.com/photos/gallery/amelie-is-built-for-the-super-duty-3-16149125"><img src="https://ic-ph-nss.xhcdn.com/a/NmQ3YTc5ODgwYmYwMjYwYzIzZGEyYzUwY2U5YTljNzY/jpeg/000/516/091/708_450.jpg"><br>Amelie Is Built For The Super Duty 3</a> 1',
+'<a href="https://xhamster.com/photos/gallery/amelie-is-built-for-the-super-duty-2-16118702"><img src="https://ic-ph-nss.xhcdn.com/a/NzExYjk4MjEyZmQwMTc5Yzc5NjU0ODBlMGQ2MDEwZWU/jpeg/000/515/664/023_450.jpg"><br>Amelie Is Built For The Super Duty 2</a> 1',
+'<a href="https://xhamster.com/photos/gallery/amelie-f650-wyoming-2024-16158588"><img src="https://ic-ph-nss.xhcdn.com/a/OGZiM2QzZDhjZTJlMDgyZTUwOGM3MzFmMTVlZjc2YTU/jpeg/000/516/201/245_450.jpg"><br>Amelie F650 Wyoming 2024</a> 1',
+'<a href="https://xhamster.com/photos/gallery/amelie-at-the-ranch-gate-16163690"><img src="https://ic-ph-nss.xhcdn.com/a/OThlMGY1NzhjZThmNzMxMmU2MDhmOWI3MDFhMGM2Mjk/jpeg/000/516/275/222_450.jpg"><br>Amelie at the Ranch Gate</a> 1',
+'<a href="https://xhamster.com/photos/gallery/amelie-apres-ski-wyoming-2024-16113087"><img src="https://ic-ph-nss.xhcdn.com/a/YWQyZDg5ZGJhZTA3OTkwNzhkNTRiOWUxODUxZjA4YTg/jpeg/000/515/589/988_450.jpg"><br>Amelie Apres Ski Wyoming 2024</a> 1',
+'<a href="https://xhamster.com/photos/gallery/am-lies-workstation-2023-upstate-ny-16002912"><img src="https://ic-ph-nss.xhcdn.com/a/OWY5NzJiZDIyZGJkNDQyMTdkMjAzMjljYmVkNDVmNGU/jpeg/000/514/098/729_450.jpg"><br>Amélie&#039;s Workstation 2023 Upstate NY</a> 1',
+'<a href="https://xhamster.com/photos/gallery/am-lies-2023-cadillac-esv-v-series-nj-4-16044523"><img src="https://ic-ph-nss.xhcdn.com/a/NTQxNDJkMWQwZjYxNGY3YTg1MmNhNjk2ODI4Y2ExZWM/jpeg/000/514/676/208_450.jpg"><br>Amélie.s 2023 Cadillac ESV-V Series NJ 4</a> 1',
+'<a href="https://xhamster.com/photos/gallery/am-lies-2023-cadillac-esv-v-series-nj-3-16011534"><img src="https://ic-ph-nss.xhcdn.com/a/MzFhOWE0ZjQzYTNmNzFmMzc3NDNjNDdhYmJiNDQyNjA/jpeg/000/514/222/866_450.jpg"><br>Amélie&#039;s 2023 Cadillac ESV V-Series NJ 3</a> 1',
+'<a href="https://xhamster.com/photos/gallery/am-lie-spreads-it-in-the-pinelands-nj-16046936"><img src="https://ic-ph-nss.xhcdn.com/a/MWFlYzIyZmQ1N2Y4MWRkZjc2MGZlNDMzNWZkMjQxZWU/jpeg/000/514/716/139_450.jpg"><br>Amélie Spreads it in the Pinelands NJ </a> 1',
+'<a href="https://xhamster.com/photos/gallery/am-lie-spreads-it-2023-nyc-16025536"><img src="https://ic-ph-nss.xhcdn.com/a/NmRjZmFlZjc3OWQyYjM5Y2MyZmEwMTMzMjg4MDdiYjA/jpeg/000/514/423/151_450.jpg"><br>Amélie Spreads It - 2023 NYC</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "ameliermoreau"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

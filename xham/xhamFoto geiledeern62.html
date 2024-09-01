@@ -1,0 +1,124 @@
+<base target="_blank"><html><head><title>geiledeernBatch: 62</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:100%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">geiledeernBatch: 62</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/fist-fucking-and-big-toys-16120013</k>',
+'Zjk0MGMzZWNmN2ZhZWJiZmI3ZGNhZDQ1Nzg3MmYxZDE/jpeg/000/515/681/725',
+'NzEzOTAwM2MwN2IxMDQxMjgwYmMzNzIzZjE5ZTY4OTE/jpeg/000/515/681/694',
+'ZjljNGY2OWQzOTgyZWIyMzcxNDVkMGI1YmVjMjUxNzU/jpeg/000/515/681/695',
+'NDA5MDU3YzM2YzFjNmUxZDQ0NTg0NmM5MDNiNDE4ODM/jpeg/000/515/681/697',
+'YTQzYTMwYzI3YWE5N2JkZDQ4MGJmZTE3MTE5MjRlZWY/jpeg/000/515/681/700',
+'MDg5YzQwMmUyNGYzZTk5ZTc2MGNhYWQ5MTdjODU4YzM/jpeg/000/515/681/724',
+'NjdjNzUwZGQ4ZWQ0MzM4ZTk5NzgzNTFmNjBiM2E1Y2I/jpeg/000/515/681/706',
+'NzJiODgwZjEyNTlhMmE0ODA0OTkxOTIzNTA2Y2U3OTY/jpeg/000/515/681/708',
+'ZGViYjM1YjM3YzZjNjJmYTlhZjA4ZjI5NjEzZDMwMjM/jpeg/000/515/681/703',
+'<k>https://xhamster.com/photos/gallery/slut-in-nylons-and-catsuit-16119579</k>',
+'ZjJiY2ZkNGQ0MDQwNTFmN2YxNmNhMTExNjRiMjE0ZjU/jpeg/000/515/675/731',
+'NjI5NzhlNjg2YzZlMzUwN2M0MzkwZGViZDRmNjJmMDQ/jpeg/000/515/675/730',
+'ZmE5ODk2N2MwZDZhNzUxMjcxZGY0M2M3ODNmNTVkMTM/jpeg/000/515/675/729',
+'NGJmZjY0MGIxMDRhZWI3ZmRkNDI0YjM2NGUzYzRmYmE/jpeg/000/515/675/716',
+'YjlhYmMwMTZiMGNhMTQxMjQ3NDc5OWQyYmEwM2YwNTU/jpeg/000/515/675/715',
+'ZGVjZjYxZWI2NTQyNmViYWM2NzM2NDYxMDczYTQxZWY/jpeg/000/515/675/712',
+'NmU1MjYxNDQ3MDYzNjQ4MzA2Mzg2ODFkZmVlOTkxMTg/jpeg/000/515/675/714',
+'<k>https://xhamster.com/photos/gallery/leisure-hobby-whore-and-passionate-slut-16123034</k>',
+'YTRmNWU5MWQwZWZhNTJkNjVkOGRmN2EzMGQ4NGRlOWU/jpeg/000/515/721/335',
+'OGI5ZTNiZDc5OThkNmQ3NTM4MTFkNzgyMGVmYTE2ZDA/jpeg/000/515/721/334',
+'OGU0ZTJkYjBlMTVmYTFiOWViNDNiNDRjMTA5ZTcxZWE/jpeg/000/515/721/333',
+'ZjNjZGM4MTk3OGM2YTNkOWMwN2NiYzQ5NzdhYzEzN2E/jpeg/000/515/721/332',
+'NDcyYWVmNmExMDU5NzA1MTQ1YjVkYzAxMTk5MzE4NDE/jpeg/000/515/721/331',
+'ZjFkYWU5YzRlMDFkZDg2ODFmMzc1MDNhYWUwZDcyOTg/jpeg/000/515/721/330',
+'ODEzMmVmOTM0YzQ4MjNjMTM0NDRlYjM4NWQxNjQyNWM/jpeg/000/515/721/336',
+'<k>https://xhamster.com/photos/gallery/anal-total-16107157</k>',
+'MGZhNGI1YmExODAyMWYxOTAyNGU1MTM5MDUxODRmOWY/jpeg/000/515/513/661',
+'OTdiZWFhODI4ZjQyNDdmZGU5M2VkYWE3Zjc2YTljMDc/jpeg/000/515/513/660',
+'ZjliN2NiNDczMjFiZDU2MWY2ZjgzZWQ5MmIwZTBmMjY/jpeg/000/515/513/659',
+'ZDkzNDgxNTZmNjQxOWZiNmY4ZGQyMjMyY2Q1MjIwYzE/jpeg/000/515/513/663',
+'MGRmYWExMzM0NDhlZmJjNTMzZjIxNzUyODcyYWIxODU/jpeg/000/515/513/665',
+'YzRlYTEzMGQ0OGRlNTI4NGU4MTdjOWZlMTQ5YWZhYWI/jpeg/000/515/513/658',
+'<k>https://xhamster.com/photos/gallery/my-favorite-pastime-thats-how-i-like-to-get-my-holes-plugg-16102567</k>',
+'NmY0NTI1ZWZjMzBjODE5ZDI1N2EyNDUzYTIyNDBlMGQ/jpeg/000/515/451/890',
+'YWM0ZThlZGUzNzhjNTU3ZDY5NjQ3MGEyZjk4ZDA0MTQ/jpeg/000/515/451/883',
+'MWY5YTFkNDZkMzc2ZjE3ZWY4NzRlNzMwMGU4Yjc2ZDk/jpeg/000/515/451/887',
+'NDdkNTM1ZDM4YjIwYzhlMzQwMmI4OTZlNzkwNzkzNzQ/jpeg/000/515/451/884',
+'NjVlZmFlYTBjZDVlOWVhOGVkZDhmYTNlMDE0MDlhNTA/jpeg/000/515/451/888',
+'<k>https://xhamster.com/photos/gallery/whore-wife-presents-for-you-16101744</k>',
+'NGJhZDI3N2E3NDM1OWUwMjcwNTg2M2U0MzBlODgwODg/jpeg/000/515/439/644',
+'MzgwN2EyY2I2ODBhN2Q0NDcxOTFmODI0MWVkNmRmMDM/jpeg/000/515/439/647',
+'M2VjNTNhMjJlN2RiOWE4ZWE0Zjk0MTE0MWUzOGVjMzY/jpeg/000/515/439/724',
+'NjhhMDBiYWQ0MjkyYzdkMmVhYTFhMWY5YWZhMTA2M2I/jpeg/000/515/439/663',
+'OGExMGFiNTY5ZTZkZmQzMDQzODU5YTM5M2Q4MDgxNTE/jpeg/000/515/439/643',
+'ZjVkMzNjYWVkMmRmNzU0MzEyM2Q3ZWZjOTg1MTY2MWU/jpeg/000/515/439/722',
+'YTYzZTUyNTg3MjljMDZkZWYxZDMyNDcwMDQ3YzY3ZjI/jpeg/000/515/439/648',
+'M2Q5NDBhZjVhY2E3N2VlNzczYzNlMzM1MTQ4YTNkZjg/jpeg/000/515/439/662',
+'ZTcyZTM2ZjQxNzc2NWNhODMxZDNmZjM0NWQ5MzQ0N2I/jpeg/000/515/439/721',
+'YzgzOWZlYWU1NWY4OTM3ZjBhN2NlNmQ1MjNkOTBjZmU/jpeg/000/515/439/645',
+'M2E0YTBmYzA4NGNhZTY2NTg5MmMzYTUwNzE1MjJhZjI/jpeg/000/515/439/723',
+'<k>https://xhamster.com/photos/gallery/kinky-whore-wife-16118337</k>',
+'MjBhZDQ0MGVmZjNmMTE0Yjc0MDE0YTA3M2IxYTI4MGQ/jpeg/000/515/659/647',
+'ZDYxOGMyYzRjMDdiYTUwOTEzMmUzMjNhZjYyMDIzZTE/jpeg/000/515/659/648',
+'ZTJiMWU4YmI3ZTVkYmU0NDc4ZDk3NTliZTk3MzRjOTQ/jpeg/000/515/659/651',
+'OGE1MTk2NTQ4ZjE1MTNlYTZlM2M1ZTQwNzhjYjVhZjU/jpeg/000/515/659/653',
+'MWM2NzNjOWIwZTY0NmQ1NzMxM2ExNzZmODE2YThhOTk/jpeg/000/515/659/652',
+'NGJiNzU2MDkwZjIzYTRiNTk1Nzc5NjllZDA4MTA5MjI/jpeg/000/515/659/640',
+'ZmU4NzcyZjZlZWNhYTRjMmJmODZmZTMyNmFhYzFiZjU/jpeg/000/515/659/642',
+'ZGM0MDVlYTAyOWFhMDVlZWU3MGFjYzBiNWY4NjkxOTM/jpeg/000/515/659/645',
+'NDVhZDMwMDY5ODI4YzMzMTBjZDFmODExNjNlMWJjOWM/jpeg/000/515/659/646',
+'YmJlMTBlNGRmNTdjZjU4MWRlMTdhYTI4MWYzMzdjNDc/jpeg/000/515/659/639',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "geiledeernBatch: 62"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

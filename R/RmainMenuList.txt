@@ -1,0 +1,18 @@
+     rvest pohub url.R
+	pohub.Batch Link adr. Simplified.R
+	pohub.Batch Link adr.170305.R
+	xhamsterExtractGalleries.R
+	xhamsterChannels.R
+	removeItems.R
+	xhamsterCat.R
+	xhamsterExtractConsecutivePagesnCount.R
+	xhamsterExtractConsecutivePagesnCountOneStep.R
+	xhamsterExtractGalleriesCntNos.R
+	xhamsterExtractPages.R
+	xhamsterExtractPagesnCount.R
+	xhamsterExtractPhotoPages.R
+	xhamsterInputAddr.R
+	xhamsterKeywords.R
+	xhamsterPornstar.R
+	xhamsterUsers.R
+	zKeyword.R

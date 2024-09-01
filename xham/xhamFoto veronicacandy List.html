@@ -1,0 +1,92 @@
+<base target="_blank"><html><head><title>veronicacandy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/veronica-candy-compilation-15811907"><img src="https://ic-ph-nss.xhcdn.com/a/M2MxNGYzYjlhNzJiZDJlODg2Yzg2ZGQ3YWRjOGUyYmI/jpeg/000/507/349/485_450.jpg"><br>Veronica Candy compilation</a> 8',
+'<a href="https://xhamster.com/photos/gallery/sexy-veronica-ass-in-bikini-14003848"><img src="https://ic-ph-nss.xhcdn.com/a/OTZhYzdlM2NkNTcwODFiZWM4YWVkZjE5MWFhYzJiMGU/jpeg/000/388/272/079_450.jpg"><br>Sexy Veronica, ass in bikini</a> 8',
+'<a href="https://xhamster.com/photos/gallery/sexy-cougar-lingerie-showoff-5911861"><img src="https://ic-ph-nss.xhcdn.com/a/MGVmYjc1NzhmMjZhNDY1N2RhYjMxZTdmNTY5YWQyZDQ/jpeg/000/102/238/650_450.jpg"><br>Sexy Cougar lingerie showoff!</a> 8',
+'<a href="https://xhamster.com/photos/gallery/legs-in-nylons-2853507"><img src="https://ic-ph-nss.xhcdn.com/a/YWJlZGRlMjZhMGRkZTM5MWU1ZjY0Yzk1MmMzYTljYTM/jpeg/000/047/202/830_450.jpg"><br>Legs in nylons</a> 7',
+'<a href="https://xhamster.com/photos/gallery/veronica-candy-milf-of-your-dreams-7037715"><img src="https://ic-ph-nss.xhcdn.com/a/NWJiODU3OGVhNzQxNWVhYTdmMTEzMjc5NzNhMmZjZDM/jpeg/000/122/678/890_450.jpg"><br>Veronica Candy MILF of your dreams</a> 6',
+'<a href="https://xhamster.com/photos/gallery/veronica-candy-erotic-queen-6943090"><img src="https://ic-ph-nss.xhcdn.com/a/MGIyODE1MDAwOTE2ZDcxOTAzYjAzNzE4MDg2MjkyYTU/jpeg/000/120/930/566_450.jpg"><br>Veronica Candy erotic queen</a> 6',
+'<a href="https://xhamster.com/photos/gallery/new-dress-sexy-or-not-5755747"><img src="https://ic-ph-nss.xhcdn.com/a/N2FlMWRhMmMzMWVlNzVmMjFjMmUxNGUxZGQ5M2VjYmU/jpeg/000/099/358/884_450.jpg"><br>New dress, sexy or not?</a> 6',
+'<a href="https://xhamster.com/photos/gallery/mature-amature-porn-queen-veronica-6369875"><img src="https://ic-ph-nss.xhcdn.com/a/OTBjY2E4OWJjMzVmMWNmMDAxNTViNDc1NWZlNjIxOWY/jpeg/000/110/498/365_450.jpg"><br>Mature Amature Porn Queen Veronica</a> 6',
+'<a href="https://xhamster.com/photos/gallery/hotest-legs-babe-5821398"><img src="https://ic-ph-nss.xhcdn.com/a/NjBhNzc3MjQwZjZmZWVkM2NjZDk2MDAzZWNjYjMzMWY/jpeg/000/100/583/585_450.jpg"><br>Hotest legs babe</a> 6',
+'<a href="https://xhamster.com/photos/gallery/foot-job-heels-4378511"><img src="https://ic-ph-nss.xhcdn.com/a/MDk3OWQ5YWRjYzBjYzZmMmY4ZGRlYzY5YzhkNWFkYmY/jpeg/000/074/229/398_450.jpg"><br>Foot job heels</a> 6',
+'<a href="https://xhamster.com/photos/gallery/very-sexy-mature-in-stockings-and-pantyhose-4809903"><img src="https://ic-ph-nss.xhcdn.com/a/ZmNhNmFjOWQ2MTBiNzAyMjA5ZWE4ODg0NDg1OGE4OGQ/jpeg/000/081/995/780_450.jpg"><br>Very sexy mature in stockings and pantyhose</a> 5',
+'<a href="https://xhamster.com/photos/gallery/some-oldschool-photos-6934392"><img src="https://ic-ph-nss.xhcdn.com/a/MWJjNGQwNDgyNTI5MDQ3MzQzNTFhOTUxYjU1OGZlM2E/jpeg/000/120/769/665_450.jpg"><br>Some oldschool photos.</a> 5',
+'<a href="https://xhamster.com/photos/gallery/nylons-3815328"><img src="https://ic-ph-nss.xhcdn.com/a/ZTI4NDI4MzA3NzFmMDM3MjE0M2YzZDYwOTUzYWQyNTA/jpeg/000/063/991/613_450.jpg"><br>Nylons </a> 5',
+'<a href="https://xhamster.com/photos/gallery/mistress-veronica-in-stockings-11201253"><img src="https://ic-ph-nss.xhcdn.com/a/N2M1ZmIxY2Y0ZmRjMjAxZThlMmIyMmUwYTBhZjQ1NzM/jpeg/000/245/110/106_450.jpg"><br>Mistress Veronica in stockings</a> 5',
+'<a href="https://xhamster.com/photos/gallery/milf-veronica-candy-7101423"><img src="https://ic-ph-nss.xhcdn.com/a/Yzg1YjYyMjI5NWUxODNhNzhmN2I3NTk5MjZhMDZkNTY/jpeg/000/123/861/730_450.jpg"><br>Milf Veronica Candy</a> 5',
+'<a href="https://xhamster.com/photos/gallery/hot-milf-dream-of-passion-6065918"><img src="https://ic-ph-nss.xhcdn.com/a/ZjcxNGYxNjQ3ZWI2N2Y1MTRlYmZlOGEwODY3NzdlODg/jpeg/000/105/060/323_450.jpg"><br>HOT MILF, dream of passion.</a> 5',
+'<a href="https://xhamster.com/photos/gallery/fetish-overknee-boots-9748589"><img src="https://ic-ph-nss.xhcdn.com/a/YmJhNGVlMWZjMjIzNjFiNGQwOGNjYWRlMjdlZDljYmM/jpeg/000/187/563/588_450.jpg"><br>Fetish overknee boots</a> 5',
+'<a href="https://xhamster.com/photos/gallery/blue-dress-i-have-tell-you-that-i-have-clothed-sex-fetish-6052259"><img src="https://ic-ph-nss.xhcdn.com/a/NWJkMTYyOTBlYjdhYTI0ZDdkOGYzYjQwOGI5MzkxM2I/jpeg/000/104/808/334_450.jpg"><br>Blue dress, I have tell you that I have clothed sex fetish.</a> 5',
+'<a href="https://xhamster.com/photos/gallery/valentines-day-lingerie-15778333"><img src="https://ic-ph-nss.xhcdn.com/a/M2QzMGYxM2Q1OWFiNDM4ZDY1MWVjZGJkOTY5YWNlNjQ/jpeg/000/489/845/455_450.jpg"><br>Valentine&#039;s day lingerie. </a> 4',
+'<a href="https://xhamster.com/photos/gallery/super-sexy-veronica-candy-15781785"><img src="https://ic-ph-nss.xhcdn.com/a/MTY1ZDAzYTBiNWVjZjhjOWRiNDkxYjAxNTI0NjI1OTc/jpeg/000/492/017/663_450.jpg"><br>Super sexy Veronica Candy</a> 4',
+'<a href="https://xhamster.com/photos/gallery/some-of-new-pictures-4368481"><img src="https://ic-ph-nss.xhcdn.com/a/ZmNhOWM3NDEzZTdiNTY2ZGMzZjgzOTA3Y2FmZGJiNjM/jpeg/000/074/041/628_450.jpg"><br>Some of new pictures</a> 4',
+'<a href="https://xhamster.com/photos/gallery/sexy-outfit-3409159"><img src="https://ic-ph-nss.xhcdn.com/a/NzMxNDZmY2Q0MTY0NDYwZjU2NjEwNzJkOTlhZWE1YmI/jpeg/000/056/864/546_450.jpg"><br>Sexy outfit</a> 4',
+'<a href="https://xhamster.com/photos/gallery/sexy-mom-nylons-and-pussy-5788433"><img src="https://ic-ph-nss.xhcdn.com/a/M2U0MWQ0NDY5ZWIzYTc2ZWUzNzgxMTRiZGNlYzE5YjI/jpeg/000/099/974/770_450.jpg"><br>Sexy Mom nylons and pussy!</a> 4',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-for-steemy-fucking-6021210"><img src="https://ic-ph-nss.xhcdn.com/a/OGE1OTQyZTkyYWNiZTgzMGFhOWVlZTJiMzIxOGQyZGM/jpeg/000/104/259/514_450.jpg"><br>Sexy lingerie for steemy fucking</a> 4',
+'<a href="https://xhamster.com/photos/gallery/nice-babe-2899044"><img src="https://ic-ph-nss.xhcdn.com/a/NjRkYTUwNDM3MGI1ZDU1YzY0MjI5NTA3ZmU0YTQ1YmU/jpeg/000/048/014/566_450.jpg"><br>Nice babe :)</a> 4',
+'<a href="https://xhamster.com/photos/gallery/legs-up-2782579"><img src="https://ic-ph-nss.xhcdn.com/a/OTFjMjNiNzQ5NzFhYTMzN2I2OTIyZjc0NzI5Nzg3ZGQ/jpeg/000/045/959/078_450.jpg"><br>Legs up</a> 4',
+'<a href="https://xhamster.com/photos/gallery/legs-open-4870294"><img src="https://ic-ph-nss.xhcdn.com/a/MTM5YWUzYzc2MmI2ZDhjZDI2ODI5YTlkODJiZDg4NDU/jpeg/000/083/084/358_450.jpg"><br>Legs open </a> 4',
+'<a href="https://xhamster.com/photos/gallery/just-veronica-3461256"><img src="https://ic-ph-nss.xhcdn.com/a/MDhhOWQ5NDk2ODgyNGNjYWU2Njg3NWE5ZjQ1ZmU0YTE/jpeg/000/057/759/592_450.jpg"><br>Just Veronica</a> 4',
+'<a href="https://xhamster.com/photos/gallery/hot-mature-veronicagorgeous-6058161"><img src="https://ic-ph-nss.xhcdn.com/a/YTgzOGY2OWRlNDUwMjVkZjNkZDRhOTVkNTI4NmY0OGQ/jpeg/000/104/915/978_450.jpg"><br>HOT MATURE VERONICAGORGEOUS</a> 4',
+'<a href="https://xhamster.com/photos/gallery/from-behind-3488958"><img src="https://ic-ph-nss.xhcdn.com/a/MDM2NGY3NWNmYzU3MDA3ODNiZTM0MWIwNGM3Yzk3MjU/jpeg/000/058/228/809_450.jpg"><br>From behind</a> 4',
+'<a href="https://xhamster.com/photos/gallery/white-stockings-15774314"><img src="https://ic-ph-nss.xhcdn.com/a/MWRlOWZlZGFhNWE5NWZkNzBiM2E1OTgzZDczNWVjYTE/jpeg/000/487/453/899_450.jpg"><br>White stockings.</a> 3',
+'<a href="https://xhamster.com/photos/gallery/milf-veronica-solo-fun-on-bed-6336988"><img src="https://ic-ph-nss.xhcdn.com/a/NzVhZWZhY2RlZTkyOTEzNWFjZDk3ODM3OTg0MzMxMGI/jpeg/000/109/930/353_450.jpg"><br>MILF Veronica solo fun on bed</a> 3',
+'<a href="https://xhamster.com/photos/gallery/milf-erotic-dream-5627313"><img src="https://ic-ph-nss.xhcdn.com/a/ZTE0NDExNTJkMzVhNzE5YjBlMTA3MDJlNGNlMmEyZmI/jpeg/000/097/003/424_450.jpg"><br>MILF - erotic dream</a> 3',
+'<a href="https://xhamster.com/photos/gallery/happy-new-year-15773354"><img src="https://ic-ph-nss.xhcdn.com/a/ZTc5MTk1ODFiMDZkNzYzZWJiYzU5Y2IxMTNiYzY2ODQ/jpeg/000/486/797/056_450.jpg"><br>Happy New year! </a> 3',
+'<a href="https://xhamster.com/photos/gallery/veronica-candy-exclusive-photos-14755861"><img src="https://ic-ph-nss.xhcdn.com/a/ZjFjYjVmNTg2YzViZGUwZmFhYzllZjE0MjA5ODk0NTI/jpeg/000/429/286/625_450.jpg"><br>Veronica Candy Exclusive photos </a> 2',
+'<a href="https://xhamster.com/photos/gallery/big-tits-big-pussy-lips-mature-veronica-14706742"><img src="https://ic-ph-nss.xhcdn.com/a/MDgwYjgxNDhkODNmYTVlNmE0ODQ2NWEyOTk5ZjRiZTU/jpeg/000/426/511/482_450.jpg"><br>Big tits big pussy lips Mature Veronica</a> 2',
+'<a href="https://xhamster.com/photos/gallery/milf-nylons-and-pussy-4389367"><img src="https://ic-ph-nss.xhcdn.com/a/N2JiNjNjZjM0NGM5MzQ3NTI4MGE5NTY1YTkzMGFhNGY/jpeg/000/074/422/346_450.jpg"><br>MILF nylons and pussy.</a> 1',
+'<a href="https://xhamster.com/photos/gallery/legs-tits-nylons-heels-2679438"><img src="https://ic-ph-nss.xhcdn.com/a/OGRiMzk5Njc2NDQxMTVjOGRjMWU3N2ZjOGQ1NjQ4Mzg/jpeg/000/044/177/463_450.jpg"><br>Legs, tits, nylons, heels....:)</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "veronicacandy"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

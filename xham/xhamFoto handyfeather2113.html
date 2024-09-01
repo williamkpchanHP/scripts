@@ -1,0 +1,175 @@
+<base target="_blank"><html><head><title>handyfeather2Batch: 113</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:100%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">handyfeather2Batch: 113</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/tits-16012287</k>',
+'NTYyZTQ0YTNhYzZlZTVkNjZjNTgzNjFmY2M3MzZlMTg/jpeg/000/514/234/037',
+'YThkZTBiZjEwZWZkNjY2ODI5YWQ3ZjdjMTk1ZTlhZDM/jpeg/000/514/234/036',
+'MmU0MzdlOWRlZDlhZGJlNzRiZDU1NmNkZjY5ZjYwZTc/jpeg/000/514/234/035',
+'MTY2ZTgxZDM0NWNkMDU4MzcxMDI4ZGNjN2YyMWExZTA/jpeg/000/514/234/034',
+'YzkzZjUxY2U2MjdkOTNkM2FjZGIzOGU1MWU1ODU5OTQ/jpeg/000/514/234/033',
+'Y2NiZDRlMjkzMTMyNTdiNDMxMGNmOWM1MjI3MDVkNGQ/jpeg/000/514/234/032',
+'N2ZkNmJkOWZlOWRiOWEzNjQxZDZkODM4MGRmY2E1OWY/jpeg/000/514/234/031',
+'MzBiZGQ5OTU1NmE0OGVkMTgyMDYyM2I2N2E0ZmZjNDA/jpeg/000/514/234/028',
+'<k>https://xhamster.com/photos/gallery/tits-16001804</k>',
+'NWI3NjNmNTYzNmUyMjdmMzI3MjFiMTk4YzFmYmY5MGU/jpeg/000/514/085/431',
+'YjM0NDE3YTA0YTg1NjZiNzlkY2YzNDUwMDgyYzBkOWE/jpeg/000/514/085/430',
+'NDZmZDEyMzcxMGExY2MwMmVlMGY3ZWI1MDI4NjhlMGM/jpeg/000/514/085/429',
+'NmE2NjU2OWQ5ZjE4ODlmMDg2OGM0MTllZGRmMDAxZTc/jpeg/000/514/085/428',
+'ZTYzMWJkYWMyNmYxNTNmZTJhMzA2ZGJlNzM2ZDQ4Mjk/jpeg/000/514/085/427',
+'NzcxMmMwN2I4MDFkMzAxODA4M2IyYmFhY2RlNjg1MTg/jpeg/000/514/085/426',
+'MzlhZWM4MjM3ZjQ2MTQyMzE1ZmZiMTdkMThhYmZlYmE/jpeg/000/514/085/425',
+'MjkxNjgxY2JhMTA5NjUyNWFlNWU0NjA1YTc0ZjFkNmQ/jpeg/000/514/085/424',
+'<k>https://xhamster.com/photos/gallery/vibe-play-16010915</k>',
+'NWQwZTFmYmJkMTNlZDM3OTljMDU5MDg4NjY0NmMyMTQ/jpeg/000/514/215/489',
+'YjkxOTk2N2Y2YTEwNDQ5OTEyYTlmN2EwZDdiZjU4M2U/jpeg/000/514/215/488',
+'MzAxYmYxNDgxZDAzZjdkZjkzYjIyYmJmZmFjMDMyN2Q/jpeg/000/514/215/487',
+'YzRiNTgyM2UzMjQwNTg3OTQxMTNjZTdhNzAxY2FlYWE/jpeg/000/514/215/486',
+'NDg1NDhhMDJmZDgyOGQ5OTBlZDQ3YjI2MzZjYmI3YjQ/jpeg/000/514/215/485',
+'<k>https://xhamster.com/photos/gallery/titty-16005483</k>',
+'YzM4NzliMjJjMWQ2YTMyYzlmNjE1MjIzNjE2ZDNlZmQ/jpeg/000/514/137/940',
+'ODg0NGMwZmMyOTUyMmJjNWZhOWU0MzlmZjU4MWVlYzc/jpeg/000/514/137/939',
+'NzA4MWJkOGU2NmRiYzAzNzQ5YWE3NzdmOTVkOTk5ZjM/jpeg/000/514/137/938',
+'MzViZDk0YzFhNGRhZWUxY2FkMDA5NmZjYzZlYjc0OTE/jpeg/000/514/137/937',
+'MGVkOTZhMDcyOTIzMzBiOTdlNjM5YmVhODJhMzdlOWI/jpeg/000/514/137/936',
+'<k>https://xhamster.com/photos/gallery/tits-16037590</k>',
+'YTliNzZiZDdlMmIxMTllOGVlMzAwNDY1ODI2NjVhN2Q/jpeg/000/514/578/404',
+'YTU1ZjdmZDk1OWYzYWI1N2VhZTAxNGU4NTUxYWYwMzQ/jpeg/000/514/578/403',
+'OTdjNzIwNTNkNjI2YmFlYWE3Njk5NjQxNDI0ZDM1MTM/jpeg/000/514/578/402',
+'ZjY5ODBkN2Q1OGRlNWYwMGI1N2E4ZDdhNmIwNTc1ODU/jpeg/000/514/578/401',
+'Nzc1YzFjZTQ4MWY2NmVhNjE3MmIyMjk0MWMxNmM4Mzg/jpeg/000/514/578/400',
+'<k>https://xhamster.com/photos/gallery/pussy-16001811</k>',
+'ZGViNmNlYmI2MWZhMDc5ZDdkZDhjZmUzOGVjNzA5MTI/jpeg/000/514/085/474',
+'Njg4NzgzOWZlZWIzMTRlOWZlODIyOTY5Mjk5MjcxODU/jpeg/000/514/085/473',
+'NzQ3ZjJkNzRiZDU3OTc2MjJiOGFlNWQ2Yjk4YzI2NjU/jpeg/000/514/085/472',
+'NjNkYjBkYmU4N2I5Yjk3ZTdiNzdlODQ4OWFiNGIzY2M/jpeg/000/514/085/471',
+'NGFkMWNhYzNmYWI3MTQ3MmE3NmVjMGI1ODBhMTM5YmI/jpeg/000/514/085/470',
+'<k>https://xhamster.com/photos/gallery/puffy-pussy-16019592</k>',
+'ZjIzNzJlMjk3N2E2OTQ1ZGQ3ZmIxOTIzNzlmYmRhNjQ/jpeg/000/514/336/678',
+'NTVhNTdhODZjM2RmMDQzNjA3NmZhMGZlNTM5MTk3YWI/jpeg/000/514/336/677',
+'ZThlOTg1MGY1MTBlMmVmNTAxOTQ2ZjU5Y2VmOThiZjQ/jpeg/000/514/336/676',
+'YWFhZjVmMmIzMmVjMjc5MDdkY2RlNjI2ZTlhZmFkM2E/jpeg/000/514/336/675',
+'YzIyNTllNjA2NjM5NjI0MTYyOWEzYTVkNmE3MmVhMGM/jpeg/000/514/336/674',
+'<k>https://xhamster.com/photos/gallery/mmmm-lick-my-fingers-16057530</k>',
+'NWUwNzg0NDRmY2M1MWQ3ZmE2MDY4NzBmY2E2Zjk0NTU/jpeg/000/514/866/228',
+'MzIyMDA2NzcyYjFhOThiZmJkZDQ4Mjg2YmFkOWRiMGI/jpeg/000/514/866/227',
+'ZGUxNTkxOWJiNDVkNmI0NTFjYzMxNzQyNmY3M2YxYzA/jpeg/000/514/866/226',
+'ZmI4MmNiN2ViNTFiYmZlZTZkOTYxZmEwN2UyM2ZkOGY/jpeg/000/514/866/225',
+'M2E1Mzg0YTlkYWViNmE3ZGQ5YzBiNzNkZWJhYzI1ZWE/jpeg/000/514/866/224',
+'<k>https://xhamster.com/photos/gallery/mmmm-horny-16010914</k>',
+'M2JhYmU4MmE3ZDlmODEzODYxYzIzZDhkZDhiMzI5YzM/jpeg/000/514/215/481',
+'NmU1ZTg2YzJhNWZkZTg1NGFlY2NkYzdlZWQ2YjlkZmY/jpeg/000/514/215/480',
+'NDUwNTk0NDYxOTk4NDFmODhlODZjNzMzMDUyYTBlNTU/jpeg/000/514/215/479',
+'ODg0ZjdiZjliZmE1NmMwZWY2OWVkOWQ1MTg3Yjg0ODc/jpeg/000/514/215/478',
+'ZjkwNWJmZWIzNWYzZDYwYmJjNmQ4MzU4NmY1ZGM5MzM/jpeg/000/514/215/477',
+'<k>https://xhamster.com/photos/gallery/hotel-fun-16045762</k>',
+'ZGNkZmFiM2Y4Y2JhOGUwZGMzZDMyZDkxYTc2NWQ4NDU/jpeg/000/514/694/246',
+'ZmJiZTc3NTYzOGQyMzMyOTMwODVjODQxMjFiNzkwZGU/jpeg/000/514/694/245',
+'MDIyMjIyYjljYzJmMTQ1M2ZiZjZhNDE1MDIzYzVhMWY/jpeg/000/514/694/244',
+'MjAwMjU1M2I4NzQ4OTczOGFiMTEwZTI0Yjk3YWU2MDk/jpeg/000/514/694/243',
+'NWFlOGEzOWM1YmNkYzUxNTVhMzY5ZDYxZTg5N2VjZmI/jpeg/000/514/694/242',
+'<k>https://xhamster.com/photos/gallery/touch-me-16014845</k>',
+'ODJlOWVlZTQwMzViZGFhMWIzMzc2YzVkZmIzMmQzNzk/jpeg/000/514/267/698',
+'MmRiNmI5Nzc0Y2U2NTkxNDZiMDNmM2VmZjg1Y2YwYTk/jpeg/000/514/267/697',
+'Y2Q4OGI2NjM1Y2MyZTQ3NDdlNzBjMGE1NTg5ZGViZWE/jpeg/000/514/267/696',
+'ZjY2ODFhMzJkOWY5NzQzMWMzNDczNjMzZDc4ZmE3ZjU/jpeg/000/514/267/695',
+'<k>https://xhamster.com/photos/gallery/lil-peek-16073498</k>',
+'YjQ5MGI3ODYzNGYwNGE0MzEwYTg3YjJhOGVhNDVmZDA/jpeg/000/515/068/647',
+'NzE4ZDcyZWM1YWFkNzRhZDQwZGIwNDYzMzVkMmNlOTE/jpeg/000/515/068/646',
+'ZDU4OWIyZmYwNWM0ZWM0NDc4ODQ4MWIyN2IxYTVjZWQ/jpeg/000/515/068/645',
+'MWE3N2Y5NjY3NDg4MTRhZWJmYTY4NWE0MTIxMGE3NmQ/jpeg/000/515/068/644',
+'<k>https://xhamster.com/photos/gallery/alone-in-a-hotel-16110372</k>',
+'ODgxYmNiNWU3ZTJhMGUwN2IxZDQxZGJiYjM0MGIyYWQ/jpeg/000/515/555/988',
+'NzI3OTRjN2JjMjU4ZWU5ZDBjOTMxMTQyNjU3NzQ3M2Q/jpeg/000/515/555/987',
+'YTg1MWE4MzE5M2ZlZDcyYzZlMTBmZjgwMmQzNWUyODA/jpeg/000/515/555/986',
+'MzJjZjkyYzgyOTg5NjQ2ZjkwYjgzODBlYjNjM2QxOTI/jpeg/000/515/555/985',
+'<k>https://xhamster.com/photos/gallery/tits-16014851</k>',
+'MTYwMzcxMTY0OTI2MzE4MTA3MzcwMjJmYzEzOTQyMWE/jpeg/000/514/267/759',
+'OWMzZTM2NjMzMDkwZWI1OWQ1MjdjYjY4NWVlMWE3Zjg/jpeg/000/514/267/758',
+'MmU1ZTM3Mzk5Mzc4ZDM5YjVkNDBiOWFlMmRmNTcwMzk/jpeg/000/514/267/757',
+'<k>https://xhamster.com/photos/gallery/you-know-you-want-to-touch-16071032</k>',
+'OTFjNWViNGUwNzI3YmY5Zjg1MTE2ZWJlZmY4OWViNzk/jpeg/000/515/039/874',
+'M2U2MzI1YzFmNzY4OGQzN2QxZWIyMDkzYTVhZGZhYzI/jpeg/000/515/039/873',
+'<k>https://xhamster.com/photos/gallery/put-your-tongue-here-16004089</k>',
+'MDQ3ZWYzODQ4ZmUyMDk2MzUxMDFmZWMwY2U2ZGExMTE/jpeg/000/514/118/416',
+'ZjBlYTJkN2JlNjJjYjEwNjUyOTk2YzQ4NTA5NTgyOWI/jpeg/000/514/118/415',
+'<k>https://xhamster.com/photos/gallery/moi-16127697</k>',
+'OGJkMTgzOGJmZTU5YmJkZjY2ZjU4MzlkODdkZmM2M2M/jpeg/000/515/780/095',
+'MzEwMzZlYjFhODMwYjZlZDNlODdlZGI5OTViZDBlMTM/jpeg/000/515/780/096',
+'<k>https://xhamster.com/photos/gallery/tits-and-ass-16001432</k>',
+'MGQzODI5OTU3ODIxNGRhNWM0ZjViOGRiZWExYTExMDc/jpeg/000/514/081/323',
+'NWY5ZWI5NjI0YzE1M2MwM2M3OTcxYTE2OTExM2FjNWI/jpeg/000/514/081/322',
+'Mzk4M2M4MDc2MmM4NmI3YzM2ZmE4ZTdmMWI1MDE2ZWI/jpeg/000/514/081/321',
+'NzM0OTFhZDMzMjZlOTNiOTIwZjE3MDJjNzQ3ZmNmNmQ/jpeg/000/514/081/319',
+'ZDlhNjk2OTBjYzg2ZjRmYThiMDkwNDMzMjhmNzU5NjM/jpeg/000/514/081/318',
+'YmIxNTRhNDM0OTE2NjA0ZTUxMTY0NWNjMDJlZDVlYzU/jpeg/000/514/081/317',
+'MjRmNDZiODY2ZDc1MWZjMGI1MDc4ZjY1MzQwYjNlMWM/jpeg/000/514/081/316',
+'MTQ2MzZiM2M4MjYwMDlkOTdlMjY5NTlhNmI4NGZiMzI/jpeg/000/514/081/315',
+'MThiNmEzY2FkNTUyNjI3MDJkOTU5ZDgwNmYxMDNmNTE/jpeg/000/514/081/314',
+'MzMyZmExYjczYThlNWUzNGZkMzg2N2U0YjdkMWQ2Zjc/jpeg/000/514/081/313',
+'<k>https://xhamster.com/photos/gallery/my-tits-wanna-suck-16057531</k>',
+'ODhhZGJjOWJkYTljMjhlNDIzZTcyYmU5ZDQ3MWQzZjM/jpeg/000/514/866/230',
+'<k>https://xhamster.com/photos/gallery/mmm-tits-16071031</k>',
+'NDgyNWM0ZDE0ZTNlNzQ1YzA0MzkyM2RhMDdhOGM2MmU/jpeg/000/515/039/784',
+'<k>https://xhamster.com/photos/gallery/it-s-late-16019584</k>',
+'NTVjZmUxNWQ3MTI0Y2FlY2YwOGFlYzhhYWM0YmE2MWU/jpeg/000/514/336/584',
+'<k>https://xhamster.com/photos/gallery/boobs-16004086</k>',
+'MGQyN2YxNjlmMmM3MjEwZDRiMmVlNWQ1OTdmYmUzOTY/jpeg/000/514/118/391',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "handyfeather2Batch: 113"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

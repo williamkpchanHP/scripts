@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width"/>
+<title>shuffle Links</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<style>
+body {background-color: black;}
+html {height: 100%;overflow: scroll;}
+::-webkit-scrollbar {width: 0px;background: transparent;}
+body { margin: auto; width: 100%; background-color: #000000; color: #20C030;}
+img { width: 50%; display: block; margin-left: auto; margin-right: auto;}
+</style>
+</head>
+<body onkeypress="chkKey()">
+<br><br><br><br><br>
+<div class="imagearea"> </div>
+<script>
+function chkKey() {
+var testkey = getChar(event);
+if(testkey == "b"){ backward();}
+if(testkey == "f"){ foreward();}
+if(testkey == "p"){ pause();}
+if(testkey == "c"){ continU();}
+if(testkey == "s"){ showMov();}}
+function getChar(event){if (event.which!=0 && event.charCode!=0) {return String.fromCharCode(event.which)}
+ else {return null}}
+var ImgList = [
+
+
+'<a href="https://www.pornhub.com/embed/ph5b0ff04f42500"><img src="https://ci.phncdn.com/videos/201805/31/168492582/original/(m=ecuKGgaaaa)(mh=cgTeboMDFgnaujbt)1.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5aff27025bea6"><img src="https://di.phncdn.com/videos/201805/18/166720822/original/(m=ecuKGgaaaa)(mh=O_5EYlfGJeoT4YD6)4.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5aa36ce81306f"><img src="https://ci.phncdn.com/videos/201803/10/157556992/original/(m=ecuKGgaaaa)(mh=wJAPZkg9ASzXj2T8)5.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5aecb54847dc4"><img src="https://di.phncdn.com/videos/201805/04/164778821/original/(m=ecuKGgaaaa)(mh=yM07SIP2lkWYK2b3)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5aec65ebc0437"><img src="https://ci.phncdn.com/videos/201805/04/164745621/original/(m=ecuKGgaaaa)(mh=Q9VjjdGFYzyQf3V2)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5ae33ab4a0327"><img src="https://ci.phncdn.com/videos/201804/27/163764091/original/(m=ecuKGgaaaa)(mh=hh49cgpCsehJM3Ri)15.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph55d6d47359c94"><img src="https://di.phncdn.com/videos/201508/21/55495021/original/(m=ecuKGgaaaa)(mh=Q5gtdYq1cUT_aOQf)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5ace2ab64add2"><img src="https://ci.phncdn.com/videos/201804/11/161680432/original/(m=ecuKGgaaaa)(mh=-3CEmakmTOPZMXRg)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph56b38d1628a41"><img src="https://di.phncdn.com/videos/201602/04/67836491/original/(m=ecuKGgaaaa)(mh=1J-45HDqosJ6OUxO)15.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5ace2b58cf8ba"><img src="https://ci.phncdn.com/videos/201804/11/161680722/original/(m=ecuKGgaaaa)(mh=gjpiUMBeCmHEkwSO)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5abb8eefe5e7d"><img src="https://di.phncdn.com/videos/201803/28/159911752/original/(m=ecuKGgaaaa)(mh=iN0BsBWjWLM3r6Qf)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5ace2c9238494"><img src="https://ci.phncdn.com/videos/201804/11/161681492/original/(m=ecuKGgaaaa)(mh=qa8Ar_zWkW7FcCeh)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5ab3d2cb8ff95"><img src="https://ci.phncdn.com/videos/201803/22/159116582/thumbs_20/(m=ecuKGgaaaa)(mh=NDcZsG8uvD4-rrhu)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5aa7d820046f4"><img src="https://ci.phncdn.com/videos/201803/13/157987102/original/(m=ecuKGgaaaa)(mh=PbGm6ywy08mBb_Df)8.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a8d7e2c1cbc8"><img src="https://ci.phncdn.com/videos/201802/21/155468212/original/(m=ecuKGgaaaa)(mh=0YGXbIGZc_f78nWo)1.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a844c285f2c6"><img src="https://ci.phncdn.com/videos/201802/14/154640692/original/(m=ecuKGgaaaa)(mh=e9R6zhk27CusjABh)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a844d6fc59e1"><img src="https://di.phncdn.com/videos/201802/14/154641332/original/(m=ecuKGgaaaa)(mh=Dptyi7agKZUn44wi)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a6a2f5648535"><img src="https://ci.phncdn.com/videos/201801/25/151828542/original/(m=ecuKGgaaaa)(mh=iDFrKaOuEYz1q8hI)10.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a5cba9d29f09"><img src="https://di.phncdn.com/videos/201801/15/150246442/original/(m=ecuKGgaaaa)(mh=izuyFwBwXVfGg4gq)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58a0cba74b1b0"><img src="https://ci.phncdn.com/videos/201702/12/105970082/original/(m=ecuKGgaaaa)(mh=xi6-ye_Nh1yPEP-O)12.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59a9a13ea84e0"><img src="https://ci.phncdn.com/videos/201709/01/130901911/thumbs_5/(m=ecuKGgaaaa)(mh=wF7Xa4patoecDTMD)2.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a538a727f65b"><img src="https://ci.phncdn.com/videos/201801/08/149166252/original/(m=ecuKGgaaaa)(mh=TrKGGq4qRqoGmTaO)14.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a538eda81e55"><img src="https://di.phncdn.com/videos/201801/08/149168912/original/(m=ecuKGgaaaa)(mh=-gFWd4KONxnnr5_1)11.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a43ac98bf926"><img src="https://ci.phncdn.com/videos/201712/27/147296952/original/(m=ecuKGgaaaa)(mh=EMojLRWENOkNzER9)7.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a1b3e48b322a"><img src="https://di.phncdn.com/videos/201711/26/142846552/original/(m=ecuKGgaaaa)(mh=IeLyRy6j5X3RPoRM)15.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a2e9a27442ef"><img src="https://ci.phncdn.com/videos/201712/11/144986932/original/(m=ecuKGgaaaa)(mh=3vbCZt828E4_Oc3l)7.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph57505ba213b69"><img src="https://ci.phncdn.com/videos/201606/02/78396201/original/(m=ecuKGgaaaa)(mh=Fv1Zb8iaT4ACE26m)4.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5734ddf0d9c6b"><img src="https://ci.phncdn.com/videos/201605/12/76453131/original/(m=ecuKGgaaaa)(mh=6WdRzsk-rFNo6O2g)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5687f899c2685"><img src="https://ci.phncdn.com/videos/201601/02/65126031/original/(m=ecuKGgaaaa)(mh=UeB0U1Q6i3lPi73W)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a05bc9bf070f"><img src="https://ci.phncdn.com/videos/201711/10/140564682/original/(m=ecuKGgaaaa)(mh=mz5901JzHTp5ml9q)9.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5a01d6ba36888"><img src="https://ci.phncdn.com/videos/201711/07/140163762/original/(m=ecuKGgaaaa)(mh=HLyrUyaVnp8KDCrL)9.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59ac33ad7aa45"><img src="https://ci.phncdn.com/videos/201709/03/131155891/original/(m=ecuKGgaaaa)(mh=TR5RDkpZlSo7Ejgl)10.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59f3819362d67"><img src="https://ci.phncdn.com/videos/201710/27/138703872/original/(m=ecuKGgaaaa)(mh=YtUDYDLaRNMHyuK8)9.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59d5e340b4895"><img src="https://ci.phncdn.com/videos/201710/05/135607192/original/(m=ecuKGgaaaa)(mh=SpqIyByKGKWgHUo4)4.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59e647d8f181a"><img src="https://ci.phncdn.com/videos/201710/17/137371112/original/(m=ecuKGgaaaa)(mh=6PRbpBUKfj1ThWge)3.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59cf3ddd06780"><img src="https://ci.phncdn.com/videos/201709/30/134930111/original/(m=ecuKGgaaaa)(mh=zeEsq-A8yDCHCCg_)8.jpg"></a>',
+
+
+
+'<a href="https://www.pornhub.com/embed/ph59dcebb6371a1"><img src="https://ci.phncdn.com/videos/201710/10/136310932/original/(m=ecuKGgaaaa)(mh=GJDKkanI3Ou0Ro3u)6.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58f23da3acb1e"><img src="https://di.phncdn.com/videos/201704/15/113325751/original/(m=ecuKGgaaaa)(mh=pkfYNzz_qa3JJAIy)3.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59ce9d6f1eb2e"><img src="https://di.phncdn.com/videos/201709/29/134863961/original/(m=ecuKGgaaaa)(mh=1BcdRDzdsJmxYfnP)0.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59c9290ea81a9"><img src="https://di.phncdn.com/videos/201709/25/134288751/original/(m=ecuKGgaaaa)(mh=Gz-UY9ZalQJM7qeM)12.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59a9a245ec195"><img src="https://di.phncdn.com/videos/201709/01/130902301/original/(m=ecuKGgaaaa)(mh=Hy4rn-MnuzliLeFi)15.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59a04439f22de"><img src="https://di.phncdn.com/videos/201708/25/129916761/original/(m=ecuKGgaaaa)(mh=wK6d5aNMnd2Aul2Z)15.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph56e71c343cbd6"><img src="https://di.phncdn.com/videos/201603/14/71074801/original/(m=ecuKGgaaaa)(mh=V_wo7XA6tVCRmTK6)7.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph598b4e5f78a5c"><img src="https://di.phncdn.com/videos/201708/09/127936851/original/(m=ecuKGgaaaa)(mh=eImiYsxIyGRoeDL3)7.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/384299146"><img src="https://di.phncdn.com/videos/201507/25/53723641/original/(m=ecuKGgaaaa)(mh=wyoi13qPGoCpRglG)8.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59563bb708e1f"><img src="https://di.phncdn.com/videos/201706/30/122490351/original/(m=ecuKGgaaaa)(mh=JmFAktorUyQmOtEf)9.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph595548f20d2dc"><img src="https://ci.phncdn.com/videos/201706/29/122406031/original/(m=ecuKGgaaaa)(mh=oAzqB2HlSZj0b4A9)15.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph594912a4d97c6"><img src="https://ci.phncdn.com/videos/201706/20/121178752/original/(m=ecuKGgaaaa)(mh=Dzc4oKVY6TQHBmoO)12.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5949067b4d31e"><img src="https://ci.phncdn.com/videos/201706/20/121174392/original/(m=ecuKGgaaaa)(mh=MIgBn1jPKZghTBhZ)3.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph591ef61b03f50"><img src="https://di.phncdn.com/videos/201705/19/117042871/original/(m=ecuKGgaaaa)(mh=eyak9o1ycjMiKvt1)6.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59285b447ed9c"><img src="https://ci.phncdn.com/videos/201705/26/117952101/original/(m=ecuKGgaaaa)(mh=u6lhQH-TjsXNDS40)6.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph56b626a2d4290"><img src="https://di.phncdn.com/videos/201602/07/68005241/original/(m=ecuKGgaaaa)(mh=uUASHR9eOSeU5gh2)8.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58a9a802808d9"><img src="https://di.phncdn.com/videos/201702/19/106761882/original/(m=ecuKGgaaaa)(mh=yiJwQu8HtgRvLmQ_)8.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5915bdf7d6a33"><img src="https://di.phncdn.com/videos/201705/12/116217391/original/(m=ecuKGgaaaa)(mh=JDiNjm2d4I9xsCTr)5.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5910a46a6f878"><img src="https://di.phncdn.com/videos/201705/08/115787621/original/(m=ecuKGgaaaa)(mh=FjBovjeBO1lh5uHo)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5903838ea0fdc"><img src="https://ci.phncdn.com/videos/201704/28/114764891/original/(m=ecuKGgaaaa)(mh=lQ7CyEZpSJZCSWBg)15.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58d92154b97c9"><img src="https://di.phncdn.com/videos/201703/27/111150632/original/(m=ecuKGgaaaa)(mh=WUluo4Ih_UB-o9he)9.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58c6d9ff681a6"><img src="https://di.phncdn.com/videos/201703/13/109491172/original/(m=ecuKGgaaaa)(mh=HYQqMyE5k754paV0)5.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58cbde046ed67"><img src="https://di.phncdn.com/videos/201703/17/109939852/original/(m=ecuKGgaaaa)(mh=hqFki96KIF1mFxga)3.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58c68acd75e0e"><img src="https://di.phncdn.com/videos/201703/13/109459452/original/(m=ecuKGgaaaa)(mh=ZUvZCyf7aPYPBKLr)7.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58c156836a036"><img src="https://di.phncdn.com/videos/201703/09/109040732/original/(m=ecuKGgaaaa)(mh=aIUO_Sapd0_1DX9-)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58bd6e831731c"><img src="https://di.phncdn.com/videos/201703/06/108684342/original/(m=ecuKGgaaaa)(mh=zrxbKbImg_lJqPtr)9.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58d12f6bab499"><img src="https://ci.phncdn.com/videos/201703/21/110430532/original/(m=ecuKGgaaaa)(mh=IQm_WHyIcGBMiy7r)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58b6d2fa56ad7"><img src="https://ci.phncdn.com/videos/201703/01/108076612/original/(m=ecuKGgaaaa)(mh=jQcIc5rOjvCN7Qwo)5.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58ee3f25ae6df"><img src="https://ci.phncdn.com/videos/201704/12/112980791/original/(m=ecuKGgaaaa)(mh=xZvYYgiBZ8dIc9V4)5.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58d92398caed1"><img src="https://di.phncdn.com/videos/201703/27/111151522/original/(m=ecuKGgaaaa)(mh=LnYGhrRBe0bEyqUd)6.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58f5f4fcec5de"><img src="https://di.phncdn.com/videos/201704/18/113636811/original/(m=ecuKGgaaaa)(mh=diiStLPRSA5CaoKT)12.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph573ba9133e765"><img src="https://ci.phncdn.com/videos/201605/17/76911031/original/(m=ecuKGgaaaa)(mh=epW9uJ5cavVa9RxL)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58b5b0f96ec52"><img src="https://di.phncdn.com/videos/201702/28/107973532/thumbs_5/(m=ecuKGgaaaa)(mh=_cxH-1ITFJQOdgPs)9.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58ac721b45b0d"><img src="https://ci.phncdn.com/videos/201702/21/107041052/original/(m=ecuKGgaaaa)(mh=rDgS4N7Qd2XfdQF4)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph588afcad29581"><img src="https://di.phncdn.com/videos/201701/27/103794542/original/(m=ecuKGgaaaa)(mh=6ooeEPrXBwBioqHj)16.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph58a728356487c"><img src="https://di.phncdn.com/videos/201702/17/106498262/original/(m=ecuKGgaaaa)(mh=TnHpYHmhmXc2zIQ9)4.jpg"></a>',
+
+
+
+'<a href="https://www.pornhub.com/embed/ph58a20678c6dd3"><img src="https://di.phncdn.com/videos/201702/13/106081732/original/(m=ecuKGgaaaa)(mh=v0JcEAkrmFHSZvzn)10.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/522537917"><img src="https://ci.phncdn.com/videos/201504/06/47189622/original/(m=ecuKGgaaaa)(mh=xa5VFo9DayxITTjD)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph55c03e1cca52c"><img src="https://ci.phncdn.com/videos/201508/04/54379941/original/(m=ecuKGgaaaa)(mh=swrJ8QcLu7fg89kT)0.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph582b462243bb4"><img src="https://ci.phncdn.com/videos/201611/15/96223721/original/(m=ecuKGgaaaa)(mh=dFqHm3yDPKAm_aQ9)8.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph573e0636055cd"><img src="https://ci.phncdn.com/videos/201605/19/77078731/original/(m=ecuKGgaaaa)(mh=l-Ms2ZbpRJKV6cZa)12.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph55e54d599fe36"><img src="https://ci.phncdn.com/videos/201509/01/56442351/original/(m=ecuKGgaaaa)(mh=3hhgRC44UHkOurBJ)6.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph55d0716731d87"><img src="https://ci.phncdn.com/videos/201508/16/55183081/original/(m=ecuKGgaaaa)(mh=tbQRnvhsNs5IpCJZ)7.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph573b786657c07"><img src="https://ci.phncdn.com/videos/201605/17/76895401/original/(m=ecuKGgaaaa)(mh=icxyF2WoI-HRp6z7)7.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph575381e41741c"><img src="https://ci.phncdn.com/videos/201606/05/78615141/original/(m=ecuKGgaaaa)(mh=XjG2QvftmT7VaLMt)3.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph572239052c4ef"><img src="https://di.phncdn.com/videos/201604/28/75202941/original/(m=ecuKGgaaaa)(mh=hBAkyY7Y4waNNwuH)10.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph55cd33882bdd6"><img src="https://ci.phncdn.com/videos/201508/13/55026651/original/(m=ecuKGgaaaa)(mh=v_iF9e1HQ12gyuad)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph55bff95fa701d"><img src="https://di.phncdn.com/videos/201508/03/54366661/original/(m=ecuKGgaaaa)(mh=B6c1jMMGEGtrwiRE)15.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph562f56ff89f04"><img src="https://di.phncdn.com/videos/201510/27/60371461/original/(m=ecuKGgaaaa)(mh=8eW7FwoAfvY31Yha)3.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph562f4df72f2a8"><img src="https://ci.phncdn.com/videos/201510/27/60369421/original/(m=ecuKGgaaaa)(mh=wQpZqk22JZIPgDpu)7.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph56c9646c8fc15"><img src="https://di.phncdn.com/videos/201602/21/69231371/original/(m=ecuKGgaaaa)(mh=zSaKrMXqC2LKdMdA)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph563ec9e3bc523"><img src="https://ci.phncdn.com/videos/201511/08/61139571/original/(m=ecuKGgaaaa)(mh=1NTKz7c4FNjyyBlL)9.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5696c9877270f"><img src="https://ci.phncdn.com/videos/201601/13/65980271/original/(m=ecuKGgaaaa)(mh=T-Axw9xDB4pKkhR8)1.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5630706204461"><img src="https://ci.phncdn.com/videos/201510/28/60430231/original/(m=ecuKGgaaaa)(mh=11akCrk6d2srhbUp)10.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5674b29e520dc"><img src="https://ci.phncdn.com/videos/201512/19/64109161/original/(m=ecuKGgaaaa)(mh=FIWJHlLnUiEU26-M)6.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/1025717988"><img src="https://di.phncdn.com/videos/201502/13/38892221/original/(m=ecuKGgaaaa)(mh=4uRSQft5haQhZDvM)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/587876113"><img src="https://di.phncdn.com/videos/201504/30/48319681/original/(m=ecuKGgaaaa)(mh=gO4Z-AMauCyOFo18)2.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/1019326909"><img src="https://ci.phncdn.com/videos/201411/12/34656911/original/(m=ecuKGgaaaa)(mh=thHbm75TdVVxrWk1)13.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/978090839"><img src="https://ci.phncdn.com/videos/201411/13/34688191/original/(m=ecuKGgaaaa)(mh=n5LoIYfp5HQDXNEm)10.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/459233089"><img src="https://ci.phncdn.com/videos/201504/14/47587611/original/(m=ecuKGgaaaa)(mh=yLM0WncbrlcznS6F)3.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/472165397"><img src="https://ci.phncdn.com/videos/201503/23/46541632/original/(m=ecuKGgaaaa)(mh=hIk-gqElgZW7JXnz)11.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/1352915511"><img src="https://ci.phncdn.com/videos/201503/22/46506561/original/(m=ecuKGgaaaa)(mh=zkNN_dY4juMR2Nmo)12.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/914137274"><img src="https://di.phncdn.com/videos/201502/22/45194861/original/(m=ecuKGgaaaa)(mh=uVcPMbv4nolcokVv)15.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/1653516883"><img src="https://ci.phncdn.com/videos/201501/16/37575761/original/(m=ecuKGgaaaa)(mh=HCU6abTftp2s6xdE)5.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/1116877959"><img src="https://ci.phncdn.com/videos/201501/30/38283161/original/(m=ecuKGgaaaa)(mh=tszluyODyfsFnclM)11.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/770496771"><img src="https://di.phncdn.com/videos/201501/14/37455941/original/(m=ecuKGgaaaa)(mh=LpxUX_QH3Ukg4ubP)8.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/842260522"><img src="https://di.phncdn.com/videos/201501/30/38282821/original/(m=ecuKGgaaaa)(mh=xTPmu2gHgCGS9_ma)14.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/1543539438"><img src="https://ci.phncdn.com/videos/201501/08/37173871/original/(m=ecuKGgaaaa)(mh=x_TSSWSU12H1a3vb)9.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/1415987426"><img src="https://ci.phncdn.com/videos/201412/12/35933011/original/(m=ecuKGgaaaa)(mh=O99eIr9VPNActAUa)2.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5b1b847393570"><img src="https://ci.phncdn.com/videos/201806/09/169688561/original/(m=ecuKGgaaaa)(mh=RsM35zzJ_6F5UIo7)1.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5b1b796c8b2ef"><img src="https://ci.phncdn.com/videos/201806/09/169684511/original/(m=ecuKGgaaaa)(mh=OLg-ofPilVz1uqzZ)12.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5b1b5fd067aac"><img src="https://ci.phncdn.com/videos/201806/09/169674641/original/(m=ecuKGgaaaa)(mh=q_-oAEXhvMnh2SXD)6.jpg"></a>',
+
+]
+ var listLen = ImgList.length, timer = 15000
+function shuffle(array) { var i = ImgList.length, j = 0, temp
+while (i--) { j = Math.floor(Math.random() * (i+1))
+temp = ImgList[i]
+ ImgList[i] = ImgList[j]
+ ImgList[j] = temp
+ } 
+return ImgList
+}
+ImgList = shuffle(Array.from(Array(ImgList.length).keys()))
+function changeImg() { if (listLen >= ImgList.length - 1) { listLen = 0
+ }
+ else if (listLen < 0) { listLen = ImgList.length - 1
+ } 
+else { listLen = listLen + 1
+ }
+showImg()
+}
+function backward() { listLen = listLen - 2
+changeImg()
+}
+function foreward() { changeImg()
+}
+function pause() { clearInterval(myVar)
+}
+function continU() { myVar = setInterval(changeImg, timer)
+ foreward()
+}
+function showImg() { var thePointerImg = document.querySelector(".imagearea")
+ thePointerImg.innerHTML = ImgList[listLen]
+ console.log(thePointerImg.innerHTML)
+}
+function showMov() { var imgAdr = ImgList[listLen]
+ var start = imgAdr.indexOf("=")+1
+ var end = imgAdr.indexOf('"', start+1)
+ var list = imgAdr.substring(start+1, end)
+ window.open(list)
+}changeImg()
+var myVar = setInterval(changeImg, timer)
+</script></body></html>

@@ -1,0 +1,146 @@
+<base target="_blank"><html><head><title>mrpunk</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/sexy-wife-nude-in-hotel-room-16105412"><img src="https://ic-ph-nss.xhcdn.com/a/MTRiMDZkZDYxNTVmZDdlMTViYTc2N2Y1YTQ0YWQxNmU/jpeg/000/515/491/191_450.jpg"><br>Sexy Wife Nude In Hotel Room </a> 39',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-27-16099214"><img src="https://ic-ph-nss.xhcdn.com/a/NTU2Y2M5ZDRhN2VmNDkzNWI2YTNlNTA3ZDU2MGFlMmI/jpeg/000/515/409/799_450.jpg"><br>Sexy Lingerie 27</a> 18',
+'<a href="https://xhamster.com/photos/gallery/mrs-punk-a-tue-sexy-goddess-16095339"><img src="https://ic-ph-nss.xhcdn.com/a/YWM0OGVhNTRhNzViNTI3Nzc5NDU5YjM5NTE5ZWViMDM/jpeg/000/515/362/029_450.jpg"><br>Mrs Punk A Tue Sexy Goddess </a> 15',
+'<a href="https://xhamster.com/photos/gallery/wife-in-hotel-shower-16091436"><img src="https://ic-ph-nss.xhcdn.com/a/OGIyOTcxYTVkNzI0M2U0MGNhMTFjZGM3ZTVjOWUzOWQ/jpeg/000/515/308/893_450.jpg"><br>Wife in hotel shower </a> 27',
+'<a href="https://xhamster.com/photos/gallery/sexy-goddess-exposes-herself-in-hotel-window-16089383"><img src="https://ic-ph-nss.xhcdn.com/a/YmEzY2I2MjcyMmU1YmViODRhYjQxMGZjMzVkMTI0ZmY/jpeg/000/515/283/929_450.jpg"><br>Sexy Goddess Exposes Herself In Hotel Window </a> 17',
+'<a href="https://xhamster.com/photos/gallery/sexy-halloween-pumpkins-16087108"><img src="https://ic-ph-nss.xhcdn.com/a/NzgwODZiNTlkOTI0OTRhMmYyNDJjYWJlNzVhOWEwMGQ/jpeg/000/515/256/192_450.jpg"><br>Sexy Halloween Pumpkins </a> 5',
+'<a href="https://xhamster.com/photos/gallery/sexy-angel-16086776"><img src="https://ic-ph-nss.xhcdn.com/a/ZDY3NDMxZjllYjAzZjIwOWZlNTY1NmZjZmNhZGVhMDQ/jpeg/000/515/250/254_450.jpg"><br>Sexy Angel </a> 25',
+'<a href="https://xhamster.com/photos/gallery/sexy-devil-16086076"><img src="https://ic-ph-nss.xhcdn.com/a/NDUzZjQ5MDk4MTAyZGI5ZjJkYzhiN2NiZjEwMGNlYTQ/jpeg/000/515/241/367_450.jpg"><br>Sexy Devil </a> 29',
+'<a href="https://xhamster.com/photos/gallery/on-the-road-16084149"><img src="https://ic-ph-nss.xhcdn.com/a/YjRmMWJiOGExNzhkNTk5ZDk2MWI0ZDIyYzBkMTlhMjU/jpeg/000/515/210/784_450.jpg"><br>On the road</a> 39',
+'<a href="https://xhamster.com/photos/gallery/the-sexy-goddess-mrs-punk-nude-16077296"><img src="https://ic-ph-nss.xhcdn.com/a/ZGFiMDAzNmIxOTdlMmYwZGJlZjg1OWIzZTI0MGFhOTI/jpeg/000/515/120/183_450.jpg"><br>The Sexy Goddess Mrs Punk Nude </a> 37',
+'<a href="https://xhamster.com/photos/gallery/my-hard-cock-16075889"><img src="https://ic-ph-nss.xhcdn.com/a/ZjExMTNhYmQ3MjhlZTA2ZjAxMzdkYmU3NmY1YmI4Y2M/jpeg/000/515/099/717_450.jpg"><br>My Hard Cock </a> 9',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-26-16071251"><img src="https://ic-ph-nss.xhcdn.com/a/ZTUyNGRmNjgzZTFkMGRjMTc4N2VjYzA4NzRiYzlmZjI/jpeg/000/515/042/514_450.jpg"><br>Sexy Lingerie 26</a> 36',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-25-16065520"><img src="https://ic-ph-nss.xhcdn.com/a/ODQ0M2JmY2Y2ODM5ODg1ZDUxMDM5YjY0OWFkZjg1OGM/jpeg/000/514/972/958_450.jpg"><br>Sexy Lingerie 25</a> 26',
+'<a href="https://xhamster.com/photos/gallery/sexy-wife-exposed-for-the-neighbors-16054571"><img src="https://ic-ph-nss.xhcdn.com/a/YjBiZDM0ZjdkOTk1MzQzODk4Y2Y3ZTdhZjdiZjg4M2Y/jpeg/000/514/823/885_450.jpg"><br>Sexy Wife Exposed for the neighbors </a> 20',
+'<a href="https://xhamster.com/photos/gallery/sexy-wife-exposed-for-the-neighborhood-16043478"><img src="https://ic-ph-nss.xhcdn.com/a/NDAyZDJjNDcxZmIyMWFlMGExNjE5ODEwNmNhYzQ4ZDI/jpeg/000/514/663/487_450.jpg"><br>Sexy Wife exposed for the neighborhood </a> 13',
+'<a href="https://xhamster.com/photos/gallery/the-sexy-goddess-mrs-punk-2-16055050"><img src="https://ic-ph-nss.xhcdn.com/a/NDcxZmYzYzk5N2ZlZjJiMTFhNjZkMjQyYmZjMmJlNTA/jpeg/000/514/830/615_450.jpg"><br>The Sexy Goddess Mrs Punk 2</a> 20',
+'<a href="https://xhamster.com/photos/gallery/the-sexy-goddess-mrs-punk-masturbates-with-her-toy-cock-16051727"><img src="https://ic-ph-nss.xhcdn.com/a/YmNmMzM0MmQzNjgyMjBiZDA0OTU5YzUyYTMwODg1YmM/jpeg/000/514/772/594_450.jpg"><br>The Sexy Goddess Mrs Punk masturbates with her toy cock</a> 26',
+'<a href="https://xhamster.com/photos/gallery/sexy-goddess-mrs-punk-16049295"><img src="https://ic-ph-nss.xhcdn.com/a/NGI4ZTdhZWRlNzkwNjcxMmI3NWFjNTliNzVjMTIzM2U/jpeg/000/514/745/935_450.jpg"><br>Sexy Goddess Mrs Punk</a> 22',
+'<a href="https://xhamster.com/photos/gallery/mrs-punk-the-sexy-goddess-16045292"><img src="https://ic-ph-nss.xhcdn.com/a/YWM2ZTBhMWFkNDU2ZDA4YjZjYmVlN2U1NTc5ZWQyZWM/jpeg/000/514/684/923_450.jpg"><br>Mrs Punk The Sexy Goddess </a> 21',
+'<a href="https://xhamster.com/photos/gallery/the-sexy-goddess-mrs-punk-bares-all-16039169"><img src="https://ic-ph-nss.xhcdn.com/a/MDdjM2NjYjc0Yjg3ODk0ZTc0ZDg2ZjI0ZjIyOTRiZTU/jpeg/000/514/606/765_450.jpg"><br>The Sexy Goddess Mrs Punk Bares All </a> 23',
+'<a href="https://xhamster.com/photos/gallery/the-sexy-goddesses-mrs-punk-in-red-light-special-16037461"><img src="https://ic-ph-nss.xhcdn.com/a/OTRlNGRkYTI4MGU2NmY3NGJjY2E4ODU0MmQ3YzBiOWM/jpeg/000/514/574/718_450.jpg"><br>The Sexy Goddesses Mrs Punk in Red Light Special </a> 25',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-24-16028155"><img src="https://ic-ph-nss.xhcdn.com/a/ZjE1MzZkNGZmMjczYWNjNzQxNDIzNTNlMWE2MmRmOGY/jpeg/000/514/458/017_450.jpg"><br>Sexy Lingerie 24</a> 32',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-23-16024909"><img src="https://ic-ph-nss.xhcdn.com/a/ZjE4Y2JmMDJlZjljZjkyYTkzOTBhYjdhMjBjMTU0MTU/jpeg/000/514/406/147_450.jpg"><br>Sexy Lingerie 23</a> 37',
+'<a href="https://xhamster.com/photos/gallery/the-nude-sexy-goddesses-mrs-punk-16020526"><img src="https://ic-ph-nss.xhcdn.com/a/M2U2MjRjYTQ0N2ZlYzNiODM3NmFkZDZjZjRmNmIwMzg/jpeg/000/514/347/133_450.jpg"><br>The Nude Sexy Goddesses Mrs Punk </a> 28',
+'<a href="https://xhamster.com/photos/gallery/sexy-wife-showing-off-her-bikinis-16017812"><img src="https://ic-ph-nss.xhcdn.com/a/Nzk0NGZjNzg4MWE2NDdjMjEzYTM2MDBmMTczYjNlNzQ/jpeg/000/514/307/191_450.jpg"><br>Sexy Wife showing off her bikinis </a> 5',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-22-16012906"><img src="https://ic-ph-nss.xhcdn.com/a/MDk0NzBhNjY3MWZkNThiOWQ0YWRmZjkyM2MyNmUzZDM/jpeg/000/514/242/626_450.jpg"><br>Sexy Lingerie 22</a> 29',
+'<a href="https://xhamster.com/photos/gallery/sexy-easter-bunny-16010807"><img src="https://ic-ph-nss.xhcdn.com/a/MDQ0ZGFkYTliOTU3NTdjZGI4ZjhiYTE4ZDM5NmRmOTI/jpeg/000/514/214/101_450.jpg"><br>Sexy Easter Bunny </a> 24',
+'<a href="https://xhamster.com/photos/gallery/the-sexy-goddess-mrs-punk-16006039"><img src="https://ic-ph-nss.xhcdn.com/a/MDQ5YzVkOGFiOTJmYjVjMWZmMTE5NWU0OTM3ZDY5OWE/jpeg/000/514/147/348_450.jpg"><br>The Sexy Goddess Mrs Punk </a> 35',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-21-16002026"><img src="https://ic-ph-nss.xhcdn.com/a/YTM0YmIyYWUwZDRiNDllZTRlYWU2N2FiZGU1YzVlZGQ/jpeg/000/514/087/553_450.jpg"><br>Sexy Lingerie 21</a> 22',
+'<a href="https://xhamster.com/photos/gallery/cumshots-on-my-sexy-wife-15996867"><img src="https://ic-ph-nss.xhcdn.com/a/NjdhZjE4YmJiMmE0Y2NhOTBjNGUyYTJiODc2YjY1MDU/jpeg/000/514/002/284_450.jpg"><br>Cumshots on my sexy wife </a> 25',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-20-15996178"><img src="https://ic-ph-nss.xhcdn.com/a/MWMxYjY3ZmNhZTU4YjhiMWFiOGI2YTc0YmFlMmVlNDk/jpeg/000/513/991/995_450.jpg"><br>Sexy Lingerie 20! </a> 19',
+'<a href="https://xhamster.com/photos/gallery/sexy-wife-in-the-shower-15995185"><img src="https://ic-ph-nss.xhcdn.com/a/NGZkZTRkZTJjMmI1YWY5NjFmMmYwMjkxMzE4NGM1YTM/jpeg/000/513/979/863_450.jpg"><br>Sexy Wife in the shower </a> 23',
+'<a href="https://xhamster.com/photos/gallery/sexy-wife-in-all-white-15991917"><img src="https://ic-ph-nss.xhcdn.com/a/YzQ0MTNjMzM3NjQ3MzM4NGQ0MGJkMmU2OTk3MjZjZGQ/jpeg/000/513/939/457_450.jpg"><br>Sexy wife in all white </a> 21',
+'<a href="https://xhamster.com/photos/gallery/sexy-wife-wearing-black-boots-15990371"><img src="https://ic-ph-nss.xhcdn.com/a/NjlmYjc3ZjI4ZWU1YWRjMzljOTliMDQwMDI1MjY2OTY/jpeg/000/513/906/917_450.jpg"><br>Sexy wife wearing black boots</a> 24',
+'<a href="https://xhamster.com/photos/gallery/the-sexy-mrs-punk-15988143"><img src="https://ic-ph-nss.xhcdn.com/a/NDhiNjJjMTI3MTVkM2U2ZDAxOWJmNzk3ZjY1YzExZGQ/jpeg/000/513/875/671_450.jpg"><br>The Sexy Mrs Punk </a> 11',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-19-15977490"><img src="https://ic-ph-nss.xhcdn.com/a/M2FhZjUzNmVlNTY1YmZhYzgwZWNmMjQ5ZjA0YmVhMWI/jpeg/000/513/713/483_450.jpg"><br>Sexy Lingerie 19</a> 35',
+'<a href="https://xhamster.com/photos/gallery/sexy-mrs-clause-15974385"><img src="https://ic-ph-nss.xhcdn.com/a/OTcyNWJjNmJjOTliMjRkOWFjN2RmM2IyZTdjZDFmNmM/jpeg/000/513/667/612_450.jpg"><br>Sexy Mrs Clause </a> 30',
+'<a href="https://xhamster.com/photos/gallery/tribute-made-by-mrrachelriley-15956832"><img src="https://ic-ph-nss.xhcdn.com/a/YjMxZmM2ZGE3MjMxY2I5ZmU2NGRhMGI1YzVkMjM1M2I/jpeg/000/513/391/250_450.jpg"><br>Tribute made by MrRachelRiley</a> 81',
+'<a href="https://xhamster.com/photos/gallery/sexy-wife-wearing-white-boots-15957343"><img src="https://ic-ph-nss.xhcdn.com/a/ODY5YjI3MGQzZDZmMjU1YjI1ODViZjk3ZGE4ZmIyZDU/jpeg/000/513/402/675_450.jpg"><br>Sexy wife wearing white boots </a> 36',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-18-15949644"><img src="https://ic-ph-nss.xhcdn.com/a/MDAyYTc5NTMxNWUyODEyYTYyMjVhN2M0MzJhNTJkMzM/jpeg/000/513/235/180_450.jpg"><br>Sexy Lingerie 18</a> 24',
+'<a href="https://xhamster.com/photos/gallery/sexy-wife-wearing-tight-jean-shorts-15940717"><img src="https://ic-ph-nss.xhcdn.com/a/YzQ4MGZhY2E4NjRiOWUyOTYzMjAyMjlmOTJlN2QzNzg/jpeg/000/513/053/153_450.jpg"><br>Sexy Wife wearing tight Jean Shorts </a> 15',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-17-15937383"><img src="https://ic-ph-nss.xhcdn.com/a/NzA4ODQ0ODY1YThiNWIzNWYzYWNmMTFkZDk1Nzc1Mzk/jpeg/000/512/978/423_450.jpg"><br>Sexy Lingerie 17</a> 20',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-16-15919392"><img src="https://ic-ph-nss.xhcdn.com/a/NzU5YzRlM2M0OTVlNDM3NDg4OWEwMzk3YmNhZTMxMjE/jpeg/000/512/575/209_450.jpg"><br>Sexy Lingerie 16</a> 23',
+'<a href="https://xhamster.com/photos/gallery/cumshots-on-my-wife-15913555"><img src="https://ic-ph-nss.xhcdn.com/a/ODIyNmUxYjYyZWM1MTIzMDcyY2E0MjE2NWQ3NTk5Yzk/jpeg/000/512/431/403_450.jpg"><br>Cumshots on my wife </a> 9',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-15-15907953"><img src="https://ic-ph-nss.xhcdn.com/a/ZDgyNzA2Y2I0NGIyMWM4NjUzMGRmZGEzZmVhZmNhMTM/jpeg/000/512/310/461_450.jpg"><br>Sexy Lingerie 15</a> 16',
+'<a href="https://xhamster.com/photos/gallery/sexy-harley-quinn-15903876"><img src="https://ic-ph-nss.xhcdn.com/a/MTk5ZDUzZGZiYzk1MDg4YjUxZTQzMGIxMWMwOWE5Y2Y/jpeg/000/512/218/883_450.jpg"><br>Sexy Harley Quinn</a> 20',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-pornstar-15896674"><img src="https://ic-ph-nss.xhcdn.com/a/MDI5YjIyYWE4OTFiYjExMDU0N2JhZjBiMjU3NzE5NTc/jpeg/000/512/060/856_450.jpg"><br>My Sexy Pornstar </a> 24',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-wife-15891727"><img src="https://ic-ph-nss.xhcdn.com/a/ZGRkMjQxYjFmYmRkOGZkNjI5ZmVmMTU4ZmJlNzI0Yjc/jpeg/000/511/947/033_450.jpg"><br>My Sexy Wife </a> 20',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-14-15888905"><img src="https://ic-ph-nss.xhcdn.com/a/NjAxZjk2YzQ3MGY4MDYwN2Q3N2ExNTZmMmEyMjI3ZjA/jpeg/000/511/884/490_450.jpg"><br>Sexy Lingerie 14</a> 20',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-13-15887550"><img src="https://ic-ph-nss.xhcdn.com/a/Y2FlOTcxYjI4OWViZDRlNmJiODE4OGY3M2ZjY2IyZmU/jpeg/000/511/856/062_450.jpg"><br>Sexy Lingerie 13</a> 18',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-12-15813793"><img src="https://ic-ph-nss.xhcdn.com/a/ZjU4MDc4YzYyMTE4OWMwMmQ3NDExYzQ1YTkxYjJlNzI/jpeg/000/507/908/815_450.jpg"><br>Sexy Lingerie 12</a> 17',
+'<a href="https://xhamster.com/photos/gallery/sexy-kitty-cat-15424514"><img src="https://ic-ph-nss.xhcdn.com/a/NDE5NGFkYTczMWYxYjZiYWZhNGI1NzI1MTk3NTExYTY/jpeg/000/466/132/046_450.jpg"><br>Sexy Kitty Cat</a> 13',
+'<a href="https://xhamster.com/photos/gallery/sexy-kitty-cat-15424506"><img src="https://ic-ph-nss.xhcdn.com/a/ZmM3NzQwMDJkMjMyOGQyZmJmMjZjMjkxNjkwMWNkYmU/jpeg/000/466/131/195_450.jpg"><br>Sexy Kitty Cat </a> 3',
+'<a href="https://xhamster.com/photos/gallery/sexy-pussy-and-asshole-2-12247838"><img src="https://ic-ph-nss.xhcdn.com/a/M2FhMTQ5MDE3OTM0MWZlMmU3Mzk0N2IzNzgxODk5MDE/jpeg/000/296/007/087_450.jpg"><br>Sexy Pussy and Asshole 2 </a> 7',
+'<a href="https://xhamster.com/photos/gallery/cumshots-3-11145829"><img src="https://ic-ph-nss.xhcdn.com/a/YWUxNzU4YmEwYzU0NDhhYTgyNzk1OTE5Y2U2MDNkNTU/jpeg/000/242/537/412_450.jpg"><br>Cumshots 3</a> 20',
+'<a href="https://xhamster.com/photos/gallery/doggy-10349293"><img src="https://ic-ph-nss.xhcdn.com/a/MDczN2U2MDI2ZTIwODA3M2Y0ODFiOTAyMTAwMWE5NWU/jpeg/000/208/104/498_450.jpg"><br>doggy</a> 15',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-11-10297706"><img src="https://ic-ph-nss.xhcdn.com/a/OWZkM2QzYTNlODY3ODcxMGU1NGZiMjVhODkwZWZlMjM/jpeg/000/206/025/270_450.jpg"><br>Sexy Lingerie!! 11</a> 16',
+'<a href="https://xhamster.com/photos/gallery/huge-natural-tits-10024734"><img src="https://ic-ph-nss.xhcdn.com/a/ODExMWY3MWUzMzhmZDlmZGFkZDU5NDhhODg1OTA1YzU/jpeg/000/196/553/874_450.jpg"><br>Huge Natural Tits </a> 9',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-10-10018137"><img src="https://ic-ph-nss.xhcdn.com/a/ZjJhNzhjNmUxMzczNjQ3OTA1ZDYzNWNhOTJmMDBmOWI/jpeg/000/196/355/003_450.jpg"><br>Sexy Lingerie!! 10</a> 16',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-9-9835430"><img src="https://ic-ph-nss.xhcdn.com/a/MGZiMjRmNzRhZGZlOGVlMDQwNDE0ZGI0ZmRiYzQwNTU/jpeg/000/190/395/209_450.jpg"><br>Sexy Lingerie!! 9</a> 15',
+'<a href="https://xhamster.com/photos/gallery/sexy-pussy-and-asshole-9668308"><img src="https://ic-ph-nss.xhcdn.com/a/ZWZmNzVlMTI4OGZiNzJmZDJlODlmZTg0NTZmN2M3Njg/jpeg/000/185/119/572_450.jpg"><br>Sexy Pussy and Asshole </a> 7',
+'<a href="https://xhamster.com/photos/gallery/my-girls-sexy-ass-9562736"><img src="https://ic-ph-nss.xhcdn.com/a/MmI1YmYzNjYyOTgwMWNhMmJkZDA0ODZiMjllZTc1NjM/jpeg/000/181/790/591_450.jpg"><br>My Girls Sexy Ass!! </a> 20',
+'<a href="https://xhamster.com/photos/gallery/sucking-cock-9450696"><img src="https://ic-ph-nss.xhcdn.com/a/YWFmYzU3ZWQ4YmQ4ZGQzMDM5N2YxYTQyYzRiNDAxNjk/jpeg/000/178/307/417_450.jpg"><br>Sucking Cock </a> 15',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-8-9336351"><img src="https://ic-ph-nss.xhcdn.com/a/ZDZkNzc4OGEzNmYxYWM1MDkxMDEyYmUzNDZlMGRiNzc/jpeg/000/174/791/264_450.jpg"><br>Sexy Lingerie!! 8</a> 10',
+'<a href="https://xhamster.com/photos/gallery/titty-fucking-9282469"><img src="https://thumb-p6.xhcdn.com/a/8-Rdd03hiOZfeS37b2oOnA/000/173/167/226_240.gif"><br>TITTY FUCKING!!</a> 1',
+'<a href="https://xhamster.com/photos/gallery/titty-fuck-2-9110649"><img src="https://ic-ph-nss.xhcdn.com/a/Y2FiZTA3MGEyYjVjOTQxYTUwMjc5YmQwMTBjNzc1Yjk/jpeg/000/168/414/985_450.jpg"><br>Titty Fuck 2 </a> 25',
+'<a href="https://xhamster.com/photos/gallery/sexy-catwoman-for-halloween-8983314"><img src="https://ic-ph-nss.xhcdn.com/a/M2VkMWMzNTcyMjI3OThiNmI1MWM4ZmI4YjdmZDcyYWY/jpeg/000/165/159/856_450.jpg"><br>Sexy Catwoman for Halloween!!</a> 15',
+'<a href="https://xhamster.com/photos/gallery/34-ddd-8959193"><img src="https://ic-ph-nss.xhcdn.com/a/NjE4MTRiZWY2MDE1ZjFkNTc3MDMxZDEwNWNhY2Y3M2U/jpeg/000/164/559/728_450.jpg"><br>34 DDD</a> 12',
+'<a href="https://xhamster.com/photos/gallery/tributes-from-xhamster-members-8775523"><img src="https://ic-ph-nss.xhcdn.com/a/NDc0YTg3MmNkMjJhNDNkYWYzYjA5NGYzNDY4MzhiMjc/jpeg/000/179/610/341_450.jpg"><br>Tributes From XHAMSTER Members!!</a> 36',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-girl-does-it-all-2-8634023"><img src="https://ic-ph-nss.xhcdn.com/a/MmU1NjkxNTEwNzJiNTNkNDhhZWQxMTk2YjBjOWJkNzU/jpeg/000/156/654/677_450.jpg"><br>My Sexy Girl Does It All!! 2</a> 8',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-girl-does-it-all-8324647"><img src="https://ic-ph-nss.xhcdn.com/a/ZmM0M2E1YTEyMjU3YjlmMmE1NzMxNThkYzM4NDBiMjU/jpeg/000/149/655/738_450.jpg"><br>My Sexy Girl Does It All!!</a> 12',
+'<a href="https://xhamster.com/photos/gallery/sexy-yankees-girl-7845587"><img src="https://ic-ph-nss.xhcdn.com/a/MTU0MGE1ZGY0YjBlYjJkZDIxY2IxMzgyYjYxNjUyNTU/jpeg/000/139/197/935_450.jpg"><br>Sexy Yankees girl!! </a> 10',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-7-7295829"><img src="https://ic-ph-nss.xhcdn.com/a/NjQ3OTkzMzRjMTJkZWFjZTg5ODRlNTcyZmYwM2ZmMmU/jpeg/000/127/759/180_450.jpg"><br>Sexy Lingerie!! 7</a> 17',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-6-7154984"><img src="https://ic-ph-nss.xhcdn.com/a/MDRjZmZhZmRlNzVkOGY1Y2MxYjRmYTA4YTU3YzE3N2Y/jpeg/000/124/910/876_450.jpg"><br>Sexy Lingerie!! 6</a> 15',
+'<a href="https://xhamster.com/photos/gallery/cumshots-2-6703241"><img src="https://ic-ph-nss.xhcdn.com/a/ZTM1NWRhMzY5ZDk4ODdiZTViY2FhODMyOTYzZjI4N2E/jpeg/000/116/567/386_450.jpg"><br>Cumshots 2</a> 6',
+'<a href="https://xhamster.com/photos/gallery/my-girl-rides-my-cock-till-i-cum-in-her-pussy-6418672"><img src="https://ic-ph-nss.xhcdn.com/a/NDIyZDBjNzM2ZGE3ZDk5ZDUxOGY5ZGE1NTEyMjhjYWQ/jpeg/000/111/396/514_450.jpg"><br>My girl rides my cock till I cum in her pussy!! </a> 14',
+'<a href="https://xhamster.com/photos/gallery/titty-fuck-6245485"><img src="https://ic-ph-nss.xhcdn.com/a/YTQ4YmUzN2IxN2MzOGRiYzg5M2IyMGM0OGNiMzBiOGQ/jpeg/000/108/277/413_450.jpg"><br>Titty Fuck </a> 14',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-5-6084344"><img src="https://ic-ph-nss.xhcdn.com/a/M2E4ZjUzMGY2ODM1MDkyN2I0NTFhMDk5ZmIzNjI5Yjc/jpeg/000/105/398/967_450.jpg"><br>Sexy Lingerie!! 5</a> 13',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-girl-2-4957546"><img src="https://ic-ph-nss.xhcdn.com/a/ZDhlNTljNjNkZDJmNzY2ZDRjMzdmMTE3NDk1NTY0MzU/jpeg/000/084/656/239_450.jpg"><br>My sexy girl 2</a> 13',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-4-4859783"><img src="https://ic-ph-nss.xhcdn.com/a/ZjhlMWNmNDM1YWFjNjY4NjZjYjAwM2JlMDliNzk5OTM/jpeg/000/082/891/467_450.jpg"><br>Sexy Lingerie!! 4</a> 22',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-3-4812000"><img src="https://ic-ph-nss.xhcdn.com/a/NmU3Y2JjM2M5MzUxYWU4M2EyNmJhYWQ2YjQ2ZTEzMTA/jpeg/000/082/034/225_450.jpg"><br>Sexy Lingerie!! 3</a> 16',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-2-4752515"><img src="https://ic-ph-nss.xhcdn.com/a/ZmU3OGM2ZmZhZTQ1NWFmOTkzODBmMzNhNWM4ODE2NGI/jpeg/000/080/984/965_450.jpg"><br>Sexy Lingerie!! 2</a> 15',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-easter-bunny-4408196"><img src="https://ic-ph-nss.xhcdn.com/a/YTMwMDQzMjQ3ZDNjYmU1OTQwZmU2YjczYmNmYmI1NWE/jpeg/000/074/767/935_450.jpg"><br>My Sexy Easter Bunny!!</a> 8',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-4276889"><img src="https://ic-ph-nss.xhcdn.com/a/MWZlYTVmMjU4MDZjZGNmNzc4N2Q4NTY2NGJkYmMyOWE/jpeg/000/072/396/177_450.jpg"><br>Sexy Lingerie!!</a> 9',
+'<a href="https://xhamster.com/photos/gallery/sexy-mrs-clause-3987050"><img src="https://ic-ph-nss.xhcdn.com/a/ZTMyN2Q4MmJhZjFhM2MzNjIyNDllZDA5MGZkM2EwMmY/jpeg/000/067/120/236_450.jpg"><br>Sexy Mrs Clause </a> 9',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-girl-3578304"><img src="https://ic-ph-nss.xhcdn.com/a/OGIyYzAxODgzZjQyZGUxNTAwOTRkNmMwYzkzMTRlYTA/jpeg/000/059/777/572_450.jpg"><br>My sexy girl</a> 5',
+'<a href="https://xhamster.com/photos/gallery/pussy-3578272"><img src="https://ic-ph-nss.xhcdn.com/a/Nzg3ZWJkMWNlMGNiYjM0OTY4NDc3NDNjN2I3OTE4ZDA/jpeg/000/059/777/369_450.jpg"><br>Pussy</a> 6',
+'<a href="https://xhamster.com/photos/gallery/my-cock-3578262"><img src="https://ic-ph-nss.xhcdn.com/a/N2I5NjAyOGUzNzVhMjQ5MGEyMWZmMzU5NDM1ZmQ5YTM/jpeg/000/059/776/901_450.jpg"><br>My Cock </a> 5',
+'<a href="https://xhamster.com/photos/gallery/cumshots-3578250"><img src="https://ic-ph-nss.xhcdn.com/a/Y2UyNTRmNDlhMTI3NmY0NmQ4MzFhOTZmZjgxYTU5ZjA/jpeg/000/059/777/421_450.jpg"><br>Cumshots</a> 7',
+'<a href="https://xhamster.com/photos/gallery/fucking-my-girl-3578209"><img src="https://ic-ph-nss.xhcdn.com/a/ZmM3OWY0MjVlM2EzZTMzNDUyOWMyZWE2YzhkYWEzNjc/jpeg/000/059/776/369_450.jpg"><br>Fucking my girl</a> 13',
+'<a href="https://xhamster.com/photos/gallery/sucking-my-cock-3578195"><img src="https://ic-ph-nss.xhcdn.com/a/MmEyNTMzMmFmNjE5ZWVlOWNmMWUwOWU1NTBmOGJhZDE/jpeg/000/059/775/894_450.jpg"><br>Sucking my cock</a> 4',
+'<a href="https://xhamster.com/photos/gallery/sexy-ass-3527282"><img src="https://ic-ph-nss.xhcdn.com/a/Nzc0YzIxZDU5NTE1Yjc1YTdlYjgyMjc2MjNmNzg4N2U/jpeg/000/058/903/137_450.jpg"><br>Sexy Ass</a> 4',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "mrpunk"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

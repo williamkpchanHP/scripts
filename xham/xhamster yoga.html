@@ -1,0 +1,99 @@
+<base target="_blank"><html><head><title>yoga940</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 50%; margin-left:25%;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">yoga940</div>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'adult-time-yoga-babes-lulu-love-geisha-kyd-and-lilly-bellas-class-turns-lesbian-anal-fuckfest-xhd7EL6"><img src="https://ic-vt-nss.xhcdn.com/a/MmNjZWVlY2FmY2UwMjc3NWQzMTJkY2UwNTg3YmJiZDE/s(w:526,h:298),jpeg/022/614/531/1280x720.c.jpg.v1664928415"><br>ADULT TIME - YOGA Babes Lulu Love, Geisha Kyd, and Lilly Bella\'s Class TURNS LESBIAN ANAL FUCKFEST!',
+'amateur-squirt-and-piss-compilation-2023-free-insane-collection-xhoSwoj"><img src="https://ic-vt-nss.xhcdn.com/a/OWZjYTQ5MmI0NjhlMDQ2MzNmNjBhOWRhZGYzZGUzNWI/s(w:320,h:180),jpeg/022/962/152/v2/320x180.230.jpg"><br>Amateur Squirt And Piss Compilation 2023 - FREE Insane Collection',
+'amber-laray-yoga-and-pussy-close-up-xhMaAGo"><img src="https://ic-vt-nss.xhcdn.com/a/MzJmYjExZTExNzgwODhjZjE0OTVmMTY4NzczZmRmZmM/s(w:320,h:180),jpeg/021/289/785/1280x720.2.jpg"><br>Amber Laray – yoga and pussy close up',
+'awkward-squirting-moment-turns-into-orgasmic-lesbian-sex-xhghXO7"><img src="https://ic-vt-nss.xhcdn.com/a/NWUwOTAzMzRmYmI1ZjQ5Mzk3ZDk0MTgyZTA2OWJlNmU/s(w:320,h:180),jpeg/020/738/260/v2/320x180.206.jpg"><br>Awkward squirting moment turns into orgasmic lesbian sex',
+'being-a-fitness-goddess-reislin-loves-to-workout-especially-with-her-favorite-big-dick-trainer-xh5OpbW"><img src="https://ic-vt-nss.xhcdn.com/a/ODk3ZWNiN2I5ZjZkM2RkZDE1MWFkNGRiMzU5N2QzMzM/s(w:526,h:298),jpeg/023/643/831/1280x720.c.jpg.v1691599743"><br>Being A Fitness Goddess, Reislin Loves To Workout, Especially With Her Favorite Big Dick Trainer',
+'big-boob-mom-get-oiled-then-hard-sex-full-uncen-in-fansly-bbwthaixxx-xhAr94R"><img src="https://ic-vt-nss.xhcdn.com/a/N2NkOGFmYWY1ZjFkNDgwN2M5MTFjZWYyMmU4YTRiNDc/s(w:526,h:298),jpeg/023/216/549/1280x720.c.jpg.v1681036387"><br>Big Boob Mom Get Oiled Then Hard Sex (Full & Uncen in Fansly BbwThaixxx)',
+'big-booty-step-sister-wants-sex-xhOqgNH"><img src="https://ic-vt-nss.xhcdn.com/a/ZjliZDhhYzZiYzZlZGNjZjFjYWEwNzNjZmZkN2U0ZTc/s(w:320,h:180),jpeg/022/766/161/v2/320x180.205.jpg"><br>Big Booty Step Sister Wants Sex',
+'cute-yoga-instructor-kathryn-mae-stretched-out-by-a-big-cock-xhYSctT"><img src="https://ic-vt-nss.xhcdn.com/a/M2JlYWM4Y2YxNWUzMjVlNTYzYWQzYmJjM2ExYmJkZGI/s(w:526,h:298),jpeg/023/167/209/1280x720.c.jpg.v1679724520"><br>Cute Yoga Instructor Kathryn Mae stretched out by a Big Cock',
+'diana-smiley-10-01-2021-pt-5-xhShR2F"><img src="https://ic-vt-nss.xhcdn.com/a/MTc5MGQ4MTcxYTZjMjRlODdkNzU4MTBiZjJjNDhmZDA/s(w:320,h:180),jpeg/017/795/119/1280x720.9.jpg"><br>Diana Smiley - 10.01.2021 - pt.5',
+'dry-humping-camel-toe-grinding-in-shiny-spandex-leggings-cum-in-pants-rubbing-cameltoe-xhIma8A"><img src="https://ic-vt-nss.xhcdn.com/a/YWRjNjlmNjc4YjZlMWY3ZDc2Nzk0YTk2Njg5MjQwNjU/s(w:320,h:180),jpeg/022/167/424/v2/320x180.242.jpg"><br>Dry humping camel toe grinding in shiny spandex leggings, cum in pants rubbing cameltoe',
+'dude-that-s-not-my-juicy-pussy-but-my-tight-asshole-xhbvJBs"><img src="https://ic-vt-nss.xhcdn.com/a/NjE5ZGYwZDY4NjFjZTZjYWNiMzY1MGE4OTA3MmYzNGQ/s(w:526,h:298),jpeg/022/374/598/1280x720.c.jpg.v1658364623"><br>Dude!!! That’s Not My Juicy Pussy But My Tight Asshole!!!',
+'fit-big-tit-milf-morgan-ray-stretches-nude-and-fingers-xhxig85"><img src="https://ic-vt-nss.xhcdn.com/a/MGUyZGZiZTZmZDQ5MGRlZTk2MGQ3MGJiNTQzZDBiZmY/s(w:320,h:180),jpeg/023/829/123/v2/320x180.215.jpg"><br>Fit Big Tit MILF Morgan Ray Stretches Nude And Fingers',
+'flexi-lara-frost-gets-anus-stretched-xhgsR0r"><img src="https://ic-vt-nss.xhcdn.com/a/ZTJiODdmMzI1OWZhNjRhODI2ZTIzMWE0ODA1N2UwNTk/s(w:526,h:298),jpeg/022/994/130/1280x720.c.jpg.v1675231838"><br>flexi Lara Frost gets anus stretched',
+'gaping-training-of-hot-milf-tiffany-on-the-morning-xhd6kle"><img src="https://ic-vt-nss.xhcdn.com/a/YjNlZmNlOWU0ZTg3MjBiNzJmNDk2NDdkMGQxMDY2NzM/s(w:320,h:180),jpeg/022/612/551/v2/320x180.208.jpg"><br>Gaping training of hot MILF Tiffany on the morning',
+'home-yoga-edition-jill-valentine-xhH97Lz"><img src="https://ic-vt-nss.xhcdn.com/a/MTM3NTljZDg4ZTc5ZjU5NDc0MmViZjM3NjNkZDlkZDE/s(w:320,h:180),jpeg/016/705/291/1280x720.2.jpg"><br>Home Yoga Edition Jill Valentine',
+'home-yoga-for-jill-valentine-xhqAtMg"><img src="https://ic-vt-nss.xhcdn.com/a/ZWUwOWU2MzY3ZDAyMzgyZjhlMjE5YjlhZTUyNDI3MTI/s(w:320,h:180),jpeg/021/196/229/1280x720.2.jpg"><br>Home Yoga For Jill Valentine',
+'hook-up-hot-shot-cute-aubrey-luna-mouth-and-pussy-fucked-xhk3Wdn"><img src="https://ic-vt-nss.xhcdn.com/a/N2I1NmM3Mjc2ZDZlYzhmZDJlYmZhYmMwMjkzNDdkMzU/s(w:320,h:180),jpeg/024/267/148/v2/320x180.280.jpg"><br>Hook Up Hot Shot - Cute Aubrey Luna Mouth and Pussy Fucked!',
+'i-was-so-horny-and-wet-today-and-fingering-my-wet-pussy-xhKRuw5"><img src="https://ic-vt-nss.xhcdn.com/a/MDhjNjg1OWExNjdlNjQ2MjA4Y2I4OWI2MTExNzg3NDQ/s(w:320,h:180),jpeg/019/807/788/1280x720.10.jpg"><br>I was so horny and wet today and fingering my wet pussy',
+'j-f-xhg0idh"><img src="https://ic-vt-nss.xhcdn.com/a/ZTk0NjRjNjZiNWNhZDQzMDUxZjBlOGU5MmRlZmRlYzY/s(w:320,h:180),jpeg/016/260/286/1280x720.1.jpg"><br>J.F',
+'latina-brunette-with-big-ass-trying-on-yoga-pants-xhCNmw9"><img src="https://ic-vt-nss.xhcdn.com/a/ODVmNGJkODRhZDkyNDJmNmYzOTdkOWZiMTA3YmI4ODU/s(w:320,h:180),jpeg/024/273/495/v2/320x180.207.jpg"><br>Latina brunette with big ass trying on yoga pants',
+'louise-jenson-gets-talked-into-fucking-with-two-guys-at-once-xh2Zleu"><img src="https://ic-vt-nss.xhcdn.com/a/NjcyZDZiYWE1Y2MxMTk4ZWI1ZTIzMjc3MGFjZTEwZmE/s(w:320,h:180),jpeg/022/178/637/v2/320x180.284.jpg"><br>Louise Jenson gets talked into fucking with two guys at once',
+'mila-jade-yoga-nympho-gets-a-facial-latina-sex-tapes-9293705"><img src="https://ic-vt-nss.xhcdn.com/a/YjdmNjZkMmNiNmJiYTI0NGRhM2EzMjI1NmY3YTY4OGM/s(w:320,h:180),jpeg/009/293/705/1280x720.3.jpg"><br>Mila Jade - Yoga Nympho Gets a Facial - Latina Sex Tapes',
+'milfgonzo-alana-luv-gets-fucked-after-yoga-8399578"><img src="https://ic-vt-nss.xhcdn.com/a/YjNhZmFlOTI5MDIyNTk1ZTJkZGY4YzBjNWE5M2E1Zjg/s(w:320,h:180),jpeg/008/399/578/1280x720.8.jpg"><br>MILFGonzo Alana Luv gets fucked after yoga',
+'mommys-boy-pervert-big-titted-milf-teases-hung-stepson-with-naked-yoga-xhT054t"><img src="https://ic-vt-nss.xhcdn.com/a/MDIxM2RiOTUzNTFjNmI3ZTI0MTY3N2QxNzgyNzNjYTM/s(w:526,h:298),jpeg/024/346/777/1280x720.17087656.jpg"><br>MOMMY\'S BOY - Pervert Big Titted MILF Teases Hung Stepson With Naked Yoga',
+'mylf-fit-and-curvy-milf-gets-her-big-titties-bouncing-as-she-gets-her-pussy-plowed-hard-xh5zHR2"><img src="https://ic-vt-nss.xhcdn.com/a/Mzg3MTEwZGIzOTA4MmE3ODVhZjk4MjBmZmZkNjk2Mjk/s(w:320,h:180),jpeg/022/373/510/v2/320x180.206.jpg"><br>MYLF - Fit And Curvy Milf Gets Her Big Titties Bouncing As She Gets Her Pussy Plowed Hard',
+'naked-german-woman-sylvia-does-yoga-with-theraband-14922645"><img src="https://ic-vt-nss.xhcdn.com/a/NjE4MTM5YjYyMmNkMzc4ZDdjMzk1NzNmNGQ1ZGFlZWI/s(w:320,h:180),jpeg/014/922/645/1280x720.1.jpg"><br>Naked German woman Sylvia does yoga with THERABAND',
+'naked-yoga-life-lana-violet-stretches-hot-bod-and-fingers-xhyxlMO"><img src="https://ic-vt-nss.xhcdn.com/a/MjBlMTc4ZTBkNTFjOTdiNzliZWVkY2U2OTYyY2VlMGI/s(w:320,h:180),jpeg/015/862/087/1280x720.2.jpg"><br>Naked Yoga Life  - Lana Violet Stretches Hot Bod and Fingers',
+'peaceful-teen-18-gets-wet-while-meditating-xhow1xr"><img src="https://ic-vt-nss.xhcdn.com/a/YTk4ZjBiYjk0NDUzOGFlNzFmYWFhZDcxMDhkNTI3N2Y/s(w:526,h:298),jpeg/022/907/327/1280x720.c.jpg.v1672897720"><br>Peaceful Teen 18+ gets wet while meditating',
+'pink-panties-julia-12669659"><img src="https://ic-vt-nss.xhcdn.com/a/ZDNmOGUzMjMyMDI1MmM4MjQwMzJmYTRhOTU4OWEzY2E/s(w:320,h:180),jpeg/012/669/659/1280x720.10.jpg"><br>pink panties julia',
+'playing-yoga-cock-and-balls-xhcst8j"><img src="https://ic-vt-nss.xhcdn.com/a/Y2IwYTVhYjYxMWVmYTEzYTM2OGNiNDA0Y2NiZGI4NTk/s(w:320,h:180),jpeg/023/890/338/v2/320x180.210.jpg"><br>Playing Yoga Cock and Balls',
+'powerful-squirt-orgasm-through-leggings-teen-in-leggings-xhwvpsB"><img src="https://ic-vt-nss.xhcdn.com/a/YmFiY2ViMjRmZjdjOWY5YjU4MmFiODBmNjI2MDhjZjA/s(w:320,h:180),jpeg/022/841/065/v2/320x180.216.jpg"><br>Powerful Squirt Orgasm Through Leggings.Teen in leggings.',
+'rina-the-professional-performer-7294964"><img src="https://ic-vt-nss.xhcdn.com/a/MTkxMmQ4NmI2YzhkYjFkYmU4ODk5MGE1NzA0MGJiN2Y/s(w:320,h:180),jpeg/007/294/964/1280x720.3.jpg"><br>Rina the professional performer',
+'rough-flexible-teen-contortion-sex-xhwfKC4"><img src="https://ic-vt-nss.xhcdn.com/a/N2Q4MWY2NzJiZWU1YTAyYWVjNjE4ZmQ4MDcxYjg1MjM/s(w:526,h:298),jpeg/021/431/399/1280x720.c.jpg.v1630557960"><br>rough flexible teen contortion sex',
+'she-loves-doggystyle-and-i-love-her-big-ass-xhPCwD9"><img src="https://ic-vt-nss.xhcdn.com/a/ZmRhN2MzYWVhZjRjMzBkZDNkOTc3MTA0MTFlOTVkMTM/s(w:320,h:180),jpeg/022/785/452/v2/320x180.202.jpg"><br>She loves doggystyle and I love her big ass',
+'slender-blonde-ophelia-kaan-stretches-during-nude-yoga-xhUjbMo"><img src="https://ic-vt-nss.xhcdn.com/a/NWM2OGUzMWFjMGY4NDUzMWJiOTViMTBiMGMxOWQ1OTc/s(w:526,h:298),jpeg/021/588/584/1280x720.c.jpg.v1631777040"><br>Slender Blonde Ophelia Kaan Stretches During Nude Yoga',
+'spreading-my-pussy-with-yoga-exercise-xhV7GqD"><img src="https://ic-vt-nss.xhcdn.com/a/ZDg2NjZiMzc3MWEwOWEyYTE4YTU2ZGExZWYzZTMyNGQ/s(w:320,h:180),jpeg/024/358/309/v2/320x180.228.jpg"><br>Spreading my pussy with yoga exercise',
+'steplesbians-nadia-styles-licks-sara-luvv-s-twat-xhjdw2z"><img src="https://ic-vt-nss.xhcdn.com/a/OWUxOWIyMDViNTEyMGM0MmM5OGMxNDk2MjU5YWI2MjQ/s(w:526,h:298),jpeg/021/317/005/1280x720.c.jpg.v1629978720"><br>StepLesbians - Nadia Styles Licks Sara Luvv’s Twat',
+'tight-yoga-pants-girl-gets-hot-creampie-projectsexdiary-xhepphC"><img src="https://ic-vt-nss.xhcdn.com/a/ZGEwOTA0MDUwNzg4ZWJhNzBlMDU3ZjJhMDI5NWZmNjg/s(w:320,h:180),jpeg/019/681/648/1280x720.6.jpg"><br>tight yoga pants girl gets hot creampie - projectsexdiary',
+'tiny4k-yoga-student-stretched-out-the-right-way-14803562"><img src="https://ic-vt-nss.xhcdn.com/a/MDMyODMzMDQ0NTkwNDUxY2Q5ZWEyZTkxMTBkOTgyYmI/s(w:526,h:298),jpeg/014/803/562/1280x720.c.jpg.v1591121820"><br>TINY4K Yoga Student Stretched Out The Right Way',
+'uncensored-leggings-try-on-haul-xh7YxWy"><img src="https://ic-vt-nss.xhcdn.com/a/Y2EyZGRkMzZlOWZmMjVjNWRhYTExMzc0ZTc4Y2M4MDI/s(w:320,h:180),jpeg/023/179/803/v2/320x180.204.jpg"><br>Uncensored leggings try on haul',
+'wetting-my-leggings-and-getting-fucked-xho2E46"><img src="https://ic-vt-nss.xhcdn.com/a/MDUyZTBhZmY2ZDhlN2FiMTI5MDY3YTczNzgwYTYyZmY/s(w:526,h:298),jpeg/023/129/877/1280x720.c.jpg.v1678727029"><br>Wetting my leggings and getting fucked',
+'when-hot-mylf-sandy-love-spots-nicky-at-her-gym-she-does-everything-at-hand-to-get-his-attention-xhImyna"><img src="https://ic-vt-nss.xhcdn.com/a/ZmUyYWVkYTg4NmJmNDQwNGE3Mzg5Y2YzOTc4YWEzYjk/s(w:526,h:298),jpeg/023/911/540/1280x720.c.jpg.v1697815249"><br>When Hot MYLF Sandy Love Spots Nicky At Her Gym, She Does Everything At Hand To Get His Attention',
+'whore-has-phat-ass-in-yoga-pants-xhge5CN"><img src="https://ic-vt-nss.xhcdn.com/a/ZWVjZDBkZTUzYTY3ZGRkY2UxNjNmYzAxMmRkYWEwZGM/s(w:320,h:180),jpeg/020/230/615/1280x720.10.jpg"><br>Whore has phat ass in yoga pants',
+'yoga-gf-analfucked-after-reversecowgirl-7789093"><img src="https://ic-vt-nss.xhcdn.com/a/ZmRmMjg4NDkzOTAzNmE5MTkyY2YzNzI1MGI1MWI3MDc/s(w:320,h:180),jpeg/007/789/093/1280x720.4.jpg"><br>Yoga gf analfucked after reversecowgirl',
+'yoga-lesbians-fuck-each-other-while-the-cameraman-fingers-11097983"><img src="https://ic-vt-nss.xhcdn.com/a/OWI5OGQzNjJlZDMwMDQyMzM2MTM0ZWRlYmY3OGUxY2I/s(w:320,h:180),jpeg/011/097/983/1280x720.7.jpg"><br>Yoga lesbians fuck each other while the cameraman fingers',
+'yoga-pants-double-facesitting-xhjWk3Z"><img src="https://ic-vt-nss.xhcdn.com/a/Y2FjMjE0YzE3MTdmNDFkOTUwZTQzY2QyNWI3ZTI2NzM/s(w:320,h:180),jpeg/018/085/419/1280x720.4.jpg"><br>Yoga Pants Double Facesitting',
+'yoga-teacher-medea-from-leipzig-reaches-her-climax-with-a-giant-dildo-xhUQKwRi"><img src="https://ic-vt-nss.xhcdn.com/a/NjZiZmFlYTNiZGY2NGIzMTgzYTYyNDZmMDhkMTZhZjg/s(w:320,h:180),jpeg/023/424/476/v2/320x180.205.jpg"><br>Yoga teacher Medea from Leipzig reaches her climax with a giant dildo',
+];
+lineHeader = '<div><a href="https://xhamster.com/videos/'
+lineTail = '</a></div>'
+showRange = 60
+bookid = "yoga940"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+A:focus {	color: red;}
+A:hover {	color: yellow;}
+a:visited { color: #784838;}
+div {display:inline-block; width: 33%; margin-right:1px;vertical-align: top; }
+img { max-width: 100%; margin: auto; display:block; margin-bottom: 10px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button {color: orange; font-size:16px;}
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}

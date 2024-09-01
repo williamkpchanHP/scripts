@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width"/>
+<title>shuffle Links</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<style>
+body {background-color: black;}
+html {height: 100%;overflow: scroll;}
+::-webkit-scrollbar {width: 0px;background: transparent;}
+body { margin: auto; width: 100%; background-color: #000000; color: #20C030;}
+img { width: 50%; display: block; margin-left: auto; margin-right: auto;}
+</style>
+</head>
+<body onkeypress="chkKey()">
+<br><br><br><br><br>
+<div class="imagearea"> </div>
+<script>
+function chkKey() {
+var testkey = getChar(event);
+if(testkey == "b"){ backward();}
+if(testkey == "f"){ foreward();}
+if(testkey == "p"){ pause();}
+if(testkey == "c"){ continU();}
+if(testkey == "s"){ showMov();}}
+function getChar(event){if (event.which!=0 && event.charCode!=0) {return String.fromCharCode(event.which)}
+ else {return null}}
+var ImgList = [
+
+
+'<a href="https://www.pornhub.com/embed/ph5776f06ae153f"><img src="https://ci.phncdn.com/videos/201607/01/81084441/original/(m=ecuKGgaaaa)(mh=kTMnDJXAoAm-x9sv)15.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5713910975558"><img src="https://di.phncdn.com/videos/201604/17/74111071/original/(m=ecuKGgaaaa)(mh=LOFxjgXG4oVxQgtv)11.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph56d0b10904295"><img src="https://ci.phncdn.com/videos/201602/26/69647541/original/(m=ecuKGgaaaa)(mh=ot83CE1wGbVFkPX9)11.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/308832357"><img src="https://ci.phncdn.com/videos/201502/03/38460171/original/(m=ecuKGgaaaa)(mh=TL1r4SuNgi-bsa0J)11.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/266454522"><img src="https://ci.phncdn.com/videos/201411/25/35261941/original/(m=ecuKGgaaaa)(mh=dwgSteXVFVFsFMZC)12.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph59c10ad279a28"><img src="https://di.phncdn.com/videos/201709/19/133457021/original/(m=ecuKGgaaaa)(mh=X9Chm-VtNCwBAZcK)6.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5673fcbfad220"><img src="https://ci.phncdn.com/videos/201512/18/64070561/original/(m=ecuKGgaaaa)(mh=tcSyHY1O9yF5_6Y8)7.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5777a69ccd320"><img src="https://di.phncdn.com/videos/201607/02/81127301/original/(m=ecuKGgaaaa)(mh=HazwSXhkFGuS62dT)1.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5985bc819da44"><img src="https://di.phncdn.com/videos/201708/05/127332071/original/(m=ecuKGgaaaa)(mh=oN9KxukHvqPj5gWU)7.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph57e25efad848c"><img src="https://ci.phncdn.com/videos/201609/21/90211271/original/(m=ecuKGgaaaa)(mh=M5jaTNPh17l8aYQ2)1.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph5764018a68ae6"><img src="https://di.phncdn.com/videos/201606/17/79818421/original/(m=ecuKGgaaaa)(mh=mH9tL1adNO97PIc_)8.jpg"></a>',
+
+'<a href="https://www.pornhub.com/embed/ph55ad4e29878ba"><img src="https://ci.phncdn.com/videos/201507/20/53303901/original/(m=ecuKGgaaaa)(mh=pIcYx4DQdeKE0lQE)10.jpg"></a>',
+
+]
+ var listLen = ImgList.length, timer = 15000
+function shuffle(array) { var i = ImgList.length, j = 0, temp
+while (i--) { j = Math.floor(Math.random() * (i+1))
+temp = ImgList[i]
+ ImgList[i] = ImgList[j]
+ ImgList[j] = temp
+ } 
+return ImgList
+}
+ImgList = shuffle(Array.from(Array(ImgList.length).keys()))
+function changeImg() { if (listLen >= ImgList.length - 1) { listLen = 0
+ }
+ else if (listLen < 0) { listLen = ImgList.length - 1
+ } 
+else { listLen = listLen + 1
+ }
+showImg()
+}
+function backward() { listLen = listLen - 2
+changeImg()
+}
+function foreward() { changeImg()
+}
+function pause() { clearInterval(myVar)
+}
+function continU() { myVar = setInterval(changeImg, timer)
+ foreward()
+}
+function showImg() { var thePointerImg = document.querySelector(".imagearea")
+ thePointerImg.innerHTML = ImgList[listLen]
+ console.log(thePointerImg.innerHTML)
+}
+function showMov() { var imgAdr = ImgList[listLen]
+ var start = imgAdr.indexOf("=")+1
+ var end = imgAdr.indexOf('"', start+1)
+ var list = imgAdr.substring(start+1, end)
+ window.open(list)
+}changeImg()
+var myVar = setInterval(changeImg, timer)
+</script></body></html>

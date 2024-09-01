@@ -1,0 +1,132 @@
+<base target="_blank"><html><head><title>pornstar=kiki-cash</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<link rel="stylesheet" href="../imgcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+
+<body onkeypress="chkKey()">
+<br>
+<center>
+<p class="tip-number">pornstar=kiki-cash</p>
+<p class="js-tip"></p>
+<br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'327/96402a760dae9859472006875b466d19-1',
+'327/96402a760dae9859472006875b466d19-10',
+'327/96402a760dae9859472006875b466d19-11',
+'327/96402a760dae9859472006875b466d19-12',
+'327/96402a760dae9859472006875b466d19-13',
+'327/96402a760dae9859472006875b466d19-14',
+'327/96402a760dae9859472006875b466d19-15',
+'327/96402a760dae9859472006875b466d19-16',
+'327/96402a760dae9859472006875b466d19-2',
+'327/96402a760dae9859472006875b466d19-3',
+'327/96402a760dae9859472006875b466d19-4',
+'327/96402a760dae9859472006875b466d19-5',
+'327/96402a760dae9859472006875b466d19-6',
+'327/96402a760dae9859472006875b466d19-7',
+'327/96402a760dae9859472006875b466d19-8',
+'327/96402a760dae9859472006875b466d19-9',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-1',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-10',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-11',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-12',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-13',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-14',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-15',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-16',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-2',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-3',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-4',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-5',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-6',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-7',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-8',
+'493/d1874571ce8ec6cb2e6b7279959c3e74-9',
+'62/ef27737d2d7c051fc0cf294ce96243eb-1',
+'62/ef27737d2d7c051fc0cf294ce96243eb-10',
+'62/ef27737d2d7c051fc0cf294ce96243eb-11',
+'62/ef27737d2d7c051fc0cf294ce96243eb-12',
+'62/ef27737d2d7c051fc0cf294ce96243eb-13',
+'62/ef27737d2d7c051fc0cf294ce96243eb-14',
+'62/ef27737d2d7c051fc0cf294ce96243eb-15',
+'62/ef27737d2d7c051fc0cf294ce96243eb-16',
+'62/ef27737d2d7c051fc0cf294ce96243eb-2',
+'62/ef27737d2d7c051fc0cf294ce96243eb-3',
+'62/ef27737d2d7c051fc0cf294ce96243eb-4',
+'62/ef27737d2d7c051fc0cf294ce96243eb-5',
+'62/ef27737d2d7c051fc0cf294ce96243eb-6',
+'62/ef27737d2d7c051fc0cf294ce96243eb-7',
+'62/ef27737d2d7c051fc0cf294ce96243eb-8',
+'62/ef27737d2d7c051fc0cf294ce96243eb-9',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-1',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-10',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-11',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-12',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-13',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-14',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-15',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-16',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-2',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-3',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-4',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-5',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-6',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-7',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-8',
+'689/0933b9ca6e005cc8809e4bb59cbfd762-9',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-1',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-10',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-11',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-12',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-13',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-14',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-15',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-16',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-2',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-3',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-4',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-5',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-6',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-7',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-8',
+'88/a20434f94ca9f1e1742df6ecc5993cbf-9',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-1',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-10',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-11',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-12',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-13',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-14',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-15',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-16',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-2',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-3',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-4',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-5',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-6',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-7',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-8',
+'915/3aff9683fd0399cf3e59d59c4ea85dc4-9',
+];
+lineHeader = '<img src="https://cdn.nudexxx.pics/content/galleries/'
+lineTail = '-full.jpg">'
+showRange = 80
+bookid = "pornstar=kiki-cash"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
+

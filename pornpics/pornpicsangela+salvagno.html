@@ -1,0 +1,122 @@
+<base target="_blank"><html><head><title>angela+salvagno</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 100%;}
+</style>
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">angela+salvagno</div>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'7/241/22470544/22470544_033_d23e',
+'7/241/22470544/22470544_046_1cd2',
+'7/241/22470544/22470544_057_c322',
+'7/241/22470544/22470544_065_8545',
+'7/241/22470544/22470544_073_35d5',
+'7/241/22470544/22470544_082_2ca3',
+'7/241/22470544/22470544_090_cb1d',
+'7/241/22470544/22470544_100_6eea',
+'7/241/22470544/22470544_102_ff93',
+'7/241/22470544/22470544_112_85c4',
+'7/241/22470544/22470544_131_d4c3',
+'7/241/22470544/22470544_140_303b',
+'7/241/22470544/22470544_148_3441',
+'7/241/22470544/22470544_156_ab80',
+'7/241/22470544/22470544_166_9ac1',
+'7/241/22470544/22470544_180_575f',
+'7/241/22470544/22470544_192_4bd7',
+'7/241/72220208/72220208_126_e362',
+'7/241/72220208/72220208_138_a951',
+'7/241/72220208/72220208_158_033c',
+'7/241/72220208/72220208_165_eef0',
+'7/241/72220208/72220208_183_b016',
+'7/241/72220208/72220208_191_5809',
+'7/241/72220208/72220208_212_c4cf',
+'7/241/72220208/72220208_223_67b9',
+'7/241/72220208/72220208_245_28ba',
+'7/241/72220208/72220208_254_ac39',
+'7/241/72220208/72220208_281_b9e3',
+'7/241/72220208/72220208_291_03d8',
+'1/144/16710407/16710407_007_14cd',
+'1/144/16710407/16710407_008_c5ce',
+'1/144/16710407/16710407_009_b230',
+'1/144/16710407/16710407_010_04c9',
+'1/144/16710407/16710407_011_04c9',
+'1/144/16710407/16710407_012_8ec8',
+'1/144/16710407/16710407_013_3144',
+'1/144/16710407/16710407_014_3cbf',
+'1/144/16710407/16710407_015_9772',
+'1/144/46832067/46832067_004_0eb7',
+'1/144/46832067/46832067_005_e1ea',
+'1/144/46832067/46832067_012_1e48',
+'1/144/46832067/46832067_013_a50a',
+'1/144/46832067/46832067_014_a50a',
+'1/144/46832067/46832067_015_2796',
+'1/144/72295150/72295150_011_93d3',
+'1/144/72295150/72295150_014_8576',
+'1/144/72295150/72295150_015_8576',
+'7/246/59704483/59704483_094_ad04',
+'7/246/59704483/59704483_104_30eb',
+'7/246/59704483/59704483_118_becd',
+'7/246/59704483/59704483_155_f1c8',
+'7/246/59704483/59704483_163_113f',
+'7/246/59704483/59704483_177_aa14',
+'7/246/59704483/59704483_189_3304',
+'7/246/59704483/59704483_200_86b0',
+'7/246/59704483/59704483_204_8bde',
+'7/241/73012250/73012250_107_bd1c',
+'7/241/73012250/73012250_116_aa3e',
+'7/241/73012250/73012250_132_9f09',
+'7/241/73012250/73012250_209_ba75',
+'7/241/73012250/73012250_227_693c',
+'1/144/13964923/13964923_011_a0a3',
+'1/144/13964923/13964923_012_8ac8',
+'1/144/13964923/13964923_013_6318',
+'1/144/13964923/13964923_014_0a55',
+'1/144/13964923/13964923_015_7429',
+'7/241/72167127/72167127_198_620c',
+'7/241/72167127/72167127_221_833a',
+'7/241/72167127/72167127_237_04ff',
+'7/241/72167127/72167127_250_aff5',
+'7/241/72167127/72167127_273_8c4a',
+'7/241/72167127/72167127_280_70d7',
+'7/241/72167127/72167127_283_3dbc',
+'7/241/72167127/72167127_292_4e1d',
+'7/241/72167127/72167127_317_5dbd',
+'',
+];
+lineHeader = '<img src="https://cdni.pornpics.com/1280/'
+lineTail = '.jpg">'
+showRange = 74
+bookid = "angela+salvagno"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<base target="_blank"><html><head><title>geileperleBatch: 116</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">geileperleBatch: 116</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/nice-16109907</k>',
+'NGM1Y2M4ZmMzOWM1NGU5YTU1MzFkNDJjMTJmYzY5MWE/jpeg/000/515/550/955',
+'N2FhOWJlNjhjYjY1MDI3YjBmYmZiZmE3NWFkYzk1NWI/jpeg/000/515/550/954',
+'MDIwM2U4YmI4NWNlODE5M2EyNTQxOWIyNWNmODFmMjk/jpeg/000/515/550/953',
+'ODgzODdiNjYwMGMwYzJlYTkzZWZlOGQwZWI2YTgwOTA/jpeg/000/515/550/952',
+'MjI2ZGNlODNhOWZlMGU3NDE5MTU3OGY2Y2ZiNWI5MzU/jpeg/000/515/550/951',
+'ZmQ2NDJlMzQ4MDE3YzhhYjRmYmEyOGEwNDM4OTZlOWI/jpeg/000/515/550/950',
+'YWJjMDQ3MGNlMDhmMmIxMTU2ZGVlMDc0NjIzY2U0ZjM/jpeg/000/515/550/949',
+'Y2Y0MTA5YmFhMmI3ZDJiNGFkOGY5ZWE5M2E2OGExMzc/jpeg/000/515/550/948',
+'ZjY4NDUxOTcxMWNiY2EwOTYwZWUzNDI5ZTc2MTEyMWE/jpeg/000/515/550/947',
+'<k>https://xhamster.com/photos/gallery/hot-and-sexy-16142081</k>',
+'ODRmZWViNWNlOWY4OWQ5YTY1MDIzMDRkYzBhMWFlMjE/jpeg/000/516/009/242',
+'ZjA5N2I2Nzc5MjI2NjI5ODE1OWY5ZTNiNmViYmE5Mjc/jpeg/000/516/009/241',
+'YmM1NmMyNjJiZWFkN2Q0MTg0ZDkxNjUyNzQwZWUyZGE/jpeg/000/516/009/240',
+'ZGU0YjU3YzM5OWQxOWE4MzI0NmI3OWM3ZTEyY2Y5ODM/jpeg/000/516/009/238',
+'NjdmNzlkZGEzNzcyZGFmYTA0OTFhZTI1NzI3YWJmNTk/jpeg/000/516/009/239',
+'MGEyOGIyY2FmMzgyNjhhMzRkYzdiOWIzNTE3OWQyZmI/jpeg/000/516/009/266',
+'YzRlY2E0YTRiOGUzNGQyYmY4NDczM2YwMDljMzEzZmI/jpeg/000/516/009/237',
+'Y2ZmNDJhNjFkZGMzYjgyMzVlZTI4ZTRmNzgzODMyYzg/jpeg/000/516/009/236',
+'NDY1MmUxMzk1NjE1YjNjYjZlZDdhYWU1MjY0ZTVjNGQ/jpeg/000/516/009/255',
+'NTdlNGM4ZmU1MDk3YzQxNTJmNzQ5YTY1MGYyMjkwZTc/jpeg/000/516/009/251',
+'ZGM1NTM3Y2RiYjc5MWJkNjRiYWRmNTk2YzRlOGIwZDQ/jpeg/000/516/009/250',
+'ZjI2ZmIyZWFjYWNlMGY2OGRmNjVmYzQ5NmFjMTQzZjg/jpeg/000/516/009/254',
+'YWIyODM0N2FhZDgxMDBhM2RmZTI5NzIyNWQzMjFjODM/jpeg/000/516/009/253',
+'ZmZkY2FlNzk4OGM5MzQ4N2I0M2VhZjkxZGM0MmJhMTQ/jpeg/000/516/009/252',
+'YTYxY2E2OWYwZmRjOTA0MWNlOWEyZGU4MDFmNjMzZjA/jpeg/000/516/009/235',
+'NzA3Y2E4ZmRiNDBmZTM2NDZlOGI4ZWNmYmIxNTk4NjE/jpeg/000/516/009/234',
+'NDQ2NzdmNjRlZmQ5ZjZjMTNlNjA4ZjJiMjBhNGUzZWU/jpeg/000/516/009/233',
+'NzU2MWFiM2RmYTZkMjhlMzEyNWVlMmEyOWNkODYwMzk/jpeg/000/516/009/232',
+'YzdjMmE0YzkyMGU4NGQ3NDcxOTc2NzhjYThkZDI3OTY/jpeg/000/516/009/231',
+'MmRhMTU3MDE4MmUzZDE2MTllNTBmYjQ5YWM2N2ZhNzg/jpeg/000/516/009/230',
+'ZDRhMTdmZTFmZmYxYTYxNmNiMjA2NjAxNTg0ZjA2OTY/jpeg/000/516/009/229',
+'YjgyNjE3NGY3NGJmOWMwZWI5ZDRlYjg4N2U0ZjRhZmM/jpeg/000/516/009/228',
+'ZGQxODI0MDg5ZTI0ZDM1NTcwZDJhYWM4MjUxMzc2N2U/jpeg/000/516/009/265',
+'Y2VkNTlmZjNlNmU3NzczZjg1NGQ4OWNhNWMyODE2Zjg/jpeg/000/516/009/227',
+'Y2YwYTdjYzVhZTQ2ZTUyZTM2NTE3YjBkZWI3ZTNkYjE/jpeg/000/516/009/264',
+'MzZmMGEwN2FlNjdhYWIyMjdhMmEzOTBlYTEyM2M5ODU/jpeg/000/516/009/226',
+'MDFmOWI5Y2I3MzEyZTk4OGYxZDk3Y2E3Nzg2MTAxOWI/jpeg/000/516/009/263',
+'MmRlMTkxN2QxN2YxZWY0NjZkYzc4ZmYwOTViNzA5ZmM/jpeg/000/516/009/225',
+'ZmQyMTc5ZmI4ZGFmYmE1ZDdhNjQ4YmJkYTY2ZGMxNzQ/jpeg/000/516/009/262',
+'YTFiODk2YjMwNjJlZDFmNWY1NTQzMWNkNzAzZjhkMDQ/jpeg/000/516/009/261',
+'NWEzMjJiZDBiZTY4ZjcyZGUwNWY3YzRlYjZlMTc2NzE/jpeg/000/516/009/224',
+'NjFkY2U3MmNhZDZlODI1NTJjMDI1ZDAxOGNmNjNiODk/jpeg/000/516/009/260',
+'M2YxOTcwOWIxYzUzNmY0ZTcyOTE1YjkzYTI0Zjk3YTg/jpeg/000/516/009/259',
+'MTY2MDA0MTc2M2M3MWM5MTNlMTRmMzUwNGVmNWZmZDA/jpeg/000/516/009/223',
+'ZjZjZDk2NDIyZmJlMjljMjk3MWMyNTc0YmExMTNjNGU/jpeg/000/516/009/258',
+'MzQ3NGI2OTE1NzY0YmZiOTU1YmE2MDkzMzUyNmJkZjA/jpeg/000/516/009/257',
+'NzY2YTVjZjA2ZTE3NzE3YmVkZTYzMzMwZDJkNGYzZDc/jpeg/000/516/009/222',
+'YjRlODlkZjg3MmJkNWFmODVmMzdjNWZlNzE3NjVhZDU/jpeg/000/516/009/221',
+'NWZhZmE5ZGNhZDEyOWRjMWQzZGNjMzRlOGViYmMwNmE/jpeg/000/516/009/220',
+'MDExZDkyZDI0OTc4NWI4YWRiOTEzMzllZDlkM2QwNWU/jpeg/000/516/009/219',
+'YTA5YmIyMTI5NzJhY2ExYTdiYjc4MWE5ZjNiZTIyMjY/jpeg/000/516/009/218',
+'NjkzMDc0YTI5ZTZkODhmOGNiNDA2ZGE4ZmQ2NTQ3YzE/jpeg/000/516/009/217',
+'YzJiNzJiMGI0NGVjM2VlZmMwOGMwODc0MTg5NTZiNzk/jpeg/000/516/009/216',
+'ZjE1YzU5NzFkODA4MjQ1NDQxNGJkODcxMTBmODNjNGQ/jpeg/000/516/009/215',
+'<k>https://xhamster.com/photos/gallery/took-out-the-dildo-again-16143710</k>',
+'Y2M5NTI2M2ViNzRiMjljZjBjZmYzYTg2NWI3MWUzZDU/jpeg/000/516/027/748',
+'NzBlNGM0NzFkYmU3Zjg3MTYzOGQ1ZWQzNzA2YTM3ZTg/jpeg/000/516/027/747',
+'MTRkNzhhZDA4MDM2MzkwOWIxN2RlNWIwNGRmMmM2NzA/jpeg/000/516/027/746',
+'ODc5OTY3YjUxNmUxYTExYjI1ZDE0NWUyMjQ2ZmEwNWI/jpeg/000/516/027/745',
+'NzU3OWE5MDE3ODJlYzhhMzZmN2I1Zjc0ZWQyYjQwYzA/jpeg/000/516/027/762',
+'NTllNDk2ZmQ0NzVhYTk3MzQ5YWNkYjliMGEzN2E4OTM/jpeg/000/516/027/761',
+'NjFiZjA3NTYzMzg4NjdlZDM0Mzg3OGFlMTA4YzRkNDU/jpeg/000/516/027/760',
+'NWFmZGU1NjRiNTAzZGQxNGRmNjM0YjcwNzgwNGZlNTE/jpeg/000/516/027/759',
+'OTA5MTAzOTlkYTg0NzhmMmM5N2U2ODRhYTRlZjJlNmU/jpeg/000/516/027/758',
+'YjVlY2VlMWU0ZjlkMzhjNWVjN2JiYWEwZTQ5N2U3Zjc/jpeg/000/516/027/757',
+'MzcyYWFjZmMwZWQxMjgzODgyMGVjM2NjZmU4ZGQwNzM/jpeg/000/516/027/756',
+'Y2FkMTBjYWM4ZGFhNjM3ODNlNDA3NWJkYTAyMDNkNDQ/jpeg/000/516/027/755',
+'NDI1YTIxODBiNjJhY2E2MGExMTE3NjRmM2MwZjNiNmE/jpeg/000/516/027/744',
+'MWRjYTIzNzI3MzQ4NTZiOTA5MjBmZTVkY2IyODM3OTE/jpeg/000/516/027/743',
+'MGZlYzAwMThkOTY1NzU5M2JhN2M1MWVkYjhlODhjMmI/jpeg/000/516/027/742',
+'NDlhZDYyYjAwNjljOGIzNTVjMDE2ZmIxNjM1OWI0Zjg/jpeg/000/516/027/741',
+'MzY5YmIyZmI1Y2Q2NmRkODhkNGIyNGEwZjc4MzVmNzM/jpeg/000/516/027/754',
+'NjZjNjFiZDU2ZjM2NDY4YWUwMzI5MjAyMDliMzM0NWQ/jpeg/000/516/027/740',
+'MWE4NWRlMjMwNTQ1YTExYmRiYjI2NzIwMzE5YzZkYTA/jpeg/000/516/027/753',
+'M2I1MTg4YWE1OTkyOGIyMDg1NDEwMWNkMTA0NTExOTg/jpeg/000/516/027/752',
+'ZGNjNTcyY2U4Y2UyNDczYzdmOGU4NzZhZDBlOTA0ODA/jpeg/000/516/027/751',
+'ZGY2YWFjZDk5NGNhNjFiZWNlYjk3YmEzMDgzZGQxYzA/jpeg/000/516/027/750',
+'OTljNWY1M2E1MmQ1ZjFhM2M1NDY0MTAyYjcwNGQ0Nzg/jpeg/000/516/027/749',
+'<k>https://xhamster.com/photos/gallery/me-myself-ans-i-16133754</k>',
+'NTkyNzY4NmUwODBmN2EzZTkxODYyZmFiYjYzMDNlZWE/jpeg/000/515/880/921',
+'ZWUzNGI0YjIyYzgwOGVlMTcwZDRmMzRlZjgzOTIyYTE/jpeg/000/515/880/915',
+'NGYwZjk0ZmNmZmVjMzA2MWEwOTZkNTE3M2Q2NmRmNWE/jpeg/000/515/880/914',
+'OGQyNmQ4MGU4MTFkYWU4NGVlY2FmMzJhZmFhMWU4YWI/jpeg/000/515/880/913',
+'ZWI1ZjE4M2M1YzUwOTM4NDBkMjY3MTNjODA0MzA5YjI/jpeg/000/515/880/912',
+'MWYzYmJjZjQ0MGMxYWJhZjQ4MDBlYjgzMjJhNWRiY2M/jpeg/000/515/880/911',
+'NGNjZjg0Njk4N2JkYzlmMjRhMjJkZjlkMjZjZDg2MDA/jpeg/000/515/880/920',
+'ZWQyZjU3NzllNjgwNTU5NjU5YjRkZTc1NDAzYjgwNWM/jpeg/000/515/880/919',
+'OGJlYTg3NDAxZWQ1ZmU2ZDEwYjYyZTkxODcxMjViM2Q/jpeg/000/515/880/918',
+'MDMxNDc3ZTIxOGQ0YWExZjhhMWQ3YmZmZDA1YzY0M2U/jpeg/000/515/880/868',
+'NmRiNTRlOWMxNDkxYjhiNDU1MjJjYzQyZmY4YTY5NGM/jpeg/000/515/880/867',
+'MzhjZmZiZGY2NGRmMWRhZDIxOTFlZmE2ZGVmMTdjZGY/jpeg/000/515/880/917',
+'OGJmMzE5N2Q1YjYyYTlkOWE2MDAyYzY4MmJjNjNhMTI/jpeg/000/515/880/866',
+'MWMyMDBlNTA1MTczOWViM2UwMGU5NmY2ZDY3Nzk0MjI/jpeg/000/515/880/865',
+'NGVjOWFiOWI1YzM2MmVmZDAyNzk1ZjdjOWYwY2NjMjQ/jpeg/000/515/880/864',
+'NDZmMmUwYjQzZGNmM2IxYmU3ZDcwOTAwYzk0NzNkZTI/jpeg/000/515/880/916',
+'NzY3MDc4ZTQ4ZDRiZTRkZWUyMjExNDNlMWUzODU0NzE/jpeg/000/515/880/845',
+'ODQ1Mjg5MWQ3NDY0ZjYzNTMyN2NlZGRmZjFiNTE3NWU/jpeg/000/515/880/841',
+'M2UwODIzNTVlNWI3Y2VjOGE2ZDg2ZGU5MDhkZmYxYTA/jpeg/000/515/880/839',
+'ODdkZjUzNmNmMzA2ZDBhNTczZGJjN2Q5ZjI1MzVkYWE/jpeg/000/515/880/835',
+'NWEwZDliMjVjMGVlMTA2ZDBkMmU4ODJhMDFkNDk2MGU/jpeg/000/515/880/863',
+'OGYwN2I1MTZmODNmZjQ1ZmU4NjI2ODUzZDMyMWQwZmQ/jpeg/000/515/880/870',
+'<k>https://xhamster.com/photos/gallery/nippel-kette-16065865</k>',
+'MDNkZWViNzEwNjRiNmQzMjBjMDdmYWJiY2EyZjMwZjI/jpeg/000/514/978/685',
+'Y2QxYzc1MGYyOGE0N2FhMTEzNGFiY2U4M2UzMzMwNmU/jpeg/000/514/978/684',
+'OWIzMGRlZGM0YjNkYjIyM2I2ZWU2NTIwYzlmODJjZjk/jpeg/000/514/978/683',
+'YWU0ZWZmYWQ2MDUzZjJkY2M0Mjc4NjIzZjVlZjZhOWY/jpeg/000/514/978/682',
+'ZGRlYTQ0Y2RmMTMyOTFjZTA1M2UwOThjMzczYWUxMjQ/jpeg/000/514/978/681',
+'YjQ1YWJkM2M0OGQ3YjBkMTAyN2NkZTZjYzNmODU5ZTE/jpeg/000/514/978/680',
+'MDFlODYwMjU4NGRmNjY1MjhhMjUzYTA2ZTc5ZjhjMWU/jpeg/000/514/978/679',
+'ZjQwYzY5MDg4ZDQzMTRhOGYxOTg1ZWQ4NDhlMmNhYzU/jpeg/000/514/978/678',
+'NzIzNGVmZTY5MDkwYWRjMmI2MmJjYjU0MmU3M2NmMTE/jpeg/000/514/978/677',
+'ZDU2NmY4MjczYjE1NjVkM2FlYjU1NTc5NDllNmI1ZGQ/jpeg/000/514/978/676',
+'MGYzZWRmMDA2YTJiMzY4ZjQxMzcyYTk4Y2Q1N2JlMDg/jpeg/000/514/978/675',
+'OTJiYjA4OWNiYWU2NzljOWJjM2JhNDM4YjNhOWJhODU/jpeg/000/514/978/674',
+'MDA5OTU0ZmI2ZTU1NDEyMjkyNzM5NTAxY2JhOGFkZmE/jpeg/000/514/978/673',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "geileperleBatch: 116"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

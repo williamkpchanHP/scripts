@@ -1,0 +1,74 @@
+<base target="_blank"><html><head><title>redroserus</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/theres-a-hot-lady-on-the-road-16182403"><img src="https://ic-ph-nss.xhcdn.com/a/YjBhOGFlOTgxOWVhZTRmMDYwYTk1ODU1NmUxYzNmNjg/jpeg/000/516/478/986_450.jpg"><br>There&#039;s a hot lady on the road</a> 9',
+'<a href="https://xhamster.com/photos/gallery/summer-outfits-16182396"><img src="https://ic-ph-nss.xhcdn.com/a/MTNkMDA2ZWViZjZmM2I2MWM2ZDdjNjQwNjQ0ODVkOTQ/jpeg/000/516/478/883_450.jpg"><br>Summer outfits</a> 8',
+'<a href="https://xhamster.com/photos/gallery/my-leather-leggings-16092610"><img src="https://ic-ph-nss.xhcdn.com/a/YmNhY2E3N2IyYTg2ZDI3ZTdiMWJmM2M4YWJiYjUzMjI/jpeg/000/515/325/112_450.jpg"><br>My leather leggings</a> 8',
+'<a href="https://xhamster.com/photos/gallery/in-hotel-15989935"><img src="https://ic-ph-nss.xhcdn.com/a/NTUyYzY5ZTk1YmY2ZTY1ZTdjZTU2OTlkZWQ0ZmI0ZDk/jpeg/000/513/900/981_450.jpg"><br>In hotel</a> 8',
+'<a href="https://xhamster.com/photos/gallery/big-ass-in-a-bikini-street-15906850"><img src="https://ic-ph-nss.xhcdn.com/a/N2FhNmVlYzIxNDE1OTAwZTYyYWM1YjdmZjJkYTdlNDk/jpeg/000/512/285/833_450.jpg"><br>Big ass in a bikini  street</a> 7',
+'<a href="https://xhamster.com/photos/gallery/my-beach-15800250"><img src="https://ic-ph-nss.xhcdn.com/a/OTM3ZDg0NDNiOGEwYzIzMTY3MGY1NGY1NGI1YzgxZTA/jpeg/000/502/504/643_450.jpg"><br>My Beach</a> 6',
+'<a href="https://xhamster.com/photos/gallery/beach-hot-blonde-15927519"><img src="https://ic-ph-nss.xhcdn.com/a/ZjNiNWQ3OWZjODQ5ZGQyMGY3Yjg4MjY2ZTM5MjY3MjM/jpeg/000/512/748/230_450.jpg"><br>Beach hot blonde</a> 6',
+'<a href="https://xhamster.com/photos/gallery/sexy-legs-in-stockings-in-the-gym-15802564"><img src="https://ic-ph-nss.xhcdn.com/a/ODI1NGU4MjFhNDRhMTMxYTA3OTRjMjBjMWVmODIwM2U/jpeg/000/503/737/208_450.jpg"><br>Sexy legs in stockings in the gym</a> 5',
+'<a href="https://xhamster.com/photos/gallery/my-ass-in-black-pantyhose-in-nature-15802125"><img src="https://ic-ph-nss.xhcdn.com/a/YmIyOTkxNjBjMTAxY2M2M2RlNTVlZTI1ZTA0YTMyZjU/jpeg/000/503/648/325_450.jpg"><br>my ass in black pantyhose in nature</a> 45',
+'<a href="https://xhamster.com/photos/gallery/hot-babe-at-home-15802395"><img src="https://ic-ph-nss.xhcdn.com/a/YzRkMWY5NmY3MWUzNjc0MmI1MDcxNTdiZmUyYWRkNGI/jpeg/000/506/701/521_450.jpg"><br>Hot babe at home</a> 45',
+'<a href="https://xhamster.com/photos/gallery/stockings-and-pantyhose-heels-15953848"><img src="https://ic-ph-nss.xhcdn.com/a/ZWJhNWUwYjg1ODZmNTVlMjAyYWRmNzIwMzZiNzBkNDc/jpeg/000/513/311/621_450.jpg"><br>Stockings and pantyhose heels</a> 28',
+'<a href="https://xhamster.com/photos/gallery/nylon-public-15802160"><img src="https://ic-ph-nss.xhcdn.com/a/MTBmNzI2YWQ3NzViYzVkNTU3NjlhOWM5OWFhYjNhOWU/jpeg/000/505/082/371_450.jpg"><br>Nylon public</a> 25',
+'<a href="https://xhamster.com/photos/gallery/leggings-16115800"><img src="https://ic-ph-nss.xhcdn.com/a/NTlkZDZiZDQxY2Q2MzhjZTQ2OGMwZmNmMjY3ZDUyN2U/jpeg/000/515/625/497_450.jpg"><br>Leggings</a> 25',
+'<a href="https://xhamster.com/photos/gallery/new-year-15974049"><img src="https://ic-ph-nss.xhcdn.com/a/MzVmMjZiY2UyY2QzY2U4NzMxMzIzNmNkNmRhZmI5NzM/jpeg/000/513/664/513_450.jpg"><br>New Year</a> 18',
+'<a href="https://xhamster.com/photos/gallery/hot-snow-maiden-16102082"><img src="https://ic-ph-nss.xhcdn.com/a/NDg2MTk4N2ZjNjczOTdjYjY0MDUzM2ZkY2MyOTJmMTA/jpeg/000/515/446/068_450.jpg"><br>Hot Snow Maiden</a> 16',
+'<a href="https://xhamster.com/photos/gallery/hot-milf-at-christmas-16096807"><img src="https://ic-ph-nss.xhcdn.com/a/Njg1MDYxMTAwYjRkNjg3MGViNDJiMjkyMDllMGVkMzU/jpeg/000/515/382/221_450.jpg"><br>Hot MILF At Christmas</a> 16',
+'<a href="https://xhamster.com/photos/gallery/fishnet-nylon-15800499"><img src="https://ic-ph-nss.xhcdn.com/a/MDJmOWY1YzlkMjhmNTFiZmUwNTNjZWM3ODJiNGRiMjI/jpeg/000/502/633/370_450.jpg"><br>Fishnet nylon</a> 14',
+'<a href="https://xhamster.com/photos/gallery/leather-shorts-16183904"><img src="https://ic-ph-nss.xhcdn.com/a/MWRmZTRjM2Q1ZWNkNzFkZWU5ZjJkNGVlODdkN2YwNDI/jpeg/000/516/496/344_450.jpg"><br>Leather Shorts</a> 13',
+'<a href="https://xhamster.com/photos/gallery/leggings-15892867"><img src="https://ic-ph-nss.xhcdn.com/a/OTEwMDg5ZGNiN2I0M2IxM2YzNTRhYmMzNDZmMTMzZDI/jpeg/000/511/969/911_450.jpg"><br>Leggings</a> 12',
+'<a href="https://xhamster.com/photos/gallery/new-years-milf-16100228"><img src="https://ic-ph-nss.xhcdn.com/a/ZTlmZDhjYTIzNTEwZjRiNWY4NTAyODZhYTc0MWFkZGE/jpeg/000/515/421/244_450.jpg"><br>New Year&#039;s milf</a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "redroserus"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

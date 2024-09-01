@@ -1,0 +1,76 @@
+<base target="_blank"><html><head><title>handyfeather2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/tits-16012287"><img src="https://ic-ph-nss.xhcdn.com/a/MGJhOTU5YTM4NDU3MWU1MDQ3ZWM1MmE1YzBiZjIxNDM/jpeg/000/514/234/028_450.jpg"><br>Tits</a> 8',
+'<a href="https://xhamster.com/photos/gallery/tits-16001804"><img src="https://ic-ph-nss.xhcdn.com/a/MDE3M2RhYWIyYWM4ZTQzYTlkY2MxNTBiYTYyZjI1ZTY/jpeg/000/514/085/424_450.jpg"><br>Tits</a> 8',
+'<a href="https://xhamster.com/photos/gallery/vibe-play-16010915"><img src="https://ic-ph-nss.xhcdn.com/a/NzJkNjMwNjhlMDVjY2M1ODg4MTY4OTVmYmI2N2I1ZTE/jpeg/000/514/215/489_450.jpg"><br>Vibe play</a> 5',
+'<a href="https://xhamster.com/photos/gallery/titty-16005483"><img src="https://ic-ph-nss.xhcdn.com/a/ZmE2NGFjNDQxNDkxODFlNDhhYzdiNDhhZmY3YjYwN2U/jpeg/000/514/137/936_450.jpg"><br>Titty</a> 5',
+'<a href="https://xhamster.com/photos/gallery/tits-16037590"><img src="https://ic-ph-nss.xhcdn.com/a/MDExMDFlYzIwMDBhY2RjOWRiMDlmNGNhZGJjNjQ4Mzc/jpeg/000/514/578/402_450.jpg"><br>Tits</a> 5',
+'<a href="https://xhamster.com/photos/gallery/pussy-16001811"><img src="https://ic-ph-nss.xhcdn.com/a/NTMzMDNjZjkwNmRlZTYwZmI1Mzk3NThhYTY3NjQ3NDM/jpeg/000/514/085/471_450.jpg"><br>Pussy</a> 5',
+'<a href="https://xhamster.com/photos/gallery/puffy-pussy-16019592"><img src="https://ic-ph-nss.xhcdn.com/a/NzU0NWRkZjA3NzQzZGNiZTU4Zjk2YjBlYTBjMWRlNDQ/jpeg/000/514/336/674_450.jpg"><br>Puffy pussy</a> 5',
+'<a href="https://xhamster.com/photos/gallery/mmmm-lick-my-fingers-16057530"><img src="https://ic-ph-nss.xhcdn.com/a/NDBjZGI1YTNiOTI2NDBjZDdjM2ZkNmRmZTFhZTI1NjE/jpeg/000/514/866/226_450.jpg"><br>Mmmm lick my fingers</a> 5',
+'<a href="https://xhamster.com/photos/gallery/mmmm-horny-16010914"><img src="https://ic-ph-nss.xhcdn.com/a/YjhmOGIyOTVlYmE1OTIyOWNlMzkzMTA1ZGZjNjU4N2M/jpeg/000/514/215/477_450.jpg"><br>Mmmm horny</a> 5',
+'<a href="https://xhamster.com/photos/gallery/hotel-fun-16045762"><img src="https://ic-ph-nss.xhcdn.com/a/ZWRiODU1MDZiOGU0NDk4NThlYWNjZGMyMWFiNDg0OTM/jpeg/000/514/694/242_450.jpg"><br>Hotel fun</a> 5',
+'<a href="https://xhamster.com/photos/gallery/touch-me-16014845"><img src="https://ic-ph-nss.xhcdn.com/a/ODczOTJmYmU5YmI5NjljNTU5Yjk1MGRhYjM3MzZkMzk/jpeg/000/514/267/695_450.jpg"><br>Touch me</a> 4',
+'<a href="https://xhamster.com/photos/gallery/lil-peek-16073498"><img src="https://ic-ph-nss.xhcdn.com/a/Nzk4MmYxMzRkZmY1NzY4NGZlMTMwYjQ1MmQ3ODA3Mzk/jpeg/000/515/068/644_450.jpg"><br>Lil peek</a> 4',
+'<a href="https://xhamster.com/photos/gallery/alone-in-a-hotel-16110372"><img src="https://ic-ph-nss.xhcdn.com/a/Yzc0Mjk5ZTgxN2RjOTNjMTkyZTIzMTdjZTQwZDA5Mjg/jpeg/000/515/555/988_450.jpg"><br>Alone in a hotel</a> 4',
+'<a href="https://xhamster.com/photos/gallery/tits-16014851"><img src="https://ic-ph-nss.xhcdn.com/a/Nzk3MGNkMGUwYzFiMDBiNjk1ZGNiYTgyM2M5YjkxMDM/jpeg/000/514/267/757_450.jpg"><br>Tits</a> 3',
+'<a href="https://xhamster.com/photos/gallery/you-know-you-want-to-touch-16071032"><img src="https://ic-ph-nss.xhcdn.com/a/Y2Y0YWY4MzMzMGNhOWE5YzI1ZTAwZDBkZTMzMWRjYTk/jpeg/000/515/039/874_450.jpg"><br>You know you want to touch</a> 2',
+'<a href="https://xhamster.com/photos/gallery/put-your-tongue-here-16004089"><img src="https://ic-ph-nss.xhcdn.com/a/ZTYzMmNkYWM4Y2RlNmE0MGQwMmJlYzQzMTg3NGJhMWE/jpeg/000/514/118/415_450.jpg"><br>Put your tongue here</a> 2',
+'<a href="https://xhamster.com/photos/gallery/moi-16127697"><img src="https://ic-ph-nss.xhcdn.com/a/YTAwZTdjMzc1ZTM3NjFhNDM0ZmM4MjA0NTk5NmJhZGE/jpeg/000/515/780/096_450.jpg"><br>Moi</a> 2',
+'<a href="https://xhamster.com/photos/gallery/tits-and-ass-16001432"><img src="https://ic-ph-nss.xhcdn.com/a/ZGJjYzM3NWFjYzE5MTZkODI3NjUxNTYxZjBiMTYyYjE/jpeg/000/514/081/322_450.jpg"><br>Tits and ass</a> 10',
+'<a href="https://xhamster.com/photos/gallery/my-tits-wanna-suck-16057531"><img src="https://ic-ph-nss.xhcdn.com/a/ZjAwNmQ2ZTI0NGRjNWE4ZTU1NGZkOGVmYWRlYzA0ODI/jpeg/000/514/866/230_450.jpg"><br>My tits - wanna suck?</a> 1',
+'<a href="https://xhamster.com/photos/gallery/mmm-tits-16071031"><img src="https://ic-ph-nss.xhcdn.com/a/NjMwZjM0YWQwN2ZmZmU5NjJiYTc4ODY4ZjRlYjEzMDc/jpeg/000/515/039/784_450.jpg"><br>Mmm tits</a> 1',
+'<a href="https://xhamster.com/photos/gallery/it-s-late-16019584"><img src="https://ic-ph-nss.xhcdn.com/a/Mjc0ZTZjYjIzNTA1YmYwMDE3YTY0M2MyODYyOGViNjA/jpeg/000/514/336/584_450.jpg"><br>It’s late</a> 1',
+'<a href="https://xhamster.com/photos/gallery/boobs-16004086"><img src="https://ic-ph-nss.xhcdn.com/a/ZjE4ODMxYWU4OWM3YTdkYjE3YTI2MjdjMDQ3NGVkNWY/jpeg/000/514/118/391_450.jpg"><br>Boobs</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "handyfeather2"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

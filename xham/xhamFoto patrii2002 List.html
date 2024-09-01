@@ -1,0 +1,75 @@
+<base target="_blank"><html><head><title>patrii2002</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/young-18-year-old-pussy-rolled-and-very-wet-with-vaginal-16080215"><img src="https://ic-ph-nss.xhcdn.com/a/MmM1ZDZlN2JmOGY4YjFmOTMzM2I5ZDg3YTQ5MTdlZDg/jpeg/000/515/158/965_450.jpg"><br>Young 18 year old pussy rolled and very wet with vaginal</a> 9',
+'<a href="https://xhamster.com/photos/gallery/young-18-university-real-pink-pussy-slave-tight-vagina-16094888"><img src="https://ic-ph-nss.xhcdn.com/a/MzNkNzZkNTJhODg3ZWEzZjNmMzIwYTU1NDk2YzRhNjY/jpeg/000/515/351/602_450.jpg"><br>Young 18 university real pink pussy slave tight vagina </a> 9',
+'<a href="https://xhamster.com/photos/gallery/patrii2002-fuckme-red-panties-masturbation-spanish-girl-16082376"><img src="https://ic-ph-nss.xhcdn.com/a/OGM4NzE4MWQxY2MyMDI3N2M1YTVmOGNlZjM1MjdkMDk/jpeg/000/515/186/884_450.jpg"><br>Patrii2002! FuckMe! - Red panties masturbation spanish girl</a> 9',
+'<a href="https://xhamster.com/photos/gallery/patrii2002-fuckme-18-year-old-girl-anal-fucked-by-her-stepfather-16070896"><img src="https://ic-ph-nss.xhcdn.com/a/NzVhM2ZhNjY0ZjRkMzQ4MjNhNWJlMTg2MjE2MjVlZTU/jpeg/000/515/037/836_450.jpg"><br>Patrii2002!FuckMe 18 year old girl anal fucked by her stepfather</a> 9',
+'<a href="https://xhamster.com/photos/gallery/patrii2002-18-years-old-masturbation-until-female-orgasm-16072060"><img src="https://ic-ph-nss.xhcdn.com/a/MTkwMDFmN2U1YzRjZTIzYjQ0N2U1MTRmY2NjMWM4YTg/jpeg/000/515/051/634_450.jpg"><br> Patrii2002 18 years old masturbation until female orgasm</a> 9',
+'<a href="https://xhamster.com/photos/gallery/i-get-naked-and-masturbate-while-my-pants-are-stained-with-16077092"><img src="https://ic-ph-nss.xhcdn.com/a/MTk0NDBjZDM1YWM0ZDY0M2M0NjE2NmJlMWVmM2FjMDQ/jpeg/000/515/116/696_450.jpg"><br>I get naked and masturbate while my pants are stained with </a> 9',
+'<a href="https://xhamster.com/photos/gallery/18-year-old-girl-masturbates-until-she-cums-with-panties-on-16080303"><img src="https://ic-ph-nss.xhcdn.com/a/ZDAxMzdiNmM5ZWVhYzYwY2Y2YTRkNTFkMWRlNzk0OTA/jpeg/000/515/159/854_450.jpg"><br>18 year old girl masturbates until she cums with panties on</a> 9',
+'<a href="https://xhamster.com/photos/gallery/18-virgin-pussy-16098223"><img src="https://ic-ph-nss.xhcdn.com/a/M2E0MzYzYWY4YWJlZDNhMTAxYjA4OWQ0MjIzNWQzZmE/jpeg/000/515/398/372_450.jpg"><br>18 virgin pussy <U+0001F633></a> 9',
+'<a href="https://xhamster.com/photos/gallery/patrii2002-fuckme-spanish-18-years-v-pinkpussy-homework-16092449"><img src="https://ic-ph-nss.xhcdn.com/a/ZmRmNDI5MjNiYzYyNWRhODIzNGU2NDhlZTk1OWQ0NzY/jpeg/000/515/322/785_450.jpg"><br>Patrii2002! FuckMe! - Spanish 18 years v pinkpussy homework </a> 8',
+'<a href="https://xhamster.com/photos/gallery/universitary-girl-makes-a-video-masturbating-for-her-teacher-16087915"><img src="https://ic-ph-nss.xhcdn.com/a/ODJlNTk0ZDQzNjZjOTVmMTE1ZTc1ZDU0ZjFjM2VjNjA/jpeg/000/515/267/436_450.jpg"><br>Universitary girl makes a video masturbating for her teacher</a> 6',
+'<a href="https://xhamster.com/photos/gallery/patrii2002-spanish-young-girl-18-moaning-and-abundant-cumsh-16074640"><img src="https://ic-ph-nss.xhcdn.com/a/MTg1YmJiZDNjYmQzN2UxMjc4ZTQ1OTAyMDQ3YzliNzY/jpeg/000/515/084/824_450.jpg"><br>Patrii2002! Spanish young girl 18 moaning and abundant cumsh</a> 6',
+'<a href="https://xhamster.com/photos/gallery/i-get-cum-inside-my-pussy-female-orgasm-18-spanish-girl-teen-16079340"><img src="https://ic-ph-nss.xhcdn.com/a/ZTcyMmVlNTgyNzVkMzcyM2Y5ODJiMTllZTMxMmE0MGM/jpeg/000/515/142/108_450.jpg"><br>I get cum inside my pussy female orgasm 18 Spanish girl teen</a> 6',
+'<a href="https://xhamster.com/photos/gallery/girl-18-years-old-pink-pussy-female-masturbate-16068663"><img src="https://ic-ph-nss.xhcdn.com/a/MDY1YjYwNTRjNTRlNWNiMTljZmVhNTJiOTVlNTIzNzM/jpeg/000/515/012/274_450.jpg"><br>girl 18 years old pink pussy female masturbate</a> 6',
+'<a href="https://xhamster.com/photos/gallery/female-orgasm-young-woman-tattoos-spanish-18-years-old-16089011"><img src="https://ic-ph-nss.xhcdn.com/a/Yzc2Y2IwZGJhMTBmNjVlNDBkMzdkNjcyZDYwNTZkMTM/jpeg/000/515/279/379_450.jpg"><br>female orgasm, young woman, tattoos, Spanish, 18 years old, </a> 6',
+'<a href="https://xhamster.com/photos/gallery/spanish-18-cute-desnuda-16086969"><img src="https://ic-ph-nss.xhcdn.com/a/YmZhOTcyNmYyMDllM2VhY2Y3ZjZlZmExMGE0ZTBjMWU/jpeg/000/515/254/644_450.jpg"><br>Spanish 18 cute desnuda </a> 5',
+'<a href="https://xhamster.com/photos/gallery/universitaria-de-18-16120098"><img src="https://ic-ph-nss.xhcdn.com/a/NTVmNWVhOTVlNDAzOTBmMTJlOGExOWJhYzViNDk1MDc/jpeg/000/515/682/879_450.jpg"><br>Universitaria de 18 </a> 4',
+'<a href="https://xhamster.com/photos/gallery/patrii2002-masturbating-girl-18-years-bitch-16090969"><img src="https://ic-ph-nss.xhcdn.com/a/Y2ZlZWNjNmY0MDdmNjFiYWE2ZmYwYjkyM2QwYWRjNjE/jpeg/000/515/303/744_450.jpg"><br>Patrii2002! Masturbating girl 18 years bitch</a> 2',
+'<a href="https://xhamster.com/photos/gallery/young-girl-masturbates-until-she-cums-today-16081409"><img src="https://ic-ph-nss.xhcdn.com/a/YjdlYjIzYjk3NWNhYTE2OGJlN2YxODRhZmYzNzQ3ZWQ/jpeg/000/515/176/422_450.jpg"><br>young girl masturbates until she cums today</a> 12',
+'<a href="https://xhamster.com/photos/gallery/un-he-wants-to-fuck-my-tight-and-pink-young-pussy-16075371"><img src="https://ic-ph-nss.xhcdn.com/a/MzI1NDRiN2E2NDJmYzg2ODA5Y2M5YjhiYWFlM2UyMDQ/jpeg/000/515/094/361_450.jpg"><br>Un He wants to fuck my tight and pink young pussy <U+0001F633></a> 12',
+'<a href="https://xhamster.com/photos/gallery/i-need-to-be-masturbated-inside-my-pink-pussy-16067505"><img src="https://ic-ph-nss.xhcdn.com/a/NmZjZjRmOWU1MWNlNjIzZjJjOTFhYTdmMTljNjgxMTk/jpeg/000/514/998/739_450.jpg"><br><U+0001F975> I need to be masturbated inside my pink pussy</a> 12',
+'<a href="https://xhamster.com/photos/gallery/young-girl-18-naked-masturbation-and-female-orgasm-16069721"><img src="https://ic-ph-nss.xhcdn.com/a/NDAyM2I3MjMzNTcxZjhhMDFmNGNiYjRkYWM1M2ZmNzE/jpeg/000/515/026/007_450.jpg"><br>young girl 18 naked masturbation and female orgasm</a> 11',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "patrii2002"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

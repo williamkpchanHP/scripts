@@ -1,0 +1,146 @@
+<base target="_blank"><html><head><title>charlotte-cross</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">charlotte-cross</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'1213059416"><img src="https://ei.phncdn.com/videos/201601/06/65434211/original/(m=eafTGgaaaa)(mh=_bgiiXUVey-ddgIU)11.jpg"><br>Charlotte ORyans horny pussy play',
+'315238453"><img src="https://ei.phncdn.com/videos/201601/19/66514481/original/(m=eafTGgaaaa)(mh=LeLMlaek04zLk4eY)8.jpg"><br>Charlotte ORyan getting off with the sex machine',
+'5f84ab77d05a1"><img src="https://ei.phncdn.com/videos/202010/12/360224992/original/(m=eafTGgaaaa)(mh=JgqzoFo9eordAD9T)15.jpg"><br>Girlfriend Fucks Her Dildo Thinking About Your Hard Cock',
+'6411c84edcfae"><img src="https://ei.phncdn.com/videos/202303/15/427454301/original/(m=q1RXZHYbeafTGgaaaa)(mh=4GSrkhqez-rBZWCE)0.jpg"><br>Diabolic - If I Fuck You , Would You Leave Me Alone? Fucking My Stepsister Hard',
+'649467cc25b47"><img src="https://ei.phncdn.com/videos/202306/22/434062231/original/(m=qI1OPPYbeafTGgaaaa)(mh=L-AksCvbppt8ZwEo)0.jpg"><br>HOTWIFEXXX - "Young Stud Fucks Me in The Ass While Hubbys Away" (Charlotte Cross)',
+'64d8d866549b8"><img src="https://ei.phncdn.com/videos/202308/13/437340241/original/(m=eafTGgaaaa)(mh=-7zrpWmATRGhsj0n)8.jpg"><br>HORNY ASIAN BABE fucked by tattooed man in the hotel',
+'65661cb838966"><img src="https://ei.phncdn.com/videos/202311/28/443808021/original/(m=eafTGgaaaa)(mh=bay2qbfKQ5tMUUDi)6.jpg"><br>上门按摩师悄悄开启了那扇小肉门 av解说',
+'657f48d37bf47"><img src="https://ei.phncdn.com/videos/202312/18/444962601/original/(m=q5LK64YbeafTGgaaaa)(mh=gZuFQAUmWAQq_NZW)0.jpg"><br>Veronica Leal surprises Stacy Cruz with her dick and destroys her tight asshole',
+'658b408cb9730"><img src="https://ei.phncdn.com/videos/202312/26/445441521/original/(m=q8M974YbeafTGgaaaa)(mh=tSg631cjVZkhKS4_)0.jpg"><br>Molly Little says, "Dont worry, Stepbro. Im Definitely Adding You to My List!" - S25:E7',
+'65d4b010e662b"><img src="https://ei.phncdn.com/videos/202402/20/448429471/original/(m=eafTGgaaaa)(mh=Z6OpykYhKd2RI2e4)11.jpg"><br>BadDaddyPOV - Slutty Charlotte get a taste of her StepDad in action',
+'65ed9dff3dca7"><img src="https://ei.phncdn.com/videos/202403/10/449357371/original/(m=q0OX7_YbeafTGgaaaa)(mh=QnelInvPEt4Ii4Kx)0.jpg"><br>Step Sister Didnt Close the Door to Her Room...',
+'65f6d3eb0be0a"><img src="https://ei.phncdn.com/videos/202403/17/449693081/original/(m=q_UTW-YbeafTGgaaaa)(mh=EuTwKhgGVOi9Nu2N)0.jpg"><br>My stepmother persuaded me to fuck her in doggy style and pump her full of cum!',
+'65faeec5b3dec"><img src="https://ei.phncdn.com/videos/202403/20/449843951/original/(m=qW2O2-YbeafTGgaaaa)(mh=s87wUMCPxjRjRKsp)0.jpg"><br>Did I fuck a slut 404HotFound or was it a dream?',
+'65fe26addf41d"><img src="https://ei.phncdn.com/videos/202403/23/449989971/thumbs_35/(m=eafTGgaaaa)(mh=3ryMSyqn2D8qZPXx)11.jpg"><br>Cheating On My Girlfriend With Her Hot Roommate',
+'818285076"><img src="https://ei.phncdn.com/videos/201512/09/63386771/original/(m=eafTGgaaaa)(mh=kR_nH8y9SkLTnGfN)6.jpg"><br>Charlotte ORyan taking the hitachi',
+'ph556c941e380d5"><img src="https://ei.phncdn.com/videos/201506/01/49839561/original/(m=eafTGgaaaWavb)(mh=lZyYyubbvePkrA18)10.jpg"><br>Brittany Shae and Charlotte ORyan have a great new experience',
+'ph55790aa4705b2"><img src="https://ei.phncdn.com/videos/201506/11/50325172/original/(m=eafTGgaaaa)(mh=p3-kHtoKthdfBRH5)14.jpg"><br>Britney Amber teaches a master class in eating pussy',
+'ph5654a3694077d"><img src="https://ei.phncdn.com/videos/201511/24/62358742/original/(m=eafTGgaaaa)(mh=zmKPW0rOX2qtXqHT)6.jpg"><br>Teacher has threesome with her students  - Brazzers',
+'ph5678a286638d0"><img src="https://ei.phncdn.com/videos/201512/22/64305091/original/(m=eafTGgaaaa)(mh=KYpQJY0NBM0yWuOp)11.jpg"><br>Hogtied Pussy Gets Electrified',
+'ph570d38edab411"><img src="https://ei.phncdn.com/videos/201604/12/73651772/original/(m=qQJ899UbeafTGgaaaa)(mh=s4rJuq7RQul-KgHO)0.jpg"><br>NuruMassage 2 Babes Take Him to Oily Finish',
+'ph57157d3f4b0ff"><img src="https://ei.phncdn.com/videos/201604/19/74258241/original/(m=eafTGgaaaa)(mh=Oh32qBilzLWCt3Ii)10.jpg"><br>PropertySex - Virgo real estate agent makes sex video with Aquarius client',
+'ph57e34598b7cca"><img src="https://ei.phncdn.com/videos/201609/22/90296771/original/(m=eafTGgaaaa)(mh=K98JKUwSL3nZD3VB)10.jpg"><br>Charlotte Cross Makes New Cuckold Husband Watch Her Fuck',
+'ph57f5064e84289"><img src="https://ei.phncdn.com/videos/201610/05/91927511/original/(m=eafTGgaaaa)(mh=5DOjBiCl9OUKmK6x)11.jpg"><br>OnlyTeenBlowjobs Loves her Step-Brothers Cock',
+'ph57f777f60a4ea"><img src="https://ei.phncdn.com/videos/201610/07/92104051/original/(m=eafTGgaaaa)(mh=YWa7UkwQfKBcV8Sy)12.jpg"><br>Old English professor blowjob and fuck lesson for teenie school girl pussy',
+'ph5809abe1a8c40"><img src="https://ei.phncdn.com/videos/201610/21/93587791/original/(m=eafTGgaaaa)(mh=8JHp4D0zYTorMJIt)12.jpg"><br>Charlotte Cross Strips High Heels For Footjob',
+'ph5809ac14576ec"><img src="https://ei.phncdn.com/videos/201610/21/93587851/original/(m=eafTGgaaaa)(mh=IZfkN_7oDAb3sH07)6.jpg"><br>Charlotte Cross Shows Us How She Gets Off',
+'ph581a053106ce5"><img src="https://ei.phncdn.com/videos/201611/02/94839551/original/(m=qWN231VbeafTGgaaaa)(mh=iQunJGhQQmFltm-F)0.jpg"><br>MomsTeachSex - Fucking My Big Tit Step Mom<U+00A0>',
+'ph581cab5df0b31"><img src="https://ei.phncdn.com/videos/201611/04/95042581/original/(m=eafTGgaaaa)(mh=CCiRDAMqxjZ_nhKM)15.jpg"><br>Mofos - Horny Cutie Fucks a Perv',
+'ph585064268057d"><img src="https://ei.phncdn.com/videos/201612/13/98979082/original/(m=eafTGgaaaa)(mh=hCEbCNYNcKshYNYq)4.jpg"><br>Babes - Come Back to Me, Suzy Rainbow',
+'ph587813f3abf51"><img src="https://ei.phncdn.com/videos/201701/13/102130642/original/(m=eafTGgaaaa)(mh=d7H2UgLYZsYBYIkD)8.jpg"><br>Finally Alone',
+'ph5888f9c43303c"><img src="https://ei.phncdn.com/videos/201701/25/103614002/original/(m=eafTGgaaaa)(mh=8MP9eOKTCtQwyI5o)9.jpg"><br>HOLED - Brunette Britney Spears look a like Charlotte Cross anal fucked',
+'ph588aa8dbd1a08"><img src="https://ei.phncdn.com/videos/201701/27/103764632/original/(m=qVW7X1VbeafTGgaaaa)(mh=bxCB8Wqp8mioXdf7)0.jpg"><br>MomsTeachSex - Mom Fucks Step Son & GF To Keep Secret',
+'ph58b6bab6e7ae0"><img src="https://ei.phncdn.com/videos/201703/01/108068842/original/(m=eafTGgaaaa)(mh=xO2GsNSZ1od9O-c6)10.jpg"><br>Charlotte Cross gets the plumber to clean her pipes',
+'ph58e2aa83635aa"><img src="https://ei.phncdn.com/videos/201704/03/111980872/thumbs_22/(m=eafTGgaaaa)(mh=b145sfXfoKHCPJTY)13.jpg"><br>POVD Private blackjack dealer Charlotte Cross fucked by home owner',
+'ph591c7bb99af88"><img src="https://ei.phncdn.com/videos/201705/17/116811061/original/(m=eafTGgaaaa)(mh=3AVCj0kF_i_StV0K)0.jpg"><br>Girling - Riley Reid, Piper Perry, Abella Danger, and Friends Nude Sliding',
+'ph591c7bc8d8fff"><img src="https://ei.phncdn.com/videos/201705/17/116811091/original/(m=eafTGgaaaa)(mh=GHOyuOr6qC9UCwWT)0.jpg"><br>Girling Trailer XXX',
+'ph591c7cf77ff14"><img src="https://ei.phncdn.com/videos/201705/17/116811581/original/(m=eafTGgaaaa)(mh=0YTzUH4oiCBkZ6qg)0.jpg"><br>Girling - Abella D, Charlotte C and Harley J in lesbian oil toy action ',
+'ph5952696caece0"><img src="https://ei.phncdn.com/videos/201706/27/122112251/original/(m=eafTGgaaaa)(mh=USFhRcePP2X84FbD)6.jpg"><br>Girling - Riley Reid, Abella Danger and Piper Perri Oiled up threesome',
+'ph595fbccf53c4f"><img src="https://ei.phncdn.com/videos/201707/07/123490321/original/(m=q43W-1SbeafTGgaaaa)(mh=fL3Be7WxPzCupMzZ)0.jpg"><br>PORNPROS Blind fold surprise fuck with busty brunette Charlotte Cross',
+'ph5967f1b3aa4f2"><img src="https://ei.phncdn.com/videos/201707/13/124318181/original/(m=eafTGgaaaa)(mh=DjuRUCZu1xG0xrDj)13.jpg"><br>Pegged with a HUGE STRAPON and DOUBLE FISTED by Charlotte Cross',
+'ph596e7d8528f1d"><img src="https://ei.phncdn.com/videos/201707/18/124984701/thumbs_10/(m=eafTGgaaaa)(mh=4Koehrr2cMS49qEB)7.jpg"><br>Charlotte Cross Double fisting and using belladonnas fist dildo on a gimp',
+'ph598ccb8cc37ea"><img src="https://ei.phncdn.com/videos/201708/10/128091071/original/(m=eafTGgaaaa)(mh=SPXYEoAjV5CZmbUj)4.jpg"><br>Horny stepdaughter wants stepmoms Boyfriends Cock',
+'ph59d61a840881e"><img src="https://ei.phncdn.com/videos/201710/05/135625822/thumbs_5/(m=eafTGgaaaa)(mh=gwt78sTBsh4_akfA)3.jpg"><br>DONT FUCK MY STEP<U+00A0>DAUGHTER - Charlotte Cross Gets Plumber To Clean Her Pipes',
+'ph59e64b315c9cd"><img src="https://ei.phncdn.com/videos/201710/17/137372482/original/(m=eafTGgaaaa)(mh=_SUn0xgrhyQNX6FB)7.jpg"><br>Ask A Porn Star: Whats Your Spirit Animal?',
+'ph59e64c3ea9d7a"><img src="https://ei.phncdn.com/videos/201710/17/137372902/thumbs_5/(m=eafTGgaaaa)(mh=eVZ42vdoS6RwAwVj)5.jpg"><br>Ask A Porn Star: Do You Like Male Pubic Hair?',
+'ph59e64c6e6c25f"><img src="https://ei.phncdn.com/videos/201710/17/137372992/original/(m=eafTGgaaaa)(mh=LjwyQ7lgA65sWVVT)4.jpg"><br>Ask A Porn Star: Real Sex Vs Porn Sex ',
+'ph59e64c8682c6b"><img src="https://ei.phncdn.com/videos/201710/17/137373022/original/(m=eafTGgaaaa)(mh=nxLqyX-qn14Xu79S)7.jpg"><br>Ask A Porn Star: Do You Ever Really Orgasm In Scenes?',
+'ph59e64ca501dc5"><img src="https://ei.phncdn.com/videos/201710/17/137373042/original/(m=eafTGgaaaa)(mh=_bTCgPrlFo_8wkhC)5.jpg"><br>Ask A Porn Star: Really Weird Porn Scenes',
+'ph59e64dcd2fddd"><img src="https://ei.phncdn.com/videos/201710/17/137373402/original/(m=eafTGgaaaa)(mh=FS7h3kKZk4eqMSjt)9.jpg"><br>Ask A Porn Star: Who Should Be The Next President?',
+'ph59e64fbb5823f"><img src="https://ei.phncdn.com/videos/201710/17/137374262/thumbs_5/(m=eafTGgaaaa)(mh=77rNTdh1bEfzwQZ6)4.jpg"><br>Ask A Porn Star: Whats Your Ideal Penis Size?',
+'ph59e654674881a"><img src="https://ei.phncdn.com/videos/201710/17/137376712/original/(m=eafTGgaaaa)(mh=fmxyWYgUWf3JV8QB)12.jpg"><br>Ask A Porn Star: Does Your Family Know You Do Porn?',
+'ph59e657f1a2310"><img src="https://ei.phncdn.com/videos/201710/17/137378412/original/(m=eafTGgaaaa)(mh=-Vt4MUGhBFNlHlcH)12.jpg"><br>Ask A Porn Star',
+'ph59e658cf4f6d8"><img src="https://ei.phncdn.com/videos/201710/17/137378852/original/(m=eafTGgaaaa)(mh=8BD7LiekRNvhOByc)16.jpg"><br>Ask A Porn Star: Why Did You Get Into Porn?',
+'ph59e65913c808d"><img src="https://ei.phncdn.com/videos/201710/17/137378992/original/(m=eafTGgaaaa)(mh=Vn-KbJOpfoNb7fi1)5.jpg"><br>Ask A Porn Star: Weirdest object youve Had Sex With?',
+'ph59e65a3ec4e3e"><img src="https://ei.phncdn.com/videos/201710/17/137379432/original/(m=eafTGgaaaa)(mh=YtXXkbMBQrTMJV2K)5.jpg"><br>Ask A Porn Star: The Perfect Handjob',
+'ph59e6cc9763dd2"><img src="https://ei.phncdn.com/videos/201710/18/137432872/original/(m=eafTGgaaaa)(mh=KAR0F_31_ANVkQ98)8.jpg"><br>Charlotte Cross And Her Photos',
+'ph5a19d6947957d"><img src="https://ei.phncdn.com/videos/201711/25/142678532/original/(m=eafTGgaaaa)(mh=dCDE2x2PI4EVwD3_)3.jpg"><br>legs joi',
+'ph5a33f3b775367"><img src="https://ei.phncdn.com/videos/201712/15/145582122/thumbs_5/(m=eafTGgaaaa)(mh=e5JF2F8-DqpRwR0A)12.jpg"><br>HardX Charlotte Cross Cums as Shes Anally Drilled',
+'ph5a39989ce546c"><img src="https://ei.phncdn.com/videos/201712/19/146213962/original/(m=eafTGgaaaa)(mh=LRYqp2IEZL031E8l)16.jpg"><br>Naughty Lesbian Schoolgirl<U+00A0>by Mistress Strapon',
+'ph5a85c7922d31e"><img src="https://ei.phncdn.com/videos/201802/15/154782532/original/(m=qU90ROTbeafTGgaaaa)(mh=PPPUyUopGpfrFRoZ)0.jpg"><br>PASSION-HD Cum tasting expert busty brunette Charlotte Cross fucked',
+'ph5aea9ce81f0c2"><img src="https://ei.phncdn.com/videos/201805/03/164557581/thumbs_10/(m=eafTGgaaaa)(mh=zBpxcU-twNlJBY7x)4.jpg"><br> Fucks Step After Watching a Porn<U+00A0>',
+'ph5aeaab4de4bb5"><img src="https://ei.phncdn.com/videos/201805/03/164563751/original/(m=eafTGgaaaa)(mh=YvtPiuRAh60puEHK)12.jpg"><br>Hate His Girlfriend So I Gave Him a Nasty Blowjob',
+'ph5afbe96ebf70a"><img src="https://ei.phncdn.com/videos/201805/16/166384611/original/(m=q1VG4VTbeafTGgaaaa)(mh=wF6Mo_8dwkQKmtfp)0.jpg"><br>BaDoinkVR.com Live DJ Sex Broadcast With Busty Charlotte Cross',
+'ph5b1ab5f4299e1"><img src="https://ei.phncdn.com/videos/201806/08/169606062/original/(m=q7LV1XTbeafTGgaaaa)(mh=vIfyIf4CQYTXEU5u)0.jpg"><br>HOLED Round brown booty STUFFED with big dick',
+'ph5b3b5ddfa0af9"><img src="https://ei.phncdn.com/videos/201807/03/172899071/original/(m=eafTGgaaaa)(mh=t4rlURCIFP57aid8)4.jpg"><br>The Cock Tales - The Story goes on (POV)',
+'ph5b3caecf0ce40"><img src="https://ei.phncdn.com/videos/201807/04/173041151/original/(m=eafTGgaaaa)(mh=YCYUxfv2wdcrnvf3)16.jpg"><br>Charlotte Cross - The Best POV Blowjob EVER!',
+'ph5ba1585c1c90c"><img src="https://ei.phncdn.com/videos/201809/18/183544471/original/(m=eafTGgaaaa)(mh=FzhIcGNXMGaH5xBh)9.jpg"><br>BAMVISIONS Anal Teen Slut Charlotte Cross',
+'ph5bae4e5c26c96"><img src="https://ei.phncdn.com/videos/201809/28/185184311/original/(m=eafTGgaaaa)(mh=79AXUMaOiz4lHiHa)4.jpg"><br>BSkow My Euro College Teen Neighbor Is Only Here For The Wknd',
+'ph5bb6387715d45"><img src="https://ei.phncdn.com/videos/201810/04/186024851/original/(m=eafTGgaaaa)(mh=MQWfd3I84Ghw6ydT)16.jpg"><br>DONT FUCK MY DAUGHTER - Charlotte Cross Gets Her Teenage Pipes Cleaned',
+'ph5c462736c8089"><img src="https://ei.phncdn.com/videos/201901/21/203059041/original/(m=eafTGgaaaa)(mh=u_h07zz51ih6VAEm)7.jpg"><br>Sexpov Virtual sex - Charlotte Cross',
+'ph5cacbd7ac4fae"><img src="https://ei.phncdn.com/videos/201904/09/217420891/original/(m=qJ275QUbeafTGgaaaa)(mh=NZdmE9OwDuFluxe7)0.jpg"><br>The Lesbian Experience - Rachael Madori & Charlotte Cross Lesbian Romance',
+'ph5d31fc6185de9"><img src="https://ei.phncdn.com/videos/201907/19/236378661/original/(m=eafTGgaaaa)(mh=zkA66W2_FiacT0SN)9.jpg"><br>She is ready for all the cocksmens cum',
+'ph5d45bce460b8b"><img src="https://ei.phncdn.com/videos/201908/03/239403781/thumbs_5/(m=eafTGgaaaa)(mh=Ds-kDnn8-LucNwvE)16.jpg"><br>Busty Charlotte Cross owned and fucked by Jake Adams in nude wrestling',
+'ph5d6d996597d30"><img src="https://ei.phncdn.com/videos/201909/02/245839921/original/(m=eafTGgaaaa)(mh=sRxZLvYJEhZEj4YS)8.jpg"><br>All Natural Busty Babe Charlotte Cross Sucks and Fucks',
+'ph5d6dd636882fe"><img src="https://ei.phncdn.com/videos/201909/03/245871081/original/(m=eafTGgaaaWavb)(mh=dtje6ca6OFc7cU7D)10.jpg"><br>The New Guy Thinks He Can Be My Fuck Buddy',
+'ph5d753a7ea17cc"><img src="https://ei.phncdn.com/videos/201909/08/247096591/original/(m=eafTGgaaaa)(mh=JCNU4tbivMWEugPF)15.jpg"><br>Girlfriend Gets Horny Thinking About Your Hard Cock & Dirty Talks ',
+'ph5d911782be125"><img src="https://ei.phncdn.com/videos/201909/29/251715552/thumbs_5/(m=eafTGgaaaa)(mh=6OayGeL4Y6FVptwE)6.jpg"><br>Girlfriend Charlotte Cross Teases You In the Shower',
+'ph5e97dc133fafd"><img src="https://ei.phncdn.com/videos/202004/16/304180001/thumbs_10/(m=eafTGgaaaa)(mh=C-dJnvDaYYLTuaS3)10.jpg"><br>Slutty stepdaughter Sends You A Video From Her Dorm',
+'ph5f665b30e5e23"><img src="https://ei.phncdn.com/videos/202009/19/353223242/original/(m=eafTGgaaaa)(mh=TqYjD1Bk5RR1zMPu)12.jpg"><br>Big Natural Titty Girl Covered in Cum',
+'ph5f6a400c0327e"><img src="https://ei.phncdn.com/videos/202009/22/354063412/original/(m=eafTGgaaaa)(mh=MriS2XO7vMWHEvE2)12.jpg"><br>All Natural Busty Babe Cums for You ',
+'ph5f6baecb29c1a"><img src="https://ei.phncdn.com/videos/202009/23/354395292/thumbs_2/(m=eafTGgaaaa)(mh=QALrKRLhhNIjjkAh)2.jpg"><br>BIg Titty Girl Makes Filthy Custom Videos For You (Charlotte Cross on SALE)',
+'ph5f6e7d2961c27"><img src="https://ei.phncdn.com/videos/202009/25/355025842/thumbs_10/(m=eafTGgaaaa)(mh=uNUcl9KqJ9NxOsXE)10.jpg"><br>Sexy Little Charlotte Cross Tells You To Jerk Your Cock JOI',
+'ph5fee307c716fb"><img src="https://ei.phncdn.com/videos/202012/31/379441722/original/(m=eafTGgaaaa)(mh=uY8QQekaCy5CZbo0)11.jpg"><br>Notice Me Step Daddy!',
+'ph6078b82d063f1"><img src="https://ei.phncdn.com/videos/202104/15/386664211/original/(m=qR4ZXNWbeafTGgaaaa)(mh=x_gUG7H8vlXnPtEc)0.jpg"><br>Naughty America - Charlotte Cross has last wishes prison sex with her friends dad',
+'ph60b504d08b616"><img src="https://ei.phncdn.com/videos/202105/31/388876481/original/(m=eafTGgaaaa)(mh=97kqenk3WemWhd_l)5.jpg"><br>Busty Slut Charlotte Cross & Fucked By Step Daddy',
+'ph60df2914c5529"><img src="https://ei.phncdn.com/videos/202107/02/390562931/original/(m=eafTGgaaaa)(mh=lJDDGq0I6tORiTny)16.jpg"><br>DONT FUCK MY STEPDAUGHTER - Teen Sluts Disappointing Their Fathers',
+'ph610a9fee77656"><img src="https://ei.phncdn.com/videos/202108/04/392391261/original/(m=qYJ31WWbeafTGgaaaa)(mh=07Lg3ozse5Jlzb4L)0.jpg"><br>Charlotte Cross "Dont pull it out unless you intend to use it" S12:E3',
+'ph61a4e09ca6844"><img src="https://ei.phncdn.com/videos/202111/29/398844581/original/(m=qLRZN2XbeafTGgaaaa)(mh=D0TBnZSUKyCq7KvJ)0.jpg"><br><U+0001F525>Big Titted Supportive Stepmom Susy Gala Bangs Her Stepson To Help Him With His Lack Of Confidence',
+'ph61c47b8829693"><img src="https://ei.phncdn.com/videos/202112/23/400114301/original/(m=qL6OP8WbeafTGgaaaa)(mh=k6ucLeBr3g-Sxd4o)0.jpg"><br>New Stepmom Xmas Fun With Anissa Kate And Charlotte Cross',
+'ph6273ce250946c"><img src="https://ei.phncdn.com/videos/202205/05/407561051/original/(m=qWVW-0XbeafTGgaaaa)(mh=a8jd18fbGIdDsQOQ)0.jpg"><br>Dad Crush - Gorgeous Horny Babe Will Do Everything Just To Get Stepdads Attention',
+'ph6338bbca303c8"><img src="https://ei.phncdn.com/videos/202210/02/416678051/original/(m=eafTGgaaaa)(mh=0IYAN-4-Pqi8PWsK)11.jpg"><br>June Liu 刘玥 / SpicyGum & Fanny Ly - Sexy new Asian recruit for the Soccer club - 3som - FFM (JL_149)',
+'ph6340a18b45868"><img src="https://ei.phncdn.com/videos/202210/07/417084011/original/(m=eafTGgaaaa)(mh=80C0rfstA27H88Ga)11.jpg"><br>BadDaddyPOV - Stepdaughter Charlotte Cross is an Obedient Little Slut',
+'ph639bbc2ae69be"><img src="https://ei.phncdn.com/videos/202212/16/421488701/thumbs_35/(m=eafTGgaaaa)(mh=gSy5aBf3o_N4VF-J)16.jpg"><br>BadDaddyPOV - Busty Brunette Charlotte Cross Loves Draining Stepdaddys Thick Cock',
+'ph63ce916db5c6a"><img src="https://ei.phncdn.com/videos/202301/23/423949041/thumbs_5/(m=eafTGgaaaa)(mh=fyzJW9R_S3X8G8gM)14.jpg"><br>ModelMedia Asia-MDAG-0012-Amateur Street Pickup-Wu Qian Qian-Best Original Asia Porn Video',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "charlotte-cross"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

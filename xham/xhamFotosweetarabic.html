@@ -1,0 +1,80 @@
+<base target="_blank"><html><head><title>sweetarabic</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/horny-arab-pornstar-sweetarabic-16084686"><img src="https://ic-ph-nss.xhcdn.com/a/NDNhZjJkNWFjYTc0MDZlZDczYmI4MmY5ZGI2YmEwZWI/jpeg/000/515/217/733_450.jpg"><br>Horny Arab Pornstar - SweetArabic</a> 9',
+'<a href="https://xhamster.com/photos/gallery/arab-camgirl-jasmine-sweet-arabic-16086369"><img src="https://ic-ph-nss.xhcdn.com/a/NWNjNDc2ZDUxZjc2MjVlNzY3ZDVlMWJkZGUwZjFmYWM/jpeg/000/515/245/760_450.jpg"><br>Arab Camgirl - Jasmine Sweet Arabic</a> 9',
+'<a href="https://xhamster.com/photos/gallery/arab-cam-girl-porn-jasmine-sweet-arabic-16086367"><img src="https://ic-ph-nss.xhcdn.com/a/Zjk1Y2Q4MzY2M2YxNzc0ODAxNjYwZWNjZGQ2MWMyMjA/jpeg/000/515/245/748_450.jpg"><br>Arab Cam Girl Porn - Jasmine Sweet Arabic</a> 9',
+'<a href="https://xhamster.com/photos/gallery/horny-arab-wife-sweetarabic-16084415"><img src="https://ic-ph-nss.xhcdn.com/a/NTVjZDdmNjE1ZWQzY2JkZTgwMThhY2QwZTQ5ZDUxYjA/jpeg/000/515/213/291_450.jpg"><br>Horny Arab Wife - SweetArabic</a> 6',
+'<a href="https://xhamster.com/photos/gallery/beautiful-arabic-girl-sweetarabic-16082150"><img src="https://ic-ph-nss.xhcdn.com/a/NjJmODFkM2FmNzY2YzQwZTJmOTgxM2EzNWNiN2U4YmY/jpeg/000/515/184/714_450.jpg"><br>Beautiful arabic girl - SweetArabic</a> 26',
+'<a href="https://xhamster.com/photos/gallery/beautiful-arab-women-sweetarabic-16082385"><img src="https://ic-ph-nss.xhcdn.com/a/NTI5NTNhYmM1NTdjZTRlYzA5YjI4NTk1NGUyZGFmMGU/jpeg/000/515/187/003_450.jpg"><br>Beautiful Arab Women - SweetArabic</a> 20',
+'<a href="https://xhamster.com/photos/gallery/sweetarabic-arabe-beurette-france-16076389"><img src="https://ic-ph-nss.xhcdn.com/a/MzQ0NjRhZmZhNzg4NTc4MzUzYWY2OGQ0YTdlNTQzM2Y/jpeg/000/515/106/028_450.jpg"><br>SweetArabic Arabe Beurette France</a> 2',
+'<a href="https://xhamster.com/photos/gallery/sexy-arab-milf-sweetarabic-16079137"><img src="https://ic-ph-nss.xhcdn.com/a/NWZmZjQ3ODNmOTdhMDZhMzAzOGU5Y2UwYTMwYzA5ZTA/jpeg/000/515/139/706_450.jpg"><br>Sexy arab MILF - SweetArabic</a> 2',
+'<a href="https://xhamster.com/photos/gallery/milf-arabe-sweetarabic-16080932"><img src="https://ic-ph-nss.xhcdn.com/a/YzE1ZDIxZjI0ODAyZTU0NmYzOTA5NDJjNmQxMjRkYjk/jpeg/000/515/169/029_450.jpg"><br>MILF Arabe - SweetArabic</a> 2',
+'<a href="https://xhamster.com/photos/gallery/hot-arabic-girl-sweetarabic-16080946"><img src="https://ic-ph-nss.xhcdn.com/a/MWZmNWU3MDNiYWNjOGEwYTAwNGRmOGFmMjBlMDhjNzA/jpeg/000/515/169/083_450.jpg"><br>Hot Arabic Girl  - SweetArabic</a> 2',
+'<a href="https://xhamster.com/photos/gallery/hot-arab-cam-girl-16082244"><img src="https://ic-ph-nss.xhcdn.com/a/NGM4NjQxMTcwYjA0ZGU3YzBiMjAyNmMyOTM5NjVkOWQ/jpeg/000/515/185/647_450.jpg"><br>hot arab cam girl</a> 2',
+'<a href="https://xhamster.com/photos/gallery/horny-arab-girl-sweetarabic-16080919"><img src="https://ic-ph-nss.xhcdn.com/a/NmI4Njg2MzlmNWIxMDIwZTE4Y2VjMGI3MzM1MGU4NjA/jpeg/000/515/168/936_450.jpg"><br>Horny arab girl - SweetArabic</a> 2',
+'<a href="https://xhamster.com/photos/gallery/horny-arab-amateur-sweetarabic-16080937"><img src="https://ic-ph-nss.xhcdn.com/a/ZTRhNDhiODg5ZTNiOTg1NDFhYWM4MjQyZDJhNjUyZTg/jpeg/000/515/169/057_450.jpg"><br>Horny arab amateur  - SweetArabic</a> 2',
+'<a href="https://xhamster.com/photos/gallery/footjob-arab-porn-16080908"><img src="https://ic-ph-nss.xhcdn.com/a/ZDNjYjJiMzc0Njk4YzU0MzNmYTkzNTU4ZGNmMDUwMDY/jpeg/000/515/168/868_450.jpg"><br>Footjob Arab Porn</a> 2',
+'<a href="https://xhamster.com/photos/gallery/beurette-pussy-sweetarabic-16080922"><img src="https://ic-ph-nss.xhcdn.com/a/YTZhODY3OTM5OGYwZmFiMjRiNTE4NmNkZDUwZWQwNzA/jpeg/000/515/168/953_450.jpg"><br>Beurette Pussy - SweetArabic</a> 2',
+'<a href="https://xhamster.com/photos/gallery/arabic-girl-sweetarabic-16081884"><img src="https://ic-ph-nss.xhcdn.com/a/NzNmMjVmOGQyYzVhNjc3MDE4NGMwOWE0ZTA3MzMxMDQ/jpeg/000/515/181/344_450.jpg"><br>Arabic girl - SweetArabic</a> 2',
+'<a href="https://xhamster.com/photos/gallery/arab-milf-sweetarabic-16078739"><img src="https://ic-ph-nss.xhcdn.com/a/NjIzNTY5ZGYxODM3YTFiZjdkZDE1MWI2ZTg2YjJmZDU/jpeg/000/515/135/303_450.jpg"><br>Arab milf - SweetArabic</a> 2',
+'<a href="https://xhamster.com/photos/gallery/french-arab-pornstar-sweetarabic-16085733"><img src="https://ic-ph-nss.xhcdn.com/a/NjQ0NzUzNmU5NDg3NzAxNWQwMWNmODBlYzJhZWEwMzM/jpeg/000/515/232/686_450.jpg"><br>French arab pornstar - SweetArabic</a> 17',
+'<a href="https://xhamster.com/photos/gallery/horny-arab-babe-porn-sweetarabic-16084965"><img src="https://ic-ph-nss.xhcdn.com/a/OTA2ZjY3NjFiNzliNTUwMjc4NTc3Mjg0YjZjMjI0YTE/jpeg/000/515/220/897_450.jpg"><br>Horny Arab Babe Porn - SweetArabic</a> 16',
+'<a href="https://xhamster.com/photos/gallery/horny-arab-milf-sweetarabic-16084418"><img src="https://ic-ph-nss.xhcdn.com/a/NjJkNWU0M2RlNjlhOTE4MzYwYjI3MjcwMzlkYjA1ZTI/jpeg/000/515/213/322_450.jpg"><br>Horny Arab Milf - SweetArabic</a> 14',
+'<a href="https://xhamster.com/photos/gallery/horny-lonely-saudi-arabia-girl-sweetarabic-16083231"><img src="https://ic-ph-nss.xhcdn.com/a/YjE4MmUxZWE3MzYxNjM4MTQ2ZmU4NTc3YWY4NmJkYmE/jpeg/000/515/198/924_450.jpg"><br>Horny Lonely Saudi Arabia Girl - SweetArabic</a> 13',
+'<a href="https://xhamster.com/photos/gallery/hot-horny-arab-sweetarabic-16082901"><img src="https://ic-ph-nss.xhcdn.com/a/ZjMyOThkZmMyMzU0NjI2NjJiYTczNGQzMTNhNzYyZDM/jpeg/000/515/193/265_450.jpg"><br>Hot Horny Arab - SweetArabic</a> 11',
+'<a href="https://xhamster.com/photos/gallery/horny-arab-hijab-sweetarabic-16083780"><img src="https://ic-ph-nss.xhcdn.com/a/ZDVjMWZkMDExOWQ4ZjdlNTMxMzU3Y2Q4NTUxNDgyYWY/jpeg/000/515/206/002_450.jpg"><br>Horny Arab Hijab - SweetArabic</a> 11',
+'<a href="https://xhamster.com/photos/gallery/horny-arab-girl-sweetarabic-16082643"><img src="https://ic-ph-nss.xhcdn.com/a/YTI4ZDM1NmY0NGMzMTEyNDQ0ZTNlMTU1ODJjNDMwNjY/jpeg/000/515/190/028_450.jpg"><br>Horny arab girl - SweetArabic</a> 11',
+'<a href="https://xhamster.com/photos/gallery/arab-pornstar-sweetarabic-16085731"><img src="https://ic-ph-nss.xhcdn.com/a/Mzc4ZmRlMTA5N2RlMDIxNDhmNmI0Y2M3OGI1YzY1Y2M/jpeg/000/515/232/651_450.jpg"><br>Arab Pornstar - SweetArabic</a> 11',
+'<a href="https://xhamster.com/photos/gallery/horny-arab-teen-sweetarabic-16083781"><img src="https://ic-ph-nss.xhcdn.com/a/MTYyNDIxYjE1MDk0MTg1MjUyZmQzMWE5NDU5MmU4YWE/jpeg/000/515/206/021_450.jpg"><br>Horny Arab Teen - SweetArabic</a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "sweetarabic"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

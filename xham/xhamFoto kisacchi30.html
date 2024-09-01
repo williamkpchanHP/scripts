@@ -1,0 +1,92 @@
+<base target="_blank"><html><head><title>kisacchiBatch: 30</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">kisacchiBatch: 30</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/my-big-pussy-16001303</k>',
+'NDc3ZTg5N2NkZTc2YzUxOTBlZDMzNTRlODBjODQ0NzI/jpeg/000/514/079/851',
+'ZGM5YWY2ZGI3MGRiMjYzOGQwZjFkYTI5YjM2MDA0NTY/jpeg/000/514/079/850',
+'OTI3ZTFjYzQxN2M3MTJlM2E3ZmZlODQ2NDY4NDI4ODk/jpeg/000/514/079/849',
+'ZDIxZTM5Yzk3YmQyODVmOTQ5YmI3NzIyNjVhNjY1Y2Y/jpeg/000/514/079/848',
+'NjJiMTFjYjkyOWRiZDAxNmIzM2ZlZDI0NmM0MzM2NWE/jpeg/000/514/079/847',
+'OWM3Y2JlMmEyMTMyNWUxNDBkM2U1OWUwNWIzMDdmZDI/jpeg/000/514/079/846',
+'MDYxOGRjNDc5OWVhNDI1ZGNiMzhlYTQ1OTNjNTdhMjk/jpeg/000/514/079/845',
+'ZWIxMTMxZjRmMTkwODEzM2IxNGY5NzhjMzljMmQxYWM/jpeg/000/514/079/831',
+'ZDBhYjJhZWUzMTgxM2QwZWMwNWYzNzJkMWVhMGVjMmE/jpeg/000/514/079/830',
+'<k>https://xhamster.com/photos/gallery/my-horny-cunt-16101610</k>',
+'YjQxMTRmOThlMTdiZWNkMmJiZjg1NGI2MTBmNTYxNjQ/jpeg/000/515/438/064',
+'NzRmNDQ4MDcyYjdlNzFhYjU0OWI0NmY5M2U5YWEwZTg/jpeg/000/515/438/060',
+'NDFmYThjNDcwMmM3NWYxMDIxYTgyMjIxYWUwMjUzNjQ/jpeg/000/515/438/059',
+'MjgxN2U1ZTUxYWJlNzBlMTEzNmQxMDI2ZjUyYWMwODA/jpeg/000/515/438/057',
+'YWQzMTBjMzA0MTg0OTI3NWVlZjFmOTI0NDhmYTgzNDI/jpeg/000/515/438/056',
+'NTc3OTEzMTk5YTYxNGZiOTNhOWE0Y2RlYWY2NGU5NmM/jpeg/000/515/438/054',
+'NjYxY2U3Y2EwNDY2ZDFlODQ5NzZiNWY2NzdkMDZkMzg/jpeg/000/515/438/053',
+'NmMzZDc1Yjc2OTJiYjQyNjBiZDJiY2JlMTJkNGRlYjQ/jpeg/000/515/438/048',
+'<k>https://xhamster.com/photos/gallery/fuck-my-filthy-cunt-16023829</k>',
+'ZGE3NjI3M2JkYjMxOWE5MmVhZDZlZGZlZmZiOWFhOTE/jpeg/000/514/392/556',
+'OWUzNWFiMDk5MDE3ODJhOWM3MmVlMDA0YTQ0MDlkZTk/jpeg/000/514/392/555',
+'ZGU5YTVkNzNkMTVhMGI4ODExODQzNDg5NzNjNTUxNmQ/jpeg/000/514/392/554',
+'MTgyZGEyYjc4NjI3NzcwYzRlZGU4YmNiMDE5NjE3OWU/jpeg/000/514/392/553',
+'ZjY0OTYwYjMzZDk2NmY3ZDRjZjVlYzY3Mjc5OWZmZmU/jpeg/000/514/392/552',
+'MTJhMjhjYzFjMTNjZWE3ZWJjMDk1ZWM4MmY3OGRhNTA/jpeg/000/514/392/551',
+'MmYwOTVjOGVkYWE3M2Y4YjQ5ZmJmYjBhZjIwY2Q5YTE/jpeg/000/514/392/550',
+'YjhjZDZhMTQyMDE3YjQ0OGNiMzk2ZGQ3Y2QzMGEyODg/jpeg/000/514/392/545',
+'ODc4YjRkZDljNDM2MGE0MjhmZjA2OGRiNzIyNmQzOWI/jpeg/000/514/392/544',
+'NjNjNzMxOGQyYjI1Y2MxOTk5MGMzZWQyNmRmMjAwMDQ/jpeg/000/514/392/542',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "kisacchiBatch: 30"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

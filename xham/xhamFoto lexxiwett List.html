@@ -1,0 +1,69 @@
+<base target="_blank"><html><head><title>lexxiwett</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/more-of-lexxis-tantalizing-titties-16122617"><img src="https://ic-ph-nss.xhcdn.com/a/NGJmNWY0MTA3YTRlNTU3MDBhMTg3MGIzNjcwMTQ0N2Q/jpeg/000/515/716/236_450.jpg"><br>More of Lexxi&#039;s Tantalizing Titties!</a> 9',
+'<a href="https://xhamster.com/photos/gallery/lexxis-lucious-titties-16121284"><img src="https://ic-ph-nss.xhcdn.com/a/NWFlZDlmODM2OTE1NjA4YzZkNTE5NTg2MTUzMDAzYjY/jpeg/000/515/699/160_450.jpg"><br>Lexxi&#039;s Lucious Titties</a> 9',
+'<a href="https://xhamster.com/photos/gallery/ass-and-pussy-play-16099017"><img src="https://ic-ph-nss.xhcdn.com/a/NDI2NzM0OWU4ZjA1YjMwY2ZlYTdmMzQyNzVlNDBlOTA/jpeg/000/515/407/717_450.jpg"><br>Ass and Pussy Play</a> 9',
+'<a href="https://xhamster.com/photos/gallery/some-titty-pics-for-daddy-and-you-16111988"><img src="https://ic-ph-nss.xhcdn.com/a/YWQ1MGEwNzU5ZGM3N2M1ZTc2OTljNzRiZjU3YWIwMGU/jpeg/000/515/576/725_450.jpg"><br>Some titty pics for Daddy and you!</a> 8',
+'<a href="https://xhamster.com/photos/gallery/lexxis-naughty-nipples-a-gallery-of-luscious-breasts-16110679"><img src="https://ic-ph-nss.xhcdn.com/a/MDk1NzJmYzk5ZWJiODI1YTJlODE2N2IwNGQ3ZjAwYTk/jpeg/000/515/559/270_450.jpg"><br>Lexxi&#039;s Naughty Nipples: A Gallery of Luscious Breasts</a> 8',
+'<a href="https://xhamster.com/photos/gallery/kayak-trip-on-the-river-with-weekend-daddy-16047282"><img src="https://ic-ph-nss.xhcdn.com/a/N2I1ZTRjNTE2YjFiMzZmNzY0ODNlNGJkYmM1ZDUyYjM/jpeg/000/514/721/744_450.jpg"><br>Kayak trip on the river with Weekend Daddy!</a> 5',
+'<a href="https://xhamster.com/photos/gallery/just-a-few-pics-of-my-tits-for-you-16102018"><img src="https://ic-ph-nss.xhcdn.com/a/YjUyZDJiOTZkZWM1MmU5OWRmNzg5MDIzMmM2NjU2NzM/jpeg/000/515/445/094_450.jpg"><br>Just a few pics of my tits for you!</a> 15',
+'<a href="https://xhamster.com/photos/gallery/daddys-load-for-lexxis-mouth-cum-covered-oral-pleasures-16110664"><img src="https://ic-ph-nss.xhcdn.com/a/NDdiN2JiYWI3NGM2MWJhZDQ2ZTEzOTU5NDNmYjFiY2Q/jpeg/000/515/559/129_450.jpg"><br>Daddy&#039;s Load for Lexxi&#039;s Mouth: Cum-Covered Oral Pleasures</a> 15',
+'<a href="https://xhamster.com/photos/gallery/fucking-and-some-light-bondage-with-my-weekend-daddy-16044178"><img src="https://ic-ph-nss.xhcdn.com/a/YmQ0M2RiMzA4ZmJiM2MyOTUxNDFmNjdlOGJhMjY5NDc/jpeg/000/514/672/179_450.jpg"><br>Fucking and some light bondage with my Weekend Daddy!</a> 14',
+'<a href="https://xhamster.com/photos/gallery/masturbating-in-my-black-lingerie-16043521"><img src="https://ic-ph-nss.xhcdn.com/a/ZmUyNzdhMDQ0MDY4NzY2Mzc2NzFkYzVkYTM5NGEyODU/jpeg/000/514/663/908_450.jpg"><br>Masturbating in my black lingerie!</a> 12',
+'<a href="https://xhamster.com/photos/gallery/lexxis-sexy-feet-wrapped-around-daddys-hard-cock-16120665"><img src="https://ic-ph-nss.xhcdn.com/a/NDVmZjJmYTRmYjUzNzc3MDM5ZTUzOGE2ODcyYTI3YzY/jpeg/000/515/690/295_450.jpg"><br>Lexxi&#039;s Sexy Feet Wrapped Around Daddy&#039;s Hard Cock</a> 12',
+'<a href="https://xhamster.com/photos/gallery/getting-throat-fucked-by-daddy-16103822"><img src="https://ic-ph-nss.xhcdn.com/a/N2IzMTk0NzIxNDQwNjcxNDQ4ZjdkNGQ1NDAyMjQxYzU/jpeg/000/515/468/908_450.jpg"><br>Getting throat fucked by Daddy!</a> 12',
+'<a href="https://xhamster.com/photos/gallery/daddy-eating-lexxi-s-tasty-pussy-16114805"><img src="https://ic-ph-nss.xhcdn.com/a/MWY5MThkYTBiOTYzY2VmY2E2MjRkNzNhYTM1NmZkNDc/jpeg/000/515/611/215_450.jpg"><br>Daddy eating Lexxi’s tasty Pussy!</a> 12',
+'<a href="https://xhamster.com/photos/gallery/pinay-milf-milks-daddys-cock-until-he-cums-in-her-mouth-16051442"><img src="https://ic-ph-nss.xhcdn.com/a/NmIxNDQ2MjNkZWM5MmNmZjM5YWYzZjQzNzkwOGRhMmQ/jpeg/000/514/770/208_450.jpg"><br>Pinay MILF milks Daddy&#039;s cock until he cums in her mouth! </a> 11',
+'<a href="https://xhamster.com/photos/gallery/lexxi-loving-stepdaddys-cum-16123859"><img src="https://ic-ph-nss.xhcdn.com/a/ZWUxMWYzM2IyZTBlNjExNWYxZjY3OGEwYmE2YjE5ZDk/jpeg/000/515/733/475_450.jpg"><br>Lexxi Loving stepdaddy.s Cum!</a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "lexxiwett"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

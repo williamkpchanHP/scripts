@@ -1,0 +1,131 @@
+<base target="_blank"><html><head><title>theotrylkarcelyne</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/calaveras-8816404"><img src="https://ic-ph-nss.xhcdn.com/a/ZjE1ZjcxNGZkN2Q5YmE1NDlmNDEzMGFhZDNmYWI4OWI/jpeg/000/161/549/475_450.jpg"><br>Calaveras</a> 91',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-white-undies-15962783"><img src="https://ic-ph-nss.xhcdn.com/a/M2VmMzQ0MGZjYWM5M2MxNzU3ZTJjNDI4ODI0YmU0Nzk/jpeg/000/513/509/649_450.jpg"><br>Karcelyne white undies</a> 90',
+'<a href="https://xhamster.com/photos/gallery/my-dick-15490428"><img src="https://ic-ph-nss.xhcdn.com/a/MmMzOGE4OWVlMGYxYzY5NzJmNTRjOTg5Y2Y5ZjJkYzY/jpeg/000/469/731/770_450.jpg"><br>My dick</a> 9',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-redwig-16099819"><img src="https://ic-ph-nss.xhcdn.com/a/OWJiNjc3OTNhODMyMGQxYTU1YjI2NWVkZDAyMDI3MTA/jpeg/000/515/416/243_450.jpg"><br>Karcelyne redwig</a> 9',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-pleasing-herself-16002888"><img src="https://ic-ph-nss.xhcdn.com/a/OTZmZDM5NjczN2NlZjlhNGFmZDEyZWM0ZjMyMDAyNDc/jpeg/000/514/098/538_450.jpg"><br>Karcelyne pleasing herself.</a> 9',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-facecum-15930269"><img src="https://ic-ph-nss.xhcdn.com/a/NGVlZjc3NzkyZDEzOWNiMDUzMjUzMWMzNjUwM2FkN2E/jpeg/000/512/815/531_450.jpg"><br>Karcelyne facecum</a> 9',
+'<a href="https://xhamster.com/photos/gallery/vinyle-and-blow-14004972"><img src="https://ic-ph-nss.xhcdn.com/a/N2I1YTUxNjVkYjEzOThmNjRiNWM4MTI1ODEzMmU1ODg/jpeg/000/388/328/949_450.jpg"><br>Vinyle and blow</a> 8',
+'<a href="https://xhamster.com/photos/gallery/rosebud-13921797"><img src="https://ic-ph-nss.xhcdn.com/a/NWU3MmU2ZjJjOTI1OGQwNDFlOWNmOGJmNzc3ZjZjMjI/jpeg/000/383/889/841_450.jpg"><br>Rosebud</a> 8',
+'<a href="https://xhamster.com/photos/gallery/never-feed-karcelyne-with-dick-after-midnight-14776808"><img src="https://ic-ph-nss.xhcdn.com/a/Nzg3MGUxZWRlY2NiNTZhOWYyOTE4MWU5NmZmNDg4MGY/jpeg/000/430/440/132_450.jpg"><br>Never feed Karcelyne with dick after midnight</a> 8',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-cosplay-props-16003114"><img src="https://ic-ph-nss.xhcdn.com/a/N2QzMjY4MTJiNDhiNDM1MTA0MTFkYTc4OGExMTI4Nzg/jpeg/000/514/100/835_450.jpg"><br>Karcelyne cosplay props</a> 8',
+'<a href="https://xhamster.com/photos/gallery/blowjob-15998882"><img src="https://ic-ph-nss.xhcdn.com/a/ZWIwYTgxMTZjNmI2YjRjODVjMjBhNTQ4ZTUzNWRmM2Q/jpeg/000/514/034/636_450.jpg"><br>Blowjob</a> 8',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-pinup-club-15931613"><img src="https://ic-ph-nss.xhcdn.com/a/MmY0N2QzYTdhNWI2M2MwOTJjMzI4MDA1OGFkNmYxMGY/jpeg/000/512/845/458_450.jpg"><br>Karcelyne pinup club</a> 78',
+'<a href="https://xhamster.com/photos/gallery/punk-slut-15934748"><img src="https://ic-ph-nss.xhcdn.com/a/YjBjYTNkYzNkOWQ0OTRjMDRlMTc1NmM2OWZkMmI4MzA/jpeg/000/512/918/946_450.jpg"><br>Punk slut</a> 72',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-submissive-action-15892052"><img src="https://ic-ph-nss.xhcdn.com/a/ZDc1M2VmMDhhYzYyMjRmNTgzODAwN2I1M2M1MDQ1NDY/jpeg/000/511/953/234_450.jpg"><br>Karcelyne submissive action</a> 7',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-bath-and-pancackes-16100404"><img src="https://ic-ph-nss.xhcdn.com/a/ZDI1YjNhOWFjZjhhMjEwZGYxODk2OGU1Y2RiMGY2MGQ/jpeg/000/515/422/990_450.jpg"><br>Karcelyne bath and Pancackes</a> 7',
+'<a href="https://xhamster.com/photos/gallery/bdsm-16120841"><img src="https://ic-ph-nss.xhcdn.com/a/YzFkMGU4ZTA0ZWE1NWRmNmRlMTg1NjdlMzg1Y2ZjMjU/jpeg/000/515/693/746_450.jpg"><br>Bdsm</a> 7',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-black-and-white-15197351"><img src="https://ic-ph-nss.xhcdn.com/a/MzNkODc3NGM2Y2ZlM2ZjMWI5NGNlODYyZmYyMDE0NTI/jpeg/000/487/623/398_450.jpg"><br>Karcelyne black and white</a> 64',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-testing-a-new-toy-15903846"><img src="https://ic-ph-nss.xhcdn.com/a/YmUyNGFmMTlkYjBhYTNlMDQyZDM4OTkxZTEwZWRkMzA/jpeg/000/512/218/216_450.jpg"><br>Karcelyne testing a new toy</a> 63',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-cagoule-et-cravache-15813048"><img src="https://ic-ph-nss.xhcdn.com/a/OGE4YmZjMzg0NDRjYjg1NGQ0ZDM4YzQ4NTc3ZDFmODg/jpeg/000/507/660/315_450.jpg"><br>Karcelyne, cagoule et cravache</a> 60',
+'<a href="https://xhamster.com/photos/gallery/bas-standup-14145758"><img src="https://ic-ph-nss.xhcdn.com/a/YTRhNTE5ODUzYTIzMTBhZTM3NGQwYjA2ZTc3NGFhYTk/jpeg/000/404/523/813_450.jpg"><br>Bas standup</a> 51',
+'<a href="https://xhamster.com/photos/gallery/devil-may-fuck-15778605"><img src="https://ic-ph-nss.xhcdn.com/a/Y2MyMGUwNzNiYmMwMTI2MjRhOWRjMTE5MTNhYjc5YmM/jpeg/000/490/035/126_450.jpg"><br>Devil may fuck</a> 50',
+'<a href="https://xhamster.com/photos/gallery/outdoor-14515427"><img src="https://ic-ph-nss.xhcdn.com/a/MGM3ZmViY2IxODQxZjA4NzI3MDkyMjM3ZTY4MTIyMDg/jpeg/000/415/960/924_450.jpg"><br>Outdoor</a> 5',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-striptease-and-blow-job-15896535"><img src="https://ic-ph-nss.xhcdn.com/a/NGMzZDg2ZjcwMzIyNzQ5MjAyYjE1YWY1MDRlZTU5OTE/jpeg/000/512/058/045_450.jpg"><br>Karcelyne striptease and blow-job</a> 47',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-shows-her-pleasure-15932055"><img src="https://ic-ph-nss.xhcdn.com/a/Y2MwMjQzNzNkYjBiYjZjMjQyMDNhNjBmMmFkNGY4OWQ/jpeg/000/512/855/418_450.jpg"><br>Karcelyne shows her pleasure</a> 46',
+'<a href="https://xhamster.com/photos/gallery/cybergoth-8293161"><img src="https://ic-ph-nss.xhcdn.com/a/NjVmMmZlODMzODBhNzI5OTVkODA4ZThjODZkYTU2ZTM/jpeg/000/148/921/299_450.jpg"><br>Cybergoth</a> 45',
+'<a href="https://xhamster.com/photos/gallery/colar-and-stockings-15784743"><img src="https://ic-ph-nss.xhcdn.com/a/MDMxNWNkNjU5NTYzNmQwMjI0YmFkNmRkMGIzYTMxNDE/jpeg/000/494/046/820_450.jpg"><br>Colar and stockings</a> 43',
+'<a href="https://xhamster.com/photos/gallery/dark-angel2-15894927"><img src="https://ic-ph-nss.xhcdn.com/a/MWU1ZmI0NTgzYzFiYTlmNWNkY2JlZWIyY2M1MjczY2Q/jpeg/000/512/020/743_450.jpg"><br>Dark angel2</a> 42',
+'<a href="https://xhamster.com/photos/gallery/burlesque-black-and-white-15777702"><img src="https://ic-ph-nss.xhcdn.com/a/ODYxYTQ0YzU2OTY5NzNhMTE0YTBhMjM5ZjZkZmI1ZjE/jpeg/000/489/470/502_450.jpg"><br>Burlesque Black and white</a> 42',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-queen-of-egypt-15805478"><img src="https://ic-ph-nss.xhcdn.com/a/MTE4OTkwNzEwNDk2YzFmYWRlZjU3OTBlZTI4YjMwYTM/jpeg/000/505/122/350_450.jpg"><br>Karcelyne Queen of Egypt</a> 41',
+'<a href="https://xhamster.com/photos/gallery/outdoor-14308748"><img src="https://ic-ph-nss.xhcdn.com/a/NTk4NGZlZDVmZTFkNTViMzQwNzQ4YWM5NGVkMjA3NmY/jpeg/000/404/799/099_450.jpg"><br>Outdoor</a> 4',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-kimono-sexparty-16011953"><img src="https://ic-ph-nss.xhcdn.com/a/NDdlMDRmNjViYmEzYWE1OWMyOWI2MjRhNDlkZWYxMzQ/jpeg/000/514/228/815_450.jpg"><br>Karcelyne kimono sexparty</a> 4',
+'<a href="https://xhamster.com/photos/gallery/christmass-2020-15772752"><img src="https://ic-ph-nss.xhcdn.com/a/NzYzYzMxOTk4YTZiNGJiZTc2ODNjYTkzZGZkZDQ1NDg/jpeg/000/486/268/433_450.jpg"><br>Christmass 2020</a> 4',
+'<a href="https://xhamster.com/photos/gallery/ce-soir-karcelyne-vous-offre-son-cul-a-mater-13529378"><img src="https://ic-ph-nss.xhcdn.com/a/MjRiYzljYjY5OWQ4NWUxNjE2YWNlZTBhM2FjNzI1ZGE/jpeg/000/362/869/745_450.jpg"><br>Ce soir karcelyne vous offre son cul a mater.</a> 4',
+'<a href="https://xhamster.com/photos/gallery/petite-baise-en-soiree-14277502"><img src="https://ic-ph-nss.xhcdn.com/a/ODZiZmU4NDhmNDQxYmEyYjQ5MTU2MDlkOGEwMDc4MjY/jpeg/000/403/080/845_450.jpg"><br>Petite baise en soiree</a> 37',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-outdoorflash-15913426"><img src="https://ic-ph-nss.xhcdn.com/a/ZDUwYjRjYzBhYTAwMDkwNzFlNmM1YjgyNjk4ODk3NTc/jpeg/000/512/428/026_450.jpg"><br>Karcelyne outdoorflash</a> 37',
+'<a href="https://xhamster.com/photos/gallery/karcelynes-new-dress-15891679"><img src="https://ic-ph-nss.xhcdn.com/a/NDljZTU2YTM2ZWIzN2Y0ZmI2MjE5ZGIwNDA3ODQ4MzY/jpeg/000/511/945/781_450.jpg"><br>Karcelyne&#039;s new dress</a> 36',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-queen-of-egypt-ii-15887345"><img src="https://ic-ph-nss.xhcdn.com/a/NjRkMzg5MTFjNjlkZjUwODU2YjFhOWFlNDIyMjUxNmQ/jpeg/000/511/851/546_450.jpg"><br>Karcelyne queen of egypt II</a> 33',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-la-marquise-se-touche-13723351"><img src="https://ic-ph-nss.xhcdn.com/a/Yzc4N2NlZmZkNmM4Yzc1NGJkN2QzMjY3Zjk3M2VhYjc/jpeg/000/373/137/199_450.jpg"><br>Karcelyne, la marquise se touche</a> 33',
+'<a href="https://xhamster.com/photos/gallery/masked-she-blows-me-15798227"><img src="https://ic-ph-nss.xhcdn.com/a/Nzg4NjE1OTA0YWY0YmNlNzBmYTQ3NDJlYzZhZGQ1MmU/jpeg/000/501/434/898_450.jpg"><br>Masked she blows me</a> 32',
+'<a href="https://xhamster.com/photos/gallery/karceline-woolstockings-15981585"><img src="https://ic-ph-nss.xhcdn.com/a/Y2E4NmI5ZTMyMWEyNmNhMmM5MDliNTNiMTRmOGZiZTE/jpeg/000/513/767/092_450.jpg"><br>Karceline woolstockings</a> 32',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-naughty-play-16042124"><img src="https://ic-ph-nss.xhcdn.com/a/NDIyNTc4NjUwZGVlMDZlZGE2MGE3OTI5NmIyYmE3Yjc/jpeg/000/514/643/406_450.jpg"><br>Karcelyne naughty play.</a> 31',
+'<a href="https://xhamster.com/photos/gallery/artwork-15108447"><img src="https://ic-ph-nss.xhcdn.com/a/MTQ0NDVlOGEwN2JiMDAxODcwZDJmYjE1Mzc1M2M0MDg/jpeg/000/448/673/048_450.jpg"><br>Artwork</a> 3',
+'<a href="https://xhamster.com/photos/gallery/oilerd-and-hormany-15123113"><img src="https://ic-ph-nss.xhcdn.com/a/MjYzODRmZjA5NWMxYzVlN2IwZGEzNmU3NzYzZjVjYzc/jpeg/000/449/530/086_450.jpg"><br>Oilerd and hormany</a> 29',
+'<a href="https://xhamster.com/photos/gallery/bdsm-8234596"><img src="https://ic-ph-nss.xhcdn.com/a/YzlhOWE5MzcwZTcyMmIwM2I0Y2NmMWM0ZjliODdlYTk/jpeg/000/304/481/323_450.jpg"><br>BDSM</a> 28',
+'<a href="https://xhamster.com/photos/gallery/the-darck-side-of-the-slut-11512386"><img src="https://ic-ph-nss.xhcdn.com/a/MzVjMjg5MWU2ZTE1ZGVkNTM0ZDU3ZDk1MjEyYWI2M2M/jpeg/000/259/552/135_450.jpg"><br>The Darck side of the slut</a> 27',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-new-orleans-20-prostitute-16135536"><img src="https://ic-ph-nss.xhcdn.com/a/NWZlMzRjMWE3Mzc4NGQ4OTE0Nzc5NTA1ZGM5MDQzNWQ/jpeg/000/515/919/197_450.jpg"><br>Karcelyne New orleans &#039;20 prostitute</a> 27',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-beer-fuck-16022429"><img src="https://ic-ph-nss.xhcdn.com/a/MzhhZWM4YmJkZGM2MmFhNjYzNDBkNzVkZWRjMDA5MTU/jpeg/000/514/375/186_450.jpg"><br>Karcelyne beer fuck</a> 27',
+'<a href="https://xhamster.com/photos/gallery/twilek-paradise-15887179"><img src="https://ic-ph-nss.xhcdn.com/a/ZTUyZmMwZTZiYjRjZTM1ZTYyMTljNzhiMWUyNzA2Yjg/jpeg/000/511/848/028_450.jpg"><br>Twi&#039;lek paradise</a> 267',
+'<a href="https://xhamster.com/photos/gallery/lets-go-to-the-woods-15926032"><img src="https://ic-ph-nss.xhcdn.com/a/NDQ2NGM4MGE5MWUzNzJkMjg2MmRiYTVkMDc4ZmMxZDM/jpeg/000/512/715/653_450.jpg"><br>Let&#039;s go to the woods</a> 25',
+'<a href="https://xhamster.com/photos/gallery/blowjob-14355327"><img src="https://ic-ph-nss.xhcdn.com/a/ODZiNTcxYWM0OGE1ODc0YWExMmM0M2JkY2FmZTIzN2Y/jpeg/000/407/332/472_450.jpg"><br>Blowjob</a> 25',
+'<a href="https://xhamster.com/photos/gallery/outdoor-karcelyne-16045486"><img src="https://ic-ph-nss.xhcdn.com/a/MDQyMjMyZGMyMzFkNGYzZTk4MzgwOTIxNzc3ZGE2MzA/jpeg/000/514/690/363_450.jpg"><br>Outdoor Karcelyne</a> 21',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-and-theotryl-at-night-15920617"><img src="https://ic-ph-nss.xhcdn.com/a/MWZlMDdkYTBjZDQ2NjhkNTM5NzJlZDZmYmQ2MjczNzk/jpeg/000/512/600/550_450.jpg"><br>Karcelyne and Theotryl at night</a> 21',
+'<a href="https://xhamster.com/photos/gallery/how-to-punish-your-twilek-slave-13659233"><img src="https://ic-ph-nss.xhcdn.com/a/NmQzNjY2NDZlODY1NTEzZmY3MTgzZDY2Nzk2MDRiNWQ/jpeg/000/369/634/165_450.jpg"><br>How to punish your twi&#039;lek slave</a> 21',
+'<a href="https://xhamster.com/photos/gallery/bikini-fuck-14986663"><img src="https://ic-ph-nss.xhcdn.com/a/ZDNiNWZjNmM2MTkxYjM4ODJhODJhNzIwNDRiOTc3ZWE/jpeg/000/441/903/125_450.jpg"><br>bikini fuck</a> 21',
+'<a href="https://xhamster.com/photos/gallery/striptease-14609223"><img src="https://ic-ph-nss.xhcdn.com/a/ZDA2NTA0YjI5NTgwOGRlY2MwNDNkZTE2YmQ4NTgwMDY/jpeg/000/420/953/783_450.jpg"><br>Striptease</a> 20',
+'<a href="https://xhamster.com/photos/gallery/strass-karcelyne-16057898"><img src="https://ic-ph-nss.xhcdn.com/a/NTk4Y2YwYmVkN2E3YjBhYTU0N2I3NzM3OTk2ZGU1OTg/jpeg/000/514/870/971_450.jpg"><br>strass Karcelyne</a> 20',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-blackbody-16065143"><img src="https://ic-ph-nss.xhcdn.com/a/MDI3NzMxNzE5NzI1OTI0NzFhYjU5ZTA4NTAzYzMyMjA/jpeg/000/514/966/389_450.jpg"><br>Karcelyne blackbody</a> 20',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-froufrou-undies-15907271"><img src="https://ic-ph-nss.xhcdn.com/a/YjY0MzI0ZmZiN2YzNmQyNjkwYWZmZTM1N2E1YzFiZjc/jpeg/000/512/294/258_450.jpg"><br>Karcelyne &quot;froufrou&quot; undies</a> 2',
+'<a href="https://xhamster.com/photos/gallery/crafts-10214593"><img src="https://ic-ph-nss.xhcdn.com/a/MGJjNWNlZjAwMjgyNzhkYjU4YzRmNzQwY2NiNjE1YmU/jpeg/000/202/872/387_450.jpg"><br>Crafts</a> 2',
+'<a href="https://xhamster.com/photos/gallery/sweet-glam-black-and-white-bondage-16022524"><img src="https://ic-ph-nss.xhcdn.com/a/MTFlMDgwM2I5ZWI2YTg1MjE4ZmM1ZmY2YmM1NDFiODk/jpeg/000/514/376/491_450.jpg"><br>Sweet glam black and white bondage</a> 19',
+'<a href="https://xhamster.com/photos/gallery/purple-wig-and-nipples-cover-15886884"><img src="https://ic-ph-nss.xhcdn.com/a/YjYyYzQ4NjI2YTcyOWI4ZDQ3M2RlMjM5MmQ0ZjY2ZDY/jpeg/000/511/840/536_450.jpg"><br>Purple wig and nipples cover</a> 19',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-new-vinyle-tenue-15941456"><img src="https://ic-ph-nss.xhcdn.com/a/OTg2ZjgxYjlkYmQ3MGFhN2NiOTA0YTJhYTI1ZjdjM2U/jpeg/000/513/069/724_450.jpg"><br>Karcelyne new vinyle tenue.</a> 19',
+'<a href="https://xhamster.com/photos/gallery/hony-karcelyne-black-undies-16032464"><img src="https://ic-ph-nss.xhcdn.com/a/YzkxNDA1YmNkMzVlMGRkNmQ0MGEwZTM2NGQ4MTBkZDU/jpeg/000/514/514/589_450.jpg"><br>Hony Karcelyne black undies.</a> 17',
+'<a href="https://xhamster.com/photos/gallery/never-serious-for-the-belgian-day-15798780"><img src="https://ic-ph-nss.xhcdn.com/a/MDVjMjc3YTJkZTQwMmQxYWQyYTFjOWFkMTNiZWRmMzM/jpeg/000/501/700/473_450.jpg"><br>Never serious for the belgian day</a> 16',
+'<a href="https://xhamster.com/photos/gallery/nightplay-15913201"><img src="https://ic-ph-nss.xhcdn.com/a/ZDdhYWM4YmUwZjRhY2Y1ODAxOTU1Mjk3MzdhNzJlOGE/jpeg/000/512/423/479_450.jpg"><br>Nightplay</a> 14',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-redwig-16099493"><img src="https://ic-ph-nss.xhcdn.com/a/MTJkZGVkOGM5NDgyNDQzOWU3MjdjMzdiOGE1ZDY2ZWI/jpeg/000/515/412/645_450.jpg"><br>Karcelyne redwig</a> 14',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-kimonogirl-15939851"><img src="https://ic-ph-nss.xhcdn.com/a/MmE5YzY4MjI2ZWQ4YWM2MzRjNWQ2ZDk5NTU5MWFkOTE/jpeg/000/513/035/342_450.jpg"><br>Karcelyne kimonogirl</a> 14',
+'<a href="https://xhamster.com/photos/gallery/dedicaces-8207119"><img src="https://ic-ph-nss.xhcdn.com/a/MDQ3NjdjN2RlNzQzYjA3MTA0N2ZiZGQ4YjMxYzgyMzA/jpeg/000/147/054/190_450.jpg"><br>Dedicaces</a> 14',
+'<a href="https://xhamster.com/photos/gallery/re-wig-karcelyne-15886773"><img src="https://ic-ph-nss.xhcdn.com/a/NmMyNGU5MDZjMjQ5ODE2ZDNiZTYxM2RjNDE1N2ZmYTk/jpeg/000/511/838/664_450.jpg"><br>Re wig Karcelyne</a> 13',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-leopard-16011231"><img src="https://ic-ph-nss.xhcdn.com/a/NjRiNGQxNjZkNWYzZDg4OWU2NDYxZGM2MDU0MmZmZjI/jpeg/000/514/220/076_450.jpg"><br>Karcelyne leopard.</a> 12',
+'<a href="https://xhamster.com/photos/gallery/submission-16008156"><img src="https://ic-ph-nss.xhcdn.com/a/YzVmYWMxNmZmYWI2Mjc4NDYyYTIxMzJmNGJjN2E5NGE/jpeg/000/514/177/548_450.jpg"><br>Submission</a> 11',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-has-a-new-top-15948778"><img src="https://ic-ph-nss.xhcdn.com/a/MjEzNGI4NDEyY2ViYjFkMmVmZWU5YmZiNDIxNDMxMTk/jpeg/000/513/217/859_450.jpg"><br>Karcelyne has a new top</a> 11',
+'<a href="https://xhamster.com/photos/gallery/plage-naturiste-10273391"><img src="https://ic-ph-nss.xhcdn.com/a/NjBiZTI3NmU3MjI5ZGMwMmJkNjAwNDE1NjU2NzY1Yzk/jpeg/000/301/391/607_450.jpg"><br>Plage naturiste</a> 102',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-santa-slut-2023-16100615"><img src="https://ic-ph-nss.xhcdn.com/a/MTFhY2UyZTc4OWNiMzFmZDc4Nzc2Y2U4M2JjNTA5YWY/jpeg/000/515/426/707_450.jpg"><br>Karcelyne santa slut 2023</a> 10',
+'<a href="https://xhamster.com/photos/gallery/des-bas-et-un-gode-14080435"><img src="https://ic-ph-nss.xhcdn.com/a/MzE2ZGIxYWM3YjNmYjdlMDJkYzBiY2U0NDg5NGY3Yzk/jpeg/000/392/279/165_450.jpg"><br>Des bas et un gode</a> 10',
+'<a href="https://xhamster.com/photos/gallery/cocoom-14160515"><img src="https://ic-ph-nss.xhcdn.com/a/OGY0YThlMzlhMjMwNWI0YzY4YzFhZGZkYjhhMzA1Yzg/jpeg/000/396/591/925_450.jpg"><br>Cocoom</a> 10',
+'<a href="https://xhamster.com/photos/gallery/karcelyne-nipples-torture-16100408"><img src="https://ic-ph-nss.xhcdn.com/a/ZGE0MTMxZGM4YjUxMjUzNGIxMzQ5ZmI5N2E1ZTYyY2M/jpeg/000/515/423/029_450.jpg"><br>Karcelyne nipples torture</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "theotrylkarcelyne"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

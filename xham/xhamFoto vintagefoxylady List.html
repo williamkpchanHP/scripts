@@ -1,0 +1,78 @@
+<base target="_blank"><html><head><title>vintagefoxylady</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/life-in-the-sun-15169719"><img src="https://ic-ph-nss.xhcdn.com/a/ZTNkOWE2MzhjZGYxMTMyYmEyNTkyNGVlZDEyODg4Nzc/jpeg/000/452/073/862_450.jpg"><br>Life in the sun</a> 9',
+'<a href="https://xhamster.com/photos/gallery/photo-shoot-11894240"><img src="https://ic-ph-nss.xhcdn.com/a/NzA2MzY2ZWIyMmEwODFjZGY3MjQ2NTM0N2RmZWY3MmQ/jpeg/000/278/422/873_450.jpg"><br>Photo shoot </a> 85',
+'<a href="https://xhamster.com/photos/gallery/red-and-black-10940585"><img src="https://ic-ph-nss.xhcdn.com/a/OGUxNDU3MDI4ZDA5N2VmZDg4NjcxYzhmNDM5NjA0NTE/jpeg/000/232/945/474_450.jpg"><br>Red and black </a> 8',
+'<a href="https://xhamster.com/photos/gallery/pin-up-dress-and-corset-stockings-10902298"><img src="https://ic-ph-nss.xhcdn.com/a/NGU3YzA5NWE2NDljYzkyYTgzNmU0ZDk0ZWZjZmNiZDU/jpeg/000/231/137/781_450.jpg"><br>Pin up dress and corset stockings </a> 8',
+'<a href="https://xhamster.com/photos/gallery/history-festival-12170805"><img src="https://ic-ph-nss.xhcdn.com/a/OTIyZTNjYjZkZWNmODhlNmNmNDlmNDE1YmJhODY2Mzc/jpeg/000/292/153/238_450.jpg"><br>History festival </a> 8',
+'<a href="https://xhamster.com/photos/gallery/glass-toy-play-with-stockings-on-16022453"><img src="https://ic-ph-nss.xhcdn.com/a/MTg2Y2NiYzAwZTQ3YzA1NzBjYWE3Mjg0NWU5ZWU0ODk/jpeg/000/514/375/685_450.jpg"><br>Glass toy play with stockings on</a> 8',
+'<a href="https://xhamster.com/photos/gallery/pussy-shots-10853596"><img src="https://ic-ph-nss.xhcdn.com/a/YWJjY2ZkNThjNWU3NzdhNmVjOGIxYzMyZjkwNjAxZmM/jpeg/000/229/010/947_450.jpg"><br>Pussy shots</a> 7',
+'<a href="https://xhamster.com/photos/gallery/vc10-shoot-11902770"><img src="https://ic-ph-nss.xhcdn.com/a/MzhiODVhMjQwZWU2YjRjNWI2NzBlMzc3MTk2NjY2ODk/jpeg/000/278/825/396_450.jpg"><br>VC10 shoot </a> 60',
+'<a href="https://xhamster.com/photos/gallery/mini-dress-and-body-stocking-10902285"><img src="https://ic-ph-nss.xhcdn.com/a/ZDNkMjAxN2IxOGM3ZDY5OTZiMmMyZmJmYWFhOWYyYTA/jpeg/000/231/136/730_450.jpg"><br>Mini dress and body stocking </a> 6',
+'<a href="https://xhamster.com/photos/gallery/lamp-lovers-16025325"><img src="https://ic-ph-nss.xhcdn.com/a/NTI4OGViZTI2NzE5ODcyZjY5MTdjODAyMmQxMzg0N2Q/jpeg/000/514/420/747_450.jpg"><br>Lamp lovers </a> 5',
+'<a href="https://xhamster.com/photos/gallery/full-frilly-body-with-stockings-and-suspenders-16022486"><img src="https://ic-ph-nss.xhcdn.com/a/ZWExNWQ5NTgyMzlmYTk3NjY1ZGI0OWJmNmUyNzQ4ZWQ/jpeg/000/514/376/069_450.jpg"><br>Full frilly body with stockings and suspenders</a> 5',
+'<a href="https://xhamster.com/photos/gallery/holiday-2019-12253194"><img src="https://ic-ph-nss.xhcdn.com/a/OTNmZDMxNzFmNjNiMTY4MjY2OGM2ODZmMDk5NDJlMzM/jpeg/000/296/263/736_450.jpg"><br>Holiday 2019</a> 48',
+'<a href="https://xhamster.com/photos/gallery/video-work-11415954"><img src="https://ic-ph-nss.xhcdn.com/a/MmVhNmY3ZjIxOWNmZDkzMTU5NmU5OTc3NDI2ZDc5ZTY/jpeg/000/255/027/833_450.jpg"><br>Video work </a> 46',
+'<a href="https://xhamster.com/photos/gallery/cam-show-and-skype-outfits-13856981"><img src="https://ic-ph-nss.xhcdn.com/a/Mjg0MWEyOWE1YzFkZjBjYjQyZDM4YTEwNTVhYjQ1OTY/jpeg/000/380/375/522_450.jpg"><br>Cam show and Skype outfits </a> 46',
+'<a href="https://xhamster.com/photos/gallery/suspender-stockings-with-no-knickers-on-16022483"><img src="https://ic-ph-nss.xhcdn.com/a/NTU2NjQzN2RhNGJiMjA3MjcwNzIyMjc5MmQzZWRkZTA/jpeg/000/514/375/997_450.jpg"><br>Suspender stockings with no knickers on</a> 4',
+'<a href="https://xhamster.com/photos/gallery/fishnets-and-long-boots-10871724"><img src="https://ic-ph-nss.xhcdn.com/a/NDllYTkyMWZhY2Q1MTNkYjQ1ZWJjYjVkNGI3MzA4ZDU/jpeg/000/229/822/574_450.jpg"><br>Fishnets and long boots</a> 4',
+'<a href="https://xhamster.com/photos/gallery/photo-shoot-at-country-house-11660620"><img src="https://ic-ph-nss.xhcdn.com/a/NzMwYWM0YjkwOTM3Mjk0OTlkMGQ4ZTBhNDA1MzNkNWY/jpeg/000/266/692/408_450.jpg"><br>Photo shoot at country house </a> 33',
+'<a href="https://xhamster.com/photos/gallery/home-after-a-night-out-10853553"><img src="https://ic-ph-nss.xhcdn.com/a/ZjdhMzdlY2E4YjJjNjE2N2YzOWFmM2M0NDdiZjdjNTk/jpeg/000/229/009/388_450.jpg"><br>Home after a night out </a> 19',
+'<a href="https://xhamster.com/photos/gallery/toy-in-tights-pantyhose-11505746"><img src="https://ic-ph-nss.xhcdn.com/a/MGJiNTM2ZjUxNGExZjNhNTkzZjFiYjI4MjVjMzEzZTg/jpeg/000/259/243/489_450.jpg"><br>Toy in tights pantyhose </a> 18',
+'<a href="https://xhamster.com/photos/gallery/sheers-body-and-boobs-10853118"><img src="https://ic-ph-nss.xhcdn.com/a/ODZmY2JlOWYwM2M1NjRiODI1YWVlYTFlZjM5ZjQ5M2I/jpeg/000/228/986/751_450.jpg"><br>Sheers body and boobs</a> 17',
+'<a href="https://xhamster.com/photos/gallery/group-shoot-i-did-yesterday-10942103"><img src="https://ic-ph-nss.xhcdn.com/a/YWJlMjdkMGI1ZjZkZDU5ZDk5NzI2NDMzODFjZDE5MjA/jpeg/000/233/022/903_450.jpg"><br>Group shoot I did yesterday </a> 17',
+'<a href="https://xhamster.com/photos/gallery/sat-on-my-balcony-in-the-sun-13844289"><img src="https://ic-ph-nss.xhcdn.com/a/OWE5YTcxOTAxYTc1NTg1MmFhMTc3NDIxZTFhNGIxYmY/jpeg/000/379/695/331_450.jpg"><br>Sat on my balcony in the sun</a> 16',
+'<a href="https://xhamster.com/photos/gallery/wet-pussy-lips-10913498"><img src="https://ic-ph-nss.xhcdn.com/a/ZjMxYWRlNDU4ODNhY2NlZjc1OTY0M2Y3ZGJkOGE4ZjI/jpeg/000/231/668/944_450.jpg"><br>Wet pussy lips</a> 13',
+'<a href="https://xhamster.com/photos/gallery/pussy-pump-10914125"><img src="https://ic-ph-nss.xhcdn.com/a/Nzc5OGVjMGE3YmY2YTFhMmRiOTQ0YjQ0NTEwY2U0YzM/jpeg/000/231/701/610_450.jpg"><br>Pussy pump</a> 13',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "vintagefoxylady"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

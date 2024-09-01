@@ -1,0 +1,94 @@
+<base target="_blank"><html><head><title>heavenlee1982Batch: 32</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:100%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">heavenlee1982Batch: 32</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/heavenlees-gallery-15904280</k>',
+'MmIxYzBlYjZkNTE3M2VhOTEyZGFjZTU4MzE5ZDcwOGI/jpeg/000/512/228/993',
+'YmZkOWI5MzBkOThhOWEyZWZkOGFiNTMyY2U4YWRhM2E/jpeg/000/512/228/992',
+'NjQ2YTFhMzYyYWJiMmRmNjE3MmZlMjlkYzcyMTk0OWI/jpeg/000/512/228/991',
+'YWRjNzc5NjAzNWY5NTgxYTBhNTBhMzc5MWFjMjE0NDQ/jpeg/000/512/228/990',
+'YzM1NTE5YWY3Y2MxY2RlYzczMGY1YzEzM2ZjYjNjZDU/jpeg/000/512/228/989',
+'MWVkOWY1ZTJlZjMzYWQwYThlNjE1NzE4NjU4MGY5NjE/jpeg/000/512/228/988',
+'MDJmMmIyMGQ0ZmU0MjY5NjBjZjhiNzA3MDFhYzRjNDY/jpeg/000/512/228/987',
+'<k>https://xhamster.com/photos/gallery/like-the-new-lingerie-15955736</k>',
+'ZGZiYzJhZjZlMTJmNzc3NTkzYmYyMWNlNjYzNWRhMjU/jpeg/000/513/363/988',
+'YjUzNDhlYWM2NjU0MGI1YjIyNzYwMTllOWU0MDNlNzY/jpeg/000/513/363/987',
+'MmFkYWRhZTgzMmFlZjEzYTljNWI0ZGM4MzNjNTg3YTc/jpeg/000/513/363/986',
+'<k>https://xhamster.com/photos/gallery/im-here-15919105</k>',
+'NGZiOTQwZmMwOWE4YWZlOWUyZWYwYTUyZjU1NzNmMjE/jpeg/000/512/569/153',
+'ZGM3NDg1M2Q3YjNiM2EzMDYzMzBiODA3OWFhMzM3Y2M/jpeg/000/512/569/152',
+'ZjBiYThlMmU3NjNjN2FjNDc0OWVmYzY1MTM1YzgzODk/jpeg/000/512/569/151',
+'<k>https://xhamster.com/photos/gallery/heavenlee-days-15956503</k>',
+'YjI1Y2Y4NTA0OGVhNGE1Y2U1MmExNzhiNDY1NmQ0OGQ/jpeg/000/513/383/977',
+'NDgzYzA1NmI0NTE1N2FlMTBlYWFmMTlhZjllNzBkZDE/jpeg/000/513/383/976',
+'NmIxYmI0NTY3YWE4ZTEzNzdhYWZmMmFhYjBhMjNhMTM/jpeg/000/513/383/975',
+'ZmMwMTc3OGJhYzU3ZjYwMTFkNTE2OWZhZDk1ZWRhMDY/jpeg/000/513/383/974',
+'ZjJmZjI1M2JjOGNlYzkyNWJhOWE5MTM0ZGY5YTc1ZjI/jpeg/000/513/383/973',
+'Yjc0MDkzZWJjZWM3NWI3ZTVlOGI5OWEwN2Y3YTliZDY/jpeg/000/513/383/972',
+'MzY4ZjVkMmUyNmMxMDg2NWFmNzIxZTQzZDkyYmRkMTM/jpeg/000/513/383/971',
+'MzljN2Y3Yjc3MWNjZjQzODFlMmJiYzZiYTMzMDA2NDg/jpeg/000/513/383/970',
+'ZTMxOTJjZDQxODNiZDEzZDU4ZmYyYjVhZGZiMGRlY2Q/jpeg/000/513/383/969',
+'ZGIxMjMwYjk0Mzk4YzhiYjJhMjM4YzYwNDFlNmUzNTQ/jpeg/000/513/383/968',
+'ZmIyNjA1ZjFiZTE3YTQwNjcyNzA1MmI0YzdkMjcwOGY/jpeg/000/513/383/967',
+'<k>https://xhamster.com/photos/gallery/heavenlees-gallery-15942954</k>',
+'ZTA5MzUyNjZiYWExNmI5MWFmYjliMWM1OTQ1YWJmYmU/jpeg/000/513/101/034',
+'<k>https://xhamster.com/photos/gallery/heavenlee-15899320</k>',
+'NDliNTI3ZWUxZjNiZWFmZTUzNTAwNDQ2ZDhhMWI5ZmQ/jpeg/000/512/119/423',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "heavenlee1982Batch: 32"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

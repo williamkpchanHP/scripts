@@ -1,0 +1,93 @@
+<base target="_blank"><html><head><title>catandfox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/massage-for-hot-milf-16177365"><img src="https://ic-ph-nss.xhcdn.com/a/OGQzMTUxMTZiNWVjYWYxZGYxMDQxZGM5OWNhMDZlNjQ/jpeg/000/516/424/784_450.jpg"><br>massage for hot milf</a> 9',
+'<a href="https://xhamster.com/photos/gallery/black-latex-mom-biker-16097745"><img src="https://ic-ph-nss.xhcdn.com/a/ZGFkM2VhMzFjYjJkY2I1MjI0Y2JiMTE0MGEwNTg2MWM/jpeg/000/515/392/752_450.jpg"><br>black latex mom biker</a> 8',
+'<a href="https://xhamster.com/photos/gallery/hot-mom-in-the-sauna-16156987"><img src="https://ic-ph-nss.xhcdn.com/a/ODU1MDAzZmFkNDJlMzA0ZjU5ZGIzMzBjYWE4ZDY5ZjU/jpeg/000/516/182/602_450.jpg"><br>Hot mom in the sauna</a> 5',
+'<a href="https://xhamster.com/photos/gallery/slutty-waitress-posing-on-the-table-16124432"><img src="https://ic-ph-nss.xhcdn.com/a/ZmI1NDZmOWU3NTk4MmYzZDNjMzRjMDFkM2QxZGI0MjE/jpeg/000/515/740/459_450.jpg"><br>slutty waitress posing on the table</a> 39',
+'<a href="https://xhamster.com/photos/gallery/glamour-lady-in-mud-16026007"><img src="https://ic-ph-nss.xhcdn.com/a/ZjcyZmExZWYyMTExYjY3OTE3MjVhMmYzOGJkNTkwMDQ/jpeg/000/514/429/518_450.jpg"><br>Glamour lady in mud</a> 36',
+'<a href="https://xhamster.com/photos/gallery/sub-mature-dog-leash-16018059"><img src="https://ic-ph-nss.xhcdn.com/a/MzZkOWUxN2Q4YmE5Mjk2MjA5ZDdkNWI2MDYyYWJmZGI/jpeg/000/514/310/038_450.jpg"><br>Sub mature. Dog leash</a> 31',
+'<a href="https://xhamster.com/photos/gallery/homemaster-mom-16117611"><img src="https://ic-ph-nss.xhcdn.com/a/ODkwYWYyMGQ4ZWEyM2NmZDNlNTVlODUyNzU2YzFhNzI/jpeg/000/515/650/496_450.jpg"><br>homemaster mom </a> 29',
+'<a href="https://xhamster.com/photos/gallery/shibari-adventure-16028949"><img src="https://ic-ph-nss.xhcdn.com/a/NzQ5MzUzZGM1NDU5ZDBlYzgwMWYwZjU1MzI1ZjQzMWU/jpeg/000/514/467/663_450.jpg"><br>Shibari adventure</a> 27',
+'<a href="https://xhamster.com/photos/gallery/milf-whore-in-the-torture-chamber-16073673"><img src="https://ic-ph-nss.xhcdn.com/a/ZTM3MzkzYjgwZTZkMzcwZDEwOTdlYTdhZjVmMGFkOTI/jpeg/000/515/070/342_450.jpg"><br>MILF whore in the torture chamber</a> 26',
+'<a href="https://xhamster.com/photos/gallery/new-year-aventure-part-one-16105702"><img src="https://ic-ph-nss.xhcdn.com/a/M2VmODVmNDdhZDUxMTEzNDJiNDRmNGRhNTk2MDBmODE/jpeg/000/515/494/803_450.jpg"><br>new year aventure part one</a> 24',
+'<a href="https://xhamster.com/photos/gallery/bdsm-mom-15963126"><img src="https://ic-ph-nss.xhcdn.com/a/NGJmOWUyYWU2ZTVhYTFiOWIzYmNkZTAyYmE2ODk0N2U/jpeg/000/513/515/926_450.jpg"><br>BDSM mom</a> 24',
+'<a href="https://xhamster.com/photos/gallery/wet-games-for-slutty-mom-16110909"><img src="https://ic-ph-nss.xhcdn.com/a/ZTg0NDEyYzljYTgzNzA1YjE5YTA1ZGIxNmFiN2JhMjk/jpeg/000/515/562/521_450.jpg"><br>Wet games for slutty mom</a> 22',
+'<a href="https://xhamster.com/photos/gallery/hot-mom-squirted-fontain-16030392"><img src="https://ic-ph-nss.xhcdn.com/a/YmVkYmY1NDA5MGZlNGQ3MmJhMmMxZGRjNzQ4ZGFiNGQ/jpeg/000/514/489/001_450.jpg"><br>Hot mom squirted fontain</a> 22',
+'<a href="https://xhamster.com/photos/gallery/new-year-anventure-part-two-16105704"><img src="https://ic-ph-nss.xhcdn.com/a/ZWNhMWE3ZjQxNWE3MzZlODVmNDY3Mjg0N2E0OTAzMjc/jpeg/000/515/494/826_450.jpg"><br>new year anventure part two</a> 21',
+'<a href="https://xhamster.com/photos/gallery/last-day-of-winter-2024-16124435"><img src="https://ic-ph-nss.xhcdn.com/a/NzI1Y2Y3MjI1YmQzODI0ZGE1Yzg3ZGY1NzlmYzM2NzE/jpeg/000/515/740/480_450.jpg"><br>Last day of winter 2024</a> 20',
+'<a href="https://xhamster.com/photos/gallery/dirty-mom-in-the-forest-spread-her-legs-and-licks-a-car-16160966"><img src="https://ic-ph-nss.xhcdn.com/a/N2FlYzQ3M2JkZTRkOWQwMjQ0ZGRkYmUxZWMwODVjYmI/jpeg/000/516/240/585_450.jpg"><br>dirty mom in the forest spread her legs and licks a car</a> 20',
+'<a href="https://xhamster.com/photos/gallery/bondage-for-sexy-mom-in-a-country-house-16175146"><img src="https://ic-ph-nss.xhcdn.com/a/OWZiYzZhMWY5ZTdjYzhhYWIxOWNkZjEzZWRkNWJjNmM/jpeg/000/516/403/009_450.jpg"><br>bondage for sexy mom in a country house</a> 19',
+'<a href="https://xhamster.com/photos/gallery/bdsm-milf-in-public-place-16028952"><img src="https://ic-ph-nss.xhcdn.com/a/MmM0NzMwOTRhZWEwOThiOTUxYWZhNGU5Nzc4ZmIwZGE/jpeg/000/514/467/699_450.jpg"><br>BDSM milf in public place</a> 18',
+'<a href="https://xhamster.com/photos/gallery/slutty-mom-on-billiards-part-one-16156978"><img src="https://ic-ph-nss.xhcdn.com/a/YjQxODE4NjhiODljNjdlMzIyMzk0NzJhY2RhYmQ0MjA/jpeg/000/516/182/439_450.jpg"><br>Slutty mom on billiards part one</a> 16',
+'<a href="https://xhamster.com/photos/gallery/slut-place-15934519"><img src="https://ic-ph-nss.xhcdn.com/a/ODY4NjQ2ZGUwYWQ1YWI2NWZiYjJkZTQxNWNjNjkzMjE/jpeg/000/512/913/692_450.jpg"><br>Slut place</a> 16',
+'<a href="https://xhamster.com/photos/gallery/police-slut-mom-16029885"><img src="https://ic-ph-nss.xhcdn.com/a/OGI2ZDA2Y2U0MzdiY2ZkNTc0NmZjZDZmZDNjNjFjN2U/jpeg/000/514/479/176_450.jpg"><br>police slut mom</a> 16',
+'<a href="https://xhamster.com/photos/gallery/slut-in-leash-walking-in-the-public-park-16073102"><img src="https://ic-ph-nss.xhcdn.com/a/MjliMmE3MDkwYWUwNzBmNGUwMGU0MTViYWU0ZGFkZjU/jpeg/000/515/063/920_450.jpg"><br>slut in leash walking in the public park</a> 15',
+'<a href="https://xhamster.com/photos/gallery/nettle-fetish-15924073"><img src="https://ic-ph-nss.xhcdn.com/a/MjcxZDU1M2VkZjY5ZTFhZjBlOTc1NjQzNGRmODEzODI/jpeg/000/512/673/565_450.jpg"><br>nettle fetish</a> 15',
+'<a href="https://xhamster.com/photos/gallery/slutty-mom-on-billiards-part-two-16156980"><img src="https://ic-ph-nss.xhcdn.com/a/NjljYWI4YTIzYmRkMGZjYjg3ZGFiNzRkOTgxMGJhZTQ/jpeg/000/516/182/462_450.jpg"><br>Slutty mom on billiards part two</a> 14',
+'<a href="https://xhamster.com/photos/gallery/high-heels-hot-milf-slut-in-stocking-on-the-bed-16146578"><img src="https://ic-ph-nss.xhcdn.com/a/OTAyZjI0NWI5NmU1NmVhN2YzMmYzMDFjNjg1YTM4YWM/jpeg/000/516/061/292_450.jpg"><br>High heels hot MILF slut in stocking on the bed</a> 14',
+'<a href="https://xhamster.com/photos/gallery/naughty-milf-mermaid-in-jacuzzi-16031906"><img src="https://ic-ph-nss.xhcdn.com/a/MjM0OGMwMDkzOTk5NmNkOWU1ZDQ5ZmE5MGVkMTY2Yzk/jpeg/000/514/506/112_450.jpg"><br>naughty milf mermaid in jacuzzi</a> 13',
+'<a href="https://xhamster.com/photos/gallery/dirty-milf-maid-clean-the-toilet-in-the-hotel-room-16157621"><img src="https://ic-ph-nss.xhcdn.com/a/ZmEzMzY1ZGNlZGFhMzQxNzkzYzFhZmY5MTA1NzhkM2I/jpeg/000/516/190/126_450.jpg"><br>dirty milf maid clean the toilet in the hotel room</a> 13',
+'<a href="https://xhamster.com/photos/gallery/milf-slut-red-corset-dressed-16073465"><img src="https://ic-ph-nss.xhcdn.com/a/NGJmZTNiNzg3MGQ5YWYyOGFlMWZhODgxNGE3MWQ0ZTg/jpeg/000/515/068/263_450.jpg"><br>MILF slut red corset dressed</a> 12',
+'<a href="https://xhamster.com/photos/gallery/dirty-mom-plays-with-garbage-16175744"><img src="https://ic-ph-nss.xhcdn.com/a/MTA5NzhjZTQwZjMzZWFjNjdmNzNjZTY3YTcyYWNmMGM/jpeg/000/516/408/970_450.jpg"><br>dirty mom plays with garbage</a> 12',
+'<a href="https://xhamster.com/photos/gallery/whore-dressed-in-a-harness-16032782"><img src="https://ic-ph-nss.xhcdn.com/a/MmRlNTdmYzBhMmY2MWU5MDk3MzhiZDhlMjRkZGQ5ZDc/jpeg/000/514/519/365_450.jpg"><br>whore dressed in a harness</a> 11',
+'<a href="https://xhamster.com/photos/gallery/slutty-mom-on-billiards-part-three-16156983"><img src="https://ic-ph-nss.xhcdn.com/a/ZGFjYzYyMzQ4NmM2M2I2YTIzZjVlOGIyMmQ4ZmEzMTQ/jpeg/000/516/182/506_450.jpg"><br>Slutty mom on billiards part three</a> 11',
+'<a href="https://xhamster.com/photos/gallery/pissed-on-milf-in-jacuzzi-16020885"><img src="https://ic-ph-nss.xhcdn.com/a/MmRhZGYyYmVlODQ3MzczNTEyNWQ3YWIxNTg4YjI0ZTM/jpeg/000/514/354/208_450.jpg"><br>pissed on milf in jacuzzi</a> 11',
+'<a href="https://xhamster.com/photos/gallery/nyotaimori-session-for-beauty-mom-16124437"><img src="https://ic-ph-nss.xhcdn.com/a/OTA2ZDgzZjA1YjViZmE0MjVhOTk2OTc0NDlhMmQxODU/jpeg/000/515/740/512_450.jpg"><br>Nyotaimori session for beauty mom</a> 11',
+'<a href="https://xhamster.com/photos/gallery/milf-slut-posing-on-the-bed-16142897"><img src="https://ic-ph-nss.xhcdn.com/a/NmQ0ODg5OGU3YjExOTAzZWQxNmFiNTFlMThiYWQ0MDU/jpeg/000/516/018/167_450.jpg"><br>milf slut posing on the bed</a> 11',
+'<a href="https://xhamster.com/photos/gallery/mature-slut-fucks-herself-by-cucmber-and-cactus-16175138"><img src="https://ic-ph-nss.xhcdn.com/a/NzllZTFkZTUwNGJjMmNiOTI3NmE1NDE4OGE4MmRkMzU/jpeg/000/516/402/982_450.jpg"><br>mature slut fucks herself by cucmber and cactus</a> 11',
+'<a href="https://xhamster.com/photos/gallery/circus-milf-sexy-poses-16143228"><img src="https://ic-ph-nss.xhcdn.com/a/OTJmN2FjNzU2ODFiYzM5YTFiYWUxZDMwNTNkZDk2N2Y/jpeg/000/516/022/282_450.jpg"><br>circus milf sexy poses</a> 11',
+'<a href="https://xhamster.com/photos/gallery/slutty-nun-15888699"><img src="https://ic-ph-nss.xhcdn.com/a/N2Q5ZDAyZDIyZTNhNWJlZjk3NzQ2NDc3MWIyYzk3MjU/jpeg/000/511/880/255_450.jpg"><br>slutty nun</a> 10',
+'<a href="https://xhamster.com/photos/gallery/my-new-tatoo-with-xhamster-logo-16059265"><img src="https://ic-ph-nss.xhcdn.com/a/MDI1NDc4ZWU1OTZjMGNhNjBkMWRlZmRkZDllZTQ2Nzg/jpeg/000/514/886/450_450.jpg"><br>My new tatoo with xhamster logo</a> 10',
+'<a href="https://xhamster.com/photos/gallery/milf-weekend-16077184"><img src="https://ic-ph-nss.xhcdn.com/a/OWZlZGI2MDdkYzk2MzU5ZmZmNGNkNTQ3MTE0MzRjNTk/jpeg/000/515/118/430_450.jpg"><br>MILF Weekend</a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "catandfox"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

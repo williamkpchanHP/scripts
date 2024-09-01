@@ -1,0 +1,80 @@
+<base target="_blank"><html><head><title>cumatozz</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">cumatozz</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'65f5156473996"><img src="https://ei.phncdn.com/videos/202403/16/449638231/original/(m=q_JWR-YbeafTGgaaaa)(mh=GaU258X7KM9vUW6-)0.jpg"><br>Step Mom Wakes up to Hard Cock of Step Son She thinks its her husband',
+'65fa90385c43b"><img src="https://ei.phncdn.com/videos/202403/20/449831091/original/(m=qOVI2-YbeafTGgaaaa)(mh=E_X1LBjbf_e6gsNV)0.jpg"><br>Big Tit Step mom got fucked while cleaning floors',
+'65fda8aeb345c"><img src="https://ei.phncdn.com/videos/202403/22/449967121/original/(m=q25M9-YbeafTGgaaaa)(mh=kQJxxEcj8TuHOyU7)0.jpg"><br>She Offered me a Pie but got a Creampie',
+'65fed97bf0546"><img src="https://ei.phncdn.com/videos/202403/23/450011061/original/(m=qTQZQGZbeafTGgaaaa)(mh=wlDhzyercfu8_7t9)0.jpg"><br>Step sis got Stuck with back pain and I helped her',
+'65ffae2e044a6"><img src="https://ei.phncdn.com/videos/202403/24/450044611/original/(m=qX--GGZbeafTGgaaaa)(mh=mQHEk_wzsXOkaBeR)0.jpg"><br>Come on Step Sister Quickly Before parents come Home',
+'65ffe113668e1"><img src="https://ei.phncdn.com/videos/202403/24/450050061/original/(m=qOGGHGZbeafTGgaaaa)(mh=lgm4zOSU-JNLpJkf)0.jpg"><br>Girl Cheated on her boyfriend to pay a Courier',
+'6601476052084"><img src="https://ei.phncdn.com/videos/202403/25/450098191/original/(m=qTUZKGZbeafTGgaaaa)(mh=ezI6LY3T20FwFNDR)0.jpg"><br>Romantic Passionate Sextape With my girlfriend',
+'66028cc29f8cd"><img src="https://ei.phncdn.com/videos/202403/26/450148731/original/(m=qURRNGZbeafTGgaaaa)(mh=uu0VDR5gnGJXKesW)0.jpg"><br>18 Year Old Big Tits Girl Got Roughly Fucked',
+'6606d5f31629c"><img src="https://ei.phncdn.com/videos/202403/29/450318761/original/(m=qPUMVGZbeafTGgaaaa)(mh=ElnwJ5xsXW52gPaZ)0.jpg"><br>Step Mom Wakes Up To Step sons Hard Cock',
+'6607f9a610953"><img src="https://ei.phncdn.com/videos/202403/30/450364331/original/(m=qM3VWGZbeafTGgaaaa)(mh=3NDPY0IeRi9DVmn0)0.jpg"><br>My Stepsister Was about to go to Bed and then this Happened...',
+'66096f615e740"><img src="https://ei.phncdn.com/videos/202403/31/450419451/original/(m=qZUR0GZbeafTGgaaaa)(mh=dHOkilpv4rqtM3t1)0.jpg"><br>Passionate Rough Romantic sex With my 18 y.o Girlfriend ended with Creampie',
+'660aaf4a88768"><img src="https://ei.phncdn.com/videos/202404/01/450474021/original/(m=qUKR3GZbeafTGgaaaa)(mh=BJCIjOl2cfu9Xtax)0.jpg"><br>My Step Sister didnt Stop Riding me even after a Creampie',
+'660d0eb43dd1d"><img src="https://ei.phncdn.com/videos/202404/03/450555931/original/(m=q9976GZbeafTGgaaaa)(mh=5CMN9e4Ay2-2dgwP)0.jpg"><br>Having fun with my Stepsister on my Parents bed',
+'661037d8da12a"><img src="https://ei.phncdn.com/videos/202404/05/450675601/original/(m=q61ZGHZbeafTGgaaaa)(mh=4gh0Hf62RwE41eVL)0.jpg"><br>My stepsister and I were again left at home alone without our parents',
+'66142c5eaa404"><img src="https://ei.phncdn.com/videos/202404/08/450806011/thumbs_15/(m=eafTGgaaaa)(mh=4cJ-SVpeMQ4wlqAS)9.jpg"><br>Roughly fucking <U+00A0>tight ass instead of her boyfriend. Anal Creampie - Valeria Sladkih',
+'6618bb48220b5"><img src="https://ei.phncdn.com/videos/202404/12/450960601/original/(m=qKGUYHZbeafTGgaaaa)(mh=4Wr11UgBH8DyvZrW)0.jpg"><br>Step sis with Perfect Big Bouncing Tits and round Ass gets a Creampie',
+'66193adb73fa9"><img src="https://ei.phncdn.com/videos/202404/12/450975951/original/(m=qK_5YHZbeafTGgaaaa)(mh=QvlkdKegC5XnDaSr)0.jpg"><br>Passionate Romantic sex With my 18 y.o Girlfriend ended with Creampie',
+'661aa40d56a7b"><img src="https://ei.phncdn.com/videos/202404/13/451022121/original/(m=q8T61HZbeafTGgaaaa)(mh=c-wrMENE7pY9iacr)0.jpg"><br>Passionate sex with my Step sister ended with squirt and Creampie',
+'661beb12b76d4"><img src="https://ei.phncdn.com/videos/202404/14/451063321/original/(m=q0-X4HZbeafTGgaaaa)(mh=bmFTAowlFey6V1wF)0.jpg"><br>Stepsister with Big Tits made me Cum inside her',
+'661ece410e173"><img src="https://ei.phncdn.com/videos/202404/16/451162161/original/(m=q8K7_HZbeafTGgaaaa)(mh=T5ovAgKQUq-iFp3S)0.jpg"><br>It was a Boring Night and we Decided to Make our First video',
+'66275f29735c0"><img src="https://ei.phncdn.com/videos/202404/23/451465821/original/(m=qQO0XIZbeafTGgaaaa)(mh=DAHx-XsL4T5oyE2w)0.jpg"><br>Passionate and Hard Sex With a Hot Big Natural Tits Cowgirl',
+'6628f9aba32c3"><img src="https://ei.phncdn.com/videos/202404/24/451517601/thumbs_45/(m=eafTGgaaaa)(mh=M_WHlhMUD0TBjlWS)16.jpg"><br>My stepsister orgasmed three times while we were filming this video',
+'6629739fbf9d3"><img src="https://ei.phncdn.com/videos/202404/24/451540361/thumbs_45/(m=eafTGgaaaa)(mh=CGFZ02sah6b13K2A)16.jpg"><br>Rough hard romantic sex of a real couple ended with creampie',
+'662bb0bbb34ea"><img src="https://ei.phncdn.com/videos/202404/26/451619931/thumbs_40/(m=eafTGgaaaa)(mh=OzDTH_6fnbP6R3PE)16.jpg"><br>Romantic Passionate sex With Big Natural Tit Girlfriend',
+'662e959dac3e5"><img src="https://ei.phncdn.com/videos/202404/28/451722011/thumbs_25/(m=eafTGgaaaa)(mh=8lUW0L_jMeB-mQn_)16.jpg"><br>Big Tit Teen Fucked Hard And Dominated By Muscular Man with Huge Cock',
+'ph628b950ccaa1c"><img src="https://ei.phncdn.com/videos/202205/23/408614731/original/(m=qKR-L7XbeafTGgaaaa)(mh=-vAalD1yr9L9J4gc)0.jpg"><br>MYLF - Lucky Stud Puts Down The Video Game To Pound His Horny Step Mama While Her Hubby Is Away',
+'ph6365982c980df"><img src="https://ei.phncdn.com/videos/202211/04/418892181/original/(m=eafTGgaaaa)(mh=uL7ieHjAI_xRRNG1)11.jpg"><br>DTFsluts - Jane Wilde Cant get Enough of James Deens BWC',
+'ph63cae71c18cb7"><img src="https://ei.phncdn.com/videos/202301/20/423766981/original/(m=eafTGgaaaa)(mh=F-QhFI_6S7k6cHPK)16.jpg"><br>BANGBROS - Diego Perez Is A Dirty Boy And Cougar Quinn Waters Takes It Upon Her MILF Self To Clean H',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "cumatozz"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

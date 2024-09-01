@@ -1,0 +1,97 @@
+<base target="_blank"><html><head><title>pornstar=maya-bijou</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<link rel="stylesheet" href="../imgcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+
+<body onkeypress="chkKey()">
+<br>
+<center>
+<p class="tip-number">pornstar=maya-bijou</p>
+<p class="js-tip"></p>
+<br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'25/13e3583a4a94b5196b59c4e0181610ee-1',
+'25/13e3583a4a94b5196b59c4e0181610ee-10',
+'25/13e3583a4a94b5196b59c4e0181610ee-11',
+'25/13e3583a4a94b5196b59c4e0181610ee-12',
+'25/13e3583a4a94b5196b59c4e0181610ee-13',
+'25/13e3583a4a94b5196b59c4e0181610ee-14',
+'25/13e3583a4a94b5196b59c4e0181610ee-15',
+'25/13e3583a4a94b5196b59c4e0181610ee-2',
+'25/13e3583a4a94b5196b59c4e0181610ee-3',
+'25/13e3583a4a94b5196b59c4e0181610ee-4',
+'25/13e3583a4a94b5196b59c4e0181610ee-5',
+'25/13e3583a4a94b5196b59c4e0181610ee-6',
+'25/13e3583a4a94b5196b59c4e0181610ee-7',
+'25/13e3583a4a94b5196b59c4e0181610ee-8',
+'25/13e3583a4a94b5196b59c4e0181610ee-9',
+'369/745069fea1b9bf217922156d66cc2f71-1',
+'369/745069fea1b9bf217922156d66cc2f71-10',
+'369/745069fea1b9bf217922156d66cc2f71-11',
+'369/745069fea1b9bf217922156d66cc2f71-12',
+'369/745069fea1b9bf217922156d66cc2f71-13',
+'369/745069fea1b9bf217922156d66cc2f71-14',
+'369/745069fea1b9bf217922156d66cc2f71-15',
+'369/745069fea1b9bf217922156d66cc2f71-2',
+'369/745069fea1b9bf217922156d66cc2f71-3',
+'369/745069fea1b9bf217922156d66cc2f71-4',
+'369/745069fea1b9bf217922156d66cc2f71-5',
+'369/745069fea1b9bf217922156d66cc2f71-6',
+'369/745069fea1b9bf217922156d66cc2f71-7',
+'369/745069fea1b9bf217922156d66cc2f71-8',
+'369/745069fea1b9bf217922156d66cc2f71-9',
+'571/42b7940f48c28ca9e1a15d6722dfe111-1',
+'571/42b7940f48c28ca9e1a15d6722dfe111-10',
+'571/42b7940f48c28ca9e1a15d6722dfe111-11',
+'571/42b7940f48c28ca9e1a15d6722dfe111-12',
+'571/42b7940f48c28ca9e1a15d6722dfe111-13',
+'571/42b7940f48c28ca9e1a15d6722dfe111-14',
+'571/42b7940f48c28ca9e1a15d6722dfe111-15',
+'571/42b7940f48c28ca9e1a15d6722dfe111-2',
+'571/42b7940f48c28ca9e1a15d6722dfe111-3',
+'571/42b7940f48c28ca9e1a15d6722dfe111-4',
+'571/42b7940f48c28ca9e1a15d6722dfe111-5',
+'571/42b7940f48c28ca9e1a15d6722dfe111-6',
+'571/42b7940f48c28ca9e1a15d6722dfe111-7',
+'571/42b7940f48c28ca9e1a15d6722dfe111-8',
+'571/42b7940f48c28ca9e1a15d6722dfe111-9',
+'751/0b8f9aa0d00d2d651ec31269ce336299-1',
+'751/0b8f9aa0d00d2d651ec31269ce336299-10',
+'751/0b8f9aa0d00d2d651ec31269ce336299-11',
+'751/0b8f9aa0d00d2d651ec31269ce336299-12',
+'751/0b8f9aa0d00d2d651ec31269ce336299-13',
+'751/0b8f9aa0d00d2d651ec31269ce336299-14',
+'751/0b8f9aa0d00d2d651ec31269ce336299-15',
+'751/0b8f9aa0d00d2d651ec31269ce336299-16',
+'751/0b8f9aa0d00d2d651ec31269ce336299-2',
+'751/0b8f9aa0d00d2d651ec31269ce336299-3',
+'751/0b8f9aa0d00d2d651ec31269ce336299-4',
+'751/0b8f9aa0d00d2d651ec31269ce336299-5',
+'751/0b8f9aa0d00d2d651ec31269ce336299-6',
+'751/0b8f9aa0d00d2d651ec31269ce336299-7',
+'751/0b8f9aa0d00d2d651ec31269ce336299-8',
+'751/0b8f9aa0d00d2d651ec31269ce336299-9',
+];
+lineHeader = '<img src="https://cdn.nudexxx.pics/content/galleries/'
+lineTail = '-full.jpg">'
+showRange = 61
+bookid = "pornstar=maya-bijou"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
+

@@ -1,0 +1,120 @@
+<base target="_blank"><html><head><title>nixy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">nixy</div>
+<center>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'1/194/92735431/92735431_001_e61f',
+'1/194/92735431/92735431_002_4fbf',
+'1/194/92735431/92735431_003_1871',
+'1/194/92735431/92735431_004_e50f',
+'1/194/92735431/92735431_005_a12b',
+'1/194/92735431/92735431_006_9fa1',
+'1/194/92735431/92735431_007_9556',
+'1/194/92735431/92735431_008_0f73',
+'1/194/92735431/92735431_009_2481',
+'1/194/92735431/92735431_010_bbab',
+'1/194/92735431/92735431_011_e7fb',
+'1/194/92735431/92735431_012_8115',
+'1/194/92735431/92735431_013_753d',
+'1/194/92735431/92735431_014_acb0',
+'1/194/92735431/92735431_015_5a98',
+'1/194/10710268/10710268_001_2e41',
+'1/194/10710268/10710268_002_d747',
+'1/194/10710268/10710268_003_c909',
+'1/194/10710268/10710268_004_dfc7',
+'1/194/10710268/10710268_005_2617',
+'1/194/10710268/10710268_006_300d',
+'1/194/10710268/10710268_007_7147',
+'1/194/10710268/10710268_008_6648',
+'1/194/10710268/10710268_009_3c89',
+'1/194/10710268/10710268_010_a458',
+'1/194/10710268/10710268_011_16a5',
+'1/194/10710268/10710268_012_68b3',
+'1/194/10710268/10710268_013_1ead',
+'1/194/10710268/10710268_014_86c8',
+'1/194/10710268/10710268_015_c1d1',
+'7/158/22503950/22503950_001_df44',
+'7/158/22503950/22503950_005_ebc7',
+'7/158/22503950/22503950_007_5cac',
+'7/158/22503950/22503950_012_30a8',
+'7/158/22503950/22503950_013_9257',
+'7/158/22503950/22503950_016_16a4',
+'7/158/22503950/22503950_021_3bac',
+'7/158/22503950/22503950_024_f0be',
+'7/158/22503950/22503950_027_45b1',
+'7/158/22503950/22503950_031_9da5',
+'7/158/22503950/22503950_033_1a71',
+'7/158/22503950/22503950_037_9a5a',
+'7/158/22503950/22503950_040_b98f',
+'7/158/22503950/22503950_044_916c',
+'7/158/22503950/22503950_045_3761',
+'7/158/22503950/22503950_050_a111',
+'7/158/22503950/22503950_051_6649',
+'7/80/78528979/78528979_003_19a0',
+'7/80/78528979/78528979_005_924a',
+'7/80/78528979/78528979_009_ecd5',
+'7/80/78528979/78528979_011_bc5b',
+'7/80/78528979/78528979_013_64c2',
+'7/80/78528979/78528979_014_c1de',
+'7/80/78528979/78528979_017_8619',
+'7/80/78528979/78528979_019_939b',
+'7/80/78528979/78528979_020_54e5',
+'7/80/78528979/78528979_023_882b',
+'7/80/78528979/78528979_024_882b',
+'7/80/78528979/78528979_027_ba94',
+'7/80/78528979/78528979_029_ee84',
+'7/80/78528979/78528979_030_ee84',
+'7/80/78528979/78528979_032_5954',
+'7/80/78528979/78528979_035_ee5b',
+'7/80/78528979/78528979_037_43f5',
+'7/80/78528979/78528979_039_ddf8',
+'7/80/78528979/78528979_040_b1ec',
+'7/80/78528979/78528979_042_ecbc',
+];
+lineHeader = '<img src="https://cdni.pornpics.com/1280/'
+lineTail = '.jpg">'
+showRange = 60
+bookid = "nixy"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

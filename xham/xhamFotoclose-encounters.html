@@ -1,0 +1,74 @@
+<base target="_blank"><html><head><title>close-encounters</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/tng-houston-15776288"><img src="https://ic-ph-nss.xhcdn.com/a/YzMzYjdhZTcyZDNlYzQ1YzNhOTkwNTE0NDY3MGJjMDA/jpeg/000/488/626/374_450.jpg"><br>TNG Houston</a> 64',
+'<a href="https://xhamster.com/photos/gallery/blue-sweater-15783064"><img src="https://ic-ph-nss.xhcdn.com/a/OTRiN2UyMjkzMjI4OWI5YzJiZmJmYzdkYjA0NmY2MDU/jpeg/000/492/786/058_450.jpg"><br>Blue Sweater</a> 6',
+'<a href="https://xhamster.com/photos/gallery/blue-bra-and-white-blouse-15783062"><img src="https://ic-ph-nss.xhcdn.com/a/YjE0ZWZkNjA1MjM3YmIyMDFlMjc2OTdhNTIzODliMWU/jpeg/000/492/785/746_450.jpg"><br>Blue Bra and White Blouse</a> 58',
+'<a href="https://xhamster.com/photos/gallery/red-corset-15783066"><img src="https://ic-ph-nss.xhcdn.com/a/NzdlYjNiMGU0YTcyMGFkZTc0YTI3MDRiNDVmMTFlZjg/jpeg/000/492/787/031_450.jpg"><br>Red Corset</a> 42',
+'<a href="https://xhamster.com/photos/gallery/bdsm-bondage-kink-15776016"><img src="https://ic-ph-nss.xhcdn.com/a/YTUzYmU1M2ZiNzQ1N2FmMGYyNzdlNzkxN2U2MTlkMTA/jpeg/000/488/419/900_450.jpg"><br>BDSM Bondage Kink </a> 40',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-15776027"><img src="https://ic-ph-nss.xhcdn.com/a/MGNkN2Q1YTkyNjkwMTM1ODE5Mzc2NmQyYWQ3ZmZlZWQ/jpeg/000/488/421/258_450.jpg"><br>Sexy Lingerie</a> 39',
+'<a href="https://xhamster.com/photos/gallery/photos-by-barbedwire-15777632"><img src="https://ic-ph-nss.xhcdn.com/a/OWY0NTRjNzNmMTUwZjk4NmNlYmViZDhkOTEzYTFkNDQ/jpeg/000/489/434/000_450.jpg"><br>Photos by BarbedWire</a> 32',
+'<a href="https://xhamster.com/photos/gallery/sneak-peak-at-photo-shoot-15776711"><img src="https://ic-ph-nss.xhcdn.com/a/YTE2OTc1NTE4OWNhODY1NWE0Nzc4OTQ1YjA0MjA2NzU/jpeg/000/488/901/788_450.jpg"><br>Sneak Peak at Photo SHoot</a> 3',
+'<a href="https://xhamster.com/photos/gallery/sexy-gypsy-15776026"><img src="https://ic-ph-nss.xhcdn.com/a/YzI1NmM0NjVkMTcyODBmYzA5NzdlNmY5NDEzZWRhMmY/jpeg/000/488/420/892_450.jpg"><br>Sexy Gypsy</a> 28',
+'<a href="https://xhamster.com/photos/gallery/red-lingerie-15777634"><img src="https://ic-ph-nss.xhcdn.com/a/N2I2NDNhYjBiNGZlZTFhMTZiZWY4ZGI5Y2U5YzVkMTE/jpeg/000/489/434/217_450.jpg"><br>Red Lingerie</a> 28',
+'<a href="https://xhamster.com/photos/gallery/red-lace-lingerie-15783065"><img src="https://ic-ph-nss.xhcdn.com/a/OTFkYjkxNTg4OWIxZDA4OWYzMGUyMWQ1NzA3ZjFlNDk/jpeg/000/492/786/968_450.jpg"><br>Red Lace Lingerie</a> 27',
+'<a href="https://xhamster.com/photos/gallery/ass-ass-and-more-ass-15776025"><img src="https://ic-ph-nss.xhcdn.com/a/MGEzYmY5NjhkMmY2MGQxZDk3YzQ0YTcwNGUxOGYyOGY/jpeg/000/488/420/486_450.jpg"><br>Ass Ass and more Ass</a> 27',
+'<a href="https://xhamster.com/photos/gallery/black-topless-15777636"><img src="https://ic-ph-nss.xhcdn.com/a/N2I3ZWQ0OTJiZDM2NzJlZTA1MjQzZDIzZTczODZkMGI/jpeg/000/489/434/480_450.jpg"><br>Black Topless</a> 25',
+'<a href="https://xhamster.com/photos/gallery/blue-dress-15783063"><img src="https://ic-ph-nss.xhcdn.com/a/MzVjZGI4MTc1MTNkOWZlNzhiYmQ0ZmE5M2U5YTgwZWE/jpeg/000/492/786/101_450.jpg"><br>Blue Dress</a> 22',
+'<a href="https://xhamster.com/photos/gallery/school-girl-15783592"><img src="https://ic-ph-nss.xhcdn.com/a/MWY1MTZlMDdhNDkxZjI1MzkwY2YyNDA1N2RhNWRkMDM/jpeg/000/493/169/196_450.jpg"><br>School Girl</a> 21',
+'<a href="https://xhamster.com/photos/gallery/cat-costume-15783590"><img src="https://ic-ph-nss.xhcdn.com/a/ZDQ1MzJjYzYxZTY4NzAxMzM0ZDlkZDAxY2I1Y2YwNTI/jpeg/000/493/169/201_450.jpg"><br>Cat Costume</a> 21',
+'<a href="https://xhamster.com/photos/gallery/italian-vixxxen-pussy-lips-15776028"><img src="https://ic-ph-nss.xhcdn.com/a/NjBiN2ZhYzUxMzlkODMzNTA1YjJmODQ1ZjY5ODI3MTU/jpeg/000/488/421/727_450.jpg"><br>Italian ViXXXen Pussy Lips</a> 19',
+'<a href="https://xhamster.com/photos/gallery/italian-vixxxen-huge-boobs-15776029"><img src="https://ic-ph-nss.xhcdn.com/a/NjhiMjFjMWVjOWI0ZWU2YjE4YmVmM2E1MjBkY2UxM2M/jpeg/000/488/422/027_450.jpg"><br>Italian ViXXXen Huge Boobs</a> 15',
+'<a href="https://xhamster.com/photos/gallery/in-public-15783589"><img src="https://ic-ph-nss.xhcdn.com/a/ZDZhZjA5YjZiNTVjMmE3ZDc2ZGQzMTNjMzhhYmZmNjk/jpeg/000/493/168/972_450.jpg"><br>In Public</a> 11',
+'<a href="https://xhamster.com/photos/gallery/purple-lingerie-15777633"><img src="https://ic-ph-nss.xhcdn.com/a/YjgwYzMzYmE3MGFmYjI1YTJjYTE2ZWQ4ZTdiNTlhNTc/jpeg/000/489/434/092_450.jpg"><br>Purple Lingerie</a> 10',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "close-encounters"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<base target="_blank"><html><head><title>les__gourmands</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/very-sexy-schoolgirl-outdoors-15794697"><img src="https://ic-ph-nss.xhcdn.com/a/NzY3ZjIxYmVkZmEyNzk4OTM5NjdmNGViMDdhYmJmMjc/jpeg/000/499/609/759_450.jpg"><br>Very sexy schoolgirl outdoors</a> 9',
+'<a href="https://xhamster.com/photos/gallery/pretty-redhead-milf-in-wetlook-15942983"><img src="https://ic-ph-nss.xhcdn.com/a/NDlkMjhkOTQyZmY3M2EzNTljMzdkMjljZjZhZjU3YTQ/jpeg/000/513/101/730_450.jpg"><br>Pretty redhead MILF in wetlook</a> 9',
+'<a href="https://xhamster.com/photos/gallery/porn-hub-star-13210681"><img src="https://ic-ph-nss.xhcdn.com/a/MzVlZTYxNmM0ZTcyMTExYzVmMzMyN2Y3ZjU0OTYyNjU/jpeg/000/346/402/025_450.jpg"><br>Porn Hub Star</a> 9',
+'<a href="https://xhamster.com/photos/gallery/milf-sexy-outdoors-in-flowery-underwear-15964146"><img src="https://ic-ph-nss.xhcdn.com/a/MDZhYzdkMmZiM2NlNGZlNGFhZmU0NTA0NDZjMjlkNGU/jpeg/000/513/534/342_450.jpg"><br>MILF Sexy outdoors in flowery underwear</a> 9',
+'<a href="https://xhamster.com/photos/gallery/milf-in-wetlook-dress-15801131"><img src="https://ic-ph-nss.xhcdn.com/a/OWI0NjI5YTE0YWFiYjJmMDBkNjE2MWM3YzEyMzY4YjI/jpeg/000/502/980/037_450.jpg"><br>MILF in wetlook dress</a> 9',
+'<a href="https://xhamster.com/photos/gallery/cute-milf-walks-on-public-beaches-in-brittany-15810834"><img src="https://ic-ph-nss.xhcdn.com/a/MWZkMTA5ZWU4NzliNTljZTIwNWNkYjJmOWE1MTIxYzY/jpeg/000/507/005/555_450.jpg"><br>cute MILF walks on public beaches in Brittany</a> 9',
+'<a href="https://xhamster.com/photos/gallery/41th-contribution-15782161"><img src="https://ic-ph-nss.xhcdn.com/a/YjE2ODI1M2QyNjhhMTMyMmQ5ZmJmMDA0OTg2OWE0OTQ/jpeg/000/492/226/575_450.jpg"><br>41Th Contribution</a> 9',
+'<a href="https://xhamster.com/photos/gallery/40th-contribution-15779931"><img src="https://ic-ph-nss.xhcdn.com/a/ZjA0NTNmNjRjOTVhYjQyMmJkOWVhNTQ5ODljOGM1ZGE/jpeg/000/490/903/870_450.jpg"><br>40Th Contribution</a> 9',
+'<a href="https://xhamster.com/photos/gallery/3eme-contribution-in-2005-13515011"><img src="https://ic-ph-nss.xhcdn.com/a/YzBjM2E2YTNjMTg4OTRkMGM5MzkzMjI2NDhjZTlkZjM/jpeg/000/362/081/997_450.jpg"><br>3eme Contribution in 2005</a> 9',
+'<a href="https://xhamster.com/photos/gallery/30th-contribution-15376983"><img src="https://ic-ph-nss.xhcdn.com/a/YjFiNzdhOWM2NTQzNzE2MDhhMjk5ZWVkYTc0MWE0YjM/jpeg/000/463/486/094_450.jpg"><br>30Th Contribution</a> 9',
+'<a href="https://xhamster.com/photos/gallery/21th-contribution-14713445"><img src="https://ic-ph-nss.xhcdn.com/a/MGM1ZmU2NWJkZTA5YjUxNTAwZDI0ODVkYTkyZTNhOWI/jpeg/000/426/894/085_450.jpg"><br>21th Contribution</a> 9',
+'<a href="https://xhamster.com/photos/gallery/sexy-schoolgirl-in-the-fields-15795805"><img src="https://ic-ph-nss.xhcdn.com/a/Y2JmZDQ5NmI0MTUzMTJlYzBjOWJhZWZhZDIxZjczNTM/jpeg/000/500/171/907_450.jpg"><br>Sexy schoolgirl in the fields</a> 8',
+'<a href="https://xhamster.com/photos/gallery/sexy-milf-in-lingerie-for-xmas-15973164"><img src="https://ic-ph-nss.xhcdn.com/a/ODNjYjJiYTUxZjc2YjI5YmZiYzhmMDg1MWQ2ZDBkZjE/jpeg/000/513/653/500_450.jpg"><br>Sexy MILF in lingerie for XMAS</a> 8',
+'<a href="https://xhamster.com/photos/gallery/sexy-holidays-un-the-french-tarn-15940588"><img src="https://ic-ph-nss.xhcdn.com/a/MjJlZjNhOWY0MjhkNWU5ZDMzOWNjZjM1MzNiNjhlNGE/jpeg/000/513/050/866_450.jpg"><br>Sexy Holidays un the French Tarn</a> 8',
+'<a href="https://xhamster.com/photos/gallery/4eme-contribution-in-2006-13515019"><img src="https://ic-ph-nss.xhcdn.com/a/M2U2OTJiNzllZmEyNDJiN2YyZDk3OGQ1N2YwMDliMjk/jpeg/000/362/082/257_450.jpg"><br>4eme Contribution in 2006</a> 8',
+'<a href="https://xhamster.com/photos/gallery/2eme-contribution-13195873"><img src="https://ic-ph-nss.xhcdn.com/a/OTI4ZjczZWJiNTg4ZDEzZWI5MzFhODZiMWRmNGM1ODE/jpeg/000/345/635/293_450.jpg"><br>2eme Contribution</a> 8',
+'<a href="https://xhamster.com/photos/gallery/28th-contribution-15235571"><img src="https://ic-ph-nss.xhcdn.com/a/OGFjOGY2MmRhZDI2ZDhlN2IyMjM0NDg5Y2Y1ZmVlZjQ/jpeg/000/455/635/165_450.jpg"><br>28Th Contribution</a> 8',
+'<a href="https://xhamster.com/photos/gallery/27th-contribution-15174853"><img src="https://ic-ph-nss.xhcdn.com/a/M2EwZDM4ODMxMGJmNjhhM2E0ZmQ3ZjQ1ZWFkMjI3YmE/jpeg/000/452/342/964_450.jpg"><br>27Th Contribution</a> 8',
+'<a href="https://xhamster.com/photos/gallery/25k-followers-on-ph-15777231"><img src="https://ic-ph-nss.xhcdn.com/a/NzAzNDcyMWYxZjA2NzQyYWYzYTM3NWViNzEwNzg0YjE/jpeg/000/489/212/023_450.jpg"><br>25K Followers on PH</a> 8',
+'<a href="https://xhamster.com/photos/gallery/23th-contribution-14825854"><img src="https://ic-ph-nss.xhcdn.com/a/NWE5MWEwZDIwYTE2YzYyN2RkNzcxYTY4ZjNiYzU4ZDI/jpeg/000/433/132/384_450.jpg"><br>23Th Contribution</a> 8',
+'<a href="https://xhamster.com/photos/gallery/milf-in-wetlook-in-hay-bales-15800393"><img src="https://ic-ph-nss.xhcdn.com/a/MWE1ODE0YzNkNWM3MjRlMTk3YWU5ODdlN2RmZGU4MzM/jpeg/000/502/582/479_450.jpg"><br>MILF in wetlook in hay bales</a> 7',
+'<a href="https://xhamster.com/photos/gallery/37th-contribution-15775948"><img src="https://ic-ph-nss.xhcdn.com/a/MjBmNjgwNjJjZmRjOWQwYzBjY2QxNTgyMzI3M2ViNjM/jpeg/000/488/374/743_450.jpg"><br>37Th Contribution</a> 7',
+'<a href="https://xhamster.com/photos/gallery/33th-contribution-15683107"><img src="https://ic-ph-nss.xhcdn.com/a/OTUwZDQwMzE4NjMwNjA1ZDg4YmQ3NDk2NmVlNTE1ZmI/jpeg/000/480/911/383_450.jpg"><br>33Th Contribution</a> 7',
+'<a href="https://xhamster.com/photos/gallery/32th-contribution-15578562"><img src="https://ic-ph-nss.xhcdn.com/a/MWMxOGIxMDkxY2E5OTFjZjg4MWQyMmRlOWNkMzcyMDU/jpeg/000/474/821/117_450.jpg"><br>32Th Contribution</a> 7',
+'<a href="https://xhamster.com/photos/gallery/31th-contribution-15471766"><img src="https://ic-ph-nss.xhcdn.com/a/MmQ5MWUzNDc3NTQ4NWM1MzVkZDAxNDM5N2Q4NWM5MDk/jpeg/000/468/757/606_450.jpg"><br>31Th Contribution</a> 7',
+'<a href="https://xhamster.com/photos/gallery/25th-contribution-15052949"><img src="https://ic-ph-nss.xhcdn.com/a/NDYxMDM5ZWY5YTQ0ZDUyMWYwMWY0NmIwMzBkMGEyZjA/jpeg/000/445/516/480_450.jpg"><br>25Th Contribution</a> 7',
+'<a href="https://xhamster.com/photos/gallery/18th-contribution-14524690"><img src="https://ic-ph-nss.xhcdn.com/a/ZTdhYTE4MjQ3MzkwYjIwMDIxZDgyNjJiODYyNzAwYmY/jpeg/000/416/461/453_450.jpg"><br>18Th Contribution</a> 7',
+'<a href="https://xhamster.com/photos/gallery/new-set-of-lingerie-13372695"><img src="https://ic-ph-nss.xhcdn.com/a/ZjdhNmI3OWIzNTY2NzJkMmEyY2RjZjg4NjcwNzk3OTg/jpeg/000/354/889/090_450.jpg"><br>New Set of Lingerie</a> 6',
+'<a href="https://xhamster.com/photos/gallery/7th-contribution-13750296"><img src="https://ic-ph-nss.xhcdn.com/a/ZWJkMzgzMzU5OWU3YmE0M2Y0NDVmYzg2NDAyYzM4Y2E/jpeg/000/374/575/358_450.jpg"><br>7th contribution</a> 6',
+'<a href="https://xhamster.com/photos/gallery/36th-contribution-15775200"><img src="https://ic-ph-nss.xhcdn.com/a/ZGY5ZTRlYmU1M2Q1MDEwZDg4MzBlM2JkZDg1NDczMjY/jpeg/000/487/883/758_450.jpg"><br>36Th Contribution</a> 6',
+'<a href="https://xhamster.com/photos/gallery/35th-contribution-15774311"><img src="https://ic-ph-nss.xhcdn.com/a/YzRlMThlMDA1MmZjY2EzNDVmZDEyMWRiMmIyNWFjMDc/jpeg/000/487/452/276_450.jpg"><br>35Th Contribution</a> 6',
+'<a href="https://xhamster.com/photos/gallery/34th-contribution-15742415"><img src="https://ic-ph-nss.xhcdn.com/a/NmM3ZDMzZDUzNmVkMTc3NGVhNWQ3Yzg5MzNjODNhMjg/jpeg/000/484/262/480_450.jpg"><br>34Th Contribution</a> 6',
+'<a href="https://xhamster.com/photos/gallery/29th-contribution-15310834"><img src="https://ic-ph-nss.xhcdn.com/a/OWVjOTdmNWQzZGVhNzAyY2IxMzRiZTBmY2U3YjRiNTA/jpeg/000/459/779/868_450.jpg"><br>29Th Contribution</a> 6',
+'<a href="https://xhamster.com/photos/gallery/26th-contribution-15103124"><img src="https://ic-ph-nss.xhcdn.com/a/NzgxOWM0OTE1MWI1YmRiZDlhNzFlOTI4NjlkOTQxMTI/jpeg/000/448/369/274_450.jpg"><br>26Th Contribution</a> 6',
+'<a href="https://xhamster.com/photos/gallery/16th-contribution-14403845"><img src="https://ic-ph-nss.xhcdn.com/a/YWRlZjU2YTdiYjdhNGU1Y2E1NmI5MTgxYTBiODc3ZGY/jpeg/000/409/899/797_450.jpg"><br>16Th Contribution</a> 6',
+'<a href="https://xhamster.com/photos/gallery/6eme-contribution-13640693"><img src="https://ic-ph-nss.xhcdn.com/a/NzZmYmMyNmZlNzM0OTY0NTRlYTVmZjEzZWJmMTA4NTI/jpeg/000/368/670/609_450.jpg"><br>6eme contribution </a> 5',
+'<a href="https://xhamster.com/photos/gallery/14th-contribution-14259322"><img src="https://ic-ph-nss.xhcdn.com/a/YWM2MzJmZjY5NTE2MWVjNGRmY2ZmNzIwNWJkYWY5MjY/jpeg/000/402/026/332_450.jpg"><br>14th Contribution</a> 5',
+'<a href="https://xhamster.com/photos/gallery/happy-new-year-13287356"><img src="https://ic-ph-nss.xhcdn.com/a/M2Q4OWM2ZWUzOTk3ZmRmNjhlZGJmOTBhNmZmOGNmMjE/jpeg/000/350/360/019_450.jpg"><br>Happy new year </a> 4',
+'<a href="https://xhamster.com/photos/gallery/8th-contribution-13849280"><img src="https://ic-ph-nss.xhcdn.com/a/MmE2ODlhNWI3NjNiY2JkZGFlZGQyODFkMGRmMmMzZWE/jpeg/000/379/957/667_450.jpg"><br>8th contribution</a> 4',
+'<a href="https://xhamster.com/photos/gallery/22th-contribution-14796885"><img src="https://ic-ph-nss.xhcdn.com/a/ZWQwMjU4YmRkNDMyZTkzYmIwNDY0MzJjYThkMTA1ZGQ/jpeg/000/431/568/927_450.jpg"><br>22Th Contribution</a> 4',
+'<a href="https://xhamster.com/photos/gallery/17th-contribution-14450778"><img src="https://ic-ph-nss.xhcdn.com/a/MDBhYmMyN2U3YzRiNjIwYTcyODVlOWQzMGIzNzZiMDE/jpeg/000/412/450/771_450.jpg"><br>17Th Contribution</a> 4',
+'<a href="https://xhamster.com/photos/gallery/13-th-contribution-14217673"><img src="https://ic-ph-nss.xhcdn.com/a/NGE1YTIyODZmMmFjNzZiNDNiNzRlODgzZmMyYjIyMDM/jpeg/000/399/646/920_450.jpg"><br>13 th contribution</a> 4',
+'<a href="https://xhamster.com/photos/gallery/joyeux-noel-13180811"><img src="https://ic-ph-nss.xhcdn.com/a/OGVmZWVkYzI4NjQwODQ4Yzk3NWFjOTY5ZDI0MDIzNjA/jpeg/000/344/885/926_450.jpg"><br>Joyeux Noel</a> 3',
+'<a href="https://xhamster.com/photos/gallery/sexy-lingerie-and-leather-jacket-outside-15788375"><img src="https://ic-ph-nss.xhcdn.com/a/ODA3ZjBiNGY3ODczODg4N2ZjYzQyMGQ4YjBlOTQ3YmU/jpeg/000/496/339/425_450.jpg"><br>Sexy lingerie and leather jacket outside</a> 23',
+'<a href="https://xhamster.com/photos/gallery/43th-contribution-15783721"><img src="https://ic-ph-nss.xhcdn.com/a/N2I2MTMzMjBiYjU3OWJkZjY4MjE1Y2JjOTk1MGRkMzU/jpeg/000/493/255/024_450.jpg"><br>43Th Contribution</a> 22',
+'<a href="https://xhamster.com/photos/gallery/diverses-photos-13072227"><img src="https://ic-ph-nss.xhcdn.com/a/M2IxODY3NDY2NTcwMjhhZDFjOGI5MjhiOTM3ZDJjMTM/jpeg/000/339/570/728_450.jpg"><br>Diverses Photos</a> 21',
+'<a href="https://xhamster.com/photos/gallery/sexy-nude-milf-and-huge-sextoy-15906643"><img src="https://ic-ph-nss.xhcdn.com/a/MTE3NTVlM2Q5NDY4OGE4OTVmZDkxMTBkYTY3ZDk3NTQ/jpeg/000/512/281/508_450.jpg"><br>Sexy Nude MILF and Huge Sextoy</a> 20',
+'<a href="https://xhamster.com/photos/gallery/sexy-blonde-milf-in-convertible-outdoors-15792483"><img src="https://ic-ph-nss.xhcdn.com/a/NDllYjZkNmEyYmIzMWNmYzZhNWE5YTNmZjFkOTgyMTM/jpeg/000/498/497/689_450.jpg"><br>Sexy blonde MILF in convertible outdoors</a> 19',
+'<a href="https://xhamster.com/photos/gallery/outdoor-blowjob-with-a-slut-15809144"><img src="https://ic-ph-nss.xhcdn.com/a/ODlhZjExNDA4OGU2YmY4MTdhOWYwZDY0NTMwYzE3NmM/jpeg/000/506/512/313_450.jpg"><br>Outdoor Blowjob with a Slut</a> 17',
+'<a href="https://xhamster.com/photos/gallery/merry-xmas-with-me-15976811"><img src="https://ic-ph-nss.xhcdn.com/a/MjNjZTE2YWE2ZWQxYjVkMzEwNTAzNjY4YTM1YjdjZDI/jpeg/000/513/700/730_450.jpg"><br>Merry XMAS with me</a> 17',
+'<a href="https://xhamster.com/photos/gallery/sexy-in-green-15928338"><img src="https://ic-ph-nss.xhcdn.com/a/MjFjMjUzNGU5ODY4NjJmMWVhOGFkZDQ5MTBkOTdjNjU/jpeg/000/512/768/658_450.jpg"><br>Sexy in Green</a> 16',
+'<a href="https://xhamster.com/photos/gallery/porn-actress-on-vacation-15812774"><img src="https://ic-ph-nss.xhcdn.com/a/ZTkxZDY0NzExOTI5YjhmM2FjZjJjZjdlNzZlYTFjNzk/jpeg/000/507/583/698_450.jpg"><br>Porn actress on vacation</a> 16',
+'<a href="https://xhamster.com/photos/gallery/outdoor-sexy-milf-15807152"><img src="https://ic-ph-nss.xhcdn.com/a/NTNiMGM1MmQ4NWVkMjJiYjZhNGNjMmFjN2UyNjg0N2M/jpeg/000/505/852/194_450.jpg"><br>Outdoor Sexy MILF</a> 16',
+'<a href="https://xhamster.com/photos/gallery/leather-set-for-sexy-milf-15786579"><img src="https://ic-ph-nss.xhcdn.com/a/ZGQwNjk4Y2QxNTAzZGE3OTVjZTY4NjAzNTc3MzQ2ZDM/jpeg/000/495/263/065_450.jpg"><br>Leather Set for Sexy MILF</a> 16',
+'<a href="https://xhamster.com/photos/gallery/i-like-to-play-with-big-dildos-or-magic-wands-16000909"><img src="https://ic-ph-nss.xhcdn.com/a/N2Q0OGY0MzQwYTIyYTEyYjU1MDA0OTg3NDYxNjAwMTc/jpeg/000/514/073/581_450.jpg"><br>I like to play with big dildos or magic wands</a> 16',
+'<a href="https://xhamster.com/photos/gallery/happy-new-year-15773262"><img src="https://ic-ph-nss.xhcdn.com/a/MDdlYjVkMWIxMTZiZDc0OTlkZDEzYjUzYjdhNGYyZGU/jpeg/000/486/721/210_450.jpg"><br>Happy NEW Year</a> 15',
+'<a href="https://xhamster.com/photos/gallery/garter-belt-high-heels-and-sexy-lingerie-on-a-pretty-milf-15804553"><img src="https://ic-ph-nss.xhcdn.com/a/NmYzMTkxNTZhZWU5YjMxNmM3ZWE4NDJlY2ZiMDViYWU/jpeg/000/504/665/658_450.jpg"><br>Garter belt, high heels and sexy lingerie on a pretty MILF</a> 15',
+'<a href="https://xhamster.com/photos/gallery/french-milf-porn-actress-15900987"><img src="https://ic-ph-nss.xhcdn.com/a/YzU4NmY4ZTZjNmJjZDkxNTc3ZTE3MDc4ZDRlNTA3YWE/jpeg/000/512/157/119_450.jpg"><br>French MILF Porn Actress</a> 15',
+'<a href="https://xhamster.com/photos/gallery/cabaret-haired-milf-in-sexy-black-lingerie-outdoors-15803330"><img src="https://ic-ph-nss.xhcdn.com/a/NTkzMDE4OTRkNGY5OGMxNGM0Njg3ZGQyYzE2ODU0Njc/jpeg/000/504/099/723_450.jpg"><br>Cabaret haired MILF in sexy black lingerie outdoors</a> 15',
+'<a href="https://xhamster.com/photos/gallery/handcuffs-and-harness-15790423"><img src="https://ic-ph-nss.xhcdn.com/a/OWM5OGVmMjZjMjc0NjAzODY1ZWFjZThlYWIwODA2YmU/jpeg/000/497/441/880_450.jpg"><br>Handcuffs and harness</a> 14',
+'<a href="https://xhamster.com/photos/gallery/38th-contribution-15776655"><img src="https://ic-ph-nss.xhcdn.com/a/YWJmOTJkYjQ2MWIwYzhlNjE3MTRiNmU4NTUwOTU0NGM/jpeg/000/488/866/106_450.jpg"><br>38Th Contribution</a> 14',
+'<a href="https://xhamster.com/photos/gallery/very-sexy-milf-in-satin-lingerie-and-leather-skirt-15802214"><img src="https://ic-ph-nss.xhcdn.com/a/N2U3MzMyZjI3Yzg0OGE2ZjY3YzQyMWIwOTJhNTRhYjg/jpeg/000/503/533/220_450.jpg"><br>Very sexy MILF in Satin lingerie and leather skirt</a> 13',
+'<a href="https://xhamster.com/photos/gallery/red-leather-jacket-15787443"><img src="https://ic-ph-nss.xhcdn.com/a/NTRkMzVjNjg3YWY3YzI1ZWI4ZGIzNDdmMjVkNjJjYWI/jpeg/000/495/787/719_450.jpg"><br>Red Leather Jacket</a> 13',
+'<a href="https://xhamster.com/photos/gallery/red-leather-dress-outdoors-15793806"><img src="https://ic-ph-nss.xhcdn.com/a/N2Q0ZTFkYmZjMWIwZTBmOTM3YjZhOGQyZDIzN2M4Y2I/jpeg/000/499/126/768_450.jpg"><br>Red leather dress outdoors</a> 13',
+'<a href="https://xhamster.com/photos/gallery/naked-on-the-sun-15799074"><img src="https://ic-ph-nss.xhcdn.com/a/MjQ2ZmFlY2NiMDMwNjA0MTMxZjNmODM4ZDY3OTg2NTM/jpeg/000/501/854/958_450.jpg"><br>Naked on the Sun</a> 13',
+'<a href="https://xhamster.com/photos/gallery/milf-in-sexy-wetlook-dress-and-huge-dildo-15938271"><img src="https://ic-ph-nss.xhcdn.com/a/MzVjNzcxNDMwMDUxYzIwODc3ZmUwOTAzOTQ1ZGQ4YTk/jpeg/000/512/998/629_450.jpg"><br>MILF in Sexy Wetlook Dress and Huge Dildo</a> 13',
+'<a href="https://xhamster.com/photos/gallery/beautiful-milf-in-leather-stockings-and-garter-belts-15917751"><img src="https://ic-ph-nss.xhcdn.com/a/YWY2ZTc3NmQyODExZGQyYTQ5ZjFlYTY2NjY4NWQzYTY/jpeg/000/512/539/711_450.jpg"><br>Beautiful MILF in leather stockings and garter belts</a> 13',
+'<a href="https://xhamster.com/photos/gallery/24th-contribution-14977546"><img src="https://ic-ph-nss.xhcdn.com/a/NTk2YjliMGNjMzgyMzc4YmUyNGI0MDMzOTFiNjI0NjU/jpeg/000/441/376/773_450.jpg"><br>24Th Contribution</a> 13',
+'<a href="https://xhamster.com/photos/gallery/19th-contribution-14615633"><img src="https://ic-ph-nss.xhcdn.com/a/NGI0ZWU1NTg3NjBmYzk1YzZmM2IxN2Y3MjQ4NWY2YjE/jpeg/000/421/317/830_450.jpg"><br>19TH Contribution</a> 13',
+'<a href="https://xhamster.com/photos/gallery/the-beauty-and-the-beast-15796834"><img src="https://ic-ph-nss.xhcdn.com/a/OGY2YTAwYjU3OWY5ZjRjODlmZDgzYzRlMTc3YmJhOTE/jpeg/000/500/725/902_450.jpg"><br>The Beauty and the Beast</a> 12',
+'<a href="https://xhamster.com/photos/gallery/sexy-milf-outdoor-and-nice-car-15791356"><img src="https://ic-ph-nss.xhcdn.com/a/OTQyNWJhYzFiZGRmMDlhZWE0NDUxZDVhYTk3ODc5OGE/jpeg/000/497/955/844_450.jpg"><br>Sexy MILF outdoor and nice car</a> 12',
+'<a href="https://xhamster.com/photos/gallery/sexy-in-black-tight-pants-15789301"><img src="https://ic-ph-nss.xhcdn.com/a/NDEwZWE2ZDUwNTQ3ZDI4YTJlNTQxNGRjZjQzYWYzZGY/jpeg/000/496/907/254_450.jpg"><br>Sexy in black tight pants</a> 12',
+'<a href="https://xhamster.com/photos/gallery/outdoor-sexy-milf-15798080"><img src="https://ic-ph-nss.xhcdn.com/a/OTM4ZmRlZmJjZWExNDQ5NGU0YWJmNGM0ZGZhNGY0MzM/jpeg/000/501/370/136_450.jpg"><br>Outdoor Sexy MILF</a> 12',
+'<a href="https://xhamster.com/photos/gallery/outdoor-flashing-in-the-windows-15814716"><img src="https://ic-ph-nss.xhcdn.com/a/ZGUyODg2NGFlM2RhZGQxYWNmYzgyNzQ4ZmFhNWFkM2E/jpeg/000/508/162/056_450.jpg"><br>Outdoor Flashing in the windows</a> 12',
+'<a href="https://xhamster.com/photos/gallery/our-gifs-13072385"><img src="https://thumb-p2.xhcdn.com/a/lnTiqNwNsYyTwBcfYZv3jQ/000/339/576/782_240.gif"><br>our gifs</a> 12',
+'<a href="https://xhamster.com/photos/gallery/milf-porn-actor-15898602"><img src="https://ic-ph-nss.xhcdn.com/a/M2UwYTNkNWVhNmVkMGNiMjBjMGZhNmUwZWNkOWY0YjA/jpeg/000/512/105/362_450.jpg"><br>MILF Porn Actor</a> 12',
+'<a href="https://xhamster.com/photos/gallery/45-th-contribution-15785756"><img src="https://ic-ph-nss.xhcdn.com/a/OWQ2ZjFkZjczNzI2MWZmYjRkNmVhNWZkNWNmNzY3Yjk/jpeg/000/494/762/386_450.jpg"><br>45 Th Contribution</a> 12',
+'<a href="https://xhamster.com/photos/gallery/44th-contribution-15784371"><img src="https://ic-ph-nss.xhcdn.com/a/NjkxMDI0YWRlN2FjYjNjMGRjNWY1MjA3Mzc3YWI3NjU/jpeg/000/493/763/657_450.jpg"><br>44Th Contribution</a> 12',
+'<a href="https://xhamster.com/photos/gallery/12th-contribution-14174997"><img src="https://ic-ph-nss.xhcdn.com/a/MDQ4MjQwNWRhNzBmMmNlMWVkZTViYjlhNDJjMjU5M2E/jpeg/000/397/353/618_450.jpg"><br>12th Contribution</a> 12',
+'<a href="https://xhamster.com/photos/gallery/10th-contribution-14043449"><img src="https://ic-ph-nss.xhcdn.com/a/YmQ0N2VlMzUwNDJhNDU5OTg3ODA4NWU5ZTdhZGQ2MDU/jpeg/000/390/255/501_450.jpg"><br>10th Contribution</a> 12',
+'<a href="https://xhamster.com/photos/gallery/10th-contribution-13382380"><img src="https://ic-ph-nss.xhcdn.com/a/MjY2MTJkMDA3NWM0MzFjZTM5NjJiNTJmZDhiODdhNTU/jpeg/000/355/378/919_450.jpg"><br>10Th Contribution</a> 12',
+'<a href="https://xhamster.com/photos/gallery/weekend-in-a-castle-in-the-tarn-15923354"><img src="https://ic-ph-nss.xhcdn.com/a/NzBmN2U3ZmUwMjJmMzBjNjdlODJlMTgzZmNlZjVjZWE/jpeg/000/512/656/940_450.jpg"><br>Weekend in a castle in the Tarn </a> 11',
+'<a href="https://xhamster.com/photos/gallery/summer-in-france-with-a-sexy-milf-15935773"><img src="https://ic-ph-nss.xhcdn.com/a/MDgyOTQzNzljNzE3MmU2Y2RjN2ZmMWNlOWYwODNjODc/jpeg/000/512/942/962_450.jpg"><br>Summer in France with a sexy MILF</a> 11',
+'<a href="https://xhamster.com/photos/gallery/huge-toys-and-sexy-french-lingerie-15806201"><img src="https://ic-ph-nss.xhcdn.com/a/NjQ4MmVjMDA0ZDkxNzA2NWIyM2FkZjczMWFhOWE1MTM/jpeg/000/505/437/872_450.jpg"><br>Huge Toys and Sexy French Lingerie</a> 11',
+'<a href="https://xhamster.com/photos/gallery/20-th-contribution-14665444"><img src="https://ic-ph-nss.xhcdn.com/a/MDQxYmEyZTEzMGE3YjkzZjcxN2FiMWI3OTRmZTJkODk/jpeg/000/424/107/095_450.jpg"><br>20 Th Contribution</a> 11',
+'<a href="https://xhamster.com/photos/gallery/1er-contribution-13083069"><img src="https://ic-ph-nss.xhcdn.com/a/YmFmYWI3ODA2Mzk5YmRkN2YxODUxNzY4Njc2NDVjY2U/jpeg/000/340/084/953_450.jpg"><br>1er Contribution</a> 11',
+'<a href="https://xhamster.com/photos/gallery/toy-and-buttplug-for-a-very-slutty-milf-15892848"><img src="https://ic-ph-nss.xhcdn.com/a/ZGJkNzJiMTAzY2FhYjI2YWZmMTEzNWJkNDI2YmExZTg/jpeg/000/511/969/518_450.jpg"><br>Toy and Buttplug for a very slutty MILF</a> 10',
+'<a href="https://xhamster.com/photos/gallery/out-for-xhamster-naked-in-the-garden-16055283"><img src="https://ic-ph-nss.xhcdn.com/a/YzU0MDRjMzc1MDY0MTdiOTFhZjI2OTViYTA1ZmQ5OWU/jpeg/000/514/833/580_450.jpg"><br>Out for Xhamster naked in the garden</a> 10',
+'<a href="https://xhamster.com/photos/gallery/merry-christmas-xmas-joyeux-noel-frohliche-weihnachten-15772377"><img src="https://ic-ph-nss.xhcdn.com/a/YTU1ODU4MGQ1N2YyNTdlNDJjMzg2YTkxNTZmNzcxMzg/jpeg/000/486/019/341_450.jpg"><br>Merry Christmas XMas Joyeux Noel Frohliche Weihnachten</a> 10',
+'<a href="https://xhamster.com/photos/gallery/magic-wand-french-lingerie-16036842"><img src="https://ic-ph-nss.xhcdn.com/a/N2Q0MzM3MDI4NjM3Mjc1ZDMxOWY5NmUyZTBiOWViOTQ/jpeg/000/514/567/339_450.jpg"><br>Magic Wand &amp; French Lingerie</a> 10',
+'<a href="https://xhamster.com/photos/gallery/5eme-contribution-in-2007-13600644"><img src="https://ic-ph-nss.xhcdn.com/a/NmZiNDJiOGRhYWU0ZmRmOTc4ZmE3OTgxNDQzMzE3ZjY/jpeg/000/366/540/488_450.jpg"><br>5eme contribution in 2007</a> 10',
+'<a href="https://xhamster.com/photos/gallery/42th-contribution-15782962"><img src="https://ic-ph-nss.xhcdn.com/a/NmY4ZDhjMmVkMmI2ZTAzYWM0ZmM2M2M1ODZmZjRhMDM/jpeg/000/492/737/253_450.jpg"><br>42Th Contribution</a> 10',
+'<a href="https://xhamster.com/photos/gallery/39th-contribution-15778897"><img src="https://ic-ph-nss.xhcdn.com/a/MjgyN2MwNmU4MzhlZGUyNjhjOGMxZjgzZThkYTRkNzg/jpeg/000/490/225/840_450.jpg"><br>39Th Contribution</a> 10',
+'<a href="https://xhamster.com/photos/gallery/15th-contribution-14310782"><img src="https://ic-ph-nss.xhcdn.com/a/MDkzMmIxZmYwMjFjMTJjN2VkMzY1Y2NkYzA5MzNhOGY/jpeg/000/404/903/074_450.jpg"><br>15th Contribution</a> 10',
+'<a href="https://xhamster.com/photos/gallery/11th-contribution-14133053"><img src="https://ic-ph-nss.xhcdn.com/a/ZDUxYjIxOWJjOTEzOTc3OTQ1NDU0ODNkMDcxNDE0NDc/jpeg/000/395/147/483_450.jpg"><br>11th contribution</a> 10',
+'<a href="https://xhamster.com/photos/gallery/9th-contribution-13924219"><img src="https://ic-ph-nss.xhcdn.com/a/MTUyYmJhZWZiZWU3NWYwMGNjMWE5MTkxYjVlYzFjMTk/jpeg/000/384/013/628_450.jpg"><br>9th contribution</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "les__gourmands"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

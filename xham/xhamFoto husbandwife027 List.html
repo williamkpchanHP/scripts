@@ -1,0 +1,71 @@
+<base target="_blank"><html><head><title>husbandwife027</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/jija-sali-16080542"><img src="https://ic-ph-nss.xhcdn.com/a/YWNiY2QxZjM0MmNkNDZkYjcxZTM4ZDg0MDcwODg5MTI/jpeg/000/515/164/277_450.jpg"><br>Jija sali </a> 9',
+'<a href="https://xhamster.com/photos/gallery/home-made-photo-16122036"><img src="https://ic-ph-nss.xhcdn.com/a/NWExODk3MWEyNzhkYThkMDVkYjUyZTJhMzExMjI4MjY/jpeg/000/515/709/320_450.jpg"><br>Home made photo </a> 65',
+'<a href="https://xhamster.com/photos/gallery/old-winter-season-video-with-my-girlfriend-16137157"><img src="https://ic-ph-nss.xhcdn.com/a/MGFhMDQ3ZDgxNTY1OWVhODAyNDQwMjc3NDhlYzRmYTM/jpeg/000/515/941/285_450.jpg"><br>Old winter season video with my Girlfriend.</a> 64',
+'<a href="https://xhamster.com/photos/gallery/karvachauth-jija-sali-blowjob-16089734"><img src="https://ic-ph-nss.xhcdn.com/a/MjhhNDRkMWI3NWYxNTY1YmE4ZGI5ZjE5MzA5M2NlN2M/jpeg/000/515/288/740_450.jpg"><br>Karvachauth jija sali blowjob .</a> 64',
+'<a href="https://xhamster.com/photos/gallery/sex-with-wifes-friend-in-a-car-during-night-16127957"><img src="https://ic-ph-nss.xhcdn.com/a/YmZlZTBlMTkwOTQ2NmY3YmYyNjc0MDRlN2I2NzM5NGM/jpeg/000/515/783/662_450.jpg"><br>Sex with wife&#039;s friend in a car during night</a> 61',
+'<a href="https://xhamster.com/photos/gallery/viral-video-m-my-office-friend-enjoy-moments-blowjob-enjo-16137206"><img src="https://ic-ph-nss.xhcdn.com/a/YTlkOTI0MmYzMDgwYzEzZWMxYjc5NzBmMjA5OTE2YTk/jpeg/000/515/941/728_450.jpg"><br>Viral video m . My office friend enjoy moment&#039;s blowjob enjo</a> 55',
+'<a href="https://xhamster.com/photos/gallery/step-sister-is-very-hot-16083550"><img src="https://ic-ph-nss.xhcdn.com/a/Mzk3MzQyODlmZDMxYzNkMzBlODkyOGY5NTQxYTJjNTg/jpeg/000/515/202/589_450.jpg"><br>Step sister is very hot .</a> 5',
+'<a href="https://xhamster.com/photos/gallery/hotel-bedroom-bhabhiji-love-blowjob-16083848"><img src="https://ic-ph-nss.xhcdn.com/a/NjI4ZDc3MTA5MWRjYTkyYTE0YWM5Mjk1ODIyMzBlYmE/jpeg/000/515/206/569_450.jpg"><br>Hotel bedroom bhabhiji love blowjob.</a> 48',
+'<a href="https://xhamster.com/photos/gallery/jija-sali-hair-cut-night-shift-16089727"><img src="https://ic-ph-nss.xhcdn.com/a/YmRiMGQxOWI1MzRmNTVkOTVhOWE1YWQxMTBkODViZTg/jpeg/000/515/288/555_450.jpg"><br>Jija sali  hair cut night shift .</a> 42',
+'<a href="https://xhamster.com/photos/gallery/night-blowjob-16121258"><img src="https://ic-ph-nss.xhcdn.com/a/Yjk3MGE2MGJjZjYzMjg0MzVmMjk0YjNkYjA2OWM0NWY/jpeg/000/515/698/904_450.jpg"><br>Night blowjob <U+0001F48B></a> 4',
+'<a href="https://xhamster.com/photos/gallery/night-shift-blowjob-16084187"><img src="https://ic-ph-nss.xhcdn.com/a/MTRhNmZlYzNiYWI0OWRmZGNhZDUwMTNhYmRhNmUzMmI/jpeg/000/515/211/178_450.jpg"><br>Night shift blowjob..</a> 27',
+'<a href="https://xhamster.com/photos/gallery/jija-sali-doggy-style-16089732"><img src="https://ic-ph-nss.xhcdn.com/a/MTI2NGY1N2MwZjMzMzcyMDY3YWJmNzFjZmQ5Y2RlMmI/jpeg/000/515/288/687_450.jpg"><br>Jija sali  doggy style .</a> 27',
+'<a href="https://xhamster.com/photos/gallery/brother-in-law-wife-blowjob-16149959"><img src="https://ic-ph-nss.xhcdn.com/a/NGNjNTI2MWEwZDkwN2RmMjRmNjgwMWY3MGE0ZWM2OGY/jpeg/000/516/101/988_450.jpg"><br>Brother in law wife blowjob..</a> 203',
+'<a href="https://xhamster.com/photos/gallery/jija-sali-16074879"><img src="https://ic-ph-nss.xhcdn.com/a/OWQzODA2OWFlZWYwNGNmMWIwOGU3ZTZkZjZmNzY3MmE/jpeg/000/515/088/121_450.jpg"><br>Jija sali </a> 20',
+'<a href="https://xhamster.com/photos/gallery/midnight-blowjob-16088196"><img src="https://ic-ph-nss.xhcdn.com/a/YzQ5NjNhYTI0Yjg3MWM3MDU2NTcxMWVjOGYyMjFmMTg/jpeg/000/515/270/547_450.jpg"><br>Midnight blowjob</a> 2',
+'<a href="https://xhamster.com/photos/gallery/brother-in-law-and-sister-in-law-16074459"><img src="https://ic-ph-nss.xhcdn.com/a/YTA0M2RmYmJiZmQ0MDBlZTI0NGMzNWJjZjE2Yjk3NDY/jpeg/000/515/081/735_450.jpg"><br>brother-in-law and sister-in-law </a> 18',
+'<a href="https://xhamster.com/photos/gallery/brother-in-law-wife-blowjob-16150317"><img src="https://ic-ph-nss.xhcdn.com/a/ZDM2NmU2OWZjYmM5OGE4NDYwOTI5NTU4NmZiZDBlMGM/jpeg/000/516/106/003_450.jpg"><br>Brother in law wife blowjob..</a> 161',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "husbandwife027"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<base target="_blank"><html><head><title>suki+sin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 100%;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">suki+sin</div>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'7/676/38728740/38728740_016_c836',
+'7/676/38728740/38728740_038_687a',
+'7/676/38728740/38728740_058_e571',
+'7/676/38728740/38728740_090_34a2',
+'7/676/38728740/38728740_116_72a9',
+'7/676/38728740/38728740_147_bb4e',
+'7/676/38728740/38728740_178_8430',
+'7/676/38728740/38728740_201_e0a5',
+'7/676/38728740/38728740_222_bded',
+'7/676/38728740/38728740_232_8e77',
+'7/676/38728740/38728740_269_68cb',
+'7/676/38728740/38728740_294_b0e2',
+'7/676/38728740/38728740_311_4af3',
+'7/676/38728740/38728740_332_8768',
+'7/676/38728740/38728740_355_b1c5',
+'7/676/38728740/38728740_373_ff87',
+'7/676/38728740/38728740_380_d17f',
+'7/676/38728740/38728740_417_099d',
+'7/676/38728740/38728740_440_6ae8',
+'7/676/38728740/38728740_457_0d90',
+'7/676/38728740/38728740_490_80a6',
+'7/696/73735578/73735578_004_37f7',
+'7/696/73735578/73735578_010_4c72',
+'7/696/73735578/73735578_012_40ec',
+'7/696/73735578/73735578_016_b0b5',
+'7/696/73735578/73735578_019_181e',
+'7/696/73735578/73735578_025_5551',
+'7/696/73735578/73735578_027_ee31',
+'7/696/73735578/73735578_032_59fd',
+'7/696/73735578/73735578_036_ca06',
+'7/696/73735578/73735578_041_5188',
+'7/696/73735578/73735578_050_4b31',
+'7/696/73735578/73735578_052_0bad',
+'7/696/73735578/73735578_059_0475',
+'7/696/73735578/73735578_061_6f08',
+'7/696/73735578/73735578_067_5a60',
+'7/696/73735578/73735578_071_db57',
+'7/696/73735578/73735578_075_774e',
+'7/696/73735578/73735578_079_81b9',
+'7/696/73735578/73735578_081_0833',
+'7/696/73735578/73735578_087_2fc0',
+'7/696/73735578/73735578_088_b6b1',
+'7/676/66438075/66438075_010_ed66',
+'7/676/66438075/66438075_024_3c1a',
+'7/676/66438075/66438075_029_fd7d',
+'7/676/66438075/66438075_049_0345',
+'7/676/66438075/66438075_057_422c',
+'7/676/66438075/66438075_076_edab',
+'7/676/66438075/66438075_085_f97a',
+'7/676/66438075/66438075_104_2e7b',
+'7/676/66438075/66438075_111_3fd3',
+'7/676/66438075/66438075_129_5ee8',
+'7/676/66438075/66438075_139_2260',
+'7/676/66438075/66438075_147_a081',
+'7/676/66438075/66438075_163_ea67',
+'7/676/66438075/66438075_173_e8a6',
+'7/676/66438075/66438075_190_1195',
+'7/676/66438075/66438075_197_32fc',
+'7/676/66438075/66438075_212_1b3e',
+'7/676/66438075/66438075_217_b2ac',
+'7/676/66438075/66438075_238_189c',
+'7/676/66438075/66438075_244_7ba7',
+'7/676/66438075/66438075_247_ba2c',
+'7/666/48936192/48936192_005_f7b0',
+'7/666/48936192/48936192_025_39c8',
+'7/666/48936192/48936192_056_ef76',
+'7/666/48936192/48936192_066_38a2',
+'7/666/48936192/48936192_091_6b90',
+'7/666/48936192/48936192_110_6bcd',
+'7/666/48936192/48936192_147_ac32',
+'7/666/48936192/48936192_156_c8a3',
+'7/666/48936192/48936192_182_65b9',
+'7/666/48936192/48936192_198_25e0',
+'7/666/48936192/48936192_216_3c3a',
+'7/666/48936192/48936192_229_981f',
+'7/666/48936192/48936192_237_b334',
+'7/666/48936192/48936192_263_4a06',
+'7/666/48936192/48936192_286_3a3e',
+'7/666/48936192/48936192_297_2ce6',
+'7/666/48936192/48936192_324_ab36',
+'7/666/48936192/48936192_345_b612',
+'7/666/48936192/48936192_362_2048',
+'7/666/48936192/48936192_383_f8fb',
+'7/666/48936192/48936192_396_f48a',
+'1/375/28311300/28311300_001_940e',
+'1/375/28311300/28311300_002_0488',
+'1/375/28311300/28311300_003_7d74',
+'1/375/28311300/28311300_004_3e04',
+'1/375/28311300/28311300_005_3e04',
+'1/375/28311300/28311300_006_1488',
+'1/375/28311300/28311300_007_17b9',
+'1/375/28311300/28311300_008_f058',
+'1/375/28311300/28311300_009_0977',
+'1/375/28311300/28311300_010_9a19',
+'1/375/28311300/28311300_011_9a19',
+'1/375/28311300/28311300_012_ff75',
+'1/375/28311300/28311300_013_3b66',
+'1/375/28311300/28311300_014_c850',
+'1/375/28311300/28311300_015_95c1',
+];
+lineHeader = '<img src="https://cdni.pornpics.com/1280/'
+lineTail = '.jpg">'
+showRange = 28
+bookid = "suki+sin"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

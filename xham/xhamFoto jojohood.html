@@ -1,0 +1,104 @@
+<base target="_blank"><html><head><title>batch file: 42</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">batch file: 42</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/bad-ass-jojo-16022094</k>',
+'M2I3NWYwMzMzODcwNDk0ZWNmMTRhMmVmMzEwN2EwYTA/jpeg/000/514/370/622',
+'OGEyZTZhNjljNGMwMTY5ZjBkNzA2MzFmYTM1MDIyMmM/jpeg/000/514/370/621',
+'<k>https://xhamster.com/photos/gallery/jojo-16021055</k>',
+'Mjc1YmUyZjE2YTllOTcwZTI1ODgyNGE5Y2I2NDFkMzY/jpeg/000/514/356/304',
+'NDZlYmViMzgyMzgxYWQzMDJiMzc1MjExODY4MDBhZDA/jpeg/000/514/356/302',
+'YTA0MDc0YzFhZjk0MGYxZWM0MDM1MjY0NmZiYzhlODY/jpeg/000/514/356/301',
+'NTM3NTQwNmM2ZDRjYjM4ZjgzODc0YzQ2ZDM1ODVkNTI/jpeg/000/514/356/300',
+'<k>https://xhamster.com/photos/gallery/sexy-blonde-milf-ready-to-be-fucked-15997692</k>',
+'NmQ2NjYzNTA0ODYwYzA2YmMzMmUzNzM4OWZmZDk1YWM/jpeg/000/514/015/948',
+'Yjk2ZTJiNTg2NzVlZWZjN2Y1ZTg3MTk5NjIzYWFiYWI/jpeg/000/514/015/947',
+'MzAzMjdmZGE2NTk1OTQyMzk5MjFmYTU2NzRjODZhZGY/jpeg/000/514/015/945',
+'NWNhMzk4OTUzNjg3ZDZmZWU3NjExYzg5NmY4MGM2N2U/jpeg/000/514/015/944',
+'YTgxNDNlNDhkNTU0MjdjZGY1OWQ3ZmE3ZDcyMmNiMDk/jpeg/000/514/015/943',
+'YTEwODAwODQ3MGY2ZDI2YmNlOTVkZTQwYjFhMDE3M2E/jpeg/000/514/015/942',
+'<k>https://xhamster.com/photos/gallery/blonde-milf-babe-enjoying-date-night-with-herself-15986092</k>',
+'YTdkNDczZGRlZjY1ZDNmNWMxZTlmNmY1NWI3ZjI4Yzc/jpeg/000/513/854/025',
+'NDUyNGZlN2U0MDk5MjRjZDllYTZkNTQ5ZTA4MTJjYjU/jpeg/000/513/854/023',
+'N2QzYzVlMjU0MjUxNzZjOTIzOGM3NjYxZGNhY2VlM2Q/jpeg/000/513/854/022',
+'NzQ4NTE5MGM0MjUyOTk5MDNiZWQwNGQxOThjYzU4M2Y/jpeg/000/513/854/021',
+'MTllMGUwZGYzMTIzMzg4MWYxNTA3Njk2MTNiZjgzNDU/jpeg/000/513/854/020',
+'<k>https://xhamster.com/photos/gallery/new-year-new-lingerie-for-sex-loving-milf-jojo-hood-15984429</k>',
+'ZTllZDg4ZGI0YWQyNzQ0ZDk2N2JiODYxZjU2Njk5YjU/jpeg/000/513/829/077',
+'MjA3OGRkNjQ4ZWIyODZhYmU1NmY2ZjRiZjVhMjYzY2I/jpeg/000/513/829/076',
+'MjZmY2ZlY2NhNzA2OGM5NjcxMzRmYjg1NmE0ZjgwMWE/jpeg/000/513/829/075',
+'ODMzNzIwZjdiNTkxMjZlYTQ4M2VjOGM0ZDA0M2I0NTc/jpeg/000/513/829/074',
+'MTZmNGM0OThlOTEyYTVkMmY1MTY0MDE2YjAxMTMyMWI/jpeg/000/513/829/073',
+'NTYxNDA5MmUyMjMxNTE0ODk1YWY4MDcyNTQzMGY2MzI/jpeg/000/513/829/072',
+'<k>https://xhamster.com/photos/gallery/jojo-hood-early-morning-pussy-and-tit-action-15977959</k>',
+'MjRjNzM5Yzg4NmU2YmY0ZmZkYWY4NTY0MDYyZjc1YzM/jpeg/000/513/719/891',
+'Yjk4MGEzYWI5NjMyMWQyNDljNjk4OWRlYjkwYjU3ZmY/jpeg/000/513/719/890',
+'ZDczYTY0ZjYwYTFmZmEzMTk4ZjdmNDM0MzU4MDk3NjE/jpeg/000/513/719/888',
+'<k>https://xhamster.com/photos/gallery/smoking-hot-milf-jojo-hood-15972408</k>',
+'NjJkOWRhZmNiNDc1MWQxNzVjOTFhZmNiOTBiM2ExZGE/jpeg/000/513/646/210',
+'NDFjZmUxMTA4NjJjMjFhNGU1NmM0ZWUwYzBlZTIxNDU/jpeg/000/513/646/209',
+'MGNjYjg3OTg0ZTkyN2IyMDgxNmNlNzI0ZTFhNGZhOTI/jpeg/000/513/646/206',
+'<k>https://xhamster.com/photos/gallery/sexy-hot-milf-jojo-hood-joins-xhamster-15972403</k>',
+'MmM5MDBhNDA5YWI4M2VhNTI3NzliNjgwYzA5ZDNmMDU/jpeg/000/513/646/197',
+'NGFjYTdmMjQ2NDcxNjI2MzMxNWE1ZGI5M2YwNzBhYmI/jpeg/000/513/646/196',
+'NmNjYzUyY2FiNzNjZmZmNmQwNjliMDk2MjRjZWYwNDU/jpeg/000/513/646/191',
+'<k>https://xhamster.com/photos/gallery/fuck-my-legs-look-good-in-these-boots-15969852</k>',
+'MDU0NTk1NmExMmFlYWFjNDJmMjVhZTYyZjg0ZGRiYWQ/jpeg/000/513/621/419',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "batch file: 42"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

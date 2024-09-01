@@ -1,0 +1,89 @@
+<base target="_blank"><html><head><title>anasthasiachristian</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/this-afternoon-at-the-office-au-bureau-11102077"><img src="https://ic-ph-nss.xhcdn.com/a/NTMwN2VlMzZmYWRlNmZhZTg3MTA3NmViYTczNmU3MzI/jpeg/000/240/571/848_450.jpg"><br>this afternoon at the office (au bureau)</a> 9',
+'<a href="https://xhamster.com/photos/gallery/new-pink-panties-10947197"><img src="https://ic-ph-nss.xhcdn.com/a/M2Q2MmIyNjE4NTZhODdhYjEyMmUwMmQ3ZTVmNjFlODM/jpeg/000/233/246/249_450.jpg"><br>New pink panties</a> 9',
+'<a href="https://xhamster.com/photos/gallery/new-black-panties-10962579"><img src="https://ic-ph-nss.xhcdn.com/a/ZDk4MGMyZmE4MzFhODI4OTUyOGQzNGIxZDdkMzRjYTA/jpeg/000/233/932/060_450.jpg"><br>New black panties</a> 9',
+'<a href="https://xhamster.com/photos/gallery/in-the-humid-heat-of-the-hammam-16058970"><img src="https://ic-ph-nss.xhcdn.com/a/NTYyY2RhMjlmMGM5YmYwMWZjYjUxNDg0YzE5NmFlMzM/jpeg/000/514/883/523_450.jpg"><br>In the humid heat of the hammam</a> 9',
+'<a href="https://xhamster.com/photos/gallery/exhib-10677041"><img src="https://ic-ph-nss.xhcdn.com/a/MThhN2ZkM2U5YmQ0NDkxYmY5Yzk3NzdlNTZiOTNiYjc/jpeg/000/221/097/111_450.jpg"><br>Exhib</a> 9',
+'<a href="https://xhamster.com/photos/gallery/a-beautiful-day-at-the-beach-16052048"><img src="https://ic-ph-nss.xhcdn.com/a/YjBkMjQ3ZTA0ZjdkOTY4NjBhZDJkMTJmY2Q2MTk3Yzk/jpeg/000/514/775/528_450.jpg"><br>A beautiful day at the beach</a> 9',
+'<a href="https://xhamster.com/photos/gallery/very-pretty-10640281"><img src="https://ic-ph-nss.xhcdn.com/a/Y2NkNjZhZmZkZjVhYzczZTkwMWFiYmEyYmE2NzFiN2Y/jpeg/000/219/717/531_450.jpg"><br>very pretty</a> 7',
+'<a href="https://xhamster.com/photos/gallery/detente-10663751"><img src="https://ic-ph-nss.xhcdn.com/a/OWExZTI1MTdlN2VmZDg2YzhmNmQwYmE1MjAwOTIwYWY/jpeg/000/220/545/423_450.jpg"><br>Detente !</a> 6',
+'<a href="https://xhamster.com/photos/gallery/black-dress-without-panties-10734952"><img src="https://ic-ph-nss.xhcdn.com/a/NWQxNjdiMGVlMTNjNTIzYTU0NzE2NTkyZDU2ZTM3NmM/jpeg/000/223/661/209_450.jpg"><br>Black dress without panties</a> 4',
+'<a href="https://xhamster.com/photos/gallery/summer-2019-part-3-15804229"><img src="https://ic-ph-nss.xhcdn.com/a/OWQ4YmVhZjNmMjUzMTMxYmM5YzA5N2Q4ZTU1NDc2NjY/jpeg/000/504/506/688_450.jpg"><br>Summer 2019 - Part 3</a> 33',
+'<a href="https://xhamster.com/photos/gallery/white-dress-without-panties-15905660"><img src="https://ic-ph-nss.xhcdn.com/a/MjBmZTJmOTY0YjMwM2FmODkxMzBmNjczYjljYWQyMDU/jpeg/000/512/261/072_450.jpg"><br>White dress without panties</a> 30',
+'<a href="https://xhamster.com/photos/gallery/tres-excitant-10650586"><img src="https://ic-ph-nss.xhcdn.com/a/MWU1YThhOTgwYmFiMWU1ODJjMTdlMzVhZTBlYTk1NWU/jpeg/000/219/967/181_450.jpg"><br>Tres excitant</a> 3',
+'<a href="https://xhamster.com/photos/gallery/shaved-pussy-at-the-cottage-15915714"><img src="https://ic-ph-nss.xhcdn.com/a/MzA4ODdmZTc5MTJiMTdlYmQwNjA4ZDRmOGVjM2M3MGQ/jpeg/000/512/493/030_450.jpg"><br>Shaved pussy at the cottage</a> 29',
+'<a href="https://xhamster.com/photos/gallery/a-shaved-pussy-in-the-sun-jul-2022-15913903"><img src="https://ic-ph-nss.xhcdn.com/a/Yjc2MWYxMTY2MDFlZDFhMTE1MTY2YTI5OWVmYjExNGI/jpeg/000/512/438/976_450.jpg"><br>A shaved pussy in the sun - Jul 2022</a> 29',
+'<a href="https://xhamster.com/photos/gallery/pink-candy-lingerie-13867020"><img src="https://ic-ph-nss.xhcdn.com/a/NGRhZjAyMWY3YjY0MWIwMGY2ODQ2NTcwNTgwMTY2N2I/jpeg/000/380/921/681_450.jpg"><br>Pink candy lingerie</a> 24',
+'<a href="https://xhamster.com/photos/gallery/last-summer-in-the-car-13720219"><img src="https://ic-ph-nss.xhcdn.com/a/ZDAwYjBmYjYwNGE2Yjc1ODk4YTI1YTZmZTNjYzY4NWQ/jpeg/000/372/959/396_450.jpg"><br>Last summer in the car</a> 21',
+'<a href="https://xhamster.com/photos/gallery/summer-2019-part-2-15802317"><img src="https://ic-ph-nss.xhcdn.com/a/ZWU0ZGY1YzkwNWJkNDk3MjVjZjZmNmMyY2M3Mzc1ODM/jpeg/000/503/599/201_450.jpg"><br>Summer 2019 Part 2</a> 20',
+'<a href="https://xhamster.com/photos/gallery/hot-and-sexy-holidays-12316668"><img src="https://ic-ph-nss.xhcdn.com/a/MTI0ZDMyN2JkYzRkZTM4MjhjM2E3ZTA4YWViMjkzOTg/jpeg/000/299/352/814_450.jpg"><br>Hot and sexy holidays</a> 20',
+'<a href="https://xhamster.com/photos/gallery/on-the-chair-10679965"><img src="https://ic-ph-nss.xhcdn.com/a/OTk5ZmZiNjk2YmE0ZWE5NWMzNjhjMzE5YmMxMWI1YWY/jpeg/000/221/223/769_450.jpg"><br>On the chair</a> 19',
+'<a href="https://xhamster.com/photos/gallery/hotel-10675470"><img src="https://ic-ph-nss.xhcdn.com/a/OGNjMDI4N2YwMDY1NmQ4YjAwMTAzODBlMzVmZmNhNzM/jpeg/000/221/031/944_450.jpg"><br>Hotel</a> 19',
+'<a href="https://xhamster.com/photos/gallery/masturbation-10735812"><img src="https://ic-ph-nss.xhcdn.com/a/ODg5ZjgwM2QwZjQxNTJhZDIxN2VlMDBlOTZiOWQ3OWY/jpeg/000/223/702/046_450.jpg"><br>Masturbation</a> 18',
+'<a href="https://xhamster.com/photos/gallery/masturb-outdor-10734769"><img src="https://ic-ph-nss.xhcdn.com/a/ZWMwNGRlNmRmYzVlMDNiZmE0NzY2Y2I0YWE5M2I0ZDk/jpeg/000/223/653/928_450.jpg"><br>Masturb outdor</a> 18',
+'<a href="https://xhamster.com/photos/gallery/relaxation-in-underwear-16063289"><img src="https://ic-ph-nss.xhcdn.com/a/NTE1MjljMmQxOWM2YzY2MDQ3YjMwN2I1ZjU0ZDY2NDE/jpeg/000/514/944/596_450.jpg"><br>Relaxation in underwear</a> 17',
+'<a href="https://xhamster.com/photos/gallery/stroll-by-the-sea-15900542"><img src="https://ic-ph-nss.xhcdn.com/a/MDgyYjY2OGM3ZmFlMGM5MTk0ZWQ4NTlkZWQ2ZDM5NTM/jpeg/000/512/146/208_450.jpg"><br>Stroll by the sea</a> 16',
+'<a href="https://xhamster.com/photos/gallery/stripping-15921022"><img src="https://ic-ph-nss.xhcdn.com/a/MzZhMGJmN2I1NTNjYTIwNDUzNTA0M2UyZjNhM2QwYjk/jpeg/000/512/608/893_450.jpg"><br>stripping</a> 16',
+'<a href="https://xhamster.com/photos/gallery/my-body-in-the-heat-of-the-sauna-16057224"><img src="https://ic-ph-nss.xhcdn.com/a/OTEzNzg0NDY5YjkyODU4MjIyNmQxMmE1OWJmOWI1YWU/jpeg/000/514/862/225_450.jpg"><br>My body in the heat of the sauna</a> 16',
+'<a href="https://xhamster.com/photos/gallery/summer-2019-15802274"><img src="https://ic-ph-nss.xhcdn.com/a/NTRkN2NjYTVmMjIxMjQ1ODk2MzdhMzI1MmNkODZhMWI/jpeg/000/503/575/968_450.jpg"><br>Summer 2019</a> 15',
+'<a href="https://xhamster.com/photos/gallery/alone-after-the-shower-10841351"><img src="https://ic-ph-nss.xhcdn.com/a/OGZmNDI1NzhmM2FlNDI1ZDNjOTljNWVmZmZiNDQ5N2Q/jpeg/000/228/482/798_450.jpg"><br>Alone after the shower</a> 15',
+'<a href="https://xhamster.com/photos/gallery/new-blue-panties-10962347"><img src="https://ic-ph-nss.xhcdn.com/a/ZjI2NGNiODE0Y2E0ZmFhM2FhZjQ4NGZjNWEzMGE3M2E/jpeg/000/233/919/997_450.jpg"><br>New blue panties</a> 14',
+'<a href="https://xhamster.com/photos/gallery/i-wet-my-panties-on-the-sofa-13786408"><img src="https://ic-ph-nss.xhcdn.com/a/NjZhMGQ3YjAwYWY2ZjUyMjA2NzlhZTQzOGUwNDc1NmE/jpeg/000/376/522/469_450.jpg"><br> I wet my panties on the sofa</a> 14',
+'<a href="https://xhamster.com/photos/gallery/new-white-panties-10912871"><img src="https://ic-ph-nss.xhcdn.com/a/MmQyNTZjNzhkMDIzZDFiMTc0ODE5Y2I0M2Q0ZjgyM2Y/jpeg/000/231/642/296_450.jpg"><br>New white panties</a> 12',
+'<a href="https://xhamster.com/photos/gallery/new-transparent-panties-10952144"><img src="https://ic-ph-nss.xhcdn.com/a/YzhmY2MwMjEwODJlOWJkN2UzMmExOWI0ODRhNTZmY2U/jpeg/000/233/466/172_450.jpg"><br>new transparent panties</a> 12',
+'<a href="https://xhamster.com/photos/gallery/my-big-boobs-15894269"><img src="https://ic-ph-nss.xhcdn.com/a/NzZmN2ViM2ZiYmNlOTIzNjI1OWQ5NjU3YmUxYTU3YmQ/jpeg/000/512/005/878_450.jpg"><br>My big boobs</a> 11',
+'<a href="https://xhamster.com/photos/gallery/i-take-some-pictures-for-you-16069824"><img src="https://ic-ph-nss.xhcdn.com/a/ODU5MmZlZGJmMTIwMDU5NjBkZDQwNThiYTM5NWNlM2E/jpeg/000/515/026/843_450.jpg"><br>I take some pictures for you</a> 11',
+'<a href="https://xhamster.com/photos/gallery/afternoon-10774226"><img src="https://ic-ph-nss.xhcdn.com/a/ZmJlOWY0NDU5ZTBhYmU1YmY2ZTc3MmEzNGYwNDY1ODI/jpeg/000/501/572/746_450.jpg"><br>Afternoon !</a> 11',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "anasthasiachristian"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

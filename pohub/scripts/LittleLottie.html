@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width"/>
+<title>shuffle Links</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<style>
+body {background-color: black;}
+html {height: 100%;overflow: scroll;}
+::-webkit-scrollbar {width: 0px;background: transparent;}
+body { margin: auto; width: 100%; background-color: #000000; color: #20C030;}
+img { width: 50%; display: block; margin-left: auto; margin-right: auto;}
+</style>
+</head>
+<body onkeypress="chkKey()">
+<br><br><br><br><br>
+<div class="imagearea"> </div>
+<script>
+function chkKey() {
+var testkey = getChar(event);
+if(testkey == "b"){ backward();}
+if(testkey == "f"){ foreward();}
+if(testkey == "p"){ pause();}
+if(testkey == "c"){ continU();}
+if(testkey == "s"){ showMov();}}
+function getChar(event){if (event.which!=0 && event.charCode!=0) {return String.fromCharCode(event.which)}
+ else {return null}}
+var ImgList = [
+'<a href="https://www.pornhub.com/embed/1006483344"><img src="https://ci.phncdn.com/videos/201505/11/48866141/original/(m=ecuKGgaaaa)(mh=ABiZwjuTO8skRAk8)5.jpg" alt="Wishlist wristwatch fetish"></a>',
+'<a href="https://www.pornhub.com/embed/1106131985"><img src="https://ci.phncdn.com/videos/201504/23/47980231/original/(m=ecuKGgaaaa)(mh=PMx5jDI2kakhfuPM)15.jpg" alt="Sucking after anal"></a>',
+'<a href="https://www.pornhub.com/embed/1171279734"><img src="https://ci.phncdn.com/videos/201505/04/48545261/original/(m=ecuKGgaaaa)(mh=tBPz52YxKE0yCGRA)6.jpg" alt="Slave masturbates in public"></a>',
+'<a href="https://www.pornhub.com/embed/1223124959"><img src="https://ci.phncdn.com/videos/201504/19/47784001/original/(m=ecuKGgaaaa)(mh=wq2--naJg1ZxBLjN)1.jpg" alt="Tit spanking"></a>',
+'<a href="https://www.pornhub.com/embed/1282908126"><img src="https://ci.phncdn.com/videos/201504/25/48085681/original/(m=ecuKGgaaaa)(mh=t_dvBKDoPZSInLvu)3.jpg" alt="Me edging for my Master while I have a toy in my ass"></a>',
+'<a href="https://www.pornhub.com/embed/1289283693"><img src="https://ci.phncdn.com/videos/201505/13/48946841/original/(m=ecuKGgaaaa)(mh=2FM5LloBx0b0w_lq)13.jpg" alt="Big titted brunette testing her new suction cup dildo"></a>',
+'<a href="https://www.pornhub.com/embed/1386127463"><img src="https://ci.phncdn.com/videos/201504/26/48133671/original/(m=ecuKGgaaaa)(mh=UPo85yDFdc3FSGvM)1.jpg" alt="Wedgie, spanking my pussy and cutting my panties for Master"></a>',
+'<a href="https://www.pornhub.com/embed/1423163520"><img src="https://ci.phncdn.com/videos/201504/26/48142451/original/(m=ecuKGgaaaa)(mh=pMNzvfjVnsQkf1tH)2.jpg" alt="Fucking my asshole with a vibrator"></a>',
+'<a href="https://www.pornhub.com/embed/1507784339"><img src="https://ci.phncdn.com/videos/201505/08/48737091/original/(m=ecuKGgaaaa)(mh=r1JPZedJo6tutfD4)10.jpg" alt="Outdoor pain play with nettles"></a>',
+'<a href="https://www.pornhub.com/embed/1509081528"><img src="https://ci.phncdn.com/videos/201505/02/48436851/original/(m=ecuKGgaaaa)(mh=5THZ4-KOGLg1vKVf)14.jpg" alt="Popping and playing with balloons at a public library toilet."></a>',
+'<a href="https://www.pornhub.com/embed/154295021"><img src="https://ci.phncdn.com/videos/201504/28/48227051/original/(m=ecuKGgaaaa)(mh=xSVBtV5roPyj44FC)13.jpg" alt="Titty fucking my toy, wishing it would be Masters cock"></a>',
+'<a href="https://www.pornhub.com/embed/1594627752"><img src="https://ci.phncdn.com/videos/201505/02/48424641/original/(m=ecuKGgaaaa)(mh=cHShR7K_yzfZPK7f)13.jpg" alt="amateur wax play"></a>',
+'<a href="https://www.pornhub.com/embed/1607858445"><img src="https://ci.phncdn.com/videos/201504/23/48002121/original/(m=ecuKGgaaaa)(mh=-zYDJTNllxCjfB7_)5.jpg" alt="Masturbating while I have a big carrot in my asshole"></a>',
+'<a href="https://www.pornhub.com/embed/1730201129"><img src="https://ci.phncdn.com/videos/201504/21/47914481/original/(m=ecuKGgaaaa)(mh=AdYfcvEztUXsKVSB)3.jpg" alt="Dirty fingering"></a>',
+'<a href="https://www.pornhub.com/embed/1975260340"><img src="https://ci.phncdn.com/videos/201505/24/49461841/original/(m=ecuKGgaaaa)(mh=QlSqhcE6XKdc2Lpc)10.jpg" alt="Nude workout session"></a>',
+'<a href="https://www.pornhub.com/embed/2000515483"><img src="https://ci.phncdn.com/videos/201504/23/48004711/original/(m=ecuKGgaaaa)(mh=hpbbuTc_TJJMQoKo)10.jpg" alt="Wedgie and cutting my panties for my Master"></a>',
+'<a href="https://www.pornhub.com/embed/26935814"><img src="https://ci.phncdn.com/videos/201504/17/47728211/original/(m=ecuKGgaaaa)(mh=4RFO1nESzo6C_k0U)1.jpg" alt="Figging"></a>',
+'<a href="https://www.pornhub.com/embed/442686710"><img src="https://ci.phncdn.com/videos/201504/23/47980101/original/(m=ecuKGgaaaa)(mh=8bVpkRXhUWyYufWs)6.jpg" alt="Carrot fucking"></a>',
+'<a href="https://www.pornhub.com/embed/514597896"><img src="https://ci.phncdn.com/videos/201504/28/48240651/original/(m=ecuKGgaaaa)(mh=TOYhgBALQT8tKeHx)3.jpg" alt="Filling all three of my holes with cucumbers"></a>',
+'<a href="https://www.pornhub.com/embed/517413968"><img src="https://ci.phncdn.com/videos/201504/18/47768471/original/(m=ecuKGgaaaa)(mh=akYcSKSaHF_WcUQp)16.jpg" alt="Master told me to play with my toys"></a>',
+'<a href="https://www.pornhub.com/embed/572878408"><img src="https://ci.phncdn.com/videos/201504/25/48119621/original/(m=ecuKGgaaaa)(mh=8PyDhSKLonPgqUUw)1.jpg" alt="Me deepthroating my vibrator"></a>',
+'<a href="https://www.pornhub.com/embed/ph55931ce6f36b8"><img src="https://ci.phncdn.com/videos/201506/30/51645901/original/(m=ecuKGgaaaa)(mh=HnANn4TBBMD-LWxt)1.jpg" alt="Order by Master to do wax play"></a>',
+'<a href="https://www.pornhub.com/embed/ph56041d6b9ba75"><img src="https://ci.phncdn.com/videos/201509/24/57993071/original/(m=ecuKGgaaaa)(mh=KXuzoheX1jiMXdlb)15.jpg" alt="Desperate for Anal"></a>',
+'<a href="https://www.pornhub.com/embed/ph5639f15d6e5a9"><img src="https://ci.phncdn.com/videos/201511/04/60887491/original/(m=ecuKGgaaaa)(mh=DDZCfNwtXJxdfdWQ)4.jpg" alt="Slaping myself and thanking Sir for letting me cum"></a>',
+'<a href="https://www.pornhub.com/embed/ph564c7992856ef"><img src="https://ci.phncdn.com/videos/201511/18/61894941/original/(m=ecuKGgaaaa)(mh=ck7hJbgZKPYyH2rb)14.jpg" alt="Nettle play for pain slut"></a>',
+'<a href="https://www.pornhub.com/embed/ph56abe9a443773"><img src="https://ci.phncdn.com/videos/201601/29/67333761/original/(m=ecuKGgaaaa)(mh=t5HI9D7UnFpKBuJR)11.jpg" alt="Slut tied to her bed and tortured"></a>',
+]
+ var listLen = ImgList.length, timer = 15000
+function shuffle(array) { var i = ImgList.length, j = 0, temp
+while (i--) { j = Math.floor(Math.random() * (i+1))
+temp = ImgList[i]
+ ImgList[i] = ImgList[j]
+ ImgList[j] = temp
+ } 
+return ImgList
+}
+ImgList = shuffle(Array.from(Array(ImgList.length).keys()))
+function changeImg() { if (listLen >= ImgList.length - 1) { listLen = 0
+ }
+ else if (listLen < 0) { listLen = ImgList.length - 1
+ } 
+else { listLen = listLen + 1
+ }
+showImg()
+}
+function backward() { listLen = listLen - 2
+changeImg()
+}
+function foreward() { changeImg()
+}
+function pause() { clearInterval(myVar)
+}
+function continU() { myVar = setInterval(changeImg, timer)
+ foreward()
+}
+function showImg() { var thePointerImg = document.querySelector(".imagearea")
+ thePointerImg.innerHTML = ImgList[listLen]
+ console.log(thePointerImg.innerHTML)
+}
+function showMov() { var imgAdr = ImgList[listLen]
+ var start = imgAdr.indexOf("=")+1
+ var end = imgAdr.indexOf('"', start+1)
+ var list = imgAdr.substring(start+1, end)
+ window.open(list)
+}changeImg()
+var myVar = setInterval(changeImg, timer)
+</script></body></html>

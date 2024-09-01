@@ -1,0 +1,120 @@
+<base target="_blank"><html><head><title>av-club</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">av-club</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'6435a446ade83"><img src="https://ei.phncdn.com/videos/202304/11/429325741/thumbs_5/(m=eafTGgaaaa)(mh=GHgIwXlJ6_Ins7Mz)14.jpg"><br>HUGE SQUIRT WHILE WATCHING PORN. HONEY HAZE',
+'643dc28711e28"><img src="https://ei.phncdn.com/videos/202304/17/429730011/original/(m=eafTGgaaaa)(mh=gLWp7vxyv71jz9Nz)14.jpg"><br>Sharing a Cock with my CLONE!? - Dainty Wilder Reacts',
+'656ee524c8079"><img src="https://ei.phncdn.com/videos/202312/05/444194711/original/(m=q26M_2YbeafTGgaaaa)(mh=mx8jWc-AhDEG_iCv)0.jpg"><br>Round And Robust Reaming - TeamSkeet',
+'659ae32b69ed0"><img src="https://ei.phncdn.com/videos/202401/07/446095051/original/(m=eafTGgaaaa)(mh=QDmsRS-_wm7iaNRF)8.jpg"><br>優しそうな旦那を尻目に、遊ぶ金欲しさに融資を受ける美人チャ',
+'659ae5de37dd5"><img src="https://ei.phncdn.com/videos/202401/07/446095611/original/(m=eafTGgaaaa)(mh=mXUnqbji_vADJ6kE)2.jpg"><br>20歳になった可愛い見習い美容師に初めて',
+'659ae8c180228"><img src="https://ei.phncdn.com/videos/202401/07/446096471/original/(m=eafTGgaaaa)(mh=XAqWJWQREeEZ33Yg)4.jpg"><br>ボーイッシュな敏感新妻はカメラに顔を隠し続けるが、その敏感さから隠す',
+'659aeb93ebbbe"><img src="https://ei.phncdn.com/videos/202401/07/446096931/original/(m=eafTGgaaaa)(mh=RfLEyfXWrofjGDBp)16.jpg"><br>お小遣いに釣られてやってきた20代男女',
+'659aed1d110aa"><img src="https://ei.phncdn.com/videos/202401/07/446097421/original/(m=eafTGgaaaa)(mh=k8HbxI0PEt0PM9oU)1.jpg"><br>1本だけ撮影することができた発育中の現<U+25EF>年生の放課後の記録。',
+'65fe6de767af9"><img src="https://ei.phncdn.com/videos/202403/23/449999981/thumbs_20/(m=eafTGgaaaa)(mh=jcmkBCYov9O3mLR4)2.jpg"><br>My hot tanned girlfriend wake me up and make me cum twice by her sweet body - miuzxc',
+'66060503144fb"><img src="https://ei.phncdn.com/videos/202403/29/450289381/original/(m=eafTGgaaaa)(mh=t96t98XeSKNO3S1-)11.jpg"><br>スレンダーな美人さんですね',
+'660606f7a900a"><img src="https://ei.phncdn.com/videos/202403/29/450289851/original/(m=eafTGgaaaa)(mh=QKYXKnqKH-Hsn5ru)1.jpg"><br>夢を追いかけるアイドルルックな少女再び！',
+'660609cd7b97b"><img src="https://ei.phncdn.com/videos/202403/29/450290221/original/(m=eafTGgaaaa)(mh=NKc9IHBnv2lTZp0d)14.jpg"><br>秋田の現代セーラームーン美女のピュアちゃん！！事前のコスプレ衣装を着てもらったら似合いすぎた編',
+'66060cc4934d0"><img src="https://ei.phncdn.com/videos/202403/29/450290591/thumbs_5/(m=eafTGgaaaa)(mh=1odVt9oW8K4R5qhP)12.jpg"><br>某社長と愛人関係にあった美女を犯罪者チンポで濃厚な精子を投入。',
+'66060f5e2dc71"><img src="https://ei.phncdn.com/videos/202403/29/450291091/original/(m=eafTGgaaaa)(mh=i2gTvkVb-aUkXqxo)7.jpg"><br>ちょっぴり大人になった19歳の無邪気で可憐な色白女子大生！',
+'660632b0634ad"><img src="https://ei.phncdn.com/videos/202403/29/450296241/original/(m=eafTGgaaaa)(mh=oRYd39mD8st52BJu)13.jpg"><br>超高身長の元モデル美女は驚異の170<U+3322>超え!?天然Gカップの娘は感度抜群ッ！Hな声は可愛すぎて逝きまくる姿は男の欲望',
+'6606352266413"><img src="https://ei.phncdn.com/videos/202403/29/450296661/original/(m=eafTGgaaaa)(mh=W5eNqekiOjT15Qs6)13.jpg"><br>美女が入り乱れた、はちゃめちゃ４Ｐって見たくないですか？',
+'6606383173ad7"><img src="https://ei.phncdn.com/videos/202403/29/450297221/original/(m=eafTGgaaaa)(mh=UJ76jLVJS2pdO60q)15.jpg"><br>〈超ウブッ娘ロケット乳〉【神乳降臨】恥ずかしがり屋おとなし',
+'66063acaa51b0"><img src="https://ei.phncdn.com/videos/202403/29/450297601/original/(m=eafTGgaaaa)(mh=Y8w58ebQGA51_IVx)4.jpg"><br>経験人数１人、フォロワー１０万人超のかりんちゃん！',
+'66063d0909ef7"><img src="https://ei.phncdn.com/videos/202403/29/450297881/original/(m=eafTGgaaaa)(mh=cT4jHFx6Jo4FsMcb)4.jpg"><br>震える色白少女の気持ちを無視して<U+00A0><U+00A0>',
+'66063f1b8c97d"><img src="https://ei.phncdn.com/videos/202403/29/450298471/original/(m=eafTGgaaaa)(mh=AMztC4uvG4QlIBWc)1.jpg"><br>神回！衝撃3P！連続中出しに口移しごっくんまで、、絶対に後悔させません',
+'660644a08acc7"><img src="https://ei.phncdn.com/videos/202403/29/450298831/original/(m=eafTGgaaaa)(mh=Y2ZuZXVm7B0O9Qbs)14.jpg"><br>南アルプス市の”普通”の中で見つけたアイドルの原石美<U+25EF>女',
+'660646f1141a0"><img src="https://ei.phncdn.com/videos/202403/29/450299181/original/(m=eafTGgaaaa)(mh=mmauNztZzzbYBte3)6.jpg"><br>20年間続く奨学金返済に苦しむ南国の雰囲気漂う美形褐色娘がAV出演！',
+'660649a43438e"><img src="https://ei.phncdn.com/videos/202403/29/450299351/original/(m=eafTGgaaaa)(mh=M0JCpLqF5ehBNddL)10.jpg"><br>僕が通っている青山の美人美容師をオフ日に誘い出し成功！！！',
+'66064b29b1646"><img src="https://ei.phncdn.com/videos/202403/29/450299571/original/(m=eafTGgaaaa)(mh=HbJLWk8wlH9Z6Vbc)9.jpg"><br>小動物系の色白スレンダー美**に２回中出しちゃいました',
+'66064c91443d2"><img src="https://ei.phncdn.com/videos/202403/29/450299751/original/(m=eafTGgaaaa)(mh=dJQ6xHsoWoXe1PJ3)2.jpg"><br>顔よし体よし性格よしの完璧美●女。生も初めて！中出しなんて言語道断もってのほかです！！',
+'66064dd7cad5e"><img src="https://ei.phncdn.com/videos/202403/29/450299931/original/(m=eafTGgaaaa)(mh=gigPYx2dXNhVRh9a)2.jpg"><br>天から授かった素朴な可愛らしさ感度1000%の女子大生がホテルで感動1000%になっちゃいました',
+'6607946de40ff"><img src="https://ei.phncdn.com/videos/202403/30/450349921/original/(m=eafTGgaaaa)(mh=T-uZqCDxdmxr6V61)3.jpg"><br>スレンダー身長高めちゃんと熱情の物語！',
+'660796e6a50ba"><img src="https://ei.phncdn.com/videos/202403/30/450350521/original/(m=eafTGgaaaa)(mh=dldXBDjJmZovIs64)12.jpg"><br>約束をドタキャンされた専門学生をカフェの非常階段に誘い出し猥褻淫行',
+'660f0b9fbf5d6"><img src="https://ei.phncdn.com/videos/202404/04/450632791/original/(m=qTHLGHZbeafTGgaaaa)(mh=-9pP7gIdP9zonFJX)0.jpg"><br>SEX AFTER FIRST DATE WITH A GIRL IN A MINISKIRT!',
+'661562ae17e0b"><img src="https://ei.phncdn.com/videos/202404/09/450846161/original/(m=qQILRHZbeafTGgaaaa)(mh=8Vnoru14OPDDAZpM)0.jpg"><br>Her Nipples Almost Exploded - Cumslut Cutie Gets Massive Cumshower',
+'6615f79dc9913"><img src="https://ei.phncdn.com/videos/202404/10/450866011/original/(m=eafTGgaaaa)(mh=D7vYzMjablS8ychk)14.jpg"><br>ろり声でパイパンおま○この激カワ色白18歳地下アイドルに二度大量中出し。',
+'6615f7a28d937"><img src="https://ei.phncdn.com/videos/202404/10/450866021/original/(m=eafTGgaaaa)(mh=Hz90Ja2_fzuOeoJG)12.jpg"><br>ろり声でパイパンおま○この激カワ色白18歳地下アイドルに二度大量中出し。',
+'66175db494135"><img src="https://ei.phncdn.com/videos/202404/11/450913441/original/(m=eafTGgaaaa)(mh=aR8_teynhsKzmuAE)12.jpg"><br>若干20歳で既にこの官能的な曲線美',
+'6617614166d03"><img src="https://ei.phncdn.com/videos/202404/11/450913751/original/(m=eafTGgaaaa)(mh=Oy9xpfIAteyiQIjd)2.jpg"><br>みおちゃん最新作を含むプレミアム福袋',
+'661a0bfbeb69d"><img src="https://ei.phncdn.com/videos/202404/13/451005371/original/(m=eafTGgaaaa)(mh=bVEEIl4wE9d_Ec0C)12.jpg"><br>インストラクターの挑発的身体 綺麗なDカップ超美乳 傷ひとつない完璧',
+'661a0e0c04d3b"><img src="https://ei.phncdn.com/videos/202404/13/451005681/original/(m=eafTGgaaaa)(mh=kL-MZLVPPg9ekyr9)15.jpg"><br>巨乳で卒業したばっかりの女の子に中出ししちゃいました',
+'661a10cf45be7"><img src="https://ei.phncdn.com/videos/202404/13/451005861/original/(m=eafTGgaaaa)(mh=jCskaBWzFc5iuhxz)12.jpg"><br>21歳の青●学院のお嬢様が人生初の連続ごっくんに挑戦。',
+'661a129a9f089"><img src="https://ei.phncdn.com/videos/202404/13/451006211/original/(m=eafTGgaaaa)(mh=xdCz7yHkP0igl8tR)12.jpg"><br>自己責任で見てください。10代家出した女の子',
+'661a149708f63"><img src="https://ei.phncdn.com/videos/202404/13/451006531/original/(m=eafTGgaaaa)(mh=TuGbf-nD5Nv4js6c)5.jpg"><br>顔出し色白美脚の美人元看護士の歪んだ性癖',
+'661a1793d8efc"><img src="https://ei.phncdn.com/videos/202404/13/451006881/original/(m=eafTGgaaaa)(mh=6TbvLI1BR5mcas2a)12.jpg"><br>顔出し透明感溢れる麗しいフェロモンと抜群のプロポーションで男を魅了する美しいピアノ講師',
+'661b07bc2f404"><img src="https://ei.phncdn.com/videos/202404/13/451035201/original/(m=eafTGgaaaa)(mh=t8o825jstIYZsL-8)1.jpg"><br>174 ㎝の長身スレンダーでスタイル抜群。エロさも兼ね備えた美女の誘惑',
+'661b091aa0d44"><img src="https://ei.phncdn.com/videos/202404/13/451035461/original/(m=eafTGgaaaa)(mh=eGfhDFeA4vAg1y7d)12.jpg"><br>カトパン似の清楚が極まったお宝美女を大発掘！',
+'661b0c2fc6288"><img src="https://ei.phncdn.com/videos/202404/13/451035961/original/(m=eafTGgaaaa)(mh=QSeDshBPGEDwRndZ)12.jpg"><br>ギャラみ女子の行き着く先は、僕の中出',
+'661b0ec54db8b"><img src="https://ei.phncdn.com/videos/202404/13/451036161/original/(m=eafTGgaaaa)(mh=TKpgNx2Fd3Th1DVS)12.jpg"><br>3412244',
+'661ebfc6e1a1b"><img src="https://ei.phncdn.com/videos/202404/16/451161381/original/(m=qQH6-HZbeafTGgaaaa)(mh=fFhZtRUM-DlBzCFi)0.jpg"><br>A hot Latina let me fuck her boyfriend, but he accidentally came inside! POV',
+'66272f46c9555"><img src="https://ei.phncdn.com/videos/202404/23/451455461/original/(m=eafTGgaaaa)(mh=CHlgu3YUcbb7buWh)11.jpg"><br>顔出しサキュバスの様な魅惑のツンデレGcup美人歯科衛生士',
+'662731ee8f2f8"><img src="https://ei.phncdn.com/videos/202404/23/451455961/original/(m=eafTGgaaaa)(mh=l7KJE8z6_puwVdBW)9.jpg"><br>キレイめサッパリ女子が一方的にオヂサンのオモチャにされる地獄絵図',
+'6627346075020"><img src="https://ei.phncdn.com/videos/202404/23/451456401/thumbs_5/(m=eafTGgaaaa)(mh=wKLQxLl5jXIS9BQ5)15.jpg"><br>新作の洋服を手に入れる為、日々男をたぶらかすスレンダー女にお仕置きしてきた',
+'6627374791362"><img src="https://ei.phncdn.com/videos/202404/23/451456911/original/(m=eafTGgaaaa)(mh=V3m1Kt-8Z5Bc4Rz2)9.jpg"><br>色白Fカップ巨乳美女のプライベートSEXを収めた衝撃映像。撮影交渉中の彼女は困惑した表情を浮かべる。',
+'66273b58be9e3"><img src="https://ei.phncdn.com/videos/202404/23/451457241/original/(m=eafTGgaaaa)(mh=ZYial_6vZpvNRmZ9)14.jpg"><br>アナウンサー志望の19歳美人女子大生に中出ししたら',
+'66273dd9a2fd3"><img src="https://ei.phncdn.com/videos/202404/23/451457681/original/(m=eafTGgaaaa)(mh=u5_wad4VTG-gQ3Qx)2.jpg"><br>人格否定！ 超美人独身女性との愛のない屈辱的なセックス！<U+00A0> <U+00A0> <U+00A0>',
+'6627a590886fa"><img src="https://ei.phncdn.com/videos/202404/23/451469801/original/(m=qVPJ3IZbeafTGgaaaa)(mh=3Z7et73nnZqcmazX)0.jpg"><br>StepDaughter: "I always wanted to fuck my stepdad. Now, Ive got a chance"',
+'6629b2b6c86c4"><img src="https://ei.phncdn.com/videos/202404/25/451548231/original/(m=eafTGgaaaa)(mh=vlZZ7UGI8lbQ81sM)5.jpg"><br>ご要望にお答えして続編を撮りました！顔射の洗礼あり！',
+'6629b2bb41928"><img src="https://ei.phncdn.com/videos/202404/25/451548241/original/(m=eafTGgaaaa)(mh=JvDkvp3aZV_FLW_V)3.jpg"><br>ご要望にお答えして続編を撮りました！顔射の洗礼あり！',
+'6629b7c605f39"><img src="https://ei.phncdn.com/videos/202404/25/451549141/original/(m=eafTGgaaaa)(mh=B61A9tEL9hzy7css)16.jpg"><br>衝撃のハメ潮潮潮潮潮！低身長144cmのみたいな舌ピギャル妻がヤバかった！',
+'6629bce8af3e9"><img src="https://ei.phncdn.com/videos/202404/25/451549441/original/(m=eafTGgaaaa)(mh=NWazv8KiMdktGVNK)16.jpg"><br>これがラスト！スタイル抜群の脱力系アイドル美●女',
+'6629beeaa3292"><img src="https://ei.phncdn.com/videos/202404/25/451549641/original/(m=eafTGgaaaa)(mh=FGKm68aBtQr2oPmI)16.jpg"><br>春から新入生！！日本の妖精を世界へお届けします。真っ白な肌',
+'6629c0bbc6cd6"><img src="https://ei.phncdn.com/videos/202404/25/451549891/original/(m=eafTGgaaaa)(mh=04GMMV1MX3PlWvPP)6.jpg"><br>溢れ出るマゾ女らしさに興奮し続ける敏感体質のマゾ娘。',
+'6629c298cd4c1"><img src="https://ei.phncdn.com/videos/202404/25/451550151/original/(m=eafTGgaaaa)(mh=h8Hw2vf2UpF2wVfw)6.jpg"><br>顔出しいやいや主張しすぎだろ！？世の男を挑発するかの様な天然Hcupパイスラ美女',
+'6629c46110f08"><img src="https://ei.phncdn.com/videos/202404/25/451550361/original/(m=eafTGgaaaa)(mh=cNYNlHBKW9kXU1ST)4.jpg"><br>礼儀正しい保育士さんが、ドスケベ顔でちんぽ舐めてんのエロすぎる件。',
+'6629c856ea938"><img src="https://ei.phncdn.com/videos/202404/25/451550821/original/(m=eafTGgaaaa)(mh=cJgNXa1p2__3iIoV)12.jpg"><br>長身美脚でモデル級のプロポーション！美しい曲線美を持つ美痴女に2回連続生中出',
+'6632aa063c470"><img src="https://ei.phncdn.com/videos/202405/01/451870731/original/(m=eafTGgaaaa)(mh=mvyCu7VFgZT7plBx)3.jpg"><br>顔出し！お嬢様育ちで親の顔色を伺い優等生を演じ続けた',
+'6632ab8811f57"><img src="https://ei.phncdn.com/videos/202405/01/451871211/original/(m=eafTGgaaaa)(mh=RaNmCmkKTAQitd3v)8.jpg"><br>ゴッドタン出演あのGカップグラドルが脱いだ！仕事なくガチオワコン',
+'6635a11ca424a"><img src="https://ei.phncdn.com/videos/202405/04/451980331/original/(m=eafTGgaaaa)(mh=thJoFJOLSPqMqSIF)4.jpg"><br>恥ずかしがり屋さんで押しに弱い女の子、ひなたちゃんの中出しえっち動画。',
+'6635a11f55902"><img src="https://ei.phncdn.com/videos/202405/04/451980341/original/(m=eafTGgaaaa)(mh=Mg-d6d2ZXy7fDRnw)2.jpg"><br>恥ずかしがり屋さんで押しに弱い女の子、ひなたちゃんの中出しえっち動画。',
+'6635bdaeca386"><img src="https://ei.phncdn.com/videos/202405/04/451983681/original/(m=eafTGgaaaa)(mh=Fzom4s0_Y9PLJsQt)2.jpg"><br>Iカップ爆乳若妻26歳 他人棒交尾の闇へ堕ちていく',
+'ph6114990a50c3e"><img src="https://ei.phncdn.com/videos/202108/12/392812441/original/(m=eafTGgaaaa)(mh=1AtRdyIY6fnWcRLF)1.jpg"><br>这一次的小花比上次更淫荡。 用你的手和你的私处。 恳求的样子真的很可爱！ 虽然我说不，但我做爱很积极',
+'ph611499509e87d"><img src="https://ei.phncdn.com/videos/202108/12/392812481/original/(m=eafTGgaaaa)(mh=JnkAZv-vILe44ckd)16.jpg"><br>ベロチュー大好き！女子大生ミッチーとラブラブ中出し！',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "av-club"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width"/>
+<title>shuffle Links</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<style>
+body {background-color: black;}
+html {height: 100%;overflow: scroll;}
+::-webkit-scrollbar {width: 0px;background: transparent;}
+body { margin: auto; width: 100%; background-color: #000000; color: #20C030;}
+img { width: 50%; display: block; margin-left: auto; margin-right: auto;}
+</style>
+</head>
+<body onkeypress="chkKey()">
+<br><br><br><br><br>
+<div class="imagearea"> </div>
+<script>
+function chkKey() {
+var testkey = getChar(event);
+if(testkey == "b"){ backward();}
+if(testkey == "f"){ foreward();}
+if(testkey == "p"){ pause();}
+if(testkey == "c"){ continU();}
+if(testkey == "s"){ showMov();}}
+function getChar(event){if (event.which!=0 && event.charCode!=0) {return String.fromCharCode(event.which)}
+ else {return null}}
+var ImgList = [
+'<a href="https://www.pornhub.com/embed/ph588fcfcacf38f"><img src="https://ci.phncdn.com/videos/201701/30/104258522/thumbs_5/(m=ecuKGgaaaa)(mh=OgGceXPdHuiG0xL2)16.jpg" alt="Trying to shoot my pee in the tub"></a>',
+'<a href="https://www.pornhub.com/embed/ph588fd06cb64f9"><img src="https://ci.phncdn.com/videos/201701/30/104258692/original/(m=ecuKGgaaaa)(mh=rgVSthHqE4x-tTkM)7.jpg" alt="Piss and clit play"></a>',
+'<a href="https://www.pornhub.com/embed/ph5890b9cf22fb7"><img src="https://ci.phncdn.com/videos/201701/31/104338402/original/(m=ecuKGgaaaa)(mh=p3DGIXAG45w2hcij)7.jpg" alt="Pissing on my purple dildo"></a>',
+'<a href="https://www.pornhub.com/embed/ph58923112de186"><img src="https://ci.phncdn.com/videos/201702/01/104474142/original/(m=ecuKGgaaaa)(mh=OZM93MH7QunT1ExI)14.jpg" alt="Hairy pussy riding dildo with bouncy boobs"></a>',
+'<a href="https://www.pornhub.com/embed/ph589404950272b"><img src="https://ci.phncdn.com/videos/201702/03/104641292/original/(m=ecuKGgaaaa)(mh=b2CRdTC4HjtMAYi_)7.jpg" alt="Pissing my panties then stuffing them in my pussy"></a>',
+'<a href="https://www.pornhub.com/embed/ph5896bacc8d08b"><img src="https://ci.phncdn.com/videos/201702/05/104911662/original/(m=ecuKGgaaaa)(mh=K6t4CUTPEEfZ6ODe)12.jpg" alt="Pissing with a huge dildo in my ass"></a>',
+'<a href="https://www.pornhub.com/embed/ph5896bb52df188"><img src="https://ci.phncdn.com/videos/201702/05/104911752/original/(m=ecuKGgaaaa)(mh=-yfKyQcUxyq5791T)12.jpg" alt="Pissing from behind on my knees"></a>',
+'<a href="https://www.pornhub.com/embed/ph5896bbbd0eeb3"><img src="https://ci.phncdn.com/videos/201702/05/104911892/original/(m=ecuKGgaaaa)(mh=AGsTW8TZ-zr_JoKD)12.jpg" alt="Close up hairy pussy pee and swollen clit play"></a>',
+'<a href="https://www.pornhub.com/embed/ph589c13753df4f"><img src="https://ci.phncdn.com/videos/201702/09/105467712/original/(m=ecuKGgaaaa)(mh=7He8wKDb1JyCk1Bd)12.jpg" alt="Pissing my Panties (#2)"></a>',
+'<a href="https://www.pornhub.com/embed/ph58a49b592adfd"><img src="https://ci.phncdn.com/videos/201702/15/106249452/thumbs_10/(m=ecuKGgaaaa)(mh=haSeOVzV4Nj92eZT)7.jpg" alt="Hairy pussy dildo fuck in the shower"></a>',
+'<a href="https://www.pornhub.com/embed/ph58a49bab8efec"><img src="https://ci.phncdn.com/videos/201702/15/106249552/original/(m=ecuKGgaaaa)(mh=4J-tUhgllnTfNog4)3.jpg" alt="Anal suction dildo fuck from below"></a>',
+'<a href="https://www.pornhub.com/embed/ph58a49c04427e2"><img src="https://ci.phncdn.com/videos/201702/15/106249632/original/(m=ecuKGgaaaa)(mh=lMvJAFVUDCq6uQNY)7.jpg" alt="Hairy pussy dildo fuck from below"></a>',
+'<a href="https://www.pornhub.com/embed/ph58a7da63c9dcf"><img src="https://ci.phncdn.com/videos/201702/18/106571082/original/(m=ecuKGgaaaa)(mh=K4fUF5ftpnp8sXXM)7.jpg" alt="Letting my pee drip down my leg"></a>',
+'<a href="https://www.pornhub.com/embed/ph58ac6bd6ea87d"><img src="https://ci.phncdn.com/videos/201702/21/107038732/original/(m=ecuKGgaaaa)(mh=invCoeXhN42X8z8z)7.jpg" alt="Pissing my Panties (#3)"></a>',
+'<a href="https://www.pornhub.com/embed/ph58b664c508d8a"><img src="https://ci.phncdn.com/videos/201703/01/108039722/original/(m=ecuKGgaaaa)(mh=EC79KLnlkw8N-WS9)12.jpg" alt="Showering myself in my piss"></a>',
+'<a href="https://www.pornhub.com/embed/ph58c1ad45bab1d"><img src="https://ci.phncdn.com/videos/201703/09/109073302/original/(m=ecuKGgaaaa)(mh=FYgZ1H6wmom4-4e-)12.jpg" alt="Hairy pussy spreading/fingering"></a>',
+'<a href="https://www.pornhub.com/embed/ph58c1ad45e1f67"><img src="https://ci.phncdn.com/videos/201703/09/109073402/original/(m=ecuKGgaaaa)(mh=9wTt559_3LNSTF0G)4.jpg" alt="Hairy pussy masturbation with Rabbit toy"></a>',
+'<a href="https://www.pornhub.com/embed/ph58c1ae1877e6d"><img src="https://ci.phncdn.com/videos/201703/09/109073562/original/(m=ecuKGgaaaa)(mh=V0OjF5IyiGDHuu1P)12.jpg" alt="Playing with my Rabbit toy on my knees"></a>',
+'<a href="https://www.pornhub.com/embed/ph58d5f6c2d96f9"><img src="https://ci.phncdn.com/videos/201703/25/110855402/original/(m=ecuKGgaaaa)(mh=VSEKHJglFuCortVd)16.jpg" alt="Wetting my blue lacy panties"></a>',
+'<a href="https://www.pornhub.com/embed/ph58d5f6c31355e"><img src="https://ci.phncdn.com/videos/201703/25/110855752/original/(m=ecuKGgaaaa)(mh=cp_pybHnjbzftuAI)12.jpg" alt="Just a little piss play"></a>',
+'<a href="https://www.pornhub.com/embed/ph58d5f6c3139e8"><img src="https://ci.phncdn.com/videos/201703/25/110855642/original/(m=ecuKGgaaaa)(mh=Ejx9Ff2k0w_Zcprg)12.jpg" alt="Fluffing my long curly pussy hair"></a>',
+'<a href="https://www.pornhub.com/embed/ph592799def217a"><img src="https://ci.phncdn.com/videos/201705/26/117880401/original/(m=ecuKGgaaaa)(mh=BJ7N_OktzTIjUHBi)12.jpg" alt="Quick Panty Wetting"></a>',
+'<a href="https://www.pornhub.com/embed/ph592ccec09d69b"><img src="https://ci.phncdn.com/videos/201705/30/118385821/original/(m=ecuKGgaaaa)(mh=oPGWfO0J21-PNur6)12.jpg" alt="Pissing in the tub close up"></a>',
+'<a href="https://www.pornhub.com/embed/ph592cd068b95dc"><img src="https://ci.phncdn.com/videos/201705/30/118386101/original/(m=ecuKGgaaaa)(mh=T5LjF0JPW8-J5-rm)12.jpg" alt="Squat &amp; piss"></a>',
+'<a href="https://www.pornhub.com/embed/ph5995227eef51a"><img src="https://ci.phncdn.com/videos/201708/17/128872671/original/(m=ecuKGgaaaa)(mh=8tafeHfYu0o6579Z)12.jpg" alt="Peeing during my shower"></a>',
+'<a href="https://www.pornhub.com/embed/ph59a48651c5c7c"><img src="https://ci.phncdn.com/videos/201708/28/130363671/original/(m=ecuKGgaaaa)(mh=fWQ6m1MDGgs-LOYF)12.jpg" alt="Wetting my panties on the floor"></a>',
+'<a href="https://www.pornhub.com/embed/ph59d13e552693a"><img src="https://ci.phncdn.com/videos/201710/01/135133261/original/(m=ecuKGgaaaa)(mh=q7cIku9VEwf5zsHW)12.jpg" alt="Chubby hairy girl grinding on toy"></a>',
+]
+ var listLen = ImgList.length, timer = 15000
+function shuffle(array) { var i = ImgList.length, j = 0, temp
+while (i--) { j = Math.floor(Math.random() * (i+1))
+temp = ImgList[i]
+ ImgList[i] = ImgList[j]
+ ImgList[j] = temp
+ } 
+return ImgList
+}
+ImgList = shuffle(Array.from(Array(ImgList.length).keys()))
+function changeImg() { if (listLen >= ImgList.length - 1) { listLen = 0
+ }
+ else if (listLen < 0) { listLen = ImgList.length - 1
+ } 
+else { listLen = listLen + 1
+ }
+showImg()
+}
+function backward() { listLen = listLen - 2
+changeImg()
+}
+function foreward() { changeImg()
+}
+function pause() { clearInterval(myVar)
+}
+function continU() { myVar = setInterval(changeImg, timer)
+ foreward()
+}
+function showImg() { var thePointerImg = document.querySelector(".imagearea")
+ thePointerImg.innerHTML = ImgList[listLen]
+ console.log(thePointerImg.innerHTML)
+}
+function showMov() { var imgAdr = ImgList[listLen]
+ var start = imgAdr.indexOf("=")+1
+ var end = imgAdr.indexOf('"', start+1)
+ var list = imgAdr.substring(start+1, end)
+ window.open(list)
+}changeImg()
+var myVar = setInterval(changeImg, timer)
+</script></body></html>

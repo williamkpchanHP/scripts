@@ -1,0 +1,68 @@
+<base target="_blank"><html><head><title>sweetpinkgiro210</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirl2029-15923765"><img src="https://ic-ph-nss.xhcdn.com/a/ZDZjODZhM2I3OWUxOWRmZTQ5M2MyZDVhYTYwYzYyOWI/jpeg/000/512/666/839_450.jpg"><br>Sweetpinkgirl2029</a> 9',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirl-candy-apple-ass-16001511"><img src="https://ic-ph-nss.xhcdn.com/a/MTc2ZTcwOTA4N2Y2YThjOGRjZWI1YmI1ZmI5M2VhYjM/jpeg/000/514/081/872_450.jpg"><br>Sweetpinkgirl candy apple ass</a> 8',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirl2029-15912178"><img src="https://ic-ph-nss.xhcdn.com/a/MzQ5NDdjMGQzYTg3YzM3NjAxMWU5Mzc3NTk2M2RkMGQ/jpeg/000/512/400/645_450.jpg"><br>Sweetpinkgirl2029</a> 7',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirl2029-15941978"><img src="https://ic-ph-nss.xhcdn.com/a/MWFmMDQyZGI5MGYwYjY3NDQ2YmViZjJiMzQ4M2Y2MzU/jpeg/000/513/080/433_450.jpg"><br>Sweetpinkgirl2029</a> 6',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirlo2022-15912177"><img src="https://ic-ph-nss.xhcdn.com/a/ZmMyYTdiYWNkNGMyMjg4NmRhY2RmNzNiNDhjZjQwNzU/jpeg/000/512/400/639_450.jpg"><br>Sweetpinkgirlo2022</a> 4',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirl-and-her-sweet-pink-tight-pretty-pussy-15943759"><img src="https://ic-ph-nss.xhcdn.com/a/ZTIxNDIyNmJkM2Q3NWM0ZjQxYTFmYjAyOGUxMjdhMDg/jpeg/000/513/117/863_450.jpg"><br>Sweetpinkgirl  and her sweet pink tight pretty pussy </a> 4',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirl-15918862"><img src="https://ic-ph-nss.xhcdn.com/a/YmFmYjBjMDljNDViY2Y2Y2ZjZjRjZWEyMWI3MjA0Y2M/jpeg/000/512/563/669_450.jpg"><br>Sweetpinkgirl </a> 36',
+'<a href="https://xhamster.com/photos/gallery/my-sweetpink-pussy-needs-a-good-beaten-16094349"><img src="https://ic-ph-nss.xhcdn.com/a/OGZjYzgwODc3MTM1YjQwN2ViMjljYmNlYWE5MWEzZTE/jpeg/000/515/344/822_450.jpg"><br>My sweetpink pussy  needs a good beaten</a> 3',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirl-wet-pussy-15992180"><img src="https://ic-ph-nss.xhcdn.com/a/MDZhNDE3YjUwM2E1ZjkwNWVhMzc1ZDVlYjgyMTBlNjc/jpeg/000/513/942/117_450.jpg"><br>Sweetpinkgirl wet pussy </a> 29',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkrose-beautiful-sweet-body-16113781"><img src="https://ic-ph-nss.xhcdn.com/a/Zjg4ZGE2ZmU2NDIwOWUxNmMwYzdmZjRlZTU5OGFkYjE/jpeg/000/515/597/994_450.jpg"><br>Sweetpinkrose beautiful sweet body</a> 25',
+'<a href="https://xhamster.com/photos/gallery/my-sweet-pink-tight-pretty-pussy-15943745"><img src="https://ic-ph-nss.xhcdn.com/a/ZWMyMzE1Yzk0MGZlM2VlNzYwZjM5ODYyY2NhN2VhYzg/jpeg/000/513/117/353_450.jpg"><br>My sweet pink tight pretty pussy </a> 22',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirl2022-15908700"><img src="https://ic-ph-nss.xhcdn.com/a/YTlhMzYxNGY3ZTU3OWQzNDVmYjVlMmVlZmE2ZDE0ZDU/jpeg/000/512/325/835_450.jpg"><br>Sweetpinkgirl2022</a> 17',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirl-big-beautiful-boobs-15963079"><img src="https://ic-ph-nss.xhcdn.com/a/ZTY0YmU1ZmM0OWM3MzY4OWUzMDU3NTI5MDlkMWVjZDI/jpeg/000/513/515/506_450.jpg"><br>sweetpinkgirl big beautiful boobs </a> 12',
+'<a href="https://xhamster.com/photos/gallery/sweetpinkgirl-sweet-pink-pussy-wet-and-tight-15993828"><img src="https://ic-ph-nss.xhcdn.com/a/MDE5MDgxY2IyNzBhMjFiYmJkNGI1NDFlMDc0YTRiZTY/jpeg/000/513/964/618_450.jpg"><br>Sweetpinkgirl sweet pink pussy wet and tight </a> 11',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "sweetpinkgiro210"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

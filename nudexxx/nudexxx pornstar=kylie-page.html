@@ -1,0 +1,100 @@
+<base target="_blank"><html><head><title>pornstar=kylie-page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<link rel="stylesheet" href="../imgcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+
+<body onkeypress="chkKey()">
+<br>
+<center>
+<p class="tip-number">pornstar=kylie-page</p>
+<p class="js-tip"></p>
+<br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'226/63ea642996f0e14d839fd37e2b2f4f9a-1',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-10',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-11',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-12',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-13',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-14',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-15',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-16',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-2',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-3',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-4',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-5',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-6',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-7',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-8',
+'226/63ea642996f0e14d839fd37e2b2f4f9a-9',
+'240/5fd24dae3ed77e36c092ab78644d5072-1',
+'240/5fd24dae3ed77e36c092ab78644d5072-10',
+'240/5fd24dae3ed77e36c092ab78644d5072-11',
+'240/5fd24dae3ed77e36c092ab78644d5072-12',
+'240/5fd24dae3ed77e36c092ab78644d5072-13',
+'240/5fd24dae3ed77e36c092ab78644d5072-14',
+'240/5fd24dae3ed77e36c092ab78644d5072-15',
+'240/5fd24dae3ed77e36c092ab78644d5072-16',
+'240/5fd24dae3ed77e36c092ab78644d5072-2',
+'240/5fd24dae3ed77e36c092ab78644d5072-3',
+'240/5fd24dae3ed77e36c092ab78644d5072-4',
+'240/5fd24dae3ed77e36c092ab78644d5072-5',
+'240/5fd24dae3ed77e36c092ab78644d5072-6',
+'240/5fd24dae3ed77e36c092ab78644d5072-7',
+'240/5fd24dae3ed77e36c092ab78644d5072-8',
+'240/5fd24dae3ed77e36c092ab78644d5072-9',
+'338/6f4d1be6328cd2e72f485edef487ed49-1',
+'338/6f4d1be6328cd2e72f485edef487ed49-10',
+'338/6f4d1be6328cd2e72f485edef487ed49-11',
+'338/6f4d1be6328cd2e72f485edef487ed49-12',
+'338/6f4d1be6328cd2e72f485edef487ed49-13',
+'338/6f4d1be6328cd2e72f485edef487ed49-14',
+'338/6f4d1be6328cd2e72f485edef487ed49-15',
+'338/6f4d1be6328cd2e72f485edef487ed49-16',
+'338/6f4d1be6328cd2e72f485edef487ed49-2',
+'338/6f4d1be6328cd2e72f485edef487ed49-3',
+'338/6f4d1be6328cd2e72f485edef487ed49-4',
+'338/6f4d1be6328cd2e72f485edef487ed49-5',
+'338/6f4d1be6328cd2e72f485edef487ed49-6',
+'338/6f4d1be6328cd2e72f485edef487ed49-7',
+'338/6f4d1be6328cd2e72f485edef487ed49-8',
+'338/6f4d1be6328cd2e72f485edef487ed49-9',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-1',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-10',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-11',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-12',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-13',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-14',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-15',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-16',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-2',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-3',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-4',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-5',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-6',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-7',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-8',
+'516/fcf90f193b6788db3bb8eab2a6a1ef01-9',
+];
+lineHeader = '<img src="https://cdn.nudexxx.pics/content/galleries/'
+lineTail = '-full.jpg">'
+showRange = 64
+bookid = "pornstar=kylie-page"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
+

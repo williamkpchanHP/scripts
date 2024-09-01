@@ -1,0 +1,79 @@
+<base target="_blank"><html><head><title>BrianaBlack</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">BrianaBlack</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'64deebd09402c"><img src="https://ei.phncdn.com/videos/202308/18/437646731/original/(m=eafTGgaaaa)(mh=TbWg9OdGrnyGpxBI)15.jpg"><br>Overwhelmingly transparent idol Asuka-chan and miraculous POV<U+2764><U+FE0F>Vol.2<U+2764><U+FE0F>Creampie<U+2764><U+FE0F>Japanesegirl<U+2764><U+FE0F>',
+'650e64ef3e7d1"><img src="https://ei.phncdn.com/videos/202309/23/439943421/original/(m=eafTGgaaaa)(mh=VlplIYFS1jq3BdKQ)10.jpg"><br>Exquisite blowjob, exquisite handjob, massive ejaculation in underwear!',
+'65bfaf4682e80"><img src="https://ei.phncdn.com/videos/202402/04/447649951/original/(m=eafTGgaaaa)(mh=Q5kYZl8VaN5Ka6iw)16.jpg"><br>Femboy gets remotely edged! We live in the future!',
+'65d665b0be864"><img src="https://ei.phncdn.com/videos/202402/21/448498651/original/(m=qNZNW9YbeafTGgaaaa)(mh=gpynAXNy0E4wjQ49)0.jpg"><br>"Your step-sis makes your cock hard, how strange" - Lily Phillips',
+'65d9909d72e4c"><img src="https://ei.phncdn.com/videos/202402/24/448616131/original/(m=q25_Z9YbeafTGgaaaa)(mh=fLhPWYJYmCnSD4mH)0.jpg"><br>Stepister decided to surprise her boyfriend, but I fucked her big ass first - MariMoore',
+'65e2a7578cb45"><img src="https://ei.phncdn.com/videos/202403/02/448956731/original/(m=qHHLP_YbeafTGgaaaa)(mh=kHR4H5I6GR89Djg4)0.jpg"><br>Stepsister has fun with her brothers cock until he makes him cum',
+'ph5c79741496635"><img src="https://ei.phncdn.com/videos/201903/01/210631231/thumbs_5/(m=eafTGgaaaa)(mh=zQyD-6bzGlrKi44d)16.jpg"><br>Curvy Anal Slut Gets High and Fucks Her Asshole',
+'ph5c797a51ced41"><img src="https://ei.phncdn.com/videos/201903/01/210636211/original/(m=eafTGgaaaa)(mh=wtLDkmLf2k7wdIR5)11.jpg"><br>Curvy Brunette Quickie Solo Sex',
+'ph5c79914e5f2c1"><img src="https://ei.phncdn.com/videos/201903/01/210649361/thumbs_5/(m=eafTGgaaaa)(mh=uVjoIRUIDZZQ5Scs)13.jpg"><br>Horny Curvy Brunette Teen Humps Her Pillow',
+'ph5c79932d7050c"><img src="https://ei.phncdn.com/videos/201903/01/210650471/thumbs_5/(m=eafTGgaaaa)(mh=vkgXTKhvftigbjgO)12.jpg"><br>Horny Pillow Humper',
+'ph5c7a9b956d613"><img src="https://ei.phncdn.com/videos/201903/02/210790371/thumbs_15/(m=eafTGgaaaa)(mh=nI4cb5gk6MmHB6ug)14.jpg"><br>Solo Masturbating Wearing Latex Gloves',
+'ph5c9645bb16c80"><img src="https://ei.phncdn.com/videos/201903/23/214573352/thumbs_5/(m=eafTGgaaaa)(mh=oSAtHf5nYp3dFjHy)14.jpg"><br>Toe Gripping and Wiggling On Cock',
+'ph5cabb217becc5"><img src="https://ei.phncdn.com/videos/201904/08/217284362/thumbs_20/(m=eafTGgaaaa)(mh=DhUA42qd1r9UvQQr)2.jpg"><br>Fat Redhead Hottie Pounding Pussy',
+'ph5cd58cb898b8f"><img src="https://ei.phncdn.com/videos/201905/10/222869641/thumbs_5/(m=eafTGgaaaa)(mh=C0vGJ1ELHqYBlhJy)4.jpg"><br>Pretty Teen Masturbates Bald Pussy In Stockings',
+'ph5cd627b3a563e"><img src="https://ei.phncdn.com/videos/201905/11/222962431/original/(m=eafTGgaaaa)(mh=LDMbdXmQNKNSYXnd)7.jpg"><br>Pretty Hairy Pussy Gets Wet ',
+'ph5ce41acaec3c8"><img src="https://ei.phncdn.com/videos/201905/21/224915931/thumbs_5/(m=eafTGgaaaa)(mh=NxOSOUXwX6agbiE3)12.jpg"><br>BBW Double Penetrates Oiled Ass Hairy Pussy ',
+'ph5cef6484e2a12"><img src="https://ei.phncdn.com/videos/201905/30/226521461/thumbs_10/(m=eafTGgaaaa)(mh=japeVj0HB4wP_905)7.jpg"><br>Chocolate Drizzled Babe Full Body Tease',
+'ph5d7bf91669014"><img src="https://ei.phncdn.com/videos/201909/13/248205881/thumbs_10/(m=eafTGgaaaa)(mh=UaAfok9Y_2_z8EyJ)9.jpg"><br>Extreme Sloppy Throat Fuck Interracial BJ ',
+'ph5d7d607593cd4"><img src="https://ei.phncdn.com/videos/201909/14/248441331/thumbs_25/(m=eafTGgaaaa)(mh=etdr6Yo8O0JDVYIL)3.jpg"><br>Xtreme Sloppy Messy Throat Fuck Interracial Blowjob',
+'ph5d928e000d950"><img src="https://ei.phncdn.com/videos/201909/30/251956482/thumbs_55/(m=eafTGgaaaa)(mh=dQcRzsgTi5do0R-Y)15.jpg"><br>Sensual BBW Domme Surprise Squirt During Lesbian JOI',
+'ph5daf77b50d1ad"><img src="https://ei.phncdn.com/videos/201910/22/256599171/thumbs_5/(m=eafTGgaaaa)(mh=IwNvKocxP13tBUwa)11.jpg"><br>Sexy Super Horny Ex Girlfriend Misses Your Big Yummy Cock ',
+'ph5dc35cf2f18ed"><img src="https://ei.phncdn.com/videos/201911/07/259877202/thumbs_15/(m=eafTGgaaaa)(mh=R4K33-3ukfXCymDk)15.jpg"><br>Thick Dick Pounds Hairy Pussy Busts A Huge Load On Her Ass Amateur Sex Tape',
+'ph5df4b00965748"><img src="https://ei.phncdn.com/videos/201912/14/268558052/thumbs_20/(m=eafTGgaaaa)(mh=-ZdOXiNeaH6M1Ngi)6.jpg"><br>Sloppy Blowjob Interracial Amateur Sex Tape',
+'ph5dfdcfb343ce8"><img src="https://ei.phncdn.com/videos/201912/21/270231521/original/(m=eafTGgaaaa)(mh=vOzc1tWwS2YGPZ_S)6.jpg"><br>Curvy BBW Babe Sucks + Rides Big Cock + Creampie FULL LENGTH',
+'ph5f39ebddad340"><img src="https://ei.phncdn.com/videos/202008/17/343068151/thumbs_25/(m=eafTGgaaaWavb)(mh=Z47FobPVO3N7R66A)11.jpg"><br>Big Belly Redhead Vibrator Grinding & Squirting With Toys',
+'ph5f3f30bc728a0"><img src="https://ei.phncdn.com/videos/202008/21/344394431/thumbs_13/(m=eafTGgaaaa)(mh=1WcfMV5JcdXBmjGk)15.jpg"><br>What Happens In Vegas ',
+'ph6025d71dc00bb"><img src="https://ei.phncdn.com/videos/202102/12/383442182/original/(m=eafTGgaaaa)(mh=OswBtP4imaBHBrx7)11.jpg"><br>Valentine’s Day Came Early FULL Creampie In Fan Club',
+'ph63a53f15d3652"><img src="https://ei.phncdn.com/videos/202212/23/421926791/original/(m=qXWJS6XbeafTGgaaaa)(mh=OoJGXrIisZ3LPVdK)0.jpg"><br>Games that a couple would play 1 - Strip Poker - Preview',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/view_video.php?viewkey='
+lineTail = '</a></div>'
+bookid = "BrianaBlack"
+showRange = 40
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

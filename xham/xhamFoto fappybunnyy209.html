@@ -1,0 +1,257 @@
+<base target="_blank"><html><head><title>fappybunnyyBatch: 209</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:100%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">fappybunnyyBatch: 209</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'NWNhOTVmOTEyYzJlOTYyYjgxM2RlNTlmMDQyZGY0NDY/jpeg/000/515/941/105',
+'ODE2NGY0ODVjMjAzZDlkNjAzZDcxODFhYzI2M2FmNTM/jpeg/000/515/941/104',
+'MTZhMTdkMTg4N2ZjYzY3NTJkZjFlMjJjOTRhMzhlMjE/jpeg/000/515/941/103',
+'OTNlMGQ0ODA2OTZiNjZmODM2YWFjNGZmMjg0NGQxZDM/jpeg/000/515/941/102',
+'MWQ5OWI0N2ZkNGM2ZDEzZjJlMTE5NTRjNjgzOTYzOWQ/jpeg/000/515/941/101',
+'MzUwMjhhMjA3MzZkNjZmNWUyNDdhNDkxYTA0Y2ZhZmY/jpeg/000/515/941/097',
+'NDAzNTAwNDBiYzk4ZmIzYzViYzI0NTY0MWZiNjNhMWI/jpeg/000/515/941/100',
+'ZGM1MDgyMGQ0OGU0YmFjNDBiYjM2MzYyODRlNTEzYWM/jpeg/000/515/941/099',
+'NTAxMmE3ZDI2ZjIxNzliNTJmYWIyZDMxNjU4YTcxM2U/jpeg/000/515/941/098',
+'Mzc2MmI1Yjc4MDM5MTE1NTdiNzlhY2NjYWIyNDQ0MDE/jpeg/000/515/597/580',
+'MDA3MDYzMDE1OGMxYjNmZGZjNTYwMzNkOWRjNjdlMDg/jpeg/000/515/597/579',
+'NWNhNzg5MjBhZmIzZDZjYmI0NTliMThiNWUwMDIzMzQ/jpeg/000/515/597/570',
+'NDRkYzhmZDdmZjVhNjU3YWVmMDNjMTNjNzBhZTBkNzk/jpeg/000/515/597/568',
+'ZGJjYTU0MTUzNmUzYjA0ZjBkZjE4NGI0MmY4ODQxYTM/jpeg/000/515/597/555',
+'MWI5NjMwYjk5ZTE3NWE2OTBiZmZiM2M3Zjc4MGFiOGY/jpeg/000/515/597/544',
+'M2IwN2Q2ZTQxYTk0NmZmZDhiZGU2N2Y1YTEwMDFmNTI/jpeg/000/515/597/541',
+'ZGE4YjY4OGQwMWM4Y2M0NGIyNGJiMGVkYzFkNjc3NjA/jpeg/000/515/597/542',
+'YWU1NTVjNThjNTY3ZGMxOTJmYzBmNWViYzc4OTU0ZGY/jpeg/000/489/184/871',
+'YTE3YmYxYThjZTVlNzdmNjg0OGEyN2U4Y2E1OTMzYWU/jpeg/000/489/184/836',
+'MjhjOGFmNWIxMzM4MjU0MWMwYzUyYjNmZmY3YjI1ODc/jpeg/000/488/788/618',
+'OTkzNjQ0NDQzYjExOWVhY2E4ZjE4NDQwMjJlMGQxNDY/jpeg/000/488/788/611',
+'ZjEzZTlhM2ZjOTNjNzEzMDUxM2NlOThmOGFkYTAxNDI/jpeg/000/488/788/604',
+'MGM2ZmVlYmM0YWRkMjMyN2M1NzMzZjA2YjIzYjUwMzg/jpeg/000/488/694/599',
+'MTgxNDc1MGIxYTY5NWFmNGQ2MTIwOTA5MTc1Y2ZmNTY/jpeg/000/488/694/573',
+'MWRlZDE0YWViNDUyODhhNmNlNDdiY2FiY2FlMzQ5YjI/jpeg/000/488/694/548',
+'ZmZhZmMwOTkzOTc5Mzc0MzEzODFlMDY0OWJmMWNmYjk/jpeg/000/488/694/536',
+'YmQ5NDlmOGUzN2UwNDM3YzgwZjRjMzJjZjNlZmU2YjA/jpeg/000/488/639/924',
+'YThlZjY4Yjg0NDc0OGM5MzkwNDFkZDk2N2JiNjliZDA/jpeg/000/488/273/402',
+'NDdkMDQ4Nzc0YjVjMjUzMDc2Y2M0NTM2YzE5ZWRjYzE/jpeg/000/488/160/367',
+'MmQ2ZWEyMDU3ZmRkZGJmYzQ5MDJjMTFiNmExOGI0NjU/jpeg/000/488/160/271',
+'NTVhNTQ5ZmQ2ZmJiODYxNTBiZmQ3ZDI3MjZhYmY3YTY/jpeg/000/488/160/254',
+'ZGVjOGVjNTg2YzEyYjZhYzk4ZmQwMjBiOGQyMDNhN2E/jpeg/000/487/204/805',
+'ZmVkY2MzODdmNzRiZmE4YWFjZTliYmM4MDk1NTBjY2Y/jpeg/000/487/204/786',
+'N2MxNGUzNWZmZDQ5MDU0ZjNjZmU2Zjk1MWQxOWU2ZjM/jpeg/000/487/204/779',
+'OWYzNGZlNzQ5YTZhNDBmZDkyNWE0MjU2MTk2MzUyNTQ/jpeg/000/487/204/700',
+'MGNmMTJhNmVmOTZlY2RmM2JkZTgwYTU2ZTY4ZWFhYWE/jpeg/000/487/204/698',
+'Zjk5MDBjNzZmMTJjY2M2MDU5MjI4ZjhlNjAxZTU3ZDc/jpeg/000/487/204/696',
+'OTE3MDM4MTZjMDI4MTRlMGRmNWQ0ZTI5ZGNkNTJhYTM/jpeg/000/487/204/691',
+'YzlkZmYwNmE5NTllOGMwZGUwYzRlNzdmODc5MWJiMjk/jpeg/000/486/901/621',
+'OTIyMWM5MDFjZDI0MjQzNzkzYzQ1ZDg1NjY4MDJmNGI/jpeg/000/486/595/768',
+'ZjQ4NTllYjQyN2UxMzcyMDA0ZTc0MDU4OGZjNzRlYzc/jpeg/000/486/595/765',
+'ZWZhYTc5MGMzMmJhNmIzYTAwNWM5ZjY3MTQ3MjkwN2Y/jpeg/000/486/595/761',
+'OWZmNDNlOGVjMzExOTJmNzBkYzkwMmFiMWQ3ZTk3ZDc/jpeg/000/486/595/756',
+'MTk3MTEzNTZlODAxYTE3ODU0MDJhNDE3ZDQ2ZDM2YmE/jpeg/000/486/583/133',
+'MzgzNWI0MzZhOWNlOWE1YWI1ZDBhZjhkYjZlYzQ2NWE/jpeg/000/486/583/036',
+'Mzc3NGU5NmY1N2FlMWI2NGIzYzAzYjc2ZmM1MmI5NGU/jpeg/000/486/582/986',
+'OWYxMmVlMjc1Nzg5ZDA1YTAzYTM2NDg3NTcwYjk1NDg/jpeg/000/453/453/620',
+'ZGRiZGIzOTNjZWM0NTBjMGNhYTIyZWZmOWU0NDRmMzg/jpeg/000/453/453/601',
+'YWRiYWI3MDRjMmFiYzIwOTgwMmEzNmY1MzMyMzk5Yjc/jpeg/000/413/436/630',
+'MTI2ZmM1NDM1MjIzOGRkNjk0NzE3ZDU4NjRiN2JlYjk/jpeg/000/413/436/599',
+'MjEyMmYxMWZiZTFjNDYzOTc2ZDI3YjUxYTAwMjlkNjM/jpeg/000/413/436/571',
+'NTYyZWI4Njg1NTFmZDMzOWNmMmQ3NGI4MzE1ODczYTc/jpeg/000/413/436/567',
+'ZDA4YmVmYTI4NjAzYWVjNTgxYmFiZjkyYzQ2NGFjYzY/jpeg/000/413/436/539',
+'NDBjNzU3MzdlNGIzOWI0YzI4ZDM0ZmE1MzBkYjYzZmM/jpeg/000/413/389/630',
+'ODlkMGU5YWFlMzBmOWQxZDBjMjk3ZWYxNjM1NzVhZWY/jpeg/000/413/377/565',
+'OGI4OWQwYTJkYWI1NjQ5OTk5NGYxZjVkZTdiNTIzYmQ/jpeg/000/413/377/408',
+'MWVhYWYyNDM1ZDQwYWYyY2FhOGRjZmExMjQ4ZjA4OTg/jpeg/000/412/582/219',
+'NmRjMzExNTM3Y2U5NGU5ODIwZDhkNjc4MTNmOGQ3OGM/jpeg/000/412/582/178',
+'MzlkM2IwNDRiODI2ZGI4Y2U0MWFjNjZiYTMzY2E5MTY/jpeg/000/412/578/538',
+'MGEwNzU0Y2UxZDBhMWMyMDZkNmZhZjU2MGUzNjZmZjY/jpeg/000/412/578/487',
+'ZGUyMTYwZDI3M2I3ZDE3OTFlNTljOWNiNWUwYzVlYmQ/jpeg/000/412/578/474',
+'ZjRlNzhjZWYxNzc2ZjZhNzViNTE4ZWE3N2I2NjMwNmY/jpeg/000/412/221/966',
+'ZWVhZGJmMzE0YmNjOGE5ZjMxM2VjMGNkYzIyODFiYzY/jpeg/000/412/221/952',
+'MTIzMmJjMzkxMWEzNDNjOWZhNWM1ZGU0YjdkMTY0ZDk/jpeg/000/412/221/897',
+'Yjg1ZDljYzJlOWM0ZmQxYmRkMjE5YjgwMjFhNjQxZjg/jpeg/000/412/221/866',
+'ZjQwMDkzY2QwOThkOWUzYzFlZWMzMjRhOTA2NjVhYmY/jpeg/000/405/740/233',
+'MDU1NmMwNWYwYTI0NGY4OWUwMWQ4OGViNzFiZGE0MDU/jpeg/000/405/740/115',
+'NmNhMGI2ZjM0N2RkYzFiOTA4OWQ5MzQ1NDIxZmU3N2M/jpeg/000/405/740/019',
+'OWQ3N2I3NjlhOTQ1MmUwZTg3MTEzMzhhZjRlMWM1Njc/jpeg/000/405/739/921',
+'ZjllZDJlMjdmNjZlYmI0YTY1ZDMxMWMxNGQwZWRhZjA/jpeg/000/405/727/024',
+'YWFjOTRhMDYzYjYyNDA4ZTQ0ODUwNzRlY2JkMWM4MmQ/jpeg/000/405/726/981',
+'NDNhN2Y1NGQwZmQ4MjNiOWE0NDFjOGUyY2EwMTBmMjQ/jpeg/000/405/696/111',
+'MTcyYTI3ZGM3ZGZjZjgxYWYxZjUwYTRiNmE1Mzk4NDA/jpeg/000/405/696/087',
+'ZTk5NWQ3OWU2NmJhYmRjNWY5MmRhZjk1NmZjZWNjYmU/jpeg/000/405/696/069',
+'NTJlNWU5ZDYyNzUzZmU3ODk4MDJkM2Y1NTc2M2E4NmM/jpeg/000/405/696/062',
+'M2ZjMmNhYzlhNGEwYWU3YTg0NDU4NDQ1NGVhNjYzMDA/jpeg/000/405/654/464',
+'OTE1ZmVhZmJkMzhlMDZiZTI4MGU1OWEyMTI0Yzg2NzU/jpeg/000/405/654/456',
+'ZmI1OTBjNWNiMmM3NWNjY2QyZmI3NmU2MmFkNmFkNWE/jpeg/000/405/654/443',
+'Y2FjOTZhMTlhODZmYzllNjdmZmI0NDU2ZmZjNWVhOWI/jpeg/000/405/654/435',
+'NTMxZmExYTc4NDg4MWY3OTFkMDQwOTI5NTUzZGI4NGU/jpeg/000/405/654/421',
+'OTRiM2IyYzMzMjkyNWE1ZjIyYmI5ZmY5NTQ1ZTFiN2I/jpeg/000/405/647/439',
+'OTM3NGEyYmNiNTg3ODliNDc4MjBlYzA2NmJiM2I0ZmU/jpeg/000/405/647/433',
+'NGUwZWI4ZDRiYmRkYzBiMzA4OGM5N2JhOWJmNjJmNzY/jpeg/000/405/647/375',
+'YmI0MjNiY2NhYjc3OTM4M2RiNDE4YTU2NTJjMjVmMWU/jpeg/000/405/647/349',
+'ODc2YjExNzFiNWRmMTRhZmRhOGI5YWJiNzFhN2ZjMTA/jpeg/000/405/647/342',
+'MDM1NTQ2YzUyYzIxYzc1ZTE0MGI0OTdmZWNiZmRkNjc/jpeg/000/405/647/307',
+'MGQ2YjdjM2QxMjA0YjFjNWFjYjEzZWYyMjE2ODljZWE/jpeg/000/405/647/296',
+'ZTY3MWM5MDk0MjE5NmMzMjFlNzY1MjQ5MTJlYTUxNGQ/jpeg/000/405/647/284',
+'ODA3NmQ5MGRlYjUzMjQ3ZWE3OTlkYzJhM2I1YmJmNzM/jpeg/000/405/647/275',
+'MGU4YjM0OWIzOTcxYTFiNWU0ZjllNDc3ZGIyNjhkZWU/jpeg/000/405/152/333',
+'YWFiMDU2YzVkOTVlNjk2YmMxNWNhZWYxYTRhODc4NTA/jpeg/000/405/152/294',
+'NThjNDJmMTQxYWNmYTVjMzA3ZmNiNDAwMGFhZjMyOWI/jpeg/000/405/152/126',
+'ZDI3OGNmOTcwMDQ5ZTc3NDc4Yzc5M2RhNGExNTM4MGY/jpeg/000/405/152/122',
+'NWMzMGJhMTZlZGM5MDAzNzJlMGZiNjA5OTU3MDY3OTI/jpeg/000/451/318/367',
+'NjQyYmVkNjkwMzE3ZmExZWQ4NWIyZjVjNWQ3ZTY0YmU/jpeg/000/451/318/361',
+'ZjMwNjMxNWU3ZTZmNmEwNGRmNGM1YzBiNWU1NzE5OTQ/jpeg/000/406/079/467',
+'Mjg4ZDRlZWM4YzQ5OGUzYzBjZDAyYWE4MTkwZDFkNTQ/jpeg/000/406/079/451',
+'MjYxZjU2NDI3OTgxOGEyOGM2ZThhZTA3ZTM1ZTRiZjg/jpeg/000/406/079/426',
+'MjgwYTBmNjhmYTUyMTQyNDdlYmQ2NTZhMmNkODhhZDY/jpeg/000/405/118/781',
+'YzIzNzAzYmE2NWUzMjA0OTdhMTczMGZkNjQ0ZDAzZjY/jpeg/000/405/101/782',
+'MmM5MjFlODQ1ZmNiOTA1N2Q5NTIzZWExZTA5ZmVjODk/jpeg/000/497/009/542',
+'ZGNhZGUwOTE0NWE0MWMxNmIxYzE4ZTEwNTE0YzJhMjI/jpeg/000/497/009/535',
+'YWEzMjFmY2ExYzA3MmY3YTg2NjI2MGZiZjQ4MTEyNDQ/jpeg/000/497/009/533',
+'OGFmODAzOWRiNDk1OWI0NTI0NjFjNDFiYmViN2EwY2U/jpeg/000/497/009/532',
+'ZDRkNDQ3YmViZjQwMjIzMmNiYWY2ZTBhNTM2MWE0Nzc/jpeg/000/489/299/874',
+'NzJhMDc1NTM5NTU4MWM0NmNiNjMwOTMyNGJjNWU1OTg/jpeg/000/489/299/859',
+'OGFmMTY4MmE2MDMyY2E0MDcxOGYzMzc3ZTJmMjQyOWI/jpeg/000/489/299/854',
+'ZTM5YjkyMjY0NzY1YzMxNTkzMDU2YTUwZThhZTY5ZmU/jpeg/000/515/745/728',
+'YjVhODgzOTE2NDFlMTM1ZDQ5MzA0ZDRmZWZkN2U3OTA/jpeg/000/515/745/727',
+'YmMxM2IwOTgxYjE4N2Y5MzViMTY0NjJmMjc5MjM3MGQ/jpeg/000/515/745/725',
+'ZjE3ZjJhM2Q5NGRiNzk1NDVmMTI3NzhkZjBlZWZlMTc/jpeg/000/515/745/729',
+'MDg3ZDFkMWJjZDc3ZDQ4ZDJkZmFkMjk0YTRjMTgyODU/jpeg/000/515/745/724',
+'ZmQzZGU5NmM1ODA3ZjdkYmY2NzY3YTRlYmRmYmY1Y2Y/jpeg/000/515/745/723',
+'ZmI5NDFiZjI3OTRjNDAyYmI4MzA2NTFkYzM5MmFjNmQ/jpeg/000/514/010/680',
+'YjQ1MDQ4NGMxYTM2ZTA1NDY0ODQwYzdjMmI3NjAzZDI/jpeg/000/514/010/673',
+'NTc0NTQ0NThiYzI3MGZiMTQyMmQ1YzU0ODU0ODg3ZDU/jpeg/000/514/010/672',
+'NGRhNzkwODkxNzUzNGE0YTc1ZTA1ZWZlYWNiMmQ5MjQ/jpeg/000/514/010/671',
+'OWM3ZTMzYWNmYzk3NWUyNTUyMWRlMTFlY2M1ZWEyNWM/jpeg/000/514/010/670',
+'<img src="https://thumb-p0.xhcdn.com/a/hXMu_BrOD6ssKqenmAehog/000/497/109/000_1000.gif">',
+'<img src="https://thumb-p2.xhcdn.com/a/NlF33oHThGWlrs4CGGLQIA/000/497/089/032_1000.gif">',
+'<img src="https://thumb-p2.xhcdn.com/a/LyHyMRQa0BlHfKfmRPajXA/000/497/023/622_1000.gif">',
+'<img src="https://thumb-p2.xhcdn.com/a/TWw1PdMJI536duW195_SzA/000/497/023/582_1000.gif">',
+'ZmE1YWNjNzhlNjMxODAwNTVjY2IwYTQyYTVlZTNmNDA/jpeg/000/514/310/898',
+'MzJmN2RlYjU2NTFkM2RhY2UyZWE5MWE1NDU5YjhkZGI/jpeg/000/514/310/897',
+'YTVlMmY1NGRmNzhjMDQ3YjBhZmU4ODc1NTE0ZDhkYTc/jpeg/000/514/310/896',
+'NjdjNzdiZWNmMDI2NzZjZWIyNjI5N2I5MGI0ODQzOTA/jpeg/000/514/310/894',
+'<img src="https://thumb-p1.xhcdn.com/a/6xSqFSbUJKYneODpoQzKjQ/000/489/299/701_1000.gif">',
+'<img src="https://thumb-p7.xhcdn.com/a/PPjyFTpLuR2_znXRpLuR5A/000/489/299/687_1000.gif">',
+'<img src="https://thumb-p1.xhcdn.com/a/JYhX-JCmsVj22e7KYz9ZNg/000/488/712/181_1000.gif">',
+'<img src="https://thumb-p4.xhcdn.com/a/2qC4Qh9RkqKsBqElQ1m_yQ/000/488/638/294_1000.gif">',
+'<img src="https://thumb-p6.xhcdn.com/a/dYoGmDYJ5Gbf9e6teUi9nQ/000/488/548/446_1000.gif">',
+'<img src="https://thumb-p5.xhcdn.com/a/sDWIxdY-20_ocvfI1Jqjew/000/488/548/405_1000.gif">',
+'<img src="https://thumb-p1.xhcdn.com/a/DIjvDG5esaXrSEgIAV0xzQ/000/487/758/851_1000.gif">',
+'<img src="https://thumb-p5.xhcdn.com/a/sNR137yW0mfH-zyVaF9zVg/000/487/758/715_1000.gif">',
+'<img src="https://thumb-p8.xhcdn.com/a/v4eDG4N0CW7Tp-p5KY7wQg/000/487/758/628_1000.gif">',
+'<img src="https://thumb-p5.xhcdn.com/a/w21WyNsNJJWjcknHXj3E5A/000/487/704/145_1000.gif">',
+'<img src="https://thumb-p8.xhcdn.com/a/1tyxfhUNNMu8XAQg5v3J3g/000/487/704/108_1000.gif">',
+'<img src="https://thumb-p0.xhcdn.com/a/Ld_HV7rrRTaxXIQ4nByxQA/000/487/704/080_1000.gif">',
+'<img src="https://thumb-p5.xhcdn.com/a/sCeAXRYPlbLfA97qNHcFvQ/000/487/703/445_1000.gif">',
+'<img src="https://thumb-p5.xhcdn.com/a/UADIkdg7_83W22HTC6ZS-g/000/487/703/415_1000.gif">',
+'<img src="https://thumb-p1.xhcdn.com/a/Xs-8TuDR7lbGRCXDp3ACqw/000/487/703/391_1000.gif">',
+'<img src="https://thumb-p8.xhcdn.com/a/EINtpvInr_C_IB0uQBZK4Q/000/487/703/278_1000.gif">',
+'<img src="https://thumb-p8.xhcdn.com/a/wCoQfr0mM7LofQcRorGWRQ/000/487/703/248_1000.gif">',
+'<img src="https://thumb-p7.xhcdn.com/a/8JfYPu15v1eKhuFBhmlqdw/000/487/227/367_1000.gif">',
+'<img src="https://thumb-p8.xhcdn.com/a/rjgB7ICN95Oq0Ssnoo22xg/000/487/227/178_1000.gif">',
+'<img src="https://thumb-p9.xhcdn.com/a/ViZMNCJyc0OR8EiMkPdV2A/000/487/227/079_1000.gif">',
+'<img src="https://thumb-p7.xhcdn.com/a/0sdDOP7uS0w8XqZeRPAEJA/000/487/226/917_1000.gif">',
+'<img src="https://thumb-p2.xhcdn.com/a/JAldGKEfad38khHipkOcNw/000/487/226/892_1000.gif">',
+'NTQwZTFkYjgxY2I5MDgxNzBlZTYxMTk4MzhiMDQxNTk/jpeg/000/516/050/875',
+'YWY2NjhlOTYyN2IwN2NkZTNmYTNlYmQ2YWFmYTgyNmI/jpeg/000/516/050/873',
+'MDUxZTA1YWQwMTM5N2ZhZTNmMWE4OTE2MDgxYzc5MGY/jpeg/000/516/050/872',
+'OTU1NTlkZWVhZTc4YzU1MGM2MGRmZGZmZTkwNzdiMjc/jpeg/000/516/050/871',
+'OGMzODc2NzBhZTliMTg4ZGI3ZDhlN2NmYzgwYjgxNjQ/jpeg/000/516/050/870',
+'N2M1ZWIxODI0MmRhMzE0MWU4MzMzNDQ1MWViNzAxM2U/jpeg/000/516/050/869',
+'ZTdiYThjODFiYWExMzZhMmNmODZjOGQ5NGRjZmNjODM/jpeg/000/516/050/868',
+'Mjg3YzQ0MmMwOWU5ODJmMThkNzBlM2ViMDY5ZWZiOWY/jpeg/000/516/050/867',
+'ZWFjZmU5YTlhNzgwM2VmZWI4ZWE3ODdkOWNiNmYyZjg/jpeg/000/516/050/878',
+'ZjE2Zjc2ZWVjNmM4M2E3ODMxNWVjMWU2NzFjMjFlZGE/jpeg/000/516/050/866',
+'ODNiZjJkZDUzN2U1YmM2MDQyNWVlZjQ0YzJiMjM3MmI/jpeg/000/516/050/865',
+'YTI5MGEyMGI5ODY4ZTAyZjEwMTU1YzVhOWY0MzhjNGI/jpeg/000/516/050/864',
+'M2JhYWQyNWM2ZjFmNzAxOGE2MGNmYTEzNTg4NzIyZTE/jpeg/000/516/050/863',
+'NTRmN2MzMzgxMWQ2MDQzZTg5MzgwZTU2NTRlYzc2ZDg/jpeg/000/516/050/862',
+'ZjA3ZjJiOTg1MDc5M2ZmNTU0MjA1ZTUxZGM0YWQwY2Q/jpeg/000/516/050/861',
+'MzViZTdjNmUyOTQ5NDMyZjNjNmZkZmNlZmFjNjlmMzQ/jpeg/000/516/050/877',
+'ZDhiNDliZDcxNjMwOTk0MjQyZTVlYzY2MDRlZWQzODc/jpeg/000/516/050/876',
+'ZDlmZDkxMWVkODAwOTJlODk3NjI0YWZlMTFjMDUwNjg/jpeg/000/516/050/882',
+'Y2Y0Y2ExZmNjNjI4YjY0ZmMzYzRhNTgxNTZkYmJmYjk/jpeg/000/516/050/879',
+'ZGYxZDlhMDJkY2YwMGEzNTEyNDA4OWY0OWQ5NGZkZWQ/jpeg/000/516/050/884',
+'NDEwMjE3YmUzODgyOGU4ZmVjODc5NTA2NDcxNDUxYTU/jpeg/000/516/050/883',
+'ZjA3YjFkMTk5NTc1OTUzODhhNWVkZTRjNTFhZjc2Y2I/jpeg/000/424/766/071',
+'YzAyNGY5NzFkMzM4OWRkODU1ODllZTY2MDg4NmVkYTY/jpeg/000/424/765/999',
+'ZGFiZjU2ZmVlYWFhOGY1Y2M0YjBhODBhZmY4ZmE2Nzk/jpeg/000/424/765/834',
+'YTc1YzIzZTVjMDcwNzNhMGFjYTZiZDAxMGUzMzE5MzI/jpeg/000/424/765/770',
+'YmYyMTY5MmVhYjhlMGZkZDI2ODBkYzE2NWZlNWE4NzE/jpeg/000/424/765/694',
+'MDI0ZTY4N2NkZDg2ZjU1YmRlZGEyY2EzN2ZkZGYyNjc/jpeg/000/424/765/635',
+'MzJkZTAyMTMyNTkwZTA3YTNlZDNiYTMxYTZlYmQ1NzE/jpeg/000/406/416/871',
+'ZGQ3YjE5NDM1YmE4NWQ4MTEyOWFhMWE5MDg1Nzk4MWM/jpeg/000/406/416/858',
+'NTc3OTNlYjFiZWFjZTliZDQ5MzlmZGJiODRkODVlYjA/jpeg/000/406/397/223',
+'YmYyNzIzNzAwYzM5MzEyNzEzMjdiMTU1MTg0Zjg4N2U/jpeg/000/406/396/814',
+'MWI1NmYxN2JiYWJhNjM0NGIxY2UyNTVkYzE2Y2MxMDg/jpeg/000/406/386/726',
+'ZDk1NDEyYjVhZjIzYmM0NjQ4NzllMTZjNjcyMmY0YTg/jpeg/000/406/386/714',
+'NGFhNzQxNTQxMzg3ZTExMTk2MjM3YjFkOGNlZjFlNTg/jpeg/000/406/386/672',
+'NTYzZGI3NjFiYTIwNDFlNGFhZTBjMmNjNWMzNDJlNWE/jpeg/000/406/386/612',
+'NTc3ZDkwYTU2OTE0NTQ1NzVlODBmNmI4NjU4OTgyNGY/jpeg/000/516/233/132',
+'N2M1ZTIyMTFiODc1YjZjYzMxOWQ3M2QwMDEyMGZkMWI/jpeg/000/516/233/303',
+'ZGNiZmY4YTgyZDRjNGZjMjdjNDNkNmU0MzVhYmQzYzI/jpeg/000/516/233/216',
+'YjM0MjM1YjA0ZTNlZWVhNzQyOTEwY2FlODBlZjQ1YTM/jpeg/000/516/233/213',
+'Zjg3ODkwMjhmOTdiM2ExMWIwOWYzYTE4MWU1ODNjOWE/jpeg/000/516/233/165',
+'NjY3N2E2ODhlMmI4NmRkMDM3YWFjM2IzMWQxYWUzNzI/jpeg/000/516/233/161',
+'YWI1YjZjYzJmMmZjYmVhMTNmMmQwZTUwMWYyZDExMzg/jpeg/000/516/233/158',
+'ZDczOTc3MDFjOWFmZTYxZmY5ODEzMmFjZGZmMDE4NmI/jpeg/000/516/233/269',
+'OTk0ODgwYjNiMjkzYmU2N2M5Y2E4MjZjNGEwYzNjM2U/jpeg/000/516/233/240',
+'NGNjNDA2OGVjNDlhMjA3NDA4OTUzYjU3OTU4ZGRiNmQ/jpeg/000/516/233/266',
+'NzUzMjIzN2Q4MzRmNTNlZjExOWQxZGI0ZDFmYzQxNzM/jpeg/000/516/233/194',
+'M2IwODYxZmIyNTVlZjczZmFkMTBjYzRkMTA3NGU0MGI/jpeg/000/516/233/293',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 196
+bookid = "fappybunnyyBatch: 209"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

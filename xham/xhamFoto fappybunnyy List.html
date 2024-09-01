@@ -1,0 +1,67 @@
+<base target="_blank"><html><head><title>fappybunnyy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/pillow-humping-babe-16137146"><img src="https://ic-ph-nss.xhcdn.com/a/ZjAwOTY0NWMzZTY0OTljNjhmNzlmYzM3ZTgxMDJjMzU/jpeg/000/515/941/105_450.jpg"><br>Pillow humping babe</a> 9',
+'<a href="https://xhamster.com/photos/gallery/late-night-chat-with-someones-wife-16113735"><img src="https://ic-ph-nss.xhcdn.com/a/NTM0ZjI3MzhkNTEyMjI0ZjNkNGMxZThiMTA3MzFmMmM/jpeg/000/515/597/542_450.jpg"><br>Late night chat with someone&#039;s wife</a> 8',
+'<a href="https://xhamster.com/photos/gallery/im-ready-for-you-14315205"><img src="https://ic-ph-nss.xhcdn.com/a/ZmQ3YjA2ZTJkNjE4MGYwNjUyZDg5Nzk4YjIxNmFmYTU/jpeg/000/486/583/036_450.jpg"><br>I&#039;m ready for you</a> 76',
+'<a href="https://xhamster.com/photos/gallery/pillow-humping-14314250"><img src="https://ic-ph-nss.xhcdn.com/a/NWYzZmI0NWRlNjJkZTk3OGExNDgzOGUzMTMwNTQ0MDA/jpeg/000/405/101/782_450.jpg"><br>Pillow humping</a> 7',
+'<a href="https://xhamster.com/photos/gallery/big-booty-babe-15777402"><img src="https://ic-ph-nss.xhcdn.com/a/MzZhYWRhYzNhOWZkZTJlM2RjZjUyNDVhMWU1NjhlOGE/jpeg/000/497/009/533_450.jpg"><br>Big Booty Babe!!</a> 7',
+'<a href="https://xhamster.com/photos/gallery/fappybunnyy-16124912"><img src="https://ic-ph-nss.xhcdn.com/a/ZjdmZDg3ZjJlMTNkODA5MTc1Y2NmZjc1NGVhNjAzY2I/jpeg/000/515/745/724_450.jpg"><br>Fappybunnyy</a> 6',
+'<a href="https://xhamster.com/photos/gallery/big-booty-milf-15997367"><img src="https://ic-ph-nss.xhcdn.com/a/Y2EyMjBmYmEyNDE2M2YwYTAxZGQyNThjNTNmYzczMGU/jpeg/000/514/010/680_450.jpg"><br>Big booty milf</a> 5',
+'<a href="https://xhamster.com/photos/gallery/sloppy-amateur-blow-jobs-15789567"><img src="https://thumb-p2.xhcdn.com/a/kEc3tTCNq65koE4XRmuaBA/000/497/023/622_240.gif"><br>Sloppy amateur blow jobs </a> 4',
+'<a href="https://xhamster.com/photos/gallery/home-alone-16018134"><img src="https://ic-ph-nss.xhcdn.com/a/MDc5ZDEwZDliMmVlZjdmNzkwNTkyZjNjMjNiM2YzZjk/jpeg/000/514/310/894_450.jpg"><br>Home alone</a> 4',
+'<a href="https://xhamster.com/photos/gallery/fappybunnyy-15773950"><img src="https://thumb-p7.xhcdn.com/a/VZlPrmpXNDLyTEDM8yfUWA/000/487/227/367_240.gif"><br>Fappybunnyy</a> 22',
+'<a href="https://xhamster.com/photos/gallery/chubby-little-goth-babe-16145548"><img src="https://ic-ph-nss.xhcdn.com/a/ZTYzNjIxYjExMTBkM2Y1ODhkMDQ2ZjZlODFiMjBhMDY/jpeg/000/516/050/870_450.jpg"><br>Chubby little goth babe </a> 21',
+'<a href="https://xhamster.com/photos/gallery/black-lingerie-pussy-14337729"><img src="https://ic-ph-nss.xhcdn.com/a/MDkxMjkwMGYzYTk2ZDJhMTYzNDkyYjI0OGJiMWY0MzQ/jpeg/000/406/386/612_450.jpg"><br>Black Lingerie Pussy</a> 14',
+'<a href="https://xhamster.com/photos/gallery/pale-booty-girlfriend-in-fishnets-16160496"><img src="https://ic-ph-nss.xhcdn.com/a/NDdlZTczMGRlYjI2YWNkNzNlMzE4OGQwYjY4NGZlOWY/jpeg/000/516/233/303_450.jpg"><br>Pale booty Girlfriend in Fishnets</a> 12',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "fappybunnyy"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

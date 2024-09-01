@@ -1,0 +1,103 @@
+<base target="_blank"><html><head><title>tarzan</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+img {width: 33%; width:480px; height:270px;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align: top; }
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">tarzan</div>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'63d7bc74555ad"><img src="https://ei.phncdn.com/videos/202301/30/424442151/original/(m=qN7JY9XbeafTGgaaaa)(mh=1aLC1ybnmK8pFfc7)0.jpg"><br>That day I behaved badly',
+'63dbb5decc15a"><img src="https://ei.phncdn.com/videos/202302/02/424641071/thumbs_5/(m=eafTGgaaaa)(mh=MXaZTY8X2sJzaU4v)1.jpg"><br>Stoping By',
+'63dca110805be"><img src="https://ei.phncdn.com/videos/202302/03/424693601/original/(m=eafTGgaaaa)(mh=gY7qEuQMtnHIlpk0)6.jpg"><br>Fit2Fuck',
+'63de221e6f474"><img src="https://ei.phncdn.com/videos/202302/04/424772501/thumbs_20/(m=eafTGgaaaa)(mh=6gPATZ50WhrR6Z-T)10.jpg"><br>Mi Judicatura Committee',
+'63e3e496eec08"><img src="https://ei.phncdn.com/videos/202302/08/425069111/thumbs_20/(m=eafTGgaaaa)(mh=PLc-7kk6yQjZ5uM_)7.jpg"><br>Beach Day',
+'63e71321764c2"><img src="https://ei.phncdn.com/videos/202302/11/425234191/thumbs_5/(m=eafTGgaaaa)(mh=k2-ncg9WyZXCcNHf)11.jpg"><br>Bible Study',
+'63e741b8590ea"><img src="https://ei.phncdn.com/videos/202302/11/425241521/thumbs_60/(m=eafTGgaaaa)(mh=a0bTEmmeCyFkihXO)14.jpg"><br>Diamonds In The Rough',
+'63e8983aaad4d"><img src="https://ei.phncdn.com/videos/202302/12/425305031/original/(m=eafTGgaaaa)(mh=BAMu3UhArbTwXlC-)12.jpg"><br>Cum On In',
+'63edf3c46a733"><img src="https://ei.phncdn.com/videos/202302/16/425580751/thumbs_75/(m=eafTGgaaaa)(mh=6MObHU32wUsvKMT9)9.jpg"><br>Miami Beach',
+'63edfa32bca47"><img src="https://ei.phncdn.com/videos/202302/16/425581741/thumbs_45/(m=eafTGgaaaa)(mh=-UzIN3CH1zssFxvl)2.jpg"><br>Make It Rain',
+'63f2f2032294d"><img src="https://ei.phncdn.com/videos/202302/20/425836431/original/(m=eafTGgaaaa)(mh=imhWi4iNaHpXStHY)13.jpg"><br>Just Cumin By',
+'63f9a804d2d40"><img src="https://ei.phncdn.com/videos/202302/25/426196001/thumbs_37/(m=eafTGgaaaa)(mh=x8cdfcPh33hHS3kW)4.jpg"><br>Cuffs',
+'63fc7da49acfc"><img src="https://ei.phncdn.com/videos/202302/27/426330181/thumbs_40/(m=eafTGgaaaa)(mh=Rn4U62r8j9LDW9Cy)3.jpg"><br>Ms. Niki',
+'64016550b98be"><img src="https://ei.phncdn.com/videos/202303/03/426595011/original/(m=eafTGgaaaa)(mh=jNyVuC70RY_CxAg3)6.jpg"><br>The PickUp',
+'6406d5900aeaa"><img src="https://ei.phncdn.com/videos/202303/07/426869351/thumbs_35/(m=eafTGgaaaa)(mh=jRVMgZK4QcVa-SR8)9.jpg"><br>Fit2Fuck',
+'6420cd5480c26"><img src="https://ei.phncdn.com/videos/202303/26/428254421/thumbs_45/(m=eafTGgaaaa)(mh=QyMBw9h33gN6W1PU)8.jpg"><br>Starlets',
+'6426fb5268e55"><img src="https://ei.phncdn.com/videos/202303/31/428582471/thumbs_5/(m=eafTGgaaaa)(mh=30Lkc0vpP4T4vrM1)15.jpg"><br>Mr. POV',
+'64338c86ee07c"><img src="https://ei.phncdn.com/videos/202304/10/429216441/thumbs_10/(m=eafTGgaaaa)(mh=Ee128hQgBoj1cLK8)1.jpg"><br>Vlog In Parker',
+'644051cc0fd9c"><img src="https://ei.phncdn.com/videos/202304/19/429868171/original/(m=eafTGgaaaa)(mh=G8tZmIYhF-JoeiBf)2.jpg"><br>Study Hard',
+'64460eb95e0b5"><img src="https://ei.phncdn.com/videos/202304/24/430149691/thumbs_10/(m=eafTGgaaaa)(mh=_LNatdm9g69r7p8z)1.jpg"><br>Y23!!',
+'6448d1392603e"><img src="https://ei.phncdn.com/videos/202304/26/430303971/thumbs_53/(m=eafTGgaaaa)(mh=CWzLrRgJx5rSJjqw)4.jpg"><br>Alex Cole in " Role Play "',
+'644f5a0e71f08"><img src="https://ei.phncdn.com/videos/202305/01/430642221/thumbs_90/(m=eafTGgaaaa)(mh=4cQwmy36DRbo9RGw)14.jpg"><br>Sincerely Forevermore',
+'6451194c6be02"><img src="https://ei.phncdn.com/videos/202305/02/430732521/thumbs_40/(m=eafTGgaaaa)(mh=vUax3ItjPR2fN3TR)15.jpg"><br>JodiT',
+'64532b01621d1"><img src="https://ei.phncdn.com/videos/202305/04/430845501/thumbs_65/(m=eafTGgaaaa)(mh=8-In5MpjHK5AyK3i)9.jpg"><br>JodiT 2',
+'645dcf5de467a"><img src="https://ei.phncdn.com/videos/202305/12/431392621/thumbs_10/(m=eafTGgaaaa)(mh=equspgVi_EIvoDSX)6.jpg"><br>Britney & Me',
+'645e362131597"><img src="https://ei.phncdn.com/videos/202305/12/431411541/original/(m=eafTGgaaaa)(mh=mYuBPd9W_vXKIf5i)4.jpg"><br>You & Me',
+'6460ca933bea4"><img src="https://ei.phncdn.com/videos/202305/14/431528161/original/(m=eafTGgaaaa)(mh=5eYCI_uRpmzC4dCj)15.jpg"><br>A Starr Is Born',
+'6460d62f6ed30"><img src="https://ei.phncdn.com/videos/202305/14/431530671/original/(m=eafTGgaaaa)(mh=-u13j8mW3iOj5L81)5.jpg"><br>Just Between Us',
+'6463010fea173"><img src="https://ei.phncdn.com/videos/202305/16/431639141/thumbs_10/(m=eafTGgaaaa)(mh=rn9LDmHz866uNd6M)6.jpg"><br>Fit2Fuck',
+'64674b7f5b0a1"><img src="https://ei.phncdn.com/videos/202305/19/431854751/thumbs_5/(m=eafTGgaaaa)(mh=xpDMChWx1hN4xyDh)2.jpg"><br>Back At The House',
+'6467522ecda52"><img src="https://ei.phncdn.com/videos/202305/19/431855721/thumbs_10/(m=eafTGgaaaa)(mh=hnavWS8B4KbfcJQg)13.jpg"><br>I’m Studying',
+'64675a9cca991"><img src="https://ei.phncdn.com/videos/202305/19/431857391/original/(m=eafTGgaaaa)(mh=YwCtH1puVRzcFRmD)1.jpg"><br>Cheers',
+'646e589f819cb"><img src="https://ei.phncdn.com/videos/202305/24/432194961/thumbs_15/(m=eafTGgaaaa)(mh=31J-DlIonnDLqX-1)13.jpg"><br>Better This Way',
+'6477dded8312b"><img src="https://ei.phncdn.com/videos/202305/31/432655891/original/(m=eafTGgaaaa)(mh=x9RP8Ul-3KyX5MZw)4.jpg"><br>Miss Angela White',
+'648401e7aa1e9"><img src="https://ei.phncdn.com/videos/202306/10/433250511/thumbs_5/(m=eafTGgaaaa)(mh=-WvaVYKnH-Ixfkrx)11.jpg"><br>Keeping It Wet With Katie Morgan',
+'648bb506dd8c8"><img src="https://ei.phncdn.com/videos/202306/16/433643181/original/(m=qTOP8OYbeafTGgaaaa)(mh=XMuQiQRz7KzTy-67)0.jpg"><br>Chinese Schoolgirl Get Creampie After Class 粉嫩白丝00后JK人间极品，这必须得内射',
+'648d570651c3c"><img src="https://ei.phncdn.com/videos/202306/17/433718941/thumbs_10/(m=eafTGgaaaa)(mh=bSL-YHfxDJ7Ra1JB)12.jpg"><br>What It Do “Tia Cyrus”',
+'649705367b129"><img src="https://ei.phncdn.com/videos/202306/24/434192551/thumbs_60/(m=eafTGgaaaa)(mh=ewLONpsj1-ZExWr4)8.jpg"><br>Deal Maker’s',
+'649b40ce5c705"><img src="https://ei.phncdn.com/videos/202306/27/434400641/thumbs_60/(m=eafTGgaaaWavb)(mh=p-mVMWSflgEWHf5H)13.jpg"><br>Massage Time',
+'64a2973380270"><img src="https://ei.phncdn.com/videos/202307/03/434749971/original/(m=eafTGgaaaa)(mh=JwHUGrxUZTJXF9Bc)14.jpg"><br>Mila & Me',
+'64a629ea8529c"><img src="https://ei.phncdn.com/videos/202307/06/434928851/thumbs_15/(m=eafTGgaaaa)(mh=1ddB_QZtDLG3EVId)5.jpg"><br>Fuckin Vegas',
+'64b2d55e76884"><img src="https://ei.phncdn.com/videos/202307/15/435544441/thumbs_15/(m=eafTGgaaaa)(mh=AE7AH5frR435bNV2)14.jpg"><br>Bestie “Nina North”',
+'64b2e0a2dead6"><img src="https://ei.phncdn.com/videos/202307/15/435559961/thumbs_10/(m=eafTGgaaaa)(mh=rMPBVX9Tf-4JqtJw)11.jpg"><br>Horny wifes gokkun blowjob<U+2764><U+FE0F>Cumshot<U+2764><U+FE0F>',
+'64b502ed79680"><img src="https://ei.phncdn.com/videos/202307/17/435643751/thumbs_55/(m=eafTGgaaaa)(mh=lV3dg3FCB8erVu6Y)6.jpg"><br>Riding Wet “Sheena Ryder”',
+'6520d84287d55"><img src="https://ei.phncdn.com/videos/202310/07/440773111/thumbs_5/(m=eafTGgaaaa)(mh=u1eLhsageB4X6Mrx)10.jpg"><br>Slender beauty with tongue piercing gives a naughty blowjob<U+2764>',
+'659a996a3bd42"><img src="https://ei.phncdn.com/videos/202401/07/446084821/original/(m=qSUHU6YbeafTGgaaaa)(mh=PCdZeakq4NCw74Gl)0.jpg"><br>Homemade Hot Fucking with Busty Wife in Oil and Fishnet Pantyhose POV',
+'65a70c3289d65"><img src="https://ei.phncdn.com/videos/202401/17/446636611/original/(m=qP72V6YbeafTGgaaaa)(mh=azQRsgpc7fnnp4m-)0.jpg"><br>Teen girl orders a hamburger and the domiciliary arrives with a big DICK  and gives her triple meal',
+'65b2cd0645881"><img src="https://ei.phncdn.com/videos/202401/25/447129351/original/(m=qW3UN7YbeafTGgaaaa)(mh=GVvlTr7fUhemh3hV)0.jpg"><br>big ass coworker says NO to CONDOM during sex',
+'65b3ddcae8349"><img src="https://ei.phncdn.com/videos/202401/26/447172251/original/(m=qKZX07YbeafTGgaaaa)(mh=lsguyeOpm_n_kC-c)0.jpg"><br>Sisters Best Friend Bets I Cant Last - Angel Youngs - Perfect Girlfriend - Alex Adams',
+'ph63c5c6820d3f3"><img src="https://ei.phncdn.com/videos/202301/16/423491872/original/(m=eafTGgaaaa)(mh=coxFN59-7RzTgC9q)9.jpg"><br>Tarzan’s Place',
+'ph63c86f790e7ab"><img src="https://ei.phncdn.com/videos/202301/18/423639522/thumbs_15/(m=eafTGgaaaa)(mh=GDlir6d709cm1KTT)4.jpg"><br>Three’s Better',
+'ph63cca0747ad47"><img src="https://ei.phncdn.com/videos/202301/22/423852771/original/(m=eafTGgaaaa)(mh=2QJJf5ZKRKzSNp4H)2.jpg"><br>Fun In The Sun',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/view_video.php?viewkey='
+lineTail = '</a></div>'
+bookid = "tarzan"
+showRange = 42
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

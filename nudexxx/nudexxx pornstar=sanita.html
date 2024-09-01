@@ -1,0 +1,100 @@
+<base target="_blank"><html><head><title>pornstar=sanita</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<link rel="stylesheet" href="../imgcss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+
+<body onkeypress="chkKey()">
+<br>
+<center>
+<p class="tip-number">pornstar=sanita</p>
+<p class="js-tip"></p>
+<br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<br>
+<script>
+var tipsList = [
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-1',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-10',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-11',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-12',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-13',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-14',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-15',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-16',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-2',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-3',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-4',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-5',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-6',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-7',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-8',
+'323/ceeee5cbfe7aabd21d5895ae59cc42b3-9',
+'509/7cf1a3d957d494453fdc742b2df1b592-1',
+'509/7cf1a3d957d494453fdc742b2df1b592-10',
+'509/7cf1a3d957d494453fdc742b2df1b592-11',
+'509/7cf1a3d957d494453fdc742b2df1b592-12',
+'509/7cf1a3d957d494453fdc742b2df1b592-13',
+'509/7cf1a3d957d494453fdc742b2df1b592-14',
+'509/7cf1a3d957d494453fdc742b2df1b592-15',
+'509/7cf1a3d957d494453fdc742b2df1b592-16',
+'509/7cf1a3d957d494453fdc742b2df1b592-2',
+'509/7cf1a3d957d494453fdc742b2df1b592-3',
+'509/7cf1a3d957d494453fdc742b2df1b592-4',
+'509/7cf1a3d957d494453fdc742b2df1b592-5',
+'509/7cf1a3d957d494453fdc742b2df1b592-6',
+'509/7cf1a3d957d494453fdc742b2df1b592-7',
+'509/7cf1a3d957d494453fdc742b2df1b592-8',
+'509/7cf1a3d957d494453fdc742b2df1b592-9',
+'632/fddfb74e5341246bf38192fdb2c89925-1',
+'632/fddfb74e5341246bf38192fdb2c89925-10',
+'632/fddfb74e5341246bf38192fdb2c89925-11',
+'632/fddfb74e5341246bf38192fdb2c89925-12',
+'632/fddfb74e5341246bf38192fdb2c89925-13',
+'632/fddfb74e5341246bf38192fdb2c89925-14',
+'632/fddfb74e5341246bf38192fdb2c89925-15',
+'632/fddfb74e5341246bf38192fdb2c89925-16',
+'632/fddfb74e5341246bf38192fdb2c89925-2',
+'632/fddfb74e5341246bf38192fdb2c89925-3',
+'632/fddfb74e5341246bf38192fdb2c89925-4',
+'632/fddfb74e5341246bf38192fdb2c89925-5',
+'632/fddfb74e5341246bf38192fdb2c89925-6',
+'632/fddfb74e5341246bf38192fdb2c89925-7',
+'632/fddfb74e5341246bf38192fdb2c89925-8',
+'632/fddfb74e5341246bf38192fdb2c89925-9',
+'676/ec83080829315c2a72c036df4561f4be-1',
+'676/ec83080829315c2a72c036df4561f4be-10',
+'676/ec83080829315c2a72c036df4561f4be-11',
+'676/ec83080829315c2a72c036df4561f4be-12',
+'676/ec83080829315c2a72c036df4561f4be-13',
+'676/ec83080829315c2a72c036df4561f4be-14',
+'676/ec83080829315c2a72c036df4561f4be-15',
+'676/ec83080829315c2a72c036df4561f4be-16',
+'676/ec83080829315c2a72c036df4561f4be-2',
+'676/ec83080829315c2a72c036df4561f4be-3',
+'676/ec83080829315c2a72c036df4561f4be-4',
+'676/ec83080829315c2a72c036df4561f4be-5',
+'676/ec83080829315c2a72c036df4561f4be-6',
+'676/ec83080829315c2a72c036df4561f4be-7',
+'676/ec83080829315c2a72c036df4561f4be-8',
+'676/ec83080829315c2a72c036df4561f4be-9',
+];
+lineHeader = '<img src="https://cdn.nudexxx.pics/content/galleries/'
+lineTail = '-full.jpg">'
+showRange = 64
+bookid = "pornstar=sanita"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
+

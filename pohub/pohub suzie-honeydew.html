@@ -1,0 +1,88 @@
+<base target="_blank"><html><head><title>suzie-honeydew</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">suzie-honeydew</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'64ced313e905a"><img src="https://ei.phncdn.com/videos/202308/05/436867061/original/(m=eafTGgaaaa)(mh=xq9QvVYpDYPv-xIW)3.jpg"><br>Summertime Fun Fingering My Meaty Pussy (Real Orgasm)',
+'64d94ea998147"><img src="https://ei.phncdn.com/videos/202308/13/437366151/original/(m=eafTGgaaaa)(mh=JwmVMUWWjj95NTXP)13.jpg"><br>Summertime Fun with a Big Dildo that Makes My Meaty Pussy Cum (Real Orgasm)',
+'64e154767c400"><img src="https://ei.phncdn.com/videos/202308/20/437754931/original/(m=eafTGgaaaa)(mh=n9wgF-rTHaZrIDWK)12.jpg"><br>Summertime Fun Getting My Meaty Pussy Sucked and Fucked After Cumming (Real Orgasm)',
+'64f9fb725873d"><img src="https://ei.phncdn.com/videos/202001/17/277230941/original/(m=eafTGgaaaa)(mh=wnFVQlrY7kaySULa)3.jpg"><br>FilthyKings - Stepdaddy SURPRISE FUCKED ME Hard When I Got In Bed With HIm',
+'64f9fb725873d"><img src="https://ei.phncdn.com/videos/202309/07/438963691/original/(m=qUSU0VYbeafTGgaaaa)(mh=dfKUrTboXJqM9x-T)0.jpg"><br>FilthyKings - Stepdaddy SURPRISE FUCKED ME Hard When I Got In Bed With HIm',
+'659f53e9ee3ae"><img src="https://ei.phncdn.com/videos/202401/11/446302451/original/(m=q95NL8YbeafTGgaaaa)(mh=2mcq790zahxi0MuR)0.jpg"><br>Horny Stepmom Mandy Waters Fantasizes, "I bet you could get me pregnant with Just 1 Hot Load"',
+'6608db8f1c6d6"><img src="https://ei.phncdn.com/videos/202403/31/450398421/original/(m=eafTGgaaaa)(mh=abcLqmsNGhBha4NE)2.jpg"><br>Real Quivering Female Orgasms',
+'663f07275a104"><img src="https://ei.phncdn.com/videos/202405/11/452313551/thumbs_46/(m=eafTGgaaaa)(mh=YgxFHt2VePHZsQWM)12.jpg"><br>"CUM INSIDE ME!!!" Big Tits Stepsister Begging For Creampie - Keep Fucking After Orgasms',
+'6647ea63210e9"><img src="https://ei.phncdn.com/videos/202405/18/452620651/original/(m=q98YXKZbeafTGgaaaa)(mh=4I0zhqcKiEQg4HB5)0.jpg"><br><U+00A1>Como te creció la VERGA pendejo! COFLA24CM se folla bien duro a YAETRIPLEX',
+'ph5de58ae1ddb38"><img src="https://ei.phncdn.com/videos/201912/02/265816132/original/(m=eafTGgaaaa)(mh=gbVzR4artTK-K-jN)7.jpg"><br>Dirty Talking  Brunette Wife Playing With Her Tight Pussy',
+'ph5de5c91928c83"><img src="https://ei.phncdn.com/videos/201912/03/265861012/original/(m=eafTGgaaaa)(mh=CVfpMz-V7e0d3raH)14.jpg"><br>Hot, Horny Wife Dildos Her Tight  Pussy',
+'ph5de6d81eaf5c0"><img src="https://ei.phncdn.com/videos/201912/03/266052602/original/(m=eafTGgaaaa)(mh=MBVFanyXXQ-dzEV6)6.jpg"><br>Hot Brunette Playing With Wet Pussy',
+'ph5de6db17cac25"><img src="https://ei.phncdn.com/videos/201912/03/266054042/original/(m=eafTGgaaaa)(mh=7FaZcuqr51O6Tdd8)14.jpg"><br>Horny Babe Stuffs a Big Dildo in Her Tight Pussy',
+'ph5dff17b5919ad"><img src="https://ei.phncdn.com/videos/201912/22/270458591/original/(m=eafTGgaaaa)(mh=AbCzZISqVOqO_JR2)7.jpg"><br>Hot Horny Wife in Yellow High  Heels Playing  With Her Pussy',
+'ph5e10d69b2d48f"><img src="https://ei.phncdn.com/videos/202001/04/273870311/original/(m=eafTGgaaaa)(mh=i-FrcquGcrGfplNK)10.jpg"><br>Hot Wife in High Heels Gives Herself an Orgasm With a Big Toy (100% Real)',
+'ph5e2117c69a8eb"><img src="https://ei.phncdn.com/videos/202001/17/277180401/original/(m=eafTGgaaaa)(mh=hXD-PgbaQdqsXFta)4.jpg"><br>Petite Wife Cums Hard  Using Her Giant  Vibrator  (100% Real)',
+'ph5e21608b2ea1a"><img src="https://ei.phncdn.com/www-static/images/private-video-big-premium.png?cache=2024061201"><br>Vid for GIF',
+'ph5e2fe10c7139b"><img src="https://ei.phncdn.com/videos/202001/28/279980351/original/(m=eafTGgaaaa)(mh=MJb0OfGlrkein-mY)1.jpg"><br>Dirty Talking Brunette Wife Cums Twice Riding Dildo For You!',
+'ph5e4f1ff8d7d5c"><img src="https://ei.phncdn.com/videos/202002/21/286347532/original/(m=eafTGgaaaa)(mh=jxsrgfwLmP4wZG2c)11.jpg"><br>Hot, Horny Wife Rubbing My Super Wet and  Meaty Pussy Lips',
+'ph5e54d10b67e28"><img src="https://ei.phncdn.com/videos/202002/25/287549202/original/(m=eafTGgaaaa)(mh=pLY2TmJmMRWFKqfA)16.jpg"><br>Hot Wife In High Heels With Her Big Dildo ( 2 Real Orgasms!)',
+'ph5f2076bb040f4"><img src="https://ei.phncdn.com/videos/202007/28/337178141/original/(m=eafTGgaaaa)(mh=o2CMUb-twaESwgVY)12.jpg"><br>STUNNING BRUNETTE TORY LANE LUBES HERSELF UP FOR A HOT ANAL ORGY',
+'ph6019d333663ea"><img src="https://ei.phncdn.com/videos/202102/02/382897682/original/(m=eafTGgaaaa)(mh=c83IVWkhvKUI0yMs)5.jpg"><br>From my Pussy to my Mouth Cum Swallow',
+'ph601c70ab3292d"><img src="https://ei.phncdn.com/videos/202102/04/383016962/original/(m=eafTGgaaaa)(mh=GxHHls-8ddL2LxiM)9.jpg"><br>Facesitting on a Lucky Face',
+'ph601dbf0f05539"><img src="https://ei.phncdn.com/videos/202102/05/383078262/original/(m=eafTGgaaaa)(mh=_hCdQbwhQKHlCBUn)8.jpg"><br>When You Just Love to Suck Cock and Have It Cum in Your Mouth',
+'ph6022187366b05"><img src="https://ei.phncdn.com/videos/202102/09/383261122/original/(m=eafTGgaaaa)(mh=0uWQsbF2iODhlz8H)9.jpg"><br>Rubbing My Meaty Pussy With a Nice Cock in My Mouth',
+'ph60398924403cf"><img src="https://ei.phncdn.com/videos/202102/26/384319762/original/(m=eafTGgaaaa)(mh=r9QlvM6PNZlkqI7Z)15.jpg"><br>Sensual Blowjob With Cum Swallow',
+'ph608d96a7b43d1"><img src="https://ei.phncdn.com/videos/202105/01/387406051/original/(m=eafTGgaaaa)(mh=444xTwRjnr58FBr6)11.jpg"><br>Naughty Schoolgirl Blowjob with Huge Load Cum Swallow',
+'ph60944449eec0a"><img src="https://ei.phncdn.com/videos/202105/06/387647901/original/(m=eafTGgaaaa)(mh=j2Gg9KZvKFVTY63g)12.jpg"><br>Naughty Schoolgirl Rubbing and Fingering Her Meaty Pussy til She Cums Hard',
+'ph6127da077a59e"><img src="https://ei.phncdn.com/videos/202108/26/393636061/original/(m=eafTGgaaaa)(mh=CZSZ6cZTDQkjIAmU)9.jpg"><br>Naughty Schoolgirls Meaty Pussy Lips Wrap Around a BIG Vibrator and She Cums Hard',
+'ph6127f5b1bc4ce"><img src="https://ei.phncdn.com/videos/202108/26/393641551/original/(m=eafTGgaaaa)(mh=kdomG5yFyvgiOqZn)3.jpg"><br>Naughty Schoolgirl Cumming Really Hard Straddling a Lucky Face',
+'ph614e54cfa2ffc"><img src="https://ei.phncdn.com/videos/202109/24/395281021/original/(m=eafTGgaaaa)(mh=bsSz1shSCJS43l5T)12.jpg"><br>Naughty Schoolgirl Rides a Big Dildo and Cums All Over It',
+'ph614f57bf607cd"><img src="https://ei.phncdn.com/videos/202109/25/395318381/original/(m=eafTGgaaaa)(mh=PxQdn--TgkEHShA5)10.jpg"><br>Naughty Schoolgirl Gets Her Wet Pussy Licked and Fucked with Cum Swallow',
+'ph61539de3ca737"><img src="https://ei.phncdn.com/videos/202109/28/395499751/original/(m=eafTGgaaaa)(mh=gxqq0nAU8SCgZ_sB)2.jpg"><br>Horny Brunette Nympho Plays With Her Meaty Pussy on the Beach With People Watching',
+'ph6153a255d720f"><img src="https://ei.phncdn.com/videos/202109/28/395500401/original/(m=eafTGgaaaa)(mh=Zv1oyo3Y-3btTg3_)12.jpg"><br>Horny Brunette Nympho With Meaty Pussy Lips Rides a Big Dildo in Her Sexy Sundress',
+'ph6154a984866ed"><img src="https://ei.phncdn.com/videos/202109/29/395549571/original/(m=eafTGgaaaa)(mh=olUB69UzzsJdgczL)5.jpg"><br>Horny Brunette Nympho Rides a Dildo Her Meaty Wet Pussy Grips it Hard',
+'ph6329c48979025"><img src="https://ei.phncdn.com/videos/202209/20/415965251/original/(m=eafTGgaaaa)(mh=6PX9_6JYjxFw39Oa)16.jpg"><br>WHITEBOXXX - PERFECT GIRLS - The Blonde Compilation Part 5',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "suzie-honeydew"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

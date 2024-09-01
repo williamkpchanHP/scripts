@@ -1,0 +1,81 @@
+<base target="_blank"><html><head><title>more-pics: 19</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 100%;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">more-pics: 19</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZTUxMDFkZGViNTEzNDhlYjYwMzlhYzdlZTVkNGZmZmE/jpeg/000/514/495/511_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OGIyNTUwMzAxNzMyYmNjZTZkNWI2MGQxNDE2MGM5YWU/jpeg/000/514/495/536_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ODZjYjdiY2EwM2ViNjFkN2E1MWVhN2Q4ZWQyNmMyYzc/jpeg/000/514/495/532_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZTMwZWY4ZWViMTUwMDUxNmUyZDk3MzZkMzhjZjk1NzI/jpeg/000/514/495/531_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/Mjk4YjlhZWI5NDE0ZGYwZDcyZTI5OTZmZTFkMmEwZGE/jpeg/000/514/495/528_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ODM0N2ViZjdmNTM2ZTQ3NWY0ZGY2NGU2ZjA3MTAyZGE/jpeg/000/514/495/527_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MzU4ZmI5OWM5YmNhOWY1YzBhYmYyZDNhZjk2NWU4YzE/jpeg/000/514/495/526_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MjQ3NzgzNTQ2NjEwMmU2YmRkYmU4NzFmMWVlNmRiMDU/jpeg/000/514/495/525_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MmNlZWI0MjQ1MjU0NmRkNTNlNzg1MTBiY2RiOWVkNzg/jpeg/000/514/495/524_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MTQ1MGM3OTJhNTRlYjMxZDY0MzE2YTZlNDMzZmQ3OTk/jpeg/000/514/495/523_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/N2I2YmY2OTg2MDI5MjI5ZWE2ZmQ2NzNhM2I1MGRjYjc/jpeg/000/514/495/522_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OTZmMDJkY2VkODhiMjVlODYxYmE1YzEwMThkYjA1ZDk/jpeg/000/514/495/520_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OTcyODIwNDBmODkxMjk4MjQ3YzhiNTgzYmNjZDdjZDI/jpeg/000/514/495/519_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MGMyOGI3YTFmYzAxMjMwYjRlNmM5MjdiNjAxMTAwNTc/jpeg/000/514/495/518_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YmJlMWMzNzZlMTI4MzE0YjVmOTgzNzI2NzQzOGUyYzA/jpeg/000/514/495/517_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YzA1ZTFkMzQyNmU0ZjdjZTI4MGQ0NGQ0ZTJkZjJiOWU/jpeg/000/514/495/516_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/N2UwZmRlYzIwYmEwM2E2Njg2ZjllODkyN2RhZDZkMDU/jpeg/000/514/495/515_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NWUwNGU3YzFjM2I5YTFjN2QyMDUxOGY3NjQyYjI1NGI/jpeg/000/514/495/514_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OTViOWFkZjVkNTc0NTRhOTkyY2Q4ZTdiMTJhZDYyZTM/jpeg/000/514/495/513_1000.jpg">',
+'',
+];
+lineHeader = ''
+lineTail = ''
+bookid = "more-pics: 19"
+showRange = 80
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+<base target="_blank"><html><head><title>curvyjuly23</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/trying-new-lingerie-15804889"><img src="https://ic-ph-nss.xhcdn.com/a/MGI2ZDg2YzgyNTFmYmVjYjZjNzk5NmQxODlkYWYzY2M/jpeg/000/504/821/878_450.jpg"><br>Trying new lingerie</a> 80',
+'<a href="https://xhamster.com/photos/gallery/little-toes-15805931"><img src="https://ic-ph-nss.xhcdn.com/a/ODhkZTllOGE2Nzk3ZDViOTI1MmY4MTAxOGY0YjIzMzg/jpeg/000/505/317/921_450.jpg"><br>Little toes</a> 7',
+'<a href="https://xhamster.com/photos/gallery/pussy-and-ass-15805930"><img src="https://ic-ph-nss.xhcdn.com/a/MGExMDZjM2ZmOGQxM2UzYWI5N2I1M2E2ZjI1MjRlNjA/jpeg/000/505/317/688_450.jpg"><br>Pussy and ass</a> 42',
+'<a href="https://xhamster.com/photos/gallery/a-little-bit-more-of-me-15805347"><img src="https://ic-ph-nss.xhcdn.com/a/ZTRkNDkyOTJlNzJkYjQ1YTQyM2ZjYmFhMzQxMDA4MjA/jpeg/000/505/076/123_450.jpg"><br>A little bit more of me</a> 39',
+'<a href="https://xhamster.com/photos/gallery/lingerie-and-more-2021-10-03-15813314"><img src="https://ic-ph-nss.xhcdn.com/a/OGM2ZGI5YWU2MDNmMGYyYjU5YzY4YWUyYTFmNGRiNjA/jpeg/000/507/752/787_450.jpg"><br>Lingerie and more - 2021-10-03</a> 30',
+'<a href="https://xhamster.com/photos/gallery/black-and-blue-lingerie-2021-11-15900052"><img src="https://ic-ph-nss.xhcdn.com/a/YjU1ZmRlZGFhNjhhZTI1NjQzODhjYTY3OGM2YjYzYTk/jpeg/000/512/135/973_450.jpg"><br>Black and blue lingerie 2021-11</a> 28',
+'<a href="https://xhamster.com/photos/gallery/bath-time-fun-15804886"><img src="https://ic-ph-nss.xhcdn.com/a/MjlmYTk3Y2NmZGJjZWFjNDhmYzRmMWJhZTdjM2MwMTA/jpeg/000/504/820/853_450.jpg"><br>bath time fun</a> 23',
+'<a href="https://xhamster.com/photos/gallery/footjob-photo-shoot-sept-2021-15809378"><img src="https://ic-ph-nss.xhcdn.com/a/OTdjMDU0M2UwNjQ4OWExNWExNjEzMzYxMDc2Y2QwODQ/jpeg/000/506/589/231_450.jpg"><br>Footjob photo shoot sept 2021 </a> 14',
+'<a href="https://xhamster.com/photos/gallery/rope-fun-15815879"><img src="https://ic-ph-nss.xhcdn.com/a/ZDM5NzhkNzljYjJhNWJjMzQyOGJlZDdiNzMwZjRiNDk/jpeg/000/508/499/711_450.jpg"><br>Rope fun</a> 11',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "curvyjuly23"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<base target="_blank"><html><head><title>emma_skyeeBatch: 113</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:100%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">emma_skyeeBatch: 113</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/pictures-of-me-15886949</k>',
+'ZTQzZmNhZGM0MDYyYmU1ZGYzMGRhOWZmYzc2ZWI1ZDc/jpeg/000/511/841/978',
+'M2IyZmIxMjkxZWZjYTU0YzRiMjM4NzU4ZGEyMTE4ODQ/jpeg/000/511/841/977',
+'YjdhODExYTg1N2MyYzI4MjQwNjkzZmM4YTk5NTQwM2Y/jpeg/000/511/841/976',
+'YTUwNTVlYmI4YWMwODM0MzM4ZTBhMjg2MjQ4NzBmNjc/jpeg/000/511/841/975',
+'MmI3OWJkZWYwOGU0ZDhmOWRlMWJjYWNjZDY3YmUyMDg/jpeg/000/511/841/974',
+'ZTk2MmJjNGRmMzczMDQ5N2RhZjBjNWU2NDQxN2I0Mjk/jpeg/000/511/841/973',
+'YmE4MGZkZjJjNDUxZmMwNzExMDdhYTY3MTFhMTViMDg/jpeg/000/511/841/972',
+'YTVjOWFlMmY2MmYwMWM3YzdjMTlhYjRkOWJhM2VkOTQ/jpeg/000/511/841/971',
+'ZjY2MTgwOTM4ZTFmZWExZGZjMTA2ZWUyYWIwNTdhMzA/jpeg/000/511/841/970',
+'NzFmOGI4YjcyYWQ0OTlmOTkzOWJhMTMyMzdjOTg2NTA/jpeg/000/511/841/969',
+'ODc0NGM5NDMzMjY2ZmEyOGY2MWRjNTg1MTJjZWFjNDU/jpeg/000/511/841/968',
+'NDVkMzMyMmI3NWZlNGE0NmZmYTNjNTVjNjNhOGNmOGE/jpeg/000/511/841/967',
+'NWZjZmU5MGNkNzhkYjAxYzY4ZjI3Mjg5YWI1ODkwYzk/jpeg/000/511/841/966',
+'Y2Y4NGIzMTExYzJhYTllNDQ1OTAzNDZmNWJiZjRjMjQ/jpeg/000/511/841/965',
+'ODRiMzllZWNiODdmODczMjQ2MjdhYTViODU2Yjc0MjI/jpeg/000/511/841/964',
+'ZDUzZjUwMTQxMjU0NTRlYTRhNDg5MmZkODdkMzRiMTU/jpeg/000/511/841/963',
+'NDI4OTg0YjJhNDVmNzc1M2UwMDQyZjYxMDE4MGY4NmU/jpeg/000/511/841/962',
+'ODBlOGJkNDc4MTYyYTIzYWU2ZDA2ZDI3NWE1ZGExZjM/jpeg/000/511/841/961',
+'MjBlNDU2NGY2MTU2MDM3OTQ5MjA1YWY4ZTg3NTZiYTU/jpeg/000/511/841/952',
+'MDBjNjc4ZTA2MjNiZjM5MzI5NGE4OTk1NTA2ZTI3YjE/jpeg/000/511/841/948',
+'YzUxOWY4NjA1OWU2M2U4YWY4N2M2MDZjNWY4OTM0N2I/jpeg/000/511/841/945',
+'MDUwOGVlY2JhMjFlZGJhOWYzNzZiNTc5ZTQ4ODU3YmM/jpeg/000/511/841/941',
+'NjM2Y2EwNGUyOTY3MDU0OGMxMjY4OThiOGNiN2I4OGI/jpeg/000/511/841/937',
+'ZjJhYWMxZjQ2ZGVjMzk1YWZmMTY5Mjk1ODg3MWQwNTM/jpeg/000/511/841/935',
+'N2VhNzEzNWQwZDBmZjQ2NThhZDkwOWZhYjBmMzVlNzU/jpeg/000/511/841/934',
+'MjNiYThlN2ZmZmFjMzliZjM1MzA1NzBiOTBmNjA0OTQ/jpeg/000/511/841/933',
+'NzU2Y2I0OTUwMjk2MGRkMDk3YTQzM2VkN2IxZGU1MDY/jpeg/000/511/841/932',
+'ZjM3MzU0OTQ2YzBmOGM3ZTJmMjExNjhlYTFiOGFiZDA/jpeg/000/511/841/931',
+'NTA2ODI1MjhkYjgzNjAwNjhjNGExZmNhZmJmZjI1YjY/jpeg/000/511/841/930',
+'ZTQ5MDU2ZjM2ZjgwMTYwN2Y1MjJkNjZlMDc3MzE4NjE/jpeg/000/511/841/929',
+'MmQ5OGI4NTk2OTBiYThmNWEwZGRiMmRjYmJkNjVjNzA/jpeg/000/511/841/928',
+'Nzg5NTg1ODgyZjhjNmNlOTA1Mzc4Mzg5OTZhMjExMGQ/jpeg/000/511/841/927',
+'OTU4ZjcxYTMwYjlkMDg1YTFkZTJlNjJhZTljZTMwNjU/jpeg/000/511/841/926',
+'NDc3YWRmZGY2NjkzMWNkNGNhNjI5ODU3MmQwMzA1NWY/jpeg/000/511/841/925',
+'MTcxNThkOTg5ZDQ2Njc5NDA3Njc3MWNmOTY5ZWJmYzA/jpeg/000/511/841/924',
+'OWMxNjg0Y2I5YjcwMmVjMjViZTQ4MjU1ZWM1M2UwYzc/jpeg/000/511/841/923',
+'ZTAzNzYwOWQ2YTE4ZTA3YTk1YmQ2YjljODIxMmFmMDM/jpeg/000/511/841/922',
+'ZGNiMjY5OTA0NDQ3ZmFmYzUyY2U1ZmE4YWZkNzRlNWE/jpeg/000/511/841/921',
+'ZGI0YWJlMGFkZTEyYjI0ZjljMGQ5ZTNmMTBjNTIzOGE/jpeg/000/511/841/920',
+'Yjk1MmRiOTMxMDBhZTg2N2VmNmVjMTJlNjdhNWRhOWU/jpeg/000/511/841/919',
+'NGVlMjFhNjA4MGQzMDgzNmUxZDBiNjlhYWYwMTY1Yjc/jpeg/000/511/841/918',
+'YzI1OWFhM2ZiZjJlOTc2ZmEyN2YwZTZjMTE0OWIzN2I/jpeg/000/511/841/917',
+'MzE4MDg2YWJmZGUzOWRiZjg1Y2ZjYTcxODdkNDYwZjU/jpeg/000/511/841/916',
+'MTAxYWI4ZmFiNWViYzdiNTcyZGM1Y2FhN2MyM2ZlYWQ/jpeg/000/511/841/915',
+'ZTk5OTdjNTBmYTNlZTZiOTQwYTE4ZTBlM2YxZTBlMGM/jpeg/000/511/841/914',
+'NmJlNTRjNGIyM2Y2OGQyNjVmZjU4Y2JlYWE2NjEzNDI/jpeg/000/511/841/913',
+'ZjJmNjA0YjgyN2I4NWVkYmFkNWUzMDlmMTJmYzIwOWU/jpeg/000/511/841/912',
+'NWUzMzRlODE3ZGU2ODM4NmMyODVjNzk1Mjg3MGRhZGI/jpeg/000/511/841/911',
+'M2JhYTFiN2E3YTgwNTJlODMxZDRkZjBhNzdiMTVhNmM/jpeg/000/511/841/910',
+'MDE4ZTA4YTg0ZjQ2MzJjY2MwMTBhOTViMzg3YWM2NmU/jpeg/000/511/841/909',
+'ODA3MGQwOTAyZjgyN2Q1OTk5NGM5MGNiYTFlNmY0MDQ/jpeg/000/511/841/908',
+'ZmU4ODNjOGI3MDdkZWY1MzYxNDBkNjNmZDUzZTQ5MzU/jpeg/000/511/841/906',
+'ODRjYmEzOWE4MmIzMDc4Zjk5ZThhMmUyOTU0NTI3NWU/jpeg/000/511/841/905',
+'OGRlMTc2ODQ5OTgxZDg5Yjg5ZGY3ODY4YjkyZGIwNDk/jpeg/000/511/841/904',
+'OGYxMzBhZWEyMDhmMWZjYThiNGRmNjM1MWU0YzdmZjc/jpeg/000/511/841/903',
+'MWQ3Zjc5OGY0MGU5ODI4MjZkNzYzNTJlMjI2MzY4ZDY/jpeg/000/511/841/902',
+'MzEyZDA2NzBlMDkwZTMyZDVhZTY1ZDVlMzVkYzgxYTQ/jpeg/000/511/841/901',
+'Yjg3ZDQ5ZjQ4MzllMWViZWY1MmMxOTAwYjg5OWY1NmQ/jpeg/000/511/841/900',
+'YjBlMDMxNDBmZmE3ODE0ODc4NjE2ZTI4ZDRlNzNmYTU/jpeg/000/511/841/899',
+'ZGM4NTZjNzVmZTQyYTJiM2I5NDUyYmVkM2Y2OWY0YzA/jpeg/000/511/841/898',
+'<k>https://xhamster.com/photos/gallery/pictures-of-me-15886949</k>',
+'N2YzYWM5NzA1NmExYWYwYmFjMjg2M2M1YTY1NmRlZmY/jpeg/000/511/841/897',
+'YzEwZjc2MGMwNTZjZDRiODRiNDQ2OGE0Zjk0MmRhOGQ/jpeg/000/511/841/896',
+'ODcyMjNhNDc4ZTQ2MmM4ZTE1ZTczOTU2ZWE4ODE3ZTI/jpeg/000/511/841/895',
+'ZjNkMDZjNzg3OTc1YjUxMzQ4ODc2ZjJjMmM0ODAxYjg/jpeg/000/511/841/894',
+'OTQ2MDFlNDc5MDcxODI5MTc0ZjRjY2U2YzUxMTQ1NzI/jpeg/000/511/841/893',
+'ZGYwODFmZDY3MjZmZGE0ZGMwZjQyZDIzMmJiYTM2YmY/jpeg/000/511/841/892',
+'OWVmODM5ODhjMDRlMTQ1OGI2ZTVkOGVjOTEyOTA3MWM/jpeg/000/511/841/891',
+'NmFmNjA0NjVmODk4OGI2MGE2YzZjM2U5MWY2YzJmYmU/jpeg/000/511/841/890',
+'MmUzYTc4OWM1MWY5YTAxY2U3NGJiYTRkZWM4ZTU2ZTI/jpeg/000/511/841/889',
+'YTE5OGNkYWViY2UwZDlkOGZhNzQxNjAzYTFkZDFjOTQ/jpeg/000/511/841/888',
+'MzkwNDU3ZmE0OThmNTdlZTI3N2U2MDFjMzkzOTEwYTQ/jpeg/000/511/841/887',
+'OGZjYzJjYjM4OGJmNjFmOTgxNzEwOWNhYjM5MmQxNDg/jpeg/000/511/841/886',
+'NTJkNDBiMmU0NzE3MjVmN2VhYjk1ZWQ2MGI5MzUwOTc/jpeg/000/511/841/885',
+'MzYzMDdlNDVkMzg0Mzc5NDE0MjU0ZWUzYTNkZGJjNWE/jpeg/000/511/841/881',
+'NWQ4MmZlNGJhNGJmNzhiMjQwYzNlM2QwZDUxZmIzNGY/jpeg/000/511/841/878',
+'ZWQyYzBlZTUxOTJhZTIwODAxNGIzZWQyMGUyOTJiMTQ/jpeg/000/511/841/877',
+'Y2RmNjA1MzQyMjcxZTA0MzQ2YmJmM2MxOTEzYjE2MTU/jpeg/000/511/841/876',
+'YTVjOWM3OGNlNjY0M2FjMjQ5ZDUzMWZjYzlkYjdkZTE/jpeg/000/511/841/875',
+'NDMzYWQ5MTQ3Nzk5YjAwNjk0N2IyYmQxNTE1NDI2Mjk/jpeg/000/511/841/874',
+'NmMzYmY4YTQ3MmM4YTM4ZTE0MmQ0NTExZGZkNjRkZDc/jpeg/000/511/841/873',
+'OTdiNTZiNzkxNTRhMTVjZThiMThjNjAyZjA4OWQyNDU/jpeg/000/511/841/872',
+'MjdiMTBkYzJiZjI0YzNjYmIzMjhkZTlkMjhkMWQzMjg/jpeg/000/511/841/871',
+'ZTcwYjhmODYxNzNhZDA0MmQwNDhiZWRkOGM3ZGJmMmE/jpeg/000/511/841/870',
+'ZDA0YTk3OGI5ODI3NDIyZGZkZTc2NWJhMTQxODMzZDE/jpeg/000/511/841/869',
+'YzJiYTgxYzQ5ZjliYTQ2NTdlMmZmOTQ0ZGY3OTI3ZTU/jpeg/000/511/841/868',
+'ZWZhNGE0MDJiMDJhYjlmY2Y4NTJhZjVmMDVkMTIyODA/jpeg/000/511/841/867',
+'ODNhNWMwMjQ1YWJkMDFhZTY5NGNiY2MwOTcxMjhlZWQ/jpeg/000/511/841/866',
+'MGE3NzVmNDBkMDBhMWRlMTE5NzAwYTk4Y2RmMzNjNmU/jpeg/000/511/841/864',
+'YmI4NzdjZjBmZDNkOTFkZTliMzA2MDk3N2Q0MTFhMjc/jpeg/000/511/841/863',
+'OWNjZmEyNDM4MDUwMzgwMDYzOTI4N2IwM2IwODdlMDQ/jpeg/000/511/841/862',
+'OGEyOWJhZTkzMjMxZWNhNGMwM2MyNmNiNzdiNWQzMzc/jpeg/000/511/841/861',
+'OGRjNzQ0YWFiZjQxMzQ3N2MzMmJiZTY5NWQxMjg4OTA/jpeg/000/511/841/860',
+'NzcxNWQzNDkyMjZiMGUwZjc4MDUwMzlmODM4ZTY1MjA/jpeg/000/511/841/859',
+'Njg4MmRjOGExNWNmNDMxZDM1NjBkZjQzMmQ5MTk4YWQ/jpeg/000/511/841/856',
+'Nzk5NTMxYWI1ZTdkOWQzMTg3Mzk4MjBiOTk5MTkwNzk/jpeg/000/511/841/854',
+'MjgyYzNmYzU2NmM3ODAzYzVmZWRjMjU1NDJlNzNkZTI/jpeg/000/511/841/853',
+'ZTVlYWMzMjY5MjQ0MTMyNGQ2ZjBmMzIyMjBhNzYyNmQ/jpeg/000/511/841/852',
+'<k>https://xhamster.com/photos/gallery/my-gifs-15886941</k>',
+'<img src="https://thumb-p0.xhcdn.com/a/FizyFJzjrGhHkjnjOm5-Jg/000/511/841/740_1000.gif">',
+'<img src="https://thumb-p9.xhcdn.com/a/bC4kAUCJyKa6BAlUX9nqrw/000/511/841/739_1000.gif">',
+'<img src="https://thumb-p8.xhcdn.com/a/ZFyVY9Oh7joP4mhmuUvdZg/000/511/841/738_1000.gif">',
+'<img src="https://thumb-p7.xhcdn.com/a/CQ8Dux7hdG2eF0ZfOZXDkA/000/511/841/737_1000.gif">',
+'<img src="https://thumb-p6.xhcdn.com/a/LNSIwLh1SNWwX2ZGXC2Ibw/000/511/841/736_1000.gif">',
+'<img src="https://thumb-p5.xhcdn.com/a/mTuMJ1zvrjSitAP5SNhTnQ/000/511/841/735_1000.gif">',
+'<img src="https://thumb-p3.xhcdn.com/a/Cec4RR-1tqM9PXM9bPI1xQ/000/511/841/733_1000.gif">',
+'<img src="https://thumb-p2.xhcdn.com/a/lPItXWaADWoxwCoMre768g/000/511/841/732_1000.gif">',
+'<img src="https://thumb-p1.xhcdn.com/a/l7xGRq1oLDKeNHyCnwbHXg/000/511/841/731_1000.gif">',
+'<img src="https://thumb-p0.xhcdn.com/a/tP32WZHQXLyc2DxMyNIRyQ/000/511/841/730_1000.gif">',
+'<img src="https://thumb-p9.xhcdn.com/a/L91--UcT0GowW_Hdjj-jHg/000/511/841/729_1000.gif">',
+'<img src="https://thumb-p8.xhcdn.com/a/RUFgHWC_6GPty3rUp3v2iA/000/511/841/728_1000.gif">',
+'<img src="https://thumb-p7.xhcdn.com/a/nr4MSIQe3mxiBo2TsZPe6Q/000/511/841/727_1000.gif">',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "emma_skyeeBatch: 113"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

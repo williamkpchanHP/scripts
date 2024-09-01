@@ -1,0 +1,109 @@
+<base target="_blank"><html><head><title>teamskeet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/jackie-hoff-elevated-with-big-tits-15805754"><img src="https://ic-ph-nss.xhcdn.com/a/ZDRjODkxMTg3YWMxM2YzZmFkYmVkYzc0YTZlODhjZjQ/jpeg/000/505/222/487_450.jpg"><br>Jackie Hoff - Elevated with Big Tits</a> 64',
+'<a href="https://xhamster.com/photos/gallery/cara-may-suck-off-our-troops-15820564"><img src="https://ic-ph-nss.xhcdn.com/a/MTU5Mzg0ZDJkOGMzNWEzZjliOTJiMzFiNjYyM2Y0MmY/jpeg/000/509/545/313_450.jpg"><br>Cara May - Suck Off Our Troops</a> 62',
+'<a href="https://xhamster.com/photos/gallery/skylar-vox-perfectly-gorgeous-view-15808421"><img src="https://ic-ph-nss.xhcdn.com/a/ODdhMGFhMjVhZjE2YjhmODg0N2VjZTU1OTRkOTNhZGI/jpeg/000/506/297/387_450.jpg"><br>Skylar Vox - Perfectly Gorgeous View</a> 199',
+'<a href="https://xhamster.com/photos/gallery/skylar-snow-national-no-bra-day-15821581"><img src="https://ic-ph-nss.xhcdn.com/a/Mjc3Yjc5NjQ3ZDQzYzNiZWZjNWIzODE0ZmIxNzUyNzc/jpeg/000/509/688/527_450.jpg"><br>Skylar Snow - National No Bra Day</a> 199',
+'<a href="https://xhamster.com/photos/gallery/natalia-nix-nerdy-deal-15803222"><img src="https://ic-ph-nss.xhcdn.com/a/Y2Q5MzRiMGRmOWRkZDhiMmJkOTJmZDkyMDVmOTZiYTY/jpeg/000/504/051/601_450.jpg"><br>Natalia Nix - Nerdy Deal</a> 199',
+'<a href="https://xhamster.com/photos/gallery/mj-fresh-leather-15808714"><img src="https://ic-ph-nss.xhcdn.com/a/NTlhOTE4MmY1Zjc2ZTdiMDkwOGJmY2I5ZGVhYTQzYTM/jpeg/000/506/382/035_450.jpg"><br>MJ Fresh - Leather</a> 199',
+'<a href="https://xhamster.com/photos/gallery/michele-james-pierced-nipples-by-the-pool-15810677"><img src="https://ic-ph-nss.xhcdn.com/a/NjkzZDJiOWVkYjEzZjlkYTMxMWNlOTA5Nzg5YmI0OTk/jpeg/000/506/952/722_450.jpg"><br>Michele James - Pierced Nipples By The Pool</a> 199',
+'<a href="https://xhamster.com/photos/gallery/kay-lovely-busty-bombshell-15803958"><img src="https://ic-ph-nss.xhcdn.com/a/OTczOWM5MWQxM2Y0NzZkNzgzYzRjYzEzZjI1YmQ0YWI/jpeg/000/504/381/394_450.jpg"><br>Kay Lovely - Busty Bombshell</a> 199',
+'<a href="https://xhamster.com/photos/gallery/indica-flower-miami-15809808"><img src="https://ic-ph-nss.xhcdn.com/a/ZWI1NDZmMWIwZWU1N2FkZjI4YTgyMDkyYjljNDY1ZWI/jpeg/000/506/712/383_450.jpg"><br>Indica Flower - Miami</a> 199',
+'<a href="https://xhamster.com/photos/gallery/hadley-haze-meditation-and-penetration-15810363"><img src="https://ic-ph-nss.xhcdn.com/a/ZmM3OWIxNGM4YmU1MTA5OTcwY2Q0ZDFkN2EwNWRjNTM/jpeg/000/506/878/384_450.jpg"><br>Hadley Haze - Meditation And Penetration</a> 199',
+'<a href="https://xhamster.com/photos/gallery/blake-blossom-pair-of-blessings-15808140"><img src="https://ic-ph-nss.xhcdn.com/a/MTMwMzIzNTM1ZDRhYzA2MGFiZjRjNDY0Y2MzMmVlOTI/jpeg/000/506/217/814_450.jpg"><br>Blake Blossom - Pair of Blessings</a> 199',
+'<a href="https://xhamster.com/photos/gallery/autumn-falls-round-and-robust-reaming-15816015"><img src="https://ic-ph-nss.xhcdn.com/a/OTg3Mzg2ODkyZjZjNThhNjJjY2YwODJjMDc3NGQwOTM/jpeg/000/508/533/837_450.jpg"><br>Autumn Falls - Round And Robust Reaming</a> 199',
+'<a href="https://xhamster.com/photos/gallery/annabel-redd-busty-babes-rule-the-world-15811457"><img src="https://ic-ph-nss.xhcdn.com/a/ZDU5YjM5ZDdmODZmMWI2Yzg0ZWI1MmE4Y2I2N2YzMWM/jpeg/000/507/210/679_450.jpg"><br>Annabel Redd - Busty Babes Rule The World</a> 199',
+'<a href="https://xhamster.com/photos/gallery/alyx-star-test-them-out-15807892"><img src="https://ic-ph-nss.xhcdn.com/a/NGI4MDBmODQ0ODViMDZiNmMxNDY1ZDYyNTJhOTEyNTM/jpeg/000/506/135/497_450.jpg"><br>Alyx Star - Test Them Out</a> 199',
+'<a href="https://xhamster.com/photos/gallery/lexxi-steele-piercings-15809545"><img src="https://ic-ph-nss.xhcdn.com/a/MDNiOGMwOTQxZWM5ZWE4ZDdmYTU3OWM2NzAxYTdjNzE/jpeg/000/506/632/443_450.jpg"><br>Lexxi Steele - Piercings</a> 197',
+'<a href="https://xhamster.com/photos/gallery/jenna-foxx-splash-15810079"><img src="https://ic-ph-nss.xhcdn.com/a/OWQ3Y2QyOTM2MmZiMWVjNmRkNzgyY2I4YzBmMzg2NTc/jpeg/000/506/790/678_450.jpg"><br>Jenna Foxx - Splash</a> 196',
+'<a href="https://xhamster.com/photos/gallery/stacy-cruz-an-impeccable-rack-15813948"><img src="https://ic-ph-nss.xhcdn.com/a/NTYxZWU2MzNjNDNiMTA0NTdmYTEyZmM5MzU3NDYzZTg/jpeg/000/507/958/537_450.jpg"><br>Stacy Cruz - An Impeccable Rack</a> 195',
+'<a href="https://xhamster.com/photos/gallery/ophelia-kaan-helping-with-the-knock-up-15803236"><img src="https://ic-ph-nss.xhcdn.com/a/Njg2MzM2YTE0OWE1Zjc0Yzc2OGRlZDRmNTk3N2MwOWU/jpeg/000/504/053/908_450.jpg"><br>Ophelia Kaan - Helping With the Knock-Up</a> 193',
+'<a href="https://xhamster.com/photos/gallery/serena-skye-big-racks-on-racks-15816351"><img src="https://ic-ph-nss.xhcdn.com/a/ZDYwMzRmNDRiYWU2NzY4NTlmMTk5ZWY1Njc4NDc3MmI/jpeg/000/508/625/896_450.jpg"><br>Serena Skye - Big Racks On Racks</a> 191',
+'<a href="https://xhamster.com/photos/gallery/sofia-lee-next-level-sexy-15811699"><img src="https://ic-ph-nss.xhcdn.com/a/ZmQ0NTM4ZWI4ZjNlYzdlMGQ4NmJlZDdiYzcyOTU5OTI/jpeg/000/507/289/900_450.jpg"><br>Sofia Lee - Next Level Sexy</a> 187',
+'<a href="https://xhamster.com/photos/gallery/jade-kush-asian-tit-tricks-15815345"><img src="https://ic-ph-nss.xhcdn.com/a/MTQ1ZDAxZmVhZTNjOTI5NmY5NzRkOTQ3YzQxZDg0NDA/jpeg/000/508/354/546_450.jpg"><br>Jade Kush - Asian Tit Tricks</a> 183',
+'<a href="https://xhamster.com/photos/gallery/sofi-ryan-a-slippery-dick-ride-15818006"><img src="https://ic-ph-nss.xhcdn.com/a/YzM5YmZlMDE3ZjQ3ZDFmYTA3MmUwYmZhZTgxMzcwNzE/jpeg/000/509/134/299_450.jpg"><br>Sofi Ryan - A Slippery Dick Ride</a> 177',
+'<a href="https://xhamster.com/photos/gallery/ava-black-bounce-jiggle-and-bang-15814205"><img src="https://ic-ph-nss.xhcdn.com/a/YzAwOWM3YjMzZDNkOTU0OTE3MDNkZjU4OWM3YWM5YTI/jpeg/000/508/023/934_450.jpg"><br>Ava Black - Bounce, Jiggle, and Bang</a> 175',
+'<a href="https://xhamster.com/photos/gallery/river-fox-gamer-girl-goo-15817757"><img src="https://ic-ph-nss.xhcdn.com/a/MDAzOGY0ZTFkMGIyZDc0YWZlMjc3M2Q3MjI0OTNkMWU/jpeg/000/509/056/643_450.jpg"><br>River Fox - Gamer Girl Goo</a> 171',
+'<a href="https://xhamster.com/photos/gallery/stacy-bloom-extra-hot-pool-pussy-play-15812240"><img src="https://ic-ph-nss.xhcdn.com/a/YjFlOWFlNTA1ZGU0ZmEwNTllM2Q1ZDNmODNjNjMyY2E/jpeg/000/507/451/278_450.jpg"><br>Stacy Bloom - Extra Hot Pool Pussy Play</a> 160',
+'<a href="https://xhamster.com/photos/gallery/ava-sinclaire-gamer-tits-15805153"><img src="https://ic-ph-nss.xhcdn.com/a/YWEzYjgzODg3NmViOGYyMjM4YTg1ZDFmZWYyZWFkYWE/jpeg/000/504/948/495_450.jpg"><br>Ava Sinclaire - Gamer Tits</a> 159',
+'<a href="https://xhamster.com/photos/gallery/bess-breast-cozy-tits-15816658"><img src="https://ic-ph-nss.xhcdn.com/a/NGU5ZDM0MWRhMjlhZjBjZDBjZjEyNmNmYzEzNTNlZmE/jpeg/000/508/713/532_450.jpg"><br>Bess Breast - Cozy Tits</a> 158',
+'<a href="https://xhamster.com/photos/gallery/skylar-vox-angel-tits-15813458"><img src="https://ic-ph-nss.xhcdn.com/a/NDU1MTczM2Y3NmM5ZWQzMzI4NzJjOWEwZWQ2NTJmMTY/jpeg/000/507/791/820_450.jpg"><br>Skylar Vox - Angel Tits</a> 153',
+'<a href="https://xhamster.com/photos/gallery/scarlett-hampton-games-with-a-twist-15803202"><img src="https://ic-ph-nss.xhcdn.com/a/MGEzNmYxMTg5OTMzYTAyNzUwNzI1MWUwZmZhYjVhNTg/jpeg/000/504/047/724_450.jpg"><br>Scarlett Hampton - Games With a Twist</a> 150',
+'<a href="https://xhamster.com/photos/gallery/samantha-reigns-angel-youngs-operation-stepbro-swap-15803240"><img src="https://ic-ph-nss.xhcdn.com/a/OGY3MjhmYWRiNmY2MTIyNmRiNzM5NzdhMTA2ZTUzZjY/jpeg/000/504/054/603_450.jpg"><br>Samantha Reigns, Angel Youngs - Operation Stepbro Swap</a> 150',
+'<a href="https://xhamster.com/photos/gallery/nala-brooks-let-them-bounce-15806276"><img src="https://ic-ph-nss.xhcdn.com/a/OTUxY2FjMGI0YmJlMjYyYzRlOTMwMTBiNTIxMTFlMjA/jpeg/000/505/470/613_450.jpg"><br>Nala Brooks - Let Them Bounce</a> 150',
+'<a href="https://xhamster.com/photos/gallery/nala-brooks-an-impeccable-pair-15804479"><img src="https://ic-ph-nss.xhcdn.com/a/NzdjMTJhODg1M2JiNTZlNGYyMzYzNjk0MjMyNDg3Yzc/jpeg/000/504/622/956_450.jpg"><br>Nala Brooks - An Impeccable Pair</a> 150',
+'<a href="https://xhamster.com/photos/gallery/honey-hayes-honeys-housemaid-service-15803205"><img src="https://ic-ph-nss.xhcdn.com/a/ZmUxMTVmMzc2NjM1OTBlMjFmOGJlNWM0ZTQ0M2YxNWI/jpeg/000/504/048/554_450.jpg"><br>Honey Hayes - Honeys Housemaid Service</a> 150',
+'<a href="https://xhamster.com/photos/gallery/gabriela-lopez-blow-you-away-15806462"><img src="https://ic-ph-nss.xhcdn.com/a/OTZmMDAwMTU4NzdiMjNjYmY4OGEwNTdmZTQ2YmU2YzI/jpeg/000/505/557/170_450.jpg"><br>Gabriela Lopez - Blow You Away</a> 150',
+'<a href="https://xhamster.com/photos/gallery/eve-marlowe-the-eavesdropping-milf-15804144"><img src="https://ic-ph-nss.xhcdn.com/a/ZGVjMGIxNzM0ZTc1OGJhMTU2ZWFkMzA3MzkxYjk2ZDA/jpeg/000/504/463/120_450.jpg"><br>Eve Marlowe - The Eavesdropping Milf</a> 150',
+'<a href="https://xhamster.com/photos/gallery/celestina-blooms-summertime-seduction-15803227"><img src="https://ic-ph-nss.xhcdn.com/a/ZGJlNGEwYzczMGU1M2E2MDI5NTRmMjljZjNmYjIxNGY/jpeg/000/504/052/461_450.jpg"><br>Celestina Blooms - Summertime Seduction</a> 150',
+'<a href="https://xhamster.com/photos/gallery/bailey-base-amnesia-amnesty-15803230"><img src="https://ic-ph-nss.xhcdn.com/a/NzdkNDRlOGU1MWUwZmRlY2ZkNDNiZTU0Mjc5ZjkwZDY/jpeg/000/504/053/304_450.jpg"><br>Bailey Base - Amnesia Amnesty</a> 150',
+'<a href="https://xhamster.com/photos/gallery/aria-kai-bountiful-goddess-15806626"><img src="https://ic-ph-nss.xhcdn.com/a/MmYyNTlmZWQ5Njc2NzNlZDg0MzJiYzZmOTg4YmJhNGI/jpeg/000/505/634/893_450.jpg"><br>Aria Kai - Bountiful Goddess</a> 150',
+'<a href="https://xhamster.com/photos/gallery/angel-youngs-the-inside-job-15803242"><img src="https://ic-ph-nss.xhcdn.com/a/OWRlM2YwMjc3N2ZlMTllOWEwOTY4ZjBmNGExZjI0ZWI/jpeg/000/504/054/801_450.jpg"><br>Angel Youngs - The Inside Job</a> 150',
+'<a href="https://xhamster.com/photos/gallery/amirah-styles-naturals-under-the-sun-15804335"><img src="https://ic-ph-nss.xhcdn.com/a/MTI1NzdhMTZkYjIxYzY3MTIxYzQwMjczZmUzNGYyNDQ/jpeg/000/504/544/829_450.jpg"><br>Amirah Styles - Naturals Under The Sun</a> 150',
+'<a href="https://xhamster.com/photos/gallery/penelope-kay-and-lauren-phillips-naughty-namaste-15803217"><img src="https://ic-ph-nss.xhcdn.com/a/ZTU2YzhkM2MxYjRkNWYzN2ZmNjJkYjcyMTRiYmRlMGU/jpeg/000/504/050/137_450.jpg"><br>Penelope Kay and Lauren Phillips - Naughty Namaste</a> 149',
+'<a href="https://xhamster.com/photos/gallery/mina-moon-no-hands-needed-15806847"><img src="https://ic-ph-nss.xhcdn.com/a/OWVkNzc1MWQxODg5MTdhYzFhMDlkNjdlYzU1MGRiMjY/jpeg/000/505/715/621_450.jpg"><br>Mina Moon - No Hands Needed</a> 147',
+'<a href="https://xhamster.com/photos/gallery/blake-blossom-going-for-a-jog-15805571"><img src="https://ic-ph-nss.xhcdn.com/a/ZjE0M2M5YzhjYmIwOWYxZTJjNzQ4NzEyZDhiZDU0MTA/jpeg/000/505/150/089_450.jpg"><br>Blake Blossom - Going For A Jog</a> 144',
+'<a href="https://xhamster.com/photos/gallery/kenzie-taylor-tits-in-the-tub-15822692"><img src="https://ic-ph-nss.xhcdn.com/a/NDJlM2Y0YjIxZWQ5YTM3OTgzZjlkYTM4NDNkODMyZDU/jpeg/000/509/851/523_450.jpg"><br>Kenzie Taylor - Tits In The Tub</a> 141',
+'<a href="https://xhamster.com/photos/gallery/emily-right-nice-and-shiny-15805324"><img src="https://ic-ph-nss.xhcdn.com/a/YTJjMGQxNjgzZjUyOWIzMjI3MWE2M2RkM2E5YWFmNzg/jpeg/000/505/067/866_450.jpg"><br>Emily Right - Nice and Shiny</a> 141',
+'<a href="https://xhamster.com/photos/gallery/jade-kush-asian-pussy-poppin-15818305"><img src="https://ic-ph-nss.xhcdn.com/a/ZTNlYmM3ZTZlMzYzZWE1N2FiOTMwZDU3ZDJjNTEwMmI/jpeg/000/509/218/878_450.jpg"><br>Jade Kush - Asian Pussy Poppin</a> 140',
+'<a href="https://xhamster.com/photos/gallery/anna-blaze-all-natural-titty-meat-15814539"><img src="https://ic-ph-nss.xhcdn.com/a/OGFjYWU1Y2QzYzYxMGU1MGEyZTE2MDJiMjlkODZhY2E/jpeg/000/508/113/723_450.jpg"><br>Anna Blaze - All Natural Titty Meat</a> 134',
+'<a href="https://xhamster.com/photos/gallery/jenna-foxx-glazed-gazongas-15811995"><img src="https://ic-ph-nss.xhcdn.com/a/NDYwNmE5MTI3YWI1NWRjZTczN2I4NDRlMDQ4MGYzOTU/jpeg/000/507/371/346_450.jpg"><br>Jenna Foxx - Glazed Gazongas</a> 133',
+'<a href="https://xhamster.com/photos/gallery/violet-myers-jumping-for-jugs-joy-15815753"><img src="https://ic-ph-nss.xhcdn.com/a/OGVmMTYxMTNhNjc5MmZhMGY2NmFhOWI4YTAwMDMzNzk/jpeg/000/508/459/045_450.jpg"><br>Violet Myers - Jumping For Jugs Joy</a> 129',
+'<a href="https://xhamster.com/photos/gallery/marica-chanelle-shiny-pair-15807035"><img src="https://ic-ph-nss.xhcdn.com/a/NzhiZmU5ZmYwODk2MTI4MjcyZWU5NWFkNzljMWYzNjU/jpeg/000/505/799/697_450.jpg"><br>Marica Chanelle - Shiny Pair</a> 128',
+'<a href="https://xhamster.com/photos/gallery/kinsley-karter-oiled-up-and-ready-to-fuck-15812602"><img src="https://ic-ph-nss.xhcdn.com/a/ZTVkMmUwMjkxNTFjYWNhOGQ4NWFiMzJjZGQ1MmQ0MjE/jpeg/000/507/539/892_450.jpg"><br>Kinsley Karter - Oiled Up And Ready To Fuck</a> 128',
+'<a href="https://xhamster.com/photos/gallery/violet-myers-with-great-tits-cum-great-responsibilities-15821104"><img src="https://ic-ph-nss.xhcdn.com/a/YzE1ZmE1MmY3NDQwMTkxM2VlOTU2MGU5OGUwMTllZGM/jpeg/000/509/620/183_450.jpg"><br>Violet Myers - With Great Tits Cum Great Responsibilities</a> 123',
+'<a href="https://xhamster.com/photos/gallery/keely-rose-handle-and-prepare-15807668"><img src="https://ic-ph-nss.xhcdn.com/a/MTE1MTcyOTYyZDA1ZjYyZDU3YzdmOTg5NmZlYzBhMTg/jpeg/000/506/054/024_450.jpg"><br>Keely Rose - Handle and Prepare</a> 114',
+'<a href="https://xhamster.com/photos/gallery/lena-paul-the-porn-office-15818673"><img src="https://ic-ph-nss.xhcdn.com/a/NDZjMThhMzRkOWQ1Y2FjYTk1OWI0OTQ0YjM5ODAxZGQ/jpeg/000/509/301/146_450.jpg"><br>Lena Paul - The Porn Office</a> 112',
+'<a href="https://xhamster.com/photos/gallery/victoria-june-rain-rain-hoe-away-15822058"><img src="https://ic-ph-nss.xhcdn.com/a/ZGJlYzY3ODlkZTFlOWVjNjg2MDg3MmRkOTExMzJkMWE/jpeg/000/509/760/045_450.jpg"><br>Victoria June - Rain, Rain, Hoe Away</a> 111',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "teamskeet"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,932 @@
+<base target="_blank"><html><head><title>SEXY PICS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src='https://williamkpchan.github.io/mainscript.js'></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 20px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 18px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img, iframe {max-width: 100%; margin: auto; display: block;}
+</style>
+<body onkeypress="chkKey()">
+<div class="js-tip"></div>
+<div class="tip-number"></div>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span><br>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+<select id="selectMusic" onchange="changeAudioSource()"></select>
+<script src='./mp3/playMusic.js'></script>
+<audio controls autoplay loop class="blue" id="myaudio">
+  <source src="./mp3/輕音樂 26首.mp3" type="audio/mpeg">
+</audio>
+<p class="Notes"></p>
+<script>
+var tipsList = [
+'',
+'iframe src="https://assets.pinterest.com/ext/embed.html?id=59883870036558387" height="714" width="345" frameborder="0" scrolling="no" ></iframe',
+'<img src="https://i.pinimg.com/originals/30/8d/f9/308df9d6e27640bba4f7dfbdfcc45ce8.jpg"',
+'<img src="https://i.pinimg.com/564x/53/b9/ae/53b9aec6040340c33431fcaf4069fd5a.jpg"',
+'<img src="https://i.pinimg.com/originals/79/8b/10/798b10557dab28093c9b04922dc5a103.jpg"',
+'<img src="https://i.pinimg.com/originals/56/7b/48/567b4867a0ae32ec4b33c0648b810c73.jpg"',
+'<img src="https://i.pinimg.com/originals/6f/5f/d5/6f5fd5e2aa2113af90d1bf6568572ed9.jpg"',
+'<img src="https://i.pinimg.com/originals/13/90/78/1390784c017093b96de33259323b5efa.jpg"',
+'<img src="https://i.pinimg.com/originals/e6/ec/92/e6ec92ba9017c1c032bda5cc505a1d52.jpg"',
+'<img src="https://i.pinimg.com/originals/0a/2e/d0/0a2ed0911fb13fae699b4538e7990d4f.jpg"',
+'<img src="https://i.pinimg.com/originals/0c/11/a3/0c11a38be5ee19f6d341cecaf88ad468.jpg"',
+'<img src="https://i.pinimg.com/originals/eb/24/10/eb24101a60f0e35cc1daff97b8f918b1.jpg"',
+'<img src="https://i.pinimg.com/originals/81/50/75/815075b397208422696a2f53f6648056.jpg"',
+'<img src="https://i.pinimg.com/originals/4c/f8/f2/4cf8f245f65b04e78622e513e226d9d5.jpg"',
+'<img src="https://i.pinimg.com/originals/8d/09/f5/8d09f5279b90e502e7383ec6fb33a0bd.jpg"',
+'<img src="https://i.pinimg.com/originals/45/6d/62/456d628217e8b82b746440f03996f85a.jpg"',
+'<img src="https://i.pinimg.com/564x/e3/c5/ae/e3c5aedaee84a7359ed322834825383f.jpg"',
+'<img src="https://i.pinimg.com/originals/8e/70/02/8e7002f0f6ffe80ec7f2861fa598f738.jpg"',
+'<img src="https://i.pinimg.com/originals/f1/fb/c3/f1fbc349e96e1b785a023841c554fdd2.jpg"',
+'<img src="https://i.pinimg.com/564x/d0/f6/59/d0f65923a2747cd1b26c6f4ca6f1ca73.jpg"',
+'<img src="https://i.pinimg.com/originals/fc/55/58/fc55584a8355a6b20d4b1a7784ed2859.jpg"',
+'<img src="https://i.pinimg.com/originals/d2/d2/d1/d2d2d15a6a01f2f3aa7fbaf167f53911.jpg"',
+'<img src="https://i.pinimg.com/originals/5e/7a/3b/5e7a3bee419c348941e7aeccbc93c567.jpg"',
+'<img src="https://i.pinimg.com/originals/bd/22/c1/bd22c1fed0db719c7c0595cce39e3c89.jpg"',
+'<img src="https://i.pinimg.com/originals/57/d4/af/57d4afc858c41497b0e97cbf7012a291.jpg"',
+'<img src="https://i.pinimg.com/564x/90/79/cc/9079cc46b2b7ff338727eec572cd52c1.jpg"',
+'<img src="https://i.pinimg.com/originals/c4/38/e6/c438e620bf9ee21709377e46c574d9ce.jpg"',
+'<img src="https://i.pinimg.com/564x/06/af/04/06af041d1e4a2d97faa73d8c49f277d2.jpg"',
+'<img src="https://i.pinimg.com/originals/9d/0e/c2/9d0ec20f1baabb425e94941b86d90203.jpg"',
+'<img src="https://i.pinimg.com/originals/71/94/61/719461e2c7253fca195ef0bce1681f68.jpg"',
+'<img src="https://i.pinimg.com/originals/02/02/a0/0202a096428e19f91d5440b2351f7404.jpg"',
+'<img src="https://i.pinimg.com/originals/b3/d6/c6/b3d6c62904929821685dc06fa0a36641.jpg"',
+'<img src="https://i.pinimg.com/originals/35/09/44/35094410b50d1acb9f0645257b042dad.jpg"',
+'<img src="https://i.pinimg.com/originals/42/c2/05/42c20592d11d1a2cf6db80557fa8baef.jpg"',
+'<img src="https://i.pinimg.com/originals/58/c4/f0/58c4f0bb7ca7b81c9d963aa13da20b04.jpg"',
+'<img src="https://i.pinimg.com/originals/1e/b4/65/1eb465d38b0a17deb51b8d55bdc048f3.jpg"',
+'<img src="https://i.pinimg.com/originals/c1/c3/ba/c1c3ba60b32b215d94ebf116047ec965.jpg"',
+'<img src="https://i.pinimg.com/originals/8c/15/34/8c1534ebe3e4f925653fd4789c750de0.jpg"',
+'<img src="https://i.pinimg.com/originals/5a/95/0e/5a950e304f42c4cc4ee91147ac5f4f14.jpg"',
+'<img src="https://i.pinimg.com/originals/0f/3a/26/0f3a26b5c3e1a7a07dc10398c5ab2f79.jpg"',
+'<img src="https://i.pinimg.com/originals/a2/77/26/a27726c5a977d23a4eb98f02cdc0039f.jpg"',
+'<img src="https://i.pinimg.com/originals/cb/f4/67/cbf4674dcf86d666bfc6b0ddcdc114b8.jpg"',
+'<img src="https://i.pinimg.com/originals/b3/6d/4c/b36d4c97e63d8ee9fc952cf27e05ae35.jpg"',
+'<img src="https://i.pinimg.com/564x/30/f9/76/30f976dd86361ab97680b6cc09f7ab97.jpg"',
+'<img src="https://i.pinimg.com/originals/3c/50/ab/3c50ab9607e57cfc7fc9d654f0cd961e.jpg"',
+'<img src="https://i.pinimg.com/originals/c1/87/32/c18732bf1e1be6941c14958f3d9b9617.jpg"',
+'<img src="https://i.pinimg.com/originals/1a/d1/3e/1ad13e53aca42258b9892d7a456cd592.jpg"',
+'<img src="https://i.pinimg.com/originals/76/f4/4b/76f44b026b441cdff395282037af308d.jpg"',
+'<img src="https://i.pinimg.com/originals/fd/ca/f2/fdcaf280f32f84c9811491aa4220690e.jpg"',
+'<img src="https://i.pinimg.com/originals/30/a2/c0/30a2c0ff4954c577fb7c82d3625f582c.jpg"',
+'<img src="https://i.pinimg.com/originals/e7/27/42/e7274286e778b622989d09fae1c6ceeb.jpg"',
+'<img src="https://i.pinimg.com/originals/ee/0a/8b/ee0a8b2c71e814e3ee98ac59540cb05f.jpg"',
+'<img src="https://i.pinimg.com/originals/f4/06/6e/f4066e2c178ac61641b59c30a76d7cd5.jpg"',
+'<img src="https://i.pinimg.com/564x/9a/72/f6/9a72f6a89e87c2b2c084779b43c0b27e.jpg"',
+'<img src="https://i.pinimg.com/originals/b1/b7/51/b1b7514faee0d82792db4fc0805cd4b9.jpg"',
+'<img src="https://i.pinimg.com/originals/32/14/2d/32142d409080574d82b3127a4d376f36.jpg"',
+'<img src="https://i.pinimg.com/originals/d1/02/97/d102974122090457715717c96897dd2e.jpg"',
+'<img src="https://i.pinimg.com/originals/91/4c/8b/914c8b04e1d0a4b13760f76ba243a806.jpg"',
+'<img src="https://i.pinimg.com/originals/21/87/0b/21870b9b85458d6d145a8f341aca2e3e.jpg"',
+'<img src="https://i.pinimg.com/originals/15/1c/a2/151ca28bdcca1ba8fcf1789d92d0a637.jpg"',
+'<img src="https://i.pinimg.com/564x/1a/d0/40/1ad0405884509ef586d1d8eef9e470f8.jpg"',
+'<img src="https://i.pinimg.com/originals/71/d7/be/71d7bed21e04a114e54b9a027797369d.jpg"',
+'<img src="https://i.pinimg.com/originals/4c/4a/98/4c4a98b4f1a181220b41eab2f3e77872.jpg"',
+'<img src="https://i.pinimg.com/originals/10/bf/94/10bf94d58c115a6be7d1c8e7c468e82a.jpg"',
+'<img src="https://i.pinimg.com/originals/fe/2b/a9/fe2ba94b4d8168e7bef9c65f8ad5acab.jpg"',
+'<img src="https://i.pinimg.com/originals/b7/91/ac/b791ac9e1d44cdde549d6c515adb165d.jpg"',
+'<img src="https://i.pinimg.com/originals/99/63/54/99635481e9f58a29ca11d9629a16b5db.jpg"',
+'<img src="https://i.pinimg.com/originals/16/e1/b2/16e1b25378a57b06b8041a2dc3d45edd.jpg"',
+'<img src="https://i.pinimg.com/originals/6d/72/db/6d72db01900a11f4160d9902b1a45d43.jpg"',
+'<img src="https://i.pinimg.com/originals/13/27/ff/1327ff0077ec9e92a186d0764981d9d5.jpg"',
+'<img src="https://i.pinimg.com/originals/1f/a3/6f/1fa36f697301e5ece27f8a48e2a19bf7.jpg"',
+'<img src="https://i.pinimg.com/originals/ac/85/ff/ac85ff2a8531cded56468a6d93fb83eb.jpg"',
+'<img src="https://i.pinimg.com/originals/b5/46/ce/b546ce008bf203e819f8c0ab34bdf7fe.jpg"',
+'<img src="https://i.pinimg.com/originals/84/47/31/8447317f96e1adac0351f3e164a09762.jpg"',
+'<img src="https://i.pinimg.com/originals/3e/0c/87/3e0c87ad383d1cf29a9ccb031a27f56a.jpg"',
+'<img src="https://i.pinimg.com/originals/8a/2a/b2/8a2ab2e9df5c1c3cb5479fb63587b75b.jpg"',
+'<img src="https://i.pinimg.com/originals/fe/71/99/fe7199de5c486f4bb47483bdfe102f9e.jpg"',
+'<img src="https://i.pinimg.com/originals/e4/e3/b2/e4e3b222deecd87477ae31a10569897a.jpg"',
+'<img src="https://i.pinimg.com/originals/4c/90/46/4c9046d7bfd49edd13415c5cb9b048a3.jpg"',
+'<img src="https://i.pinimg.com/originals/a5/08/b5/a508b5ae12563ad0736172cea9e68b17.jpg"',
+'<img src="https://i.pinimg.com/originals/42/92/4f/42924f592cb4bd0a956d189030493b47.jpg"',
+'<img src="https://i.pinimg.com/originals/1c/cd/11/1ccd115c4ee45acb8e0d31e2aa84d92e.jpg"',
+'<img src="https://i.pinimg.com/originals/03/72/3c/03723ce41b65474ff03b1e4d0c684b5d.jpg"',
+'<img src="https://i.pinimg.com/originals/7f/13/8a/7f138a6eeeed755e206822ac11528b16.jpg"',
+'<img src="https://i.pinimg.com/originals/9a/e6/62/9ae662a1d9c4f59a584e972e1ba5f87a.jpg"',
+'<img src="https://i.pinimg.com/originals/20/44/0b/20440b5bf0adee3aaac3851f445684c6.jpg"',
+'<img src="https://i.pinimg.com/564x/7e/65/56/7e655673bf0306d808659fd3843ad25f.jpg"',
+'<img src="https://i.pinimg.com/564x/39/87/f1/3987f1b31e3020a04688ace06bf127ca.jpg"',
+'<img src="https://i.pinimg.com/originals/67/6c/f8/676cf8633fa1b6d84586498e8e36db51.jpg"',
+'<img src="https://i.pinimg.com/originals/38/24/32/3824320b50ba6bb04cdc5eea305982e8.jpg"',
+'<img src="https://i.pinimg.com/originals/a3/b1/2a/a3b12ab6cfce78b53847cb83fee9581f.jpg"',
+'<img src="https://i.pinimg.com/originals/fe/b4/58/feb458388e1dd525d7c952cb0f895426.jpg"',
+'<img src="https://i.pinimg.com/originals/f1/88/d9/f188d9c3954a183cf0e5ef3d8556006c.jpg"',
+'<img src="https://i.pinimg.com/originals/ee/1f/be/ee1fbe4840e4ac143ca436cd6fb0631b.jpg"',
+'<img src="https://i.pinimg.com/originals/6f/4d/d3/6f4dd3616682724d708374dac8639ddc.jpg"',
+'<img src="https://i.pinimg.com/originals/0d/57/56/0d5756f3900e9b47a4749316646887f0.jpg"',
+'<img src="https://i.pinimg.com/originals/80/16/8e/80168ede78957ccadb624eb6de6556d7.jpg"',
+'<img src="https://i.pinimg.com/originals/1d/be/e7/1dbee7526a57c431770c5a779d477d5b.jpg"',
+'<img src="https://i.pinimg.com/originals/90/ef/ad/90efad5480a705252d5e2fbfadea794d.jpg"',
+'<img src="https://i.pinimg.com/originals/3f/23/14/3f23140f0ab77651a8c82fa7d0de9709.jpg"',
+'<img src="https://i.pinimg.com/originals/35/62/61/356261847f880c86aba60c30f26a403b.jpg"',
+'<img src="https://i.pinimg.com/originals/37/2d/52/372d52c57e9aa3561da85c16f410aaca.jpg"',
+'<img src="https://i.pinimg.com/originals/1d/9a/8a/1d9a8a1637eb2fa18f5e40b0edd2aa2e.jpg"',
+'<img src="https://i.pinimg.com/originals/55/8d/63/558d63b681d4c0620286d01ed962368a.jpg"',
+'<img src="https://i.pinimg.com/originals/50/83/34/5083342b41ded25357c09d66c3bc5950.jpg"',
+'<img src="https://i.pinimg.com/originals/89/59/9e/89599ec56ba119d84fee9212d78508ef.jpg"',
+'<img src="https://i.pinimg.com/originals/2d/8b/04/2d8b04903f81c322bcfccc0e1b080329.jpg"',
+'<img src="https://i.pinimg.com/originals/44/75/5f/44755fd7c4fc8134c0ce799b9144d09d.jpg"',
+'<img src="https://i.pinimg.com/originals/19/e8/34/19e83487a379e054b9e1b9f47cde9cce.jpg"',
+'<img src="https://i.pinimg.com/564x/54/fc/e7/54fce73fed1a344be7dc84b32d5011f9.jpg"',
+'<img src="https://i.pinimg.com/originals/75/17/d5/7517d5ff04974b2a89540f7043efb4b3.jpg"',
+'<img src="https://i.pinimg.com/originals/cc/c5/8a/ccc58a1b9f1b281c57a9fe38ad50a8df.jpg"',
+'<img src="https://i.pinimg.com/originals/02/1b/15/021b1559ea8bddde59cca886fc509278.jpg"',
+'<img src="https://i.pinimg.com/originals/ce/6e/8f/ce6e8f8fb035ca85d1e30658f5efe05c.jpg"',
+'<img src="https://i.pinimg.com/originals/16/36/45/1636456ead31d221cb516763bd5e8b30.jpg"',
+'<img src="https://i.pinimg.com/originals/3a/b5/96/3ab59691246d9a6b02f3948812509d89.jpg"',
+'<img src="https://i.pinimg.com/originals/d0/05/30/d00530c54680e230a1ec86b51197d72d.jpg"',
+'<img src="https://i.pinimg.com/originals/d2/35/55/d235557e7107d437eb3d81776d6cca66.jpg"',
+'<img src="https://i.pinimg.com/originals/84/d7/97/84d7978a8ceb45af6487e679b82c1394.jpg"',
+'<img src="https://i.pinimg.com/originals/3e/b7/6e/3eb76efb3821d0b38bac1d62abbac438.jpg"',
+'<img src="https://i.pinimg.com/originals/fe/59/a3/fe59a394e70996ed9a30c21465d6878c.jpg"',
+'<img src="https://i.pinimg.com/originals/6a/54/00/6a5400a008ec6f0ad0ae3ca266675faa.jpg"',
+'<img src="https://i.pinimg.com/originals/a1/61/ae/a161aee238ec9ac46e1c24741a0764ed.jpg"',
+'<img src="https://i.pinimg.com/originals/94/70/61/947061d26405fea2bcb455f5dd9f2690.jpg"',
+'<img src="https://i.pinimg.com/originals/f1/7c/70/f17c703020880d5a2905fffcfecaa419.jpg"',
+'<img src="https://i.pinimg.com/originals/1b/3d/7c/1b3d7cbf8a0d6126789da8f1c63e1a98.jpg"',
+'<img src="https://i.pinimg.com/564x/a3/f0/48/a3f048ddc0e53bf8828345489954f42d.jpg"',
+'<img src="https://i.pinimg.com/originals/2b/fe/ec/2bfeecc6d0d46a09dd666896777989d6.jpg"',
+'<img src="https://i.pinimg.com/originals/bc/f9/09/bcf909df63f13eadad81046aad112d70.jpg"',
+'<img src="https://i.pinimg.com/originals/82/80/6f/82806f175aa3f3e2d293d3cb14a03b32.jpg"',
+'<img src="https://i.pinimg.com/originals/b7/73/a7/b773a7510d113481f9a485a4358599ff.jpg"',
+'<img src="https://i.pinimg.com/originals/5d/cf/2c/5dcf2c33b2b870b74f8facbafbfb2a72.jpg"',
+'<img src="https://i.pinimg.com/originals/99/4f/ef/994fef85652f11ad40e68da5b536a908.jpg"',
+'<img src="https://i.pinimg.com/originals/ee/60/97/ee6097bcbd1f0da57e9047a7b15aa563.jpg"',
+'<img src="https://i.pinimg.com/originals/bc/26/e5/bc26e541d9c8a7ac6368ccd321682e33.jpg"',
+'<img src="https://i.pinimg.com/originals/be/30/d8/be30d8b482e7d091f4073392fe69bc13.jpg"',
+'<img src="https://i.pinimg.com/originals/b6/1e/7a/b61e7ac9ca35643c550348595b9162e1.jpg"',
+'<img src="https://i.pinimg.com/originals/1b/22/7f/1b227f60f0fb9d3808d2f80dedf2bb78.jpg"',
+'<img src="https://i.pinimg.com/originals/d4/c1/6e/d4c16e44031adc9accff9e764601eb3a.jpg"',
+'<img src="https://i.pinimg.com/originals/55/4f/af/554faf87f8de2a6b9f8751010b9a2140.jpg"',
+'<img src="https://i.pinimg.com/originals/56/f2/1f/56f21fb116422a7787dfad97b6215a9b.jpg"',
+'<img src="https://i.pinimg.com/originals/d9/02/57/d902570691f3b60c84469830fb0adfca.jpg"',
+'<img src="https://i.pinimg.com/564x/f4/e8/50/f4e850ce6bed61f7e125b28c9d3a2c81.jpg"',
+'<img src="https://i.pinimg.com/originals/7d/4c/14/7d4c14cdfc54363fad6caca5797ee113.jpg"',
+'<img src="https://i.pinimg.com/originals/42/c2/06/42c206edca92b851cf523d2e62b095c9.jpg"',
+'<img src="https://i.pinimg.com/originals/95/d3/12/95d31206c8e3936e90a88f147b9bbb6d.jpg"',
+'<img src="https://i.pinimg.com/originals/01/5c/45/015c456ecb00fea465427342d706be3a.jpg"',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'<img src="https://i.pinimg.com/originals/0e/d9/e8/0ed9e86773917cd9c3e241a129ef6729.jpg"',
+'<img src="https://i.pinimg.com/originals/be/c9/de/bec9dec46f9faeb547cbfba88d003e10.jpg"',
+'<img src="https://i.pinimg.com/originals/d7/9d/ff/d79dff4b58cb20c5b0f9e3097848afea.jpg"',
+'<img src="https://i.pinimg.com/originals/2b/59/0f/2b590f5b39f4e55817605bbb59c6426a.jpg"',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'<img src="https://i.pinimg.com/originals/23/86/4b/23864ba9477c8a749296e6c21dfbc56d.jpg"',
+'<img src="https://i.pinimg.com/originals/93/1e/e4/931ee476fff7c341121aab3a7c22b282.jpg"',
+'<img src="https://i.pinimg.com/originals/0d/34/e5/0d34e5f4ac9dfb7577c56df84c9bb3f5.jpg"',
+]
+lineHeader = '<'
+lineTail = '>'
+bookid = "SEXY PICS"
+showRange = 60
+initSelectRange = 12000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<!--script src='../showTips.js'></script-->
+<script src='showLongTips.js'></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<base target="_blank"><html><head><title>pohub clamps</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">pohub clamps</div>
+<center>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'1051739533"><img src="https://di.phncdn.com/videos/201311/01/19204292/original/(m=ecuKGgaaaa)(mh=4-rmien4QEQcR2DN)5.jpg',
+'1074114730"><img src="https://di.phncdn.com/videos/201506/01/49827821/original/(m=ecuKGgaaaa)(mh=xYHXprN3Dim_NyWD)6.jpg',
+'1136657116"><img src="https://ci.phncdn.com/videos/201306/27/14035791/original/(m=ecuKGgaaaa)(mh=Ovkfdm2fIUEs2UQ8)16.jpg',
+'1136657116"><img src="https://di.phncdn.com/videos/201306/27/14035791/original/(m=eaf8Ggaaaa)(mh=vmzGLj1uPtnWw8Bl)16.jpg"',
+'1186805614"><img src="https://ci.phncdn.com/videos/201412/05/35651381/original/(m=eaf8Ggaaaa)(mh=j546SOnx8f5mtwD5)10.jpg"',
+'1186805614"><img src="https://ci.phncdn.com/videos/201412/05/35651381/original/(m=ecuKGgaaaa)(mh=COPC2moSO0iN7hy1)10.jpg',
+'1186805614"><img src="https://di.phncdn.com/videos/201412/05/35651381/original/(m=ecuKGgaaaa)(mh=COPC2moSO0iN7hy1)10.jpg',
+'1239783814"><img src="https://di.phncdn.com/videos/201211/15/7268311/original/(m=ecuKGgaaaa)(mh=5T0DNB6hqBuUWW27)10.jpg',
+'1274678653"><img src="https://ci.phncdn.com/videos/201403/04/23989382/original/(m=ecuKGgaaaa)(mh=Y-woaJ8DqyM0FaTX)11.jpg',
+'1349442145"><img src="https://di.phncdn.com/videos/201503/06/45781851/original/(m=ecuKGgaaaa)(mh=zkjDBP4Gym9KltzR)10.jpg',
+'1837402921"><img src="https://ci.phncdn.com/videos/201502/10/38779771/original/(m=ecuKGgaaaa)(mh=khqDeLlSlyLNr7I4)16.jpg',
+'1844345917"><img src="https://ci.phncdn.com/videos/201503/26/46701612/original/(m=ecuKGgaaaa)(mh=AjT_yrq3zyFUSPjv)14.jpg',
+'2114454341"><img src="https://ci.phncdn.com/videos/201305/10/11985751/original/(m=ecuKGgaaaa)(mh=LhCCM5tTk6cA-MbC)11.jpg',
+'502522362"><img src="https://ci.phncdn.com/videos/201412/01/35467511/original/(m=ecuKGgaaaa)(mh=tE7N6Cbg1aucWZUr)2.jpg',
+
+'638786866"><img src="https://di.phncdn.com/videos/201401/31/22599842/original/(m=ecuKGgaaaa)(mh=1RYGbC8I6r_RwWK1)4.jpg',
+'639496520"><img src="https://ci.phncdn.com/videos/201502/05/38577101/original/(m=ecuKGgaaaa)(mh=8u8-VT65daNjU6pw)16.jpg',
+
+'823705101"><img src="https://ci.phncdn.com/videos/201504/08/47318381/original/(m=ecuKGgaaaa)(mh=js_vgDFNmYSQdKhi)2.jpg',
+'825240145"><img src="https://di.phncdn.com/videos/201503/17/46275501/original/(m=ecuKGgaaaa)(mh=pevQuslrBEpaF6cf)5.jpg',
+'ph56098c7ee3da2"><img src="https://di.phncdn.com/videos/201509/28/58274981/original/(m=ecuKGgaaaa)(mh=PEFl667DElEMRig-)5.jpg',
+'ph56155833a8952"><img src="https://di.phncdn.com/videos/201510/07/58927391/original/(m=ecuKGgaaayrGbid)(mh=VECuPPt5J_hzvKcV)8.jpg',
+'ph5670c4e32dd94"><img src="https://di.phncdn.com/videos/201512/16/63902721/original/(m=ecuKGgaaaa)(mh=dCHiwtmGD_VXFtu0)0.jpg',
+'ph5674674737dc5"><img src="https://ci.phncdn.com/videos/201512/18/64092861/original/(m=ecuKGgaaaa)(mh=hiVA9XlNBjqG3Xnm)0.jpg',
+
+'ph58ce1b00b3a91"><img src="https://ci.phncdn.com/videos/201703/19/110140712/original/(m=ecuKGgaaaa)(mh=X2hM4Kxv3o0Z3z_v)14.jpg',
+
+'ph591c432c1aefc"><img src="https://ci.phncdn.com/videos/201705/17/116790601/original/(m=ecuKGgaaaa)(mh=sVfpgnwgkwm8Fu02)8.jpg',
+
+'ph5abaaebaf17da"><img src="https://ci.phncdn.com/videos/201803/27/159832172/original/(m=ecuKGgaaaa)(mh=Nb2oINu-CszuLT4T)9.jpg',
+'ph5adbab333f878"><img src="https://ci.phncdn.com/videos/201804/21/162993062/original/(m=ecuKGgaaaa)(mh=usEKxnEh0_Y6pT2O)9.jpg',
+'ph5ae13bac22a55"><img src="https://ci.phncdn.com/videos/201804/26/163570521/original/(m=ecuKGgaaayrGbid)(mh=OaWZ9FYIbXMv4ICp)3.jpg',
+'ph5b3d740c51629"><img src="https://di.phncdn.com/videos/201807/05/173131891/thumbs_5/(m=ecuKGgaaaa)(mh=mdcVUawa3mM29wZA)10.jpg',
+'',
+];
+lineHeader = '<a href ="https://www.pornhub.com/embed/'
+lineTail = '"></a>'
+showRange = 80
+bookid = "pohub clamps"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+
+<script src='showLongTips.js'></script>
+</body>
+</html>

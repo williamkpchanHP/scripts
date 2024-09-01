@@ -1,0 +1,67 @@
+<base target="_blank"><html><head><title>julieeroticdress</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/mk-photographics-16087380"><img src="https://ic-ph-nss.xhcdn.com/a/OWFhZWVhYzhmYTdjMjRmZDMzM2E2MWY3YjU4NjUzNWM/jpeg/000/515/260/976_450.jpg"><br> MK photographics</a> 9',
+'<a href="https://xhamster.com/photos/gallery/julies-outfits-15915678"><img src="https://ic-ph-nss.xhcdn.com/a/OTUxNjBiZDZjOWZmYmRmYTViZWUzYjRlMzU3NDFjMWY/jpeg/000/512/492/316_450.jpg"><br>Julies outfits</a> 7',
+'<a href="https://xhamster.com/photos/gallery/julies-bondage-15807031"><img src="https://ic-ph-nss.xhcdn.com/a/YmZjY2I4MjFlOWI5ZDJhY2ZmOTE5N2Y5Y2FmN2U5Yjg/jpeg/000/507/293/584_450.jpg"><br>Julies bondage</a> 65',
+'<a href="https://xhamster.com/photos/gallery/julies-office-outfit-20-10-22-15951269"><img src="https://ic-ph-nss.xhcdn.com/a/NjQ4NDA5NTk1MGQyOGQyNzJhMjhlZDlmNzc3ZmVhMmM/jpeg/000/513/253/654_450.jpg"><br>Julies Office Outfit 20.10.22</a> 6',
+'<a href="https://xhamster.com/photos/gallery/julie-s-office-outfits-15939107"><img src="https://ic-ph-nss.xhcdn.com/a/ZmNlMjQ5MjE2MTM2Mjk5ZjA4N2ZmNDg3NzE3YjA4Njk/jpeg/000/513/018/227_450.jpg"><br>Julie‘s office outfits</a> 6',
+'<a href="https://xhamster.com/photos/gallery/me-at-home-15907663"><img src="https://ic-ph-nss.xhcdn.com/a/YTQ3ZjIyYTIxMGRlMDA2Y2M5Y2E4OTVmMGNmMTIwOWQ/jpeg/000/512/304/124_450.jpg"><br>Me at home</a> 5',
+'<a href="https://xhamster.com/photos/gallery/mk-artworks-16144290"><img src="https://ic-ph-nss.xhcdn.com/a/OTE1MmJiMTFmMjQ5NGUyNGEyMTI0MzM0ZmEzNDExNjM/jpeg/000/516/036/589_450.jpg"><br>MK artworks</a> 4',
+'<a href="https://xhamster.com/photos/gallery/orgasm-at-public-art-exhibition-in-front-of-a-red-wall-16012789"><img src="https://ic-ph-nss.xhcdn.com/a/MzM0NTg4NmJkNzg5ZGI0YzRmMzg0OTM4OTEyMTkwYzM/jpeg/000/514/241/195_450.jpg"><br>Orgasm at public art exhibition in front of a red wall</a> 33',
+'<a href="https://xhamster.com/photos/gallery/julie-s-bondage-for-master-16010839"><img src="https://ic-ph-nss.xhcdn.com/a/MmI1OGI1MjhiMjUzOGYxOTY0OTFjOGY4NGZlMTIyYjg/jpeg/000/514/214/731_450.jpg"><br>Julie‘s bondage for Master</a> 23',
+'<a href="https://xhamster.com/photos/gallery/my-bondage-15886512"><img src="https://ic-ph-nss.xhcdn.com/a/MmNjNThkYmY1YjcwNjlkMmQxZTdiZmQ5Nzg2NDc1MjU/jpeg/000/511/833/560_450.jpg"><br>My Bondage</a> 2',
+'<a href="https://xhamster.com/photos/gallery/squirt-at-wall-16050038"><img src="https://ic-ph-nss.xhcdn.com/a/NTE1YjI3MzRhZDY3OTFlNDgwMDY5YmFiODI2ZTUxNjg/jpeg/000/514/753/925_450.jpg"><br>Squirt at wall</a> 19',
+'<a href="https://xhamster.com/photos/gallery/julie-s-bondage-15984921"><img src="https://ic-ph-nss.xhcdn.com/a/OWY3ZGUwYWIyMjNmNjMyMmUxOTJiYTFlYzM3M2U0MDQ/jpeg/000/513/835/275_450.jpg"><br>Julie‘s bondage </a> 17',
+'<a href="https://xhamster.com/photos/gallery/my-pumped-puss-15971620"><img src="https://ic-ph-nss.xhcdn.com/a/YTQwMTBkMDU1ZTU5ZTZiOTBiNWQ3ZjNlNGY0OTUxNTQ/jpeg/000/513/639/888_450.jpg"><br>My pumped puss/</a> 1',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "julieeroticdress"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

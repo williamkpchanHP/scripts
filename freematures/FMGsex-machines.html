@@ -1,0 +1,257 @@
+<base target="_blank"><html><head><title>sex-machines</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 100%;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">sex-machines</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'2020/01/7VzGBoGZ/7VzGBoGZ-1',
+'2020/01/7VzGBoGZ/7VzGBoGZ-2',
+'2020/01/7VzGBoGZ/7VzGBoGZ-3',
+'2020/01/7VzGBoGZ/7VzGBoGZ-4',
+'2020/01/7VzGBoGZ/7VzGBoGZ-5',
+'2020/01/7VzGBoGZ/7VzGBoGZ-6',
+'2020/01/7VzGBoGZ/7VzGBoGZ-7',
+'2020/01/7VzGBoGZ/7VzGBoGZ-8',
+'2020/01/7VzGBoGZ/7VzGBoGZ-9',
+'2020/01/7VzGBoGZ/7VzGBoGZ-10',
+'2020/01/7VzGBoGZ/7VzGBoGZ-11',
+'2020/01/7VzGBoGZ/7VzGBoGZ-12',
+'2020/01/7VzGBoGZ/7VzGBoGZ-13',
+'2020/01/7VzGBoGZ/7VzGBoGZ-14',
+'2020/01/7VzGBoGZ/7VzGBoGZ-15',
+'2020/01/BZ5YfzbR/BZ5YfzbR-1',
+'2020/01/BZ5YfzbR/BZ5YfzbR-2',
+'2020/01/BZ5YfzbR/BZ5YfzbR-3',
+'2020/01/BZ5YfzbR/BZ5YfzbR-4',
+'2020/01/BZ5YfzbR/BZ5YfzbR-5',
+'2020/01/BZ5YfzbR/BZ5YfzbR-6',
+'2020/01/BZ5YfzbR/BZ5YfzbR-7',
+'2020/01/BZ5YfzbR/BZ5YfzbR-8',
+'2020/01/BZ5YfzbR/BZ5YfzbR-9',
+'2020/01/BZ5YfzbR/BZ5YfzbR-10',
+'2020/01/BZ5YfzbR/BZ5YfzbR-11',
+'2020/01/BZ5YfzbR/BZ5YfzbR-12',
+'2020/01/BZ5YfzbR/BZ5YfzbR-13',
+'2020/01/BZ5YfzbR/BZ5YfzbR-14',
+'2020/01/BZ5YfzbR/BZ5YfzbR-15',
+'2020/01/JfjF83gY/JfjF83gY-1',
+'2020/01/JfjF83gY/JfjF83gY-2',
+'2020/01/JfjF83gY/JfjF83gY-3',
+'2020/01/JfjF83gY/JfjF83gY-4',
+'2020/01/JfjF83gY/JfjF83gY-5',
+'2020/01/JfjF83gY/JfjF83gY-6',
+'2020/01/JfjF83gY/JfjF83gY-7',
+'2020/01/JfjF83gY/JfjF83gY-8',
+'2020/01/JfjF83gY/JfjF83gY-9',
+'2020/01/JfjF83gY/JfjF83gY-10',
+'2020/01/JfjF83gY/JfjF83gY-11',
+'2020/01/JfjF83gY/JfjF83gY-12',
+'2020/01/JfjF83gY/JfjF83gY-13',
+'2020/01/JfjF83gY/JfjF83gY-14',
+'2020/01/JfjF83gY/JfjF83gY-15',
+'2020/01/LTLYg7xM/LTLYg7xM-1',
+'2020/01/LTLYg7xM/LTLYg7xM-2',
+'2020/01/LTLYg7xM/LTLYg7xM-3',
+'2020/01/LTLYg7xM/LTLYg7xM-4',
+'2020/01/LTLYg7xM/LTLYg7xM-5',
+'2020/01/LTLYg7xM/LTLYg7xM-6',
+'2020/01/LTLYg7xM/LTLYg7xM-7',
+'2020/01/LTLYg7xM/LTLYg7xM-8',
+'2020/01/LTLYg7xM/LTLYg7xM-9',
+'2020/01/LTLYg7xM/LTLYg7xM-10',
+'2020/01/LTLYg7xM/LTLYg7xM-11',
+'2020/01/LTLYg7xM/LTLYg7xM-12',
+'2020/01/LTLYg7xM/LTLYg7xM-13',
+'2020/01/LTLYg7xM/LTLYg7xM-14',
+'2020/01/LTLYg7xM/LTLYg7xM-15',
+'2020/02/dD3B2AEL/dD3B2AEL-1',
+'2020/02/dD3B2AEL/dD3B2AEL-2',
+'2020/02/dD3B2AEL/dD3B2AEL-3',
+'2020/02/dD3B2AEL/dD3B2AEL-4',
+'2020/02/dD3B2AEL/dD3B2AEL-5',
+'2020/02/dD3B2AEL/dD3B2AEL-6',
+'2020/02/dD3B2AEL/dD3B2AEL-7',
+'2020/02/dD3B2AEL/dD3B2AEL-8',
+'2020/02/dD3B2AEL/dD3B2AEL-9',
+'2020/02/dD3B2AEL/dD3B2AEL-10',
+'2020/02/dD3B2AEL/dD3B2AEL-11',
+'2020/02/dD3B2AEL/dD3B2AEL-12',
+'2020/02/dD3B2AEL/dD3B2AEL-13',
+'2020/02/dD3B2AEL/dD3B2AEL-14',
+'2020/02/dD3B2AEL/dD3B2AEL-15',
+'2020/02/J3Jfb4A4/J3Jfb4A4-1',
+'2020/02/J3Jfb4A4/J3Jfb4A4-2',
+'2020/02/J3Jfb4A4/J3Jfb4A4-3',
+'2020/02/J3Jfb4A4/J3Jfb4A4-4',
+'2020/02/J3Jfb4A4/J3Jfb4A4-5',
+'2020/02/J3Jfb4A4/J3Jfb4A4-6',
+'2020/02/J3Jfb4A4/J3Jfb4A4-7',
+'2020/02/J3Jfb4A4/J3Jfb4A4-8',
+'2020/02/J3Jfb4A4/J3Jfb4A4-9',
+'2020/02/J3Jfb4A4/J3Jfb4A4-10',
+'2020/02/J3Jfb4A4/J3Jfb4A4-11',
+'2020/02/J3Jfb4A4/J3Jfb4A4-12',
+'2020/02/J3Jfb4A4/J3Jfb4A4-13',
+'2020/02/J3Jfb4A4/J3Jfb4A4-14',
+'2020/02/J3Jfb4A4/J3Jfb4A4-15',
+'2020/03/A2DH2rVG/A2DH2rVG-1',
+'2020/03/A2DH2rVG/A2DH2rVG-2',
+'2020/03/A2DH2rVG/A2DH2rVG-3',
+'2020/03/A2DH2rVG/A2DH2rVG-4',
+'2020/03/A2DH2rVG/A2DH2rVG-5',
+'2020/03/A2DH2rVG/A2DH2rVG-6',
+'2020/03/A2DH2rVG/A2DH2rVG-7',
+'2020/03/A2DH2rVG/A2DH2rVG-8',
+'2020/03/A2DH2rVG/A2DH2rVG-9',
+'2020/03/A2DH2rVG/A2DH2rVG-10',
+'2020/03/A2DH2rVG/A2DH2rVG-11',
+'2020/03/A2DH2rVG/A2DH2rVG-12',
+'2020/03/A2DH2rVG/A2DH2rVG-13',
+'2020/03/A2DH2rVG/A2DH2rVG-14',
+'2020/03/A2DH2rVG/A2DH2rVG-15',
+'2020/04/rhTRC86b/rhTRC86b-1',
+'2020/04/rhTRC86b/rhTRC86b-2',
+'2020/04/rhTRC86b/rhTRC86b-3',
+'2020/04/rhTRC86b/rhTRC86b-4',
+'2020/04/rhTRC86b/rhTRC86b-5',
+'2020/04/rhTRC86b/rhTRC86b-6',
+'2020/04/rhTRC86b/rhTRC86b-7',
+'2020/04/rhTRC86b/rhTRC86b-8',
+'2020/04/rhTRC86b/rhTRC86b-9',
+'2020/04/rhTRC86b/rhTRC86b-10',
+'2020/04/rhTRC86b/rhTRC86b-11',
+'2020/04/rhTRC86b/rhTRC86b-12',
+'2020/04/rhTRC86b/rhTRC86b-13',
+'2020/04/rhTRC86b/rhTRC86b-14',
+'2020/04/rhTRC86b/rhTRC86b-15',
+'2020/05/KSVuW7A5/KSVuW7A5-1',
+'2020/05/KSVuW7A5/KSVuW7A5-2',
+'2020/05/KSVuW7A5/KSVuW7A5-3',
+'2020/05/KSVuW7A5/KSVuW7A5-4',
+'2020/05/KSVuW7A5/KSVuW7A5-5',
+'2020/05/KSVuW7A5/KSVuW7A5-6',
+'2020/05/KSVuW7A5/KSVuW7A5-7',
+'2020/05/KSVuW7A5/KSVuW7A5-8',
+'2020/05/KSVuW7A5/KSVuW7A5-9',
+'2020/05/KSVuW7A5/KSVuW7A5-10',
+'2020/05/KSVuW7A5/KSVuW7A5-11',
+'2020/05/KSVuW7A5/KSVuW7A5-12',
+'2020/05/KSVuW7A5/KSVuW7A5-13',
+'2020/05/KSVuW7A5/KSVuW7A5-14',
+'2020/05/KSVuW7A5/KSVuW7A5-15',
+'2021/03/GVU86v49/GVU86v49-1',
+'2021/03/GVU86v49/GVU86v49-2',
+'2021/03/GVU86v49/GVU86v49-3',
+'2021/03/GVU86v49/GVU86v49-4',
+'2021/03/GVU86v49/GVU86v49-5',
+'2021/03/GVU86v49/GVU86v49-6',
+'2021/03/GVU86v49/GVU86v49-7',
+'2021/03/GVU86v49/GVU86v49-8',
+'2021/03/GVU86v49/GVU86v49-9',
+'2021/03/GVU86v49/GVU86v49-10',
+'2021/03/GVU86v49/GVU86v49-11',
+'2021/03/GVU86v49/GVU86v49-12',
+'2021/03/GVU86v49/GVU86v49-13',
+'2021/03/GVU86v49/GVU86v49-14',
+'2021/03/GVU86v49/GVU86v49-15',
+'2021/03/K5J3qYkq/K5J3qYkq-1',
+'2021/03/K5J3qYkq/K5J3qYkq-2',
+'2021/03/K5J3qYkq/K5J3qYkq-3',
+'2021/03/K5J3qYkq/K5J3qYkq-4',
+'2021/03/K5J3qYkq/K5J3qYkq-5',
+'2021/03/K5J3qYkq/K5J3qYkq-6',
+'2021/03/K5J3qYkq/K5J3qYkq-7',
+'2021/03/K5J3qYkq/K5J3qYkq-8',
+'2021/03/K5J3qYkq/K5J3qYkq-9',
+'2021/03/K5J3qYkq/K5J3qYkq-10',
+'2021/03/K5J3qYkq/K5J3qYkq-11',
+'2021/03/K5J3qYkq/K5J3qYkq-12',
+'2021/03/K5J3qYkq/K5J3qYkq-13',
+'2021/03/K5J3qYkq/K5J3qYkq-14',
+'2021/03/K5J3qYkq/K5J3qYkq-15',
+'2023/05/4xBgWmEM/4xBgWmEM-1',
+'2023/05/4xBgWmEM/4xBgWmEM-2',
+'2023/05/4xBgWmEM/4xBgWmEM-3',
+'2023/05/4xBgWmEM/4xBgWmEM-4',
+'2023/05/4xBgWmEM/4xBgWmEM-5',
+'2023/05/4xBgWmEM/4xBgWmEM-6',
+'2023/05/4xBgWmEM/4xBgWmEM-7',
+'2023/05/4xBgWmEM/4xBgWmEM-8',
+'2023/05/4xBgWmEM/4xBgWmEM-9',
+'2023/05/4xBgWmEM/4xBgWmEM-10',
+'2023/05/4xBgWmEM/4xBgWmEM-11',
+'2023/05/4xBgWmEM/4xBgWmEM-12',
+'2023/05/4xBgWmEM/4xBgWmEM-13',
+'2023/05/4xBgWmEM/4xBgWmEM-14',
+'2023/05/4xBgWmEM/4xBgWmEM-15',
+'2023/05/m9dSn9mN/m9dSn9mN-1',
+'2023/05/m9dSn9mN/m9dSn9mN-2',
+'2023/05/m9dSn9mN/m9dSn9mN-3',
+'2023/05/m9dSn9mN/m9dSn9mN-4',
+'2023/05/m9dSn9mN/m9dSn9mN-5',
+'2023/05/m9dSn9mN/m9dSn9mN-6',
+'2023/05/m9dSn9mN/m9dSn9mN-7',
+'2023/05/m9dSn9mN/m9dSn9mN-8',
+'2023/05/m9dSn9mN/m9dSn9mN-9',
+'2023/05/m9dSn9mN/m9dSn9mN-10',
+'2023/05/m9dSn9mN/m9dSn9mN-11',
+'2023/05/m9dSn9mN/m9dSn9mN-12',
+'2023/05/m9dSn9mN/m9dSn9mN-13',
+'2023/05/m9dSn9mN/m9dSn9mN-14',
+'2023/05/m9dSn9mN/m9dSn9mN-15',
+'',
+];
+lineHeader = '<img src="http://freematuresgallery.com/pics/'
+lineTail = '.jpg">'
+bookid = "sex-machines"
+showRange = 60
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

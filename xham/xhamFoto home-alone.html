@@ -1,0 +1,129 @@
+<base target="_blank"><html><head><title>home-alone: 67</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {width: 100%;}
+video {width: 60%;}
+div {display:inline-block; width:33%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">home-alone: 67</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YWY5MDAzZTc2YWFiZmRkMWI3ZTA2NjJhYjRkNmVmYzE/jpeg/000/492/189/711_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NjMxYTVkZTNmMDUyMWI2MjM3NzY4ZmY3MTg1N2UxODY/jpeg/000/492/189/722_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NmE4ZGNhMjIzY2MxYWU4ODhhMDdhZTVhMjM0NDhmZWY/jpeg/000/492/189/720_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZjJlZDNjN2U1YjIwZDcyMzY1NTVmYWM2Y2NiNTEzNjI/jpeg/000/492/189/715_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MWYyNjhlODQ1Nzk4YmRhNDNiZTNiNDdkOTY3NzExNjU/jpeg/000/492/189/713_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NTIzNzJlNGEwYWM4ZWQyOTNjZDAwMmU2N2Y5MjViNjE/jpeg/000/492/189/710_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MjFiMDQ5MTk5ZWU1YjgxYWZmZjc1MmRiNjViM2FmNmU/jpeg/000/492/189/707_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZDAwOWM3NmVkMTc5MmQwYThhZWVmYzAxYjI4YzA2MjA/jpeg/000/492/189/704_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NTMzNzI5YzJjM2FhNGUzYjcwOGM0MTE1NjEzYTk5YWU/jpeg/000/492/189/703_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZjVhYWRhMzhhY2RmZDg5ZjkzZmY5NDEzMDI3OGQyMTk/jpeg/000/492/189/702_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MTNiMzU4NzU5MDM3MmM4NWI0YTJmNTU4MDc5YmIwNGM/jpeg/000/492/189/699_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YzQ0MzMzNTQ1MGMwNzhmOTEyNGExZmMxOWEyYTY1M2M/jpeg/000/492/189/697_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NmQxNzRmODIyMTA3ZDgwMTZjOGRmYjI0ZWZhZjFjZGQ/jpeg/000/492/189/695_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZDdiNTNhNGY5YjhhMzJiYTVhYWM0NGZiNzhiYWU3YjM/jpeg/000/492/189/693_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NjNkZDk2Y2M1YWRmODRlZDAxZTQ1Njg3NDM3YTVkZmI/jpeg/000/492/189/690_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OTMzMjZjYjI4ODNjYTUzZDk1NWI3MjU1ZTkxYTU4OTM/jpeg/000/492/189/687_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ODc0MTkzMjQzY2JlMzg0ZDAwM2FiZDZmNGM3ZWMzZjE/jpeg/000/492/189/684_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NWU1NmYzYzhjYTNmNGJhY2Y3NTYwOGJkZGNhOTM4NGM/jpeg/000/492/189/683_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OGYzMzE1NDgzN2ZmMjVjOTA1ZmQ0NjUxNTM0MmQxOWU/jpeg/000/492/189/678_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZDc1MDM5MDJhNjUyYjVlYzI2ZWI1MjE4Nzk1NThmZjQ/jpeg/000/492/189/674_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OGI1Mzg2ZDNiMDNmZGU3YjI5ZWEyOTNjM2FmNWMwMTE/jpeg/000/492/189/673_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MzFlOGQ2ZmVkZGUxNGExMmQzN2M2ZWYyZTljOTc4ZTY/jpeg/000/492/189/671_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MTNhYTgwM2Y5MjUwNWUxOWFlZmVjZDE2ZTliNjkzNTE/jpeg/000/492/189/670_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MTE0NDBlMzViODE0NzE1ZGJmNWMwYzYzNzBhNTJkYTI/jpeg/000/492/189/669_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OTg1NTllNzAyNmY5ODkxNjBmMjJjZjAxYzJhZjhlN2E/jpeg/000/492/189/665_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZThmMmJlODRhNTk4OWM0ZWIzOTcxZWVlZDZkZGZiZTQ/jpeg/000/492/189/663_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OGJhYzFhYTE3YjQwM2U0ZGY1YTY0NmU4MjNkNTlhNTI/jpeg/000/492/189/661_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OGM2M2FhZWRkODU5NDRhM2VhNjU4MTU3ZjVlMTI1MTM/jpeg/000/492/189/660_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NjdjMTliOGNiNGU3NzMzMTM0ODgzNmZmMzk0Y2FiNTQ/jpeg/000/492/189/657_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YzljYzNjZDViNTNjOWI1YzBjMjEwZjkxYmI4NTYxYTc/jpeg/000/492/189/656_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MDA1OTdhNGUyZTQ3MzZlOGQzYmY0ZmM4MWVhYjhjMWQ/jpeg/000/492/189/655_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MzY5OTE5Yjc4YWMxZDVjYzhkMWIxMGMxZTZlYmMxOTk/jpeg/000/492/189/654_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NGFjZmIwNjk1N2MxOTYwM2U3YzRlYjZmN2MzMzg4ZjQ/jpeg/000/492/189/653_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NjEwNmU3NGNkNjE1YWJhYTFlY2JmN2M4ZmNjOWIzZWM/jpeg/000/492/189/651_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NDNiZTk0NWMyMDIxMzZiNzdkNWI3MjQwMDBlZTNjNmE/jpeg/000/492/189/650_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YjhiMmYyNDZiZTliNDc0MmE5MGE0MTQ0NTc4MTVjN2Q/jpeg/000/492/189/649_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YTMyZGFiOTFkOTA2ODNmNzNiZTc1M2Y4NWNjYjg5YTU/jpeg/000/492/189/648_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZDk5ZGFiZDNhNDNlZjgyNTFlMDZjNjgzNWUzNTczMjA/jpeg/000/492/189/647_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MGVlZTIzMWZhYmE5OWNlNDQ4MDIxODdiYzE5MjM1YTg/jpeg/000/492/189/645_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MWQ3ZjgyZTNhMDYxYmViYTNkZGUxNWU0Yzc3ZWQ4Y2Y/jpeg/000/492/189/644_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NzhjYWNlOWE3ZjQzZDYzNzQyODlkYzg2ZjgyOTk5Mzc/jpeg/000/492/189/641_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YmE1ZWNlOWIxYTRhNTU0Mzk5NjYyOTAxYWQ3MTRiMmQ/jpeg/000/492/189/639_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NTE3MWUyMDY3ZDNjOTNmY2FjNzJmZmU0NGQ1OTk4MjQ/jpeg/000/492/189/637_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MzM4YTQ0M2VkZjJhY2UzYTA3YWQ2MmJhNmVmYjg3ZDk/jpeg/000/492/189/634_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YTU0MGZhYjZlYjZlMTA2YmE1ODM0NzJmN2JkOTIwMDU/jpeg/000/492/189/632_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YzQ0NzNjZTVmMTJlYTI0ZWE0MDIwNDQ5NTJkYWVlZmU/jpeg/000/492/189/631_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZTY1ZjQ2NDgwODhkNzg1NTgwYjM2Y2IyMGY1YzZhMTY/jpeg/000/492/189/629_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MjA3MGJlNjQ2NjMyNjdmYzhlMDNmNDhhNjNjYTU3MjA/jpeg/000/492/189/628_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OWU4YmEyNDIzYTE1ODRkMTMyMmFiNDBjMzMxN2E3NjQ/jpeg/000/492/189/627_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NjJkNTAxNTQ2ODg0NjJkNGIyOTgwNmE1ZWU4MGQ1MGI/jpeg/000/492/189/625_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NzM0NGQ5ZTM2MTVmZTBjYjJhNzNmMDNjN2NjY2FiOTg/jpeg/000/492/189/622_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MTM1OGQxYjVlYzBlODRmNzVhOTlmM2QzZDE0YmJmOGM/jpeg/000/492/189/620_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ODhmMmJkZGIxOTFiYzZjNWY5OGMyODA1MDRhZGQ1MTc/jpeg/000/492/189/618_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZGVjMmU3NDI4YTcxZWNkOTZkNzIxNjIwYzJkNTJkZTk/jpeg/000/492/189/615_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NjVhMmQ3ODJmNzA1ODJlZTZmYTFlNzc3NDE1YTY0NGQ/jpeg/000/492/189/613_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZWE3OGRiNDRjMWQ2ODI3YWJjZGUyMDM2ZDYwZTE5ZjI/jpeg/000/492/189/612_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/Y2RkMmU4MjdhMmRjMDhkZDA2ZTNiMjNiYmE3ODY0MWM/jpeg/000/492/189/611_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NzA1MzYzNGE1ZjgzYWI5MjFmYmViOTdlYjVkYmM5MTg/jpeg/000/492/189/610_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MjBlN2RmY2M1Y2Q3MTc4ODAxNTlhMjhjNmQxZjdmYTc/jpeg/000/492/189/607_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ZDBkMzA2MWJkZmVjMGI2YjY2YWQwNjMzOTRhM2JlY2E/jpeg/000/492/189/605_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/MjcxOGFmZDJlMGFiYzIwOWE1N2I1YTA4NDRkZDlhZjc/jpeg/000/492/189/604_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/YWQ0ZWJlMWNkMDg0MDQzYzUyM2I1ZjRhY2Y3YmY0YWU/jpeg/000/492/189/602_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OWQ1MGM3OTQzMmFjMGZkYjQ4MDY3NzVjNzEzYzk1NTg/jpeg/000/492/189/600_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NWIzMzcyYzFhMDJjM2E5ZGY3YzE2ZDcxNWVkMDUxYjk/jpeg/000/492/189/598_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/OWUxNWI2NGU1Yzg0OGMxNTlmZTU3ZDczYTU3NTNiNjg/jpeg/000/492/189/596_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/ODAwNTY1YzBjM2M1ZmRlMGJkNzA2Yzg0YmFiZjU3NGU/jpeg/000/492/189/595_1000.jpg">',
+'<img src="https://ic-ph-nss.xhcdn.com/a/NWRjYWJjZjJkN2I0OTE0MGM3NDJiODcxMmFjN2RiODg/jpeg/000/492/189/592_1000.jpg">',
+'',
+];
+lineHeader = ''
+lineTail = ''
+bookid = "home-alone: 67"
+showRange = 60
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,128 @@
+<base target="_blank"><html><head><title>dareclio84Batch: 66</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
+video {width: 60%;}
+div {display:inline-block; width:100%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">dareclio84Batch: 66</div>
+<br>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'<k>https://xhamster.com/photos/gallery/photo-sexy-15947772</k>',
+'MGI0OTRiNTRkM2FlNDViYjFiNDg5Njg0ODA5YjIwNWY/jpeg/000/513/196/059',
+'MmVlY2YxYjllMWMyMDRiODIxOWRlOWRlMDA5NDE0OWU/jpeg/000/513/196/058',
+'NjhiZjEyNjMzYTkxMzI1YzVhYWQ0YjhhYTg5ZDM1OTA/jpeg/000/513/196/057',
+'OGFlMmVmNTkxYTY4ZjMzZjdhNGFmNWY4YWRhZTg2MjQ/jpeg/000/513/196/056',
+'ZGVjYzE4ZmYwZDZmNGE2Y2E5YTQzZDJkYWJmZGRkY2U/jpeg/000/513/196/055',
+'MDA0OWEwZDZhZTQ3YmE2OTgzMGJmNjIzYjczNjFhOWE/jpeg/000/513/196/054',
+'<k>https://xhamster.com/photos/gallery/lingerie-xxx-15949928</k>',
+'NjI3YTc4NzRhYzBhNGQzMDQyYmQ5Yzk5ZTJiM2NiYzA/jpeg/000/513/240/940',
+'NjA2YjNjYmI2YzVmYmNjNGE3YzVkODljYzFhOThjMTE/jpeg/000/513/240/939',
+'MjVlOTQwY2IyMmZiMDU1N2ZlMjQzNWYwZTkwMzIwZTI/jpeg/000/513/240/938',
+'NjJhNDE4ZWM2OWFmMDY1NjYwMGMwNjg5NGYwNTE1NjM/jpeg/000/513/240/937',
+'N2NiYjhlZTBmNTg4OTc2NDU2YmYyZjg1YjYwZDZjZDU/jpeg/000/513/240/892',
+'ZjFmZTQzMzc2MTUyYzM5ZjE0YmEyMzZkNTZiMTUzYWE/jpeg/000/513/240/891',
+'Y2U1ODMzNGRmZjk1MDJmNjFkMDk3NDllZDEyYTc0MWY/jpeg/000/513/240/890',
+'YTYzZTk4MGI1YzA0NDcyODczOTkyY2E1Yjk1ZWRiNTE/jpeg/000/513/240/889',
+'NDFkMDcyMDY0MzgzN2EwZjgzMzVhZDZjZTgyY2MxNTg/jpeg/000/513/240/888',
+'NDNmZjU1ZGZlNDAzYTMwZTI0OWIwMWUzMjljYTQ0MTU/jpeg/000/513/240/887',
+'NTRkOTg1NDY4YTE2MDBlYmJlZTAwYzRjYWY2ODRlOGI/jpeg/000/513/240/886',
+'ZTQyZjM3MTI1ZDY4ZjJiMzc3MzVjYzAyOGMwYTFiNTM/jpeg/000/513/240/884',
+'MmQ3MzBjYzkyNTU4OWVkYzQxMjI1NzkyYTEwY2Y0Yjc/jpeg/000/513/240/883',
+'MjRhZDBkMmQ4MDljYTZiMTBlOWI3ODk0OGY2NzMxNmI/jpeg/000/513/240/882',
+'MTIxZDMxMzRhZWRkMTNkZjdkNjk3NTEzNjZjMjc2Y2Q/jpeg/000/513/240/881',
+'MTJhNDU3ZTBiMTY4ODQxMDk4NTFhN2YwODFhYTQzZGU/jpeg/000/513/240/880',
+'MGE4ODg1ZGU3M2YzMzYwYmZjOWRiOGIxMDU1NjFlZDM/jpeg/000/513/240/878',
+'N2YyYjVlMzVhNTYxNmY1NTU3MjZkMDFlZDNmMmZiYjk/jpeg/000/513/240/877',
+'OTg5ODg1NGQ3YWEyNzhkMzgyNTAxZjZlMDM4YWExY2E/jpeg/000/513/240/876',
+'MjQ1M2IwMzBlMDZmMmY3M2E3Y2QxMmZhOTUwMGViMjA/jpeg/000/513/240/875',
+'MWRjZjgwN2EwODUwNDlhNWE3MTA0Yzg5ZjRjMWFhOTA/jpeg/000/513/240/874',
+'MWZmMzNlZDU0Mjc0ZGVhNDdhNmRlMDE0NmIyODdjMTE/jpeg/000/513/240/872',
+'Y2RhZDcwYTAwYjEzNmI1MTM4ZmYzNWFhM2Y4MmFlOTI/jpeg/000/513/240/871',
+'ZjgwYTM1YjZhMWFlYTI1OTdhNWQxNjIxNTU2YTA2ODI/jpeg/000/513/240/870',
+'ZTYxNWQ3ZjcxYTljZjJiNjhkZjMyOTkxMTA2MTVkNDY/jpeg/000/513/240/858',
+'YzU5ODAyYWE5YTFlN2EyMDJlNmM1MDhhOWIwNDZhYTg/jpeg/000/513/240/857',
+'M2U3ZjA0NzQwOGE4NmEwNmVkNjI2MWE0MTdmODZhZWM/jpeg/000/513/240/855',
+'NzFjNTg4MzlhZmUyNjU0ZTFiNzYzNWVjMzc3NjJiODc/jpeg/000/513/240/854',
+'YmUwMWRkYjFiYmUxNzU0Y2E4NmNkMTk4YTFjZWQ5YmM/jpeg/000/513/240/853',
+'MjU0ZDNmMzBjOTFiZGEyNjRkMmJhODE3MjJiZjlmMzQ/jpeg/000/513/240/848',
+'MjAzNjg3ZGE1NWYyZTkxNTVhNGM0MmU0YzVlNGMyMDc/jpeg/000/513/240/847',
+'<k>https://xhamster.com/photos/gallery/photo-sexy-lingerie-xxx-15955526</k>',
+'Njc2MWVjYWNmMWRiYmI0OWM1MTRmMmNmOTY3NzlmNWI/jpeg/000/513/359/572',
+'MzJhMGYzMWE3MmJhMTg0NjA4ZWRiNzgwZTQxYjgzMzc/jpeg/000/513/359/571',
+'NTVmZGIxNTgyZmI3ZTJhMzJjYWExM2Q3ZTZmYjNiNTk/jpeg/000/513/359/570',
+'NzhjZjgxOGNiYjFkOTI1NmY0MzhjM2FiYjA3N2IwMDE/jpeg/000/513/359/569',
+'YzBkYWMzYWU3OGRlMDhjZjE0MGE5NzExZDliMTAwZDM/jpeg/000/513/359/568',
+'ZGEwOTM4ZGMyYmM5NzA0OWYzM2IxYjM0ODI2YmI4ZmM/jpeg/000/513/359/567',
+'OTIxZmNiN2EzMTYzZmU5MTgzNjg1Yjc4ZDJlYTljNzg/jpeg/000/513/359/566',
+'NjllNDI4YjYxOWFjMWYwMDQzMzU4MjJjYmM3Yzc5Zjg/jpeg/000/513/359/565',
+'ZDhjYTVkZDM4YzMwNmMzOTg0ZDIxMTZjYzM0MWE0MDc/jpeg/000/513/359/564',
+'ZDQ2NjE2NzJkZTBjZjc1OWZiOThhM2M4NWYyMDgwMWY/jpeg/000/513/359/563',
+'MDY2YTE0OGIyMTVhYTRmYzI5MWEwNDdlZGQ5OTU4MmE/jpeg/000/513/359/562',
+'NzRiMWM1MjAyMzA1OGZjOWNiNTY3ZjAyZjI5NzBlYmI/jpeg/000/513/359/561',
+'ZGQ0NDM4NDQ5ZmZmZWNmZWExMzJlMjA0MmJmOWM0OGE/jpeg/000/513/359/560',
+'NzQ1MTRjOTM5MGEzYjgwNDdhNjkwZDZkYTMxMmJmZTk/jpeg/000/513/359/559',
+'ZGE0Mzk4MTUyMTZiYWY0YWU4MDcxOGNiN2YyYmJkYzY/jpeg/000/513/359/558',
+'NjRiOGQ2YzBlY2Q0NWQ2MzIyZGFiNDg2NmQwYTk4NjU/jpeg/000/513/359/557',
+'MDUzYjFjYjU3M2Q3NTZlN2YxOTUyY2ViOGU1NTUzNjc/jpeg/000/513/359/556',
+'MmVlM2QxZjQxMTVlZTA2MzBiMDI5ZTQ4MzFmOWEwYTc/jpeg/000/513/359/555',
+'MTJmNWNmMjI5MTE3YWNkZjdhZDU0YmRkNDBlYTg3NDg/jpeg/000/513/359/554',
+'NDdlMDNiY2VmOWM1YTNhMTJhZWMzY2Y1NzNkYmE2ODQ/jpeg/000/513/359/553',
+'M2RiNjI0Yjk4MDlhM2UyYTg3YTljZjQ1YTIxMDIyN2E/jpeg/000/513/359/552',
+'N2JmZjgxOWZiOWY3NDQ2ZTc0MjZiMDA3MTBkODBkNjc/jpeg/000/513/359/549',
+'ODIzNjBjODI3MjgyMDQ1N2FlNmIwNmQyY2RkYjBjM2Q/jpeg/000/513/359/548',
+'N2IyNjk0Y2Q5MWM0NWQ3MjkyYmYxOTk2ZDBlZDIzY2I/jpeg/000/513/359/547',
+'YWEwYmNiOWE5MWYzMzEwNGYxNWRlNmJlZjA2ZDQ0NGY/jpeg/000/513/359/546',
+'ZTZmOWY1ZmQ4MTkwMTU3ZjM1MTEwNmE5YmZiZTk3NTk/jpeg/000/513/359/545',
+'',
+];
+lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
+lineTail = '_1000.jpg">'
+showRange = 60
+bookid = "dareclio84Batch: 66"
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

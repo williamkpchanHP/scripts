@@ -1,0 +1,163 @@
+<base target="_blank"><html><head><title>artjoyx</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/sweet-scholar-16159118"><img src="https://ic-ph-nss.xhcdn.com/a/N2I0MDA0MGRkZTM1ODA1OTc0YWU4Zjg1ZTA0MzI2NzQ/jpeg/000/516/209/198_450.jpg"><br>Sweet Scholar</a> 19',
+'<a href="https://xhamster.com/photos/gallery/radiant-in-red-16158802"><img src="https://ic-ph-nss.xhcdn.com/a/M2MzZDkwM2Q0NDQ3ZmViNjgwYzEwZWU1YmRmOTYzMGU/jpeg/000/516/204/062_450.jpg"><br>Radiant in Red</a> 19',
+'<a href="https://xhamster.com/photos/gallery/presenting-caramella-del-x-16159135"><img src="https://ic-ph-nss.xhcdn.com/a/YzJmNDIwYWNhNjlhMmJiYmFiZGFiMDEyYjU5MGE0ZWQ/jpeg/000/516/209/343_450.jpg"><br>Presenting Caramella del X</a> 19',
+'<a href="https://xhamster.com/photos/gallery/denim-and-palms-16159117"><img src="https://ic-ph-nss.xhcdn.com/a/ODcyOTUxMTM1YzIyM2UwMWMyNmU1MWZmYzM4NGRkYzY/jpeg/000/516/209/176_450.jpg"><br>Denim and Palms</a> 19',
+'<a href="https://xhamster.com/photos/gallery/alluring-blonde-16158804"><img src="https://ic-ph-nss.xhcdn.com/a/MThjNTE3ZDIzMDUxMDAxY2ZjMjgxM2M0NGE2NjY1ZTE/jpeg/000/516/204/089_450.jpg"><br>Alluring Blonde</a> 19',
+'<a href="https://xhamster.com/photos/gallery/wild-encounter-16159223"><img src="https://ic-ph-nss.xhcdn.com/a/MzA1NzQ2ZWVlZWE4NDg1NWE4ZjIzMDFmYjc0OTI1YzU/jpeg/000/516/211/307_450.jpg"><br>Wild Encounter</a> 13',
+'<a href="https://xhamster.com/photos/gallery/wet-heat-16159184"><img src="https://ic-ph-nss.xhcdn.com/a/MzkzZjJmYWU5OWU5MDZjNDdmMjJlNDk0MTYzNGMzZDU/jpeg/000/516/210/773_450.jpg"><br>Wet Heat</a> 13',
+'<a href="https://xhamster.com/photos/gallery/warm-heart-16159243"><img src="https://ic-ph-nss.xhcdn.com/a/NTcyNDc1OTgwYTkxNDllYzIwNWY5MjBjZTZiMWE1ZjQ/jpeg/000/516/211/558_450.jpg"><br>Warm Heart</a> 13',
+'<a href="https://xhamster.com/photos/gallery/wardrobe-16159271"><img src="https://ic-ph-nss.xhcdn.com/a/MjRhZGU4MGJmZTA4ZmQ1MzJlYTdhN2JmOGQ1Zjk4Y2E/jpeg/000/516/211/942_450.jpg"><br>Wardrobe</a> 13',
+'<a href="https://xhamster.com/photos/gallery/wandering-hands-16159200"><img src="https://ic-ph-nss.xhcdn.com/a/OWU2MDNhNDllZDk4YzRmNmE3ZDFkNDMwODZjOTg0MjM/jpeg/000/516/210/993_450.jpg"><br>Wandering Hands</a> 13',
+'<a href="https://xhamster.com/photos/gallery/wake-me-up-16159281"><img src="https://ic-ph-nss.xhcdn.com/a/OWViNzcxZTJjOGZmN2UwNGM1ODVhZjFlZGNmMjIyNTQ/jpeg/000/516/212/075_450.jpg"><br>Wake Me Up</a> 13',
+'<a href="https://xhamster.com/photos/gallery/viewing-pleasure-16159266"><img src="https://ic-ph-nss.xhcdn.com/a/ZDY5MjEwMDdjODRiYTliMjcyMjk0YWRkMTQ5YzNhYTk/jpeg/000/516/211/881_450.jpg"><br>Viewing Pleasure</a> 13',
+'<a href="https://xhamster.com/photos/gallery/turquoise-dream-16159275"><img src="https://ic-ph-nss.xhcdn.com/a/ZTVmODMxYzZmNDE5YjVjZWJiMGNjNzYwOGFiMjdkN2E/jpeg/000/516/211/997_450.jpg"><br>Turquoise Dream</a> 13',
+'<a href="https://xhamster.com/photos/gallery/time-for-bed-16159289"><img src="https://ic-ph-nss.xhcdn.com/a/MDYwY2Q3YzA5YjA3ZWY3ZTk2NTI0MmYzYjI0ODdlMTU/jpeg/000/516/212/178_450.jpg"><br>Time For Bed</a> 13',
+'<a href="https://xhamster.com/photos/gallery/time-alone-16159269"><img src="https://ic-ph-nss.xhcdn.com/a/MzQ0M2FkMTI5MmFkNjA2NGNkMGNlOTM1ZjVkNDlhNmI/jpeg/000/516/211/921_450.jpg"><br>Time Alone</a> 13',
+'<a href="https://xhamster.com/photos/gallery/the-loft-16159265"><img src="https://ic-ph-nss.xhcdn.com/a/NjdjMjFjMDA3NzEwMzcxMTc4MDNjYWUwZmQ4N2ExNjk/jpeg/000/516/211/861_450.jpg"><br>The Loft</a> 13',
+'<a href="https://xhamster.com/photos/gallery/tender-beauty-16159188"><img src="https://ic-ph-nss.xhcdn.com/a/MjVlYjk1NWUzOTcwOTY2NGI2NTRiNDlmZmYzY2Y5ZjM/jpeg/000/516/210/838_450.jpg"><br>Tender Beauty</a> 13',
+'<a href="https://xhamster.com/photos/gallery/taste-me-16159246"><img src="https://ic-ph-nss.xhcdn.com/a/MjFkNzY4ZDhlYjZlNjFkOWYxNzU3Yjc3MGJmOTQ5MTg/jpeg/000/516/211/603_450.jpg"><br>Taste Me</a> 13',
+'<a href="https://xhamster.com/photos/gallery/take-a-shot-16159224"><img src="https://ic-ph-nss.xhcdn.com/a/YjRkMmU2YTlkNjQwNTU4MWIwNDVkOWRmOWZiN2Y0MTg/jpeg/000/516/211/323_450.jpg"><br>Take A Shot</a> 13',
+'<a href="https://xhamster.com/photos/gallery/sultry-beauty-16159208"><img src="https://ic-ph-nss.xhcdn.com/a/YjY1MWUxMjlmZTgzOTVlN2JmZTZmNmRlMDg2MGQwYzM/jpeg/000/516/211/105_450.jpg"><br>Sultry Beauty</a> 13',
+'<a href="https://xhamster.com/photos/gallery/strawberry-16159186"><img src="https://ic-ph-nss.xhcdn.com/a/ZGY5OWNlNjg4ZjMwOTg5ZWJmOGNlOTI4MmViMWMyMGI/jpeg/000/516/210/803_450.jpg"><br>Strawberry</a> 13',
+'<a href="https://xhamster.com/photos/gallery/steamy-windows-16159203"><img src="https://ic-ph-nss.xhcdn.com/a/YjZkZTZhN2QzYTFjOTYyMThiNjg3OWU2YTJkYzFhNjY/jpeg/000/516/211/030_450.jpg"><br>Steamy Windows</a> 13',
+'<a href="https://xhamster.com/photos/gallery/sporty-sexy-16159252"><img src="https://ic-ph-nss.xhcdn.com/a/NzcxMmZiMDg4YTJhNWM4ZWE0ZjFmMWJiOGU3MWE4ZDc/jpeg/000/516/211/680_450.jpg"><br>Sporty Sexy</a> 13',
+'<a href="https://xhamster.com/photos/gallery/sporty-fun-16159202"><img src="https://ic-ph-nss.xhcdn.com/a/YzBiZGUxYWVhZDg3N2E5YzNhMzEwODI4YjlmN2FhOGI/jpeg/000/516/211/017_450.jpg"><br>Sporty Fun</a> 13',
+'<a href="https://xhamster.com/photos/gallery/spellbound-16159227"><img src="https://ic-ph-nss.xhcdn.com/a/YWZjYWFlYjFhY2YwY2RlOWQ4NGMyYTYzZGYzYTE5ZDY/jpeg/000/516/211/363_450.jpg"><br>Spellbound</a> 13',
+'<a href="https://xhamster.com/photos/gallery/special-pleasure-16159294"><img src="https://ic-ph-nss.xhcdn.com/a/YjhkMDY0OGE2YWIxZmZhMjUxMzkwMjI2NDVjNTRiM2Y/jpeg/000/516/212/260_450.jpg"><br>Special Pleasure</a> 13',
+'<a href="https://xhamster.com/photos/gallery/special-connection-16159221"><img src="https://ic-ph-nss.xhcdn.com/a/ZjNiN2JlNjUzMGExMjEyNGE4NTMzNzgwOGQ0MmIxMzE/jpeg/000/516/211/275_450.jpg"><br>Special Connection</a> 13',
+'<a href="https://xhamster.com/photos/gallery/solo-shower-16159193"><img src="https://ic-ph-nss.xhcdn.com/a/OWY1NTIyZmExYmQ5MzNlODVlZjRjYTY5MzFlZTVmOTQ/jpeg/000/516/210/895_450.jpg"><br>Solo Shower</a> 13',
+'<a href="https://xhamster.com/photos/gallery/sirena-16159278"><img src="https://ic-ph-nss.xhcdn.com/a/MTI0NDFlZjI3MDY1ZTJmMGNlMzgyN2Y0NGM5MTlkMGE/jpeg/000/516/212/031_450.jpg"><br>Sirena</a> 13',
+'<a href="https://xhamster.com/photos/gallery/silver-heels-16159206"><img src="https://ic-ph-nss.xhcdn.com/a/YzQ1NWRlY2EyMzJiYWM5OWNmNzUyMzljYjM0MzA1OGU/jpeg/000/516/211/082_450.jpg"><br>Silver Heels</a> 13',
+'<a href="https://xhamster.com/photos/gallery/show-off-16159187"><img src="https://ic-ph-nss.xhcdn.com/a/NzY4MTZkMTEzMmE3MjA1YThlNDFjZmQwZDNkM2QzZDQ/jpeg/000/516/210/822_450.jpg"><br>Show Off</a> 13',
+'<a href="https://xhamster.com/photos/gallery/sheer-floral-16159198"><img src="https://ic-ph-nss.xhcdn.com/a/ZjNlNDQ2MjRmN2E1OWNjYTFiYmUwYjc4YzAyMjBiYzg/jpeg/000/516/210/966_450.jpg"><br>Sheer Floral</a> 13',
+'<a href="https://xhamster.com/photos/gallery/sex-appeal-16159182"><img src="https://ic-ph-nss.xhcdn.com/a/ZDJmNDFkZjZmNjMzMmFjYjhmZjdjMDhkZDQ4MTM0OTA/jpeg/000/516/210/753_450.jpg"><br>Sex Appeal</a> 13',
+'<a href="https://xhamster.com/photos/gallery/sensual-pleasure-16159261"><img src="https://ic-ph-nss.xhcdn.com/a/Yzk2NDNjNjVkMmUxMzhlNTdlNjdjMjA3ZDhjMWNmY2Y/jpeg/000/516/211/812_450.jpg"><br>Sensual Pleasure</a> 13',
+'<a href="https://xhamster.com/photos/gallery/seductive-style-16159237"><img src="https://ic-ph-nss.xhcdn.com/a/ZjZjMjBiNTY3ZTEzOTJkNWQyMDI5ZTQ0NDMzMTZlYjc/jpeg/000/516/211/482_450.jpg"><br>Seductive Style</a> 13',
+'<a href="https://xhamster.com/photos/gallery/seductive-gaze-16159212"><img src="https://ic-ph-nss.xhcdn.com/a/NWUyOTkyZDQ1ZDE0NTkwNzE0Y2YwYjlhNzYzMGJhOGE/jpeg/000/516/211/145_450.jpg"><br>Seductive Gaze</a> 13',
+'<a href="https://xhamster.com/photos/gallery/scarlet-straps-16159226"><img src="https://ic-ph-nss.xhcdn.com/a/MTliM2M2NTE2M2U0ZDRhYTA4NzUxNWQ2NjRlODFmMDM/jpeg/000/516/211/348_450.jpg"><br>Scarlet Straps</a> 13',
+'<a href="https://xhamster.com/photos/gallery/rose-cascade-16159245"><img src="https://ic-ph-nss.xhcdn.com/a/ZDZmMWEyYzAwOGNlYmJlMTJlZjJlYzU5MTA3MzU0YmQ/jpeg/000/516/211/586_450.jpg"><br>Rose Cascade</a> 13',
+'<a href="https://xhamster.com/photos/gallery/rock-hard-16159197"><img src="https://ic-ph-nss.xhcdn.com/a/ZWNmZTUxMTNlNzc0NjQ1OWIzMGNlMTVmM2M2Y2Y4ZWI/jpeg/000/516/210/957_450.jpg"><br>Rock Hard</a> 13',
+'<a href="https://xhamster.com/photos/gallery/ride-with-me-16159263"><img src="https://ic-ph-nss.xhcdn.com/a/NTE0NzBiYWY3OTc3MDczOTdhNGE2Yjk0NzllNTIyZGU/jpeg/000/516/211/835_450.jpg"><br>Ride With Me</a> 13',
+'<a href="https://xhamster.com/photos/gallery/red-dress-16159256"><img src="https://ic-ph-nss.xhcdn.com/a/ZGJjMTBhNTQwZjg4MTY5NmM2YzU1ZDFjZDlhZTA4ZGY/jpeg/000/516/211/742_450.jpg"><br>Red Dress</a> 13',
+'<a href="https://xhamster.com/photos/gallery/red-curls-16159249"><img src="https://ic-ph-nss.xhcdn.com/a/YTQ3ZjczOTNkMDdhZGU4YzZiNDg5MWE3ZTY4ZmQ3MTY/jpeg/000/516/211/642_450.jpg"><br>Red Curls</a> 13',
+'<a href="https://xhamster.com/photos/gallery/read-my-mind-16159287"><img src="https://ic-ph-nss.xhcdn.com/a/NmE1YzYxMzAxZTQ3NzIzYmU5NWU5MjQ0ZjY0NDZhMDI/jpeg/000/516/212/143_450.jpg"><br>Read My Mind</a> 13',
+'<a href="https://xhamster.com/photos/gallery/pure-pink-16159204"><img src="https://ic-ph-nss.xhcdn.com/a/ZDczYWY3NmQ3OGU0MDRhNjI2N2IyZDkzMzFhZTU1MGI/jpeg/000/516/211/050_450.jpg"><br>Pure Pink</a> 13',
+'<a href="https://xhamster.com/photos/gallery/provocative-16159228"><img src="https://ic-ph-nss.xhcdn.com/a/MTJmZDFiZGU1YzgwNmUyYzA3NmE2ZGJkY2Q3ZmYwZTI/jpeg/000/516/211/370_450.jpg"><br>Provocative</a> 13',
+'<a href="https://xhamster.com/photos/gallery/private-boudoir-16159274"><img src="https://ic-ph-nss.xhcdn.com/a/OWE0OWQ3NGUxZDhmMjZjZGYzYWZhYzNiNGQ4NTgwMjA/jpeg/000/516/211/979_450.jpg"><br>Private Boudoir</a> 13',
+'<a href="https://xhamster.com/photos/gallery/pleasure-tripled-16159194"><img src="https://ic-ph-nss.xhcdn.com/a/MDc0M2M5NjA4ODhlOWFmMDY2ZjQ4MmM2MjU2MTY2NWM/jpeg/000/516/210/915_450.jpg"><br>Pleasure Tripled</a> 13',
+'<a href="https://xhamster.com/photos/gallery/pleasure-park-16159196"><img src="https://ic-ph-nss.xhcdn.com/a/Y2Y4ZmYwMjEyZjM0Y2I4YjMwMDA3Y2Y2MDFjYjkwNDQ/jpeg/000/516/210/934_450.jpg"><br>Pleasure Park</a> 13',
+'<a href="https://xhamster.com/photos/gallery/pink-lingerie-16159255"><img src="https://ic-ph-nss.xhcdn.com/a/MjQyOTQ4ODQ1ZGMzZTcwODI0ZDZhNmZjZTdlZDBkZGM/jpeg/000/516/211/725_450.jpg"><br>Pink Lingerie</a> 13',
+'<a href="https://xhamster.com/photos/gallery/picnic-16159179"><img src="https://ic-ph-nss.xhcdn.com/a/YTE4ZTQ0ZGM3MTYxMGUzYTU1ZmNjNzU3YjU5MjliMWY/jpeg/000/516/210/708_450.jpg"><br>Picnic</a> 13',
+'<a href="https://xhamster.com/photos/gallery/petal-16159219"><img src="https://ic-ph-nss.xhcdn.com/a/MDFiMzE4NzFiOWMwNjcxYzc1NzYwNGVjNjU2NWVjYTI/jpeg/000/516/211/249_450.jpg"><br>Petal</a> 13',
+'<a href="https://xhamster.com/photos/gallery/perfect-view-16159220"><img src="https://ic-ph-nss.xhcdn.com/a/NzcyNTM1ZWRhZjcxYTM0MGU4OGE1MWE5MGUyYjA0Mzc/jpeg/000/516/211/262_450.jpg"><br>Perfect View</a> 13',
+'<a href="https://xhamster.com/photos/gallery/perfect-break-16159242"><img src="https://ic-ph-nss.xhcdn.com/a/MDc3ZWI1MDdhYWE0OWY3ODNkNzA4ZDg4ZmNkMjBkNjk/jpeg/000/516/211/553_450.jpg"><br>Perfect Break</a> 13',
+'<a href="https://xhamster.com/photos/gallery/new-game-16159286"><img src="https://ic-ph-nss.xhcdn.com/a/YzMwMGJiNTI0NTVjMGE5ODcyNDRmYTQzODljZTg3MTE/jpeg/000/516/212/134_450.jpg"><br>New Game</a> 13',
+'<a href="https://xhamster.com/photos/gallery/natural-pleasure-16159282"><img src="https://ic-ph-nss.xhcdn.com/a/MDgzNWI4MTkwZDkxZWU1MzdiM2M1OWM4MDAyYjQ3ZWY/jpeg/000/516/212/091_450.jpg"><br>Natural Pleasure</a> 13',
+'<a href="https://xhamster.com/photos/gallery/natural-craving-16159257"><img src="https://ic-ph-nss.xhcdn.com/a/Y2ZlN2Y0MTlkODllY2VhMzk0MDRjMmFkMmViMjQ2ZTQ/jpeg/000/516/211/758_450.jpg"><br>Natural Craving</a> 13',
+'<a href="https://xhamster.com/photos/gallery/natural-beauty-16159247"><img src="https://ic-ph-nss.xhcdn.com/a/OTNiN2ZkZDg1NTUwZWQwM2ViMWMyNDRhMmFmNDAxOTY/jpeg/000/516/211/622_450.jpg"><br>Natural Beauty</a> 13',
+'<a href="https://xhamster.com/photos/gallery/my-reflection-16159201"><img src="https://ic-ph-nss.xhcdn.com/a/NjAyY2U5YTBmYjg1N2Q2MjFiZmZhZTA2OTM0YjBlNmE/jpeg/000/516/211/005_450.jpg"><br>My Reflection</a> 13',
+'<a href="https://xhamster.com/photos/gallery/my-boudoir-16159293"><img src="https://ic-ph-nss.xhcdn.com/a/NjYyN2EyZWZmZWJmMjFlOWU4NWYwNzFlMTc4ZWQ5MDI/jpeg/000/516/212/249_450.jpg"><br>My Boudoir</a> 13',
+'<a href="https://xhamster.com/photos/gallery/moviemaker-16159233"><img src="https://ic-ph-nss.xhcdn.com/a/YTJiZWVmNGE5ODQ0Y2RiYTRjMzNmMmI1YjNlOTI4YmQ/jpeg/000/516/211/428_450.jpg"><br>Moviemaker</a> 13',
+'<a href="https://xhamster.com/photos/gallery/mouthwatering-16159234"><img src="https://ic-ph-nss.xhcdn.com/a/MWE0OGYwZjIxOTQwMDQxN2M0NzYwYWMyNjFmMjgxYjI/jpeg/000/516/211/448_450.jpg"><br>Mouthwatering</a> 13',
+'<a href="https://xhamster.com/photos/gallery/luscious-curves-16159259"><img src="https://ic-ph-nss.xhcdn.com/a/ZDA1ZjUwMWZiM2ZiOTgxMDc0OTA2NjZhYWI1MDVlZWY/jpeg/000/516/211/790_450.jpg"><br>Luscious Curves</a> 13',
+'<a href="https://xhamster.com/photos/gallery/loading-bay-16159229"><img src="https://ic-ph-nss.xhcdn.com/a/YWYxNjhlNmMzYTY2ODgzNzNhZjI1MzRiZDMwMzY5YzI/jpeg/000/516/211/395_450.jpg"><br>Loading Bay</a> 13',
+'<a href="https://xhamster.com/photos/gallery/lingerie-dream-16159240"><img src="https://ic-ph-nss.xhcdn.com/a/MWE2OGRiMmQ3YTU0YmI3NTIxNDQ0ZTc2NGEwMjAxZTI/jpeg/000/516/211/522_450.jpg"><br>Lingerie Dream</a> 13',
+'<a href="https://xhamster.com/photos/gallery/lilac-love-16159222"><img src="https://ic-ph-nss.xhcdn.com/a/ODVmNzMxM2FlMWQ4N2FhYTE0ZDMyNGUyYzk1NjJlZDI/jpeg/000/516/211/296_450.jpg"><br>Lilac Love</a> 13',
+'<a href="https://xhamster.com/photos/gallery/lick-it-16159225"><img src="https://ic-ph-nss.xhcdn.com/a/ZTA3YmNkNzQxOTI4ZWNhZTA4OTMyMTAzMDgzNjE1N2Q/jpeg/000/516/211/337_450.jpg"><br>Lick It</a> 13',
+'<a href="https://xhamster.com/photos/gallery/learning-16159280"><img src="https://ic-ph-nss.xhcdn.com/a/N2E0MDdkMjg5OWU2MWQ4YjNkYTNjOGM2MjQzMWFlMjA/jpeg/000/516/212/056_450.jpg"><br>Learning</a> 13',
+'<a href="https://xhamster.com/photos/gallery/lady-in-red-16159192"><img src="https://ic-ph-nss.xhcdn.com/a/ODRiMjY5OTFlMjQwMjgwM2MwNjhiM2VjMjA5Yzk5MGU/jpeg/000/516/210/873_450.jpg"><br>Lady In Red</a> 13',
+'<a href="https://xhamster.com/photos/gallery/kinky-pleasure-16159213"><img src="https://ic-ph-nss.xhcdn.com/a/NWU2MWM5OTYxYjdjMGJhM2QzMTViNTc3YWNkYzBlYjY/jpeg/000/516/211/166_450.jpg"><br>Kinky Pleasure</a> 13',
+'<a href="https://xhamster.com/photos/gallery/joyful-16159251"><img src="https://ic-ph-nss.xhcdn.com/a/YTFlMzMyZWY2Y2VmMDM4N2NiYTcxOThhMzZkNDRjYjE/jpeg/000/516/211/676_450.jpg"><br>Joyful</a> 13',
+'<a href="https://xhamster.com/photos/gallery/inviting-16159253"><img src="https://ic-ph-nss.xhcdn.com/a/MTkxMGUwYTI5NjE2YmE0OTE1NDJjODBkZTcwZWJjZTM/jpeg/000/516/211/696_450.jpg"><br>Inviting</a> 13',
+'<a href="https://xhamster.com/photos/gallery/hot-kisses-16159215"><img src="https://ic-ph-nss.xhcdn.com/a/MmIyYWIwZjE1M2EzYmY1ZDMwNmI2Mzg3OWMwODcwODc/jpeg/000/516/211/200_450.jpg"><br>Hot Kisses</a> 13',
+'<a href="https://xhamster.com/photos/gallery/homebody-16159235"><img src="https://ic-ph-nss.xhcdn.com/a/N2NlYmEzOWU2N2MyMGJjNDFmYTZlMjY3ODJhMGQ1YTU/jpeg/000/516/211/452_450.jpg"><br>Homebody</a> 13',
+'<a href="https://xhamster.com/photos/gallery/holiday-spirit-16159236"><img src="https://ic-ph-nss.xhcdn.com/a/ODE5ZTY0ZmY0YTQzNDJmNzE2Y2Q3ZDcyY2EzOTY3N2M/jpeg/000/516/211/467_450.jpg"><br>Holiday Spirit</a> 13',
+'<a href="https://xhamster.com/photos/gallery/heat-rising-16159254"><img src="https://ic-ph-nss.xhcdn.com/a/YmVhOTg3OTI1MTUwODI1NzVhZGUxOWQ4YmQ3YTBjMTI/jpeg/000/516/211/715_450.jpg"><br>Heat Rising</a> 13',
+'<a href="https://xhamster.com/photos/gallery/hay-roll-16159230"><img src="https://ic-ph-nss.xhcdn.com/a/ZGVlYTAzYmM1MTQ1ZjY5NTkwODAwNTMwYWI1ZmMxZGQ/jpeg/000/516/211/400_450.jpg"><br>Hay Roll</a> 13',
+'<a href="https://xhamster.com/photos/gallery/gold-lace-16159250"><img src="https://ic-ph-nss.xhcdn.com/a/MWViYjk1MDI0YmVmZmY4YzBjM2EwYTViZmU3ZWY5OGU/jpeg/000/516/211/659_450.jpg"><br>Gold Lace</a> 13',
+'<a href="https://xhamster.com/photos/gallery/glam-pink-16159267"><img src="https://ic-ph-nss.xhcdn.com/a/YzAyYzhkNjljM2FlYWVhNmIzZTI5MzA0MDE5NTUwMTA/jpeg/000/516/211/885_450.jpg"><br>Glam Pink</a> 13',
+'<a href="https://xhamster.com/photos/gallery/get-wet-16159258"><img src="https://ic-ph-nss.xhcdn.com/a/N2VkNzRjZWNhNDM1N2JkYTIzNzY0ZWQ0YzFkYjJjYmQ/jpeg/000/516/211/774_450.jpg"><br>Get Wet</a> 13',
+'<a href="https://xhamster.com/photos/gallery/full-stretch-16159270"><img src="https://ic-ph-nss.xhcdn.com/a/Zjk1MjEyZDg1OWNiYWZiMThmYzQzNmYxMmQ5OTZkOGI/jpeg/000/516/211/926_450.jpg"><br>Full Stretch</a> 13',
+'<a href="https://xhamster.com/photos/gallery/frisky-lace-16159284"><img src="https://ic-ph-nss.xhcdn.com/a/MDdhZjk0MTUxZDkwNDA2YWNlNjE0MzMyY2Y1NDA1ZWI/jpeg/000/516/212/121_450.jpg"><br>Frisky Lace</a> 13',
+'<a href="https://xhamster.com/photos/gallery/foxy-lady-16159207"><img src="https://ic-ph-nss.xhcdn.com/a/YTcxNjlmN2JkMjAxMDA0YmM3NzEzMTM0ZWEwZDQyNGU/jpeg/000/516/211/093_450.jpg"><br>Foxy Lady</a> 13',
+'<a href="https://xhamster.com/photos/gallery/floral-beauty-16159180"><img src="https://ic-ph-nss.xhcdn.com/a/ZWM2ZTVlNzJhZjllMDUxY2NiMzdkMGE0MWJkNTY5OGY/jpeg/000/516/210/718_450.jpg"><br>Floral Beauty</a> 13',
+'<a href="https://xhamster.com/photos/gallery/fiery-beauty-16159185"><img src="https://ic-ph-nss.xhcdn.com/a/MjE1NTE3NzQxNGYzMWIyYzE4ZTMxMzI5ZTY3ZWJjZTY/jpeg/000/516/210/797_450.jpg"><br>Fiery Beauty</a> 13',
+'<a href="https://xhamster.com/photos/gallery/festive-beauty-16159239"><img src="https://ic-ph-nss.xhcdn.com/a/NTNjNTdjZWQ1ZDFkNTU0OTg3YmQzZTI0M2Y5OGIxNTk/jpeg/000/516/211/505_450.jpg"><br>Festive Beauty</a> 13',
+'<a href="https://xhamster.com/photos/gallery/feather-touch-16159291"><img src="https://ic-ph-nss.xhcdn.com/a/YzRkMzg3YWFiMDVjMzhiNmQ1MTE2Nzk5Y2U4ZDM0NDc/jpeg/000/516/212/216_450.jpg"><br>Feather Touch</a> 13',
+'<a href="https://xhamster.com/photos/gallery/enjoy-myself-16159264"><img src="https://ic-ph-nss.xhcdn.com/a/YzY3MjkxZjczMmRmMDEzZjkzNjc5MTdjZDBhNDA0YTU/jpeg/000/516/211/851_450.jpg"><br>Enjoy Myself</a> 13',
+'<a href="https://xhamster.com/photos/gallery/enchanting-16159273"><img src="https://ic-ph-nss.xhcdn.com/a/NjY1OWEyN2MwNDg3NWQ1Yzc1MmU2ZjQ0YTZjZWZhNTc/jpeg/000/516/211/973_450.jpg"><br>Enchanting</a> 13',
+'<a href="https://xhamster.com/photos/gallery/elegant-allure-16159241"><img src="https://ic-ph-nss.xhcdn.com/a/NDkyMzhkOGYwYzRjODI2OWM0MzhkZGI2MTRjZjQ1MzE/jpeg/000/516/211/540_450.jpg"><br>Elegant Allure</a> 13',
+'<a href="https://xhamster.com/photos/gallery/electric-blue-16159205"><img src="https://ic-ph-nss.xhcdn.com/a/NGRjNGI0MzFkMDIzYmFmYThhZjBiOGI0MWRkODdmN2E/jpeg/000/516/211/063_450.jpg"><br>Electric Blue</a> 13',
+'<a href="https://xhamster.com/photos/gallery/eagerness-16159295"><img src="https://ic-ph-nss.xhcdn.com/a/ZTEwNzk2ZTA0NTMyMDM5NGVjOTllYjc0Y2QzZjc4YzI/jpeg/000/516/212/273_450.jpg"><br>Eagerness</a> 13',
+'<a href="https://xhamster.com/photos/gallery/distract-me-16159214"><img src="https://ic-ph-nss.xhcdn.com/a/ZjM4ZThlMDM0NzkyOTEyMjQwNDc3MTRjZTRiZWQzMDI/jpeg/000/516/211/184_450.jpg"><br>Distract Me</a> 13',
+'<a href="https://xhamster.com/photos/gallery/desire-you-16159216"><img src="https://ic-ph-nss.xhcdn.com/a/YzZkZjFkZjE2ZWFjYzMxNjIyZDc0ZTM1OTEyNGM3ZmU/jpeg/000/516/211/212_450.jpg"><br>Desire You</a> 13',
+'<a href="https://xhamster.com/photos/gallery/desirable-16159218"><img src="https://ic-ph-nss.xhcdn.com/a/MGI3NmJkNTAzOTE1MjQ1NzdiYTJiNjUyYzQ4MzEzOWQ/jpeg/000/516/211/237_450.jpg"><br>Desirable</a> 13',
+'<a href="https://xhamster.com/photos/gallery/deepika-16159189"><img src="https://ic-ph-nss.xhcdn.com/a/MzcxMGM2YmNkOTI5NTNiYWI5YTA5MjY2YWI1ZGQ3NDc/jpeg/000/516/210/848_450.jpg"><br>Deepika</a> 13',
+'<a href="https://xhamster.com/photos/gallery/colorful-delight-16159195"><img src="https://ic-ph-nss.xhcdn.com/a/ZTA1NmFiMjA0YTExZDJhY2ExZjhhNjFhMmVlZjFiZmE/jpeg/000/516/210/919_450.jpg"><br>Colorful Delight</a> 13',
+'<a href="https://xhamster.com/photos/gallery/collaboration-16159209"><img src="https://ic-ph-nss.xhcdn.com/a/OTBmYjdlMThiY2ZmNTJlMDkxMWY4MjY3MWVjMTAwNGY/jpeg/000/516/211/120_450.jpg"><br>Collaboration</a> 13',
+'<a href="https://xhamster.com/photos/gallery/cherry-16159199"><img src="https://ic-ph-nss.xhcdn.com/a/NWU0ZGMyYjcxNDJmYmE0NWU2ZTg5NDQyNGI1NTlmNGE/jpeg/000/516/210/978_450.jpg"><br>Cherry</a> 13',
+'<a href="https://xhamster.com/photos/gallery/casual-sass-16159244"><img src="https://ic-ph-nss.xhcdn.com/a/ZGViYzVjMjVlNjVlMmM4YmVlM2QxOGNkM2Q1Njk1ZGI/jpeg/000/516/211/572_450.jpg"><br>Casual Sass</a> 13',
+'<a href="https://xhamster.com/photos/gallery/brunch-16159232"><img src="https://ic-ph-nss.xhcdn.com/a/ZTI2MWRiMjJhNGY4ZTJhNzg2NTk3OWQzYWFkOTdlMjU/jpeg/000/516/211/414_450.jpg"><br>Brunch</a> 13',
+'<a href="https://xhamster.com/photos/gallery/breast-features-16159191"><img src="https://ic-ph-nss.xhcdn.com/a/ZTQ2MTkxN2NhOTg4ZDkwMGJlNTgwOGI0OWVmYTljNjA/jpeg/000/516/210/859_450.jpg"><br>Breast Features</a> 13',
+'<a href="https://xhamster.com/photos/gallery/boudoir-beauty-16159211"><img src="https://ic-ph-nss.xhcdn.com/a/M2JhZWIwYWU1MDRkZDQ4NTBiNDExNjE5OWE5MWQyMzg/jpeg/000/516/211/139_450.jpg"><br>Boudoir Beauty</a> 13',
+'<a href="https://xhamster.com/photos/gallery/bombshell-16159296"><img src="https://ic-ph-nss.xhcdn.com/a/ODNlNDYxMjIwODVlOGNmYTM3N2ZmZmQ0YzNhYTczMzk/jpeg/000/516/212/291_450.jpg"><br>Bombshell</a> 13',
+'<a href="https://xhamster.com/photos/gallery/black-corset-16159248"><img src="https://ic-ph-nss.xhcdn.com/a/MDYwNTA5Yjk5NDAxMzFjYjBkZWMzZGI2MmJiYmZlMjY/jpeg/000/516/211/636_450.jpg"><br>Black Corset</a> 13',
+'<a href="https://xhamster.com/photos/gallery/better-game-16159268"><img src="https://ic-ph-nss.xhcdn.com/a/ZTQ0Yzk5MjQyMzMzZDE0NWViYmI1MDcxNjg5YTM5MTQ/jpeg/000/516/211/904_450.jpg"><br>Better Game</a> 13',
+'<a href="https://xhamster.com/photos/gallery/another-world-16159279"><img src="https://ic-ph-nss.xhcdn.com/a/YjA0N2E2NWI1MjhjZjM4ZmEzMjI3ZTNhYjRmMzBhMzA/jpeg/000/516/212/054_450.jpg"><br>Another World</a> 13',
+'<a href="https://xhamster.com/photos/gallery/alter-16159276"><img src="https://ic-ph-nss.xhcdn.com/a/NTYzNzg1MmI5MTQxYmY3ZWExM2I4NTg0M2YzZWNmNTk/jpeg/000/516/212/011_450.jpg"><br>Alter</a> 13',
+'<a href="https://xhamster.com/photos/gallery/all-for-you-16159292"><img src="https://ic-ph-nss.xhcdn.com/a/MzY5OGIzNzM1OTZjMTA4MDQzODdlMTc4MWViODMwZTY/jpeg/000/516/212/225_450.jpg"><br>All For You</a> 13',
+'<a href="https://xhamster.com/photos/gallery/admire-me-16159181"><img src="https://ic-ph-nss.xhcdn.com/a/NTFkMTEzODFiYmEyNzBkZDlmZDE2N2YxODY3MGQxM2I/jpeg/000/516/210/731_450.jpg"><br>Admire Me</a> 13',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "artjoyx"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

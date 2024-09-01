@@ -1,0 +1,172 @@
+<base target="_blank"><html><head><title>cocoa-ch</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+img {width: 33%; width:480px; height:270px;}
+div {display:inline-block;width: 33%; margin-right:1px;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">cocoa-ch</div>
+<pre class="js-tip"></pre>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'63fa3e58623e2"><img src="https://ei.phncdn.com/videos/202302/25/426225721/original/(m=q2JZ2-XbeafTGgaaaa)(mh=z671PtOeN5UcVEDm)0.jpg"><br>【视频中的链接已失效！请访问最新网址：JE27点cc --- 全国同城约炮资源平台】探花李寻花3000约了个身高170cm御姐型美女身材特别好，皮肤超白',
+'6572d352d4d88"><img src="https://ei.phncdn.com/videos/202312/08/444384981/thumbs_5/(m=eafTGgaaaa)(mh=9mnAgR58D8DZHgTD)5.jpg"><br>Office Lady Cant Pay Her Rent, She Fucks Her Landlord To Make Up For It...<U+00A0>',
+'65a70c3289d65"><img src="https://ei.phncdn.com/videos/202401/17/446636611/original/(m=qP72V6YbeafTGgaaaa)(mh=azQRsgpc7fnnp4m-)0.jpg"><br>Teen girl orders a hamburger and the domiciliary arrives with a big DICK  and gives her triple meal',
+'65a7ef1a16b6f"><img src="https://ei.phncdn.com/videos/202401/17/446671411/original/(m=eafTGgaaaa)(mh=sG79KvCdHoUuC4SB)3.jpg"><br>Schoolgirl needs his stockings and shoes cleaned',
+'65ad7f6d1fa9e"><img src="https://ei.phncdn.com/videos/202401/21/446899831/original/(m=qLN186YbeafTGgaaaa)(mh=GiMDxRhlRIp7yLSG)0.jpg"><br>What does it mean when two friends invite you to see a movie? ft Mei Pang',
+'65afbd3e57032"><img src="https://ei.phncdn.com/videos/202401/23/446994751/thumbs_5/(m=eafTGgaaaa)(mh=mHut3tP4DZibYZfm)16.jpg"><br>On this wonderful day I want to cum on my younger stepsisters pussy',
+'65b3ddcae8349"><img src="https://ei.phncdn.com/videos/202401/26/447172251/original/(m=qKZX07YbeafTGgaaaa)(mh=lsguyeOpm_n_kC-c)0.jpg"><br>Sisters Best Friend Bets I Cant Last - Angel Youngs - Perfect Girlfriend - Alex Adams',
+'65c1715e63863"><img src="https://ei.phncdn.com/videos/202402/05/447721811/original/(m=eafTGgaaaa)(mh=DsueaB8eWR4_1w1a)13.jpg"><br>[無修正動画］',
+'ph61d000ddd2b28"><img src="https://ei.phncdn.com/videos/202201/01/400551991/thumbs_5/(m=eafTGgaaaa)(mh=MURDO7Xmonf-7FlI)15.jpg"><br>Trampling #87 kiss my sneakers slave',
+'ph6344c18f0cfe1"><img src="https://ei.phncdn.com/videos/202210/11/417297311/original/(m=eafTGgaaaa)(mh=SCfZOUiCe8e5mrvr)9.jpg"><br>私がカラダで教えてあげる　英語の家庭教師を誘惑<U+266A>フェラ&手コキで口いっぱい射精させてあげる',
+'ph634626008c76a"><img src="https://ei.phncdn.com/videos/202210/12/417374711/original/(m=eafTGgaaaa)(mh=gy7tJUbrz6ElWGnD)11.jpg"><br>我将用我的身体来教你<U+301C>我会安慰你的老师的阴茎<U+301C>（3）',
+'ph634629bf35ac5"><img src="https://ei.phncdn.com/videos/202210/12/417375341/original/(m=eafTGgaaaa)(mh=R9DWO0l8C5wHp0Ux)14.jpg"><br>我将用我的身体来教你<U+301C>我会安慰你的老师的阴茎<U+301C>（2）',
+'ph63476c5021248"><img src="https://ei.phncdn.com/videos/202210/13/417440341/original/(m=eafTGgaaaa)(mh=zuTy0vif4rXAsVFh)14.jpg"><br>【波多野結衣】粘稠、肮脏的性爱（1）',
+'ph6347c5c62e54f"><img src="https://ei.phncdn.com/videos/202210/13/417457341/original/(m=eafTGgaaaa)(mh=EAsyfC3nCc19s3Bs)1.jpg"><br>【波多野結衣】粘稠、肮脏的性爱（2）',
+'ph63480d3c75088"><img src="https://ei.phncdn.com/videos/202210/13/417470441/original/(m=eafTGgaaaa)(mh=pMUEwtjWhfejKKGJ)7.jpg"><br>【無修正】3pハードコア ショートショート　2分動画',
+'ph6348c930ddc30"><img src="https://ei.phncdn.com/videos/202210/14/417513231/original/(m=eafTGgaaaa)(mh=ggz6__kMgRSuPG9L)1.jpg"><br>【波多野結衣】ねっとりとしたやらしいセックス',
+'ph6348dfe6c25d9"><img src="https://ei.phncdn.com/videos/202210/14/417517691/original/(m=eafTGgaaaa)(mh=QFBC4CzTG-KLoGaG)5.jpg"><br>【波多野結衣】無修正鬼イカせ絶頂アクメ　ルックススタイル抜群波多野結衣が鬼ハメFUCKで何度も絶頂',
+'ph634956b42c91d"><img src="https://ei.phncdn.com/videos/202210/14/417536311/original/(m=eafTGgaaaa)(mh=OhXTNZEQMbCUFeES)13.jpg"><br>［Uncensored] Super Excitement and Randomness',
+'ph634a62a3b669a"><img src="https://ei.phncdn.com/videos/202210/15/417587701/original/(m=eafTGgaaaa)(mh=-_p49QRj5R3hqI_s)9.jpg"><br>［Uncensored] Lewd Female Who Looks Good in Kimono',
+'ph634a6fb3b7b98"><img src="https://ei.phncdn.com/videos/202210/15/417589111/original/(m=eafTGgaaaa)(mh=xTLnk7bPqCagntxc)8.jpg"><br>［Uncensored] After School Girl File - Keep the innocent girl to yourself',
+'ph634a72d0ae32a"><img src="https://ei.phncdn.com/videos/202210/15/417589321/original/(m=eafTGgaaaa)(mh=_IoE2L-3wMNK7Ze7)9.jpg"><br>［Uncensored] After School Beautiful Girl File - Beautiful White Skinned Young Lady',
+'ph634a7586ee02f"><img src="https://ei.phncdn.com/videos/202210/15/417589611/original/(m=eafTGgaaaa)(mh=so4sK1v4hKyZhFVn)1.jpg"><br>［Uncensored] My Exclusive Maid Who Can Be Instantly Fucked',
+'ph634a7827dae6d"><img src="https://ei.phncdn.com/videos/202210/15/417590011/original/(m=eafTGgaaaa)(mh=IWues0OO7Eg-72f7)6.jpg"><br>［Uncensored] Dreamy Orgy Performance - Two Beautiful Exclusive Happy Bitch',
+'ph634b675bb66b2"><img src="https://ei.phncdn.com/videos/202210/16/417634691/original/(m=eafTGgaaaa)(mh=XeXjTJTAWSenNFHi)9.jpg"><br>［Uncensored] Too Erotic and Glamorous Beautiful Women Make You Want to Insert Your Penis',
+'ph634ba5af550e3"><img src="https://ei.phncdn.com/videos/202210/16/417640441/original/(m=eafTGgaaaa)(mh=E0xeLINmxfOD2zbI)9.jpg"><br>I came back because I missed Japanese dick',
+'ph634baf0b9c401"><img src="https://ei.phncdn.com/videos/202210/16/417642001/original/(m=eafTGgaaaa)(mh=X9ldqYb6z7zkSWaJ)9.jpg"><br>Iカップ美巨乳女優のありがたい筆おろし　痙攣性交　絶頂潮',
+'ph634bb307d72d6"><img src="https://ei.phncdn.com/videos/202210/16/417642751/original/(m=eafTGgaaaa)(mh=oAAZ3IwVAEVYbsz_)3.jpg"><br>Working tits negligent tits Golf lesson version',
+'ph634bb7242e473"><img src="https://ei.phncdn.com/videos/202210/16/417643371/original/(m=eafTGgaaaa)(mh=o5YSdnChA8KCbyQv)3.jpg"><br>アナルに目覚めた私の妻　変態美人妻が夫にアナルSEXを懇願！アナル汁垂れ流し',
+'ph634bbbb29677a"><img src="https://ei.phncdn.com/videos/202210/16/417644061/original/(m=eafTGgaaaa)(mh=6mFVs_wEs0Kmlyhw)1.jpg"><br>Jurchen Continent',
+'ph634bbfb282c86"><img src="https://ei.phncdn.com/videos/202210/16/417644441/original/(m=eafTGgaaaa)(mh=1FZI40-2Mw43IoKd)3.jpg"><br>Savage girls who want to be touched a lot outside',
+'ph634ca79574b59"><img src="https://ei.phncdn.com/videos/202210/17/417684921/original/(m=eafTGgaaaa)(mh=T0gcL4JkjZkyUSOc)16.jpg"><br>［Yui Hatano] Rich SEX with a realistic feeling of presence, superb style, and superb FUCK!',
+'ph634d3bff95996"><img src="https://ei.phncdn.com/videos/202210/17/417707361/original/(m=eafTGgaaaa)(mh=yaRufs0ELoqMYDUw)4.jpg"><br>［Yui Hatano] Bukkake Mature Woman - Beautiful Face Covered in Semen',
+'ph634d4461c3520"><img src="https://ei.phncdn.com/videos/202210/17/417709001/original/(m=eafTGgaaaa)(mh=OmKcMhOb7-zCh05n)5.jpg"><br>連続絶頂大乱交　さん2人が乱交ファックで乱れ狂う',
+'ph634df293810d8"><img src="https://ei.phncdn.com/videos/202210/18/417750251/original/(m=eafTGgaaaa)(mh=rRPiuRJkmCGuXLbK)3.jpg"><br>Lesbian orgies - Beautiful lascivious witches',
+'ph634e033d9e201"><img src="https://ei.phncdn.com/videos/202210/18/417753851/original/(m=eafTGgaaaa)(mh=MT-_9h3j7z3zZP84)4.jpg"><br>Beautiful Big Tits Biatch H-cup Bursting Tits Superb Body',
+'ph634e2a09d93b8"><img src="https://ei.phncdn.com/videos/202210/18/417757821/original/(m=eafTGgaaaa)(mh=Y5HLrzvnWSu-uaR6)14.jpg"><br>The day I fell into sex slavery',
+'ph634e399ec4a66"><img src="https://ei.phncdn.com/videos/202210/18/417760591/original/(m=eafTGgaaaa)(mh=AFli9Kb3rR9PZ9XE)16.jpg"><br>Second Virginity Development by Simultaneous Two-Hole FUCK',
+'ph634e4643c0c9e"><img src="https://ei.phncdn.com/videos/202210/18/417762201/original/(m=eafTGgaaaa)(mh=aJot84R69kmUkqi1)13.jpg"><br>Married woman who became a prisoner of the rod',
+'ph634fb7c408752"><img src="https://ei.phncdn.com/videos/202210/19/417835931/original/(m=eafTGgaaaa)(mh=tygSsJkSTJqaVyEP)1.jpg"><br>That girl is so pretty when shes clean. Its embarrassing to be seen like that.',
+'ph634fbbc950c15"><img src="https://ei.phncdn.com/videos/202210/19/417836551/original/(m=eafTGgaaaa)(mh=GysCJgOwGxPX-4PI)6.jpg"><br>僕の望みをなんでも叶えてくれる従順ペット　パイパン美女がデカチン割れ目に食い込ませ馬乗りファック',
+'ph634fbe089e31b"><img src="https://ei.phncdn.com/videos/202210/19/417836981/original/(m=eafTGgaaaa)(mh=cu_q0Qqi8_wxaRyE)13.jpg"><br>パイパン美少女に連続ザーメン注入 ヌルヌルスジ全開で3Pでイキ狂う美女',
+'ph634fd949b20f7"><img src="https://ei.phncdn.com/videos/202210/19/417841361/original/(m=eafTGgaaaa)(mh=HFzy_ZkhjOnIlQrV)14.jpg"><br>Koi Ochi Marin-chan no Koi',
+'ph634fdf151f688"><img src="https://ei.phncdn.com/videos/202210/19/417842471/original/(m=eafTGgaaaa)(mh=pXDLCot2QlaJJo03)2.jpg"><br>Neighborhood playful no-bra wife who takes out the trash in the morning',
+'ph634fea5b42d94"><img src="https://ei.phncdn.com/videos/202210/19/417844731/original/(m=eafTGgaaaa)(mh=M1wLYuNgvX827F0L)1.jpg"><br>体型のギャルがデカチンぶち込まれ喘ぎ狂う',
+'ph634ffae42b190"><img src="https://ei.phncdn.com/videos/202210/19/417848751/original/(m=eafTGgaaaa)(mh=pFXQULKHGwtKm1WN)8.jpg"><br>Welcome to Luxury Soaps',
+'ph6352654f67140"><img src="https://ei.phncdn.com/videos/202210/21/417970791/original/(m=eafTGgaaaa)(mh=WXutHBtg9peA3xkJ)15.jpg"><br>My Summer Memories',
+'ph635268648bda8"><img src="https://ei.phncdn.com/videos/202210/21/417971241/original/(m=eafTGgaaaa)(mh=kspRsDlkIyG2EZT3)7.jpg"><br>白濁液を連続ぶっかけ　綺麗',
+'ph63526e90a8d26"><img src="https://ei.phncdn.com/videos/202210/21/417972081/original/(m=eafTGgaaaa)(mh=AgBbqXnDA862DSR7)11.jpg"><br>The favorite food of a superbly beautiful woman is extremely thick',
+'ph635274408f2b9"><img src="https://ei.phncdn.com/videos/202210/21/417972781/original/(m=eafTGgaaaa)(mh=9a6eluRtwlQRWuNH)10.jpg"><br>Picking up a beautiful woman with great style',
+'ph6352765951bad"><img src="https://ei.phncdn.com/videos/202210/21/417973031/original/(m=eafTGgaaaa)(mh=NJnm4Rl3f1IGM2nd)1.jpg"><br>I want to be tied up. A pretty girl who wants to be trained.',
+'ph63527938cac83"><img src="https://ei.phncdn.com/videos/202210/21/417973441/original/(m=eafTGgaaaa)(mh=5csykEgCwwqOW-PK)1.jpg"><br>Welcome to the high-class soap, a fabulous, frenzied, and frenzied experience!',
+'ph63527b88b2f0b"><img src="https://ei.phncdn.com/videos/202210/21/417973791/original/(m=eafTGgaaaa)(mh=DDaCrr1BaZ6-RDUf)5.jpg"><br>Slime tits, slut tits, powerful big tits, and a hard shake fuck!',
+'ph63527de46aa25"><img src="https://ei.phncdn.com/videos/202210/21/417974121/original/(m=eafTGgaaaa)(mh=yriTd8TUgz7QEj9y)3.jpg"><br>A friend I hadnt seen in a long time had grown up to be obnoxious.',
+'ph6352806527e91"><img src="https://ei.phncdn.com/videos/202210/21/417974531/original/(m=eafTGgaaaa)(mh=mA-XnAwqBkoQNKHC)3.jpg"><br>Four people get together and have an orgy of climaxes!',
+'ph635282a246c6f"><img src="https://ei.phncdn.com/videos/202210/21/417974851/original/(m=eafTGgaaaa)(mh=yY1kp3twl_JF5JlR)15.jpg"><br>Insertion at sight! Instant insertion! Suddenly, instant sex!',
+'ph635284eab1fcd"><img src="https://ei.phncdn.com/videos/202210/21/417975151/original/(m=eafTGgaaaa)(mh=_h9qzX9yHH6XMec9)4.jpg"><br>I want to cuddle all the time on a date at home Big-breasted beauties fuck each other hard!',
+'ph63528fc226a69"><img src="https://ei.phncdn.com/videos/202210/21/417976661/original/(m=eafTGgaaaa)(mh=9Wmc9uIbPyya0O2r)11.jpg"><br>Dynamite beautiful big-breasted girl goes wild while tied with a rope!',
+'ph635291b056371"><img src="https://ei.phncdn.com/videos/202210/21/417977001/original/(m=eafTGgaaaa)(mh=cLKWY7_tA4m9Wa9b)4.jpg"><br>Beautiful OL Lust White Paper - Intense sex in a hotel with a beautiful OL boyfriend who is in agony',
+'ph6353b5e354854"><img src="https://ei.phncdn.com/videos/202210/22/418028301/original/(m=eafTGgaaaa)(mh=S-1nsWPZnW6ML1vS)9.jpg"><br>Healing for sophisticated adults, beautiful women in kimono, hospitality and sex.',
+'ph6353b8427edd6"><img src="https://ei.phncdn.com/videos/202210/22/418028551/original/(m=eafTGgaaaa)(mh=tYgftZcaYMx2Nxet)1.jpg"><br>VIP course, exclusive access to the best cabaret club girls, and rich sex with customers at the hote',
+'ph6353bab6365d6"><img src="https://ei.phncdn.com/videos/202210/22/418028791/original/(m=eafTGgaaaa)(mh=0I6N6T4syFHVZ9hL)15.jpg"><br>Beautiful womans panties are penetrated raw, her big ass is shaken and she comes hard!',
+'ph6353bd0ae8157"><img src="https://ei.phncdn.com/videos/202210/22/418028981/original/(m=eafTGgaaaa)(mh=qiWBTkTNZp_23tcq)13.jpg"><br>Seduced by her sisters sex appeal, she injects herself with extra fat.',
+'ph6353bf81b44ea"><img src="https://ei.phncdn.com/videos/202210/22/418029331/original/(m=eafTGgaaaa)(mh=ShiVhlFP-HJDQDdf)2.jpg"><br>Pillow sales of high-class cabaret girls Climax FUCK of a dirty beauty',
+'ph6353c1ecb178a"><img src="https://ei.phncdn.com/videos/202210/22/418029501/original/(m=eafTGgaaaa)(mh=8ME-zEkVpvc5Ssce)4.jpg"><br>A naive girl with a nice pink panties under her bare bathrobe.',
+'ph6353c4fa6a48a"><img src="https://ei.phncdn.com/videos/202210/22/418029771/original/(m=eafTGgaaaa)(mh=zxVH4_DKG2aIZ217)1.jpg"><br>Beautiful woman with I-cup big tits compliments my sex.',
+'ph6353cb3aad8a1"><img src="https://ei.phncdn.com/videos/202210/22/418030501/original/(m=eafTGgaaaa)(mh=MJ5Oo0tsNagh72W7)9.jpg"><br>Non-Stop SEX Heaven - Dark-Haired Girl Comes Continuously',
+'ph6353cd9a24447"><img src="https://ei.phncdn.com/videos/202210/22/418030831/original/(m=eafTGgaaaa)(mh=jtyu-rgATR-N8UCL)14.jpg"><br>Private sex between a painter and a drawing model',
+'ph6353d004c31e7"><img src="https://ei.phncdn.com/videos/202210/22/418031321/original/(m=eafTGgaaaa)(mh=TIuZP3_FXU0bIzty)12.jpg"><br>We deliver porn stars to your home.',
+'ph635621031a956"><img src="https://ei.phncdn.com/videos/202210/24/418134261/original/(m=eafTGgaaaa)(mh=7iYSkWkTwuA7B5wb)3.jpg"><br>Sexy Mature Woman Comes Fiercely with Sexual Massage',
+'ph6356238cc456f"><img src="https://ei.phncdn.com/videos/202210/24/418134631/original/(m=eafTGgaaaa)(mh=kz9BLS3WK4QixWDJ)9.jpg"><br>Sexy Mature Woman Comes Fiercely with Sexual Massage',
+'ph635625e07580c"><img src="https://ei.phncdn.com/videos/202210/24/418135021/original/(m=eafTGgaaaa)(mh=xDbY1NYG8XULoPda)5.jpg"><br>Big Ass Office Lady Ripped Pantyhose and Fucked by a Demon FUCCK',
+'ph6356284b6ab50"><img src="https://ei.phncdn.com/videos/202210/24/418135441/original/(m=eafTGgaaaa)(mh=IhsK09MvV8dOzxnG)5.jpg"><br>Poor titty girl who wants to gobble cum inside and Ill have cum inside!',
+'ph635631d3f0866"><img src="https://ei.phncdn.com/videos/202210/24/418136761/original/(m=eafTGgaaaa)(mh=FH-kcIyCpE2JNgZN)2.jpg"><br>隣人を誘惑SEX 美人人妻の昼間の情事',
+'ph63563420b89dc"><img src="https://ei.phncdn.com/videos/202210/24/418137161/original/(m=eafTGgaaaa)(mh=Y-n6nXwYUPL2_arI)2.jpg"><br>裸エプロンでキッチンプレイ　エロギャルに恋人気分',
+'ph635636c55b5b0"><img src="https://ei.phncdn.com/videos/202210/24/418137531/original/(m=eafTGgaaaa)(mh=cjxIlVL3DCZR82wq)12.jpg"><br>色白美乳美女が大人の癒しを提供　大興奮のご奉仕SEX',
+'ph635791e6e222d"><img src="https://ei.phncdn.com/videos/202210/25/418207271/original/(m=eafTGgaaaa)(mh=ySc2QE2S9G4e7UtZ)8.jpg"><br>Orgy Onsen Two big-breasted girls have an orgy FUCK on the futon!',
+'ph6357a2a95d7be"><img src="https://ei.phncdn.com/videos/202210/25/418210231/original/(m=eafTGgaaaa)(mh=oz7h-sj_8FWDuBOX)14.jpg"><br>ドスケベ年上の極上ソープ嬢のテクニックを駆使したマットプレイ',
+'ph6357a80a15af2"><img src="https://ei.phncdn.com/videos/202210/25/418210971/original/(m=eafTGgaaaa)(mh=3712P5oGxlh9qYCZ)14.jpg"><br>Blaming her hard in a Chinese dress, the voluptuous beauty moans and comes hard.',
+'ph6357ad1c83eab"><img src="https://ei.phncdn.com/videos/202210/25/418211961/original/(m=eafTGgaaaa)(mh=iWEgNxoh6ldctveQ)16.jpg"><br>Erokawa girl with naughty tits shakes her tits and gets fucked hard!',
+'ph6357d042e24ec"><img src="https://ei.phncdn.com/videos/202210/25/418217541/original/(m=eafTGgaaaa)(mh=ECPq2N5TE-s8Gnvd)12.jpg"><br>Microscopic Chubby Cute Girl Shaking Ponytail and Coming FUCK in Three Rows',
+'ph6357d276efff8"><img src="https://ei.phncdn.com/videos/202210/25/418218091/original/(m=eafTGgaaaa)(mh=ai2XQ6f8DlMJst6p)16.jpg"><br>Midsummer BBQ party - Erotic lascivious woman has a blue threesome on the riverbank',
+'ph6357edf697a97"><img src="https://ei.phncdn.com/videos/202210/25/418227001/original/(m=eafTGgaaaa)(mh=9ltvUNhbWENxqne6)13.jpg"><br>H-cup beauties and big tits come hard with high-speed pistons.',
+'ph635b9474e5ff1"><img src="https://ei.phncdn.com/videos/202210/28/418409081/original/(m=eafTGgaaaa)(mh=eug26nVTPk6XEMYa)13.jpg"><br>The big-breasted girl who moved in next door shakes her H-cups and fucks hard!',
+'ph635b9bf604aa7"><img src="https://ei.phncdn.com/videos/202210/28/418410401/original/(m=eafTGgaaaa)(mh=8IEdOWzj3ne5vgiE)1.jpg"><br>Soft tits and passionate sex',
+'ph635b9f8fae290"><img src="https://ei.phncdn.com/videos/202210/28/418411061/original/(m=eafTGgaaaa)(mh=Mvwn9Ufmy5NExTIj)10.jpg"><br>Two consecutive cumshots inside a beautiful slut, coming over and over and over again.',
+'ph635ba2471925f"><img src="https://ei.phncdn.com/videos/202210/28/418411451/original/(m=eafTGgaaaa)(mh=zHoPC2x5Ohm-uzaF)8.jpg"><br>Furisode gals join a training school for female servants, shaking their big tits and moaning like ma',
+'ph635bb4799f8ae"><img src="https://ei.phncdn.com/videos/202210/28/418414461/original/(m=eafTGgaaaa)(mh=od3T9eUifP-ZDroh)2.jpg"><br>Esthetician with a strong work ethic gets it on.',
+'ph635bb69f03b96"><img src="https://ei.phncdn.com/videos/202210/28/418414831/original/(m=eafTGgaaaa)(mh=hDxNDeNWYJ4Ls7mj)16.jpg"><br>A slender, beautifully legged older woman seduces you with no pants!',
+'ph635bb940d25d0"><img src="https://ei.phncdn.com/videos/202210/28/418415451/original/(m=eafTGgaaaa)(mh=RCSg46oeZmfokifG)14.jpg"><br>Beautiful Lascivious Woman Treatment of ED by Bursting Tits Female Doctor',
+'ph635bbc738c52f"><img src="https://ei.phncdn.com/videos/202210/28/418415851/original/(m=eafTGgaaaa)(mh=wL4EZMGN4mQ7G0JZ)7.jpg"><br>Cabaret girls exposed and fucked around in the store.',
+'ph635cf3880c2c1"><img src="https://ei.phncdn.com/videos/202210/29/418474321/original/(m=eafTGgaaaa)(mh=gVvRtFn2ES-Trycw)5.jpg"><br>欲情した女を満足させるフェラ大好き年上',
+'ph635cf579eb672"><img src="https://ei.phncdn.com/videos/202210/29/418474611/original/(m=eafTGgaaaa)(mh=Sz8_66xvQaffNGcA)2.jpg"><br>Slowly training a dirty married woman with small tits',
+'ph635cf84c974c5"><img src="https://ei.phncdn.com/videos/202210/29/418475081/original/(m=eafTGgaaaa)(mh=pFMTbrI2WDesSabI)13.jpg"><br>Beautiful white woman with a bewitching beauty, coming hard in her naked garter.',
+'ph635d1dac5bcf3"><img src="https://ei.phncdn.com/videos/202210/29/418480351/original/(m=eafTGgaaaa)(mh=yCUlg1QFKO-rFxY2)4.jpg"><br>A top quality woman fucks hard while wearing a school uniform!',
+'ph635d2090e3104"><img src="https://ei.phncdn.com/videos/202210/29/418480671/original/(m=eafTGgaaaa)(mh=UBUsUMctxoeFZq2r)9.jpg"><br>A lascivious woman who tortures my nipples as necessary.',
+'ph635d2577ba641"><img src="https://ei.phncdn.com/videos/202210/29/418481511/original/(m=eafTGgaaaa)(mh=TcEMZvy0NFDb_Cp8)1.jpg"><br>On business trip, cabaret girls are full of skirts, big tits, and hard-on fucks!',
+'ph6362391509bfd"><img src="https://ei.phncdn.com/videos/202211/02/418717651/original/(m=eafTGgaaaa)(mh=7_u4QQZRCO88KFMY)4.jpg"><br>Erotic Mature Woman Dripping with Pheromones and Fiercely Fucked in a Threesome!',
+'ph63623b24ce353"><img src="https://ei.phncdn.com/videos/202211/02/418717931/original/(m=eafTGgaaaa)(mh=CHwcnAe86kpM9JVu)7.jpg"><br>A big orgy in a Japanese-style room with two women in yukata',
+'ph63623d8b3680f"><img src="https://ei.phncdn.com/videos/202211/02/418718261/original/(m=eafTGgaaaa)(mh=kVu1iy4QUl33OVo5)5.jpg"><br>Beautiful dark-haired girl has intense sex with a handsome man.',
+'ph636240668c2ec"><img src="https://ei.phncdn.com/videos/202211/02/418718851/original/(m=eafTGgaaaa)(mh=4ci5be47lHab-Gev)9.jpg"><br>Dynamic FUCK of a glamorous beauty who has both beautiful looks and an erotic body.',
+'ph636242ce78a84"><img src="https://ei.phncdn.com/videos/202211/02/418719341/original/(m=eafTGgaaaa)(mh=KulG4bxinbrGz21M)10.jpg"><br>The Secret Inside the Uniform: Ill scream if you blame me that much!',
+'ph6362502c347aa"><img src="https://ei.phncdn.com/videos/202211/02/418721511/original/(m=eafTGgaaaa)(mh=f3-eoiZZYnSHO2sR)3.jpg"><br>I want to lick it while staring at it.',
+'ph636255f8cc05e"><img src="https://ei.phncdn.com/videos/202211/02/418722771/original/(m=eafTGgaaaa)(mh=Xuq0eBPZbmh7Gzrq)12.jpg"><br>Teasing the purest of women, she comes to climax over and over again.',
+'ph63625826aa189"><img src="https://ei.phncdn.com/videos/202211/02/418723201/original/(m=eafTGgaaaa)(mh=gkJ4zBKDixmzn8_9)8.jpg"><br>A beautiful woman with big tits and a voluptuous body gets fucked hard over and over again!',
+'ph63625a8be54d6"><img src="https://ei.phncdn.com/videos/202211/02/418723601/original/(m=eafTGgaaaa)(mh=KcpK1b08PLMBAm4b)9.jpg"><br>Picking up a runner with big tits and having live sex with her',
+'ph6364c2cac2887"><img src="https://ei.phncdn.com/videos/202211/04/418846471/original/(m=eafTGgaaaa)(mh=mVE6NBMRNNuQQDkj)9.jpg"><br>Wife who wants a lot of cum inside Married woman who is captivated by the penis',
+'ph6364c6f574ee4"><img src="https://ei.phncdn.com/videos/202211/04/418846941/original/(m=eafTGgaaaa)(mh=ef39dF5y08yjamB3)9.jpg"><br>Beautiful Mature Womans High-Class Soap Play We will serve you!',
+'ph6364cd9f01ca0"><img src="https://ei.phncdn.com/videos/202211/04/418847821/original/(m=eafTGgaaaa)(mh=OhYOcDNtEXaEUyIq)8.jpg"><br>Can you resist this amazing technique?　Even if you cant stand it, its still raw insertion and ejac',
+'ph6364d2c9f3b43"><img src="https://ei.phncdn.com/videos/202211/04/418848601/original/(m=eafTGgaaaa)(mh=Ou8HOQ4heLdR46q5)10.jpg"><br>Ill make a beautiful dark-haired woman with a big pie pan come over and over again. Shes so gooey.',
+'ph6365270855abc"><img src="https://ei.phncdn.com/videos/202211/04/418864201/original/(m=eafTGgaaaa)(mh=qpm1jPvjMNo6X2PS)6.jpg"><br>Rather than just use a sex toy Haruka Sanada wants her Asian twat creampied',
+'ph63669cba59644"><img src="https://ei.phncdn.com/videos/202211/05/418937461/original/(m=eafTGgaaaa)(mh=IvjO9KurX4bHg4oH)1.jpg"><br>Using vibrating sex toys on the brunette leads to her Asian love tube being creampied',
+'ph636f52db3a3fa"><img src="https://ei.phncdn.com/videos/202211/12/419381741/original/(m=eafTGgaaaa)(mh=ebzp85Eqkg1rg_PN)5.jpg"><br>Seducing middle-aged fathers by showing them how to masturbate and have sex with them',
+'ph636f563e92ca5"><img src="https://ei.phncdn.com/videos/202211/12/419382121/original/(m=eafTGgaaaa)(mh=L7rJ1Lwt-ZNCkNsv)4.jpg"><br>She blames her bare pussy while wearing jeans that have been torn only at the local area.',
+'ph636f58afe60e4"><img src="https://ei.phncdn.com/videos/202211/12/419382441/original/(m=eafTGgaaaa)(mh=Z67KLssmkHqnD2iR)5.jpg"><br>Legendary sex worker ejaculates three times in a row',
+'ph636f5e1266967"><img src="https://ei.phncdn.com/videos/202211/12/419383611/original/(m=eafTGgaaaa)(mh=NswIh4MxVOyJqpF3)5.jpg"><br>Outdoor Exposure and Rigid Performance with Outstandingly Stylish Amateur Gals',
+'ph636f6065458c6"><img src="https://ei.phncdn.com/videos/202211/12/419383851/original/(m=eafTGgaaaa)(mh=rypOVJ_bCGrphc_I)10.jpg"><br>ダイナマイトボディのお姉さんが4本のチンポの精子を搾り尽くす',
+'ph636f72ddd1fe9"><img src="https://ei.phncdn.com/videos/202211/12/419386561/original/(m=eafTGgaaaa)(mh=Nkp9qY_vr7ljIAMF)7.jpg"><br>Cool beauty seduces a man by rubbing her crotch against his face.',
+'ph636f755487e2b"><img src="https://ei.phncdn.com/videos/202211/12/419387021/original/(m=eafTGgaaaa)(mh=VpsXP3c-r7po_gTq)4.jpg"><br>Dusky beauty craving for cock after 10 days of abstinence',
+'ph636f797ddafe2"><img src="https://ei.phncdn.com/videos/202211/12/419387351/original/(m=eafTGgaaaa)(mh=qxIElN6iR4sqJ5hO)11.jpg"><br>Young lady with a big dick is very excited about a big dick',
+'ph636f7cd326435"><img src="https://ei.phncdn.com/videos/202211/12/419387741/original/(m=eafTGgaaaa)(mh=mmIG-HXpL5W8zmbu)3.jpg"><br>I was a normal woman until my shameful debut.',
+'ph636f8253e448c"><img src="https://ei.phncdn.com/videos/202211/12/419388761/original/(m=eafTGgaaaa)(mh=shYvOlHJsBWzZdcb)16.jpg"><br>A beautiful white amateur woman is dressed in a school uniform and fucked around!',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/view_video.php?viewkey='
+lineTail = '</a></div>'
+bookid = "cocoa-ch"
+showRange = 40
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+
+</body>
+</html>
+

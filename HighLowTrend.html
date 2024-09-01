@@ -1,0 +1,3168 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html>
+<head>
+<title>High Low Trend</title>
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='https://williamkpchan.github.io/mainscript.js'></script>
+<script src="https://williamkpchan.github.io/LibDocs/stkComments.js"></script>
+<script src="https://williamkpchanhp.github.io/filterResulitLib.txt"></script>
+<script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+
+<script src="https://williamkpchanhp.github.io/LibDocs/longHistList.js"></script>
+<script src="https://williamkpchan.github.io/LibDocs/rchart/RGraph.common.core.js" ></script>
+<script src="https://williamkpchan.github.io/LibDocs/rchart/RGraph.line.js"></script>
+<script src="https://williamkpchan.github.io/LibDocs/rchart/RGraph.drawing.yaxis.js"></script>
+<script src="https://williamkpchan.github.io/LibDocs/rchart/RGraph.common.dynamic.js"></script>
+<script src="https://williamkpchan.github.io/LibDocs/rchart/RGraph.common.tooltips.js"></script>
+<script src="https://williamkpchanhp.github.io/codeList.js"></script>
+<script src='https://cdn.plot.ly/plotly-2.34.0.min.js'></script>
+<script>
+  var showTopicNumber = false;
+  var topicEnd = "&emsp;";
+  var bookid = "HIgh Low Trend"
+  var markerName = "h2"
+</script>
+
+<style>
+#dateTime {  text-align: left;}
+#cmtNote, #instruction, #message, #usstock{display:none;}
+#amtLst {font-size:12px;}
+#actions {font-size:12px; text-align: left; tab-size: 8; margin-left: 5%;}
+select {border-radius:10px; font-size:20px;background-color:black; color:brown;}
+#ohlcDiv {display:inline-block; width:85%; height:700px;}
+#linechart {display:inline-block; width:85%; height:700px;}
+
+</style>
+
+</head>
+<body onkeypress="chkKey()">
+<center>
+<div id="toc"></div>
+<br>
+<h2>MHL + trends</h2>
+<canvas id="cvs" width="1150" height="600" ondblclick="askforCode()">[No canvas support]</canvas>
+<br>
+<h2>MidLine trends</h2>
+<div id='linechart'></div><br>
+<h2>OHLC Chart</h2>
+<div id='ohlcDiv'></div><br>
+<h2>Data List</h2>
+<p id="actions"></p>
+<h2>amtLst</h2>
+<p id="amtLst"></p>
+
+<h2>accel</h2>
+<canvas id="accel" width="1150" height="240" ondblclick="window.location = '#commands'; window.scrollTo(window.scrollX, window.scrollY + 800);">[No canvas support]</canvas>
+<br>
+<h2>accaccel</h2>
+<canvas id="accaccel" width="1150" height="240">[No canvas support]</canvas>
+<br>
+<h2>aastock chart</h2>
+K线图日数与趋势图不同
+<p id="image"></p>
+
+<canvas id="TP" width="1150" height="240">[No canvas support]</canvas>
+<canvas id="强弱50" width="1150" height="240">[No canvas support]</canvas>
+
+<span id="lastValues"></span>
+<br><span id="turnover"></span>
+</center>
+
+<div id="dateTime" style="margin-left:5%;" class="lime"> </div>
+<span onclick="$('#instruction').toggle();"> 🎌 </span>
+<a href="AStkList.txt" class="whitebut" target="_blank">A股清单</a>
+
+<a href="http://www.etnet.com.hk/www/tc/stocks/industry_adu.php" target="_blank" class="bordred1">行業板塊</a>
+<a href="http://www.etnet.com.hk/www/tc/stocks/indexes_detail.php?subtype=HSI" target="_blank" class="bordred1">指數成分股表現</a>
+<a href="http://www.etnet.com.r/www/tc/stocks/ah.php" target="_blank" class="bordred1">AH股表現</a>
+<select id="selectList" onchange="assignList()"></select>
+<span onclick="$('#message').toggle();"> 🎌 </span>
+<pre id="filterMarkers"></pre>
+
+<br>
+<pre id="instruction">
+</pre>
+<pre id="commands">
+<gr>attention：</gr>
+<k onclick="collectStkData('399300')">000300.sh 沪深300 399300</k>
+<k onclick="collectStkData('01072')">东方电器</k> <k onclick="collectStkData('09888')">百度</k> <k onclick="collectStkData('09988')">阿里</k> 
+<gr>commands:</gr>
+!d fillLineData, paste one set data to redraw with std dev
+<gr>c</gr> askforCode	<gr>z</gr> large chart	<gr>R</gr> Random Charts.html	
+<gr>m</gr> mlineMinutechart.html	<gr>f</gr> jpforward	<gr>b</gr> jpback	<gr>r</gr> jprandom	<gr>t</gr> jpTo 0	
+<gr>h</gr> chgHighList	<gr>l</gr> chgLowList	<gr>m</gr> chgMidList	<gr>C</gr> chgCloseLst	<gr>a</gr> useAttentionList	<gr>i</gr> chgIntv	
+<gr>L</gr> askList	<gr>+</gr> addToquickCodeList()	<gr>-</gr> removeFmquickCodeList()	
+<gr>.</gr> open("mlineMinutechart.html")	<gr>[</gr> jpback()	<gr>]</gr> jpforward()	
+<gr>b</gr> jpback()	<gr>B</gr> usestkListArr()	<gr>C</gr> chgCloseLst()	
+<gr>d</gr> xunbao(localStorage.randomcode)	<gr>e</gr> window.location = '#commands';	<gr>E</gr> window.location = '#filterMarkers'	
+<gr>J</gr> theCode = 'us.INX'; collectStkData('us.INX')	<gr>j</gr> collectStkData(theCode)	<gr>k</gr> collectStkData(theCode)	
+<gr>l</gr> window.location = '#endpage'	<gr>n</gr> collectStkData('us.IXIC')	<gr>q</gr> myfavor()	
+<gr>Q</gr> usequickCodeList()	<gr>s</gr> window.location = '#accel';	<gr>t</gr> setTabWidth()}	
+<gr>U</gr> window.location = '#usstock'	<gr>u</gr> collectStkData('us.DJI')	<gr>W</gr> chgchartWidth()	<gr>w</gr> window.scrollTo(0,0)
+<gr>X</gr> window.open("Random Charts.html")
+
+5 lines: data, WAve5, WAve10, sd+, sd-
+A stk code sample: 000001.sh, 399001.sz
+
+<gr>chartColor:</gr>
+white M
+red H
+#0f4 L
+#c80 H, halfNum
+#066 L, halfNum
+#c60 H, intv1
+#086 L, intv1
+#c40 H, intv2
+#084 L, intv2
+purple Devadd
+purple Devminus
+
+dblclick on chart to enter code
+
+<r onclick="window.scrollTo(0,0);">go Top</r>
+</pre>
+<h2>CN</h2>
+<k onclick="collectStkData('000006')">000006 深振业Ａ</k> &emsp;
+<k onclick="collectStkData('000008')">000008 神州高铁</k> &emsp;
+<k onclick="collectStkData('000010')">000010 美丽生态</k> &emsp;
+<k onclick="collectStkData('000012')">000012 南 玻Ａ</k> &emsp;
+<k onclick="collectStkData('000027')">000027 深圳能源</k> &emsp;
+<k onclick="collectStkData('000030')">000030 富奥股份</k> &emsp;
+<k onclick="collectStkData('000031')">000031 大悦城</k> &emsp;
+<k onclick="collectStkData('000035')">000035 中国天楹</k> &emsp;
+<k onclick="collectStkData('000037')">000037 深南电A</k> &emsp;
+<k onclick="collectStkData('000039')">000039 中集集团</k> &emsp;
+<k onclick="collectStkData('000039')">000039 中集集团</k> &emsp;
+<k onclick="collectStkData('000040')">000040 东旭蓝天</k> &emsp;
+<k onclick="collectStkData('000042')">000042 中洲控股</k> &emsp;
+<k onclick="collectStkData('000058')">000058 深 赛 格</k> &emsp;
+<k onclick="collectStkData('000059')">000059 华锦股份</k> &emsp;
+<k onclick="collectStkData('000060')">000060 中金岭南</k> &emsp;
+<k onclick="collectStkData('000061')">000061 农 产 品</k> &emsp;
+<k onclick="collectStkData('000065')">000065 北方国际</k> &emsp;
+<k onclick="collectStkData('000068')">000068 华控赛格</k> &emsp;
+<k onclick="collectStkData('000069')">000069 华侨城Ａ</k> &emsp;
+<k onclick="collectStkData('000070')">000070 特发信息</k> &emsp;
+<k onclick="collectStkData('000070')">000070 特发信息</k> &emsp;
+<k onclick="collectStkData('000088')">000088 盐 田 港</k> &emsp;
+<k onclick="collectStkData('000089')">000089 深圳机场</k> &emsp;
+<k onclick="collectStkData('000090')">000090 天健集团</k> &emsp;
+<k onclick="collectStkData('000099')">000099 中信海直</k> &emsp;
+<k onclick="collectStkData('000100')">000100 TCL科技</k> &emsp;
+<k onclick="collectStkData('000100')">000100 TCL科技</k> &emsp;
+<k onclick="collectStkData('000156')" class="orange">华数传媒 000156</k> &emsp;
+<k onclick="collectStkData('000156')">000156 华数传媒</k> &emsp;
+<k onclick="collectStkData('000157')">000157 中联重科</k> &emsp;
+<k onclick="collectStkData('000158')">000158 常山北明</k> &emsp;
+<k onclick="collectStkData('000158')">000158 常山北明</k> &emsp;
+<k onclick="collectStkData('000166')" class="orange">申万宏源 000166</k> &emsp;
+<k onclick="collectStkData('000166')">000166 申万宏源</k> &emsp;
+<k onclick="collectStkData('000338')" class="orange">000338 潍柴动力</k> &emsp;
+<k onclick="collectStkData('000401')">000401 冀东水泥</k> &emsp;
+<k onclick="collectStkData('000402')">000402 金 融 街</k> &emsp;
+<k onclick="collectStkData('000404')">000404 长虹华意</k> &emsp;
+<k onclick="collectStkData('000407')">000407 胜利股份</k> &emsp;
+<k onclick="collectStkData('000409')">000409 云鼎科技</k> &emsp;
+<k onclick="collectStkData('000413')">000413 东旭光电</k> &emsp;
+<k onclick="collectStkData('000415')">000415 渤海租赁</k> &emsp;
+<k onclick="collectStkData('000417')">000417 合肥百货</k> &emsp;
+<k onclick="collectStkData('000419')">000419 通程控股</k> &emsp;
+<k onclick="collectStkData('000420')">000420 吉林化纤</k> &emsp;
+<k onclick="collectStkData('000425')">000425 徐工机械</k> &emsp;
+<k onclick="collectStkData('000426')">000426 兴业银锡</k> &emsp;
+<k onclick="collectStkData('000428')" class="red">000428 华天酒店</k> &emsp;
+<k onclick="collectStkData('000428')">000428 华天酒店</k> &emsp;
+<k onclick="collectStkData('000429')">000429 粤高速Ａ</k> &emsp;
+<k onclick="collectStkData('000488')">000488 晨鸣纸业</k> &emsp;
+<k onclick="collectStkData('000498')">000498 山东路桥</k> &emsp;
+<k onclick="collectStkData('000505')">000505 京粮控股</k> &emsp;
+<k onclick="collectStkData('000506')">000506 中润资源</k> &emsp;
+<k onclick="collectStkData('000510')">000510 新金路</k> &emsp;
+<k onclick="collectStkData('000514')">000514 渝 开 发</k> &emsp;
+<k onclick="collectStkData('000517')">000517 荣安地产</k> &emsp;
+<k onclick="collectStkData('000520')">000520 凤凰航运</k> &emsp;
+<k onclick="collectStkData('000521')">000521 长虹美菱</k> &emsp;
+<k onclick="collectStkData('000523')">000523 广州浪奇</k> &emsp;
+<k onclick="collectStkData('000528')">000528 柳 工</k> &emsp;
+<k onclick="collectStkData('000529')">000529 广弘控股</k> &emsp;
+<k onclick="collectStkData('000530')">000530 冰山冷热</k> &emsp;
+<k onclick="collectStkData('000531')">000531 穗恒运Ａ</k> &emsp;
+<k onclick="collectStkData('000533')">000533 顺钠股份</k> &emsp;
+<k onclick="collectStkData('000536')">000536 华映科技</k> &emsp;
+<k onclick="collectStkData('000539')">000539 粤电力Ａ</k> &emsp;
+<k onclick="collectStkData('000541')">000541 佛山照明</k> &emsp;
+<k onclick="collectStkData('000548')">000548 湖南投资</k> &emsp;
+<k onclick="collectStkData('000551')">000551 创元科技</k> &emsp;
+<k onclick="collectStkData('000552')">000552 甘肃能化</k> &emsp;
+<k onclick="collectStkData('000552')">000552 甘肃能化</k> &emsp;
+<k onclick="collectStkData('000554')">000554 泰山石油</k> &emsp;
+<k onclick="collectStkData('000557')">000557 西部创业</k> &emsp;
+<k onclick="collectStkData('000558')">000558 莱茵体育</k> &emsp;
+<k onclick="collectStkData('000559')">000559 万向钱潮</k> &emsp;
+<k onclick="collectStkData('000560')">000560 我爱我家</k> &emsp;
+<k onclick="collectStkData('000563')">000563 陕国投Ａ</k> &emsp;
+<k onclick="collectStkData('000565')">000565 渝三峡Ａ</k> &emsp;
+<k onclick="collectStkData('000566')">000566 海南海药</k> &emsp;
+<k onclick="collectStkData('000570')">000570 苏常柴Ａ</k> &emsp;
+<k onclick="collectStkData('000573')">000573 粤宏远Ａ</k> &emsp;
+<k onclick="collectStkData('000584')">000584 ST工智</k> &emsp;
+<k onclick="collectStkData('000589')">000589 贵州轮胎</k> &emsp;
+<k onclick="collectStkData('000590')">000590 启迪药业</k> &emsp;
+<k onclick="collectStkData('000591')">000591 太阳能</k> &emsp;
+<k onclick="collectStkData('000591')">000591 太阳能</k> &emsp;
+<k onclick="collectStkData('000592')">000592 平潭发展</k> &emsp;
+<k onclick="collectStkData('000593')">000593 德龙汇能</k> &emsp;
+<k onclick="collectStkData('000595')">000595 宝塔实业</k> &emsp;
+<k onclick="collectStkData('000597')">000597 东北制药</k> &emsp;
+<k onclick="collectStkData('000598')">000598 兴蓉环境</k> &emsp;
+<k onclick="collectStkData('000599')">000599 青岛双星</k> &emsp;
+<k onclick="collectStkData('000600')">000600 建投能源</k> &emsp;
+<k onclick="collectStkData('000605')">000605 渤海股份</k> &emsp;
+<k onclick="collectStkData('000608')">000608 阳光股份</k> &emsp;
+<k onclick="collectStkData('000609')">000609 中迪投资</k> &emsp;
+<k onclick="collectStkData('000612')">000612 焦作万方</k> &emsp;
+<k onclick="collectStkData('000617')">000617 中油资本</k> &emsp;
+<k onclick="collectStkData('000620')">000620 *ST新联</k> &emsp;
+<k onclick="collectStkData('000627')">000627 天茂集团</k> &emsp;
+<k onclick="collectStkData('000629')">000629 钒钛股份</k> &emsp;
+<k onclick="collectStkData('000633')">000633 合金投资</k> &emsp;
+<k onclick="collectStkData('000635')">000635 英 力 特</k> &emsp;
+<k onclick="collectStkData('000638')">000638 万方发展</k> &emsp;
+<k onclick="collectStkData('000650')">000650 仁和药业</k> &emsp;
+<k onclick="collectStkData('000652')">000652 泰达股份</k> &emsp;
+<k onclick="collectStkData('000655')">000655 金岭矿业</k> &emsp;
+<k onclick="collectStkData('000656')">000656 金科股份</k> &emsp;
+<k onclick="collectStkData('000665')">000665 湖北广电</k> &emsp;
+<k onclick="collectStkData('000670')">000670 盈方微</k> &emsp;
+<k onclick="collectStkData('000676')">000676 智度股份</k> &emsp;
+<k onclick="collectStkData('000678')">000678 襄阳轴承</k> &emsp;
+<k onclick="collectStkData('000680')" class="orange">000680 山推股份</k> &emsp;
+<k onclick="collectStkData('000680')">000680 山推股份</k> &emsp;
+<k onclick="collectStkData('000682')">000682 东方电子</k> &emsp;
+<k onclick="collectStkData('000682')">000682 东方电子</k> &emsp;
+<k onclick="collectStkData('000683')">000683 远兴能源</k> &emsp;
+<k onclick="collectStkData('000685')">000685 中山公用</k> &emsp;
+<k onclick="collectStkData('000686')">000686 东北证券</k> &emsp;
+<k onclick="collectStkData('000686')">000686 东北证券</k> &emsp;
+<k onclick="collectStkData('000690')">000690 宝新能源</k> &emsp;
+<k onclick="collectStkData('000697')">000697 *ST炼石</k> &emsp;
+<k onclick="collectStkData('000697')">000697 *ST炼石</k> &emsp;
+<k onclick="collectStkData('000698')">000698 沈阳化工</k> &emsp;
+<k onclick="collectStkData('000700')">000700 模塑科技</k> &emsp;
+<k onclick="collectStkData('000701')">000701 厦门信达</k> &emsp;
+<k onclick="collectStkData('000703')">000703 恒逸石化</k> &emsp;
+<k onclick="collectStkData('000705')">000705 浙江震元</k> &emsp;
+<k onclick="collectStkData('000709')">000709 河钢股份</k> &emsp;
+<k onclick="collectStkData('000717')">000717 中南股份</k> &emsp;
+<k onclick="collectStkData('000719')" class="orange">中原传媒 000719</k> &emsp;
+<k onclick="collectStkData('000719')">000719 中原传媒</k> &emsp;
+<k onclick="collectStkData('000725')">000725 京东方Ａ</k> &emsp;
+<k onclick="collectStkData('000728')">000728 国元证券</k> &emsp;
+<k onclick="collectStkData('000728')">000728 国元证券</k> &emsp;
+<k onclick="collectStkData('000731')">000731 四川美丰</k> &emsp;
+<k onclick="collectStkData('000735')">000735 罗 牛 山</k> &emsp;
+<k onclick="collectStkData('000750')">000750 国海证券</k> &emsp;
+<k onclick="collectStkData('000751')">000751 锌业股份</k> &emsp;
+<k onclick="collectStkData('000755')">000755 山西路桥</k> &emsp;
+<k onclick="collectStkData('000758')">000758 中色股份</k> &emsp;
+<k onclick="collectStkData('000759')">000759 中百集团</k> &emsp;
+<k onclick="collectStkData('000761')">000761 本钢板材</k> &emsp;
+<k onclick="collectStkData('000767')" class="orange">晋控电力 000767</k> &emsp;
+<k onclick="collectStkData('000767')">000767 晋控电力</k> &emsp;
+<k onclick="collectStkData('000778')">000778 新兴铸管</k> &emsp;
+<k onclick="collectStkData('000782')">000782 美达股份</k> &emsp;
+<k onclick="collectStkData('000783')">000783 长江证券</k> &emsp;
+<k onclick="collectStkData('000785')" class="orange">居然之家 000785</k> &emsp;
+<k onclick="collectStkData('000785')">000785 居然之家</k> &emsp;
+<k onclick="collectStkData('000789')">000789 万年青</k> &emsp;
+<k onclick="collectStkData('000790')">000790 华神科技</k> &emsp;
+<k onclick="collectStkData('000791')">000791 甘肃能源</k> &emsp;
+<k onclick="collectStkData('000793')">000793 华闻集团</k> &emsp;
+<k onclick="collectStkData('000797')">000797 中国武夷</k> &emsp;
+<k onclick="collectStkData('000800')">000800 一汽解放</k> &emsp;
+<k onclick="collectStkData('000801')">000801 四川九洲</k> &emsp;
+<k onclick="collectStkData('000802')" class="orange">北京文化 000802</k> &emsp;
+<k onclick="collectStkData('000802')">000802 北京文化</k> &emsp;
+<k onclick="collectStkData('000812')">000812 陕西金叶</k> &emsp;
+<k onclick="collectStkData('000820')">000820 神雾节能</k> &emsp;
+<k onclick="collectStkData('000822')">000822 山东海化</k> &emsp;
+<k onclick="collectStkData('000825')">000825 太钢不锈</k> &emsp;
+<k onclick="collectStkData('000826')">000826 启迪环境</k> &emsp;
+<k onclick="collectStkData('000836')">000836 富通信息</k> &emsp;
+<k onclick="collectStkData('000838')" class="orange">财信发展 000838</k> &emsp;
+<k onclick="collectStkData('000838')">000838 财信发展</k> &emsp;
+<k onclick="collectStkData('000851')">000851 高鸿股份</k> &emsp;
+<k onclick="collectStkData('000851')">000851 高鸿股份</k> &emsp;
+<k onclick="collectStkData('000852')">000852 石化机械</k> &emsp;
+<k onclick="collectStkData('000856')">000856 冀东装备</k> &emsp;
+<k onclick="collectStkData('000861')">000861 海印股份</k> &emsp;
+<k onclick="collectStkData('000863')">000863 三湘印象</k> &emsp;
+<k onclick="collectStkData('000875')">000875 吉电股份</k> &emsp;
+<k onclick="collectStkData('000877')">000877 天山股份</k> &emsp;
+<k onclick="collectStkData('000881')">000881 中广核技</k> &emsp;
+<k onclick="collectStkData('000882')">000882 华联股份</k> &emsp;
+<k onclick="collectStkData('000883')">000883 湖北能源</k> &emsp;
+<k onclick="collectStkData('000886')">000886 海南高速</k> &emsp;
+<k onclick="collectStkData('000888')">000888 峨眉山Ａ</k> &emsp;
+<k onclick="collectStkData('000897')">000897 津滨发展</k> &emsp;
+<k onclick="collectStkData('000898')">000898 鞍钢股份</k> &emsp;
+<k onclick="collectStkData('000900')" class="orange">现代投资 000900</k> &emsp;
+<k onclick="collectStkData('000901')">000901 航天科技</k> &emsp;
+<k onclick="collectStkData('000901')">000901 航天科技</k> &emsp;
+<k onclick="collectStkData('000903')">000903 云内动力</k> &emsp;
+<k onclick="collectStkData('000905')">000905 厦门港务</k> &emsp;
+<k onclick="collectStkData('000912')">000912 泸天化</k> &emsp;
+<k onclick="collectStkData('000917')" class="orange">电广传媒 000917</k> &emsp;
+<k onclick="collectStkData('000917')">000917 电广传媒</k> &emsp;
+<k onclick="collectStkData('000919')">000919 金陵药业</k> &emsp;
+<k onclick="collectStkData('000925')">000925 众合科技</k> &emsp;
+<k onclick="collectStkData('000926')">000926 福星股份</k> &emsp;
+<k onclick="collectStkData('000927')">000927 中国铁物</k> &emsp;
+<k onclick="collectStkData('000928')">000928 中钢国际</k> &emsp;
+<k onclick="collectStkData('000930')">000930 中粮科技</k> &emsp;
+<k onclick="collectStkData('000931')">000931 中 关 村</k> &emsp;
+<k onclick="collectStkData('000932')">000932 华菱钢铁</k> &emsp;
+<k onclick="collectStkData('000936')" class="orange">华西股份 000936</k> &emsp;
+<k onclick="collectStkData('000936')">000936 华西股份</k> &emsp;
+<k onclick="collectStkData('000937')">000937 冀中能源</k> &emsp;
+<k onclick="collectStkData('000950')">000950 重药控股</k> &emsp;
+<k onclick="collectStkData('000952')">000952 广济药业</k> &emsp;
+<k onclick="collectStkData('000953')">000953 河化股份</k> &emsp;
+<k onclick="collectStkData('000958')">000958 电投产融</k> &emsp;
+<k onclick="collectStkData('000959')">000959 首钢股份</k> &emsp;
+<k onclick="collectStkData('000965')">000965 天保基建</k> &emsp;
+<k onclick="collectStkData('000967')">000967 盈峰环境</k> &emsp;
+<k onclick="collectStkData('000968')">000968 蓝焰控股</k> &emsp;
+<k onclick="collectStkData('000969')">000969 安泰科技</k> &emsp;
+<k onclick="collectStkData('000973')">000973 佛塑科技</k> &emsp;
+<k onclick="collectStkData('000981')">000981 山子股份</k> &emsp;
+<k onclick="collectStkData('000982')">000982 中银绒业</k> &emsp;
+<k onclick="collectStkData('000987')">000987 越秀资本</k> &emsp;
+<k onclick="collectStkData('000990')">000990 诚志股份</k> &emsp;
+<k onclick="collectStkData('001213')">001213 中铁特货</k> &emsp;
+<k onclick="collectStkData('001227')">001227 兰州银行</k> &emsp;
+<k onclick="collectStkData('001267')">001267 汇绿生态</k> &emsp;
+<k onclick="collectStkData('001696')">001696 宗申动力</k> &emsp;
+<k onclick="collectStkData('001896')">001896 豫能控股</k> &emsp;
+<k onclick="collectStkData('001965')">001965 招商公路</k> &emsp;
+<k onclick="collectStkData('002002')">002002 ST鸿达</k> &emsp;
+<k onclick="collectStkData('002004')">002004 华邦健康</k> &emsp;
+<k onclick="collectStkData('002010')">002010 传化智联</k> &emsp;
+<k onclick="collectStkData('002012')">002012 凯恩股份</k> &emsp;
+<k onclick="collectStkData('002014')">002014 永新股份</k> &emsp;
+<k onclick="collectStkData('002023')">002023 海特高新</k> &emsp;
+<k onclick="collectStkData('002027')">002027 分众传媒</k> &emsp;
+<k onclick="collectStkData('002029')">002029 七 匹 狼</k> &emsp;
+<k onclick="collectStkData('002035')">002035 华帝股份</k> &emsp;
+<k onclick="collectStkData('002038')">002038 双鹭药业</k> &emsp;
+<k onclick="collectStkData('002040')">002040 南 京 港</k> &emsp;
+<k onclick="collectStkData('002044')">002044 美年健康</k> &emsp;
+<k onclick="collectStkData('002047')">002047 宝鹰股份</k> &emsp;
+<k onclick="collectStkData('002051')">002051 中工国际</k> &emsp;
+<k onclick="collectStkData('002059')">002059 云南旅游</k> &emsp;
+<k onclick="collectStkData('002060')">002060 粤 水 电</k> &emsp;
+<k onclick="collectStkData('002061')" class="orange">浙江交科 002061</k> &emsp;
+<k onclick="collectStkData('002061')">002061 浙江交科</k> &emsp;
+<k onclick="collectStkData('002062')">002062 宏润建设</k> &emsp;
+<k onclick="collectStkData('002063')" class="orange">远光软件</k> &emsp;
+<k onclick="collectStkData('002063')">002063 远光软件</k> &emsp;
+<k onclick="collectStkData('002064')">002064 华峰化学</k> &emsp;
+<k onclick="collectStkData('002065')">002065 东华软件</k> &emsp;
+<k onclick="collectStkData('002067')">002067 景兴纸业</k> &emsp;
+<k onclick="collectStkData('002072')" class="orange">凯瑞德 002072</k> &emsp;
+<k onclick="collectStkData('002072')">002072 凯瑞德</k> &emsp;
+<k onclick="collectStkData('002073')">002073 软控股份</k> &emsp;
+<k onclick="collectStkData('002081')">002081 金 螳 螂</k> &emsp;
+<k onclick="collectStkData('002084')">002084 海鸥住工</k> &emsp;
+<k onclick="collectStkData('002085')">002085 万丰奥威</k> &emsp;
+<k onclick="collectStkData('002085')">002085 万丰奥威</k> &emsp;
+<k onclick="collectStkData('002091')">002091 江苏国泰</k> &emsp;
+<k onclick="collectStkData('002092')">002092 中泰化学</k> &emsp;
+<k onclick="collectStkData('002093')">002093 国脉科技</k> &emsp;
+<k onclick="collectStkData('002094')">002094 青岛金王</k> &emsp;
+<k onclick="collectStkData('002097')">002097 山河智能</k> &emsp;
+<k onclick="collectStkData('002099')">002099 海翔药业</k> &emsp;
+<k onclick="collectStkData('002100')">002100 天康生物</k> &emsp;
+<k onclick="collectStkData('002103')">002103 广博股份</k> &emsp;
+<k onclick="collectStkData('002104')">002104 恒宝股份</k> &emsp;
+<k onclick="collectStkData('002105')">002105 信隆健康</k> &emsp;
+<k onclick="collectStkData('002108')">002108 沧州明珠</k> &emsp;
+<k onclick="collectStkData('002112')">002112 三变科技</k> &emsp;
+<k onclick="collectStkData('002114')">002114 罗平锌电</k> &emsp;
+<k onclick="collectStkData('002115')">002115 三维通信</k> &emsp;
+<k onclick="collectStkData('002117')" class="orange">东港股份 002117</k> &emsp;
+<k onclick="collectStkData('002117')">002117 东港股份</k> &emsp;
+<k onclick="collectStkData('002124')">002124 天邦食品</k> &emsp;
+<k onclick="collectStkData('002127')">002127 南极电商</k> &emsp;
+<k onclick="collectStkData('002130')">002130 沃尔核材</k> &emsp;
+<k onclick="collectStkData('002131')" class="orange">利欧股份 002131</k> &emsp;
+<k onclick="collectStkData('002131')">002131 利欧股份</k> &emsp;
+<k onclick="collectStkData('002132')">002132 恒星科技</k> &emsp;
+<k onclick="collectStkData('002134')">002134 天津普林</k> &emsp;
+<k onclick="collectStkData('002141')">002141 贤丰控股</k> &emsp;
+<k onclick="collectStkData('002145')">002145 中核钛白</k> &emsp;
+<k onclick="collectStkData('002148')">002148 北纬科技</k> &emsp;
+<k onclick="collectStkData('002154')">002154 报 喜 鸟</k> &emsp;
+<k onclick="collectStkData('002160')">002160 常铝股份</k> &emsp;
+<k onclick="collectStkData('002161')">002161 远 望 谷</k> &emsp;
+<k onclick="collectStkData('002162')">002162 悦心健康</k> &emsp;
+<k onclick="collectStkData('002162')">002162 悦心健康</k> &emsp;
+<k onclick="collectStkData('002165')">002165 红 宝 丽</k> &emsp;
+<k onclick="collectStkData('002165')">002165 红 宝 丽</k> &emsp;
+<k onclick="collectStkData('002167')">002167 东方锆业</k> &emsp;
+<k onclick="collectStkData('002168')">002168 惠程科技</k> &emsp;
+<k onclick="collectStkData('002169')">002169 智光电气</k> &emsp;
+<k onclick="collectStkData('002170')">002170 芭田股份</k> &emsp;
+<k onclick="collectStkData('002171')">002171 楚江新材</k> &emsp;
+<k onclick="collectStkData('002171')">002171 楚江新材</k> &emsp;
+<k onclick="collectStkData('002173')">002173 创新医疗</k> &emsp;
+<k onclick="collectStkData('002173')">002173 创新医疗</k> &emsp;
+<k onclick="collectStkData('002175')">002175 东方智造</k> &emsp;
+<k onclick="collectStkData('002181')">002181 粤 传 媒</k> &emsp;
+<k onclick="collectStkData('002183')">002183 怡 亚 通</k> &emsp;
+<k onclick="collectStkData('002185')">002185 华天科技</k> &emsp;
+<k onclick="collectStkData('002187')">002187 广百股份</k> &emsp;
+<k onclick="collectStkData('002188')">002188 中天服务</k> &emsp;
+<k onclick="collectStkData('002191')">002191 劲嘉股份</k> &emsp;
+<k onclick="collectStkData('002195')">002195 岩山科技</k> &emsp;
+<k onclick="collectStkData('002198')">002198 嘉应制药</k> &emsp;
+<k onclick="collectStkData('002204')">002204 大连重工</k> &emsp;
+<k onclick="collectStkData('002206')">002206 海 利 得</k> &emsp;
+<k onclick="collectStkData('002207')">002207 准油股份</k> &emsp;
+<k onclick="collectStkData('002208')">002208 合肥城建</k> &emsp;
+<k onclick="collectStkData('002210')">002210 飞马国际</k> &emsp;
+<k onclick="collectStkData('002218')">002218 拓日新能</k> &emsp;
+<k onclick="collectStkData('002221')">002221 东华能源</k> &emsp;
+<k onclick="collectStkData('002221')">002221 东华能源</k> &emsp;
+<k onclick="collectStkData('002226')">002226 江南化工</k> &emsp;
+<k onclick="collectStkData('002229')">002229 鸿博股份</k> &emsp;
+<k onclick="collectStkData('002233')">002233 塔牌集团</k> &emsp;
+<k onclick="collectStkData('002243')">002243 力合科创</k> &emsp;
+<k onclick="collectStkData('002247')">002247 聚力文化</k> &emsp;
+<k onclick="collectStkData('002249')">002249 大洋电机</k> &emsp;
+<k onclick="collectStkData('002251')">002251 步 步 高</k> &emsp;
+<k onclick="collectStkData('002252')">002252 上海莱士</k> &emsp;
+<k onclick="collectStkData('002255')">002255 海陆重工</k> &emsp;
+<k onclick="collectStkData('002261')">002261 拓维信息</k> &emsp;
+<k onclick="collectStkData('002263')">002263 大东南</k> &emsp;
+<k onclick="collectStkData('002264')">002264 新 华 都</k> &emsp;
+<k onclick="collectStkData('002266')">002266 浙富控股</k> &emsp;
+<k onclick="collectStkData('002267')">002267 陕天然气</k> &emsp;
+<k onclick="collectStkData('002269')" class="red">美邦服饰</k> &emsp;
+<k onclick="collectStkData('002269')">002269 美邦服饰</k> &emsp;
+<k onclick="collectStkData('002270')">002270 华明装备</k> &emsp;
+<k onclick="collectStkData('002272')">002272 川润股份</k> &emsp;
+<k onclick="collectStkData('002274')">002274 华昌化工</k> &emsp;
+<k onclick="collectStkData('002276')">002276 万马股份</k> &emsp;
+<k onclick="collectStkData('002276')">002276 万马股份</k> &emsp;
+<k onclick="collectStkData('002277')" class="orange">友阿股份</k> &emsp;
+<k onclick="collectStkData('002278')">002278 神开股份</k> &emsp;
+<k onclick="collectStkData('002280')">002280 联络互动</k> &emsp;
+<k onclick="collectStkData('002282')">002282 博深股份</k> &emsp;
+<k onclick="collectStkData('002283')">002283 天润工业</k> &emsp;
+<k onclick="collectStkData('002284')">002284 亚太股份</k> &emsp;
+<k onclick="collectStkData('002292')" class="orange">奥飞娱乐 002292</k> &emsp;
+<k onclick="collectStkData('002292')">002292 奥飞娱乐</k> &emsp;
+<k onclick="collectStkData('002296')">002296 辉煌科技</k> &emsp;
+<k onclick="collectStkData('002297')">002297 博云新材</k> &emsp;
+<k onclick="collectStkData('002300')" class="orange">太阳电缆 002300</k> &emsp;
+<k onclick="collectStkData('002300')">002300 太阳电缆</k> &emsp;
+<k onclick="collectStkData('002301')" class="orange">齐心集团 002301</k> &emsp;
+<k onclick="collectStkData('002302')">002302 西部建设</k> &emsp;
+<k onclick="collectStkData('002305')">002305 南国置业</k> &emsp;
+<k onclick="collectStkData('002306')">002306 中科云网</k> &emsp;
+<k onclick="collectStkData('002307')">002307 北新路桥</k> &emsp;
+<k onclick="collectStkData('002310')">002310 东方园林</k> &emsp;
+<k onclick="collectStkData('002314')">002314 南山控股</k> &emsp;
+<k onclick="collectStkData('002327')">002327 富安娜</k> &emsp;
+<k onclick="collectStkData('002328')">002328 新朋股份</k> &emsp;
+<k onclick="collectStkData('002329')">002329 皇氏集团</k> &emsp;
+<k onclick="collectStkData('002337')">002337 赛象科技</k> &emsp;
+<k onclick="collectStkData('002339')">002339 积成电子</k> &emsp;
+<k onclick="collectStkData('002340')">002340 格林美</k> &emsp;
+<k onclick="collectStkData('002340')">002340 格林美</k> &emsp;
+<k onclick="collectStkData('002341')">002341 新纶新材</k> &emsp;
+<k onclick="collectStkData('002342')">002342 巨力索具</k> &emsp;
+<k onclick="collectStkData('002345')">002345 潮宏基</k> &emsp;
+<k onclick="collectStkData('002347')">002347 泰尔股份</k> &emsp;
+<k onclick="collectStkData('002350')">002350 北京科锐</k> &emsp;
+<k onclick="collectStkData('002354')" class="orange">天娱数科 002354</k> &emsp;
+<k onclick="collectStkData('002354')">002354 天娱数科</k> &emsp;
+<k onclick="collectStkData('002356')">002356 赫美集团</k> &emsp;
+<k onclick="collectStkData('002357')">002357 富临运业</k> &emsp;
+<k onclick="collectStkData('002360')">002360 同德化工</k> &emsp;
+<k onclick="collectStkData('002363')">002363 隆基机械</k> &emsp;
+<k onclick="collectStkData('002364')">002364 中恒电气</k> &emsp;
+<k onclick="collectStkData('002370')">002370 亚太药业</k> &emsp;
+<k onclick="collectStkData('002374')">002374 中锐股份</k> &emsp;
+<k onclick="collectStkData('002375')">002375 亚厦股份</k> &emsp;
+<k onclick="collectStkData('002376')">002376 新北洋</k> &emsp;
+<k onclick="collectStkData('002377')">002377 国创高新</k> &emsp;
+<k onclick="collectStkData('002378')">002378 章源钨业</k> &emsp;
+<k onclick="collectStkData('002382')">002382 蓝帆医疗</k> &emsp;
+<k onclick="collectStkData('002383')" class="orange">合众思壮</k> &emsp;
+<k onclick="collectStkData('002383')">002383 合众思壮</k> &emsp;
+<k onclick="collectStkData('002387')">002387 维信诺</k> &emsp;
+<k onclick="collectStkData('002390')">002390 信邦制药</k> &emsp;
+<k onclick="collectStkData('002394')">002394 联发股份</k> &emsp;
+<k onclick="collectStkData('002397')">002397 梦洁股份</k> &emsp;
+<k onclick="collectStkData('002398')">002398 垒知集团</k> &emsp;
+<k onclick="collectStkData('002400')">002400 省广集团</k> &emsp;
+<k onclick="collectStkData('002408')">002408 齐翔腾达</k> &emsp;
+<k onclick="collectStkData('002412')">002412 汉森制药</k> &emsp;
+<k onclick="collectStkData('002413')">002413 雷科防务</k> &emsp;
+<k onclick="collectStkData('002418')">002418 康盛股份</k> &emsp;
+<k onclick="collectStkData('002419')">002419 天虹股份</k> &emsp;
+<k onclick="collectStkData('002420')" class="orange">毅昌科技</k> &emsp;
+<k onclick="collectStkData('002421')">002421 达实智能</k> &emsp;
+<k onclick="collectStkData('002423')">002423 中粮资本</k> &emsp;
+<k onclick="collectStkData('002424')">002424 贵州百灵</k> &emsp;
+<k onclick="collectStkData('002425')" class="orange">凯撒文化 002425</k> &emsp;
+<k onclick="collectStkData('002425')">002425 凯撒文化</k> &emsp;
+<k onclick="collectStkData('002426')">002426 胜利精密</k> &emsp;
+<k onclick="collectStkData('002429')">002429 兆驰股份</k> &emsp;
+<k onclick="collectStkData('002429')">002429 兆驰股份</k> &emsp;
+<k onclick="collectStkData('002431')">002431 棕榈股份</k> &emsp;
+<k onclick="collectStkData('002434')">002434 万里扬</k> &emsp;
+<k onclick="collectStkData('002435')">002435 长江健康</k> &emsp;
+<k onclick="collectStkData('002437')">002437 誉衡药业</k> &emsp;
+<k onclick="collectStkData('002440')">002440 闰土股份</k> &emsp;
+<k onclick="collectStkData('002443')">002443 金洲管道</k> &emsp;
+<k onclick="collectStkData('002445')">002445 中南文化</k> &emsp;
+<k onclick="collectStkData('002448')">002448 中原内配</k> &emsp;
+<k onclick="collectStkData('002451')">002451 摩恩电气</k> &emsp;
+<k onclick="collectStkData('002452')">002452 长高电新</k> &emsp;
+<k onclick="collectStkData('002454')" class="orange">松芝股份</k> &emsp;
+<k onclick="collectStkData('002456')">002456 欧菲光</k> &emsp;
+<k onclick="collectStkData('002461')">002461 珠江啤酒</k> &emsp;
+<k onclick="collectStkData('002465')">002465 海格通信</k> &emsp;
+<k onclick="collectStkData('002471')">002471 中超控股</k> &emsp;
+<k onclick="collectStkData('002471')">002471 中超控股</k> &emsp;
+<k onclick="collectStkData('002476')">002476 宝莫股份</k> &emsp;
+<k onclick="collectStkData('002478')">002478 常宝股份</k> &emsp;
+<k onclick="collectStkData('002480')">002480 新筑股份</k> &emsp;
+<k onclick="collectStkData('002481')">002481 双塔食品</k> &emsp;
+<k onclick="collectStkData('002483')">002483 润邦股份</k> &emsp;
+<k onclick="collectStkData('002486')">002486 嘉麟杰</k> &emsp;
+<k onclick="collectStkData('002491')" class="orange">通鼎互联 002491</k> &emsp;
+<k onclick="collectStkData('002491')">002491 通鼎互联</k> &emsp;
+<k onclick="collectStkData('002492')">002492 恒基达鑫</k> &emsp;
+<k onclick="collectStkData('002494')" class="orange">华斯股份 002494</k> &emsp;
+<k onclick="collectStkData('002494')">002494 华斯股份</k> &emsp;
+<k onclick="collectStkData('002496')">002496 辉丰股份</k> &emsp;
+<k onclick="collectStkData('002498')">002498 汉缆股份</k> &emsp;
+<k onclick="collectStkData('002500')">002500 山西证券</k> &emsp;
+<k onclick="collectStkData('002500')">002500 山西证券</k> &emsp;
+<k onclick="collectStkData('002501')">002501 利源股份</k> &emsp;
+<k onclick="collectStkData('002506')">002506 协鑫集成</k> &emsp;
+<k onclick="collectStkData('002506')">002506 协鑫集成</k> &emsp;
+<k onclick="collectStkData('002515')">002515 金字火腿</k> &emsp;
+<k onclick="collectStkData('002516')" class="orange">旷达科技</k> &emsp;
+<k onclick="collectStkData('002517')" class="orange">恺英网络 002517</k> &emsp;
+<k onclick="collectStkData('002517')">002517 恺英网络</k> &emsp;
+<k onclick="collectStkData('002519')">002519 银河电子</k> &emsp;
+<k onclick="collectStkData('002520')">002520 日发精机</k> &emsp;
+<k onclick="collectStkData('002522')">002522 浙江众成</k> &emsp;
+<k onclick="collectStkData('002526')" class="red">山东矿机</k> &emsp;
+<k onclick="collectStkData('002526')">002526 山东矿机</k> &emsp;
+<k onclick="collectStkData('002530')">002530 金财互联</k> &emsp;
+<k onclick="collectStkData('002532')">002532 天山铝业</k> &emsp;
+<k onclick="collectStkData('002533')">002533 金杯电工</k> &emsp;
+<k onclick="collectStkData('002536')">002536 飞龙股份</k> &emsp;
+<k onclick="collectStkData('002538')">002538 司尔特</k> &emsp;
+<k onclick="collectStkData('002540')">002540 亚太科技</k> &emsp;
+<k onclick="collectStkData('002542')">002542 中化岩土</k> &emsp;
+<k onclick="collectStkData('002545')">002545 东方铁塔</k> &emsp;
+<k onclick="collectStkData('002546')">002546 新联电子</k> &emsp;
+<k onclick="collectStkData('002547')" class="orange">春兴精工</k> &emsp;
+<k onclick="collectStkData('002548')">002548 金新农</k> &emsp;
+<k onclick="collectStkData('002554')">002554 惠博普</k> &emsp;
+<k onclick="collectStkData('002556')">002556 辉隆股份</k> &emsp;
+<k onclick="collectStkData('002558')" class="orange">巨人网络 002558</k> &emsp;
+<k onclick="collectStkData('002559')">002559 亚威股份</k> &emsp;
+<k onclick="collectStkData('002560')">002560 通达股份</k> &emsp;
+<k onclick="collectStkData('002563')">002563 森马服饰</k> &emsp;
+<k onclick="collectStkData('002565')">002565 顺灏股份</k> &emsp;
+<k onclick="collectStkData('002567')">002567 唐人神</k> &emsp;
+<k onclick="collectStkData('002571')">002571 德力股份</k> &emsp;
+<k onclick="collectStkData('002571')">002571 德力股份</k> &emsp;
+<k onclick="collectStkData('002573')">002573 清新环境</k> &emsp;
+<k onclick="collectStkData('002574')">002574 明牌珠宝</k> &emsp;
+<k onclick="collectStkData('002575')">002575 群兴玩具</k> &emsp;
+<k onclick="collectStkData('002582')">002582 好想你</k> &emsp;
+<k onclick="collectStkData('002584')">002584 西陇科学</k> &emsp;
+<k onclick="collectStkData('002587')">002587 奥拓电子</k> &emsp;
+<k onclick="collectStkData('002588')">002588 史丹利</k> &emsp;
+<k onclick="collectStkData('002589')">002589 瑞康医药</k> &emsp;
+<k onclick="collectStkData('002591')">002591 恒大高新</k> &emsp;
+<k onclick="collectStkData('002599')">002599 盛通股份</k> &emsp;
+<k onclick="collectStkData('002600')">002600 领益智造</k> &emsp;
+<k onclick="collectStkData('002600')">002600 领益智造</k> &emsp;
+<k onclick="collectStkData('002602')">002602 世纪华通</k> &emsp;
+<k onclick="collectStkData('002607')">002607 中公教育</k> &emsp;
+<k onclick="collectStkData('002607')">002607 中公教育</k> &emsp;
+<k onclick="collectStkData('002608')">002608 江苏国信</k> &emsp;
+<k onclick="collectStkData('002613')">002613 北玻股份</k> &emsp;
+<k onclick="collectStkData('002614')" class="orange">奥佳华 002614</k> &emsp;
+<k onclick="collectStkData('002614')">002614 奥佳华</k> &emsp;
+<k onclick="collectStkData('002615')">002615 哈尔斯</k> &emsp;
+<k onclick="collectStkData('002615')">002615 哈尔斯</k> &emsp;
+<k onclick="collectStkData('002616')">002616 长青集团</k> &emsp;
+<k onclick="collectStkData('002621')">002621 美吉姆</k> &emsp;
+<k onclick="collectStkData('002627')">002627 三峡旅游</k> &emsp;
+<k onclick="collectStkData('002628')">002628 成都路桥</k> &emsp;
+<k onclick="collectStkData('002629')">002629 仁智股份</k> &emsp;
+<k onclick="collectStkData('002630')">002630 华西能源</k> &emsp;
+<k onclick="collectStkData('002631')">002631 德尔未来</k> &emsp;
+<k onclick="collectStkData('002632')">002632 道明光学</k> &emsp;
+<k onclick="collectStkData('002636')">002636 金安国纪</k> &emsp;
+<k onclick="collectStkData('002639')">002639 雪人股份</k> &emsp;
+<k onclick="collectStkData('002640')">002640 跨境通</k> &emsp;
+<k onclick="collectStkData('002641')">002641 公元股份</k> &emsp;
+<k onclick="collectStkData('002642')">002642 荣联科技</k> &emsp;
+<k onclick="collectStkData('002647')" class="orange">仁东控股 002647</k> &emsp;
+<k onclick="collectStkData('002647')">002647 仁东控股</k> &emsp;
+<k onclick="collectStkData('002652')">002652 扬子新材</k> &emsp;
+<k onclick="collectStkData('002654')">002654 万润科技</k> &emsp;
+<k onclick="collectStkData('002658')">002658 雪迪龙</k> &emsp;
+<k onclick="collectStkData('002659')">002659 凯文教育</k> &emsp;
+<k onclick="collectStkData('002660')">002660 茂硕电源</k> &emsp;
+<k onclick="collectStkData('002663')">002663 普邦股份</k> &emsp;
+<k onclick="collectStkData('002665')">002665 首航高科</k> &emsp;
+<k onclick="collectStkData('002670')">002670 国盛金控</k> &emsp;
+<k onclick="collectStkData('002670')">002670 国盛金控</k> &emsp;
+<k onclick="collectStkData('002672')">002672 东江环保</k> &emsp;
+<k onclick="collectStkData('002673')">002673 西部证券</k> &emsp;
+<k onclick="collectStkData('002678')">002678 珠江钢琴</k> &emsp;
+<k onclick="collectStkData('002681')">002681 奋达科技</k> &emsp;
+<k onclick="collectStkData('002682')" class="red">龙洲股份</k> &emsp;
+<k onclick="collectStkData('002682')">002682 龙洲股份</k> &emsp;
+<k onclick="collectStkData('002686')">002686 亿利达</k> &emsp;
+<k onclick="collectStkData('002687')">002687 乔治白</k> &emsp;
+<k onclick="collectStkData('002688')">002688 金河生物</k> &emsp;
+<k onclick="collectStkData('002689')">002689 远大智能</k> &emsp;
+<k onclick="collectStkData('002693')">002693 双成药业</k> &emsp;
+<k onclick="collectStkData('002696')">002696 百洋股份</k> &emsp;
+<k onclick="collectStkData('002697')">002697 红旗连锁</k> &emsp;
+<k onclick="collectStkData('002701')">002701 奥瑞金</k> &emsp;
+<k onclick="collectStkData('002708')">002708 光洋股份</k> &emsp;
+<k onclick="collectStkData('002713')">002713 东易日盛</k> &emsp;
+<k onclick="collectStkData('002717')">002717 岭南股份</k> &emsp;
+<k onclick="collectStkData('002730')">002730 电光科技</k> &emsp;
+<k onclick="collectStkData('002745')">002745 木林森</k> &emsp;
+<k onclick="collectStkData('002752')">002752 昇兴股份</k> &emsp;
+<k onclick="collectStkData('002755')">002755 奥赛康</k> &emsp;
+<k onclick="collectStkData('002763')">002763 汇洁股份</k> &emsp;
+<k onclick="collectStkData('002769')">002769 普路通</k> &emsp;
+<k onclick="collectStkData('002772')">002772 众兴菌业</k> &emsp;
+<k onclick="collectStkData('002786')">002786 银宝山新</k> &emsp;
+<k onclick="collectStkData('002788')">002788 鹭燕医药</k> &emsp;
+<k onclick="collectStkData('002793')">002793 罗欣药业</k> &emsp;
+<k onclick="collectStkData('002797')">002797 第一创业</k> &emsp;
+<k onclick="collectStkData('002797')">002797 第一创业</k> &emsp;
+<k onclick="collectStkData('002798')">002798 帝欧家居</k> &emsp;
+<k onclick="collectStkData('002807')">002807 江阴银行</k> &emsp;
+<k onclick="collectStkData('002822')">002822 中装建设</k> &emsp;
+<k onclick="collectStkData('002828')">002828 贝肯能源</k> &emsp;
+<k onclick="collectStkData('002839')">002839 张家港行</k> &emsp;
+<k onclick="collectStkData('002855')">002855 捷荣技术</k> &emsp;
+<k onclick="collectStkData('002863')">002863 今飞凯达</k> &emsp;
+<k onclick="collectStkData('002877')">002877 智能自控</k> &emsp;
+<k onclick="collectStkData('002893')">002893 京能热力</k> &emsp;
+<k onclick="collectStkData('002926')">002926 华西证券</k> &emsp;
+<k onclick="collectStkData('002936')">002936 郑州银行</k> &emsp;
+<k onclick="collectStkData('002948')">002948 青岛银行</k> &emsp;
+<k onclick="collectStkData('002958')">002958 青农商行</k> &emsp;
+<k onclick="collectStkData('002966')">002966 苏州银行</k> &emsp;
+<k onclick="collectStkData('002969')">002969 嘉美包装</k> &emsp;
+<k onclick="collectStkData('002998')">002998 优彩资源</k> &emsp;
+<k onclick="collectStkData('003015')">003015 日久光电</k> &emsp;
+<k onclick="collectStkData('003035')">003035 南网能源</k> &emsp;
+<k onclick="collectStkData('003816')">003816 中国广核</k> &emsp;
+<k onclick="collectStkData('300002')" class="orange">神州泰岳 300002</k> &emsp;
+<k onclick="collectStkData('300002')">300002 神州泰岳</k> &emsp;
+<k onclick="collectStkData('300005')">300005 探路者</k> &emsp;
+<k onclick="collectStkData('300006')">300006 莱美药业</k> &emsp;
+<k onclick="collectStkData('300008')">300008 天海防务</k> &emsp;
+<k onclick="collectStkData('300011')">300011 鼎汉技术</k> &emsp;
+<k onclick="collectStkData('300013')" class="orange">新宁物流 300013</k> &emsp;
+<k onclick="collectStkData('300013')">300013 新宁物流</k> &emsp;
+<k onclick="collectStkData('300017')" class="orange">网宿科技 300017</k> &emsp;
+<k onclick="collectStkData('300017')">300017 网宿科技</k> &emsp;
+<k onclick="collectStkData('300018')">300018 中元股份</k> &emsp;
+<k onclick="collectStkData('300022')">300022 吉峰科技</k> &emsp;
+<k onclick="collectStkData('300025')">300025 华星创业</k> &emsp;
+<k onclick="collectStkData('300026')">300026 红日药业</k> &emsp;
+<k onclick="collectStkData('300027')">300027 华谊兄弟</k> &emsp;
+<k onclick="collectStkData('300030')">300030 阳普医疗</k> &emsp;
+<k onclick="collectStkData('300032')">300032 金龙机电</k> &emsp;
+<k onclick="collectStkData('300039')">300039 上海凯宝</k> &emsp;
+<k onclick="collectStkData('300040')">300040 九洲集团</k> &emsp;
+<k onclick="collectStkData('300043')" class="orange">星辉娱乐 300043</k> &emsp;
+<k onclick="collectStkData('300043')">300043 星辉娱乐</k> &emsp;
+<k onclick="collectStkData('300044')">300044 赛为智能</k> &emsp;
+<k onclick="collectStkData('300045')">300045 华力创通</k> &emsp;
+<k onclick="collectStkData('300047')">300047 天源迪科</k> &emsp;
+<k onclick="collectStkData('300047')">300047 天源迪科</k> &emsp;
+<k onclick="collectStkData('300048')">300048 合康新能</k> &emsp;
+<k onclick="collectStkData('300053')">300053 航宇微</k> &emsp;
+<k onclick="collectStkData('300056')">300056 中创环保</k> &emsp;
+<k onclick="collectStkData('300058')" class="orange">蓝色光标 300058</k> &emsp;
+<k onclick="collectStkData('300058')">300058 蓝色光标</k> &emsp;
+<k onclick="collectStkData('300061')">300061 旗天科技</k> &emsp;
+<k onclick="collectStkData('300062')">300062 中能电气</k> &emsp;
+<k onclick="collectStkData('300063')">300063 天龙集团</k> &emsp;
+<k onclick="collectStkData('300066')">300066 三川智慧</k> &emsp;
+<k onclick="collectStkData('300067')">300067 安诺其</k> &emsp;
+<k onclick="collectStkData('300070')">300070 碧水源</k> &emsp;
+<k onclick="collectStkData('300071')">300071 福石控股</k> &emsp;
+<k onclick="collectStkData('300072')">300072 海新能科</k> &emsp;
+<k onclick="collectStkData('300074')">300074 华平股份</k> &emsp;
+<k onclick="collectStkData('300076')">300076 GQY视讯</k> &emsp;
+<k onclick="collectStkData('300078')">300078 思创医惠</k> &emsp;
+<k onclick="collectStkData('300079')" class="orange">数码视讯 300079</k> &emsp;
+<k onclick="collectStkData('300079')">300079 数码视讯</k> &emsp;
+<k onclick="collectStkData('300080')">300080 易成新能</k> &emsp;
+<k onclick="collectStkData('300081')" class="orange">恒信东方</k> &emsp;
+<k onclick="collectStkData('300081')">300081 恒信东方</k> &emsp;
+<k onclick="collectStkData('300083')">300083 创世纪</k> &emsp;
+<k onclick="collectStkData('300086')">300086 康芝药业</k> &emsp;
+<k onclick="collectStkData('300086')">300086 康芝药业</k> &emsp;
+<k onclick="collectStkData('300088')">300088 长信科技</k> &emsp;
+<k onclick="collectStkData('300091')">300091 金通灵</k> &emsp;
+<k onclick="collectStkData('300094')">300094 国联水产</k> &emsp;
+<k onclick="collectStkData('300096')">300096 易联众</k> &emsp;
+<k onclick="collectStkData('300096')">300096 易联众</k> &emsp;
+<k onclick="collectStkData('300097')">300097 智云股份</k> &emsp;
+<k onclick="collectStkData('300098')">300098 高新兴</k> &emsp;
+<k onclick="collectStkData('300099')">300099 精准信息</k> &emsp;
+<k onclick="collectStkData('300102')">300102 乾照光电</k> &emsp;
+<k onclick="collectStkData('300105')">300105 龙源技术</k> &emsp;
+<k onclick="collectStkData('300106')">300106 西部牧业</k> &emsp;
+<k onclick="collectStkData('300110')">300110 华仁药业</k> &emsp;
+<k onclick="collectStkData('300111')">300111 向日葵</k> &emsp;
+<k onclick="collectStkData('300114')">300114 中航电测</k> &emsp;
+<k onclick="collectStkData('300116')">300116 保力新</k> &emsp;
+<k onclick="collectStkData('300120')">300120 经纬辉开</k> &emsp;
+<k onclick="collectStkData('300123')">300123 亚光科技</k> &emsp;
+<k onclick="collectStkData('300128')">300128 锦富技术</k> &emsp;
+<k onclick="collectStkData('300129')" class="orange">泰胜风能</k> &emsp;
+<k onclick="collectStkData('300131')">300131 英唐智控</k> &emsp;
+<k onclick="collectStkData('300131')">300131 英唐智控</k> &emsp;
+<k onclick="collectStkData('300133')" class="orange">华策影视 300133</k> &emsp;
+<k onclick="collectStkData('300133')">300133 华策影视</k> &emsp;
+<k onclick="collectStkData('300134')">300134 大富科技</k> &emsp;
+<k onclick="collectStkData('300135')">300135 宝利国际</k> &emsp;
+<k onclick="collectStkData('300139')">300139 晓程科技</k> &emsp;
+<k onclick="collectStkData('300140')">300140 节能环境</k> &emsp;
+<k onclick="collectStkData('300141')">300141 和顺电气</k> &emsp;
+<k onclick="collectStkData('300145')">300145 中金环境</k> &emsp;
+<k onclick="collectStkData('300147')">300147 香雪制药</k> &emsp;
+<k onclick="collectStkData('300148')" class="orange">天舟文化 300148</k> &emsp;
+<k onclick="collectStkData('300148')">300148 天舟文化</k> &emsp;
+<k onclick="collectStkData('300150')">300150 世纪瑞尔</k> &emsp;
+<k onclick="collectStkData('300152')">300152 新动力</k> &emsp;
+<k onclick="collectStkData('300155')">300155 安居宝</k> &emsp;
+<k onclick="collectStkData('300157')" class="red">新锦动力</k> &emsp;
+<k onclick="collectStkData('300158')" class="orange">振东制药 300158</k> &emsp;
+<k onclick="collectStkData('300158')">300158 振东制药</k> &emsp;
+<k onclick="collectStkData('300160')">300160 秀强股份</k> &emsp;
+<k onclick="collectStkData('300163')">300163 先锋新材</k> &emsp;
+<k onclick="collectStkData('300164')">300164 通源石油</k> &emsp;
+<k onclick="collectStkData('300166')">300166 东方国信</k> &emsp;
+<k onclick="collectStkData('300167')">300167 ST迪威迅</k> &emsp;
+<k onclick="collectStkData('300168')">300168 万达信息</k> &emsp;
+<k onclick="collectStkData('300169')">300169 天晟新材</k> &emsp;
+<k onclick="collectStkData('300172')">300172 中电环保</k> &emsp;
+<k onclick="collectStkData('300173')">300173 福能东方</k> &emsp;
+<k onclick="collectStkData('300175')">300175 朗源股份</k> &emsp;
+<k onclick="collectStkData('300176')" class="orange">派生科技</k> &emsp;
+<k onclick="collectStkData('300177')">300177 中海达</k> &emsp;
+<k onclick="collectStkData('300180')">300180 华峰超纤</k> &emsp;
+<k onclick="collectStkData('300182')" class="orange">捷成股份 300182</k> &emsp;
+<k onclick="collectStkData('300182')">300182 捷成股份</k> &emsp;
+<k onclick="collectStkData('300184')">300184 力源信息</k> &emsp;
+<k onclick="collectStkData('300185')">300185 通裕重工</k> &emsp;
+<k onclick="collectStkData('300192')" class="orange">科德教育 300192</k> &emsp;
+<k onclick="collectStkData('300192')">300192 科德教育</k> &emsp;
+<k onclick="collectStkData('300193')">300193 佳士科技</k> &emsp;
+<k onclick="collectStkData('300194')">300194 福安药业</k> &emsp;
+<k onclick="collectStkData('300197')">300197 节能铁汉</k> &emsp;
+<k onclick="collectStkData('300198')">300198 纳川股份</k> &emsp;
+<k onclick="collectStkData('300200')">300200 高盟新材</k> &emsp;
+<k onclick="collectStkData('300210')">300210 森远股份</k> &emsp;
+<k onclick="collectStkData('300213')">300213 佳讯飞鸿</k> &emsp;
+<k onclick="collectStkData('300217')">300217 东方电热</k> &emsp;
+<k onclick="collectStkData('300219')" class="orange">鸿利智汇</k> &emsp;
+<k onclick="collectStkData('300219')">300219 鸿利智汇</k> &emsp;
+<k onclick="collectStkData('300222')" class="orange">科大智能</k> &emsp;
+<k onclick="collectStkData('300222')">300222 科大智能</k> &emsp;
+<k onclick="collectStkData('300225')">300225 金力泰</k> &emsp;
+<k onclick="collectStkData('300227')">300227 光韵达</k> &emsp;
+<k onclick="collectStkData('300231')">300231 银信科技</k> &emsp;
+<k onclick="collectStkData('300232')">300232 洲明科技</k> &emsp;
+<k onclick="collectStkData('300234')">300234 开尔新材</k> &emsp;
+<k onclick="collectStkData('300237')">300237 美晨生态</k> &emsp;
+<k onclick="collectStkData('300241')">300241 瑞丰光电</k> &emsp;
+<k onclick="collectStkData('300245')">300245 天玑科技</k> &emsp;
+<k onclick="collectStkData('300252')" class="orange">金信诺 300252</k> &emsp;
+<k onclick="collectStkData('300252')">300252 金信诺</k> &emsp;
+<k onclick="collectStkData('300254')">300254 仟源医药</k> &emsp;
+<k onclick="collectStkData('300255')">300255 常山药业</k> &emsp;
+<k onclick="collectStkData('300263')">300263 隆华科技</k> &emsp;
+<k onclick="collectStkData('300264')">300264 佳创视讯</k> &emsp;
+<k onclick="collectStkData('300267')">300267 尔康制药</k> &emsp;
+<k onclick="collectStkData('300270')">300270 中威电子</k> &emsp;
+<k onclick="collectStkData('300278')">300278 华昌达</k> &emsp;
+<k onclick="collectStkData('300279')">300279 和晶科技</k> &emsp;
+<k onclick="collectStkData('300281')">300281 金明精机</k> &emsp;
+<k onclick="collectStkData('300283')">300283 温州宏丰</k> &emsp;
+<k onclick="collectStkData('300284')">300284 苏交科</k> &emsp;
+<k onclick="collectStkData('300287')">300287 飞利信</k> &emsp;
+<k onclick="collectStkData('300290')">300290 荣科科技</k> &emsp;
+<k onclick="collectStkData('300291')" class="orange">百纳千成 300291</k> &emsp;
+<k onclick="collectStkData('300291')">300291 百纳千成</k> &emsp;
+<k onclick="collectStkData('300292')">300292 吴通控股</k> &emsp;
+<k onclick="collectStkData('300293')">300293 蓝英装备</k> &emsp;
+<k onclick="collectStkData('300296')">300296 利亚德</k> &emsp;
+<k onclick="collectStkData('300299')" class="orange">富春股份 300299</k> &emsp;
+<k onclick="collectStkData('300300')">300300 海峡创新</k> &emsp;
+<k onclick="collectStkData('300302')" class="orange">同有科技 300302</k> &emsp;
+<k onclick="collectStkData('300303')">300303 聚飞光电</k> &emsp;
+<k onclick="collectStkData('300304')">300304 云意电气</k> &emsp;
+<k onclick="collectStkData('300307')">300307 慈星股份</k> &emsp;
+<k onclick="collectStkData('300310')">300310 宜通世纪</k> &emsp;
+<k onclick="collectStkData('300311')">300311 任子行</k> &emsp;
+<k onclick="collectStkData('300315')" class="orange">掌趣科技 300315</k> &emsp;
+<k onclick="collectStkData('300315')">300315 掌趣科技</k> &emsp;
+<k onclick="collectStkData('300317')">300317 珈伟新能</k> &emsp;
+<k onclick="collectStkData('300322')">300322 硕贝德</k> &emsp;
+<k onclick="collectStkData('300324')">300324 旋极信息</k> &emsp;
+<k onclick="collectStkData('300329')">300329 海伦钢琴</k> &emsp;
+<k onclick="collectStkData('300333')">300333 兆日科技</k> &emsp;
+<k onclick="collectStkData('300335')">300335 迪森股份</k> &emsp;
+<k onclick="collectStkData('300337')">300337 银邦股份</k> &emsp;
+<k onclick="collectStkData('300342')">300342 天银机电</k> &emsp;
+<k onclick="collectStkData('300344')">300344 立方数科</k> &emsp;
+<k onclick="collectStkData('300350')">300350 华鹏飞</k> &emsp;
+<k onclick="collectStkData('300350')">300350 华鹏飞</k> &emsp;
+<k onclick="collectStkData('300352')">300352 北信源</k> &emsp;
+<k onclick="collectStkData('300355')">300355 蒙草生态</k> &emsp;
+<k onclick="collectStkData('300365')">300365 恒华科技</k> &emsp;
+<k onclick="collectStkData('300368')">300368 汇金股份</k> &emsp;
+<k onclick="collectStkData('300375')">300375 鹏翎股份</k> &emsp;
+<k onclick="collectStkData('300376')" class="orange">易事特</k> &emsp;
+<k onclick="collectStkData('300376')">300376 易事特</k> &emsp;
+<k onclick="collectStkData('300376')">300376 易事特</k> &emsp;
+<k onclick="collectStkData('300383')">300383 光环新网</k> &emsp;
+<k onclick="collectStkData('300387')">300387 富邦股份</k> &emsp;
+<k onclick="collectStkData('300388')">300388 节能国祯</k> &emsp;
+<k onclick="collectStkData('300403')">300403 汉宇集团</k> &emsp;
+<k onclick="collectStkData('300404')">300404 博济医药</k> &emsp;
+<k onclick="collectStkData('300405')">300405 科隆股份</k> &emsp;
+<k onclick="collectStkData('300412')">300412 迦南科技</k> &emsp;
+<k onclick="collectStkData('300425')">300425 中建环能</k> &emsp;
+<k onclick="collectStkData('300426')">300426 唐德影视</k> &emsp;
+<k onclick="collectStkData('300440')">300440 运达科技</k> &emsp;
+<k onclick="collectStkData('300441')">300441 鲍斯股份</k> &emsp;
+<k onclick="collectStkData('300444')">300444 双杰电气</k> &emsp;
+<k onclick="collectStkData('300448')">300448 浩云科技</k> &emsp;
+<k onclick="collectStkData('300449')">300449 汉邦高科</k> &emsp;
+<k onclick="collectStkData('300451')" class="orange">创业慧康 300451</k> &emsp;
+<k onclick="collectStkData('300451')">300451 创业慧康</k> &emsp;
+<k onclick="collectStkData('300455')">300455 航天智装</k> &emsp;
+<k onclick="collectStkData('300459')" class="orange">汤姆猫 300459</k> &emsp;
+<k onclick="collectStkData('300459')">300459 汤姆猫</k> &emsp;
+<k onclick="collectStkData('300462')">300462 华铭智能</k> &emsp;
+<k onclick="collectStkData('300464')" class="orange">星徽股份 300464</k> &emsp;
+<k onclick="collectStkData('300465')" class="orange">高伟达 300465</k> &emsp;
+<k onclick="collectStkData('300465')">300465 高伟达</k> &emsp;
+<k onclick="collectStkData('300477')">300477 合纵科技</k> &emsp;
+<k onclick="collectStkData('300493')">300493 润欣科技</k> &emsp;
+<k onclick="collectStkData('300503')">300503 昊志机电</k> &emsp;
+<k onclick="collectStkData('300506')">300506 名家汇</k> &emsp;
+<k onclick="collectStkData('300510')">300510 金冠股份</k> &emsp;
+<k onclick="collectStkData('300511')">300511 雪榕生物</k> &emsp;
+<k onclick="collectStkData('300521')">300521 爱司凯</k> &emsp;
+<k onclick="collectStkData('300527')">300527 中船应急</k> &emsp;
+<k onclick="collectStkData('300532')">300532 今天国际</k> &emsp;
+<k onclick="collectStkData('300533')" class="orange">冰川网络 300533</k> &emsp;
+<k onclick="collectStkData('300533')">300533 冰川网络</k> &emsp;
+<k onclick="collectStkData('300534')">300534 陇神戎发</k> &emsp;
+<k onclick="collectStkData('300535')">300535 达威股份</k> &emsp;
+<k onclick="collectStkData('300536')">300536 农尚环境</k> &emsp;
+<k onclick="collectStkData('300537')">300537 广信材料</k> &emsp;
+<k onclick="collectStkData('300538')">300538 同益股份</k> &emsp;
+<k onclick="collectStkData('300540')">300540 蜀道装备</k> &emsp;
+<k onclick="collectStkData('300541')">300541 先进数通</k> &emsp;
+<k onclick="collectStkData('300543')">300543 朗科智能</k> &emsp;
+<k onclick="collectStkData('300545')">300545 联得装备</k> &emsp;
+<k onclick="collectStkData('300546')">300546 雄帝科技</k> &emsp;
+<k onclick="collectStkData('300547')">300547 川环科技</k> &emsp;
+<k onclick="collectStkData('300548')">300548 博创科技</k> &emsp;
+<k onclick="collectStkData('300548')">300548 博创科技</k> &emsp;
+<k onclick="collectStkData('300550')">300550 和仁科技</k> &emsp;
+<k onclick="collectStkData('300569')">300569 天能重工</k> &emsp;
+<k onclick="collectStkData('300591')">300591 万里马</k> &emsp;
+<k onclick="collectStkData('300597')">300597 吉大通信</k> &emsp;
+<k onclick="collectStkData('300611')">300611 美力科技</k> &emsp;
+<k onclick="collectStkData('300647')">300647 超频三</k> &emsp;
+<k onclick="collectStkData('300664')">300664 鹏鹞环保</k> &emsp;
+<k onclick="collectStkData('300701')">300701 森霸传感</k> &emsp;
+<k onclick="collectStkData('300749')">300749 顶固集创</k> &emsp;
+<k onclick="collectStkData('300790')">300790 宇瞳光学</k> &emsp;
+<k onclick="collectStkData('300792')">300792 壹网壹创</k> &emsp;
+<k onclick="collectStkData('300796')">300796 贝斯美</k> &emsp;
+<k onclick="collectStkData('300797')">300797 钢研纳克</k> &emsp;
+<k onclick="collectStkData('300799')">300799 *ST左江</k> &emsp;
+<k onclick="collectStkData('300802')">300802 矩子科技</k> &emsp;
+<k onclick="collectStkData('300803')" class="orange">指南针 300803</k> &emsp;
+<k onclick="collectStkData('300803')">300803 指南针</k> &emsp;
+<k onclick="collectStkData('300806')">300806 斯迪克</k> &emsp;
+<k onclick="collectStkData('300809')">300809 华辰装备</k> &emsp;
+<k onclick="collectStkData('300830')">300830 金现代</k> &emsp;
+<k onclick="collectStkData('300883')">300883 龙利得</k> &emsp;
+<k onclick="collectStkData('300968')">300968 格林精密</k> &emsp;
+<k onclick="collectStkData('300975')">300975 商络电子</k> &emsp;
+<k onclick="collectStkData('301039')">301039 中集车辆</k> &emsp;
+<k onclick="collectStkData('301048')">301048 金鹰重工</k> &emsp;
+<k onclick="collectStkData('301062')">301062 上海艾录</k> &emsp;
+<k onclick="collectStkData('301175')">301175 中科环保</k> &emsp;
+<k onclick="collectStkData('301215')">301215 中汽股份</k> &emsp;
+<k onclick="collectStkData('600000')">600000 浦发银行</k> &emsp;
+<k onclick="collectStkData('600008')">600008 首创环保</k> &emsp;
+<k onclick="collectStkData('600010')">600010 包钢股份</k> &emsp;
+<k onclick="collectStkData('600011')">600011 华能国际</k> &emsp;
+<k onclick="collectStkData('600012')">600012 皖通高速</k> &emsp;
+<k onclick="collectStkData('600015')">600015 华夏银行</k> &emsp;
+<k onclick="collectStkData('600016')">600016 民生银行</k> &emsp;
+<k onclick="collectStkData('600017')">600017 日照港</k> &emsp;
+<k onclick="collectStkData('600018')">600018 上港集团</k> &emsp;
+<k onclick="collectStkData('600019')">600019 宝钢股份</k> &emsp;
+<k onclick="collectStkData('600020')">600020 中原高速</k> &emsp;
+<k onclick="collectStkData('600022')">600022 山东钢铁</k> &emsp;
+<k onclick="collectStkData('600025')" class="red">华能水电</k> &emsp;
+<k onclick="collectStkData('600025')">600025 华能水电</k> &emsp;
+<k onclick="collectStkData('600027')">600027 华电国际</k> &emsp;
+<k onclick="collectStkData('600033')">600033 福建高速</k> &emsp;
+<k onclick="collectStkData('600035')" class="orange">楚天高速 600035</k> &emsp;
+<k onclick="collectStkData('600035')">600035 楚天高速</k> &emsp;
+<k onclick="collectStkData('600037')">600037 歌华有线</k> &emsp;
+<k onclick="collectStkData('600050')">600050 中国联通</k> &emsp;
+<k onclick="collectStkData('600051')" class="orange">宁波联合 600051</k> &emsp;
+<k onclick="collectStkData('600051')">600051 宁波联合</k> &emsp;
+<k onclick="collectStkData('600052')">600052 东望时代</k> &emsp;
+<k onclick="collectStkData('600058')">600058 五矿发展</k> &emsp;
+<k onclick="collectStkData('600061')">600061 国投资本</k> &emsp;
+<k onclick="collectStkData('600063')">600063 皖维高新</k> &emsp;
+<k onclick="collectStkData('600064')">600064 南京高科</k> &emsp;
+<k onclick="collectStkData('600066')">600066 宇通客车</k> &emsp;
+<k onclick="collectStkData('600067')">600067 冠城大通</k> &emsp;
+<k onclick="collectStkData('600073')">600073 上海梅林</k> &emsp;
+<k onclick="collectStkData('600082')">600082 海泰发展</k> &emsp;
+<k onclick="collectStkData('600098')">600098 广州发展</k> &emsp;
+<k onclick="collectStkData('600099')">600099 林海股份</k> &emsp;
+<k onclick="collectStkData('600100')">600100 同方股份</k> &emsp;
+<k onclick="collectStkData('600101')" class="orange">明星电力</k> &emsp;
+<k onclick="collectStkData('600101')">600101 明星电力</k> &emsp;
+<k onclick="collectStkData('600103')">600103 青山纸业</k> &emsp;
+<k onclick="collectStkData('600105')">600105 永鼎股份</k> &emsp;
+<k onclick="collectStkData('600107')">600107 美尔雅</k> &emsp;
+<k onclick="collectStkData('600108')">600108 亚盛集团</k> &emsp;
+<k onclick="collectStkData('600110')">600110 诺德股份</k> &emsp;
+<k onclick="collectStkData('600115')">600115 600115 东方航空&emsp;</k> 
+<k onclick="collectStkData('600115')">600115 中国东航</k> &emsp;
+<k onclick="collectStkData('600116')">600116 三峡水利</k> &emsp;
+<k onclick="collectStkData('600120')">600120 浙江东方</k> &emsp;
+<k onclick="collectStkData('600121')">600121 郑州煤电</k> &emsp;
+<k onclick="collectStkData('600125')">600125 铁龙物流</k> &emsp;
+<k onclick="collectStkData('600126')">600126 杭钢股份</k> &emsp;
+<k onclick="collectStkData('600135')">600135 乐凯胶片</k> &emsp;
+<k onclick="collectStkData('600151')" class="orange">航天机电</k> &emsp;
+<k onclick="collectStkData('600151')">600151 航天机电</k> &emsp;
+<k onclick="collectStkData('600155')">600155 华创云信</k> &emsp;
+<k onclick="collectStkData('600156')" class="orange">华升股份 600156</k> &emsp;
+<k onclick="collectStkData('600156')">600156 华升股份</k> &emsp;
+<k onclick="collectStkData('600157')">600157 永泰能源</k> &emsp;
+<k onclick="collectStkData('600158')">600158 中体产业</k> &emsp;
+<k onclick="collectStkData('600159')">600159 大龙地产</k> &emsp;
+<k onclick="collectStkData('600162')">600162 香江控股</k> &emsp;
+<k onclick="collectStkData('600165')">600165 宁科生物</k> &emsp;
+<k onclick="collectStkData('600166')">600166 福田汽车</k> &emsp;
+<k onclick="collectStkData('600167')">600167 联美控股</k> &emsp;
+<k onclick="collectStkData('600169')">600169 太原重工</k> &emsp;
+<k onclick="collectStkData('600170')">600170 上海建工</k> &emsp;
+<k onclick="collectStkData('600172')">600172 黄河旋风</k> &emsp;
+<k onclick="collectStkData('600173')">600173 卧龙地产</k> &emsp;
+<k onclick="collectStkData('600177')" class="orange">雅戈尔 600177</k> &emsp;
+<k onclick="collectStkData('600178')">600178 东安动力</k> &emsp;
+<k onclick="collectStkData('600179')">600179 安通控股</k> &emsp;
+<k onclick="collectStkData('600189')">600189 泉阳泉</k> &emsp;
+<k onclick="collectStkData('600190')">600190 锦州港</k> &emsp;
+<k onclick="collectStkData('600191')" class="orange">华资实业 600191</k> &emsp;
+<k onclick="collectStkData('600191')">600191 华资实业</k> &emsp;
+<k onclick="collectStkData('600192')">600192 长城电工</k> &emsp;
+<k onclick="collectStkData('600200')">600200 江苏吴中</k> &emsp;
+<k onclick="collectStkData('600202')">600202 哈空调</k> &emsp;
+<k onclick="collectStkData('600203')">600203 福日电子</k> &emsp;
+<k onclick="collectStkData('600207')">600207 安彩高科</k> &emsp;
+<k onclick="collectStkData('600208')">600208 新湖中宝</k> &emsp;
+<k onclick="collectStkData('600210')">600210 紫江企业</k> &emsp;
+<k onclick="collectStkData('600212')">600212 绿能慧充</k> &emsp;
+<k onclick="collectStkData('600215')">600215 派斯林</k> &emsp;
+<k onclick="collectStkData('600218')">600218 全柴动力</k> &emsp;
+<k onclick="collectStkData('600219')">600219 南山铝业</k> &emsp;
+<k onclick="collectStkData('600220')">600220 江苏阳光</k> &emsp;
+<k onclick="collectStkData('600221')">600221 海航控股</k> &emsp;
+<k onclick="collectStkData('600222')">600222 太龙药业</k> &emsp;
+<k onclick="collectStkData('600225')">600225 卓朗科技</k> &emsp;
+<k onclick="collectStkData('600225')">600225 卓朗科技</k> &emsp;
+<k onclick="collectStkData('600228')">600228 返利科技</k> &emsp;
+<k onclick="collectStkData('600229')" class="orange">城市传媒 600229</k> &emsp;
+<k onclick="collectStkData('600229')">600229 城市传媒</k> &emsp;
+<k onclick="collectStkData('600236')">600236 桂冠电力</k> &emsp;
+<k onclick="collectStkData('600237')">600237 铜峰电子</k> &emsp;
+<k onclick="collectStkData('600243')">600243 青海华鼎</k> &emsp;
+<k onclick="collectStkData('600246')">600246 万通发展</k> &emsp;
+<k onclick="collectStkData('600246')">600246 万通发展</k> &emsp;
+<k onclick="collectStkData('600248')">600248 陕建股份</k> &emsp;
+<k onclick="collectStkData('600249')" class="orange">两面针 600249</k> &emsp;
+<k onclick="collectStkData('600249')">600249 两面针</k> &emsp;
+<k onclick="collectStkData('600250')">600250 南纺股份</k> &emsp;
+<k onclick="collectStkData('600251')">600251 冠农股份</k> &emsp;
+<k onclick="collectStkData('600252')">600252 中恒集团</k> &emsp;
+<k onclick="collectStkData('600255')">600255 鑫科材料</k> &emsp;
+<k onclick="collectStkData('600257')">600257 大湖股份</k> &emsp;
+<k onclick="collectStkData('600261')">600261 阳光照明</k> &emsp;
+<k onclick="collectStkData('600266')">600266 城建发展</k> &emsp;
+<k onclick="collectStkData('600268')">600268 国电南自</k> &emsp;
+<k onclick="collectStkData('600269')">600269 赣粤高速</k> &emsp;
+<k onclick="collectStkData('600273')">600273 嘉化能源</k> &emsp;
+<k onclick="collectStkData('600277')">600277 亿利洁能</k> &emsp;
+<k onclick="collectStkData('600278')">600278 东方创业</k> &emsp;
+<k onclick="collectStkData('600279')">600279 重庆港</k> &emsp;
+<k onclick="collectStkData('600280')">600280 中央商场</k> &emsp;
+<k onclick="collectStkData('600281')">600281 华阳新材</k> &emsp;
+<k onclick="collectStkData('600282')" class="orange">南钢股份 600282</k> &emsp;
+<k onclick="collectStkData('600282')">600282 南钢股份</k> &emsp;
+<k onclick="collectStkData('600284')">600284 浦东建设</k> &emsp;
+<k onclick="collectStkData('600287')">600287 江苏舜天</k> &emsp;
+<k onclick="collectStkData('600297')">600297 广汇汽车</k> &emsp;
+<k onclick="collectStkData('600299')">600299 安迪苏</k> &emsp;
+<k onclick="collectStkData('600300')">600300 维维股份</k> &emsp;
+<k onclick="collectStkData('600310')">600310 广西能源</k> &emsp;
+<k onclick="collectStkData('600312')">600312 平高电气</k> &emsp;
+<k onclick="collectStkData('600318')">600318 新力金融</k> &emsp;
+<k onclick="collectStkData('600319')">600319 亚星化学</k> &emsp;
+<k onclick="collectStkData('600320')" class="orange">振华重工 600320</k> &emsp;
+<k onclick="collectStkData('600320')">600320 振华重工</k> &emsp;
+<k onclick="collectStkData('600321')">600321 正源股份</k> &emsp;
+<k onclick="collectStkData('600322')" class="red">天房发展</k> &emsp;
+<k onclick="collectStkData('600327')">600327 大东方</k> &emsp;
+<k onclick="collectStkData('600331')">600331 宏达股份</k> &emsp;
+<k onclick="collectStkData('600336')">600336 澳柯玛</k> &emsp;
+<k onclick="collectStkData('600339')">600339 中油工程</k> &emsp;
+<k onclick="collectStkData('600340')">600340 华夏幸福</k> &emsp;
+<k onclick="collectStkData('600350')">600350 山东高速</k> &emsp;
+<k onclick="collectStkData('600351')">600351 亚宝药业</k> &emsp;
+<k onclick="collectStkData('600354')">600354 敦煌种业</k> &emsp;
+<k onclick="collectStkData('600355')" class="orange">精伦电子 600355</k> &emsp;
+<k onclick="collectStkData('600355')">600355 精伦电子</k> &emsp;
+<k onclick="collectStkData('600356')">600356 恒丰纸业</k> &emsp;
+<k onclick="collectStkData('600360')">600360 华微电子</k> &emsp;
+<k onclick="collectStkData('600361')">600361 创新新材</k> &emsp;
+<k onclick="collectStkData('600368')" class="orange">五洲交通 600368</k> &emsp;
+<k onclick="collectStkData('600368')">600368 五洲交通</k> &emsp;
+<k onclick="collectStkData('600369')">600369 西南证券</k> &emsp;
+<k onclick="collectStkData('600376')">600376 首开股份</k> &emsp;
+<k onclick="collectStkData('600377')">600377 宁沪高速</k> &emsp;
+<k onclick="collectStkData('600386')" class="orange">北巴传媒 600386</k> &emsp;
+<k onclick="collectStkData('600387')">600387 ST海越</k> &emsp;
+<k onclick="collectStkData('600390')">600390 五矿资本</k> &emsp;
+<k onclick="collectStkData('600395')">600395 盘江股份</k> &emsp;
+<k onclick="collectStkData('600397')">600397 安源煤业</k> &emsp;
+<k onclick="collectStkData('600398')">600398 海澜之家</k> &emsp;
+<k onclick="collectStkData('600400')" class="orange">红豆股份 600400</k> &emsp;
+<k onclick="collectStkData('600400')">600400 红豆股份</k> &emsp;
+<k onclick="collectStkData('600403')">600403 大有能源</k> &emsp;
+<k onclick="collectStkData('600403')">600403 大有能源</k> &emsp;
+<k onclick="collectStkData('600408')" class="orange">安泰集团 600408</k> &emsp;
+<k onclick="collectStkData('600408')">600408 安泰集团</k> &emsp;
+<k onclick="collectStkData('600408')">600408 安泰集团</k> &emsp;
+<k onclick="collectStkData('600409')">600409 三友化工</k> &emsp;
+<k onclick="collectStkData('600410')">600410 华胜天成</k> &emsp;
+<k onclick="collectStkData('600415')">600415 小商品城</k> &emsp;
+<k onclick="collectStkData('600428')">600428 中远海特</k> &emsp;
+<k onclick="collectStkData('600433')">600433 冠豪高新</k> &emsp;
+<k onclick="collectStkData('600439')">600439 瑞贝卡</k> &emsp;
+<k onclick="collectStkData('600448')">600448 华纺股份</k> &emsp;
+<k onclick="collectStkData('600467')">600467 好当家</k> &emsp;
+<k onclick="collectStkData('600468')">600468 百利电气</k> &emsp;
+<k onclick="collectStkData('600469')">600469 风神股份</k> &emsp;
+<k onclick="collectStkData('600477')">600477 杭萧钢构</k> &emsp;
+<k onclick="collectStkData('600480')">600480 凌云股份</k> &emsp;
+<k onclick="collectStkData('600480')">600480 凌云股份</k> &emsp;
+<k onclick="collectStkData('600489')">600489 中金黄金</k> &emsp;
+<k onclick="collectStkData('600490')">600490 鹏欣资源</k> &emsp;
+<k onclick="collectStkData('600491')" class="orange">龙元建设 600491</k> &emsp;
+<k onclick="collectStkData('600491')">600491 龙元建设</k> &emsp;
+<k onclick="collectStkData('600493')">600493 凤竹纺织</k> &emsp;
+<k onclick="collectStkData('600495')">600495 晋西车轴</k> &emsp;
+<k onclick="collectStkData('600496')">600496 精工钢构</k> &emsp;
+<k onclick="collectStkData('600497')">600497 驰宏锌锗</k> &emsp;
+<k onclick="collectStkData('600500')">600500 中化国际</k> &emsp;
+<k onclick="collectStkData('600502')">600502 安徽建工</k> &emsp;
+<k onclick="collectStkData('600503')">600503 华丽家族</k> &emsp;
+<k onclick="collectStkData('600505')">600505 西昌电力</k> &emsp;
+<k onclick="collectStkData('600507')">600507 方大特钢</k> &emsp;
+<k onclick="collectStkData('600509')">600509 天富能源</k> &emsp;
+<k onclick="collectStkData('600510')">600510 黑牡丹</k> &emsp;
+<k onclick="collectStkData('600512')">600512 腾达建设</k> &emsp;
+<k onclick="collectStkData('600515')">600515 海南机场</k> &emsp;
+<k onclick="collectStkData('600516')">600516 方大炭素</k> &emsp;
+<k onclick="collectStkData('600517')">600517 国网英大</k> &emsp;
+<k onclick="collectStkData('600525')">600525 长园集团</k> &emsp;
+<k onclick="collectStkData('600527')">600527 江南高纤</k> &emsp;
+<k onclick="collectStkData('600528')">600528 中铁工业</k> &emsp;
+<k onclick="collectStkData('600531')">600531 豫光金铅</k> &emsp;
+<k onclick="collectStkData('600533')">600533 栖霞建设</k> &emsp;
+<k onclick="collectStkData('600537')">600537 亿晶光电</k> &emsp;
+<k onclick="collectStkData('600538')">600538 国发股份</k> &emsp;
+<k onclick="collectStkData('600539')" class="orange">狮头股份 600539</k> &emsp;
+<k onclick="collectStkData('600540')">600540 新赛股份</k> &emsp;
+<k onclick="collectStkData('600550')">600550 保变电气</k> &emsp;
+<k onclick="collectStkData('600556')" class="orange">天下秀 600556</k> &emsp;
+<k onclick="collectStkData('600556')">600556 天下秀</k> &emsp;
+<k onclick="collectStkData('600558')">600558 大西洋</k> &emsp;
+<k onclick="collectStkData('600561')">600561 江西长运</k> &emsp;
+<k onclick="collectStkData('600565')">600565 迪马股份</k> &emsp;
+<k onclick="collectStkData('600567')">600567 山鹰国际</k> &emsp;
+<k onclick="collectStkData('600572')">600572 康恩贝</k> &emsp;
+<k onclick="collectStkData('600575')">600575 淮河能源</k> &emsp;
+<k onclick="collectStkData('600576')" class="orange">祥源文旅 600576</k> &emsp;
+<k onclick="collectStkData('600577')">600577 精达股份</k> &emsp;
+<k onclick="collectStkData('600578')">600578 京能电力</k> &emsp;
+<k onclick="collectStkData('600581')">600581 八一钢铁</k> &emsp;
+<k onclick="collectStkData('600582')" class="orange">天地科技</k> &emsp;
+<k onclick="collectStkData('600582')">600582 天地科技</k> &emsp;
+<k onclick="collectStkData('600583')">600583 海油工程</k> &emsp;
+<k onclick="collectStkData('600590')">600590 泰豪科技</k> &emsp;
+<k onclick="collectStkData('600592')">600592 龙溪股份</k> &emsp;
+<k onclick="collectStkData('600594')">600594 益佰制药</k> &emsp;
+<k onclick="collectStkData('600595')">600595 中孚实业</k> &emsp;
+<k onclick="collectStkData('600602')">600602 云赛智联</k> &emsp;
+<k onclick="collectStkData('600603')">600603 广汇物流</k> &emsp;
+<k onclick="collectStkData('600604')">600604 市北高新</k> &emsp;
+<k onclick="collectStkData('600606')">600606 绿地控股</k> &emsp;
+<k onclick="collectStkData('600611')">600611 大众交通</k> &emsp;
+<k onclick="collectStkData('600613')">600613 神奇制药</k> &emsp;
+<k onclick="collectStkData('600616')">600616 金枫酒业</k> &emsp;
+<k onclick="collectStkData('600617')">600617 国新能源</k> &emsp;
+<k onclick="collectStkData('600619')">600619 海立股份</k> &emsp;
+<k onclick="collectStkData('600619')">600619 海立股份</k> &emsp;
+<k onclick="collectStkData('600622')">600622 光大嘉宝</k> &emsp;
+<k onclick="collectStkData('600623')" class="orange">华谊集团 600623</k> &emsp;
+<k onclick="collectStkData('600623')">600623 华谊集团</k> &emsp;
+<k onclick="collectStkData('600624')">600624 复旦复华</k> &emsp;
+<k onclick="collectStkData('600626')">600626 申达股份</k> &emsp;
+<k onclick="collectStkData('600628')">600628 新世界</k> &emsp;
+<k onclick="collectStkData('600629')">600629 华建集团</k> &emsp;
+<k onclick="collectStkData('600630')" class="orange">龙头股份 600630</k> &emsp;
+<k onclick="collectStkData('600630')">600630 龙头股份</k> &emsp;
+<k onclick="collectStkData('600633')">600633 浙数文化</k> &emsp;
+<k onclick="collectStkData('600635')">600635 大众公用</k> &emsp;
+<k onclick="collectStkData('600637')" class="orange">东方明珠 600637</k> &emsp;
+<k onclick="collectStkData('600637')">600637 东方明珠</k> &emsp;
+<k onclick="collectStkData('600642')">600642 申能股份</k> &emsp;
+<k onclick="collectStkData('600643')">600643 爱建集团</k> &emsp;
+<k onclick="collectStkData('600649')">600649 城投控股</k> &emsp;
+<k onclick="collectStkData('600651')">600651 飞乐音响</k> &emsp;
+<k onclick="collectStkData('600655')">600655 豫园股份</k> &emsp;
+<k onclick="collectStkData('600657')">600657 信达地产</k> &emsp;
+<k onclick="collectStkData('600658')" class="orange">电子城 600658</k> &emsp;
+<k onclick="collectStkData('600658')">600658 电子城</k> &emsp;
+<k onclick="collectStkData('600662')">600662 外服控股</k> &emsp;
+<k onclick="collectStkData('600665')">600665 天地源</k> &emsp;
+<k onclick="collectStkData('600667')">600667 太极实业</k> &emsp;
+<k onclick="collectStkData('600673')">600673 东阳光</k> &emsp;
+<k onclick="collectStkData('600676')">600676 交运股份</k> &emsp;
+<k onclick="collectStkData('600679')">600679 上海凤凰</k> &emsp;
+<k onclick="collectStkData('600681')">600681 XD百川能</k> &emsp;
+<k onclick="collectStkData('600682')" class="orange">南京新百 600682</k> &emsp;
+<k onclick="collectStkData('600683')">600683 京投发展</k> &emsp;
+<k onclick="collectStkData('600686')" class="orange">金龙汽车 600686</k> &emsp;
+<k onclick="collectStkData('600686')">600686 金龙汽车</k> &emsp;
+<k onclick="collectStkData('600688')">600688 上海石化</k> &emsp;
+<k onclick="collectStkData('600689')">600689 上海三毛</k> &emsp;
+<k onclick="collectStkData('600691')">600691 阳煤化工</k> &emsp;
+<k onclick="collectStkData('600692')">600692 亚通股份</k> &emsp;
+<k onclick="collectStkData('600698')">600698 湖南天雁</k> &emsp;
+<k onclick="collectStkData('600704')">600704 物产中大</k> &emsp;
+<k onclick="collectStkData('600705')">600705 中航产融</k> &emsp;
+<k onclick="collectStkData('600707')">600707 彩虹股份</k> &emsp;
+<k onclick="collectStkData('600708')">600708 光明地产</k> &emsp;
+<k onclick="collectStkData('600710')">600710 苏美达</k> &emsp;
+<k onclick="collectStkData('600711')">600711 盛屯矿业</k> &emsp;
+<k onclick="collectStkData('600712')">600712 南宁百货</k> &emsp;
+<k onclick="collectStkData('600713')">600713 南京医药</k> &emsp;
+<k onclick="collectStkData('600715')" class="orange">文投控股 600715</k> &emsp;
+<k onclick="collectStkData('600716')">600716 凤凰股份</k> &emsp;
+<k onclick="collectStkData('600717')">600717 天津港</k> &emsp;
+<k onclick="collectStkData('600721')">600721 百花医药</k> &emsp;
+<k onclick="collectStkData('600725')">600725 云维股份</k> &emsp;
+<k onclick="collectStkData('600728')">600728 佳都科技</k> &emsp;
+<k onclick="collectStkData('600730')">600730 中国高科</k> &emsp;
+<k onclick="collectStkData('600731')">600731 湖南海利</k> &emsp;
+<k onclick="collectStkData('600733')">600733 北汽蓝谷</k> &emsp;
+<k onclick="collectStkData('600735')">600735 新华锦</k> &emsp;
+<k onclick="collectStkData('600736')">600736 苏州高新</k> &emsp;
+<k onclick="collectStkData('600737')">600737 中粮糖业</k> &emsp;
+<k onclick="collectStkData('600738')">600738 丽尚国潮</k> &emsp;
+<k onclick="collectStkData('600740')">600740 山西焦化</k> &emsp;
+<k onclick="collectStkData('600742')">600742 一汽富维</k> &emsp;
+<k onclick="collectStkData('600742')">600742 一汽富维</k> &emsp;
+<k onclick="collectStkData('600743')">600743 华远地产</k> &emsp;
+<k onclick="collectStkData('600744')">600744 华银电力</k> &emsp;
+<k onclick="collectStkData('600748')">600748 上实发展</k> &emsp;
+<k onclick="collectStkData('600751')">600751 海航科技</k> &emsp;
+<k onclick="collectStkData('600755')" class="orange">厦门国贸 600755</k> &emsp;
+<k onclick="collectStkData('600755')">600755 厦门国贸</k> &emsp;
+<k onclick="collectStkData('600757')" class="orange">长江传媒 600757</k> &emsp;
+<k onclick="collectStkData('600757')">600757 长江传媒</k> &emsp;
+<k onclick="collectStkData('600758')" class="red">辽宁能源</k> &emsp;
+<k onclick="collectStkData('600758')">600758 辽宁能源</k> &emsp;
+<k onclick="collectStkData('600769')">600769 祥龙电业</k> &emsp;
+<k onclick="collectStkData('600777')">600777 新潮能源</k> &emsp;
+<k onclick="collectStkData('600778')">600778 友好集团</k> &emsp;
+<k onclick="collectStkData('600780')">600780 通宝能源</k> &emsp;
+<k onclick="collectStkData('600782')">600782 新钢股份</k> &emsp;
+<k onclick="collectStkData('600784')">600784 鲁银投资</k> &emsp;
+<k onclick="collectStkData('600787')">600787 中储股份</k> &emsp;
+<k onclick="collectStkData('600789')">600789 鲁抗医药</k> &emsp;
+<k onclick="collectStkData('600791')">600791 京能置业</k> &emsp;
+<k onclick="collectStkData('600792')">600792 云煤能源</k> &emsp;
+<k onclick="collectStkData('600794')">600794 保税科技</k> &emsp;
+<k onclick="collectStkData('600795')" class="orange">国电电力 600795</k> &emsp;
+<k onclick="collectStkData('600795')">600795 国电电力</k> &emsp;
+<k onclick="collectStkData('600798')">600798 宁波海运</k> &emsp;
+<k onclick="collectStkData('600800')">600800 渤海化学</k> &emsp;
+<k onclick="collectStkData('600802')" class="orange">福建水泥 600802</k> &emsp;
+<k onclick="collectStkData('600805')">600805 悦达投资</k> &emsp;
+<k onclick="collectStkData('600807')">600807 济南高新</k> &emsp;
+<k onclick="collectStkData('600808')">600808 马钢股份</k> &emsp;
+<k onclick="collectStkData('600810')">600810 神马股份</k> &emsp;
+<k onclick="collectStkData('600812')">600812 华北制药</k> &emsp;
+<k onclick="collectStkData('600814')">600814 杭州解百</k> &emsp;
+<k onclick="collectStkData('600819')">600819 耀皮玻璃</k> &emsp;
+<k onclick="collectStkData('600820')">600820 隧道股份</k> &emsp;
+<k onclick="collectStkData('600821')">600821 金开新能</k> &emsp;
+<k onclick="collectStkData('600822')">600822 上海物贸</k> &emsp;
+<k onclick="collectStkData('600823')">600823 ST世茂</k> &emsp;
+<k onclick="collectStkData('600824')" class="orange">益民集团 600824</k> &emsp;
+<k onclick="collectStkData('600824')">600824 益民集团</k> &emsp;
+<k onclick="collectStkData('600825')">600825 新华传媒</k> &emsp;
+<k onclick="collectStkData('600829')">600829 人民同泰</k> &emsp;
+<k onclick="collectStkData('600830')">600830 香溢融通</k> &emsp;
+<k onclick="collectStkData('600831')">600831 广电网络</k> &emsp;
+<k onclick="collectStkData('600834')">600834 申通地铁</k> &emsp;
+<k onclick="collectStkData('600836')">600836 上海易连</k> &emsp;
+<k onclick="collectStkData('600838')">600838 上海九百</k> &emsp;
+<k onclick="collectStkData('600839')">600839 四川长虹</k> &emsp;
+<k onclick="collectStkData('600841')">600841 动力新科</k> &emsp;
+<k onclick="collectStkData('600843')">600843 上工申贝</k> &emsp;
+<k onclick="collectStkData('600844')">600844 丹化科技</k> &emsp;
+<k onclick="collectStkData('600846')">600846 同济科技</k> &emsp;
+<k onclick="collectStkData('600851')">600851 海欣股份</k> &emsp;
+<k onclick="collectStkData('600853')">600853 龙建股份</k> &emsp;
+<k onclick="collectStkData('600854')">600854 春兰股份</k> &emsp;
+<k onclick="collectStkData('600858')" class="orange">银座股份 600858</k> &emsp;
+<k onclick="collectStkData('600858')">600858 银座股份</k> &emsp;
+<k onclick="collectStkData('600863')">600863 内蒙华电</k> &emsp;
+<k onclick="collectStkData('600863')">600863 内蒙华电</k> &emsp;
+<k onclick="collectStkData('600864')">600864 哈投股份</k> &emsp;
+<k onclick="collectStkData('600864')">600864 哈投股份</k> &emsp;
+<k onclick="collectStkData('600869')">600869 远东股份</k> &emsp;
+<k onclick="collectStkData('600871')">600871 石化油服</k> &emsp;
+<k onclick="collectStkData('600874')">600874 创业环保</k> &emsp;
+<k onclick="collectStkData('600879')">600879 航天电子</k> &emsp;
+<k onclick="collectStkData('600880')">600880 博瑞传播</k> &emsp;
+<k onclick="collectStkData('600888')">600888 新疆众和</k> &emsp;
+<k onclick="collectStkData('600889')">600889 南京化纤</k> &emsp;
+<k onclick="collectStkData('600892')" class="orange">大晟文化 600892</k> &emsp;
+<k onclick="collectStkData('600901')" class="orange">江苏金租</k> &emsp;
+<k onclick="collectStkData('600901')">600901 江苏金租</k> &emsp;
+<k onclick="collectStkData('600903')">600903 贵州燃气</k> &emsp;
+<k onclick="collectStkData('600905')">600905 三峡能源</k> &emsp;
+<k onclick="collectStkData('600906')">600906 财达证券</k> &emsp;
+<k onclick="collectStkData('600906')">600906 财达证券</k> &emsp;
+<k onclick="collectStkData('600908')">600908 无锡银行</k> &emsp;
+<k onclick="collectStkData('600909')">600909 华安证券</k> &emsp;
+<k onclick="collectStkData('600918')">600918 中泰证券</k> &emsp;
+<k onclick="collectStkData('600919')">600919 江苏银行</k> &emsp;
+<k onclick="collectStkData('600928')">600928 西安银行</k> &emsp;
+<k onclick="collectStkData('600929')">600929 雪天盐业</k> &emsp;
+<k onclick="collectStkData('600936')">600936 广西广电</k> &emsp;
+<k onclick="collectStkData('600959')">600959 江苏有线</k> &emsp;
+<k onclick="collectStkData('600960')">600960 渤海汽车</k> &emsp;
+<k onclick="collectStkData('600961')">600961 株冶集团</k> &emsp;
+<k onclick="collectStkData('600963')">600963 岳阳林纸</k> &emsp;
+<k onclick="collectStkData('600965')">600965 福成股份</k> &emsp;
+<k onclick="collectStkData('600966')">600966 博汇纸业</k> &emsp;
+<k onclick="collectStkData('600967')">600967 内蒙一机</k> &emsp;
+<k onclick="collectStkData('600968')">600968 海油发展</k> &emsp;
+<k onclick="collectStkData('600969')">600969 郴电国际</k> &emsp;
+<k onclick="collectStkData('600971')">600971 恒源煤电</k> &emsp;
+<k onclick="collectStkData('600981')" class="orange">汇鸿集团 600981</k> &emsp;
+<k onclick="collectStkData('600981')">600981 汇鸿集团</k> &emsp;
+<k onclick="collectStkData('600987')">600987 航民股份</k> &emsp;
+<k onclick="collectStkData('600997')">600997 开滦股份</k> &emsp;
+<k onclick="collectStkData('601000')">601000 唐山港</k> &emsp;
+<k onclick="collectStkData('601005')">601005 重庆钢铁</k> &emsp;
+<k onclick="collectStkData('601006')">601006 大秦铁路</k> &emsp;
+<k onclick="collectStkData('601008')">601008 连云港</k> &emsp;
+<k onclick="collectStkData('601010')" class="orange">文峰股份 601010</k> &emsp;
+<k onclick="collectStkData('601010')">601010 文峰股份</k> &emsp;
+<k onclick="collectStkData('601011')">601011 宝泰隆</k> &emsp;
+<k onclick="collectStkData('601016')">601016 节能风电</k> &emsp;
+<k onclick="collectStkData('601018')">601018 宁波港</k> &emsp;
+<k onclick="collectStkData('601019')">601019 山东出版</k> &emsp;
+<k onclick="collectStkData('601068')">601068 中铝国际</k> &emsp;
+<k onclick="collectStkData('601077')">601077 渝农商行</k> &emsp;
+<k onclick="collectStkData('601086')">601086 国芳集团</k> &emsp;
+<k onclick="collectStkData('601099')">601099 太平洋</k> &emsp;
+<k onclick="collectStkData('601099')">601099 太平洋</k> &emsp;
+<k onclick="collectStkData('601101')">601101 昊华能源</k> &emsp;
+<k onclick="collectStkData('601106')">601106 中国一重</k> &emsp;
+<k onclick="collectStkData('601107')">601107 四川成渝</k> &emsp;
+<k onclick="collectStkData('601108')">601108 财通证券</k> &emsp;
+<k onclick="collectStkData('601108')">601108 财通证券</k> &emsp;
+<k onclick="collectStkData('601113')">601113 华鼎股份</k> &emsp;
+<k onclick="collectStkData('601117')">601117 中国化学</k> &emsp;
+<k onclick="collectStkData('601118')">601118 海南橡胶</k> &emsp;
+<k onclick="collectStkData('601139')">601139 深圳燃气</k> &emsp;
+<k onclick="collectStkData('601158')">601158 重庆水务</k> &emsp;
+<k onclick="collectStkData('601162')">601162 天风证券</k> &emsp;
+<k onclick="collectStkData('601162')">601162 天风证券</k> &emsp;
+<k onclick="collectStkData('601169')">601169 北京银行</k> &emsp;
+<k onclick="collectStkData('601179')">601179 中国西电</k> &emsp;
+<k onclick="collectStkData('601186')">601186 中国铁建</k> &emsp;
+<k onclick="collectStkData('601187')">601187 厦门银行</k> &emsp;
+<k onclick="collectStkData('601188')">601188 龙江交通</k> &emsp;
+<k onclick="collectStkData('601198')">601198 东兴证券</k> &emsp;
+<k onclick="collectStkData('601199')" class="orange">江南水务 601199</k> &emsp;
+<k onclick="collectStkData('601199')">601199 江南水务</k> &emsp;
+<k onclick="collectStkData('601212')">601212 白银有色</k> &emsp;
+<k onclick="collectStkData('601216')">601216 君正集团</k> &emsp;
+<k onclick="collectStkData('601218')">601218 吉鑫科技</k> &emsp;
+<k onclick="collectStkData('601222')">601222 林洋能源</k> &emsp;
+<k onclick="collectStkData('601226')">601226 华电重工</k> &emsp;
+<k onclick="collectStkData('601228')">601228 广州港</k> &emsp;
+<k onclick="collectStkData('601229')">601229 上海银行</k> &emsp;
+<k onclick="collectStkData('601236')">601236 红塔证券</k> &emsp;
+<k onclick="collectStkData('601236')">601236 红塔证券</k> &emsp;
+<k onclick="collectStkData('601288')">601288 农业银行</k> &emsp;
+<k onclick="collectStkData('601298')">601298 青岛港</k> &emsp;
+<k onclick="collectStkData('601311')">601311 骆驼股份</k> &emsp;
+<k onclick="collectStkData('601319')">601319 中国人保</k> &emsp;
+<k onclick="collectStkData('601326')">601326 秦港股份</k> &emsp;
+<k onclick="collectStkData('601328')">601328 交通银行</k> &emsp;
+<k onclick="collectStkData('601333')">601333 广深铁路</k> &emsp;
+<k onclick="collectStkData('601339')">601339 百隆东方</k> &emsp;
+<k onclick="collectStkData('601360')">601360 三六零</k> &emsp;
+<k onclick="collectStkData('601368')">601368 绿城水务</k> &emsp;
+<k onclick="collectStkData('601375')">601375 中原证券</k> &emsp;
+<k onclick="collectStkData('601375')">601375 中原证券</k> &emsp;
+<k onclick="collectStkData('601377')">601377 兴业证券</k> &emsp;
+<k onclick="collectStkData('601377')">601377 兴业证券</k> &emsp;
+<k onclick="collectStkData('601388')">601388 怡球资源</k> &emsp;
+<k onclick="collectStkData('601390')">601390 中国中铁</k> &emsp;
+<k onclick="collectStkData('601398')">601398 工商银行</k> &emsp;
+<k onclick="collectStkData('601399')">601399 国机重装</k> &emsp;
+<k onclick="collectStkData('601500')">601500 通用股份</k> &emsp;
+<k onclick="collectStkData('601512')">601512 中新集团</k> &emsp;
+<k onclick="collectStkData('601518')">601518 吉林高速</k> &emsp;
+<k onclick="collectStkData('601519')">601519 大智慧</k> &emsp;
+<k onclick="collectStkData('601519')">601519 大智慧</k> &emsp;
+<k onclick="collectStkData('601528')">601528 瑞丰银行</k> &emsp;
+<k onclick="collectStkData('601555')">601555 东吴证券</k> &emsp;
+<k onclick="collectStkData('601568')">601568 北元集团</k> &emsp;
+<k onclick="collectStkData('601577')">601577 长沙银行</k> &emsp;
+<k onclick="collectStkData('601588')">601588 北辰实业</k> &emsp;
+<k onclick="collectStkData('601598')">601598 中国外运</k> &emsp;
+<k onclick="collectStkData('601599')" class="orange">浙文影业 601599</k> &emsp;
+<k onclick="collectStkData('601599')">601599 浙文影业</k> &emsp;
+<k onclick="collectStkData('601600')">601600 中国铝业</k> &emsp;
+<k onclick="collectStkData('601608')">601608 中信重工</k> &emsp;
+<k onclick="collectStkData('601609')">601609 金田股份</k> &emsp;
+<k onclick="collectStkData('601611')" class="orange">中国核建 601611</k> &emsp;
+<k onclick="collectStkData('601611')">601611 中国核建</k> &emsp;
+<k onclick="collectStkData('601616')">601616 广电电气</k> &emsp;
+<k onclick="collectStkData('601618')">601618 中国中冶</k> &emsp;
+<k onclick="collectStkData('601619')">601619 嘉泽新能</k> &emsp;
+<k onclick="collectStkData('601658')" class="orange">邮储银行</k> &emsp;
+<k onclick="collectStkData('601658')">601658 邮储银行</k> &emsp;
+<k onclick="collectStkData('601665')" class="orange">齐鲁银行 601665</k> &emsp;
+<k onclick="collectStkData('601665')">601665 齐鲁银行</k> &emsp;
+<k onclick="collectStkData('601668')">601668 中国建筑</k> &emsp;
+<k onclick="collectStkData('601669')">601669 中国电建</k> &emsp;
+<k onclick="collectStkData('601678')">601678 滨化股份</k> &emsp;
+<k onclick="collectStkData('601686')" class="orange">友发集团 601686</k> &emsp;
+<k onclick="collectStkData('601700')">601700 风范股份</k> &emsp;
+<k onclick="collectStkData('601718')">601718 际华集团</k> &emsp;
+<k onclick="collectStkData('601727')">601727 上海电气</k> &emsp;
+<k onclick="collectStkData('601766')">601766 中国中车</k> &emsp;
+<k onclick="collectStkData('601777')">601777 力帆科技</k> &emsp;
+<k onclick="collectStkData('601778')">601778 晶科科技</k> &emsp;
+<k onclick="collectStkData('601789')">601789 宁波建工</k> &emsp;
+<k onclick="collectStkData('601798')">601798 蓝科高新</k> &emsp;
+<k onclick="collectStkData('601800')">601800 中国交建</k> &emsp;
+<k onclick="collectStkData('601801')">601801 皖新传媒</k> &emsp;
+<k onclick="collectStkData('601816')">601816 京沪高铁</k> &emsp;
+<k onclick="collectStkData('601818')">601818 光大银行</k> &emsp;
+<k onclick="collectStkData('601828')">601828 美凯龙</k> &emsp;
+<k onclick="collectStkData('601857')">601857 中国石油</k> &emsp;
+<k onclick="collectStkData('601860')">601860 紫金银行</k> &emsp;
+<k onclick="collectStkData('601866')" class="red">中远海发</k> &emsp;
+<k onclick="collectStkData('601866')">601866 中远海发</k> &emsp;
+<k onclick="collectStkData('601868')">601868 中国能建</k> &emsp;
+<k onclick="collectStkData('601872')">601872 招商轮船</k> &emsp;
+<k onclick="collectStkData('601880')">601880 辽港股份</k> &emsp;
+<k onclick="collectStkData('601886')">601886 江河集团</k> &emsp;
+<k onclick="collectStkData('601890')">601890 亚星锚链</k> &emsp;
+<k onclick="collectStkData('601898')">601898 中煤能源</k> &emsp;
+<k onclick="collectStkData('601900')" class="orange">南方传媒 601900</k> &emsp;
+<k onclick="collectStkData('601900')">601900 南方传媒</k> &emsp;
+<k onclick="collectStkData('601901')">601901 方正证券</k> &emsp;
+<k onclick="collectStkData('601908')">601908 京运通</k> &emsp;
+<k onclick="collectStkData('601916')">601916 浙商银行</k> &emsp;
+<k onclick="collectStkData('601918')">601918 新集能源</k> &emsp;
+<k onclick="collectStkData('601921')" class="orange">浙版传媒 601921</k> &emsp;
+<k onclick="collectStkData('601921')">601921 浙版传媒</k> &emsp;
+<k onclick="collectStkData('601928')" class="orange">凤凰传媒 601928</k> &emsp;
+<k onclick="collectStkData('601928')">601928 凤凰传媒</k> &emsp;
+<k onclick="collectStkData('601933')">601933 永辉超市</k> &emsp;
+<k onclick="collectStkData('601939')">601939 建设银行</k> &emsp;
+<k onclick="collectStkData('601949')" class="orange">中国出版 601949</k> &emsp;
+<k onclick="collectStkData('601949')">601949 中国出版</k> &emsp;
+<k onclick="collectStkData('601956')">601956 东贝集团</k> &emsp;
+<k onclick="collectStkData('601963')">601963 重庆银行</k> &emsp;
+<k onclick="collectStkData('601968')" class="orange">宝钢包装 601968</k> &emsp;
+<k onclick="collectStkData('601968')">601968 宝钢包装</k> &emsp;
+<k onclick="collectStkData('601969')">601969 海南矿业</k> &emsp;
+<k onclick="collectStkData('601975')">601975 招商南油</k> &emsp;
+<k onclick="collectStkData('601985')">601985 中国核电</k> &emsp;
+<k onclick="collectStkData('601988')">601988 中国银行</k> &emsp;
+<k onclick="collectStkData('601989')">601989 中国重工</k> &emsp;
+<k onclick="collectStkData('601990')">601990 南京证券</k> &emsp;
+<k onclick="collectStkData('601990')">601990 南京证券</k> &emsp;
+<k onclick="collectStkData('601991')">601991 大唐发电</k> &emsp;
+<k onclick="collectStkData('601992')">601992 金隅集团</k> &emsp;
+<k onclick="collectStkData('601996')" class="orange">丰林集团 601996</k> &emsp;
+<k onclick="collectStkData('601997')">601997 贵阳银行</k> &emsp;
+<k onclick="collectStkData('601998')">601998 中信银行</k> &emsp;
+<k onclick="collectStkData('601999')">601999 出版传媒</k> &emsp;
+<k onclick="collectStkData('603003')">603003 龙宇股份</k> &emsp;
+<k onclick="collectStkData('603009')">603009 北特科技</k> &emsp;
+<k onclick="collectStkData('603011')">603011 合锻智能</k> &emsp;
+<k onclick="collectStkData('603012')">603012 创力集团</k> &emsp;
+<k onclick="collectStkData('603015')">603015 弘讯科技</k> &emsp;
+<k onclick="collectStkData('603018')">603018 华设集团</k> &emsp;
+<k onclick="collectStkData('603021')">603021 山东华鹏</k> &emsp;
+<k onclick="collectStkData('603038')">603038 华立股份</k> &emsp;
+<k onclick="collectStkData('603058')">603058 永吉股份</k> &emsp;
+<k onclick="collectStkData('603077')">603077 和邦生物</k> &emsp;
+<k onclick="collectStkData('603088')">603088 宁波精达</k> &emsp;
+<k onclick="collectStkData('603101')">603101 汇嘉时代</k> &emsp;
+<k onclick="collectStkData('603101')">603101 汇嘉时代</k> &emsp;
+<k onclick="collectStkData('603106')" class="orange">恒银科技 603106</k> &emsp;
+<k onclick="collectStkData('603116')" class="orange">红蜻蜓 603116</k> &emsp;
+<k onclick="collectStkData('603116')">603116 红蜻蜓</k> &emsp;
+<k onclick="collectStkData('603118')">603118 共进股份</k> &emsp;
+<k onclick="collectStkData('603121')">603121 华培动力</k> &emsp;
+<k onclick="collectStkData('603126')">603126 中材节能</k> &emsp;
+<k onclick="collectStkData('603166')">603166 福达股份</k> &emsp;
+<k onclick="collectStkData('603167')">603167 渤海轮渡</k> &emsp;
+<k onclick="collectStkData('603168')">603168 莎普爱思</k> &emsp;
+<k onclick="collectStkData('603169')">603169 兰石重装</k> &emsp;
+<k onclick="collectStkData('603196')">603196 日播时尚</k> &emsp;
+<k onclick="collectStkData('603323')">603323 苏农银行</k> &emsp;
+<k onclick="collectStkData('603328')">603328 依顿电子</k> &emsp;
+<k onclick="collectStkData('603333')">603333 尚纬股份</k> &emsp;
+<k onclick="collectStkData('603335')">603335 迪生力</k> &emsp;
+<k onclick="collectStkData('603336')">603336 宏辉果蔬</k> &emsp;
+<k onclick="collectStkData('603366')" class="orange">日出东方 603366</k> &emsp;
+<k onclick="collectStkData('603366')">603366 日出东方</k> &emsp;
+<k onclick="collectStkData('603518')" class="orange">锦泓集团</k> &emsp;
+<k onclick="collectStkData('603518')">603518 锦泓集团</k> &emsp;
+<k onclick="collectStkData('603536')">603536 惠发食品</k> &emsp;
+<k onclick="collectStkData('603555')">603555 ST贵人</k> &emsp;
+<k onclick="collectStkData('603558')">603558 健盛集团</k> &emsp;
+<k onclick="collectStkData('603608')" class="orange">天创时尚 603608</k> &emsp;
+<k onclick="collectStkData('603615')">603615 茶花股份</k> &emsp;
+<k onclick="collectStkData('603618')">603618 杭电股份</k> &emsp;
+<k onclick="collectStkData('603626')">603626 科森科技</k> &emsp;
+<k onclick="collectStkData('603637')">603637 镇海股份</k> &emsp;
+<k onclick="collectStkData('603660')">603660 苏州科达</k> &emsp;
+<k onclick="collectStkData('603682')">603682 锦和商管</k> &emsp;
+<k onclick="collectStkData('603686')">603686 福龙马</k> &emsp;
+<k onclick="collectStkData('603717')">603717 天域生态</k> &emsp;
+<k onclick="collectStkData('603725')">603725 天安新材</k> &emsp;
+<k onclick="collectStkData('603766')">603766 隆鑫通用</k> &emsp;
+<k onclick="collectStkData('603778')">603778 乾景园林</k> &emsp;
+<k onclick="collectStkData('603779')">603779 威龙股份</k> &emsp;
+<k onclick="collectStkData('603803')">603803 瑞斯康达</k> &emsp;
+<k onclick="collectStkData('603815')">603815 交建股份</k> &emsp;
+<k onclick="collectStkData('603838')">603838 四通股份</k> &emsp;
+<k onclick="collectStkData('603869')" class="orange">新智认知 603869</k> &emsp;
+<k onclick="collectStkData('603869')">603869 新智认知</k> &emsp;
+<k onclick="collectStkData('603887')">603887 城地香江</k> &emsp;
+<k onclick="collectStkData('603889')">603889 新澳股份</k> &emsp;
+<k onclick="collectStkData('603900')">603900 莱绅通灵</k> &emsp;
+<k onclick="collectStkData('603918')" class="orange">金桥信息 603918</k> &emsp;
+<k onclick="collectStkData('603918')">603918 金桥信息</k> &emsp;
+<k onclick="collectStkData('603969')">603969 银龙股份</k> &emsp;
+<k onclick="collectStkData('603977')">603977 国泰集团</k> &emsp;
+<k onclick="collectStkData('603993')" class="orange">洛阳钼业 603993</k> &emsp;
+<k onclick="collectStkData('603998')" class="orange">方盛制药 603998</k> &emsp;
+<k onclick="collectStkData('603998')">603998 方盛制药</k> &emsp;
+<k onclick="collectStkData('603999')" class="orange">读者传媒 603999</k> &emsp;
+<k onclick="collectStkData('603999')">603999 读者传媒</k> &emsp;
+<k onclick="collectStkData('605055')">605055 迎丰股份</k> &emsp;
+<k onclick="collectStkData('605069')" class="orange">正和生态</k> &emsp;
+<k onclick="collectStkData('605158')">605158 华达新材</k> &emsp;
+<k onclick="collectStkData('605162')">605162 新中港</k> &emsp;
+<k onclick="collectStkData('605188')">605188 国光连锁</k> &emsp;
+<k onclick="collectStkData('605196')">605196 华通线缆</k> &emsp;
+<k onclick="collectStkData('688009')">688009 中国通号</k> &emsp;
+<k onclick="collectStkData('688055')">688055 龙腾光电</k> &emsp;
+<k onclick="collectStkData('688098')">688098 申联生物</k> &emsp;
+<k onclick="collectStkData('688108')">688108 赛诺医疗</k> &emsp;
+<k onclick="collectStkData('688119')">688119 中钢洛耐</k> &emsp;
+<k onclick="collectStkData('688119')">688119 中钢洛耐</k> &emsp;
+<k onclick="collectStkData('688365')">688365 光云科技</k> &emsp;
+<k onclick="collectStkData('688387')">688387 信科移动-U</k> &emsp;
+<k onclick="collectStkData('688425')">688425 铁建重工</k> &emsp;
+<k onclick="collectStkData('688505')">688505 复旦张江</k> &emsp;
+<k onclick="collectStkData('688509')">688509 正元地信</k> &emsp;
+<k onclick="collectStkData('688509')">688509 正元地信</k> &emsp;
+<k onclick="collectStkData('688538')">688538 和辉光电-U</k> &emsp;
+<k onclick="collectStkData('688565')">688565 力源科技</k> &emsp;
+<k onclick="collectStkData('688609')">688609 九联科技</k> &emsp;
+<k onclick="collectStkData('688660')">688660 电气风电</k> &emsp;
+<k onclick="collectStkData('688660')">688660 电气风电</k> &emsp;
+
+<br>
+<h2>HK</h2>
+<k onclick="collectStkData('000001.sh')">上证</k> &emsp;
+<k onclick="collectStkData('399001.sz')">深证</k> &emsp;
+<k onclick="collectStkData('110000')">110000 恒指</k> &emsp;
+
+<br>
+<br>
+<k onclick="collectStkData('00001')">00001 长和</k> &emsp;
+<k onclick="collectStkData('00002')">00002 中电控股</k> &emsp;
+<k onclick="collectStkData('00003')">00003 香港中华煤气</k> &emsp;
+<k onclick="collectStkData('00004')">00004 九龙仓集团</k> &emsp;
+<k onclick="collectStkData('00005')">00005 滙豐控股</k> &emsp;
+<k onclick="collectStkData('00006')">00006 电能实业</k> &emsp;
+<br>
+<k onclick="collectStkData('00010')">00010 恒隆集团</k> &emsp;
+<k onclick="collectStkData('00011')">00011 恒生銀行</k> &emsp;
+<k onclick="collectStkData('00012')">00012 恒基地产</k> &emsp;
+<k onclick="collectStkData('00013')">00013 和黄医药</k> &emsp;
+<k onclick="collectStkData('00014')">00014 希慎兴业</k> &emsp;
+<k onclick="collectStkData('00016')">00016 新鸿基地产</k> &emsp;
+<br>
+<k onclick="collectStkData('00017')">00017 新世界发展</k> &emsp;
+<k onclick="collectStkData('00019')">00019 太古股份公司Ａ</k> &emsp;
+<k onclick="collectStkData('00020')">00020 商汤－Ｗ</k> &emsp;
+<k onclick="collectStkData('00027')">00027 銀河娛樂</k> &emsp;
+<k onclick="collectStkData('00038')">00038 第一拖拉机股份</k> &emsp;
+<k onclick="collectStkData('00066')">00066 港铁公司</k> &emsp;
+<br>
+<k onclick="collectStkData('00069')">00069 香格里拉（亚洲） &emsp;00069</k>
+<k onclick="collectStkData('00081')">00081 中国海外宏洋集团</k> &emsp;
+<k onclick="collectStkData('00087')">00087 太古股份公司Ｂ</k> &emsp;
+<k onclick="collectStkData('00101')">00101 恒隆地產</k> &emsp;
+<k onclick="collectStkData('00120')">00120 COSMOPOL INT'L</k> &emsp;
+<k onclick="collectStkData('00135')">00135 昆仑能源</k> &emsp;
+<br>
+<k onclick="collectStkData('00136')">00136 中国儒意</k> &emsp;
+<k onclick="collectStkData('00148')">00148 建滔集团</k> &emsp;
+<k onclick="collectStkData('00152')">00152 深圳国际</k> &emsp;
+<k onclick="collectStkData('00168')">00168 青岛啤酒股份</k> &emsp;
+<k onclick="collectStkData('00175')">00175 吉利汽车</k> &emsp;
+<k onclick="collectStkData('00177')">00177 江苏宁沪高速公路</k> &emsp;
+<br>
+<k onclick="collectStkData('00179')">00179 德昌电机控股</k> &emsp;
+<k onclick="collectStkData('00182')">00182 协合新能源</k> &emsp;
+<k onclick="collectStkData('00189')">00189 东岳集团</k> &emsp;
+<k onclick="collectStkData('00200')">00200 新濠国际发展</k> &emsp;
+<k onclick="collectStkData('00220')">00220 统一企业中国</k> &emsp;
+<k onclick="collectStkData('00241')">00241 阿里健康</k> &emsp;
+<br>
+<k onclick="collectStkData('00257')">00257 光大环境</k> &emsp;
+<k onclick="collectStkData('00267')">00267 中信股份</k> &emsp;
+<k onclick="collectStkData('00270')">00270 粤海投资</k> &emsp;
+<k onclick="collectStkData('00285')">00285 比亚迪电子</k> &emsp;
+<k onclick="collectStkData('00288')">00288 万洲国际</k> &emsp;
+<k onclick="collectStkData('00291')">00291 华润啤酒</k> &emsp;
+<br>
+<k onclick="collectStkData('00293')">00293 国泰航空</k> &emsp;
+<k onclick="collectStkData('00302')">00302 中手游</k> &emsp;
+<k onclick="collectStkData('00303')">00303 VTECH HOLDINGS</k> &emsp;
+<k onclick="collectStkData('00308')">00308 00308</k> &emsp;
+<k onclick="collectStkData('00316')">00316 东方海外国际</k> &emsp;
+<k onclick="collectStkData('00317')">00317 中船防务</k> &emsp;
+<br>
+<k onclick="collectStkData('00322')">00322 康師傅控股</k> &emsp;
+<k onclick="collectStkData('00341')">00341 大家乐集团</k> &emsp;
+<k onclick="collectStkData('00345')">00345 VITASOY INT'L</k> &emsp;
+<k onclick="collectStkData('00347')">00347 鞍钢股份</k> &emsp;
+<k onclick="collectStkData('00358')">00358 江西铜业股份</k> &emsp;
+<k onclick="collectStkData('00371')">00371 北控水务集团</k> &emsp;
+<br>
+<k onclick="collectStkData('00384')">00384 中国燃气</k> &emsp;
+<k onclick="collectStkData('00386')">00386 中国石油化工股份</k> &emsp;
+<k onclick="collectStkData('00388')">00388 香港交易所</k> &emsp;
+<k onclick="collectStkData('00390')">00390 中国中铁</k> &emsp;
+<k onclick="collectStkData('00392')">00392 北京控股</k> &emsp;
+<k onclick="collectStkData('00398')">00398 东方表行集团</k> &emsp;
+<br>
+<k onclick="collectStkData('00412')">00412 山高控股</k> &emsp;
+<k onclick="collectStkData('00506')">00506 中国食品</k> &emsp;
+<k onclick="collectStkData('00522')">00522 ASMPT</k> &emsp;
+<k onclick="collectStkData('00525')">00525 广深铁路股份</k> &emsp;
+<k onclick="collectStkData('00546')">00546 阜丰集团</k> &emsp;
+<k onclick="collectStkData('00552')">00552 中国通信服务</k> &emsp;
+<br>
+<k onclick="collectStkData('00558')">00558 力劲科技</k> &emsp;
+<k onclick="collectStkData('00570')">00570 中国中药</k> &emsp;
+<k onclick="collectStkData('00576')">00576 浙江沪杭甬</k> &emsp;
+<k onclick="collectStkData('00579')">00579 京能清洁能源</k> &emsp;
+<k onclick="collectStkData('00586')">00586 海螺创业</k> &emsp;
+<k onclick="collectStkData('00596')">00596 浪潮数字企业</k> &emsp;
+<br>
+<k onclick="collectStkData('00598')">00598 中国外运</k> &emsp;
+<k onclick="collectStkData('00636')">00636 嘉里物流</k> &emsp;
+<k onclick="collectStkData('00639')">00639 首钢资源</k> &emsp;
+<k onclick="collectStkData('00656')">00656 复星国际</k> &emsp;
+<k onclick="collectStkData('00659')">00659 新创建集团</k> &emsp;
+<k onclick="collectStkData('00667')">00667 中国东方教育</k> &emsp;
+<br>
+<k onclick="collectStkData('00669')">00669 创科实业</k> &emsp;
+<k onclick="collectStkData('00683')">00683 嘉里建设</k> &emsp;
+<k onclick="collectStkData('00688')">00688 中国海外发展</k> &emsp;
+<k onclick="collectStkData('00694')">00694 北京首都机场股份</k> &emsp;
+<k onclick="collectStkData('00696')">00696 中国民航信息网络</k> &emsp;
+<k onclick="collectStkData('00700')">00700 腾讯控股</k> &emsp;
+<br>
+<k onclick="collectStkData('00751')">00751 创维集团</k> &emsp;
+<k onclick="collectStkData('00753')">00753 中国国航</k> &emsp;
+<k onclick="collectStkData('00762')">00762 中国联通</k> &emsp;
+<k onclick="collectStkData('00763')">00763 中兴通讯</k> &emsp;
+<k onclick="collectStkData('00772')">00772 阅文集团</k> &emsp;
+<k onclick="collectStkData('00777')">00777 网龙 00777</k> &emsp;
+<br>
+<k onclick="collectStkData('00780')">00780 同程旅行</k> &emsp;
+<k onclick="collectStkData('00788')">00788 中国铁塔</k> &emsp;
+<k onclick="collectStkData('00806')">00806 惠理集团</k> &emsp;
+<k onclick="collectStkData('00823')">00823 领展房产基金</k> &emsp;
+<k onclick="collectStkData('00836')">00836 华润电力</k> &emsp;
+<k onclick="collectStkData('00855')">00855 中国水务</k> &emsp;
+<br>
+<k onclick="collectStkData('00856')">00856 伟仕佳杰</k> &emsp;
+<k onclick="collectStkData('00857')">00857 中国石油股份</k> &emsp;
+<k onclick="collectStkData('00867')">00867 康哲药业</k> &emsp;
+<k onclick="collectStkData('00868')">00868 信义玻璃</k> &emsp;
+<k onclick="collectStkData('00873')">00873 世茂服务</k> &emsp;
+<k onclick="collectStkData('00881')">00881 中升控股</k> &emsp;
+<br>
+<k onclick="collectStkData('00883')">00883 中国海洋石油</k> &emsp;
+<k onclick="collectStkData('00884')">00884 旭辉控股集团</k> &emsp;
+<k onclick="collectStkData('00902')">00902 华能国际电力股份</k> &emsp;
+<k onclick="collectStkData('00906')">00906 中粮包装</k> &emsp;
+<k onclick="collectStkData('00909')">00909 明源云</k> &emsp;
+<k onclick="collectStkData('00914')">00914 海螺水泥</k> &emsp;
+<br>
+<k onclick="collectStkData('00916')">00916 龙源电力</k> &emsp;
+<k onclick="collectStkData('00921')">00921 海信家电</k> &emsp;
+<k onclick="collectStkData('00939')">00939 建設銀行</k> &emsp;
+<k onclick="collectStkData('00941')">00941 中国移动</k> &emsp;
+<k onclick="collectStkData('00956')">00956 新天绿色能源</k> &emsp;
+<k onclick="collectStkData('00960')">00960 龙湖集团</k> &emsp;
+<br>
+<k onclick="collectStkData('00966')">00966 中国太平</k> &emsp;
+<k onclick="collectStkData('00968')">00968 信義光能</k> &emsp;
+<k onclick="collectStkData('00973')">00973 L'OCCITANE</k> &emsp;
+<k onclick="collectStkData('00981')">00981 中芯国际</k> &emsp;
+<k onclick="collectStkData('00992')">00992 联想集团</k> &emsp;
+<k onclick="collectStkData('00995')">00995 安徽皖通高速公路</k> &emsp;
+<br>
+<k onclick="collectStkData('00998')">00998 中信银行</k> &emsp;
+<k onclick="collectStkData('01029')">01029 铁货</k> &emsp;
+<k onclick="collectStkData('01030')">01030 新城发展</k> &emsp;
+<k onclick="collectStkData('01038')">01038 长江基建集团</k> &emsp;
+<k onclick="collectStkData('01044')">01044 恒安国际</k> &emsp;
+<k onclick="collectStkData('01052')">01052 越秀交通基建</k> &emsp;
+<br>
+<k onclick="collectStkData('01055')">01055 中国南方航空股份</k> &emsp;
+<k onclick="collectStkData('01057')">01057 浙江世宝</k> &emsp;
+<k onclick="collectStkData('01066')">01066 威高股份</k> &emsp;
+<k onclick="collectStkData('01071')">01071 华电国际电力股份</k> &emsp;
+<k onclick="collectStkData('01088')">01088 中国神华</k> &emsp;
+<k onclick="collectStkData('01093')">01093 石药集团</k> &emsp;
+<br>
+<k onclick="collectStkData('01099')">01099 国药控股</k> &emsp;
+<k onclick="collectStkData('01109')">01109 华润置地</k> &emsp;
+<k onclick="collectStkData('01113')">01113 长实集团</k> &emsp;
+<k onclick="collectStkData('01114')">01114 BRILLIANCE CHI</k> &emsp;
+<k onclick="collectStkData('01119')">01119 创梦天地</k> &emsp;
+<k onclick="collectStkData('01128')">01128 永利澳门</k> &emsp;
+<br>
+<k onclick="collectStkData('01138')">01138 中远海能</k> &emsp;
+<k onclick="collectStkData('01157')">01157 中联重科</k> &emsp;
+<k onclick="collectStkData('01171')">01171 兖矿能源</k> &emsp;
+<k onclick="collectStkData('01177')">01177 中國生物製藥</k> &emsp;
+<k onclick="collectStkData('01186')">01186 中国铁建</k> &emsp;
+<k onclick="collectStkData('01193')">01193 华润燃气</k> &emsp;
+<br>
+<k onclick="collectStkData('01199')">01199 中远海运港口</k> &emsp;
+<k onclick="collectStkData('01208')">01208 五矿资源</k> &emsp;
+<k onclick="collectStkData('01209')">01209 華潤萬象生活</k> &emsp;
+<k onclick="collectStkData('01211')">01211 比亚迪股份</k> &emsp;
+<k onclick="collectStkData('01238')">01238 宝龙地产</k> &emsp;
+<k onclick="collectStkData('01268')">01268 美东汽车</k> &emsp;
+<br>
+<k onclick="collectStkData('01288')">01288 农业银行</k> &emsp;
+<k onclick="collectStkData('01299')">01299 友邦保险</k> &emsp;
+<k onclick="collectStkData('01302')">01302 先健科技</k> &emsp;
+<k onclick="collectStkData('01310')">01310 香港宽频</k> &emsp;
+<k onclick="collectStkData('01313')">01313 华润水泥控股</k> &emsp;
+<k onclick="collectStkData('01316')">01316 耐世特</k> &emsp;
+<br>
+<k onclick="collectStkData('01336')">01336 新华保险</k> &emsp;
+<k onclick="collectStkData('01347')">01347 华虹半导体</k> &emsp;
+<k onclick="collectStkData('01357')">01357 美图公司</k> &emsp;
+<k onclick="collectStkData('01359')">01359 中国信达</k> &emsp;
+<k onclick="collectStkData('01368')">01368 特步国际</k> &emsp;
+<k onclick="collectStkData('01378')">01378 中国宏桥</k> &emsp;
+<br>
+<k onclick="collectStkData('01385')">01385 上海复旦</k> &emsp;
+<k onclick="collectStkData('01398')">01398 工商银行</k> &emsp;
+<k onclick="collectStkData('01428')">01428 耀才证券金融</k> &emsp;
+<k onclick="collectStkData('01448')">01448 福寿园</k> &emsp;
+<k onclick="collectStkData('01458')">01458 周黑鸭</k> &emsp;
+<k onclick="collectStkData('01475')">01475 日清食品</k> &emsp;
+<br>
+<k onclick="collectStkData('01478')">01478 丘钛科技</k> &emsp;
+<k onclick="collectStkData('01513')">01513 丽珠医药</k> &emsp;
+<k onclick="collectStkData('01516')">01516 融创服务</k> &emsp;
+<k onclick="collectStkData('01521')">01521 方达控股</k> &emsp;
+<k onclick="collectStkData('01530')">01530 三生制药</k> &emsp;
+<k onclick="collectStkData('01548')">01548 金斯瑞生物科技</k> &emsp;
+<br>
+<k onclick="collectStkData('01658')">01658 邮储银行</k> &emsp;
+<k onclick="collectStkData('01766')">01766 中国中车</k> &emsp;
+<k onclick="collectStkData('01772')">01772 赣锋锂业</k> &emsp;
+<k onclick="collectStkData('01776')">01776 广发证券</k> &emsp;
+<k onclick="collectStkData('01797')">01797 东方甄选</k> &emsp;
+<k onclick="collectStkData('01800')">01800 中国交通建设</k> &emsp;
+<br>
+<k onclick="collectStkData('01801')">01801 信达生物</k> &emsp;
+<k onclick="collectStkData('01810')">01810 小米集团－Ｗ</k> &emsp;
+<k onclick="collectStkData('01816')">01816 中广核电力</k> &emsp;
+<k onclick="collectStkData('01818')">01818 招金矿业</k> &emsp;
+<k onclick="collectStkData('01821')">01821 ESR</k> &emsp;
+<k onclick="collectStkData('01876')">01876 百威亞太</k> &emsp;
+<br>
+<k onclick="collectStkData('01877')">01877 君实生物</k> &emsp;
+<k onclick="collectStkData('01880')">01880 中国中免</k> &emsp;
+<k onclick="collectStkData('01882')">01882 海天国际</k> &emsp;
+<k onclick="collectStkData('01883')">01883 中信国际电讯</k> &emsp;
+<k onclick="collectStkData('01888')">01888 建滔积层板</k> &emsp;
+<k onclick="collectStkData('01896')">01896 猫眼娱乐</k> &emsp;
+<br>
+<k onclick="collectStkData('01898')">01898 中煤能源</k> &emsp;
+<k onclick="collectStkData('01907')">01907 中国旭阳集团</k> &emsp;
+<k onclick="collectStkData('01908')">01908 建发国际集团</k> &emsp;
+<k onclick="collectStkData('01913')">01913 普拉达</k> &emsp;
+<k onclick="collectStkData('01919')">01919 中远海控</k> &emsp;
+<k onclick="collectStkData('01928')">01928 金沙中國</k> &emsp;
+<br>
+<k onclick="collectStkData('01929')">01929 周大福</k> &emsp;
+<k onclick="collectStkData('01951')">01951 锦欣生殖</k> &emsp;
+<k onclick="collectStkData('01952')">01952 云顶新耀－Ｂ</k> &emsp;
+<k onclick="collectStkData('01958')">01958 北京汽车</k> &emsp;
+<k onclick="collectStkData('01972')">01972 太古地产</k> &emsp;
+<k onclick="collectStkData('01997')">01997 九龙仓置业</k> &emsp;
+<br>
+<k onclick="collectStkData('01999')">01999 敏华控股</k> &emsp;
+<k onclick="collectStkData('02007')">02007 碧桂園</k> &emsp;
+<k onclick="collectStkData('02009')">02009 02009</k> &emsp;
+<k onclick="collectStkData('02013')">02013 02013</k> &emsp;
+<k onclick="collectStkData('02015')">02015 理想汽車</k> &emsp;
+<k onclick="collectStkData('02018')">02018 瑞声科技</k> &emsp;
+<br>
+<k onclick="collectStkData('02020')">02020 安踏体育</k> &emsp;
+<k onclick="collectStkData('02057')">02057 中通快递－Ｗ</k> &emsp;
+<k onclick="collectStkData('02096')">02096 先声药业</k> &emsp;
+<k onclick="collectStkData('02099')">02099 中国黄金国际</k> &emsp;
+<k onclick="collectStkData('02126')">02126 药明巨诺－Ｂ</k> &emsp;
+<k onclick="collectStkData('02128')">02128 中国联塑</k> &emsp;
+<br>
+<k onclick="collectStkData('02142')">02142 和铂医药－Ｂ</k> &emsp;
+<k onclick="collectStkData('02155')">02155 森松国际</k> &emsp;
+<k onclick="collectStkData('02196')">02196 复星医药</k> &emsp;
+<k onclick="collectStkData('02202')">02202 万科企业</k> &emsp;
+<k onclick="collectStkData('02208')">02208 金风科技</k> &emsp;
+<k onclick="collectStkData('02238')">02238 广汽集团</k> &emsp;
+<br>
+<k onclick="collectStkData('02255')">02255 海昌海洋公园</k> &emsp;
+<k onclick="collectStkData('02257')">02257 圣诺医药－Ｂ</k> &emsp;
+<k onclick="collectStkData('02269')">02269 藥明生物</k> &emsp;
+<k onclick="collectStkData('02276')">02276 康耐特光学</k> &emsp;
+<k onclick="collectStkData('02282')">02282 美高梅中国</k> &emsp;
+<k onclick="collectStkData('02285')">02285 泉峰控股</k> &emsp;
+<br>
+<k onclick="collectStkData('02306')">02306 乐华娱乐</k> &emsp;
+<k onclick="collectStkData('02313')">02313 申洲国际</k> &emsp;
+<k onclick="collectStkData('02318')">02318 中国平安</k> &emsp;
+<k onclick="collectStkData('02319')">02319 蒙牛乳业</k> &emsp;
+<k onclick="collectStkData('02328')">02328 中国财险</k> &emsp;
+<k onclick="collectStkData('02331')">02331 李宁</k> &emsp;
+<br>
+<k onclick="collectStkData('02333')">02333 长城汽车</k> &emsp;
+<k onclick="collectStkData('02338')">02338 潍柴动力</k> &emsp;
+<k onclick="collectStkData('02342')">02342 京信通信</k> &emsp;
+<k onclick="collectStkData('02343')">02343 太平洋航运</k> &emsp;
+<k onclick="collectStkData('02357')">02357 中航科工</k> &emsp;
+<k onclick="collectStkData('02359')">02359 药明康德</k> &emsp;
+<br>
+<k onclick="collectStkData('02362')">02362 金川国际</k> &emsp;
+<k onclick="collectStkData('02367')">02367 巨子生物</k> &emsp;
+<k onclick="collectStkData('02380')">02380 中国电力</k> &emsp;
+<k onclick="collectStkData('02382')">02382 舜宇光学科技</k> &emsp;
+<k onclick="collectStkData('02386')">02386 中石化炼化工程</k> &emsp;
+<k onclick="collectStkData('02388')">02388 中银香港</k> &emsp;
+<br>
+<k onclick="collectStkData('02423')">02423 贝壳－Ｗ</k> &emsp;
+<k onclick="collectStkData('02469')">02469 粉笔</k> &emsp;
+<k onclick="collectStkData('02500')">02500 启明医疗－Ｂ</k> &emsp;
+<k onclick="collectStkData('02600')">02600 中国铝业</k> &emsp;
+<k onclick="collectStkData('02601')">02601 中国太保</k> &emsp;
+<k onclick="collectStkData('02607')">02607 上海医药</k> &emsp;
+<br>
+<k onclick="collectStkData('02611')">02611 国泰君安</k> &emsp;
+<k onclick="collectStkData('02618')">02618 京东物流</k> &emsp;
+<k onclick="collectStkData('02628')">02628 中国人寿</k> &emsp;
+<k onclick="collectStkData('02638')">02638 港灯－ＳＳ</k> &emsp;
+<k onclick="collectStkData('02688')">02688 新奧能源</k> &emsp;
+<k onclick="collectStkData('02689')">02689 玖龙纸业</k> &emsp;
+<br>
+<k onclick="collectStkData('02800')">02800 盈富基金</k> &emsp;
+<k onclick="collectStkData('02828')">02828 恆生中國企業</k> &emsp;
+<k onclick="collectStkData('02830')">02830 沙特ETF</k> &emsp;
+<k onclick="collectStkData('02883')">02883 中海油田服务</k> &emsp;
+<k onclick="collectStkData('02888')">02888 渣打集团</k> &emsp;
+<k onclick="collectStkData('02899')">02899 紫金矿业</k> &emsp;
+<br>
+<k onclick="collectStkData('03033')">03033 南方恆生科技</k> &emsp;
+<k onclick="collectStkData('03160')">03160 华夏日股对冲</k> &emsp;
+<k onclick="collectStkData('03306')">03306 江南布衣</k> &emsp;
+<k onclick="collectStkData('03311')">03311 中国建筑国际</k> &emsp;
+<k onclick="collectStkData('03319')">03319 雅生活服务</k> &emsp;
+<k onclick="collectStkData('03320')">03320 华润医药</k> &emsp;
+<br>
+<k onclick="collectStkData('03323')">03323 中国建材</k> &emsp;
+<k onclick="collectStkData('03347')">03347 泰格医药</k> &emsp;
+<k onclick="collectStkData('03360')">03360 远东宏信</k> &emsp;
+<k onclick="collectStkData('03377')">03377 远洋集团</k> &emsp;
+<k onclick="collectStkData('03606')">03606 福耀玻璃</k> &emsp;
+<k onclick="collectStkData('03618')">03618 重庆农村商业银行</k> &emsp;
+<br>
+<k onclick="collectStkData('03690')">03690 美團</k> &emsp;
+<k onclick="collectStkData('03692')">03692 翰森制药</k> &emsp;
+<k onclick="collectStkData('03709')">03709 赢家时尚</k> &emsp;
+<k onclick="collectStkData('03800')">03800 协鑫科技</k> &emsp;
+<k onclick="collectStkData('03808')">03808 中国重汽</k> &emsp;
+<k onclick="collectStkData('03888')">03888 金山软件</k> &emsp;
+<br>
+<k onclick="collectStkData('03898')">03898 时代电气</k> &emsp;
+<k onclick="collectStkData('03900')">03900 绿城中国</k> &emsp;
+<k onclick="collectStkData('03908')">03908 中金公司</k> &emsp;
+<k onclick="collectStkData('03968')">03968 招商银行</k> &emsp;
+<k onclick="collectStkData('03988')">03988 中国银行</k> &emsp;
+<k onclick="collectStkData('03993')">03993 洛阳钼业</k> &emsp;
+<br>
+<k onclick="collectStkData('03998')">03998 波司登</k> &emsp;
+<k onclick="collectStkData('06030')">06030 中信证券</k> &emsp;
+<k onclick="collectStkData('06049')">06049 保利物业</k> &emsp;
+<k onclick="collectStkData('06060')">06060 众安在线</k> &emsp;
+<k onclick="collectStkData('06066')">06066 中信建投证券</k> &emsp;
+<k onclick="collectStkData('06098')">06098 碧桂園服務</k> &emsp;
+<br>
+<k onclick="collectStkData('06110')">06110 滔搏</k> &emsp;
+<k onclick="collectStkData('06127')">06127 昭衍新药</k> &emsp;
+<k onclick="collectStkData('06160')">06160 百济神州</k> &emsp;
+<k onclick="collectStkData('06178')">06178 光大证券</k> &emsp;
+<k onclick="collectStkData('06186')">06186 中国飞鹤</k> &emsp;
+<k onclick="collectStkData('06600')">06600 赛生药业</k> &emsp;
+<br>
+<k onclick="collectStkData('06606')">06606 诺辉健康</k> &emsp;
+<k onclick="collectStkData('06608')">06608 百融云－Ｗ</k> &emsp;
+<k onclick="collectStkData('06616')">06616 环球新材国际</k> &emsp;
+<k onclick="collectStkData('06618')">06618 京東健康</k> &emsp;
+<k onclick="collectStkData('06689')">06689 洪九果品</k> &emsp;
+<k onclick="collectStkData('06690')">06690 海尔智家</k> &emsp;
+<br>
+<k onclick="collectStkData('06699')">06699 时代天使</k> &emsp;
+<k onclick="collectStkData('06818')">06818 中国光大银行</k> &emsp;
+<k onclick="collectStkData('06820')">06820 友谊时光</k> &emsp;
+<k onclick="collectStkData('06823')">06823 香港电讯－ＳＳ</k> &emsp;
+<k onclick="collectStkData('06837')">06837 海通证券</k> &emsp;
+<k onclick="collectStkData('06855')">06855 亚盛医药－Ｂ</k> &emsp;
+<br>
+<k onclick="collectStkData('06862')">06862 海底捞</k> &emsp;
+<k onclick="collectStkData('06865')">06865 福莱特玻璃</k> &emsp;
+<k onclick="collectStkData('06881')">06881 中国银河</k> &emsp;
+<k onclick="collectStkData('06886')">06886 HTSC</k> &emsp;
+<k onclick="collectStkData('07226')">07226 ＸＬ二南方恆科</k> &emsp;
+<k onclick="collectStkData('07552')">07552 ＸＩ二南方恒科</k> &emsp;
+<br>
+<k onclick="collectStkData('08032')">08032 非凡领越</k> &emsp;
+<k onclick="collectStkData('09618')">09618 京东集团－ＳＷ</k> &emsp;
+<k onclick="collectStkData('09626')">09626 哔哩哔哩－Ｗ</k> &emsp;
+<k onclick="collectStkData('09633')">09633 農夫山泉</k> &emsp;
+<k onclick="collectStkData('09658')">09658 特海国际</k> &emsp;
+<k onclick="collectStkData('09666')">09666 金科服务</k> &emsp;
+<br>
+<k onclick="collectStkData('09696')">09696 天齐锂业</k> &emsp;
+<k onclick="collectStkData('09698')">09698 万国数据－ＳＷ</k> &emsp;
+<k onclick="collectStkData('09699')">09699 顺丰同城</k> &emsp;
+<k onclick="collectStkData('09863')">09863 零跑汽車</k> &emsp;
+<k onclick="collectStkData('09866')">09866 蔚来－ＳＷ</k> &emsp;
+<k onclick="collectStkData('09868')">09868 小鵬汽車</k> &emsp;
+<br>
+<k onclick="collectStkData('09877')">09877 健世科技－Ｂ</k> &emsp;
+<k onclick="collectStkData('09888')">09888 百度集團</k> &emsp;
+<k onclick="collectStkData('09926')">09926 康方生物</k> &emsp;
+<k onclick="collectStkData('09961')">09961 攜程集團</k> &emsp;
+<k onclick="collectStkData('09987')">09987 百胜中国</k> &emsp;
+<k onclick="collectStkData('09988')">09988 阿里巴巴</k> &emsp;
+<br>
+<k onclick="collectStkData('09992')">09992 泡泡玛特</k> &emsp;
+<k onclick="collectStkData('09993')">09993 金辉控股</k> &emsp;
+<k onclick="collectStkData('09995')">09995 荣昌生物</k> &emsp;
+<k onclick="collectStkData('09996')">09996 沛嘉医疗－Ｂ</k> &emsp;
+<k onclick="collectStkData('09997')">09997 康基医疗</k> &emsp;
+<k onclick="collectStkData('09999')">09999 網易</k> &emsp;
+
+<pre id="message">
+
+</pre>
+<br>
+<r onclick="askforCode();">stkCode</r>
+<k onclick="chgchartWidth();">chartWidth</k>
+<r onclick="chgIntv();">chgIntv</r>
+<k onclick="collectStkData('us.DJIus ')">DJI</k> &emsp;
+<k onclick="collectStkData('us.IXIus C')">IXIC</k> &emsp;
+<k onclick="collectStkData('us.INXus ')">INX</k> &emsp;
+
+<br>
+<span id="endpage">
+中特估 中國特色估值體系 中特股和許多派息5厘以上的高息股，例如銀行、電訊、公路股，都可以是「懼中可貪」的選擇。
+<br>
+<h2>Msgs</h2>
+大摩CAF<br>
+<k onclick="collectStkData('600519')">600519 貴州茅台</k> &emsp;
+<k onclick="collectStkData('600900')">600900 長江電力</k> &emsp;
+<k onclick="collectStkData('000651')">000651 格力</k> &emsp;
+<k onclick="collectStkData('300760')">300760 邁瑞醫療</k> &emsp;
+<k onclick="collectStkData('603605')">603605 珀萊雅</k> &emsp;
+<k onclick="collectStkData('600036')">600036 招行</k> &emsp;
+<k onclick="collectStkData('601939')">601939 建行</k> &emsp;
+<k onclick="collectStkData('601398')">601398 工行</k> &emsp;
+<k onclick="collectStkData('601658')">601658 郵儲銀行</k> &emsp;
+<k onclick="collectStkData('601668')">601668 中國建築</k> &emsp;
+<br>
+<k onclick="collectStkData('00939')">00939 建行H</k> &emsp;
+<k onclick="collectStkData('03968')">03968 招行H</k> &emsp;
+<k onclick="collectStkData('01398')">01398 工行H</k> &emsp;
+<k onclick="collectStkData('01658')">01658 郵儲銀行H</k> &emsp;
+<k onclick="collectStkData('03311')">03311 中國建築H</k> &emsp;
+<k onclick="collectStkData('01816')">01816 中广核</k> &emsp;
+<br>
+Arm ARM.US,Booking BKNG.US,Meta Platforms META.US,Moderna MRNA.US,Reddit RDDT.US,Snap SNAP.US,亚马逊 AMZN.US,元宇宙第一股 Roblox RBLX.US,好时 HSY.US,星巴克 SBUX.US,特斯拉 TSLA.US,礼来 LLY.US,英伟达 NVDA.US,英特尔 INTC.US,苹果 AAPL.US,西部数据 WDC.US,高通 QCOM.US,
+</span>
+<span onclick="$('#usstock').toggle();">usstock 🎌 </span>
+<pre id="usstock">
+<b onclick='fetchUsCode("usTCEHY.PS")'>usTCEHY.PS 腾信</b> . <b onclick='fetchUsCode("usPEP.OQ")'>usPEP.OQ 百事可乐</b> . <b onclick='fetchUsCode("usORCL.N")'>usORCL.N 甲骨文</b> . <b onclick='fetchUsCode("usOIL.AM")'>usOIL.AM 标普高盛原油指数ETN</b> . <b onclick='fetchUsCode("usNVS.N")'>usNVS.N 诺华制药</b> . <b onclick='fetchUsCode("usNVFY.OQ")'>usNVFY.OQ 诺华家具</b> . <b onclick='fetchUsCode("usNVDA.OQ")'>usNVDA.OQ 英伟达</b> . <b onclick='fetchUsCode("usNTES.OQ")'>usNTES.OQ 网易</b> . <b onclick='fetchUsCode("usNTAP.OQ")'>usNTAP.OQ 美国网存</b> . <b onclick='fetchUsCode("usNKE.N")'>usNKE.N 耐克</b> . <b onclick='fetchUsCode("usNFLX.OQ")'>usNFLX.OQ 奈飞</b> . <b onclick='fetchUsCode("usMSFT.OQ")'>usMSFT.OQ 微软</b> . <b onclick='fetchUsCode("usMS.N")'>usMS.N 摩根士丹利</b> . <b onclick='fetchUsCode("usMPNGY.PS")'>usMPNGY.PS 美团</b> . <b onclick='fetchUsCode("usMET.N")'>usMET.N 大都会人寿</b> . <b onclick='fetchUsCode("usMBLY.OQ")'>usMBLY.OQ Mobileye Global Inc</b> . <b onclick='fetchUsCode("usMAT.OQ")'>usMAT.OQ 美泰</b> . <b onclick='fetchUsCode("usLRCX.OQ")'>usLRCX.OQ 拉姆研究</b> . <b onclick='fetchUsCode("usLMT.N")'>usLMT.N 洛克希德马丁</b> . <b onclick='fetchUsCode("usKWEB.AM")'>usKWEB.AM 中国海外互联网ETF</b> . <b onclick='fetchUsCode("usJT.N")'>usJT.N 简普科技</b> . <b onclick='fetchUsCode("usJNJ.N")'>usJNJ.N 强生</b> . <b onclick='fetchUsCode("usIRBT.OQ")'>usIRBT.OQ Irobot Corp</b> . <b onclick='fetchUsCode("usINTU.OQ")'>usINTU.OQ 财捷</b> . <b onclick='fetchUsCode("usINTC.OQ")'>usINTC.OQ 英特尔</b> . <b onclick='fetchUsCode("usILMN.OQ")'>usILMN.OQ Illumina Inc</b> . <b onclick='fetchUsCode("usHUYA.N")'>usHUYA.N 虎牙</b> . <b onclick='fetchUsCode("usH.N")'>usH.N 凯悦酒店</b> . <b onclick='fetchUsCode("usGRPN.OQ")'>usGRPN.OQ Groupon Inc</b> . <b onclick='fetchUsCode("usGOGO.OQ")'>usGOGO.OQ Gogo Inc</b> . <b onclick='fetchUsCode("usGLW.N")'>usGLW.N 康宁</b> . <b onclick='fetchUsCode("usGHG.N")'>usGHG.N 格林酒店</b> . <b onclick='fetchUsCode("usGDS.OQ")'>usGDS.OQ 万国数据</b> . <b onclick='fetchUsCode("usGDOT.N")'>usGDOT.N Green Dot Corp</b> . <b onclick='fetchUsCode("usGD.N")'>usGD.N 通用动力</b> . <b onclick='fetchUsCode("usFTNT.OQ")'>usFTNT.OQ 飞塔信息</b> . <b onclick='fetchUsCode("usFEDU.N")'>usFEDU.N 四季教育</b> . <b onclick='fetchUsCode("usFDX.N")'>usFDX.N 联邦快递</b> . <b onclick='fetchUsCode("usFANH.OQ")'>usFANH.OQ 泛华控股集团</b> . <b onclick='fetchUsCode("usFAMI.OQ")'>usFAMI.OQ 农米良品</b> . <b onclick='fetchUsCode("usETR.N")'>usETR.N 安特吉</b> . <b onclick='fetchUsCode("usZTO.N")'>usZTO.N 中通快递</b> . <b onclick='fetchUsCode("usZKIN.OQ")'>usZKIN.OQ 正康国际</b> . <b onclick='fetchUsCode("usYUMC.N")'>usYUMC.N 百胜中国</b> . <b onclick='fetchUsCode("usYELP.N")'>usYELP.N Yelp</b> . <b onclick='fetchUsCode("usYECO.PS")'>usYECO.PS 玉龙生态材料</b> . <b onclick='fetchUsCode("usXIACY.PS")'>usXIACY.PS 小米集团</b> . <b onclick='fetchUsCode("usX.N")'>usX.N 美国钢铁</b> . <b onclick='fetchUsCode("usWDC.OQ")'>usWDC.OQ 西部数据</b> . <b onclick='fetchUsCode("usWDAY.OQ")'>usWDAY.OQ Workday</b> . <b onclick='fetchUsCode("usWBA.OQ")'>usWBA.OQ 沃尔格林-联合博姿</b> . <b onclick='fetchUsCode("usVXZ.AM")'>usVXZ.AM 恐慌中期做多ETN-iPath S</b> . <b onclick='fetchUsCode("usVXX.AM")'>usVXX.AM 短期VIX指数期货ETN</b> . <b onclick='fetchUsCode("usVMW.N")'>usVMW.N 威睿</b> . <b onclick='fetchUsCode("usV.N")'>usV.N Visa</b> . <b onclick='fetchUsCode("usUSNA.N")'>usUSNA.N 优莎娜</b> . <b onclick='fetchUsCode("usUNH.N")'>usUNH.N 联合健康</b> . <b onclick='fetchUsCode("usUNG.AM")'>usUNG.AM 美国即月天然气ETF</b> . <b onclick='fetchUsCode("usTXN.OQ")'>usTXN.OQ 德州仪器</b> . <b onclick='fetchUsCode("usTRIP.OQ")'>usTRIP.OQ 猫途鹰</b> . <b onclick='fetchUsCode("usTME.N")'>usTME.N 腾讯音乐</b> . <b onclick='fetchUsCode("usTKAT.AM")'>usTKAT.AM 大公文交所</b> . <b onclick='fetchUsCode("usTGT.N")'>usTGT.N 塔吉特</b> . <b onclick='fetchUsCode("usTER.OQ")'>usTER.OQ 泰瑞达</b> . <b onclick='fetchUsCode("usSSYS.OQ")'>usSSYS.OQ Stratasys</b> . <b onclick='fetchUsCode("usSPWR.OQ")'>usSPWR.OQ Sunpower Corp</b> . <b onclick='fetchUsCode("usSPLK.OQ")'>usSPLK.OQ Splunk Inc</b> . <b onclick='fetchUsCode("usSPI.OQ")'>usSPI.OQ 阳光动力</b> . <b onclick='fetchUsCode("usSMI.AM")'>usSMI.AM Vaneck Hip Sustainable Muni Etf</b> . <b onclick='fetchUsCode("usSMFG.N")'>usSMFG.N 三井住友金融</b> . <b onclick='fetchUsCode("usSIMO.OQ")'>usSIMO.OQ 慧荣科技</b> . <b onclick='fetchUsCode("usSBUX.OQ")'>usSBUX.OQ 星巴克</b> . <b onclick='fetchUsCode("usSAP.N")'>usSAP.N SAP</b> . <b onclick='fetchUsCode("usROK.N")'>usROK.N 罗克韦尔自动化</b> . <b onclick='fetchUsCode("usRF.N")'>usRF.N 地区金融</b> . <b onclick='fetchUsCode("usRENN.N")'>usRENN.N 人人网</b> . <b onclick='fetchUsCode("usQD.N")'>usQD.N 趣店</b> . <b onclick='fetchUsCode("usQCOM.OQ")'>usQCOM.OQ 高通</b> . <b onclick='fetchUsCode("usPLUG.OQ")'>usPLUG.OQ 普拉格能源</b> . <b onclick='fetchUsCode("usPFE.N")'>usPFE.N 辉瑞</b> . <b onclick='fetchUsCode("usPETZ.OQ")'>usPETZ.OQ 天地荟</b> . <b onclick='fetchUsCode("usKSM.N")'>usKSM.N DWS市政债务基金</b> . <b onclick='fetchUsCode("usEQIX.OQ")'>usEQIX.OQ 易昆尼克斯</b> . <b onclick='fetchUsCode("usENV.N")'>usENV.N Envestnet Inc</b> . <b onclick='fetchUsCode("usEBAY.OQ")'>usEBAY.OQ eBay</b> . <b onclick='fetchUsCode("usEA.OQ")'>usEA.OQ 艺电</b> . <b onclick='fetchUsCode("usDZZ.AM")'>usDZZ.AM 黄金两倍做空ETN（德银）</b> . <b onclick='fetchUsCode("usDXCM.OQ")'>usDXCM.OQ 德康医疗</b> . <b onclick='fetchUsCode("usDUK.N")'>usDUK.N 杜克能源</b> . <b onclick='fetchUsCode("usDGZ.AM")'>usDGZ.AM 黄金短期做空ETN（德银）</b> . <b onclick='fetchUsCode("usDGP.AM")'>usDGP.AM 黄金两倍做多ETN</b> . <b onclick='fetchUsCode("usDELL.N")'>usDELL.N 戴尔科技</b> . <b onclick='fetchUsCode("usDB.N")'>usDB.N 德意志银行</b> . <b onclick='fetchUsCode("usDAL.N")'>usDAL.N 达美航空</b> . <b onclick='fetchUsCode("usCSIQ.OQ")'>usCSIQ.OQ 阿特斯太阳能</b> . <b onclick='fetchUsCode("usCPHI.AM")'>usCPHI.AM 惠普森医药</b> . <b onclick='fetchUsCode("usCOST.OQ")'>usCOST.OQ 好市多</b> . <b onclick='fetchUsCode("usCOP.N")'>usCOP.N 康菲石油</b> . <b onclick='fetchUsCode("usCOF.N")'>usCOF.N 第一资本信贷</b> . <b onclick='fetchUsCode("usCMCSA.OQ")'>usCMCSA.OQ 康卡斯特</b> . <b onclick='fetchUsCode("usCAT.N")'>usCAT.N 卡特彼勒</b> . <b onclick='fetchUsCode("usCANG.N")'>usCANG.N 灿谷</b> . <b onclick='fetchUsCode("usCAJ.N")'>usCAJ.N 佳能</b> . <b onclick='fetchUsCode("usC.N")'>usC.N 花旗集团</b> . <b onclick='fetchUsCode("usBYSI.OQ")'>usBYSI.OQ 万春医药</b> . <b onclick='fetchUsCode("usBK.N")'>usBK.N 纽约梅隆银行</b> . <b onclick='fetchUsCode("usBIDU.OQ")'>usBIDU.OQ 百度</b> . <b onclick='fetchUsCode("usBAX.N")'>usBAX.N 百特国际</b> . <b onclick='fetchUsCode("usATVI.OQ")'>usATVI.OQ 动视暴雪</b> . <b onclick='fetchUsCode("usATSG.OQ")'>usATSG.OQ 航空运输服务</b> . <b onclick='fetchUsCode("usAPH.N")'>usAPH.N 安诺电子</b> . <b onclick='fetchUsCode("usAMRC.N")'>usAMRC.N 阿梅雷斯克</b> . <b onclick='fetchUsCode("usAMGN.OQ")'>usAMGN.OQ 安进</b> . <b onclick='fetchUsCode("usAMBA.OQ")'>usAMBA.OQ 安霸</b> . <b onclick='fetchUsCode("usALL.N")'>usALL.N 好事达</b> . <b onclick='fetchUsCode("usADSK.OQ")'>usADSK.OQ 欧特克</b> . <b onclick='fetchUsCode("usABT.N")'>usABT.N 雅培</b> . <b onclick='fetchUsCode("usAAPL.OQ")'>usAAPL.OQ 苹果</b> . <b onclick='fetchUsCode("usYY.OQ")'>usYY.OQ 欢聚</b> . <b onclick='fetchUsCode("usYRD.N")'>usYRD.N 宜人金科</b> . <b onclick='fetchUsCode("usXNET.OQ")'>usXNET.OQ 迅雷</b> . <b onclick='fetchUsCode("usXIN.N")'>usXIN.N 鑫苑置业</b> . <b onclick='fetchUsCode("usVNET.OQ")'>usVNET.OQ 世纪互联</b> . <b onclick='fetchUsCode("usVIPS.N")'>usVIPS.N 唯品会</b> . <b onclick='fetchUsCode("usUTSI.OQ")'>usUTSI.OQ UT斯达康</b> . <b onclick='fetchUsCode("usTOUR.OQ")'>usTOUR.OQ 途牛</b> . <b onclick='fetchUsCode("usTEDU.OQ")'>usTEDU.OQ 达内科技</b> . <b onclick='fetchUsCode("usTANH.OQ")'>usTANH.OQ 碳博士控股</b> . <b onclick='fetchUsCode("usTAL.N")'>usTAL.N 好未来</b> . <b onclick='fetchUsCode("usSOL.N")'>usSOL.N Emeren Group Ltd</b> . <b onclick='fetchUsCode("usSOHU.OQ")'>usSOHU.OQ 搜狐</b> . <b onclick='fetchUsCode("usSEED.OQ")'>usSEED.OQ 奥瑞金种业</b> . <b onclick='fetchUsCode("usRCON.OQ")'>usRCON.OQ 研控科技</b> . <b onclick='fetchUsCode("usOIIM.OQ")'>usOIIM.OQ 凹凸科技</b> . <b onclick='fetchUsCode("usNOAH.N")'>usNOAH.N 诺亚财富</b> . <b onclick='fetchUsCode("usNCTY.OQ")'>usNCTY.OQ 第九城市</b> . <b onclick='fetchUsCode("usMOXC.OQ")'>usMOXC.OQ 魔线</b> . <b onclick='fetchUsCode("usMOMO.OQ")'>usMOMO.OQ 挚文集团</b> . <b onclick='fetchUsCode("usMLCO.OQ")'>usMLCO.OQ 新濠博亚娱乐</b> . <b onclick='fetchUsCode("usLITB.N")'>usLITB.N 兰亭集势</b> . <b onclick='fetchUsCode("usLEJU.N")'>usLEJU.N 乐居</b> . <b onclick='fetchUsCode("usKNDI.OQ")'>usKNDI.OQ 康迪车业</b> . <b onclick='fetchUsCode("usJKS.N")'>usJKS.N 晶科能源</b> . <b onclick='fetchUsCode("usJD.OQ")'>usJD.OQ 京东</b> . <b onclick='fetchUsCode("usHTHT.OQ")'>usHTHT.OQ 华住</b> . <b onclick='fetchUsCode("usHOLI.OQ")'>usHOLI.OQ 和利时自动化</b> . <b onclick='fetchUsCode("usHIHO.OQ")'>usHIHO.OQ 骇维金属加工</b> . <b onclick='fetchUsCode("usHCM.OQ")'>usHCM.OQ 和黄医药</b> . <b onclick='fetchUsCode("usGURE.OQ")'>usGURE.OQ 海湾资源</b> . <b onclick='fetchUsCode("usFTFT.OQ")'>usFTFT.OQ 未来金融科技</b> . <b onclick='fetchUsCode("usFENG.N")'>usFENG.N 凤凰新媒体</b> . <b onclick='fetchUsCode("usEDU.N")'>usEDU.N 新东方</b> . <b onclick='fetchUsCode("usDSWL.OQ")'>usDSWL.OQ 德斯维尔工业</b> . <b onclick='fetchUsCode("usDQ.N")'>usDQ.N 大全新能源</b> . <b onclick='fetchUsCode("usCYD.N")'>usCYD.N 玉柴国际</b> . <b onclick='fetchUsCode("usCXDC.PS")'>usCXDC.PS 鑫达集团</b> . <b onclick='fetchUsCode("usCREG.OQ")'>usCREG.OQ 中国循环能源</b> . <b onclick='fetchUsCode("usCOE.N")'>usCOE.N 51Talk</b> . <b onclick='fetchUsCode("usCNET.OQ")'>usCNET.OQ 中网载线</b> . <b onclick='fetchUsCode("usCMCM.N")'>usCMCM.N 猎豹移动</b> . <b onclick='fetchUsCode("usCLWT.OQ")'>usCLWT.OQ 欧陆科仪</b> . <b onclick='fetchUsCode("usCJJD.OQ")'>usCJJD.OQ 九洲大药房</b> . <b onclick='fetchUsCode("usCHNR.OQ")'>usCHNR.OQ 中国天然资源</b> . <b onclick='fetchUsCode("usCGA.N")'>usCGA.N 中国绿色农业</b> . <b onclick='fetchUsCode("usCCM.N")'>usCCM.N 泰和诚医疗</b> . <b onclick='fetchUsCode("usCAAS.OQ")'>usCAAS.OQ 中汽系统</b> . <b onclick='fetchUsCode("usBZUN.OQ")'>usBZUN.OQ 宝尊电商</b> . <b onclick='fetchUsCode("usBSPM.OQ")'>usBSPM.OQ Biostar Pharmaceuticals, Inc.</b> . <b onclick='fetchUsCode("usBGNE.OQ")'>usBGNE.OQ 百济神州</b> . <b onclick='fetchUsCode("usBEDU.N")'>usBEDU.N 博实乐</b> . <b onclick='fetchUsCode("usBABA.N")'>usBABA.N 阿里巴巴</b> . <b onclick='fetchUsCode("usATHM.N")'>usATHM.N 汽车之家</b> . <b onclick='fetchUsCode("usATAI.OQ")'>usATAI.OQ Atai Life Sciences Nv</b> . <b onclick='fetchUsCode("usUMC.N")'>usUMC.N 联电</b> . <b onclick='fetchUsCode("usTSM.N")'>usTSM.N 台积电</b> . <b onclick='fetchUsCode("usHIMX.OQ")'>usHIMX.OQ 奇景光电</b> . <b onclick='fetchUsCode("usGIGM.OQ")'>usGIGM.OQ 和信超媒体</b> . <b onclick='fetchUsCode("usCHT.N")'>usCHT.N 中华电信</b> . <b onclick='fetchUsCode("usASX.N")'>usASX.N 日月光半导体</b> . <b onclick='fetchUsCode("usXRX.OQ")'>usXRX.OQ 施乐</b> . <b onclick='fetchUsCode("usVZ.N")'>usVZ.N Verizon</b> . <b onclick='fetchUsCode("usUBER.N")'>usUBER.N 优步</b> . <b onclick='fetchUsCode("usTSLA.OQ")'>usTSLA.OQ 特斯拉</b> . <b onclick='fetchUsCode("usTMUS.OQ")'>usTMUS.OQ T-Mobile Us Inc</b> . <b onclick='fetchUsCode("usSWKS.OQ")'>usSWKS.OQ 思佳讯</b> . <b onclick='fetchUsCode("usQRVO.OQ")'>usQRVO.OQ Qorvo Inc</b> . <b onclick='fetchUsCode("usMU.OQ")'>usMU.OQ 美光科技</b> . <b onclick='fetchUsCode("usMSI.N")'>usMSI.N 摩托罗拉解决方案</b> . <b onclick='fetchUsCode("usMMI.N")'>usMMI.N 马库斯米利查普</b> . <b onclick='fetchUsCode("usMETA.OQ")'>usMETA.OQ Meta Platforms Inc</b> . <b onclick='fetchUsCode("usMCHP.OQ")'>usMCHP.OQ 微芯科技</b> . <b onclick='fetchUsCode("usMA.N")'>usMA.N 万事达</b> . <b onclick='fetchUsCode("usLYFT.OQ")'>usLYFT.OQ Lyft Inc</b> . <b onclick='fetchUsCode("usLOGI.OQ")'>usLOGI.OQ 罗技</b> . <b onclick='fetchUsCode("usJBL.N")'>usJBL.N 捷普科技</b> . <b onclick='fetchUsCode("usIGT.N")'>usIGT.N 国际游戏科技</b> . <b onclick='fetchUsCode("usIBM.N")'>usIBM.N IBM</b> . <b onclick='fetchUsCode("usHPQ.N")'>usHPQ.N 惠普</b> . <b onclick='fetchUsCode("usHPE.N")'>usHPE.N 慧与</b> . <b onclick='fetchUsCode("usEMR.N")'>usEMR.N 艾默生电气</b> . <b onclick='fetchUsCode("usDT.N")'>usDT.N Dynatrace Inc</b> . <b onclick='fetchUsCode("usDLB.N")'>usDLB.N 杜比实验室</b> . <b onclick='fetchUsCode("usCMBM.OQ")'>usCMBM.OQ Cambium Networks Corporation</b> . <b onclick='fetchUsCode("usATI.N")'>usATI.N 阿勒格尼技术</b> . <b onclick='fetchUsCode("usARW.N")'>usARW.N 艾睿</b> . <b onclick='fetchUsCode("usADI.OQ")'>usADI.OQ 亚德诺</b> . <b onclick='fetchUsCode("usACM.N")'>usACM.N Aecom</b> . <b onclick='fetchUsCode("usACLS.OQ")'>usACLS.OQ Axcelis Technologies</b> . <b onclick='fetchUsCode("usABNB.OQ")'>usABNB.OQ 爱彼迎</b> . <b onclick='fetchUsCode("usVRSN.OQ")'>usVRSN.OQ 威瑞信</b> . <b onclick='fetchUsCode("usTRMB.OQ")'>usTRMB.OQ 天宝导航公司</b> . <b onclick='fetchUsCode("usTDC.N")'>usTDC.N 天睿公司</b> . <b onclick='fetchUsCode("usT.N")'>usT.N AT&amp;T</b> . <b onclick='fetchUsCode("usSTX.OQ")'>usSTX.OQ 希捷科技</b> . <b onclick='fetchUsCode("usSRAD.OQ")'>usSRAD.OQ Sportradar Group Ag</b> . <b onclick='fetchUsCode("usSATS.OQ")'>usSATS.OQ 回声星通信</b> . <b onclick='fetchUsCode("usPYPL.OQ")'>usPYPL.OQ Paypal</b> . <b onclick='fetchUsCode("usKLAC.OQ")'>usKLAC.OQ 科磊</b> . <b onclick='fetchUsCode("usJNPR.N")'>usJNPR.N 瞻博网络</b> . <b onclick='fetchUsCode("usGE.N")'>usGE.N 通用电气</b> . <b onclick='fetchUsCode("usERIC.OQ")'>usERIC.OQ 爱立信</b> . <b onclick='fetchUsCode("usEAR.OQ")'>usEAR.OQ Eargo Inc</b> . <b onclick='fetchUsCode("usDD.N")'>usDD.N 杜邦</b> . <b onclick='fetchUsCode("usCVLT.OQ")'>usCVLT.OQ 康沃系统</b> . <b onclick='fetchUsCode("usCSCO.OQ")'>usCSCO.OQ 思科</b> . <b onclick='fetchUsCode("usCRWD.OQ")'>usCRWD.OQ Crowdstrike Holdings Inc</b> . <b onclick='fetchUsCode("usCRM.N")'>usCRM.N 赛富时</b> . <b onclick='fetchUsCode("usCIEN.N")'>usCIEN.N Ciena科技</b> . <b onclick='fetchUsCode("usCDNS.OQ")'>usCDNS.OQ 楷登电子</b> . <b onclick='fetchUsCode("usAZPN.OQ")'>usAZPN.OQ 艾斯本</b> . <b onclick='fetchUsCode("usAVGO.OQ")'>usAVGO.OQ 博通</b> . <b onclick='fetchUsCode("usATNI.OQ")'>usATNI.OQ Atn International Inc</b> . <b onclick='fetchUsCode("usAMD.OQ")'>usAMD.OQ 美国超微公司</b> . <b onclick='fetchUsCode("usALTR.OQ")'>usALTR.OQ Altair Engineering Inc</b> . <b onclick='fetchUsCode("usAKAM.OQ")'>usAKAM.OQ 阿克迈</b> . <b onclick='fetchUsCode("usACN.N")'>usACN.N 埃森哲</b> . <b onclick='fetchUsCode("usZM.OQ")'>usZM.OQ Zoom视频通讯</b> . <b onclick='fetchUsCode("usWISH.OQ")'>usWISH.OQ Contextlogic Inc</b> . <b onclick='fetchUsCode("usWE.N")'>usWE.N Wework Inc</b> . <b onclick='fetchUsCode("usVOD.OQ")'>usVOD.OQ 沃达丰</b> . <b onclick='fetchUsCode("usTYL.N")'>usTYL.N 泰勒科技</b> . <b onclick='fetchUsCode("usTDS.N")'>usTDS.N 电话和数据系统</b> . <b onclick='fetchUsCode("usSPCE.N")'>usSPCE.N 维珍银河</b> . <b onclick='fetchUsCode("usSNOW.N")'>usSNOW.N Snowflake Inc</b> . <b onclick='fetchUsCode("usSNAP.N")'>usSNAP.N Snap Inc</b> . <b onclick='fetchUsCode("usS.N")'>usS.N Sentinelone Inc</b> . <b onclick='fetchUsCode("usRBLX.N")'>usRBLX.N Roblox Corporation</b> . <b onclick='fetchUsCode("usPINS.N")'>usPINS.N Pinterest Inc</b> . <b onclick='fetchUsCode("usPATH.N")'>usPATH.N Uipath Inc</b> . <b onclick='fetchUsCode("usOPEN.OQ")'>usOPEN.OQ Opendoor Technologies Inc</b> . <b onclick='fetchUsCode("usNOW.N")'>usNOW.N 现在服务公司</b> . <b onclick='fetchUsCode("usNOK.N")'>usNOK.N 诺基亚</b> . <b onclick='fetchUsCode("usMRVL.OQ")'>usMRVL.OQ 迈威尔科技</b> . <b onclick='fetchUsCode("usJMIA.N")'>usJMIA.N Jumia Technologies Ag</b> . <b onclick='fetchUsCode("usINFA.N")'>usINFA.N Informatica Inc</b> . <b onclick='fetchUsCode("usGOOGL.OQ")'>usGOOGL.OQ 谷歌-A</b> . <b onclick='fetchUsCode("usGOOG.OQ")'>usGOOG.OQ 谷歌-C</b> . <b onclick='fetchUsCode("usFVRR.N")'>usFVRR.N Fiverr International Ltd</b> . <b onclick='fetchUsCode("usFSR.N")'>usFSR.N 菲斯克</b> . <b onclick='fetchUsCode("usFFIV.OQ")'>usFFIV.OQ F5</b> . <b onclick='fetchUsCode("usDUOL.OQ")'>usDUOL.OQ 多邻国</b> . <b onclick='fetchUsCode("usDDD.N")'>usDDD.N 3D系统</b> . <b onclick='fetchUsCode("usCTSH.OQ")'>usCTSH.OQ 高知特</b> . <b onclick='fetchUsCode("usCCI.N")'>usCCI.N 冠城国际</b> . <b onclick='fetchUsCode("usAPP.OQ")'>usAPP.OQ Applovin Corp</b> . <b onclick='fetchUsCode("usAMZN.OQ")'>usAMZN.OQ 亚马逊</b> . <b onclick='fetchUsCode("usAMAT.OQ")'>usAMAT.OQ 应用材料</b> . <b onclick='fetchUsCode("usADBE.OQ")'>usADBE.OQ Adobe Inc</b> . <b onclick='fetchUsCode("usWFC.N")'>usWFC.N 富国银行</b> . <b onclick='fetchUsCode("usUSB.N")'>usUSB.N 美国合众银行</b> . <b onclick='fetchUsCode("usJPM.N")'>usJPM.N 摩根大通</b> . <b onclick='fetchUsCode("usHIG.N")'>usHIG.N 美国哈特福德金融</b> . <b onclick='fetchUsCode("usGS.N")'>usGS.N 高盛</b> . <b onclick='fetchUsCode("usCI.N")'>usCI.N 信诺</b> . <b onclick='fetchUsCode("usBAC.N")'>usBAC.N 美国银行</b> . <b onclick='fetchUsCode("usAXP.N")'>usAXP.N 美国运通</b> . <b onclick='fetchUsCode("usAIG.N")'>usAIG.N 美国国际集团</b> . <b onclick='fetchUsCode("usMRK.N")'>usMRK.N 默沙东</b> . <b onclick='fetchUsCode("usMO.N")'>usMO.N 奥驰亚</b> . <b onclick='fetchUsCode("usMDT.N")'>usMDT.N 美敦力</b> . <b onclick='fetchUsCode("usMCD.N")'>usMCD.N 麦当劳</b> . <b onclick='fetchUsCode("usKO.N")'>usKO.N 可口可乐</b> . <b onclick='fetchUsCode("usCVS.N")'>usCVS.N CVS健康</b> . <b onclick='fetchUsCode("usCPB.N")'>usCPB.N 金宝汤</b> . <b onclick='fetchUsCode("usBMY.N")'>usBMY.N 施贵宝</b> . <b onclick='fetchUsCode("usXOM.N")'>usXOM.N 埃克森美孚</b> . <b onclick='fetchUsCode("usWMB.N")'>usWMB.N 威廉姆斯</b> . <b onclick='fetchUsCode("usSO.N")'>usSO.N 美国南方公司</b> . <b onclick='fetchUsCode("usSLB.N")'>usSLB.N 斯伦贝谢</b> . <b onclick='fetchUsCode("usHAL.N")'>usHAL.N 哈里伯顿</b> . <b onclick='fetchUsCode("usGM.N")'>usGM.N 通用汽车</b> . <b onclick='fetchUsCode("usF.N")'>usF.N 福特汽车</b> . <b onclick='fetchUsCode("usEXC.OQ")'>usEXC.OQ 爱克斯龙电力</b> . <b onclick='fetchUsCode("usEP.AM")'>usEP.AM Empire Petroleum Corporation</b> . <b onclick='fetchUsCode("usCVX.N")'>usCVX.N 雪佛龙</b> . <b onclick='fetchUsCode("usAES.N")'>usAES.N AES发电</b> . <b onclick='fetchUsCode("usAEP.OQ")'>usAEP.OQ 美国电力</b> . <b onclick='fetchUsCode("usNWS.OQ")'>usNWS.OQ 新闻集团 Class B</b> . <b onclick='fetchUsCode("usDIS.N")'>usDIS.N 迪士尼</b> . <b onclick='fetchUsCode("usCCU.N")'>usCCU.N 智利CCU啤酒</b> . <b onclick='fetchUsCode("usWY.N")'>usWY.N 惠好</b> . <b onclick='fetchUsCode("usWMT.N")'>usWMT.N 沃尔玛</b> . <b onclick='fetchUsCode("usUPS.N")'>usUPS.N 联合包裹</b> . <b onclick='fetchUsCode("usPG.N")'>usPG.N 宝洁</b> . <b onclick='fetchUsCode("usNSC.N")'>usNSC.N 诺福克南方</b> . <b onclick='fetchUsCode("usMMM.N")'>usMMM.N 3M Company</b> . <b onclick='fetchUsCode("usIP.N")'>usIP.N 国际纸业</b> . <b onclick='fetchUsCode("usHD.N")'>usHD.N 家得宝</b> . <b onclick='fetchUsCode("usEL.N")'>usEL.N 雅诗兰黛</b> . <b onclick='fetchUsCode("usDOW.N")'>usDOW.N 陶氏化学</b> . <b onclick='fetchUsCode("usCL.N")'>usCL.N 高露洁</b> . <b onclick='fetchUsCode("usBA.N")'>usBA.N 波音</b> . <b onclick='fetchUsCode("usAA.N")'>usAA.N 美国铝业公司</b> . <b onclick='fetchUsCode("usUSNA.N")'>USNA.N 优莎娜</b> . <b onclick='fetchUsCode("usUSO.AM")'>USO.AM 美国原油ETF</b> . </pre>
+<h2>End of Page</h2>
+<script>
+      let thestkdata = [];
+      let dateLst = [];
+      let openLst = [];
+      let highLst = [];
+      let lowLst = [];
+      let midLst = [];
+      let closeLst = [];
+      let amtLst = [];
+      let startIntv = 5;
+
+      if (localStorage.getItem("daychartWidth") === null) {
+        localStorage.setItem("daychartWidth", 75);
+        period = 75;
+      } else{
+        period = localStorage.getItem("daychartWidth");
+      }
+      dataStatus = "M"
+      intv1 = startIntv
+      intv2 = 2*intv1
+      intv3 = 4*intv1
+      intv4 = 6*intv1
+      intv5 = 8*intv1
+      intv6 = 9*intv1
+      intv7 = 10*intv1
+      intv8 = 11*intv1
+      intv9 = 12*intv1
+      halfNum = Math.round(intv1/2)
+
+      stkpriceDataArr = [];
+      stkList = 恒指成分.split(' ');
+      stkPointer = 0;
+      theCode = localStorage.randomcode;
+      titleText = "";
+      starti = 0;
+      chartColor = ['white',
+                    'red','#c80','#c60','#c40',
+                    '#0f4','#066','#086','#084',
+                    'purple','purple']
+
+      attentionList = ""
+
+      var options = '';  // build the List select option
+      for (var i = 0; i < allListNames.length; i++) {
+         options += '<option value="' + allListNames[i]+ '">' + allListNames[i] + '</option>';
+      }
+      $("#selectList").html(options);
+
+
+      if (localStorage.getItem("attentionList") === null) {
+        localStorage.attentionList = "07500";
+      } else{
+        attentionList = localStorage.getItem("attentionList").split(',');
+      }
+      //console.log(attentionList)
+
+      // load localStorage.savedCodeList
+      if (localStorage.getItem("savedCodeList") === null) {
+        quickCodeList = ["110000"];
+        localStorage.savedCodeList = quickCodeList;
+      } else{
+        quickCodeList = localStorage.getItem("savedCodeList").split(',');
+      }
+
+
+      // added extra links
+      bigVolHeader = "http://www.etnet.com.hk/www/tc/stocks/realtime/quote_transaction.php?code="
+      shortsellHeader = "http://www.aastocks.com/tc/stocks/analysis/stock-short-selling-ratio.aspx?symbol="
+      newshead = "http://www.aastocks.com/tc/stocks/analysis/stock-aafn/"
+      newstail = "/0/all/1"
+
+      function askforCode() {
+        var tempCode = prompt("Code Number:", "");
+        if (tempCode != null && tempCode != ""){
+
+            codewidth = tempCode.length
+            if(codewidth <= 5){
+              theCode = "00000"+tempCode;
+              codewidth = theCode.length;
+              theCode = theCode.slice(codewidth-5, codewidth);
+              codewidth = theCode.length; //update to be used later
+            }else{
+              theCode = tempCode
+            }
+
+           storeCode(theCode)
+           collectStkData(theCode)  // show turnover and draw
+        }
+      }
+
+      function collectStkData(theCode) {
+
+      storeCode(theCode);
+      $("#turnover").html(
+       '<br><span class="randomBut gold bordred1 borRad10" onclick="askforCode()">号码</span> ' +
+       '<span class="randomBut gold bordred1 borRad10" onclick="jpforward()">Next</span> ' +
+      '<a href="' + bigVolHeader + theCode +'" target="_blank" class="white bordred1 borRad10">大戶</a>' +
+      '<a href="' + newshead + theCode + newstail +'" target="_blank" class="white bordred1 borRad10">資料</a>' +
+      '<a href="' + shortsellHeader + theCode + '" target="_blank" class="white bordred1 borRad10">沽空</a> '
+      );
+
+        //if(isNaN(theCode.substring(0, 1))){  // is it character}
+        if( theCode.substring(0, 2) == "us"){
+              theurl = 'https://web.ifzq.gtimg.cn/appstock/app/usfqkline/get?_var=kline_dayqfq&param=' + theCode + ',day,,,1000,qfq';
+              imageCode = theCode
+        }else{
+
+          if(theCode == "110000"){
+             theCode = "HSI"; imageCode = "110000"
+          }
+
+          codewidth = theCode.length
+          if(theCode == "HSI"){
+              theurl = 'https://web.ifzq.gtimg.cn/appstock/app/hkfqkline/get?_var=kline_dayqfq&param=hk' + theCode + ',day,,,1000,qfq';
+              imageCode = "110000"
+          }else{
+            if(codewidth <= 5){
+              theCode = "00000"+theCode;
+              codewidth = theCode.length;
+              theCode = theCode.slice(codewidth-5, codewidth);
+              codewidth = theCode.length; //update to be used later
+              theStartCode = theCode
+              imageCode = theCode
+              theurl = 'https://web.ifzq.gtimg.cn/appstock/app/hkfqkline/get?_var=kline_dayqfq&param=hk' + theCode + ',day,,,1000,qfq';
+            }else{
+              codewidth = theCode.length
+              if((codewidth == 6) && !hsReservedCode.includes(theCode)){
+                 if (theCode.charAt(0) == "6"){
+                    imageCode = theCode+".sh"; // note this comes before following line
+                    theCode = "sh"+theCode; 
+                 }else{
+                    imageCode = theCode+".sz";
+                    theCode = "sz"+theCode
+                 }
+                 theStartCode = theCode
+                 theurl = 'https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?_var=kline_dayqfq&param=' + theCode + ',day,,,1000,qfq';
+              }else if(codewidth == 9){
+                imageCode = theCode
+                theCode = theCode.substring(7, 9) + theCode.substring(0, 6);
+                theStartCode = theCode
+
+                theurl = 'https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?_var=kline_dayqfq&param=' + theCode + ',day,,,1000,qfq';
+              }else{
+                theurl = 'https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?_var=kline_dayqfq&param=' + theCode + ',day,,,1000,qfq';
+                theStartCode = theCode
+                imageCode = theCode
+              }
+            }
+          }
+        }
+          theStartCode = theCode;
+        document.getElementById("image").innerHTML = '<img src="http://charts.aastocks.com/servlet/Charts?fontsize=12&15MinDelay=F&lang=1&titlestyle=1&vol=1&Indicator=3&indpara1=3&indpara2=6&indpara3=9&indpara4=12&indpara5=15&subChart1=3&ref1para1=7&ref1para2=10&ref1para3=3&subChart2=3&ref2para1=12&ref2para2=26&ref2para3=9&subChart3=7&ref3para1=7&ref3para2=5&ref3para3=0&subChart4=7&ref4para1=11&ref4para2=8&ref3para3=0&subChart5=13&ref4para1=0&ref4para2=0&ref4para3=0&scheme=3&com=100&chartwidth=1200&chartheight=760&stockid='+ imageCode +'&period=6&type=1&logoStyle=1" onclick = \"xunbao(\'' + imageCode + '\')\">'
+
+
+          thestkdata = [];
+          thedrawdata = [];
+          dateLst = [];
+          openLst = [];
+          highLst = [];
+          lowLst = [];
+          midLst = [];
+          closeLst = [];
+          amtLst.length = 0;
+      
+          RGraph.AJAX.getJSON(theurl, function (rawJSON){
+              var keys = Object.keys(rawJSON); // read the structure keys ["code", "msg", "data"]
+
+              var insideDatakey = Object.keys(rawJSON)[2] //
+              // myobj[Object.keys(myobj)[0]] this is the extract method
+      
+              var thedata = rawJSON[Object.keys(rawJSON)[2]]
+              thestkkey = Object.keys(thedata)[0] // this is the stk key name
+              var tempdata = thedata[Object.keys(thedata)[0]];
+              thestkdata = tempdata[Object.keys(tempdata)[0]]; // real data here, this is whole dataset
+
+              if(thestkdata.length == 0){alert("no data in: " + thestkkey)}
+
+              for(i=(thestkdata.length-12);i<thestkdata.length;i++){
+                    thedate = thestkdata[i][0];  // date
+                    if(codewidth <= 5){
+                      theAmtIdx = 8;
+                    }else{
+                      theAmtIdx = 5;
+                    }
+                    theamt = Math.round(Number(thestkdata[i][theAmtIdx]));
+                    if(codewidth > 5){
+                      if(theCode.slice(0, 5) == "sh688"){
+                        theamt = Math.round(theamt * Number(thestkdata[i][2])/10000);
+                      }else{
+                        theamt = Math.round(theamt * Number(thestkdata[i][2])/100);
+                      }
+                    }
+                    theamt = theamt.toString().replace(/\B(?=(\d{4})+(?!\d))/g, ",");
+                    $("#turnover").prepend( theamt,"w ");
+                  }
+      
+              theNameObj = tempdata[Object.keys(tempdata)[1]];
+              theNameObjName  = theNameObj[Object.keys(theNameObj)[0]];
+              stkName = theNameObjName[1]
+      
+              /* data is arranged in days array, tempdata[320] is last set
+              tempdata[320][0]  // date
+              tempdata[320][1]  // open
+              tempdata[320][3]  // high
+              tempdata[320][4]  // low
+              tempdata[320][2]  // close */
+      
+                //period + intv1, the chartwidth + max trend interval
+              starti = thestkdata.length - (parseInt(period) + parseInt(intv1)) -5; 
+              if(starti <= 0){
+                  alert(theStartCode + " " + stkName +" not enough data! dataLength: " + thestkdata.length);
+                  return;
+              }
+
+              for (let i = starti; i < thestkdata.length; i++) {
+                  dateLst.push(thestkdata[i][0]);
+                  openLst.push(Number(thestkdata[i][1]));
+                  highLst.push(Number(thestkdata[i][3]));
+                  lowLst.push(Number(thestkdata[i][4]));
+                  midLst.push((Number(thestkdata[i][3]) + Number(thestkdata[i][4]))/2);
+                  closeLst.push(Number(thestkdata[i][2]));
+                  amtvalue = "&emsp;" + Math.round(Number(thestkdata[i][8])).toString().replace(/\B(?=(\d{4})+(?!\d))/g, ",") +"w ";
+                  amtLst.push(amtvalue);
+              }
+
+              if(dataStatus == "C"){ stkpriceDataArr = closeLst
+              }else if(dataStatus == "L"){ stkpriceDataArr = lowLst
+              }else if(dataStatus == "M"){ stkpriceDataArr = midLst
+              }else { stkpriceDataArr = highLst}
+
+              redraw();  // this line must be inside the AJAX because AJAX run last
+           });
+
+           showDateTime();
+           $("#dateTime").prepend("Item " + (stkPointer+1) + " of " + stkList.length + ", ");
+
+           //showActivity(theCode)
+           window.scrollTo(0,0);
+
+      }
+
+     function chkKey() {
+       var testkey = getChar(event);
+       if(testkey == '0'){ theCode = '000001.sh'; collectStkData('000001.sh');}
+       else if(testkey == '3'){ theCode = '399001.sz'; collectStkData('399001.sz');}
+       else if(testkey == '1'){ theCode = '110000'; collectStkData('HSI');}
+       else if(testkey == '2'){ theCode = '02013'; collectStkData('02013');}
+       else if(testkey == '4'){ theCode = '01766'; collectStkData('01766');}
+       else if(testkey == '5'){ theCode = '02009'; collectStkData('02009');}
+       else if(testkey == '6'){ theCode = '01186'; collectStkData('01186');}
+       else if(testkey == '7'){ theCode = '00788'; collectStkData('00788');}
+       else if(testkey == '8'){ theCode = '00308'; collectStkData('00308');}
+       else if(testkey == '9'){ theCode = '00390'; collectStkData('00390');}
+       else if(testkey == 'u'){ theCode = 'us.DJI'; collectStkData('us.DJI');}
+       else if(testkey == 'n'){ theCode = 'us.IXIC'; collectStkData('us.IXIC');}
+       else if(testkey == 'J'){ theCode = 'us.INX'; collectStkData('us.INX');}
+       else if(testkey == 'U'){ $('#usstock').toggle(); window.location = '#usstock';}
+       else if(testkey == 'c'){askforCode();}
+       else if(testkey == '+'){addToquickCodeList();}
+       else if(testkey == 'q'){myfavor();}
+       else if(testkey == 'Q'){usequickCodeList();}
+       else if(testkey == 'B'){usestkListArr();}
+
+       // if(testkey == '+'){addToAttentionList();}
+       else if(testkey == '-'){removeFmquickCodeList();}
+       else if(testkey == 'X'){storeCode(theCode); window.open("Random Charts.html");}
+       else if(testkey == '.'){storeCode(theCode); window.open("mlineMinutechart.html");}
+
+       else if(testkey == 'a'){useAttentionList();}
+       else if(testkey == 'f'){jpforward();}
+       else if(testkey == ']'){jpforward();}
+       else if(testkey == 'b'){jpback();}
+       else if(testkey == '['){jpback();}
+       else if(testkey == 'r'){jprandom();}
+       else if(testkey == 'w'){window.scrollTo(0,0);}
+       //else if(testkey == 'D'){window.location = '#image';}
+       else if(testkey == 'd'){xunbao(localStorage.randomcode);}
+
+       else if(testkey == 'l'){window.location = '#endpage';console.log("l: ");}
+       else if(testkey == 'i'){chgIntv();}
+       else if(testkey == 'W'){chgchartWidth();}
+       else if(testkey == 'j'){period = 300; intv1 = 30; collectStkData(theCode);}
+       else if(testkey == 'k'){period = 50; intv1 = 2; collectStkData(theCode);}
+
+       else if(testkey == 'C'){chgCloseLst();}
+       else if(testkey == 'L'){askList()}
+       else if(testkey == 'z'){largeCht()}
+       else if(testkey == 't'){setTabWidth()}
+       else if(testkey == 'e'){window.location = '#commands';
+            window.scrollTo(window.scrollX, window.scrollY + 2000);}
+       else if(testkey == 's'){window.location = '#accel';
+            window.scrollTo(window.scrollX, window.scrollY - 500);}
+       else if(testkey == 'E'){window.location = '#filterMarkers';}
+       else{chkOtherKeys(testkey)} 
+     }
+
+     function getChar(event) {
+       if (event.which!=0 && event.charCode!=0) {
+         return String.fromCharCode(event.which)   // the rest
+       } else {
+         return null // special key
+       }
+     }
+
+     function xunbao(xunbaocode) {
+       localStorage.setItem("randomcode", xunbaocode)
+       localStorage.setItem("otherCode", xunbaocode)
+       localStorage.setItem("stkCode", xunbaocode)
+       window.open("Random Charts.html");
+     }
+
+	function fillLineData() {
+      var dataArr = prompt("Enter data array sep by space:", "");
+      if (dataArr != null && dataArr != "") {
+        dataArrArr = dataArr.split(' ');
+
+        stkpriceDataArr = dataArrArr.map(Number);
+        redraw()
+      }
+     }
+
+      function addToquickCodeList() {
+        codewidth = theCode.length
+        if(codewidth <= 5){
+          theCode = "00000"+theCode;
+          codewidth = theCode.length;
+          theCode = theCode.slice(codewidth-5, codewidth);
+        }
+        if (!quickCodeList.includes(theCode)) {
+          quickCodeList.push(theCode);
+          quickCodeList = Array.from(new Set(quickCodeList)); // set unique
+          localStorage.savedCodeList = quickCodeList;
+          alert(theCode + " added to quickCodeList")
+        }else{alert(theCode + " already exist!")}
+      }
+
+    function usequickCodeList() {
+        stkList = quickCodeList;
+        alert("quickCodeList Total: " + quickCodeList.length + "\ndetails see end of this page.\nremember to modify mustadd list!")
+        $("#message").text("quickCodeList Total: " + quickCodeList.length + "\n"+stkList);
+    }
+
+    function usestkListArr() {
+      stkListArr = localStorage.getItem("stkListArr")
+      if (stkListArr === null) {
+         stkList = quickCodeList;
+      } else{
+         stkList = stkListArr;
+      }
+        alert("Use stkListArr, Total: " + stkListArr.length + " : "+stkListArr)
+        $("#message").text("stkListArr Total: " + stkListArr.length + "\n"+stkList);
+    }
+
+	function addToAttentionList() {
+            codewidth = theCode.length
+            if(codewidth <= 5){
+              theCode = "00000"+theCode;
+              codewidth = theCode.length;
+              theCode = theCode.slice(codewidth-5, codewidth);
+              codewidth = theCode.length; //update to be used later
+            }
+
+        attentionList.push(theCode)
+        attentionList = [...new Set(attentionList)]; // set unique
+
+        ItemIndex = attentionList.indexOf("");  // remove empty items
+        if (ItemIndex > -1) { attentionList.splice(ItemIndex, 1); }
+
+        localStorage.setItem("attentionList", attentionList);
+        alert(theCode + " added to attentionList!")
+     }
+	function removeFmquickCodeList() {
+        ItemIndex = quickCodeList.indexOf(theCode);
+        if (ItemIndex > -1) { quickCodeList.splice(ItemIndex, 1); }
+        quickCodeList = [...new Set(quickCodeList)]; // set unique
+        localStorage.setItem("quickCodeList", quickCodeList);
+        alert(theCode + " removed fm quickCodeList!")
+   }
+
+     function redraw() { // includes main chart and aux charts
+        initIntvSteps()
+        titleText = showDate() +" "+ showTime()+", p1: "+intv1 +" w: "+(thestkdata.length-starti) +"\n"+theStartCode + " " + stkName + " 日線 ";
+        $("#amtLst").html("Amt: ".concat(amtLst.slice((amtLst.length-14),amtLst.length).join("")));
+
+ 
+        RGraph.reset(document.getElementById('cvs'));
+
+        stkpriceDataArrC = closeLst
+        stkpriceDataArrL = lowLst
+        stkpriceDataArrM = midLst
+        stkpriceDataArrH = highLst
+        stdDevH = makeStd(highLst, intv3)
+        stdDevL = makeStd(lowLst, intv3)
+
+specialBackUp = lowLst.slice();  // backup array to avoid shadow changes
+        newDevadd = makeMovAve(stkpriceDataArrM, intv3).map((a, i) => a + stdDevH[i]);
+        newDevminus = makeMovAve(stkpriceDataArrM, intv3).map((a, i) => a - stdDevL[i]);
+
+        mydata = [ stkpriceDataArrM]
+
+          mydata.push(stkpriceDataArrH)
+          mydata.push(makeMovAve(stkpriceDataArrH, halfNum))
+          mydata.push(makeMovAve(stkpriceDataArrH, intv1))
+          mydata.push(makeMovAve(stkpriceDataArrH, intv2))
+          //mydata.push(makeMovAve(mydata[1], intv3))
+          //mydata.push(makeMovAve(mydata[1], intv4))  // line 6
+
+          mydata.push(stkpriceDataArrL) // line 6, index 5
+          mydata.push(makeMovAve(stkpriceDataArrL, halfNum))
+          mydata.push(makeMovAve(stkpriceDataArrL, intv1))
+          mydata.push(makeMovAve(stkpriceDataArrL, intv2))
+          //mydata.push(makeMovAve(mydata[5], intv3))
+          // mydata.push(makeMovAve(mydata[5], intv4))
+
+          //mydata.push(makeMovAve(mydata[1], intv8))
+          mydata.push(newDevadd)
+          mydata.push(newDevminus)  // line 8
+        theMax = Math.max(...[].concat(...mydata));
+        theMin = Math.min(...[].concat(...mydata));
+
+        thedrawdata = mydata
+        //thedrawdata.push(makeMovAve(thedrawdata[2], intv1));  // add one line to check results
+
+        thedrawdata[1] = thedrawdata[1].fill(null,0,0)
+        thedrawdata[2] = thedrawdata[2].fill(null,0,halfNum)
+        thedrawdata[3] = thedrawdata[3].fill(null,0,intv1)
+        thedrawdata[4] = thedrawdata[4].fill(null,0,intv2)
+
+        thedrawdata[5] = thedrawdata[5].fill(null,0,0)
+        thedrawdata[6] = thedrawdata[6].fill(null,0,halfNum)
+        thedrawdata[7] = thedrawdata[7].fill(null,0,intv1)
+        thedrawdata[8] = thedrawdata[8].fill(null,0,intv2)
+
+        thedrawdata[9] = thedrawdata[9].fill(null,0,intv3)
+        thedrawdata[10] = thedrawdata[10].fill(null,0,intv3)
+
+        //thedrawdata[11] = thedrawdata[11].fill(null,0,intv3)
+        //thedrawdata[12] = thedrawdata[12].fill(null,0,intv1)  // add one line 
+
+lowLst = specialBackUp  // recover data
+
+statusMsg = '<br><span class="red">price '+ mydata[0].slice(-1)[0].toFixed(3) +
+'</span>, <span class="darkgreen">intvS '+ mydata[1].slice(-1)[0].toFixed(3) +
+'</span>, <span class="blue">intvL '+ mydata[2].slice(-1)[0].toFixed(3) +
+'</span>, <span class="purple">Top '+ mydata[3].slice(-1)[0].toFixed(3) +
+'</span>, <span class="yellow">Bottom '+ mydata[4].slice(-1)[0].toFixed(3) +
+'</span>, <span class="darkgreen">IntvS '+ intv1 +
+'</span>, <span class="blue">IntvL '+ intv2 +
+'</span>'
+
+$("#lastValues").text("");
+$("#lastValues").append(statusMsg);
+
+       drawchart()
+
+		// create datalog table
+		 transp = transpose(mydata);
+            wAveTrendRange = [];  // this is the gap diff
+		  for (var row=0; row < transp.length; row++) {
+		    rowRange = transp[row].slice(1, mydata.length);
+      	    rowMax = Math.max(...rowRange);
+      	    rowMin = Math.min(...rowRange);
+      	    var rowDiff = rowMax - rowMin;
+      	    wAveTrendRange.push(rowDiff);
+      	  }
+
+		wAveTrendRange.fill(null,0,intv3);
+		wAvemax = Math.max(...wAveTrendRange);
+		wAvemin = Math.min(...wAveTrendRange);
+		drawTrend(wAveTrendRange, wAvemax, wAvemin, 'TP');
+
+		// find derivative
+		derivative = diff(makeMovAve(mydata[0], 3));
+		derivative.unshift(0);
+		derivative.fill(null,0,intv1+3); //array.fill(value, start, end)
+
+		// diffaccel
+		// diffaccel = thedrawdata[baseSubIdx].map(function(item, index) { return item - thedrawdata[baseMinuIdx][index]; })
+		diffaccel = []
+		diffaccel.push(thedrawdata[1].map(function(item, index) { return item - thedrawdata[9][index]; }))
+		diffaccel.push(thedrawdata[2].map(function(item, index) { return item - thedrawdata[9][index]; }))
+		diffaccel.push(thedrawdata[3].map(function(item, index) { return item - thedrawdata[9][index]; }))
+		diffaccel.push(thedrawdata[4].map(function(item, index) { return item - thedrawdata[9][index]; }))
+		diffaccel.push(thedrawdata[5].map(function(item, index) { return item - thedrawdata[9][index]; }))
+		diffaccel.push(thedrawdata[6].map(function(item, index) { return item - thedrawdata[9][index]; }))
+		diffaccel[0].fill(null,0,intv3); //array.fill(value, start, end)
+		diffaccel[1].fill(null,0,intv3); //array.fill(value, start, end)
+		diffaccel[2].fill(null,0,intv3); //array.fill(value, start, end)
+		diffaccel[3].fill(null,0,intv3); //array.fill(value, start, end)
+		diffaccel[4].fill(null,0,intv3); //array.fill(value, start, end)
+		diffaccel[5].fill(null,0,intv3); //array.fill(value, start, end)
+
+		diffaccMax = Math.max(...[].concat.apply([], diffaccel));
+		diffaccMin = Math.min(...[].concat.apply([], diffaccel));
+		drawTrend(diffaccel, diffaccMax, diffaccMin, 'accel');
+
+
+		// ddiffaccel
+		ddiffaccel = []
+		ddiffaccel.push(diffaccel[0].map(function(item, index) { return item - diffaccel[1][index]; }))
+		ddiffaccel.push(diffaccel[1].map(function(item, index) { return item - diffaccel[2][index]; }))
+		ddiffaccel.push(diffaccel[2].map(function(item, index) { return item - diffaccel[3][index]; }))
+		//ddiffaccel.push(diffaccel[3].map(function(item, index) { return item - diffaccel[4][index]; }))
+		//ddiffaccel.push(diffaccel[4].map(function(item, index) { return item - diffaccel[5][index]; }))
+		//ddiffaccel[0].fill(null,0,intv3); //array.fill(value, start, end)
+		//ddiffaccel[1].fill(null,0,intv3); //array.fill(value, start, end)
+		//ddiffaccel[2].fill(null,0,intv3); //array.fill(value, start, end)
+		//ddiffaccel[3].fill(null,0,intv3); //array.fill(value, start, end)
+		//ddiffaccel[4].fill(null,0,intv3); //array.fill(value, start, end)
+
+		ddiffaccMax = Math.max(...[].concat.apply([], ddiffaccel));
+		ddiffaccMin = Math.min(...[].concat.apply([], ddiffaccel));
+		drawTrend(ddiffaccel, ddiffaccMax, ddiffaccMin, 'accaccel');
+
+		// find stoch
+		stoch1 = makeStoch(mydata[0], 50)
+		stochmax1 = Math.max(...stoch1);
+		stochmin1 = Math.min(...stoch1);
+		drawTrend(stoch1, stochmax1, stochmin1, '强弱50');
+
+
+        // evaluate B/S
+        lastdayPtr = mydata[0].length-1
+        statBegin = lastdayPtr - 29
+        actionStr = ""
+        for (var i = statBegin; i < (lastdayPtr+1); i++) {
+          // define references
+          Mvalue = mydata[0][i]
+          Hvalue = mydata[1][i]
+          Lvalue = mydata[5][i]
+          hRefvalue = mydata[2][i]
+          lRefvalue = mydata[6][i]
+          h2Refvalue = mydata[3][i]
+          l2Refvalue = mydata[7][i]
+          acRefvalue = diffaccel[1][i]
+          // compare indicators
+          Hdiff = (Hvalue - hRefvalue).toFixed(2)
+          Ldiff = (Lvalue - lRefvalue).toFixed(2)
+          H2diff = (Hvalue - h2Refvalue).toFixed(2)
+          L2diff = (Lvalue - l2Refvalue).toFixed(2)
+          Mhdiff = (Mvalue - h2Refvalue).toFixed(2)
+          Mldiff = (Mvalue - l2Refvalue).toFixed(2)
+          acdiff = (diffaccel[0][i] - diffaccel[0][i-1]).toFixed(2)
+          ac1diff = (diffaccel[0][i] - diffaccel[1][i]).toFixed(2)
+
+          Mdiff = (mydata[0][i] - mydata[0][i-1]).toFixed(2)
+
+          if(Hdiff >0){Hdiff = "<span class='red'>" +Hdiff + "</span>"}
+          if(Ldiff >0){Ldiff = "<span class='red'>" +Ldiff + "</span>"}
+          if(H2diff >0){H2diff = "<span class='red'>" +H2diff + "</span>"}
+          if(L2diff >0){L2diff = "<span class='red'>" +L2diff + "</span>"}
+
+          if(Mhdiff >0){Mhdiff = "<r>" +Mhdiff + "</r>"}
+          else{Mhdiff = "<gr>" +Mhdiff + "</gr>"}
+          if(Mldiff >0){Mldiff = "<r>" +Mldiff + "</r>"}
+          else{Mldiff = "<gr>" +Mldiff + "</gr>"}
+
+          if(Mdiff >0){Mdiff = "<r>" +Mdiff + "</r>"}
+          else{Mdiff = "<gr>" +Mdiff + "</gr>"}
+
+          if(acdiff >0){acdiff = "<r>" +acdiff + "</r>"}
+          else{acdiff = "<gr>" +acdiff + "</gr>"}
+          if(ac1diff >0){ac1diff = "<r>" +ac1diff + "</r>"}
+          else{ac1diff = "<gr>" +ac1diff + "</gr>"}
+
+          closeValue = lowLst[i]
+          dateValue = dateLst[i].slice(5)
+
+          // decision conditions
+          actionStr = actionStr + dateValue + " C: " + closeValue +"\tHd: " + Hdiff + "\tLd: " + Ldiff + "\tH2d: " + H2diff + "\tL2d: " + L2diff + "\tMd: " + Mdiff + "\tacd: " + acdiff + "\tac1d: " + ac1diff + "<br>" 
+
+          if(Hdiff>0){action = "buy"}
+        }
+        explanationStr = "<gr>h2d: h2 diff, l2d: L2 diff, md: M diff, acd: acc0 diff, ac1d: acc0 diff</gr>"
+        actionStr = "<pre>" + actionStr + explanationStr+"</pre>"
+        $("#actions").html(actionStr);
+
+        drawOHLC()
+        drawlinechart()
+     }
+
+	function makeMovAve(bigArray, intv) {
+	     // the intv-1 is correct
+		return bigArray.slice(0, intv-1).concat(calcMovAve(bigArray, intv));
+	}
+	function calcAve(aveArray) {
+		add = (a, b) =>  a + b;
+		return aveArray.reduce(add) / aveArray.length;
+	}
+	
+	function calcMovAve(bigArray, intv) {
+		var ma = [];
+		for (var i =0 ; i < (bigArray.length-intv+1); i++) {ma[i] = calcWAve(bigArray.slice(i, i+intv));} // points to indicator
+		return ma;
+	}
+	function calcWAve(aveArray) {
+		var sum = 0
+		for( var i = 1; i <= aveArray.length; i++ ) {
+			sum += aveArray[i-1] * i;
+		}
+		return (sum / ((1 + aveArray.length)*aveArray.length/2))
+	}
+
+	function makeStoch(bigArray, intv) {
+	     tempArr = bigArray.slice(0, intv-1).concat(calcStoch(bigArray, intv));
+		return tempArr.fill(50,0,intv-1)
+	}
+
+	function calcStoch(bigArray, intv) {
+		var stc = [];
+		for (var i =0 ; i < (bigArray.length-intv+1); i++) {
+			stc[i] = calc1Stoch(bigArray.slice(i, i+intv));
+		}
+		return stc;
+	}
+
+	function calc1Stoch(stcArray) {
+			stcMax = Math.max(...stcArray)
+			stcMin = Math.min(...stcArray)
+			lastVal = stcArray[stcArray.length - 1]
+			stcRange = stcMax - stcMin
+			if(stcRange == 0){
+				stcVal = 50
+			}else{
+				stcVal = 100*(lastVal - stcMin) / stcRange
+			}
+			return stcVal
+	}
+
+	function makeStd(bigArray, intv) {
+	     // the intv-1 is correct
+          newArray = new Array(intv-1).fill(0)
+		newArray = newArray.concat(calcStd(bigArray, intv));
+		return newArray
+	}
+
+	function calcStd(bigArray, intv) {
+		var stdArrar = [];
+		for (var i =0 ; i < (bigArray.length-intv+1); i++) {stdArrar[i] = Std(bigArray.slice(i, i+intv));} // points to indicator
+		return stdArrar;
+	}
+
+	function Std(array) {
+	  const n = array.length
+	  const mean = array.reduce((a, b) => a + b) / n
+	  return Math.sqrt(array.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n)
+	}
+
+	function transpose(thisArr) { // Swap rows with columns of a matrix
+	    return Object.keys(thisArr[0]).map(function(column) {
+	        return thisArr.map(function(row) { return row[column]; });
+	    });
+	}
+
+    function useAttentionList() {
+        stkList = attentionList;
+        alert("AttentionList Total: " + attentionList.length + "\ndetails see end of this page.\nremember to modify mustadd list!")
+        $("#message").text("Total: " + attentionList.length + "\n"+stkList);
+    }
+
+    function myfavor() {
+        myfavorLst = mychips.split(" ");
+        stkList = myfavorLst;
+        alert("mychips Total: " + myfavorLst.length + "\ndetails see end of this page.\nremember to modify mustadd list!")
+        $("#message").text("mychips Total: " + myfavorLst.length + "\n"+stkList);
+    }
+
+    function askList() {
+        var theList = prompt("CodeList, Number (5 digits) sep by space： ", "");
+        if (theList != null && theList != "HSI" && theList != "") {
+            stkList = theList.split(" ");
+            alert("Supplied List Total: " + stkList.length + "\ndetails see end of this page.\nremember to modify mustadd list!")
+            $("#message").text("Supplied List Total: " + stkList.length + "\n"+stkList);
+        }
+    }
+
+    function FormatNumberLength5(num) {
+        var r = "" + num;
+        while (r.length < 5) { r = "0" + r; }
+        return r;
+    }
+
+    function jpforward() {
+        if (stkPointer < stkList.length-1) {
+            stkPointer = stkPointer + 1;
+        } else {
+            stkPointer = 0;
+        }
+        theCode = stkList[stkPointer];
+         collectStkData(theCode)
+    }
+
+    function jpback() {
+        if (stkPointer > 0) {
+            stkPointer = stkPointer - 1;
+        } else {
+            stkPointer = stkList.length-1;
+        }
+        theCode = stkList[stkPointer];
+         collectStkData(theCode)
+    }
+    function jprandom() {
+        stkPointer = Math.floor(Math.random() * (stkList.length-1))
+        theCode = stkList[stkPointer]
+         collectStkData(theCode)
+    }
+
+    function jpTo0() {
+        stkPointer = 0;
+        theCode = stkList[stkPointer]
+        collectStkData(theCode)
+    }
+
+    function storeCode(theCode) {
+        if(typeof(Storage) !== "undefined") {
+            localStorage.randomcode = theCode;
+        }
+    }
+
+
+    function chgchartWidth() {
+        newChartWidth = prompt("enter chart width:", "");
+        if (newChartWidth != null && newChartWidth != "" && newChartWidth < (1000 - 2*intv1)){
+          period = parseInt(newChartWidth);
+          localStorage.setItem("daychartWidth", period);
+          collectStkData(theCode);
+        }
+
+    }
+    function chgIntv() {
+        intv = prompt("intv1 value:", "");
+        if (theCode != null && intv1 != ""){
+          intv1 = parseInt(intv);
+          initIntvSteps()
+          redraw()
+        }
+    }
+    function initIntvSteps() {
+      halfNum = Math.round(intv1/2)
+      intv2 = 2*intv1
+      intv3 = 4*intv1
+      intv4 = 6*intv1
+      intv5 = 8*intv1
+      intv6 = 9*intv1
+      intv7 = 10*intv1
+      intv8 = 11*intv1
+      intv9 = 12*intv1
+    }
+    function setTabWidth() {
+        tabWidth = prompt("set tab width:", "");
+        if (tabWidth != null && tabWidth != ""){
+          tabWidth = parseInt(tabWidth);
+          document.getElementById("actions").style.tabSize = tabWidth;
+        }
+    }
+
+    function chgHighList() {
+        dataStatus = "H"
+        redraw()
+    }
+    function chgLowList() {
+        dataStatus = "L"
+        redraw()
+    }
+    function chgMidList() {
+        dataStatus = "M"
+        redraw()
+    }
+    function chgCloseLst() {
+        dataStatus = "C"
+        redraw()
+    }
+
+    function largeCht() {
+        imgHead = "http://charts.aastocks.com/servlet/Charts?fontsize=12&15MinDelay=F&lang=1&titlestyle=1&vol=1&Indicator=3&indpara1=3&indpara2=5&indpara3=10&indpara4=15&indpara5=20&subChart2=3&ref2para1=12&ref2para2=26&ref2para3=9&subChart3=12&ref3para1=0&ref3para2=0&ref3para3=0&scheme=3&com=100&chartwidth=1600&chartheight=900&stockid=";
+
+        imgTail = "&period=2060&type=1&logoStyle=1"
+        imgURL = imgHead + theCode + imgTail
+        window.open(imgURL, "_blank")
+    }
+
+function assignList(){
+  newList = eval(document.getElementById("selectList").value).split(" ");
+  stkList = newList;
+  codeList = newList;
+  // console.log(newList)
+
+  document.getElementById("message").focus();
+  alert(" Total: " + stkList.length + "\ndetails see end of this page.\nremember to modify mustadd list!\n" + newList)
+        $("#message").text("Total: " + stkList.length + "\n"+stkList);
+  $('#selectList').blur()
+
+}
+
+function showDateTime() {
+    cmtCode = theCode // use another name not to interfere other parts
+    var cmtcodewidth = cmtCode.length
+    if(cmtcodewidth <= 5){
+      cmtCode = "00000"+cmtCode;
+      cmtcodewidth = cmtCode.length;
+      cmtCode = cmtCode.slice(cmtcodewidth-5, cmtcodewidth);
+    }
+    else if(cmtcodewidth == 8){ cmtCode = cmtCode.slice(2, 8); }
+    else if(cmtcodewidth == 9){ cmtCode = cmtCode.slice(0, 6); }
+    commentName = "j" + cmtCode;
+
+    CommentListNames = Object.keys(theCommentList); // extract the names from comments
+    // to show comments
+    if(CommentListNames.includes(commentName)){
+      cmtLocation = CommentListNames.indexOf(commentName);
+      commentTxt = theCommentList[Object.keys(theCommentList)[cmtLocation]]
+    }else{commentTxt = "No data!";}
+
+    document.getElementById("dateTime").innerHTML ="<span class='orange'>" + commentTxt + "</span>";
+}
+
+    function drawchart() {
+      listItems = []
+      if(dataStatus == "C"){ tooltips = closeLst
+      }else if(dataStatus == "L"){ tooltips = lowLst
+      }else if(dataStatus == "M"){ tooltips = midLst
+      }else { tooltips = highLst}
+
+      dataTooltips = tooltips.map(item => Math.round(item * 1000) / 1000)
+      for (index = 0; index < dataTooltips.length; index++) {
+        listItems[index] = dateLst[index] + "<br><span class='red'>" + dataStatus + "</span>: " + dataTooltips[index];
+      }
+
+      dataTooltips = dataTooltips.map(String)
+
+      var line = new RGraph.Line({
+        id:'cvs',
+        data: thedrawdata,
+        options: {
+			title: titleText + " " + "MHL + trends",
+			titleColor: 'grey',
+			titleSize: 20,
+               colors: chartColor,
+            backgroundGrid: true, backgroundGridVlines: true,
+            backgroundGridColor: '#001000', backgroundGridBorder: false,
+            // backgroundGridDotted: true,
+            backgroundGridDashed: true, 
+            axisColor: '#864',  scaleDecimals: 2,
+            xaxis: true,
+            //xaxisLabels: ["a","b","c","d"],
+            textColor: '#ccc',
+            tickmarks: 'plus',
+            ticksize: 1,
+            linewidth:1,
+			ymax: theMax,
+			ymin: theMin,
+      // labels control the number of grids
+            // labels: ['2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018'],
+            spline: false,
+            shadow: false,
+            tooltips: listItems,
+            gutterLeft: 0, gutterRight: 50,
+            gutterTop: 25, gutterBottom: 25
+            }
+          }).trace();
+
+		yminpct = 100 - (theMax-theMin)*100/theMax,
+		ymaxpct = 100,
+
+          yaxis1 = new RGraph.Drawing.YAxis('cvs', 1200)
+                .Set('colors', ['gold'])
+                .Set('text.color', 'gray')
+                .Set('text.size', 8)
+                .Set('max', ymaxpct)
+                .Set('min', yminpct)
+                .Set('linewidth', 2)
+                .Set('tickmarkslength', 5)
+                .Set('title', '% pct')
+                .Draw();
+
+    };
+
+    function drawTrend(therange,maxValue, minValue, chartID) {
+       // dataTooltips = therange.map(item => Math.round(item * 1000) / 1000)
+       // dataTooltips = dataTooltips.map(String)
+       RGraph.reset(document.getElementById(chartID));
+       line = new RGraph.Line({
+       	id:chartID, data:therange,
+       	options: {
+       		title: chartID + ", "+theStartCode + " " + stkName,
+    			titleColor: 'grey', 
+    			titleSize: 10,
+       		backgroundGrid: true, axisColor: '#864', textColor: '#ccc',
+    		numxticks: 0, colors: chartColor, scaleDecimals: 2,
+
+       		tickmarksDotLinewidth: 0,ticksize: 1, linewidth: 1, 
+       		ymax: maxValue, ymin: minValue,
+               tickmarks: 'plus',
+
+       		spline: false, shadow: false,
+              // tooltips: dataTooltips,
+			backgroundGridVlines: true,
+			backgroundGridDashed: true, 
+       		backgroundGridColor: '#001000',
+       		gutterLeft: 0, gutterRight: 50, gutterTop: 25, gutterBottom: 25
+       	}
+       }).trace();
+    };
+    
+    function diff(arr) {
+      return arr.slice(1).map(function(n, i) { return n - arr[i]; });
+    }
+
+function showActivity(thecode){
+    markers = filterResult.filter(element => element.includes(thecode));
+    // clean the h2 tags
+    markers = markers.map(element => element.replace(/<\/h2>.*/gi, ""))
+    markers = markers.map(element => element.replace(/<h2>/gi, ""))
+
+    markers = markers.map(element => formatWeekDay(element))
+    if (markers.length > 50) markers.splice(0, markers.length-80);
+
+    $('#filterMarkers').append("<b class='red'>" + thecode + " 日线特征:</b><br>")
+    $('#filterMarkers').append(markers)
+}
+
+// format WeekDay
+function formatWeekDay(element) {
+    dayStr = element.replace(/<.*?>/gi, "") // clean span tags
+    dayStr = dayStr.substr(0,6)
+    dayStr = convertWeekday(dayStr)
+    return(dayStr + " " + element + "<br>")
+}
+
+// convert date string to weekday
+function parse(str) {
+    str = "20" + str
+    var y = str.substr(0,4), m = str.substr(4,2) - 1,
+        d = str.substr(6,2);
+    var D = new Date(y,m,d);
+    return (D.getFullYear() == y && D.getMonth() == m && D.getDate() == d) ? D : 'invalid date';
+}
+function convertWeekday(str) {
+    return ["SUN","MON","TUE","WED","THU","FRI","SAT"][parse(str).getDay()]
+}
+function fetchUsCode(str) {
+    theCode = str; collectStkData(str); window.location = '#cvs';
+    $('#usstock').toggle();
+}
+
+function handleRight( event ){
+    codeListPtr = codeListPtr +1
+    theCode = codeList[codeListPtr];
+    collectStkData(theCode);
+}
+
+    codeList = codeList.split(' ')
+    codeListPtr = 0
+
+    // $( "html" ).on( "swiperight", handleRight );
+    // $( "html" ).on( "swipeleft", askforCode );
+    window.addEventListener('click', function (evt) {
+        if (evt.detail === 3) { askforCode(); }
+    });
+
+    collectStkData(theCode);
+
+function docLoaded() {
+    let script1 = document.createElement('script');
+    script1.src = 'https://williamkpchan.github.io/LibDocs/readbook.js';
+    document.body.appendChild(script1);
+    let script = document.createElement('script');
+    script.src = 'C:/R programs/!!! STKMon !!!/headerApp.js';
+    document.body.appendChild(script);
+    window.scrollTo(0,(document.body.scrollHeight));
+
+}
+
+    function drawOHLC() { // includes main chart and aux charts
+      var ohlcdata = {
+        close:  closeLst,
+        low:  lowLst,
+        open:  openLst,
+        high:  highLst,
+        x:  dateLst,
+        line: {color: 'rgba(31,119,180,1)'}, 
+        increasing: {line: {color: 'red'}},
+        decreasing: {line: {color: 'green'}},
+        type: 'candlestick', 
+        xaxis: 'x', 
+        yaxis: 'y'
+      };
+
+      var data = [ohlcdata];
+      var layout = {
+      title: titleText,
+        dragmode: 'zoom', 
+        showlegend: false,
+        xaxis: { rangeslider: { visible: false } }, 
+        yaxis: { autorange: true,  type: 'linear' }
+      };
+      Plotly.newPlot('ohlcDiv', data, layout);
+    }
+
+    function drawlinechart() { // includes main chart and aux charts
+      var traceLine0 = {
+        y: midLst,
+        name: 'WAvemidLst0',
+        type: 'scatter',
+        line: { color: 'red', width: 1, dash: 'solid', },
+      };
+
+      y1data = makeMovAve(midLst, intv1)
+      y1data = y1data.fill(null,0,intv1)
+      var traceLine1 = {
+        y: y1data,
+        name: 'WAvemidLst1',
+        type: 'scatter',
+        line: { color: 'blue', width: 1, dash: 'solid', },
+      };
+
+      y2data = makeMovAve(midLst, intv2)
+      y2data = y2data.fill(null,0,intv2)
+      var traceLine2 = {
+        y: y2data,
+        name: 'WAvemidLst2',
+        type: 'scatter',
+        line: { color: 'blue', width: 1, dash: 'solid', },
+      };
+
+      y3data = makeMovAve(midLst, intv3)
+      y3data = y3data.fill(null,0,intv3)
+      var traceLine3 = {
+        y: y3data,
+        name: 'WAvemidLst3',
+        type: 'scatter',
+        line: { color: 'green', width: 1, dash: 'dashdot', },
+      };
+
+      y4data = makeMovAve(midLst, intv4)
+      y4data = y4data.fill(null,0,intv4)
+      var traceLine4 = {
+        y: y4data,
+        name: 'WAvemidLst4',
+        type: 'scatter',
+        line: { color: 'purple', width: 1, dash: 'dashdot', },
+      };
+
+
+      y5data = makeMovAve(midLst, intv5)
+      y5data = y5data.fill(null,0,intv5)
+      var traceLine5 = {
+        y: y5data,
+        name: 'WAvemidLst5',
+        type: 'scatter',
+        line: { color: 'black', width: 1, dash: 'dashdot', },
+      };
+
+      y6data = makeMovAve(midLst, intv6)
+      y6data = y6data.fill(null,0,intv6)
+      var traceLine6 = {
+        y: y6data,
+        name: 'WAvemidLst6',
+        type: 'scatter',
+        line: { color: 'black', width: 1, dash: 'solid', },
+      };
+
+      ysdmdata = makeStd(midLst, intv3)
+      yWAvedata = makeMovAve(midLst, intv3)
+
+      ysdhdata = ysdmdata.map((e,i) => yWAvedata[i] + e);
+      ysdhdata = ysdhdata.fill(null,0,intv3)
+      var traceLinesdh = {
+        y: ysdhdata,
+        name: 'midLstsdh',
+        type: 'scatter',
+        line: { color: 'purple', width: 1, dash: 'dashdot', },
+      };
+
+      ysdldata = ysdmdata.map((e,i) => yWAvedata[i] - e);
+      ysdldata = ysdldata.fill(null,0,intv3)
+      var traceLinesdl = {
+        y: ysdldata,
+        name: 'midLstsdl',
+        type: 'scatter',
+        line: { color: 'purple', width: 1, dash: 'dashdot', },
+      };
+
+      var linedata = [traceLine0, traceLine1, traceLine2, traceLine3, traceLine4, traceLine5, traceLine6, traceLinesdh, traceLinesdl];
+      var linelayout = {
+      title: titleText,
+             // height: 500,
+             showgrid: true,
+             zeroline: true,
+             showlegend: false,
+       };
+
+
+      Plotly.newPlot('linechart', linedata, linelayout);
+    }
+
+</script>
+
+<script src='https://williamkpchan.github.io/LibDocs/readbook.js'></script>
+<script>
+     function chkKey() {
+       var testkey = getChar(event);
+       if(testkey == '0'){ theCode = '000001.sh'; collectStkData('000001.sh');}
+       else if(testkey == '3'){ theCode = '399001.sz'; collectStkData('399001.sz');}
+       else if(testkey == '1'){ theCode = '110000'; collectStkData('HSI');}
+       else if(testkey == '2'){ theCode = '02013'; collectStkData('02013');}
+       else if(testkey == '4'){ theCode = '01766'; collectStkData('01766');}
+       else if(testkey == '5'){ theCode = '02009'; collectStkData('02009');}
+       else if(testkey == '6'){ theCode = '01186'; collectStkData('01186');}
+       else if(testkey == '7'){ theCode = '00788'; collectStkData('00788');}
+       else if(testkey == '8'){ theCode = '00308'; collectStkData('00308');}
+       else if(testkey == '9'){ theCode = '00390'; collectStkData('00390');}
+       else if(testkey == 'u'){ theCode = 'us.DJI'; collectStkData('us.DJI');}
+       else if(testkey == 'n'){ theCode = 'us.IXIC'; collectStkData('us.IXIC');}
+       else if(testkey == 'J'){ theCode = 'us.INX'; collectStkData('us.INX');}
+       else if(testkey == 'U'){ $('#usstock').toggle(); window.location = '#usstock';}
+       else if(testkey == 'c'){askforCode();}
+       else if(testkey == '+'){addToquickCodeList();}
+       else if(testkey == 'q'){myfavor();}
+       else if(testkey == 'Q'){usequickCodeList();}
+       else if(testkey == 'B'){usestkListArr();}
+
+       // if(testkey == '+'){addToAttentionList();}
+       else if(testkey == '-'){removeFmquickCodeList();}
+       else if(testkey == 'X'){storeCode(theCode); window.open("Random Charts.html");}
+       else if(testkey == '.'){storeCode(theCode); window.open("mlineMinutechart.html");}
+
+       else if(testkey == 'a'){useAttentionList();}
+       else if(testkey == 'f'){jpforward();}
+       else if(testkey == ']'){jpforward();}
+       else if(testkey == 'b'){jpback();}
+       else if(testkey == '['){jpback();}
+       else if(testkey == 'r'){jprandom();}
+       else if(testkey == 'w'){window.scrollTo(0,0);}
+       //else if(testkey == 'D'){window.location = '#image';}
+       else if(testkey == 'd'){xunbao(localStorage.randomcode);}
+
+       else if(testkey == 'l'){window.location = '#endpage';console.log("l: ");}
+       else if(testkey == 'i'){chgIntv();}
+       else if(testkey == 'W'){chgchartWidth();}
+       else if(testkey == 'j'){period = 300; intv1 = 30; collectStkData(theCode);}
+       else if(testkey == 'k'){period = 50; intv1 = 2; collectStkData(theCode);}
+
+       else if(testkey == 'C'){chgCloseLst();}
+       else if(testkey == 'L'){askList()}
+       else if(testkey == 'z'){largeCht()}
+       else if(testkey == 't'){setTabWidth()}
+       else if(testkey == 'e'){window.location = '#commands';
+            window.scrollTo(window.scrollX, window.scrollY + 2000);}
+       else if(testkey == 's'){window.location = '#accel';
+            window.scrollTo(window.scrollX, window.scrollY - 500);}
+       else if(testkey == 'E'){window.location = '#filterMarkers';}
+       else{chkOtherKeys(testkey)} 
+     }
+
+     function getChar(event) {
+       if (event.which!=0 && event.charCode!=0) {
+         return String.fromCharCode(event.which)   // the rest
+       } else {
+         return null // special key
+       }
+     }
+</script>
+</body>
+</html>

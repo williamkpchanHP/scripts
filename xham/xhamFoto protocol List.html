@@ -1,0 +1,97 @@
+<base target="_blank"><html><head><title>protocol</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/olivia-wilder-soles-and-holes-13860137"><img src="https://ic-ph-nss.xhcdn.com/a/YTIzNGU0MGI4YTJhNmI3MWY5Yzg0NzM3ZTVjMDQ1Mjg/jpeg/000/380/552/626_450.jpg"><br>Olivia Wilder Soles and Holes</a> 5',
+'<a href="https://xhamster.com/photos/gallery/veronica-valentine-latina-hottie-14048632"><img src="https://ic-ph-nss.xhcdn.com/a/ZDMzZmVhZDZkN2FhOTVhYTEyZDc4NzhmMzViMDlmZTM/jpeg/000/390/539/663_450.jpg"><br>Veronica Valentine Latina Hottie</a> 15',
+'<a href="https://xhamster.com/photos/gallery/uncontainable-ass-tierra-staxxx-14945010"><img src="https://ic-ph-nss.xhcdn.com/a/MWZlYjI4N2NjYTZjMzNjNTJkNTEyMmNmM2Y0MTgzY2U/jpeg/000/439/528/111_450.jpg"><br>Uncontainable Ass Tierra Staxxx</a> 15',
+'<a href="https://xhamster.com/photos/gallery/the-hart-attack-12579515"><img src="https://ic-ph-nss.xhcdn.com/a/OTFmMDkzNDFlZWE5Nzk4NjY0ZTI0OTdhZmNjMTZmZDk/jpeg/000/313/105/999_450.jpg"><br>The Hart Attack</a> 15',
+'<a href="https://xhamster.com/photos/gallery/the-hart-attack-12068500"><img src="https://ic-ph-nss.xhcdn.com/a/ZGQwYTA5ZTE2ZWFmYjA1ODJkMDA2M2ZiNDA1Zjk3NmE/jpeg/000/287/255/844_450.jpg"><br>The Hart Attack</a> 15',
+'<a href="https://xhamster.com/photos/gallery/spinner-karlee-paige-in-red-stockings-15920434"><img src="https://ic-ph-nss.xhcdn.com/a/MTllZmNiOTRjYzlkMzI5MmEzNjE3YzQwMTQzNGQ4NDU/jpeg/000/512/596/842_450.jpg"><br>Spinner Karlee Paige in Red Stockings</a> 15',
+'<a href="https://xhamster.com/photos/gallery/soles-of-olivia-14033827"><img src="https://ic-ph-nss.xhcdn.com/a/YjFkNGQyODRjNzU2OTQ2MWNiOWZkOTU0NjA0ZjZmNWM/jpeg/000/389/746/866_450.jpg"><br>Soles Of Olivia</a> 15',
+'<a href="https://xhamster.com/photos/gallery/soles-and-holes-from-veronica-valentine-14892514"><img src="https://ic-ph-nss.xhcdn.com/a/NGMzNDRkZjFjNGZlYWI3ZTYyNzg3NDJhMTFlMmU4MjI/jpeg/000/436/653/779_450.jpg"><br>Soles and Holes from Veronica Valentine</a> 15',
+'<a href="https://xhamster.com/photos/gallery/slim-sexy-ebony-pussy-bri-15939858"><img src="https://ic-ph-nss.xhcdn.com/a/NjZiNDZkOWZkZmIyNzZmMWUyY2M5Mzk4ZmI5ODRmMTA/jpeg/000/513/035/424_450.jpg"><br>Slim Sexy Ebony Pussy Bri</a> 15',
+'<a href="https://xhamster.com/photos/gallery/sierra-grace-feet-and-pussy-14914643"><img src="https://ic-ph-nss.xhcdn.com/a/YTMwOGJhNTcyMjI3ODZlOGJmZjdmMzNjZGMyYWViNjk/jpeg/000/437/838/891_450.jpg"><br>Sierra Grace Feet and Pussy</a> 15',
+'<a href="https://xhamster.com/photos/gallery/showing-you-my-pussy-14380244"><img src="https://ic-ph-nss.xhcdn.com/a/OGY4YmEyODFiZTQ1NTJiMTUzZjlhOTMwYjljNTc5NTI/jpeg/000/408/647/233_450.jpg"><br>Showing You My Pussy</a> 15',
+'<a href="https://xhamster.com/photos/gallery/sexy-olivia-wilder-interracial-sex-13664936"><img src="https://ic-ph-nss.xhcdn.com/a/ZGQwYmUwMjhiYjRiZjA4OWNmYTM4MDU3OWFkZjZjZTI/jpeg/000/369/942/029_450.jpg"><br>Sexy Olivia Wilder Interracial Sex</a> 15',
+'<a href="https://xhamster.com/photos/gallery/sexy-olivia-wilder-holes-in-red-lingerie-15925221"><img src="https://ic-ph-nss.xhcdn.com/a/MWIxZGQwN2Q0M2FkY2Y2MjdjNzI3NmNhNDc1ZWQ1NDg/jpeg/000/512/698/622_450.jpg"><br>Sexy Olivia Wilder Holes in Red Lingerie</a> 15',
+'<a href="https://xhamster.com/photos/gallery/russian-hottie-pornstar-sandra-luberc-14669828"><img src="https://ic-ph-nss.xhcdn.com/a/YmRjZGVjNDBkZjQ0M2I0ODE4MGFkZWM2NWUzN2VhMGQ/jpeg/000/424/375/485_450.jpg"><br>Russian Hottie Pornstar Sandra Luberc</a> 15',
+'<a href="https://xhamster.com/photos/gallery/play-in-my-asshole-14396453"><img src="https://ic-ph-nss.xhcdn.com/a/NmYwNWQzODY2MTExMDE3ODhhMTM1ZjM4NmViNmJlY2Y/jpeg/000/409/514/808_450.jpg"><br>Play In My Asshole</a> 15',
+'<a href="https://xhamster.com/photos/gallery/olivias-feet-in-the-air-14156650"><img src="https://ic-ph-nss.xhcdn.com/a/NmVjYWY5ZDhhZWY0MmMxYjUxODk2M2M3Yzg0OTEzNDc/jpeg/000/396/412/835_450.jpg"><br>Olivia&#039;s Feet in the Air</a> 15',
+'<a href="https://xhamster.com/photos/gallery/olivia-wilder-foot-fetish-12308948"><img src="https://ic-ph-nss.xhcdn.com/a/Yjc1NWJjMGQ2ZjkzMjdhYjUwZDUwMTkzNTY5YjNhMzY/jpeg/000/298/944/338_450.jpg"><br>Olivia Wilder Foot Fetish</a> 15',
+'<a href="https://xhamster.com/photos/gallery/olivia-wilder-barefoot-stripper-13563283"><img src="https://ic-ph-nss.xhcdn.com/a/YjUxMTVjZTU4ZmNjMTg4Yzk4OWU0MTEwZmUxYmMzYjg/jpeg/000/364/548/952_450.jpg"><br>Olivia Wilder Barefoot Stripper</a> 15',
+'<a href="https://xhamster.com/photos/gallery/olivia-wilder-ass-in-lingerie-12694942"><img src="https://ic-ph-nss.xhcdn.com/a/ZTk2ZjVlNzVkNGE0MWM5YTJkMzY3MmY3YTg5NTNjMDI/jpeg/000/319/729/161_450.jpg"><br>Olivia Wilder Ass in Lingerie</a> 15',
+'<a href="https://xhamster.com/photos/gallery/mollie-ryder-ass-in-green-leggings-15923218"><img src="https://ic-ph-nss.xhcdn.com/a/NmRmNTViNGJiNGRjZGM3M2M3YTNiZDYzMGZmMTQzODg/jpeg/000/512/653/819_450.jpg"><br>Mollie Ryder Ass in Green Leggings</a> 15',
+'<a href="https://xhamster.com/photos/gallery/loni-legend-exposes-her-pussy-15920775"><img src="https://ic-ph-nss.xhcdn.com/a/MmFjMjhhYjVmYmJlYWJlNGJmMjA3MzQ2MTUyN2Y3ZjA/jpeg/000/512/603/599_450.jpg"><br>Loni Legend Exposes Her Pussy</a> 15',
+'<a href="https://xhamster.com/photos/gallery/lola-long-tits-in-miniskirt-15937479"><img src="https://ic-ph-nss.xhcdn.com/a/ZTY0Mjc3NTFmMDE2YTNmZmE1ZjdlMGI3YzUyMDc5Y2E/jpeg/000/512/980/345_450.jpg"><br>Lola Long Tits in Miniskirt</a> 15',
+'<a href="https://xhamster.com/photos/gallery/layla-lux-big-brown-soft-ebony-booty-16121502"><img src="https://ic-ph-nss.xhcdn.com/a/OGJmNjI1NTU0MDNjMzA4Nzg4NzM1NjE5YjFlODJlNTM/jpeg/000/515/702/304_450.jpg"><br>Layla Lux Big Brown Soft Ebony Booty</a> 15',
+'<a href="https://xhamster.com/photos/gallery/interracial-foot-fetish-video-13696846"><img src="https://ic-ph-nss.xhcdn.com/a/M2I2MzQ4YzM5YTE4MTkzMDVkYjdhMGFlNTQ2MDM3YzI/jpeg/000/371/726/673_450.jpg"><br>Interracial Foot Fetish Video</a> 15',
+'<a href="https://xhamster.com/photos/gallery/indian-barefoot-milf-in-lingerie-anaya-night-13576600"><img src="https://ic-ph-nss.xhcdn.com/a/OGM4OTZjNTYxODcyOGQ1ZDE5MGYwMzQxNzM0NzM1YTA/jpeg/000/365/256/452_450.jpg"><br>Indian Barefoot Milf in Lingerie (Anaya Night)</a> 15',
+'<a href="https://xhamster.com/photos/gallery/hot-indian-mom-bends-over-for-you-13729076"><img src="https://ic-ph-nss.xhcdn.com/a/MTc0NWNmNjBjNzQ3MDZlOWRjNmZjMDc3OTIyMDMxODA/jpeg/000/373/442/330_450.jpg"><br>Hot Indian Mom Bends Over For You</a> 15',
+'<a href="https://xhamster.com/photos/gallery/hardcore-sex-with-indian-mom-14409861"><img src="https://ic-ph-nss.xhcdn.com/a/ZTRhNTY5Nzk4NDczNWUzYTFiNzFkOWJkYTE5ZmZmMTI/jpeg/000/410/200/379_450.jpg"><br>Hardcore Sex with Indian Mom</a> 15',
+'<a href="https://xhamster.com/photos/gallery/fetish-for-veronica-14445226"><img src="https://ic-ph-nss.xhcdn.com/a/MGEyNmMzMzIzYjkyMmExZmU3ZDIyZmQ0NDBhODYwODg/jpeg/000/412/114/511_450.jpg"><br>Fetish for Veronica</a> 15',
+'<a href="https://xhamster.com/photos/gallery/black-milf-with-a-big-round-booty-15947442"><img src="https://ic-ph-nss.xhcdn.com/a/MGM1MTM3ZDJjY2FiYTI4YTI2NjZkODFkMzNmYmJlMTk/jpeg/000/513/189/736_450.jpg"><br>Black MILF With A Big Round Booty</a> 15',
+'<a href="https://xhamster.com/photos/gallery/big-round-black-ass-tierra-staxxx-14008742"><img src="https://ic-ph-nss.xhcdn.com/a/NmUwODI3YjJjMTcxMWUxM2E1NjZkZGIxMDQ5ZmRkZjI/jpeg/000/388/509/704_450.jpg"><br>Big Round Black Ass Tierra Staxxx</a> 15',
+'<a href="https://xhamster.com/photos/gallery/big-ebony-juicy-booty-13550659"><img src="https://ic-ph-nss.xhcdn.com/a/MzQ0ZGFhMTIzYzIzYzIyZjNjNDk1MjgwZGNmYTU4M2U/jpeg/000/363/904/286_450.jpg"><br>Big Ebony Juicy Booty</a> 15',
+'<a href="https://xhamster.com/photos/gallery/big-butt-ebony-queen-13898501"><img src="https://ic-ph-nss.xhcdn.com/a/ZjRiMWYxYjMzMjJiNzhlYzA2YjkwMDYyMTQzMTdlMGQ/jpeg/000/382/658/062_450.jpg"><br>Big Butt Ebony Queen</a> 15',
+'<a href="https://xhamster.com/photos/gallery/big-booty-takes-huge-dick-14479799"><img src="https://ic-ph-nss.xhcdn.com/a/NTUyNWVmOWY5MjZjMTNkNzNiMzNmNTY4MmI0OTZhYWQ/jpeg/000/414/024/288_450.jpg"><br>Big Booty Takes Huge Dick</a> 15',
+'<a href="https://xhamster.com/photos/gallery/big-booty-kylie-fae-in-pink-15927545"><img src="https://ic-ph-nss.xhcdn.com/a/OTQ1ZTY5YmMwMzkxM2ZhYjIyOTM5MzlmOGFkYzIwM2E/jpeg/000/512/748/856_450.jpg"><br>Big Booty Kylie Fae in Pink</a> 15',
+'<a href="https://xhamster.com/photos/gallery/big-booty-ebony-latina-in-lingerie-12738497"><img src="https://ic-ph-nss.xhcdn.com/a/NzRhZDM4MDc0MWRkZWFhNzRiODVkNTA0MjVkZGI5YzQ/jpeg/000/322/130/877_450.jpg"><br>Big Booty Ebony Latina in Lingerie</a> 15',
+'<a href="https://xhamster.com/photos/gallery/behind-the-scenes-of-interracial-porn-olivia-wilder-13608275"><img src="https://ic-ph-nss.xhcdn.com/a/OTZhMTI3NGE1YmVlODk0YzY1NWUzMWJjZTg4N2I5MDg/jpeg/000/366/973/609_450.jpg"><br>Behind The Scenes of Interracial Porn Olivia Wilder</a> 15',
+'<a href="https://xhamster.com/photos/gallery/barefoot-milf-with-a-big-ass-thehartattack-13690478"><img src="https://ic-ph-nss.xhcdn.com/a/MmZmZTcxNjk2YTViZTc4OTY1OTZkZWFkYmZjMDc4ZjU/jpeg/000/371/385/852_450.jpg"><br>Barefoot Milf With a Big Ass TheHartAttack</a> 15',
+'<a href="https://xhamster.com/photos/gallery/sierra-shows-off-her-toes-15929896"><img src="https://ic-ph-nss.xhcdn.com/a/ZGFmOTQzZDg4YTM1ZTI1MDQ1ZmNlZDdlZDNhNzU1MjQ/jpeg/000/512/806/189_450.jpg"><br>Sierra Shows Off Her Toes</a> 14',
+'<a href="https://xhamster.com/photos/gallery/olivia-wilder-sexy-stripper-feet-14863854"><img src="https://ic-ph-nss.xhcdn.com/a/MDlmNTBjMTk2M2RiMTMzYzhiMmY2NzM2OTgxNWE4NjQ/jpeg/000/435/175/729_450.jpg"><br>Olivia Wilder Sexy Stripper Feet</a> 14',
+'<a href="https://xhamster.com/photos/gallery/olivia-foot-fetish-handjob-14295230"><img src="https://ic-ph-nss.xhcdn.com/a/Yzk1YjIwMzRjYWQ1ZjkxMmFhOTRkYjAzOWJlNGY1MGE/jpeg/000/404/071/458_450.jpg"><br>Olivia Foot Fetish Handjob</a> 14',
+'<a href="https://xhamster.com/photos/gallery/beauty-dupree-thick-junk-in-the-trunk-16120670"><img src="https://ic-ph-nss.xhcdn.com/a/NzNlYzlhN2QyNTY4NDI0MjcwMjc5OWU1MWM0YzI5MTM/jpeg/000/515/690/421_450.jpg"><br>Beauty Dupree Thick Junk In The Trunk</a> 14',
+'<a href="https://xhamster.com/photos/gallery/julatto-sexy-body-in-white-15920772"><img src="https://ic-ph-nss.xhcdn.com/a/Zjg5NTU4NmE1MDc1NzIzMzA5NTcwY2QxMDE5NDk4NjA/jpeg/000/512/603/531_450.jpg"><br>Ju&#039;Latto Sexy Body in White</a> 13',
+'<a href="https://xhamster.com/photos/gallery/cheeks-of-tierra-staxxx-14257300"><img src="https://ic-ph-nss.xhcdn.com/a/OGFiMmY0NGFhZDc4ZDBlN2RkM2IyODU0ZmY4MDdlZmQ/jpeg/000/401/919/402_450.jpg"><br>Cheeks of Tierra Staxxx</a> 11',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "protocol"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<base target="_blank"><html><head><title>lollytopss</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/yellow-16088882"><img src="https://ic-ph-nss.xhcdn.com/a/NGM3NGNkZWQ0OTRiMGYzNGQ2ZDY3MTFmMjY2YzM3MTc/jpeg/000/515/277/621_450.jpg"><br>Yellow</a>',
+'<a href="https://xhamster.com/photos/gallery/window-16083017"><img src="https://ic-ph-nss.xhcdn.com/a/MWM1NTAyODdlNDM3MjA1OTg3OWU3MGY1MGZkYzJmNTY/jpeg/000/515/195/375_450.jpg"><br>Window</a>',
+'<a href="https://xhamster.com/photos/gallery/random-pics-16098638"><img src="https://ic-ph-nss.xhcdn.com/a/NjlhODM2ODRmNjIwYmViZDIzZmRlNmExODU1ZjdiOTQ/jpeg/000/515/402/287_450.jpg"><br>Random Pics</a>',
+'<a href="https://xhamster.com/photos/gallery/playing-in-my-closet-16059858"><img src="https://ic-ph-nss.xhcdn.com/a/NTg0MDg1ZjI5YTIwY2ZmNzM1YzhjZDk5YjNmMzgyNmM/jpeg/000/514/894/223_450.jpg"><br>Playing in my closet</a>',
+'<a href="https://xhamster.com/photos/gallery/play-time-16063539"><img src="https://ic-ph-nss.xhcdn.com/a/ZmQ4YjcwNDhjNTYyYWNiOWYzNDQ1ODQ4YzBmZDVhYmU/jpeg/000/514/947/304_450.jpg"><br>Play Time</a>',
+'<a href="https://xhamster.com/photos/gallery/pics-of-my-latest-videos-16100625"><img src="https://ic-ph-nss.xhcdn.com/a/ZWIyMTIxNzBiMTFkNTM4MDgyYjkyNzJhYWEyZjc5YmI/jpeg/000/515/426/764_450.jpg"><br>Pics of My Latest Videos</a>',
+'<a href="https://xhamster.com/photos/gallery/pics-of-my-last-video-16174434"><img src="https://ic-ph-nss.xhcdn.com/a/YmQ3NjJjNmY4MDY4ODViOWMwZmU2ZTAxNzJiMmUwZjQ/jpeg/000/516/395/883_450.jpg"><br>Pics of My Last Video</a>',
+'<a href="https://xhamster.com/photos/gallery/photos-16059742"><img src="https://ic-ph-nss.xhcdn.com/a/NGVlOTkwNmE4Y2Q5YmM1MjIwMDVlNmMzOWJkOGU5NmE/jpeg/000/514/892/709_450.jpg"><br>Photos</a>',
+'<a href="https://xhamster.com/photos/gallery/my-sanctuary-is-being-in-my-closet-where-all-my-toys-are-16089184"><img src="https://ic-ph-nss.xhcdn.com/a/OWZjNjE4OTBmZTQ1ZDk4ZTYxYTg2MTEyNWYyYjRmZGQ/jpeg/000/515/281/292_450.jpg"><br>My sanctuary is being in my closet where all my toys are</a>',
+'<a href="https://xhamster.com/photos/gallery/feeling-sexy-16085306"><img src="https://ic-ph-nss.xhcdn.com/a/OTBhNjI3YzE4OWY2MDAxYTk5YmU0NDgwMWE0NWQ2ZmQ/jpeg/000/515/225/748_450.jpg"><br>Feeling Sexy</a>',
+'<a href="https://xhamster.com/photos/gallery/compilation-gallery-of-my-gallery-16091734"><img src="https://ic-ph-nss.xhcdn.com/a/ZDQ5ZDc0ZjVhZWM4ZGFjYWMxYTU3MzRmZjc2MTFmMTk/jpeg/000/515/312/948_450.jpg"><br>Compilation gallery of my gallery</a>',
+'<a href="https://xhamster.com/photos/gallery/anal-play-16081977"><img src="https://ic-ph-nss.xhcdn.com/a/YjRjNzNmMjg5YjIzMWU4NzkxMTA3N2RlMjQzZDUyYjU/jpeg/000/515/182/526_450.jpg"><br>Anal Play</a>',
+'<a href="https://xhamster.com/photos/gallery/all-about-me-16059853"><img src="https://ic-ph-nss.xhcdn.com/a/ZTU0YjZkZWYwZDllM2QwMjc3MGEwNjdiM2ViZDUwOTE/jpeg/000/514/894/121_450.jpg"><br>All about me<U+0001F618></a>',
+'<a href="https://xhamster.com/photos/gallery/a-snaps-16088452"><img src="https://ic-ph-nss.xhcdn.com/a/YWU5ODE1Mzc0ZDFiMjcyNTU5YTAwMGRlNjNjOTIzMjE/jpeg/000/515/273/059_450.jpg"><br>A Snaps</a>',
+'<a href="https://xhamster.com/photos/gallery/a-few-pics-from-my-latest-video-16091097"><img src="https://ic-ph-nss.xhcdn.com/a/NjdjYWFiZWQ2MjE1YWMzOTE0ODNiNjFjYjRiOGIwZGI/jpeg/000/515/305/669_450.jpg"><br>A few pics from my latest video</a>',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "lollytopss"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

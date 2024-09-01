@@ -1,0 +1,76 @@
+<base target="_blank"><html><head><title>all-those-moms</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
+<script src='../mainscript.js'></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 16px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+.tip-button {color: green;}
+img {width: 100%;}
+div {display:inline-block;width: 33%; margin-right:1px;vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
+<div class="tip-number" onclick="forward()" ondblclick="randomNum()">all-those-moms</div>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+// List of JavaScript tips
+var tipsList = [
+'',
+'6591de7386b01"><img src="https://ei.phncdn.com/videos/202312/31/445713761/original/(m=qKUVI8YbeafTGgaaaa)(mh=vMnCq5b2QDna_67O)0.jpg"><br>Naughty Big Tits Natasha Nice Agrees, "I deserve ALL the Big Loads of Fun I Can Get" -S19:E10',
+'65cf8c2469c34"><img src="https://ei.phncdn.com/videos/202402/16/448243761/original/(m=q69W-8YbeafTGgaaaa)(mh=3nANcor4MZV8rTxJ)0.jpg"><br>Sis Loves Me - I My Stepsis To Suck My Cock And Photograph Her Tight Pussy While Fucking Her',
+'65f75abf18367"><img src="https://ei.phncdn.com/videos/202403/17/449712561/original/(m=qI9TV-YbeafTGgaaaa)(mh=FlV0OvC0Kuwgk0Nx)0.jpg"><br>Edging Practice With Sexy Blonde Step Sister ~ Addison Vodka ~ Household Fantasy ~ Scott Stark',
+'664767b82a666"><img src="https://ei.phncdn.com/videos/202405/17/452593881/thumbs_45/(m=eafTGgaaaa)(mh=0hbK64uTxRRqrQK8)11.jpg"><br>Rating Redhead Step Sister’s Hotness Level - Elly Clutch - Family Therapy - Alex Adams',
+'ph58d39afbd9099"><img src="https://ei.phncdn.com/videos/201703/23/110661722/original/(m=eafTGgaaaa)(mh=6U-lkhC_l2R_ZnFa)9.jpg"><br>busty stepmom alone at home',
+'ph58e47c15457de"><img src="https://ei.phncdn.com/videos/201704/05/112128762/original/(m=eafTGgaaaa)(mh=PBbeIMdcB9bijGv7)2.jpg"><br>stepmoms oiled big natural boobs',
+'ph58ef06a91287b"><img src="https://ei.phncdn.com/videos/201704/13/113048011/original/(m=eafTGgaaaa)(mh=ufFc14h42WxXLint)12.jpg"><br>sexy chubby busty milf alone at home',
+'ph592a8961e8cdb"><img src="https://ei.phncdn.com/videos/201705/28/118164741/original/(m=eafTGgaaaa)(mh=geG10eumV-QttEx9)10.jpg"><br>horny big breast chubby MIlf',
+'ph5948a7565fd56"><img src="https://ei.phncdn.com/videos/201706/20/121142602/original/(m=eafTGgaaaa)(mh=8zIA6HsmNzNM-SBZ)15.jpg"><br>horny mom rubbing her wet pussy',
+'ph5970a0ce0ee90"><img src="https://ei.phncdn.com/videos/201707/20/125182121/original/(m=eafTGgaaaa)(mh=cQux3d1n3j8A8Xzl)9.jpg"><br>stepmom fist her hairy pussy',
+'ph599003b3c1889"><img src="https://ei.phncdn.com/videos/201708/13/128407221/original/(m=eafTGgaaaa)(mh=6K0fRM8ot8jmByNN)13.jpg"><br>chubby hairy redhead mom masturbating',
+'ph5a0855d061d37"><img src="https://ei.phncdn.com/videos/201711/12/140836542/original/(m=eafTGgaaaa)(mh=Sb_JShUoZd_60X7c)11.jpg"><br>my big boob horny mom alone at home',
+'ph5a393f736be74"><img src="https://ei.phncdn.com/videos/201712/19/146175232/original/(m=eafTGgaaaa)(mh=hGOIfCTBx2eYenX1)10.jpg"><br>extreme hairy mom alone at home',
+'ph5a72d6680e9ae"><img src="https://ei.phncdn.com/videos/201802/01/152819681/original/(m=eafTGgaaaa)(mh=ccAsYlSybgyspYZW)10.jpg"><br>sexy mom fisting and squirting',
+'ph5a8fbbab39836"><img src="https://ei.phncdn.com/videos/201802/23/155686752/original/(m=eafTGgaaaa)(mh=sC9f17veberQdJot)14.jpg"><br>extreme hairy moms real orgasm',
+'ph5ad4c2102ec00"><img src="https://ei.phncdn.com/videos/201804/16/162330482/original/(m=eafTGgaaaa)(mh=RwQDzyTNcSE1JDK2)11.jpg"><br>black Milf with big oiled boobs',
+'ph5c4b39d5eaaca"><img src="https://ei.phncdn.com/videos/201901/25/203759091/original/(m=eafTGgaaaa)(mh=MB7YIhPxsrP05ISK)7.jpg"><br>big boob stepmom alone at home',
+'ph5df1d143ac805"><img src="https://ei.phncdn.com/videos/201912/12/268044492/original/(m=q0I2J-UbeafTGgaaaa)(mh=vxppcYfPguQ5CGa5)0.jpg"><br>grandma toying her old dry pussy',
+'ph5e6ba166b2d1c"><img src="https://ei.phncdn.com/videos/202003/13/292593101/original/(m=q6OP3MVbeafTGgaaaa)(mh=j27nZRCKRMXNr2MQ)0.jpg"><br>black stepmom first time on porn video',
+'ph5e7eef06d5bf4"><img src="https://ei.phncdn.com/videos/202003/28/297607951/original/(m=q7J99NVbeafTGgaaaa)(mh=ZBZZzcoknbpntbGv)0.jpg"><br>my monster boob mom first time video',
+'ph5eb2c60c76922"><img src="https://ei.phncdn.com/videos/202005/06/310924431/original/(m=qITYLRVbeafTGgaaaa)(mh=poUAtFtbYIZIqh4w)0.jpg"><br>grandmas first porn video filmed',
+'ph5ebf7e46d3b42"><img src="https://ei.phncdn.com/videos/202005/16/314320131/original/(m=qMGH-RVbeafTGgaaaa)(mh=yIkAPdWxrrcWtHrc)0.jpg"><br>soapy mom masturbating with showerhead',
+'ph5f6c2808a4122"><img src="https://ei.phncdn.com/videos/202009/24/354498842/original/(m=qPNS42VbeafTGgaaaa)(mh=wmDaqQGxoHm6HTpB)0.jpg"><br>76 years old big boob<U+00A0>alone at home',
+'ph5f952167675ea"><img src="https://ei.phncdn.com/videos/202010/25/363827152/original/(m=qTYRQ5VbeafTGgaaaa)(mh=F0distXY0LDOq5oj)0.jpg"><br>busty moms first porn video',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
+bookid = "all-those-moms"
+showRange = 84
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='../showLongTips.js'></script>
+
+
+</body>
+</html>
+

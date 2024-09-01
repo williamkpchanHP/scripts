@@ -1,0 +1,94 @@
+<base target="_blank"><html><head><title>xhamPhoto</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchan.github.io/lazyload.min.js"></script>
+<script type='text/javascript' src='https://williamkpchan.github.io/mainscript.js'></script>
+<script src="https://williamkpchan.github.io/commonfunctions.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script>
+  var showTopicNumber = true;
+  var bookid = "xhamPhoto"
+  var markerName = "img"
+</script>
+<style>
+body{width:100%;margin-left: 0%; font-size:22px;}
+h1, h2 {color: gold;}
+strong {color: orange;}
+pre{width:100%; text-align:center;}
+</style></head><body onkeypress="chkKey()"><center>
+<div id="toc"></div>
+<br><br>
+<pre>
+<img class="lazy" data-src="https://thumb-p8.xhcdn.com/a/MuFVudzl4KuojugVB88kkg/000/495/287/628_1000.jpg">
+<img class="lazy" data-src="https://thumb-p5.xhcdn.com/a/wLs6lNI0dg9AHriXjgi4_w/000/499/068/235_1000.jpg">
+<img class="lazy" data-src="https://thumb-p4.xhcdn.com/a/Dxqh4J0Cnf_p-Wr2_w2vSQ/000/499/068/234_1000.jpg">
+<img class="lazy" data-src="https://thumb-p3.xhcdn.com/a/ubwZRZw9jJQPAbhQyS9IKw/000/499/068/233_1000.jpg">
+<img class="lazy" data-src="https://thumb-p2.xhcdn.com/a/mLb5azkuoBXhhVxFomHGQw/000/499/068/232_1000.jpg">
+<img class="lazy" data-src="https://thumb-p1.xhcdn.com/a/Jsh-NZjuBYiIee44UyRc4A/000/499/068/231_1000.jpg">
+<img class="lazy" data-src="https://thumb-p9.xhcdn.com/a/JM78Y4LBsRQSvgGUTqt25w/000/499/068/229_1000.jpg">
+<img class="lazy" data-src="https://thumb-p8.xhcdn.com/a/xOh7hzKve_gqg1WybQLaRA/000/499/068/228_1000.jpg">
+<img class="lazy" data-src="https://thumb-p7.xhcdn.com/a/et1GkAlEF_U0-RwRxudpFA/000/499/068/227_1000.jpg">
+<img class="lazy" data-src="https://thumb-p6.xhcdn.com/a/k5bdo6PqUQMuLKB8shasoA/000/499/068/226_1000.jpg">
+<img class="lazy" data-src="https://thumb-p5.xhcdn.com/a/P0IqtQIaEgpUcsVH0C-bcA/000/499/068/225_1000.jpg">
+<img class="lazy" data-src="https://thumb-p4.xhcdn.com/a/SjTORsHQwY6aXgfXYlEtUw/000/499/068/224_1000.jpg">
+<img class="lazy" data-src="https://thumb-p3.xhcdn.com/a/W8tYRxeApiOmDVErVIX1sg/000/499/068/223_1000.jpg">
+<img class="lazy" data-src="https://thumb-p2.xhcdn.com/a/286vpniWKySaYGrtg7EeEA/000/499/068/222_1000.jpg">
+<img class="lazy" data-src="https://thumb-p0.xhcdn.com/a/XOWq3hylJa5b55hmaYFs2A/000/499/068/220_1000.jpg">
+<img class="lazy" data-src="https://thumb-p9.xhcdn.com/a/6ZVDiGGgFk2nQFWV1M5Q1Q/000/499/068/219_1000.jpg">
+<img class="lazy" data-src="https://thumb-p7.xhcdn.com/a/GgWxU3X3MJI1HbJQS75I3A/000/499/068/217_1000.jpg">
+<img class="lazy" data-src="https://thumb-p6.xhcdn.com/a/YevsNaU3G3Lz_PpSW7KxhQ/000/499/068/216_1000.jpg">
+<img class="lazy" data-src="https://thumb-p2.xhcdn.com/a/tafdxXyVi5Ne1j2L96SkvQ/000/499/068/212_1000.jpg">
+<img class="lazy" data-src="https://thumb-p1.xhcdn.com/a/T6HnW6jzzJ5JW7HS3xdLpg/000/499/068/211_1000.jpg">
+<img class="lazy" data-src="https://thumb-p8.xhcdn.com/a/BHPwv8NSNzLUkFzcyYohIA/000/499/068/208_1000.jpg">
+<img class="lazy" data-src="https://thumb-p7.xhcdn.com/a/JHkWH60dJUzij0fz54BZ9Q/000/499/068/207_1000.jpg">
+<img class="lazy" data-src="https://thumb-p6.xhcdn.com/a/Mh0ZEuAgGzekq3Oht1SMnw/000/499/068/206_1000.jpg">
+<img class="lazy" data-src="https://thumb-p5.xhcdn.com/a/hYGZYql23ftZgpVoWaOitw/000/499/068/205_1000.jpg">
+<img class="lazy" data-src="https://thumb-p1.xhcdn.com/a/98aGJAY2fk611RHtS3RHRA/000/499/068/201_1000.jpg">
+<img class="lazy" data-src="https://thumb-p9.xhcdn.com/a/iciVI0PLrMA5j6GrAdST-Q/000/499/068/199_1000.jpg">
+<img class="lazy" data-src="https://thumb-p6.xhcdn.com/a/uaC1qYPeZIBRshMANOV_tg/000/499/068/196_1000.jpg">
+<img class="lazy" data-src="https://thumb-p5.xhcdn.com/a/6oKpmeRjumCUWGFVbJCa2g/000/499/068/195_1000.jpg">
+<img class="lazy" data-src="https://thumb-p3.xhcdn.com/a/ORHYd2BioGXgXEQ2m9m3Dg/000/499/068/193_1000.jpg">
+<img class="lazy" data-src="https://thumb-p1.xhcdn.com/a/qfp2NWkmS0Z8BigEiPPJfg/000/499/068/191_1000.jpg">
+<img class="lazy" data-src="https://thumb-p9.xhcdn.com/a/jOqspHoHsx_1wk4K18oumg/000/499/068/189_1000.jpg">
+<img class="lazy" data-src="https://thumb-p5.xhcdn.com/a/FyJBRttnbYlIjII_rtirmQ/000/499/068/185_1000.jpg">
+<img class="lazy" data-src="https://thumb-p4.xhcdn.com/a/y0PstNRnMuTYgu4ePQ2qEg/000/499/068/184_1000.jpg">
+<img class="lazy" data-src="https://thumb-p6.xhcdn.com/a/yuyKWp4AHlluIfLiB6SdNg/000/499/068/176_1000.jpg">
+<img class="lazy" data-src="https://thumb-p5.xhcdn.com/a/pU6OCDq8Ysoand8w8Jrj0g/000/499/068/175_1000.jpg">
+<img class="lazy" data-src="https://thumb-p2.xhcdn.com/a/Ch_tboC7VfwnnGx2DhACOA/000/499/068/172_1000.jpg">
+<img class="lazy" data-src="https://thumb-p1.xhcdn.com/a/-AeN_lJpOb4TI8xzZ2VwjQ/000/499/068/171_1000.jpg">
+<img class="lazy" data-src="https://thumb-p0.xhcdn.com/a/e4ngN9Z0S6e470W3AyiX7Q/000/499/068/170_1000.jpg">
+<img class="lazy" data-src="https://thumb-p9.xhcdn.com/a/Ps-JQSPebCANrzFjUAX4zQ/000/499/068/169_1000.jpg">
+<img class="lazy" data-src="https://thumb-p8.xhcdn.com/a/FDfPCjYz9m0FNVv6GXr7cg/000/499/068/168_1000.jpg">
+<img class="lazy" data-src="https://thumb-p7.xhcdn.com/a/PIvzLwZfjTMcWRYWNoBxnA/000/499/068/167_1000.jpg">
+<img class="lazy" data-src="https://thumb-p6.xhcdn.com/a/r3tAbNlHsCGj8DKSS5pSrw/000/499/068/166_1000.jpg">
+<img class="lazy" data-src="https://thumb-p2.xhcdn.com/a/HGCaQzOFSDf8UAeH0ya1zw/000/499/068/162_1000.jpg">
+<img class="lazy" data-src="https://thumb-p9.xhcdn.com/a/DW3Em3hPKutuX4-blgYlAQ/000/499/068/159_1000.jpg">
+<img class="lazy" data-src="https://thumb-p7.xhcdn.com/a/LSB-MyFWv134uGFXumRnAw/000/499/068/157_1000.jpg">
+<img class="lazy" data-src="https://thumb-p6.xhcdn.com/a/NFGeFeClsd5wFcHVyAc_-g/000/499/068/156_1000.jpg">
+<img class="lazy" data-src="https://thumb-p5.xhcdn.com/a/NIN_zcS2Sjj9yRYj8FUhkw/000/499/068/155_1000.jpg">
+<img class="lazy" data-src="https://thumb-p4.xhcdn.com/a/v73L0k6P4VphU3USlt28Ww/000/499/068/154_1000.jpg">
+<img class="lazy" data-src="https://thumb-p3.xhcdn.com/a/KHXtbGjjp4XOzvB43swIcw/000/499/068/153_1000.jpg">
+<img class="lazy" data-src="https://thumb-p2.xhcdn.com/a/ZjVG8xj8nxmEAlzEzQbwSA/000/499/068/152_1000.jpg">
+<img class="lazy" data-src="https://thumb-p1.xhcdn.com/a/Eo7QXhdbE3saerPFzPaYEg/000/499/068/151_1000.jpg">
+<img class="lazy" data-src="https://thumb-p9.xhcdn.com/a/z4fbuAvr-R9q0QC0ToUEow/000/499/068/149_1000.jpg">
+<img class="lazy" data-src="https://thumb-p8.xhcdn.com/a/jrJDZXU0baP_8a5qoc-W_g/000/499/068/148_1000.jpg">
+<img class="lazy" data-src="https://thumb-p7.xhcdn.com/a/9mfIto7WhoYpmfDJT0AFDQ/000/499/068/147_1000.jpg">
+<img class="lazy" data-src="https://thumb-p6.xhcdn.com/a/9Uu_e_ndQJRX7-gmVOzJXw/000/499/068/146_1000.jpg">
+<img class="lazy" data-src="https://thumb-p5.xhcdn.com/a/yb63PwVuzDKg3iQbZKboTA/000/499/068/145_1000.jpg">
+<img class="lazy" data-src="https://thumb-p4.xhcdn.com/a/ij-zVTtVgTMzlCN0xLTJig/000/499/068/144_1000.jpg">
+<img class="lazy" data-src="https://thumb-p3.xhcdn.com/a/Bklt-0oOrV00Jlw6by7G4w/000/499/068/143_1000.jpg">
+<img class="lazy" data-src="https://thumb-p8.xhcdn.com/a/MZJifz1UqPwQudxZ6eSlpQ/000/499/068/158_1000.jpg">
+<img class="lazy" data-src="https://thumb-p9.xhcdn.com/a/qVoht8D8bzk4UtSURBdVEQ/000/499/068/209_1000.jpg">
+<script src='https://williamkpchan.github.io/LibDocs/readbook.js'></script>
+<script src="https://williamkpchan.github.io/imgControl.js"></script>
+<script>
+var lazyLoadInstance = new LazyLoad({ elements_selector: ".lazy" });
+</script>
+var lazyLoadInstance = new LazyLoad({ elements_selector: ".lazy" }); 
+
+</script>
+
+</pre></body></html>

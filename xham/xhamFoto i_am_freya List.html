@@ -1,0 +1,74 @@
+<base target="_blank"><html><head><title>i_am_freya</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/a-compilation-of-my-photos-16031478"><img src="https://ic-ph-nss.xhcdn.com/a/ZDY1NGYwMTNkMjg0M2IyMzY2ZmMyZWVkM2U5NTNhZDk/jpeg/000/514/501/368_450.jpg"><br>a compilation of my photos</a> 66',
+'<a href="https://xhamster.com/photos/gallery/the-girl-gets-completely-naked-16183454"><img src="https://ic-ph-nss.xhcdn.com/a/Zjk2NjVlMzE2MjAzNjVmMzM3NDJkODY3MjJhODkxNDU/jpeg/000/516/491/596_450.jpg"><br>The girl gets completely naked</a> 46',
+'<a href="https://xhamster.com/photos/gallery/i-masturbate-and-think-of-you-16036972"><img src="https://ic-ph-nss.xhcdn.com/a/ZTVhNTYyNjI4ZGY2MDVmMGEwMTk1MjhiYjllODEzMTI/jpeg/000/514/568/757_450.jpg"><br>I masturbate and think of you</a> 37',
+'<a href="https://xhamster.com/photos/gallery/schoolgirl-addicted-to-sex-16034625"><img src="https://ic-ph-nss.xhcdn.com/a/MGE3NmQ2MjRhNDRhZTYxMzFiMmU4ZGY4YTc4N2QyYmI/jpeg/000/514/539/761_450.jpg"><br>schoolgirl addicted to sex</a> 36',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-pussy-wants-to-be-penetrated-16187157"><img src="https://ic-ph-nss.xhcdn.com/a/NTcwNzY3NTczNGUyYzFjN2VmOTg4MDRjYjdhMTg3Mjc/jpeg/000/516/536/500_450.jpg"><br>My sexy pussy wants to be penetrated</a> 32',
+'<a href="https://xhamster.com/photos/gallery/the-girl-wants-to-fuck-16031925"><img src="https://ic-ph-nss.xhcdn.com/a/ZTI2NTUyN2MzNWZhNDQ3OGFhOTE1ZmY3NDQ5NWM4ZmE/jpeg/000/514/506/334_450.jpg"><br>the girl wants to fuck</a> 30',
+'<a href="https://xhamster.com/photos/gallery/the-girl-wants-sex-16033576"><img src="https://ic-ph-nss.xhcdn.com/a/MTczY2MyOWVkZDYzNmM1NjY4NDBjMzBhMDQ0NThlMTk/jpeg/000/514/527/823_450.jpg"><br>the girl wants sex</a> 29',
+'<a href="https://xhamster.com/photos/gallery/anal-and-squirt-double-pleasure-16037854"><img src="https://ic-ph-nss.xhcdn.com/a/N2RhMmJlZGYxYjYwN2MxZDFkZDc1YzNmOWI3ZDBjOWM/jpeg/000/514/582/968_450.jpg"><br>anal and squirt, double pleasure</a> 26',
+'<a href="https://xhamster.com/photos/gallery/a-photo-day-with-me-16029774"><img src="https://ic-ph-nss.xhcdn.com/a/YjAxMGQ1MGYwMTY1YmYzNDZiN2IwMTYyMzk3YzYwOTY/jpeg/000/514/477/890_450.jpg"><br>a photo day with me</a> 26',
+'<a href="https://xhamster.com/photos/gallery/im-a-sexy-bunny-16031469"><img src="https://ic-ph-nss.xhcdn.com/a/OWQxNGU0ZmE1NzIzNjc4NDgxZDVkY2ZkMzQ4M2I2ZWM/jpeg/000/514/501/271_450.jpg"><br>i&#039;m a sexy bunny</a> 24',
+'<a href="https://xhamster.com/photos/gallery/my-blue-lingerie-is-very-sexy-and-makes-me-touch-my-ass-16031499"><img src="https://ic-ph-nss.xhcdn.com/a/MWJhODM2ZGU1YjE4YzAxODA2NTI5NzVmNDk1ZjRhYzQ/jpeg/000/514/501/595_450.jpg"><br>My blue lingerie is very sexy and makes me touch my ass.</a> 22',
+'<a href="https://xhamster.com/photos/gallery/playful-girl-16034622"><img src="https://ic-ph-nss.xhcdn.com/a/MjNmMDNlOGZiNGRiMjI5ZjA2ZmY2YjljNzJjYjhhMDM/jpeg/000/514/539/705_450.jpg"><br>playful girl</a> 21',
+'<a href="https://xhamster.com/photos/gallery/a-bit-of-me-16029439"><img src="https://ic-ph-nss.xhcdn.com/a/MGI4OTE0ZDFiNmM4MjYwMmE0NjgxZGM1NWIxNjFhMTU/jpeg/000/514/474/213_450.jpg"><br>a bit of me</a> 20',
+'<a href="https://xhamster.com/photos/gallery/sexy-young-man-with-double-penetration-16033849"><img src="https://ic-ph-nss.xhcdn.com/a/ZDlkOTg0YjYwZTA2NmE3NWFjMDk5ZmFmMmE1NzdlNDk/jpeg/000/514/530/428_450.jpg"><br>sexy young man with double penetration</a> 19',
+'<a href="https://xhamster.com/photos/gallery/sensual-and-elegant-porn-16124987"><img src="https://ic-ph-nss.xhcdn.com/a/M2JjYzU5ZTdlMjFiMDQwNWQyNTMzOTE2ZjNjZDhhNGU/jpeg/000/515/746/622_450.jpg"><br>sensual and elegant porn</a> 19',
+'<a href="https://xhamster.com/photos/gallery/anal-dildo-penetrates-rich-16043378"><img src="https://ic-ph-nss.xhcdn.com/a/NmJmYjg0MjVhNjczZTQyODljMWE4YmY1ZmI4Yzg3MGM/jpeg/000/514/662/289_450.jpg"><br>anal dildo penetrates rich</a> 19',
+'<a href="https://xhamster.com/photos/gallery/mega-dildo-in-tight-ass-16052093"><img src="https://ic-ph-nss.xhcdn.com/a/ZGNhMjYzNzg4ODVmY2QyMzc0MGQ0MjE5ZmRmNTNkMTg/jpeg/000/514/775/899_450.jpg"><br>mega dildo in tight ass</a> 17',
+'<a href="https://xhamster.com/photos/gallery/i-am-very-daring-with-a-sexy-lingerie-16030867"><img src="https://ic-ph-nss.xhcdn.com/a/NWZkMzlmYWNlMmEwYmI5NGY2NDMyZGM4ZDIxZDNjYjg/jpeg/000/514/494/988_450.jpg"><br>I am very daring, with a sexy lingerie</a> 17',
+'<a href="https://xhamster.com/photos/gallery/the-princess-of-the-house-pleasures-herself-in-the-ass-with-16065153"><img src="https://ic-ph-nss.xhcdn.com/a/MTE2MmQyNTY5YTYwMmYyY2FhZmYyZGNmNmVjYjRmMzE/jpeg/000/514/966/456_450.jpg"><br>The princess of the house pleasures herself in the ass with </a> 15',
+'<a href="https://xhamster.com/photos/gallery/im-a-naughty-girl-16183448"><img src="https://ic-ph-nss.xhcdn.com/a/ODQzMTRiNDFmNWI4MjNmZjBiYzdjZTliNjZhZjMxNGY/jpeg/000/516/491/496_450.jpg"><br>I&#039;m a naughty girl</a> 108',
+'',
+];
+lineHeader = '<div>'
+lineTail = '</div>'
+showRange = 60
+bookid = "i_am_freya"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
