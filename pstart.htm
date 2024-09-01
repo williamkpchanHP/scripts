@@ -9011,11 +9011,11 @@ L askList()
 <script>
 // imgList
 $("#imgList").append(imgList[Math.floor(Math.random() * imgList.length)]);
-$("#imgList").onclick(function() {
+$("#imgList").click(function() {
   $("#imgList").html(imgList[Math.floor(Math.random() * imgList.length)]);
 });
 
-$("#imgList1").onclick(function() {
+$("#imgList1").click(function() {
   fillimgList1()
   window.location = '#End';
 });
