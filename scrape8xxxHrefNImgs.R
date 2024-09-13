@@ -26,7 +26,7 @@ doSingleUrl <- function(thisurl){
       # loop to collect images from itemListurl
       for(i in 1:length(itemListurl)){
         itemurl <- itemListurl[i]
-        cat(itemurl,"\n")
+        #cat(itemurl,"\n")
         thepage <- retrieveFile(itemurl)
         if(!is.character(thepage)){
 
@@ -71,9 +71,17 @@ getOnePageMultiAlbums <- function(thepage){
 
 # savefile function
 savefile <- function(allimgs){
-    outFilename = "8xxxImgs.html"
-    write(allimgs, outFilename, append=TRUE)
-    shell(outFilename)
+    outFilename = "8xxxImgsList.js"
+    allimgs = paste0("'", allimgs, "',")
+    allimgs = c(allimgs, "]")
+
+    outFile = readLines(outFilename)
+    outFile = outFile[-length(outFile)]
+    outFile = c(outFile, allimgs)
+    sink(outFilename)
+    cat(outFile, sep="\n")
+    sink()
+    shell("8xxxImgs.html")
 }
 
 # searchkeyword function
