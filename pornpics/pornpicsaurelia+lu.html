@@ -1,0 +1,130 @@
+<base target="_blank"><html><head><title>aurelia+lu</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number">aurelia+lu</div>
+<center>
+<p class="js-tip"></p>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'1/341/16292362/16292362_001_7795',
+'1/341/16292362/16292362_002_84e2',
+'1/341/16292362/16292362_003_fb19',
+'1/341/16292362/16292362_004_7e70',
+'1/341/16292362/16292362_005_996d',
+'1/341/16292362/16292362_006_315a',
+'1/341/16292362/16292362_007_315a',
+'1/341/16292362/16292362_008_babb',
+'1/341/16292362/16292362_009_9c25',
+'1/341/16292362/16292362_010_0143',
+'1/341/16292362/16292362_011_0143',
+'1/341/16292362/16292362_012_f35d',
+'1/341/16292362/16292362_013_e43e',
+'1/341/16292362/16292362_014_a9b0',
+'1/341/16292362/16292362_015_90dd',
+'1/341/16292362/16292362_016_12ed',
+'1/341/16292362/16292362_017_3b20',
+'1/341/16292362/16292362_018_39a9',
+'7/547/19511677/19511677_004_78ed',
+'7/547/19511677/19511677_007_9aa3',
+'7/547/19511677/19511677_017_9745',
+'7/547/19511677/19511677_023_57b6',
+'7/547/19511677/19511677_027_d9e4',
+'7/547/19511677/19511677_031_69de',
+'7/547/19511677/19511677_039_5e72',
+'7/547/19511677/19511677_047_fa3e',
+'7/547/19511677/19511677_050_ec95',
+'7/547/19511677/19511677_056_3f44',
+'7/547/19511677/19511677_057_c515',
+'7/547/19511677/19511677_063_2a03',
+'7/547/19511677/19511677_069_b658',
+'7/547/19511677/19511677_074_ddc7',
+'7/547/19511677/19511677_083_f3d5',
+'7/547/19511677/19511677_089_e846',
+'7/547/19511677/19511677_096_a458',
+'7/547/19511677/19511677_101_c4df',
+'7/547/19511677/19511677_103_cf35',
+'7/547/19511677/19511677_111_2b50',
+'7/547/19511677/19511677_120_fd6c',
+'1/338/77351444/77351444_001_2b74',
+'1/338/77351444/77351444_002_9a76',
+'1/338/77351444/77351444_003_2008',
+'1/338/77351444/77351444_004_1a77',
+'1/338/77351444/77351444_005_7375',
+'1/338/77351444/77351444_006_a89e',
+'1/338/77351444/77351444_007_8534',
+'1/338/77351444/77351444_008_33b1',
+'1/338/77351444/77351444_009_b2ae',
+'1/338/77351444/77351444_010_08fb',
+'1/338/77351444/77351444_011_5475',
+'1/338/77351444/77351444_012_3d3e',
+'1/338/77351444/77351444_013_be21',
+'1/338/77351444/77351444_014_357c',
+'1/338/77351444/77351444_015_fcda',
+'1/338/77351444/77351444_016_47d9',
+'1/338/77351444/77351444_017_f329',
+'1/338/77351444/77351444_018_9a27',
+'7/544/95998443/95998443_005_e648',
+'7/544/95998443/95998443_009_e06a',
+'7/544/95998443/95998443_015_4f3f',
+'7/544/95998443/95998443_022_a8ce',
+'7/544/95998443/95998443_028_dba5',
+'7/544/95998443/95998443_032_1c5b',
+'7/544/95998443/95998443_041_be82',
+'7/544/95998443/95998443_048_430e',
+'7/544/95998443/95998443_054_98e5',
+'7/544/95998443/95998443_055_1d1e',
+'7/544/95998443/95998443_065_00b5',
+'7/544/95998443/95998443_070_2cb4',
+'7/544/95998443/95998443_076_a0f0',
+'7/544/95998443/95998443_084_79a6',
+'7/544/95998443/95998443_088_728a',
+'7/544/95998443/95998443_096_c307',
+'7/544/95998443/95998443_098_ee04',
+'7/544/95998443/95998443_108_5dd6',
+'7/544/95998443/95998443_109_ebe1',
+'7/544/95998443/95998443_117_9a53',
+];
+lineHeader = '<img src="https://cdni.pornpics.com/1280/'
+lineTail = '.jpg">'
+showRange = 60
+bookid = "aurelia+lu"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

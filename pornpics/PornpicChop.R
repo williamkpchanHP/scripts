@@ -15,23 +15,26 @@ library(crayon)
 
 # ask for cmdFileName
 cat(white("\n\n\nTo screen out lines!\n\n"))
+
+imgsrc = readline("Select image src origin, 1 pornpic, 2 xham, 3 freematures, 4 allHtmls: ")
+if(imgsrc == "1"){
+  setwd("C:/Users/william/Desktop/scripts/pornpics")
+}else if(imgsrc == "2"){
+  setwd("C:/Users/william/Desktop/scripts/xham")
+}else if(imgsrc == "3"){
+  setwd("C:/Users/william/Desktop/scripts/freematures")
+}else if(imgsrc == "4"){
+  setwd("C:/Users/william/Desktop/scripts/allHtmls")
+}
+
 cat(yellow("please select command file!\n"))
 choosefile = readline("select command file(txt file, press enter to default, jobcommands.txt): ")
 if(choosefile==""){
   choosefile = "jobcommands.txt"
 }
 
-setwd("C:/Users/william/Desktop/scripts/pornpics")
 cmdFile = readLines(choosefile)
 
-imgsrc = readline("Select image src origin, 1 pornpic, 2 xham, 3, freematures: ")
-if(imgsrc == "1"){
-  setwd("C:/Users/william/Desktop/scripts/pornpics")
-}else if(imgsrc == "2"){
-  setwd("C:/Users/william/Desktop/scripts/xham")
-}else{
-  setwd("C:/Users/william/Desktop/scripts/freematures")
-}
 
 #cat(blue(cmdFile), "\n\n", sep="\n")
 cat(green("file: ", choosefile, "\n"))
@@ -61,7 +64,7 @@ if(imgsrc == "1"){
   cmdFile = gsub('https://ic-ph-nss.xhcdn.com/a/', '', cmdFile)
   cmdFile = gsub('https://thumb-p.*?.com/a/', '', cmdFile)
   cmdFile = gsub('_1000.jpg', '', cmdFile)
-}else{
+}else if(imgsrc == "3"){
   cmdFile = gsub('http://freematuresgallery.com/pics/', '', cmdFile)
   cmdFile = gsub('.jpg', "',", cmdFile)
 }
@@ -76,8 +79,8 @@ cmdLines = cmdFile[-oddLines] # net line is cmd
 imgLinesLen = length(imgLines)
 chkRepeat = unique(imgLines)
   if(imgLinesLen != length(chkRepeat)){
-    cat(red("\n\nWarning! repeated imgLines:\n"))
-    cat(imgLines[duplicated(imgLines)], sep="\n")
+    cat(red("\n\nWarning! repeated imgLines:\n\n\n"))
+    cat(yellow(imgLines[duplicated(imgLines)], sep="\n\n"))
     break
   }
 
