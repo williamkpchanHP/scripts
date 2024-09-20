@@ -71,7 +71,7 @@ getOnePageMultiAlbums <- function(thepage){
 
 # savefile function
 savefile <- function(allimgs){
-    outFilename = "8xxxImgsList.js"
+    #outFilename = "8xxxImgsList.js"
     allimgs = paste0("'", allimgs, "',")
     allimgs = c(allimgs, "]")
 
@@ -136,6 +136,11 @@ cat("http://user.8xxx.net\n")
     totalAlbumimgs = character(0)
     keyword = character(0)
 loopType = readline("select single url or search keyword: 0/1 ")
+
+outFilename = readline("what is the outFilename? press enter if 8xxxImgsList.js! ")
+if(outFilename == ""){
+  outFilename = "8xxxImgsList.js"
+}
 
 if(loopType == 0){
     # url = "http://user.8xxx.net/i/287785-pierced-busty-milf/gallery20264576/"
