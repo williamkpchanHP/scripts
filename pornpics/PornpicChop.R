@@ -80,7 +80,9 @@ imgLinesLen = length(imgLines)
 chkRepeat = unique(imgLines)
   if(imgLinesLen != length(chkRepeat)){
     cat(red("\n\nWarning! repeated imgLines:\n\n\n"))
-    cat(yellow(imgLines[duplicated(imgLines)], sep="\n\n"))
+    for(i in imgLines[duplicated(imgLines)]){
+      cat(yellow(i, "\n"))
+    }
     break
   }
 

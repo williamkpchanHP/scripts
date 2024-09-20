@@ -132,7 +132,7 @@ searchkeyword <- function(){
 
 # main loop
 cat(red("Scrape href and images!\n"))
-cat("8xxx.net\n")
+cat("http://user.8xxx.net\n")
     totalAlbumimgs = character(0)
     keyword = character(0)
 loopType = readline("select single url or search keyword: 0/1 ")
