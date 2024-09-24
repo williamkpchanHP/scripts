@@ -1,55 +1,28 @@
-# this download cannot download full page and reason unknown
-# theFilename = paste0("mergeLists.js")
-# shell("mergeLists.html")
-# batchFIleHistory = readLines("xhamsterBatchProcessHistory.txt")
-
-# this must be added to setting chinese
 Sys.setlocale(category = 'LC_ALL', 'Chinese')
-#Sys.setlocale(, 'English')  
+setwd("C:/Users/william/Desktop/scripts/xham/R")
 
-#options("encoding" = "native.enc")
-#options("encoding" = "UTF-8")
-setwd("C:/Users/User/Pictures/sexpage")
-
-#library(audio)
 library(rvest)
 library(crayon)
  ligSilver <- make_style("#889988")
 
-className = ".page-list-container li"
-
-geturl = readline(prompt="enter url: ")
-titleName = readline(prompt="enter titleName: ")
-mergeMode = "1"
-
-pageTail=""
-pageHeader = geturl
-theFilename = paste0("mergeLists.js")
-
 wholePage = character()
+links = character()
+className = "a.video-thumb__image-container"
 
-# remember to remove &#9;
 
-url = pageHeader
-
- cat("url:",url, "\n")
-  batchFIleHistory = readLines("xhamsterBatchProcessHistory.txt")
-  historyIdx = grep(k, batchFIleHistory)
-  if(length(historyIdx) !=0){
-    stop(red("\nListed in History!: ", k, "\n"))
-  }
-
+collectXhamPage <- function(url){
+ cat(yellow("\nurl:",url, "\n"))
  pagesource <- read_html(url)
- className = "a.video-thumb__image-container"
 
  itemList <- html_nodes(pagesource, className)
- links = html_attr(itemList, "href")
+ links <<- c(links, html_attr(itemList, "href"))
  previewvideo = html_attr(itemList, "data-previewvideo")
 
  images = html_nodes(itemList, "noscript img")
  imgSrc = html_attr(images, "src")
  linksTxt = html_attr(images, "alt")
- linksTxt = paste0(titleName,", " ,linksTxt)
+ #linksTxt = paste0(titleName,", " ,linksTxt)
+ linksTxt = gsub("'", " ", linksTxt)
 
  sprite <- html_nodes(pagesource, "div.thumb-image-container__sprite")
  sprite = html_attr(sprite, "data-sprite")
@@ -57,34 +30,45 @@ url = pageHeader
 
  videoTxt = paste0('<br><video controls loop autoplay><source src="', previewvideo, '"></video>')
 
- result = paste0('<div><a href="', links, '"><img src="', imgSrc, '"><br>', linksTxt, '</a>', videoTxt, spriteTxt, '</div>')
- #rmid = grep('Friends only', result)s
- #result = result[-rmid]
+ result = paste0('<a href="', links, '"><img src="', imgSrc, '"><br>', linksTxt, '</a><br>', videoTxt,'<br>')
+ wholePage <<- sort(unique(wholePage))
+ wholePage <<- c(wholePage, result)
+}
 
- className = "div.xp-preload-image"
- itemImg <- html_nodes(pagesource, className)
+opMode = readline(prompt="enter batchMode or single url? 0/1: ")
 
- imgLink = html_attr(itemImg, "style")
- imgLink = gsub("^.*?http", "http",imgLink)
- imgLink = gsub("jpg.*", "jpg",imgLink)
- headerLink = paste0("<div><a href=\"", pageHeader, '"><img src="', imgLink, '"><br>', titleName, '</div>')
+if(opMode=="1"){
+  url = readline(prompt="enter url: ")
+  titleName = readline(prompt="enter titleName: ")
+  theFilename = paste0(titleName, ".html")
+  collectXhamPage(url)
+}else{
+  urlbatch = readLines("urlRelated.txt")
+  theFilename = paste0("Related.html")
 
-  wholePage = c(wholePage, headerLink, result)
-  wholePage = gsub("'", ".", wholePage)
-  wholePage = gsub("<div>", "'", wholePage)
-  wholePage = gsub("</div>", "',", wholePage)
+  for(i in urlbatch){
+    collectXhamPage(i)
+  }
+}
 
-  mergeFile = readLines(theFilename)
-  mergeFile = mergeFile[-length(mergeFile)]
-  mergeFile = c(mergeFile, wholePage, "];")
+links = sort(unique(links))
+cat("\n\nbegin relating...\n\n")
+counter = 0
+linksLen = length(links)
+for(i in links){
+  counter = counter + 1
+  cat( counter, "of", linksLen, i)
+  collectXhamPage(i)
+}
 
+wholePage = sort(unique(wholePage))
+
+setwd("C:/Users/william/Desktop/scripts/xham")
   sink(theFilename)
-  cat(mergeFile, sep="\n")
+  cat(wholePage, sep="\n")
   sink()
 
-cat(theFilename, "created!", "Total links: ", length(wholePage), "\n")
+cat(red("\n", theFilename, "created! Total links: ", length(wholePage), "\n"))
 theFilename = paste0('"',theFilename,'"')
-shell("mergeLists.html")
-
       write(url, file="xhamsterBatchProcessHistory.txt", append=TRUE)
       cat(yellow("\nxhamsterBatchProcessHistory.txt updated!\n"))

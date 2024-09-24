@@ -48,6 +48,12 @@ C:\Users\william\Desktop\scripts\pornpics\	PornpicChop.R
  	 
 C:\Users\william\Desktop\scripts\freematures\	collectfreematuresgalleryImgs.R
 C:\Users\william\Desktop\scripts\	findFiles.r
+C:\Users\william\Desktop\scripts\	removeduplicates.R
+C:\Users\william\Desktop\scripts\	extractAddr.R
+C:\Users\william\Desktop\scripts\	checkFIleExistFromFileList.R
+C:\Users\william\Desktop\scripts\	checkUrlexistFromFile.R
+C:\Users\william\Desktop\scripts\	tocleanFileFromAList.R
+ 	 
 C:\Users\william\Desktop\scripts\	scrapeImgs.R
 C:\Users\william\Desktop\scripts\youx\	scrapeYouxLinks.R
 C:\Users\william\Desktop\scripts\youx\	scrapeBatchYouxImgs.R

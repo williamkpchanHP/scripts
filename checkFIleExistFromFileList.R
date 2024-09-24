@@ -1,7 +1,7 @@
 programSrcPath = "C:/Users/william/Desktop/scripts/"
 setwd(programSrcPath)
 
-cat("\n\nCheck file exist, src data from file!\n\n")
+cat("\n\n\nCheck file exist, src data from file!\n\n")
 originalpath = readline("enter path name only:")
 originalpath = paste0(programSrcPath, originalpath)
 setwd(originalpath)
@@ -44,16 +44,22 @@ for (i in url) {
     }
 }
 
-for (i in noneTxt) {
-    targetIdx = grep(i, srcFile)
+
+for (i in 1:length(noneTxt)) {
+    targetIdx = grep(noneTxt[i], srcFile)
     if(length(targetIdx) ==1){
       cat("Idx: ",targetIdx, " ")
       srcFile[targetIdx] = ""
+    }else if(length(targetIdx) ==0){
+      cat("not found: targetIdx =0",i, "\ntargetIdx ",targetIdx)
     }else{
-      cat("unknown:\n","i: ",i, "\ntargetIdx ",targetIdx, "\nsrcFile[targetIdx]",srcFile[targetIdx], "\n")
-      break
+      cat("not found: targetIdx >0",i, "\ntargetIdx ",targetIdx)
     }
 }
+
+sink("nontxt.txt")
+  cat(noneTxt, sep="\n")
+sink()
 
 srcFile = unique(srcFile)
 # write back file
