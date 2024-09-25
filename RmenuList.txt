@@ -26,11 +26,13 @@ C:\Users\william\Desktop\scripts\pohub\	stdRvestPornhubChannelsNew.R
 C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubVideo.R
 C:\Users\william\Desktop\scripts\pohub\R\	PohubBATCHListProcess.R
  	 
-C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterAllStarVideos.R
-C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterPornstar.R
-C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterPornstarVideos.R
-C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterRelatedVideos.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterStars.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterPornstar.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterAllStarVideos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterPornstarVideos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterCreatorAlbumVideo.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterRelatedVideos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterVideoAlbum.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsVideos.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterUserGrpPhotos.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterAlbumFoto.R
