@@ -4,7 +4,7 @@ library(crayon)
 
 # retrieveFile
   retrieveFile <- function(urlAddr){
-    cat(yellow(urlAddr,"\n"))
+    cat(yellow("\n",urlAddr,"\n"))
     retryCounter = 1
     while(retryCounter < 5) {
       cat("...try ",retryCounter) 
