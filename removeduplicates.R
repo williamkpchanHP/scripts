@@ -10,9 +10,10 @@ srcFile = readLines(srcFileName)
 opeSrc = srcFile
 cat("\nlength(opeSrc): ", length(opeSrc))
 # extract keyData
-startingMark = readline("enter start Marker:")
+startingMark = readline("enter start Marker (without begin mark):")
 startingMark = paste0("^",startingMark)
-endMark = readline("enter end Marker:")
+
+endMark = readline("enter end Marker (without until mark):")
 endMark = paste0(endMark, ".*")
 
 keyData = gsub(startingMark, "", opeSrc)

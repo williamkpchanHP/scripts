@@ -84,7 +84,7 @@ for (page in 1:lentocpage){
    #writeClipboard(keywordList)
    keywordList = gsub(' class="video-thumb__image-container thumb-image-container"', '', keywordList)
    keywordList = gsub(' data-sprite', '><br><img src', keywordList)
-   keywordList = gsub(' data-previewvideo', '><br><br><video controls loop autoplay><source src', keywordList)
+   keywordList = gsub(' data-previewvideo', '><br><br><video controls preload="none" preload="none" loop autoplay><source src', keywordList)
 # the following line may change
    keywordList = gsub('"><div class="thumb-image-container__duration"', '<div', keywordList)
    keywordList = gsub('mp4">', 'mp4"></video><br><br>', keywordList)

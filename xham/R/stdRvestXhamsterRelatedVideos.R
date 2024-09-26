@@ -28,7 +28,7 @@ collectXhamPage <- function(url){
  sprite = html_attr(sprite, "data-sprite")
  spriteTxt = paste0('<br><img src="', sprite, '"><br>')
 
- videoTxt = paste0('<br><video controls loop autoplay><source src="', previewvideo, '"></video>')
+ videoTxt = paste0('<br><video controls preload="none" preload="none" loop autoplay><source src="', previewvideo, '"></video>')
 
  result = paste0('<a href="', links, '"><img src="', imgSrc, '"><br>', linksTxt, '</a><br>', videoTxt,'<br>')
  wholePage <<- sort(unique(wholePage))

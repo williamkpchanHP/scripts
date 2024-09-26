@@ -79,7 +79,7 @@ for(i in 1:length(addr)){
  text = gsub("'", ".", text)
 
  result = paste0(href, '"><img src="', imgsrc, '"><br>',
-   text,'</a><br><video controls loop autoplay><source src="', video, "',")
+   text,'</a><br><video controls preload="none" loop autoplay><source src="', video, "',")
  cat("\n\nlength(resut): ", length(result), "\n\n")
  wholePage = c(wholePage, result)
 

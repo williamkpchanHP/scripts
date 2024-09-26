@@ -91,7 +91,7 @@ for(i in 1:length(addr)){
  video = gsub('","isHD.*', '', video)
 
  result = paste0('<a href="', pageURL, '"><img src="', thumbURL, '"><br>',
-   title,'</a><br><video controls loop autoplay><source src="', video, "',")
+   title,'</a><br><video controls preload="none" preload="none" loop autoplay><source src="', video, "',")
  cat("\n\nlength(resut): ", length(result), "\n\n")
  wholePage = c(wholePage, result)
 

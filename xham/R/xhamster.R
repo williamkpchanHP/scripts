@@ -5,7 +5,7 @@
 # <a class="video-thumb__image-container thumb-image-container"
 # since thumb video is included, use video without thumb img
 # <a class="video-thumb__image-container thumb-image-container" href="https://xhamster.com/videos/curvy-karlie-simon-gives-a-fat-cock-a-pussy-ride-6635349" data-sprite="https://thumb-v9.xhcdn.com/a/T7vn1QCxKvis-gnrLn2dAg/006/635/349/240x135.s.jpg" data-previewvideo="https://thumb-v9.xhcdn.com/a/sGIu0_hJehlSFBH2VXPuUA/006/635/349/240x135.t.mp4">
-# <video controls width="500"><source src="https://thumb-v9.xhcdn.com/a/sGIu0_hJehlSFBH2VXPuUA/006/635/349/240x135.t.mp4"></video>
+# <video controls preload="none" preload="none" width="500"><source src="https://thumb-v9.xhcdn.com/a/sGIu0_hJehlSFBH2VXPuUA/006/635/349/240x135.t.mp4"></video>
 
 dirStr = "D:/Dropbox/MyDocs/R misc Jobs/webscraping/Text/programs/pohub/scripts"
 
@@ -24,7 +24,7 @@ theWholePage = character(0)
 		thepage = readLines(paste0(pageHead, i))
 		thepage = thepage[grep(seekkey, thepage)]
 		thepage = gsub('.*href' , '\'<a href', thepage)
-		thepage = gsub('data-sprite.*data-previewvideo' , '></a><video controls width="800"><source src', thepage)  
+		thepage = gsub('data-sprite.*data-previewvideo' , '></a><video controls preload="none" preload="none" width="800"><source src', thepage)  
 		thepage = gsub('mp4">' , 'mp4"></video>\'\\,', thepage)  
 
 		theWholePage = c(theWholePage, thepage)
