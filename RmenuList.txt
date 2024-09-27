@@ -25,6 +25,7 @@ C:\Users\william\Desktop\scripts\	stdRvestPornhubAllStars.R
 C:\Users\william\Desktop\scripts\pohub\	stdRvestPornhubChannelsNew.R
 C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubVideo.R
 C:\Users\william\Desktop\scripts\pohub\R\	PohubBATCHListProcess.R
+C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPohubRelatedVideos.R
  	 
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterStars.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterPornstar.R

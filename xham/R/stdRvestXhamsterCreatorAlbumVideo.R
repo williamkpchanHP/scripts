@@ -74,26 +74,30 @@ for(i in 1:length(addr)){
  targetLine = unlist(strsplit(targetLine, '"spriteURL":'))
  targetLine = targetLine[-(1:3)]
  targetLine = gsub('\\\\/', '/', targetLine)
-
+cat("targetLine", targetLine,"\n")
  title = gsub('^.*?title":"', '', targetLine)
  title = gsub('","thumbId.*', '', title)
+cat("title", length(title),"\n")
 
  pageURL = gsub('^.*?"pageURL":"', '', targetLine)
  pageURL = gsub('","thumbURL.*', '', pageURL)
  pageURL = gsub('<a href="https://xhamster.com/videos/', "'", pageURL)
+cat("pageURL", length(pageURL),"\n")
 
 
 #cat(pageURL, sep="\n")
  thumbURL = gsub('^.*?"thumbURL":"', '', targetLine)
  thumbURL = gsub('","previewThumbURL.*', '', thumbURL)
-
+cat("thumbURL", length(thumbURL),"\n")
  video = gsub('^.*?"trailerURL":"', '', targetLine)
  video = gsub('","isHD.*', '', video)
+cat("video", length(video),"\n")
 
  result = paste0('<a href="', pageURL, '"><img src="', thumbURL, '"><br>',
    title,'</a><br><video controls preload="none" preload="none" loop autoplay><source src="', video, "',")
  cat("\n\nlength(resut): ", length(result), "\n\n")
  wholePage = c(wholePage, result)
+cat("wholePage", length(wholePage),"\n")
 
  if(i == 10){
    ProcessEndTime = Sys.time()

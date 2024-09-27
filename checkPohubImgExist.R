@@ -1,36 +1,22 @@
-programSrcPath = "C:/Users/william/Desktop/scripts/"
+programSrcPath = "C:/Users/william/Desktop/scripts/pohub"
 setwd(programSrcPath)
-
-cat("\n\n\nCheck file exist, src data from file!\n\n")
-originalpath = readline("enter path name only, without full list:")
-originalpath = paste0(programSrcPath, originalpath)
-setwd(originalpath)
-cat("\ncurrent src path: ", originalpath)
 
 srcFileName = readline("enter src file name including extension:")
 srcFile = readLines(srcFileName)
 
-cleanup = function(linetxt){
-  lineIdx = grep(linetxt, srcFile)
-  cat("clean: ",lineIdx)
-  srcFile[lineIdx] = ""
-}
 urlIdx = grep("<img loading", srcFile)
 url = srcFile[urlIdx]
-url = gsub('^.*?http', 'http', url)
+url = gsub('^.*?src="', '', url)
 url = gsub('">.*', '', url)
-
-rmidx = grep("^\n", url)
-if(length(rmidx)>0){
-  url = url[-rmidx]
-}
+lenurl = length(url)
 
 noneTxt = character()
 cat("Total urls: ", length(url), "\n")
 counter = 0
+
 for (i in url) {
     counter = counter+1
-    cat(counter, ". ")
+    cat(counter, "of", lenurl,".")
     tmp <- tryCatch(
              readLines(url(i), warn=F), silent = TRUE,
              error = function (e) NULL
@@ -44,6 +30,8 @@ for (i in url) {
     }
 }
 
+noneTxt = gsub("\\(", "\\\\(", noneTxt)
+noneTxt = gsub("\\)", "\\\\)", noneTxt)
 
 for (i in 1:length(noneTxt)) {
     targetIdx = grep(noneTxt[i], srcFile)

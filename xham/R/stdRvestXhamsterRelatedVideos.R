@@ -15,24 +15,33 @@ collectXhamPage <- function(url){
  pagesource <- read_html(url)
 
  itemList <- html_nodes(pagesource, className)
- links <<- c(links, html_attr(itemList, "href"))
+ link = html_attr(itemList, "href")
+ cat("link: ", length(link), "\n")
+ links <<- c(links, link)
+ cat("links: ", length(links), "\n")
  previewvideo = html_attr(itemList, "data-previewvideo")
+ cat("previewvideo: ", length(previewvideo), "\n")
 
  images = html_nodes(itemList, "noscript img")
  imgSrc = html_attr(images, "src")
+ cat("imgSrc: ", length(imgSrc), "\n")
  linksTxt = html_attr(images, "alt")
  #linksTxt = paste0(titleName,", " ,linksTxt)
  linksTxt = gsub("'", " ", linksTxt)
+ cat("linksTxt: ", length(linksTxt), "\n")
 
  sprite <- html_nodes(pagesource, "div.thumb-image-container__sprite")
  sprite = html_attr(sprite, "data-sprite")
  spriteTxt = paste0('<br><img src="', sprite, '"><br>')
 
  videoTxt = paste0('<br><video controls preload="none" preload="none" loop autoplay><source src="', previewvideo, '"></video>')
+ cat("videoTxt: ", length(videoTxt), "\n")
 
- result = paste0('<a href="', links, '"><img src="', imgSrc, '"><br>', linksTxt, '</a><br>', videoTxt,'<br>')
+ result = paste0('<a href="', link, '"><img src="', imgSrc, '"><br>', linksTxt, '</a><br>', videoTxt,'<br>')
+ cat("result: ", length(result), "\n")
  wholePage <<- sort(unique(wholePage))
  wholePage <<- c(wholePage, result)
+ cat("wholePage: ", length(wholePage), "\n")
 }
 
 opMode = readline(prompt="enter batchMode or single url? 0/1: ")
@@ -52,13 +61,26 @@ if(opMode=="1"){
 }
 
 links = sort(unique(links))
-cat("\n\nbegin relating...\n\n")
+cat("\n\nbegin relating... links:", length(links),"\n\n")
 counter = 0
 linksLen = length(links)
 for(i in links){
   counter = counter + 1
   cat( counter, "of", linksLen, i)
   collectXhamPage(i)
+}
+
+oneMore = readline(prompt="run the third loop? y/n 0/1: ")
+if(oneMore == "0"){
+  links = sort(unique(links))
+  cat(red("\n\nbegin relating again... links:", length(links),"\n\n"))
+  counter = 0
+  linksLen = length(links)
+  for(i in links){
+    counter = counter + 1
+    cat( counter, "of", linksLen, i)
+    collectXhamPage(i)
+  }
 }
 
 wholePage = sort(unique(wholePage))

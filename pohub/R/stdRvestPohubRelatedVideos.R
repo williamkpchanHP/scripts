@@ -4,7 +4,7 @@ setwd("C:/Users/william/Desktop/scripts/pohub/R")
 library(rvest)
 library(crayon)
  ligSilver <- make_style("#889988")
-
+source("../../retrieveFile.R")
 wholePage = character()
 links = character()
 #className = ".gtm-event-thumb-click,.fade,.fadeUp,.videoPreviewBg,.linkVideoThumb,.js-linkVideoThumb"
