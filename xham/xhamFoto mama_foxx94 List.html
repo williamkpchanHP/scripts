@@ -1,0 +1,133 @@
+<base target="_blank"><html><head><title>mama_foxx94</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/teasing-in-my-pajama-shorts-mama-foxx94-16050135"><img src="https://ic-ph-nss.xhcdn.com/a/ZDQ4ZTc5Mzg3MzFiODc1MGQzMDA4MmU5YzRlNWExMTY/jpeg/000/514/754/893_450.jpg"><br>Teasing in my pajama shorts - Mama_Foxx94</a> 9',
+'<a href="https://xhamster.com/photos/gallery/sucking-a-big-dildo-and-showing-my-body-mama-foxx94-16042652"><img src="https://ic-ph-nss.xhcdn.com/a/YWJkMDljNGY2MjRiM2RiNjAwOWQwZjdkYzc3OGRkNjg/jpeg/000/514/653/526_450.jpg"><br>Sucking a big dildo and showing my body - Mama_Foxx94</a> 9',
+'<a href="https://xhamster.com/photos/gallery/some-recent-favorites-16152941"><img src="https://ic-ph-nss.xhcdn.com/a/ZmQzOWJkYzY0YTcyOTI2MzI4MTJhZDgwZjc2ZTA4NDc/jpeg/000/516/138/001_450.jpg"><br>Some recent Favorites</a> 9',
+'<a href="https://xhamster.com/photos/gallery/showing-off-mama-foxx94-16027998"><img src="https://ic-ph-nss.xhcdn.com/a/NDMzNjI4MzMxYzU3MGIxYzU2OGI1MjZiOTBhYTk2MTM/jpeg/000/514/454/547_450.jpg"><br>Showing off - Mama_Foxx94</a> 9',
+'<a href="https://xhamster.com/photos/gallery/shower-album-from-my-newest-video-mama-foxx94-16064229"><img src="https://ic-ph-nss.xhcdn.com/a/NTk0MTg5MTQ3NDRlNmZkMDQ2MzJjMmIyNzE3NjFkZTA/jpeg/000/514/954/546_450.jpg"><br>Shower album from my newest video - Mama_Foxx94</a> 9',
+'<a href="https://xhamster.com/photos/gallery/purple-lingerie-pics-mama-foxx94-16026597"><img src="https://ic-ph-nss.xhcdn.com/a/ZTZmZWE4Nzg3ZmNlMWIxZWJmZDkxYWYzZjQ2MDFmMmM/jpeg/000/514/435/715_450.jpg"><br>Purple Lingerie Pics - Mama_Foxx94</a> 9',
+'<a href="https://xhamster.com/photos/gallery/new-videos-on-profile-mama-foxx94-16040784"><img src="https://ic-ph-nss.xhcdn.com/a/ZmIxZDdjNzNlMzBmMjJmYjBkODE1Nzg5YzNiMmUzZjM/jpeg/000/514/626/213_450.jpg"><br>NEW VIDEOS ON PROFILE! - Mama_Foxx94</a> 9',
+'<a href="https://xhamster.com/photos/gallery/bathing-suit-baddie-mama-foxx94-16044504"><img src="https://ic-ph-nss.xhcdn.com/a/MzEwMWQ3MzVmNmJjOGRlZWQyNWI3MDVkODBjZTY2N2I/jpeg/000/514/676/085_450.jpg"><br>Bathing suit baddie - Mama_Foxx94</a> 9',
+'<a href="https://xhamster.com/photos/gallery/amateur-free-use-milf-got-some-sun-and-some-dick-in-the-wind-16151116"><img src="https://ic-ph-nss.xhcdn.com/a/MDQ3OGMyNTk5NzI0YWE1NmMxNzMxMzE2MGZhN2QwM2U/jpeg/000/516/117/242_450.jpg"><br>Amateur Free use MILF got some sun and some dick in the wind</a> 9',
+'<a href="https://xhamster.com/photos/gallery/your-favorite-whore-loves-showing-off-for-you-mama-foxx94-16038808"><img src="https://ic-ph-nss.xhcdn.com/a/N2FkMDJjYjEyZTRiMmJkMGFmMzgyMmVmMTJkYTgwNjk/jpeg/000/514/602/519_450.jpg"><br>Your favorite whore loves showing off for you - Mama_Foxx94</a> 8',
+'<a href="https://xhamster.com/photos/gallery/vid-on-profile-fishnets-and-dildos-mama-foxx94-16027719"><img src="https://ic-ph-nss.xhcdn.com/a/ZWUzOWY4MDMxYTBkNTZjNzNmYjMyMDE0M2U5NmNmZDQ/jpeg/000/514/450/929_450.jpg"><br>(VID ON PROFILE) Fishnets and dildos - Mama_Foxx94</a> 8',
+'<a href="https://xhamster.com/photos/gallery/some-more-nudes-mama-foxx94-16040781"><img src="https://ic-ph-nss.xhcdn.com/a/OGQ1MmNkYzYyODllYTZjYTNkN2FhOTViYjBjN2E2MjA/jpeg/000/514/626/187_450.jpg"><br>Some More Nudes - Mama_Foxx94</a> 8',
+'<a href="https://xhamster.com/photos/gallery/showing-off-mama-foxx94-16040777"><img src="https://ic-ph-nss.xhcdn.com/a/Y2QxYWI2YzQ3ZWVmYjQwODgyYTQ5M2RjYTZjNWI1ZmE/jpeg/000/514/626/174_450.jpg"><br>Showing Off - Mama_Foxx94</a> 8',
+'<a href="https://xhamster.com/photos/gallery/pretty-pastels-mama-foxx94-16028216"><img src="https://ic-ph-nss.xhcdn.com/a/MWIwNjJkYjY0ODI2ZjQ5Yzk2ZWNhYzE4ZWE1MmViYmQ/jpeg/000/514/458/541_450.jpg"><br>Pretty Pastels - Mama_Foxx94</a> 8',
+'<a href="https://xhamster.com/photos/gallery/green-thong-mama-foxx94-16044501"><img src="https://ic-ph-nss.xhcdn.com/a/NjRlNzc5NWVkNWRmYjZjNTk3ODg4YzM1Nzg0YjU5OGM/jpeg/000/514/676/075_450.jpg"><br>Green thong - Mama_Foxx94</a> 8',
+'<a href="https://xhamster.com/photos/gallery/amateur-milf-in-red-lingerie-16151110"><img src="https://ic-ph-nss.xhcdn.com/a/MGYwOGI0YzYxNTg0ZDUyNmMzNzI2MmNiNjJhNjQ1YWY/jpeg/000/516/117/192_450.jpg"><br>Amateur MILF in red lingerie</a> 8',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-easter-album-bj-vid-for-sale-on-many-vids-16013206"><img src="https://ic-ph-nss.xhcdn.com/a/ZDE1N2YwMmIxZDgyOGZmZjExZDE4ZGI4MGVjMGExMzQ/jpeg/000/514/246/119_450.jpg"><br>Mama_Foxx94 Easter Album - Bj vid for sale on MANY VIDS</a> 72',
+'<a href="https://xhamster.com/photos/gallery/video-on-profile-blue-lingerie-pics-mama-foxx94-16026595"><img src="https://ic-ph-nss.xhcdn.com/a/YzhkZjBhZmExMmFjMjc5NjA0YzhiMzE2MzZkMWQwZjk/jpeg/000/514/435/702_450.jpg"><br>(video on Profile) Blue lingerie Pics - Mama_Foxx94</a> 7',
+'<a href="https://xhamster.com/photos/gallery/thin-blue-leggings-16148189"><img src="https://ic-ph-nss.xhcdn.com/a/NDQ5YjQ1ZDBkOTRkNDg2MTY2OGIxOTU5NjU5YzY4ODg/jpeg/000/516/079/741_450.jpg"><br>Thin blue leggings</a> 7',
+'<a href="https://xhamster.com/photos/gallery/slut-milf-showing-off-mama-foxx94-16060998"><img src="https://ic-ph-nss.xhcdn.com/a/MWIzMTdmOGI2YzEzNGY1ZWNjMWU5NWJlODg2OWM0MjI/jpeg/000/514/915/147_450.jpg"><br>Slut MILF Showing off - Mama_Foxx94</a> 7',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-a-fan-bought-me-a-slutty-kitty-dress-16017402"><img src="https://ic-ph-nss.xhcdn.com/a/MjhjNTIzM2YyNTM2NGM0NzA0ZmU3NDg4NWFjODczNjU/jpeg/000/514/301/196_450.jpg"><br>Mama_Foxx94 - A fan bought me a slutty kitty dress!</a> 7',
+'<a href="https://xhamster.com/photos/gallery/i-love-showing-off-my-ass-in-my-jean-shorts-mama-foxx94-16049699"><img src="https://ic-ph-nss.xhcdn.com/a/NmM3ZjhjZjVhMTY0NTZjMmQ4MGI3MmVkOWJjOWFkNGM/jpeg/000/514/750/378_450.jpg"><br>I love showing off my ass in my jean shorts - Mama_Foxx94</a> 7',
+'<a href="https://xhamster.com/photos/gallery/getting-naughty-on-the-floor-mama-foxx94-16047109"><img src="https://ic-ph-nss.xhcdn.com/a/ZDZhNWRjYzVjNTZhMTcwM2YxMTRhOTk2Yjc2YWNlYzY/jpeg/000/514/719/077_450.jpg"><br>Getting naughty on the floor - Mama_Foxx94</a> 7',
+'<a href="https://xhamster.com/photos/gallery/vids-on-profile-another-weeks-wort-of-filming-mama-foxx-16033291"><img src="https://ic-ph-nss.xhcdn.com/a/OGIyMDc1OWJkNzUwMWM4NmQ0Zjc5Y2YzOTM2M2UyZWI/jpeg/000/514/525/230_450.jpg"><br>(VIDS ON PROFILE) Another weeks wort of filming! - Mama_Foxx</a> 63',
+'<a href="https://xhamster.com/photos/gallery/working-remotely-has-perks-mama-foxx94-16028776"><img src="https://ic-ph-nss.xhcdn.com/a/YzNhNTZhYWFjZmY4MDVmZjJlZDE3MzQ4MTM5NDNiNTE/jpeg/000/514/465/136_450.jpg"><br>Working remotely has perks - Mama_Foxx94</a> 6',
+'<a href="https://xhamster.com/photos/gallery/spreading-wide-mama-foxx94-16042655"><img src="https://ic-ph-nss.xhcdn.com/a/ZjlkNWZlZmZiYzdlZGRiOGJmZTU5ODE2NGI5ZGM0NDQ/jpeg/000/514/653/539_450.jpg"><br>Spreading wide - Mama_Foxx94</a> 6',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-purple-lingerie-video-on-profile-16015182"><img src="https://ic-ph-nss.xhcdn.com/a/OWU1Yzk3OTFhYWU3ZDMyZGNjMTc4YjAwMGQwYTg3MWM/jpeg/000/514/271/202_450.jpg"><br>Mama_Foxx94 - Purple Lingerie (Video on Profile)</a> 6',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-blue-hair-album-video-on-profile-16012213"><img src="https://ic-ph-nss.xhcdn.com/a/NDVlOGZhZTViMjNiYjFhZDk3NDM3M2RiYTVmMmMwODQ/jpeg/000/514/231/723_450.jpg"><br>Mama_Foxx94 - Blue Hair Album VIDEO ON PROFILE</a> 55',
+'<a href="https://xhamster.com/photos/gallery/christmas-lingerie-album-16010828"><img src="https://ic-ph-nss.xhcdn.com/a/ZGIyY2NkMjVlMmVhMDhmNTRjZWU0MzFmZDY2YWQwM2U/jpeg/000/514/214/552_450.jpg"><br>Christmas Lingerie Album</a> 55',
+'<a href="https://xhamster.com/photos/gallery/another-collection-of-sexy-pics-mama-foxx94-16071624"><img src="https://ic-ph-nss.xhcdn.com/a/YjI2ZjUzZGZlMDIwOTA4YmNhOTQwNzVmNmNlZjU4OTM/jpeg/000/515/046/486_450.jpg"><br>Another collection of sexy pics - Mama_Foxx94</a> 54',
+'<a href="https://xhamster.com/photos/gallery/your-favorite-milf-slut-mama-foxx94-16058402"><img src="https://ic-ph-nss.xhcdn.com/a/YzhkZDIxN2I2NzA1YzFmNGFlNzE4MzlhYzRlYzUzYWU/jpeg/000/514/875/852_450.jpg"><br>Your Favorite MILF Slut - Mama_Foxx94</a> 45',
+'<a href="https://xhamster.com/photos/gallery/slut-activities-mama-foxx94-16076531"><img src="https://ic-ph-nss.xhcdn.com/a/NjNmOWFmMzQwNDlhZDUzMzhiOWRkOWIxOGM5MGM1NTM/jpeg/000/515/107/542_450.jpg"><br>Slut activities - Mama_Foxx94</a> 44',
+'<a href="https://xhamster.com/photos/gallery/vids-on-profile-another-slutty-collection-mama-foxx94-16030925"><img src="https://ic-ph-nss.xhcdn.com/a/YWU0ZGI3NmZmZGJhN2EwYTk0M2M5ZDMxNWM3MWQxNDM/jpeg/000/514/495/762_450.jpg"><br>(Vids on Profile) Another slutty collection - Mama_Foxx94</a> 41',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-late-night-adult-time-video-on-profile-16016629"><img src="https://ic-ph-nss.xhcdn.com/a/ODdkNjg0YTVkNTlhOWJmMTRhN2UwMGY2ZGY5MDRhODM/jpeg/000/514/290/088_450.jpg"><br>Mama_Foxx94 - Late night adult time (VIDEO ON PROFILE)</a> 38',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-fun-in-a-sundress-16017864"><img src="https://ic-ph-nss.xhcdn.com/a/ZDkzMjY2ZGFhNWJhMGMwYzg0OGI3NzczNzI1NzNmZWY/jpeg/000/514/307/665_450.jpg"><br>Mama_Foxx94 - Fun in a sundress</a> 38',
+'<a href="https://xhamster.com/photos/gallery/videos-on-profile-yellow-leggings-and-tits-mama-foxx94-16027997"><img src="https://ic-ph-nss.xhcdn.com/a/NzEzY2FjMWU3N2M0ZWMzZmIwMDFiZjBmZjgzNWNjYjk/jpeg/000/514/454/496_450.jpg"><br>(Videos on profile) Yellow leggings and tits - Mama_Foxx94</a> 37',
+'<a href="https://xhamster.com/photos/gallery/fishnets-and-slutty-dresses-mama-foxx94-vid-on-profile-16023422"><img src="https://ic-ph-nss.xhcdn.com/a/OTE3NDRiOGQ3N2IyNjY4NzUzMmI5ODNhNmU4NDU1YWQ/jpeg/000/514/388/874_450.jpg"><br>Fishnets and slutty dresses - Mama_Foxx94 (Vid on profile)</a> 37',
+'<a href="https://xhamster.com/photos/gallery/videos-on-profile-weeks-worth-of-pics-mama-foxx94-16030596"><img src="https://ic-ph-nss.xhcdn.com/a/Mzc5MTU3NTBlMWZmMDAzMTJjOThiOWI0ZmVkMjkwMGE/jpeg/000/514/491/856_450.jpg"><br>(Videos on profile!) Weeks worth of pics - Mama_Foxx94</a> 33',
+'<a href="https://xhamster.com/photos/gallery/a-few-days-worth-of-shoots-mama-foxx94-16056244"><img src="https://ic-ph-nss.xhcdn.com/a/ZTBlYzQxYTZjOGMyYWVkN2NlODA3MjAzMTZjYTNkYjU/jpeg/000/514/847/923_450.jpg"><br>A few Days worth of shoots - Mama_Foxx94</a> 30',
+'<a href="https://xhamster.com/photos/gallery/vid-on-profile-outside-pussy-play-16024274"><img src="https://ic-ph-nss.xhcdn.com/a/YzVlMzFiOGQ0ZjA0NDczYWRiNjY2YWYyNTlmYzc1ZDk/jpeg/000/514/397/724_450.jpg"><br>(VID ON PROFILE) - Outside Pussy play</a> 3',
+'<a href="https://xhamster.com/photos/gallery/cabin-fun-16010462"><img src="https://ic-ph-nss.xhcdn.com/a/NWZiYjI5N2UyNzQ3MmM1MzlmOThiMDgyY2M4MjBkZGI/jpeg/000/514/208/469_450.jpg"><br>Cabin Fun</a> 26',
+'<a href="https://xhamster.com/photos/gallery/bodysuits-and-jeans-mama-foxx94-16020959"><img src="https://ic-ph-nss.xhcdn.com/a/M2Y5ZTBhZjliZDg1MjAxZGE1YjE3OWZlODQ5NTIyYjI/jpeg/000/514/355/415_450.jpg"><br>Bodysuits and Jeans - Mama_Foxx94</a> 23',
+'<a href="https://xhamster.com/photos/gallery/vids-on-profile-a-few-nudes-for-you-mama-foxx94-16037559"><img src="https://ic-ph-nss.xhcdn.com/a/OWM0NWViMzdjMmRjZTM0MzUwMjE4YmRlZmE5ZDFjYjY/jpeg/000/514/578/108_450.jpg"><br>(VIDS on Profile) A few nudes for you - Mama_Foxx94</a> 21',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-pics-from-the-vids-i-shoot-for-my-profile-16019449"><img src="https://ic-ph-nss.xhcdn.com/a/Y2VmYTY5N2FiNGQ3MzE5Zjk3ZTQwMGYxMjIwMDk3NzQ/jpeg/000/514/335/469_450.jpg"><br>Mama_Foxx94 - Pics from the vids I shoot for my profile</a> 21',
+'<a href="https://xhamster.com/photos/gallery/amateur-milf-in-fishnet-and-a-thong-masturbating-16152945"><img src="https://ic-ph-nss.xhcdn.com/a/ZjBiMjExYzEwOTAxYWVkMjAyMmFmNGU1YTFmZjM1NTE/jpeg/000/516/138/024_450.jpg"><br>Amateur MILF in Fishnet and a thong masturbating</a> 21',
+'<a href="https://xhamster.com/photos/gallery/a-slut-in-fishnets-16109495"><img src="https://ic-ph-nss.xhcdn.com/a/NmNkMzAxMzhmMTEyNjEwMmMzODFiMDQ1Njg4MGJlMTE/jpeg/000/515/546/184_450.jpg"><br>A slut in fishnets</a> 21',
+'<a href="https://xhamster.com/photos/gallery/vid-on-profile-masturbating-in-the-shower-mama-foxx94-16024924"><img src="https://ic-ph-nss.xhcdn.com/a/NTY5YjI4NWI5ZjE0OGU3MTMzNWY0YWY2NjY4Y2YzZmY/jpeg/000/514/406/229_450.jpg"><br>(VID ON PROFILE) Masturbating in the shower - Mama_Foxx94</a> 20',
+'<a href="https://xhamster.com/photos/gallery/recent-photo-dump-16174755"><img src="https://ic-ph-nss.xhcdn.com/a/MjZmNmYzMDRlYmY5YTQxNWFlOTYyOWQyOTMyYzJmZDE/jpeg/000/516/399/047_450.jpg"><br>Recent Photo Dump</a> 20',
+'<a href="https://xhamster.com/photos/gallery/a-days-worth-of-filming-wardrobe-changes-mama-foxx94-16025257"><img src="https://ic-ph-nss.xhcdn.com/a/ZmJkMzVlNjcwYjBhNzE4ZDYwMjZkMzA5Yjg3ZGNjOTg/jpeg/000/514/420/162_450.jpg"><br>A days Worth of Filming wardrobe changes - Mama_Foxx94</a> 20',
+'<a href="https://xhamster.com/photos/gallery/black-and-white-top-pics-mama-foxx94-16026289"><img src="https://ic-ph-nss.xhcdn.com/a/NmU5YjdjNDlhZGMwMTFiM2M0YzdlNTJiMjc1NWY4N2Y/jpeg/000/514/432/461_450.jpg"><br>Black and White Top Pics - Mama_Foxx94</a> 2',
+'<a href="https://xhamster.com/photos/gallery/vids-on-profile-more-slutty-pics-for-you-mama-foxx94-16037176"><img src="https://ic-ph-nss.xhcdn.com/a/OGEzMzAzMjdkOWMyODRkOThlNTBjZGVlZWVkMTJhMTQ/jpeg/000/514/571/137_450.jpg"><br>(VIDS ON PROFILE) More slutty pics for you - Mama_Foxx94</a> 19',
+'<a href="https://xhamster.com/photos/gallery/pics-from-custom-videos-mama-foxx94-16019855"><img src="https://ic-ph-nss.xhcdn.com/a/ZmIzNmM1NTNmODZkNWVkMGFjMjQxNmQ1YzYwZDhjZjU/jpeg/000/514/339/453_450.jpg"><br>Pics from custom videos - Mama_Foxx94 </a> 19',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-pics-from-the-car-play-video-16018414"><img src="https://ic-ph-nss.xhcdn.com/a/ZTA5MzhmOTAzMjVkZTFmZTEzZTI2MTBiNzdmZTI4OTU/jpeg/000/514/315/850_450.jpg"><br>Mama_Foxx94 - Pics from the car play video</a> 19',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-gaming-and-fucking-video-on-profile-16014798"><img src="https://ic-ph-nss.xhcdn.com/a/YjA2YjMzYWQzMTI3ZjhiNzI4YjgxNmU2YWExMzBlNzE/jpeg/000/514/267/278_450.jpg"><br>Mama_Foxx94 - Gaming and fucking VIDEO ON PROFILE</a> 19',
+'<a href="https://xhamster.com/photos/gallery/i-love-corsets-mama-foxx94-16024659"><img src="https://ic-ph-nss.xhcdn.com/a/NWZiZmNiMGQ5MzNkYTA1NzdhOTA5MWZjOWY4YzU4OGQ/jpeg/000/514/403/134_450.jpg"><br>I love corsets! - Mama_Foxx94</a> 19',
+'<a href="https://xhamster.com/photos/gallery/easy-access-mama-foxx94-16061963"><img src="https://ic-ph-nss.xhcdn.com/a/NDc1MGNmZWUwMjY2ZTMyMzY4ZGExMGJlNWQxODJkZjY/jpeg/000/514/926/005_450.jpg"><br>Easy access - Mama_Foxx94</a> 18',
+'<a href="https://xhamster.com/photos/gallery/just-another-whore-in-a-sundress-mama-foxx94-16022685"><img src="https://ic-ph-nss.xhcdn.com/a/N2M0ZTYwNjBmMzQ1MzVlYTEwYjhiOTIxN2E4MWQ2NjA/jpeg/000/514/378/132_450.jpg"><br>Just another whore in a sundress - Mama_Foxx94</a> 17',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-green-lace-panties-16018126"><img src="https://ic-ph-nss.xhcdn.com/a/OWQ5ZjExMTI4OWRkZjc3Y2YwMmJmNTAxYjUwMTA4N2U/jpeg/000/514/310/767_450.jpg"><br>Mama_Foxx94 - Green Lace panties</a> 16',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-pink-thong-selfies-16011657"><img src="https://ic-ph-nss.xhcdn.com/a/YWZlYTdkOGIxZmRkMzZmYmE1N2Q2ZjEwNGE5MWFhNTc/jpeg/000/514/224/587_450.jpg"><br>Mama_Foxx94 Pink Thong Selfies</a> 15',
+'<a href="https://xhamster.com/photos/gallery/video-on-profile-showing-off-my-sexy-body-mama-foxx94-16040451"><img src="https://ic-ph-nss.xhcdn.com/a/ZDIzNDE2NGU4MzAxOGFmMGNjMjBjZTI4ZGUwNDg5ODc/jpeg/000/514/622/117_450.jpg"><br>(Video On Profile) Showing off my sexy body - Mama_Foxx94</a> 14',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-quickie-after-a-broadway-show-vid-on-profile-16016186"><img src="https://ic-ph-nss.xhcdn.com/a/OTNkODRmNzczYmIzZDc0Zjg0ZGUzN2ZkYmI0NjI1YTA/jpeg/000/514/284/284_450.jpg"><br>Mama_Foxx94 - Quickie after a Broadway show [VID ON PROFILE]</a> 14',
+'<a href="https://xhamster.com/photos/gallery/vid-on-profile-blue-lingerie-mama-foxx94-16026048"><img src="https://ic-ph-nss.xhcdn.com/a/ZjgzYzM3ZTdiNDgxNDJhYTU2NWZiNzRhNzg3NzI3OGI/jpeg/000/514/430/109_450.jpg"><br>(Vid on Profile) Blue Lingerie - Mama_Foxx94</a> 13',
+'<a href="https://xhamster.com/photos/gallery/milf-next-door-mama-foxx94-16060070"><img src="https://ic-ph-nss.xhcdn.com/a/ZTFjZmNkMGM5ZmMzYjYwZTJkMzk4MmIzNDVkY2JlMDE/jpeg/000/514/900/761_450.jpg"><br>Milf Next Door - Mama_Foxx94</a> 13',
+'<a href="https://xhamster.com/photos/gallery/vid-on-profile-slutty-pink-dress-mama-foxx94-16022320"><img src="https://ic-ph-nss.xhcdn.com/a/ODgxNmJlYjE4MTEyZTJiZjE0NTQzM2IwZTQ5Y2ZjODE/jpeg/000/514/373/193_450.jpg"><br>(VID ON PROFILE) Slutty Pink Dress - Mama_Foxx94</a> 12',
+'<a href="https://xhamster.com/photos/gallery/slut-strips-out-of-her-clothes-mama-foxx94-16040793"><img src="https://ic-ph-nss.xhcdn.com/a/ODVjYmIxYjQzNjEzYzJkY2QwYjIyMmI1MzIxMmU5NGQ/jpeg/000/514/626/283_450.jpg"><br>Slut strips out of her clothes - Mama_Foxx94</a> 12',
+'<a href="https://xhamster.com/photos/gallery/purple-satin-corset-mama-foxx94-16078035"><img src="https://ic-ph-nss.xhcdn.com/a/NDcwNGZiNjI2ZjNjYmI1ZmE0ZDhlZWNmZDhmNGE5ZDI/jpeg/000/515/128/044_450.jpg"><br>Purple Satin Corset - Mama_Foxx94</a> 12',
+'<a href="https://xhamster.com/photos/gallery/public-pussy-play-16025735"><img src="https://ic-ph-nss.xhcdn.com/a/MWUyYmE5ZTE4ZGI1NzZiNWJjN2E5ZDUzNTIzMjY4OTg/jpeg/000/514/425/698_450.jpg"><br>Public Pussy Play</a> 12',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-a-fan-got-me-a-micro-bikini-16017135"><img src="https://ic-ph-nss.xhcdn.com/a/NDk0Mzk5NWFiOTQ4MDBlMDU1Y2ZmNWYyZjgxMDU4YTU/jpeg/000/514/297/000_450.jpg"><br>Mama_Foxx94 - A fan got me a micro bikini!!</a> 12',
+'<a href="https://xhamster.com/photos/gallery/video-on-profile-silk-nightie-stripping-mama-foxx94-16027395"><img src="https://ic-ph-nss.xhcdn.com/a/YjdlOWMxYWVhYTE5Y2VjNDZlZDA4ZmU5OTk4MWVjY2M/jpeg/000/514/446/618_450.jpg"><br>(video on profile!) Silk Nightie stripping - Mama_Foxx94</a> 11',
+'<a href="https://xhamster.com/photos/gallery/sexy-milf-in-silk-and-heels-16151113"><img src="https://ic-ph-nss.xhcdn.com/a/ZjU4NzMzOWQ4NTM3MzFiNzJmMWVmY2QwYzgzZGJkZWQ/jpeg/000/516/117/216_450.jpg"><br>Sexy MILF in silk and heels</a> 11',
+'<a href="https://xhamster.com/photos/gallery/more-fun-in-my-slutty-pink-dress-mama-foxx94-16028000"><img src="https://ic-ph-nss.xhcdn.com/a/MWJkMWVjYzlmMjU5Y2I4ZmU4NGMyNzUxZGVlODEyNjk/jpeg/000/514/454/583_450.jpg"><br>More fun in my Slutty Pink Dress - Mama_Foxx94</a> 11',
+'<a href="https://xhamster.com/photos/gallery/i-love-this-dress-mama-foxx94-16052190"><img src="https://ic-ph-nss.xhcdn.com/a/YTI0MTMzNDAxYjkxZmVhZTI1NmZkMzZkODY3MzA1MDk/jpeg/000/514/776/893_450.jpg"><br>I love this dress - Mama_Foxx94</a> 11',
+'<a href="https://xhamster.com/photos/gallery/vid-on-profile-black-lace-and-pussy-mama-foxx94-16028509"><img src="https://ic-ph-nss.xhcdn.com/a/ZTA3NWY5YWUwNDk0M2YzYTUwMDFjN2NhMGM5ZDk1NDk/jpeg/000/514/462/127_450.jpg"><br>(VID ON PROFILE) Black lace and pussy - Mama_Foxx94</a> 10',
+'<a href="https://xhamster.com/photos/gallery/spreading-wide-mama-foxx94-16040783"><img src="https://ic-ph-nss.xhcdn.com/a/OTIxODIzYzM4NjY4ZmEyMTBiMWNmOWE2MDY2YjllYWM/jpeg/000/514/626/207_450.jpg"><br>Spreading wide - Mama_Foxx94</a> 10',
+'<a href="https://xhamster.com/photos/gallery/spooky-milf-slut-mama-foxx94-16078030"><img src="https://ic-ph-nss.xhcdn.com/a/OWJjZDIyMzM2NDc4YWExYTJhZmVhMzk5ZDk3ZjYwNDM/jpeg/000/515/128/011_450.jpg"><br>Spooky MILF Slut - Mama_Foxx94</a> 10',
+'<a href="https://xhamster.com/photos/gallery/some-more-pics-to-get-you-through-the-week-mama-foxx94-16039608"><img src="https://ic-ph-nss.xhcdn.com/a/YWJlZDg5YjI0ZTIxOTEyOWQyZTM5YTVlMWE1N2FhMmM/jpeg/000/514/612/859_450.jpg"><br>Some more pics to get you through the week - Mama_Foxx94</a> 10',
+'<a href="https://xhamster.com/photos/gallery/mama-foxx94-purple-dildo-fun-video-for-sale-on-many-vids-16013188"><img src="https://ic-ph-nss.xhcdn.com/a/NTkxOTIwOTM5OGRjNDM2MThhZDk1MmFmYTE3NjM3OTM/jpeg/000/514/245/997_450.jpg"><br>Mama_Foxx94 - Purple Dildo fun - Video for sale on Many VIDS</a> 10',
+'<a href="https://xhamster.com/photos/gallery/i-love-being-a-little-whore-while-im-working-mama-foxx94-16047107"><img src="https://ic-ph-nss.xhcdn.com/a/Yzg1MjMxOWQ1ODA5NjFlZTY2ZjRkNmIxYmEwNDQ2MzY/jpeg/000/514/719/067_450.jpg"><br>I love being a little whore while I&#039;m working! - Mama_Foxx94</a> 10',
+'',
+];
+lineHeader = ''
+lineTail = ''
+showRange = 60
+bookid = "mama_foxx94"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

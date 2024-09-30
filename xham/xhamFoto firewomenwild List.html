@@ -1,0 +1,89 @@
+<base target="_blank"><html><head><title>firewomenwild</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/new-gallery-in-the-end-i-end-up-naked-on-the-balcony-15909791"><img src="https://ic-ph-nss.xhcdn.com/a/OGRkN2FlODIxZmQ0ZGQ1YzhiMjVkYjIzYjM5ZTk5MWE/jpeg/000/512/349/304_450.jpg"><br>new gallery!  in the end I end up naked on the balcony</a> 99',
+'<a href="https://xhamster.com/photos/gallery/gif-love-bodyshot-cumshot-11388224"><img src="https://thumb-p1.xhcdn.com/a/MUZja6q5k7hi-7rCWE5aGQ/000/253/759/881_240.gif"><br>GIF love bodyshot cumshot </a> 9',
+'<a href="https://xhamster.com/photos/gallery/young-wife-loves-getting-fucked-every-night-15795922"><img src="https://ic-ph-nss.xhcdn.com/a/NjM5Y2I2MjRlMzg4NDlmYjE0ZWM2YzJiZGZhNTIwYmU/jpeg/000/500/224/432_450.jpg"><br>Young Wife Loves Getting Fucked Every Night</a> 84',
+'<a href="https://xhamster.com/photos/gallery/real-wife-loves-to-show-off-when-she-gets-fucked-16065390"><img src="https://ic-ph-nss.xhcdn.com/a/MDgwYmM4NGViYzY0M2Q1N2FjMDEwZjViNTMwMWYwZjE/jpeg/000/514/971/404_450.jpg"><br>Real Wife Loves To Show Off When She Gets Fucked</a> 82',
+'<a href="https://xhamster.com/photos/gallery/hot-in-the-bathroom-1-10833801"><img src="https://ic-ph-nss.xhcdn.com/a/ZjU0YWY5MjMxOTIwYzA0NTYwZmJjMGMxOGY2ZGU1MGE/jpeg/000/228/139/191_450.jpg"><br>hot in the bathroom 1</a> 73',
+'<a href="https://xhamster.com/photos/gallery/young-wife-in-lingerie-is-fucked-she-loves-to-show-herself-15801217"><img src="https://ic-ph-nss.xhcdn.com/a/ZjA4YjEwMmQ5MmQwZTljNmU3MmQ3MWRlZjc1ZjQ1OWY/jpeg/000/503/032/576_450.jpg"><br>Young Wife In Lingerie Is Fucked She Loves To Show Herself</a> 69',
+'<a href="https://xhamster.com/photos/gallery/hot-in-the-bathroom-2-11313540"><img src="https://ic-ph-nss.xhcdn.com/a/MDFkM2MxMmNiM2FiYTQzOWUwNGVhZmY1NDYyYzRmZWY/jpeg/000/250/211/984_450.jpg"><br>Hot in the bathroom 2</a> 67',
+'<a href="https://xhamster.com/photos/gallery/naughty-young-wife-in-new-session-with-a-stranger-15945806"><img src="https://ic-ph-nss.xhcdn.com/a/OGYzYzhlNzIwY2QyODc3OGVlNTE2MTQ4NDkwZTY2Y2E/jpeg/000/513/155/131_450.jpg"><br>Naughty young wife in new session with a stranger</a> 62',
+'<a href="https://xhamster.com/photos/gallery/happy-new-year-2020-13292221"><img src="https://thumb-p9.xhcdn.com/a/fSLKtRcqpS7tdOscBtRGFQ/000/350/607/889_240.gif"><br>HAPPY NEW YEAR 2020 !!</a> 6',
+'<a href="https://xhamster.com/photos/gallery/amateur-wife-loves-to-fuck-15790413"><img src="https://ic-ph-nss.xhcdn.com/a/Y2MyY2ZmY2Y1ZWY4MzBjZjBkZTIyYzYxZWI4MTFlNDE/jpeg/000/497/438/450_450.jpg"><br>Amateur wife loves to fuck</a> 49',
+'<a href="https://xhamster.com/photos/gallery/i-love-anal-15582997"><img src="https://ic-ph-nss.xhcdn.com/a/MzRhZmJlY2EzYWNiZmZlZDNiYTk1YTc4MThkZjg3ZjY/jpeg/000/475/091/360_450.jpg"><br>I Love Anal </a> 42',
+'<a href="https://xhamster.com/photos/gallery/real-wives-love-sucking-dick-getting-pussy-and-ass-fucked-15789399"><img src="https://ic-ph-nss.xhcdn.com/a/YzMzYTU3MGNlNWJmYWEzYjM2NzQwZjA3NTRhNzMwZmQ/jpeg/000/496/937/129_450.jpg"><br>Real Wives Love Sucking Dick Getting Pussy And Ass Fucked</a> 41',
+'<a href="https://xhamster.com/photos/gallery/hot-in-the-bathroom-10973841"><img src="https://ic-ph-nss.xhcdn.com/a/NzM4NDM4YWYzNzBlYzQwNWJmMWJlZTE1ZjhiMTdmZTE/jpeg/000/234/475/746_450.jpg"><br>Hot in the bathroom </a> 41',
+'<a href="https://xhamster.com/photos/gallery/undress-me-and-ill-be-yours-14888823"><img src="https://ic-ph-nss.xhcdn.com/a/MGFhZjIxMzBmYjYwNWI4NGQwN2UzMjgxOTI3NjRkMDE/jpeg/000/436/454/857_450.jpg"><br>undress me and I&#039;ll be yours !!</a> 4',
+'<a href="https://xhamster.com/photos/gallery/hot-blowjob-and-fuck-2-11968710"><img src="https://ic-ph-nss.xhcdn.com/a/ODc3OGRiMTNiOWJkNjlmNDNhZjg0OGFkOWE4YWIxOGM/jpeg/000/282/224/059_450.jpg"><br>Hot blowjob and fuck 2</a> 39',
+'<a href="https://xhamster.com/photos/gallery/i-promised-you-here-they-are-blindfold-14719736"><img src="https://ic-ph-nss.xhcdn.com/a/MmMxODcwNTdiMDQ4YTBjNDI1MTI4YjhmZmEzZjk0MDc/jpeg/000/427/260/970_450.jpg"><br>I promised you, here they are! (Blindfold)</a> 37',
+'<a href="https://xhamster.com/photos/gallery/how-to-be-a-hotwife-15116625"><img src="https://ic-ph-nss.xhcdn.com/a/ZTgzNDNmYTMwYWU5Y2Y2NDlmNTBkNWEwZTBjNDk1NzI/jpeg/000/449/164/174_450.jpg"><br>How to be a hotwife</a> 36',
+'<a href="https://xhamster.com/photos/gallery/i-love-the-cock-2-12115481"><img src="https://ic-ph-nss.xhcdn.com/a/YTRhOGFjM2VkZTkyOThkNTJmYTg5NGVjM2U3NzNkNGE/jpeg/000/289/489/722_450.jpg"><br>I love the cock 2</a> 35',
+'<a href="https://xhamster.com/photos/gallery/i-love-the-cock-10731069"><img src="https://ic-ph-nss.xhcdn.com/a/ZGFmYTUxNzI2YzBkZDNjYTc1MGY4NWU4NWUzYWY3YjM/jpeg/000/223/492/832_450.jpg"><br>I love the cock</a> 33',
+'<a href="https://xhamster.com/photos/gallery/super-hot-2-13671734"><img src="https://ic-ph-nss.xhcdn.com/a/MzMzMzEyZDQzNDgzNDhkMGQxMDcxODA3M2FjYjE0OGU/jpeg/000/370/339/472_450.jpg"><br>Super hot 2</a> 32',
+'<a href="https://xhamster.com/photos/gallery/hot-in-bed-3-wishing-for-big-cock-11842232"><img src="https://ic-ph-nss.xhcdn.com/a/MzhiZDAxM2Y4ZGExOGQxOTJlMmNkNWRjNzQ5NjUxMDI/jpeg/000/275/705/810_450.jpg"><br>Hot in bed 3 (Wishing For Big Cock)</a> 31',
+'<a href="https://xhamster.com/photos/gallery/under-the-covers-14644761"><img src="https://ic-ph-nss.xhcdn.com/a/NjM0YjZhYTEzODA4MzY1NDViOGZkNTIxMWZlNjE4NDE/jpeg/000/422/960/996_450.jpg"><br>Under the covers!!</a> 3',
+'<a href="https://xhamster.com/photos/gallery/slutty-wife-2-13387426"><img src="https://ic-ph-nss.xhcdn.com/a/Y2JkNTIxODg0NzUxZjg2NGE2Yzc5YTNmOTQ1ZjRhMTg/jpeg/000/355/619/346_450.jpg"><br>Slutty Wife 2</a> 28',
+'<a href="https://xhamster.com/photos/gallery/i-like-to-show-my-ass-to-be-fucked-2-12027774"><img src="https://ic-ph-nss.xhcdn.com/a/NzBmZjVhMmUzZjliZTIzMzlmMzZiMDVhNmI4NGZhMmY/jpeg/000/285/300/999_450.jpg"><br>I like to show my ass to be fucked 2</a> 27',
+'<a href="https://xhamster.com/photos/gallery/little-slut-3-14077326"><img src="https://ic-ph-nss.xhcdn.com/a/ZmE0MWFjYTAxNzFmMDMzYjVjMjlhMjBiMjVmZWU2ZWU/jpeg/000/439/537/023_450.jpg"><br>Little slut 3</a> 24',
+'<a href="https://xhamster.com/photos/gallery/pov-wife-sucking-and-fucking-15785827"><img src="https://ic-ph-nss.xhcdn.com/a/MDIzYzUzMzBmMDk3MzRmYmEyNzNjZjRlY2E3MzNiMGQ/jpeg/000/494/808/872_450.jpg"><br>POV Wife sucking and fucking</a> 21',
+'<a href="https://xhamster.com/photos/gallery/little-slut-ii-13221758"><img src="https://ic-ph-nss.xhcdn.com/a/ODhiMmJiZGQyMWMxYjNjNGZkNzUwYTU3OGQ1Nzc3N2M/jpeg/000/346/950/589_450.jpg"><br>Little slut II</a> 20',
+'<a href="https://xhamster.com/photos/gallery/my-husband-fucking-me-2-12027761"><img src="https://ic-ph-nss.xhcdn.com/a/ZmE0M2JlZDU2NDQ1NzdiMTEzYjBkZTk5ZjM2ZDFmYWI/jpeg/000/285/300/341_450.jpg"><br>my husband fucking me 2</a> 19',
+'<a href="https://xhamster.com/photos/gallery/how-to-wake-your-man-up-in-the-morning-15786527"><img src="https://ic-ph-nss.xhcdn.com/a/YjUwZDU2YjFkMDE1OTVjNTI5NWM0M2VhM2QyMzU3YjM/jpeg/000/495/217/920_450.jpg"><br>How to wake your man up in the morning</a> 18',
+'<a href="https://xhamster.com/photos/gallery/hot-in-bed-10564022"><img src="https://ic-ph-nss.xhcdn.com/a/ZTUwYmVlYjQxZjJjMzdhY2IxNzk0ZTcxMmRkNzlmZjY/jpeg/000/216/485/113_450.jpg"><br>Hot in bed </a> 18',
+'<a href="https://xhamster.com/photos/gallery/little-slut-12868215"><img src="https://ic-ph-nss.xhcdn.com/a/YmI1ZGE1NjFjYTFmN2NkMWRkZDBhYTg2MGJmZGFkYzY/jpeg/000/329/251/791_450.jpg"><br>Little slut </a> 17',
+'<a href="https://xhamster.com/photos/gallery/fucked-with-sexy-thong-on-side-10938256"><img src="https://ic-ph-nss.xhcdn.com/a/NTdiZTUyNGEzNjY5NjQ2ZTdiZGUzMzEyZjcxY2UyNDc/jpeg/000/232/839/296_450.jpg"><br>fucked with sexy thong on side</a> 16',
+'<a href="https://xhamster.com/photos/gallery/fucked-like-a-whore-14266082"><img src="https://thumb-p6.xhcdn.com/a/W3RIkuHSQxZo1ma8jzZwFQ/000/402/416/336_240.gif"><br>Fucked like a Whore</a> 14',
+'<a href="https://xhamster.com/photos/gallery/slutty-wife-13130049"><img src="https://ic-ph-nss.xhcdn.com/a/MGRiNzVjOTE5Y2NjZDQxY2YxZWY5MjZhYmE2YTY2YzA/jpeg/000/371/744/184_450.jpg"><br>Slutty Wife</a> 13',
+'<a href="https://xhamster.com/photos/gallery/before-making-love-10695437"><img src="https://ic-ph-nss.xhcdn.com/a/MmZkM2UxN2ViMTViZGQ3MzkwNzMzMmM2OThjMmQ2YzU/jpeg/000/221/923/401_450.jpg"><br>before making love</a> 13',
+'',
+];
+lineHeader = ''
+lineTail = ''
+showRange = 35
+bookid = "firewomenwild"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

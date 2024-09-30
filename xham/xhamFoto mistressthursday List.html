@@ -1,0 +1,100 @@
+<base target="_blank"><html><head><title>mistressthursday</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/watching-mommy-shower-amatuer-mature-milf-mistress-thursday-16147287"><img src="https://ic-ph-nss.xhcdn.com/a/ZGJhOGVlMGRiODZhMTQwZDA0MDk0NWM1MzQwZmIwZTU/jpeg/000/516/068/029_450.jpg"><br>Watching Mommy Shower -Amatuer Mature MILF Mistress Thursday</a> 8',
+'<a href="https://xhamster.com/photos/gallery/my-mommy-the-cocksucker-mature-huge-tits-mistress-thursday-16101382"><img src="https://ic-ph-nss.xhcdn.com/a/NjQzNmZiYmU2MWVmODkzZDYzNGRmODEyODVkYTJlNmU/jpeg/000/515/435/042_450.jpg"><br>My MOMMY The CockSUCKER  Mature Huge Tits Mistress Thursday </a> 77',
+'<a href="https://xhamster.com/photos/gallery/loves-a-mouth-full-of-big-cock-amateur-homemade-16162177"><img src="https://ic-ph-nss.xhcdn.com/a/ZDRmZjJiYzE0Y2ZlMTIwNjdlYTU3MmM5ZjAzZTgxZDk/jpeg/000/516/257/395_450.jpg"><br> Loves a Mouth Full of BIG Cock  Amateur Homemade </a> 77',
+'<a href="https://xhamster.com/photos/gallery/look-at-step-mommys-hugh-tit-compilation-mature-bbw-milf-15999136"><img src="https://ic-ph-nss.xhcdn.com/a/NDBhZTAyMmVkZDA1OTQ5MTM0MjcxODY0NDUzMzVmNDI/jpeg/000/514/037/858_450.jpg"><br>Look at Step Mommy&#039;s Hugh Tit Compilation. Mature BBW MILF</a> 76',
+'<a href="https://xhamster.com/photos/gallery/stepmommy-butters-up-stepsons-big-cock-under-her-milk-table-16057027"><img src="https://ic-ph-nss.xhcdn.com/a/YTIwYTllODgxZmE0NjZmNzZjMDc3Y2Q1NTFjMjRmNzg/jpeg/000/514/858/724_450.jpg"><br>Stepmommy Butters up Stepsons Big Cock Under her Milk Table</a> 74',
+'<a href="https://xhamster.com/photos/gallery/cock-milk-torture-and-denial-mature-mommy-mistress-thrusday-16087393"><img src="https://ic-ph-nss.xhcdn.com/a/NWQ3NGY1MGM1MmI3YTViNWQ5ZjdkNzUwY2RmOTI2ZmI/jpeg/000/515/261/150_450.jpg"><br>Cock Milk TORTURE and Denial Mature Mommy Mistress Thrusday</a> 73',
+'<a href="https://xhamster.com/photos/gallery/mature-mommy-back-at-it-again-under-her-cock-milking-table-16039517"><img src="https://ic-ph-nss.xhcdn.com/a/MDg3YTMwNGM2NDFiZGVkMDliNzNmNzRjYjFiNTg1ZGM/jpeg/000/514/610/204_450.jpg"><br>MATURE Mommy back at it Again Under her Cock Milking Table</a> 71',
+'<a href="https://xhamster.com/photos/gallery/cum-guzzling-mommy-mistress-thursday-squirts-and-loves-cum-16088812"><img src="https://ic-ph-nss.xhcdn.com/a/MDMyZjRiMmVmYWFmZGQ0YmQ3ZmRjNTQ1OTk3MGMyNjc/jpeg/000/515/276/818_450.jpg"><br>CUM Guzzling Mommy Mistress Thursday Squirts and LOVES Cum</a> 68',
+'<a href="https://xhamster.com/photos/gallery/big-tit-fucking-cumslut-guzzles-cum-mature-mistress-thursday-16090560"><img src="https://ic-ph-nss.xhcdn.com/a/YzhjNmIwYjk4NThkYjU2M2YyMzk1ZThkZjUzZDQyM2I/jpeg/000/515/298/453_450.jpg"><br>BIG Tit FUCKING CUMSLUT Guzzles CUM Mature Mistress Thursday</a> 65',
+'<a href="https://xhamster.com/photos/gallery/pussy-squirting-stepmom-masturbates-as-stepson-fingers-her-16005737"><img src="https://ic-ph-nss.xhcdn.com/a/Zjk0YjQ5YjcxZmE2YzZlY2MyY2E0MzI4OGRlYTcxNzc/jpeg/000/514/142/506_450.jpg"><br>Pussy Squirting STEPMOM Masturbates as STEPSON Fingers her  </a> 64',
+'<a href="https://xhamster.com/photos/gallery/cumslut-mistress-thursday-drinks-a-big-load-of-chocolate-cum-16088023"><img src="https://ic-ph-nss.xhcdn.com/a/Y2I3OWZlOTA4ZTU1ODhkNmYzOWU3YmIzMTRjNDQzMDU/jpeg/000/515/268/628_450.jpg"><br>CUMSLUT Mistress Thursday Drinks a BIG Load Of Chocolate Cum</a> 60',
+'<a href="https://xhamster.com/photos/gallery/dripping-cum-soaked-huge-tits-mature-mommy-mistress-thursday-16089914"><img src="https://ic-ph-nss.xhcdn.com/a/MmE3OTM5NDE2YzliZWYzNWI4YmY5M2FjMmRmYjJkZTc/jpeg/000/515/290/880_450.jpg"><br>Dripping CUM Soaked HUGE TITS Mature Mommy Mistress Thursday</a> 59',
+'<a href="https://xhamster.com/photos/gallery/huge-titted-mature-step-mommy-loves-to-make-step-son-cum-15998647"><img src="https://ic-ph-nss.xhcdn.com/a/Nzc1ZGQ1NjMzYjA0N2U5YTY1MDA3OGEzYWQ5ZmNlYzI/jpeg/000/514/031/468_450.jpg"><br>Huge-Titted Mature Step Mommy Loves to make Step Son Cum </a> 57',
+'<a href="https://xhamster.com/photos/gallery/cum-whore-mommy-eats-big-cock-mistress-thursday-loves-cum-16096775"><img src="https://ic-ph-nss.xhcdn.com/a/ZTMxMGUzNmUyMjI5OTZlODZkYjQwYzk4ZDA2MWY5ZGI/jpeg/000/515/381/901_450.jpg"><br>CUM Whore Mommy Eats Big Cock Mistress Thursday Loves Cum</a> 56',
+'<a href="https://xhamster.com/photos/gallery/big-fucking-tits-dirty-cock-sucker-mature-mistress-thursday-16091032"><img src="https://ic-ph-nss.xhcdn.com/a/M2FjMjQxMjdmZWI5YmU3MmY1OTExN2Y5ZDc2YzcwMTE/jpeg/000/515/304/455_450.jpg"><br>BIG Fucking TITS  Dirty Cock Sucker Mature Mistress Thursday</a> 56',
+'<a href="https://xhamster.com/photos/gallery/evil-stepmom-disciplines-naughty-stepson-cums-onto-her-face-16007384"><img src="https://ic-ph-nss.xhcdn.com/a/Nzg3MGMxZTU5MjA4ZTU0OGFjNjEzMGZkNGUzYTU3MGM/jpeg/000/514/166/208_450.jpg"><br>EVIL Stepmom DISCIPLINES Naughty STEPSON -Cums onto her Face</a> 55',
+'<a href="https://xhamster.com/photos/gallery/cum-whore-step-mommy-loves-stepsons-hot-loads-on-her-tongue-16003958"><img src="https://ic-ph-nss.xhcdn.com/a/OWMzN2YyMGY0OGIwZjYxYjcyYTAwZTkyNjRjZTgzNjc/jpeg/000/514/116/954_450.jpg"><br>CUM Whore STEP-MOMMY Loves Stepson&#039;s Hot Loads on her Tongue</a> 53',
+'<a href="https://xhamster.com/photos/gallery/stepson-cum-covers-hugh-tits-as-stepmommy-milks-big-cock-16004650"><img src="https://ic-ph-nss.xhcdn.com/a/ZmQ2OGFlZTRlMjJiNGJhYTc4ZTU5ZTkyODAxM2YxZTI/jpeg/000/514/126/529_450.jpg"><br>STEPSON CUM Covers HUGH TITS as STEPMOMMY Milks BIG COCK</a> 52',
+'<a href="https://xhamster.com/photos/gallery/mature-step-mommy-with-huge-tits-sucks-naughty-stepson-cock-15999155"><img src="https://ic-ph-nss.xhcdn.com/a/ZDhhMGQwMWVhOTg2OTM1ZDAxMTIwYWQwMzI5YThlZGU/jpeg/000/514/038/116_450.jpg"><br>Mature Step Mommy with Huge Tits Sucks naughty Stepson Cock</a> 50',
+'<a href="https://xhamster.com/photos/gallery/jerk-off-and-cum-on-my-face-mature-stepmom-gets-cum-facial-16006860"><img src="https://ic-ph-nss.xhcdn.com/a/Mjc1ZGFhZDk3MGQ1YzdhOTRlMDY4MTZmMDFlMzJlYTk/jpeg/000/514/158/805_450.jpg"><br>JERK Off and CUM on MY Face -Mature Stepmom gets Cum Facial</a> 50',
+'<a href="https://xhamster.com/photos/gallery/cum-lover-cock-milking-stepmom-rubs-it-into-mature-huge-tits-16019868"><img src="https://ic-ph-nss.xhcdn.com/a/ZmFhYzEyZGU2MDQ2NDE1NmU4NDdhNzFmYzhiZjYxM2E/jpeg/000/514/339/520_450.jpg"><br>Cum-LOVER Cock-Milking Stepmom Rubs it into Mature Huge Tits</a> 50',
+'<a href="https://xhamster.com/photos/gallery/cum-hungry-stepmom-gets-stepsons-big-load-shot-in-her-face-16007744"><img src="https://ic-ph-nss.xhcdn.com/a/OTkxZTkwNzM5YTdmMjI0ODZlZDhkYmZkZWE2YzllNzQ/jpeg/000/514/171/875_450.jpg"><br>CUM Hungry STEPMOM gets Stepsons Big Load Shot in her Face</a> 50',
+'<a href="https://xhamster.com/photos/gallery/cum-slurping-mature-mistress-thursday-licks-up-huge-cum-load-16091314"><img src="https://ic-ph-nss.xhcdn.com/a/NjBiNzNiNGEyOWVlNWUzYTc1MTM5MTE4YTgxYzU3OTA/jpeg/000/515/307/520_450.jpg"><br>CUM SLURPING Mature Mistress Thursday licks up Huge Cum load</a> 49',
+'<a href="https://xhamster.com/photos/gallery/amatuer-busty-milf-cum-sucker-mature-mommy-mistress-thursday-16149504"><img src="https://ic-ph-nss.xhcdn.com/a/ZmQwZTE0ZjgzYjE3OTdmOWU3MjBkNzRlYmEwZTI3NDk/jpeg/000/516/096/919_450.jpg"><br>Amatuer Busty MILF Cum Sucker Mature Mommy Mistress Thursday</a> 48',
+'<a href="https://xhamster.com/photos/gallery/femdom-step-mommy-slaps-stepsons-big-cock-and-jerks-out-cum-16003181"><img src="https://ic-ph-nss.xhcdn.com/a/ZTI4OGM5ZTBkOTBkOWFjYTZmNzgxYzk2NjNmZjY1MGY/jpeg/000/514/102/683_450.jpg"><br>Femdom STEP-MOMMY Slaps Stepson&#039;s BIG Cock and Jerks out CUM</a> 46',
+'<a href="https://xhamster.com/photos/gallery/step-mommy-stomps-an-smashes-stepsons-shit-when-hes-naughty-15999927"><img src="https://ic-ph-nss.xhcdn.com/a/YzExNzU2ZWMzNDdmZThmZTg4OTQ0NzM4Y2NiYjA2OWM/jpeg/000/514/047/664_450.jpg"><br>Step Mommy STOMPS an SMASHES Stepsons Shit when he&#039;s Naughty</a> 43',
+'<a href="https://xhamster.com/photos/gallery/table-cock-milking-step-mommy-make-stepson-cum-on-huge-tits-16001312"><img src="https://ic-ph-nss.xhcdn.com/a/YTRhY2NlOGFjZGI0OTI5YTNhMDIwNDE5OTNiODc2M2U/jpeg/000/514/079/994_450.jpg"><br>Table Cock Milking STEP MOMMY Make Stepson CUM On Huge Tits </a> 41',
+'<a href="https://xhamster.com/photos/gallery/vouyer-step-mommy-fingers-pussy-huge-tits-mistress-thursday-16142896"><img src="https://ic-ph-nss.xhcdn.com/a/MmM5M2U5ZmM5ZDY1YWQ3NjE5OGQ5NThlNDhlODVjZTU/jpeg/000/516/018/172_450.jpg"><br>Vouyer Step Mommy Fingers Pussy Huge Tits Mistress Thursday</a> 40',
+'<a href="https://xhamster.com/photos/gallery/horny-mature-stepmom-cumming-hard-squirting-all-over-couch-16008525"><img src="https://ic-ph-nss.xhcdn.com/a/ZmIwODNmM2QxZDdhMGUzOTA2YzZmZWI5NWFlNzQ0Yzk/jpeg/000/514/182/446_450.jpg"><br>HORNY Mature STEPMOM Cumming HARD Squirting All Over Couch </a> 40',
+'<a href="https://xhamster.com/photos/gallery/dirty-huge-titted-step-mommy-loves-messy-masturbating-16015907"><img src="https://ic-ph-nss.xhcdn.com/a/ZmZlZmQ2NmU4OTZmZDhmMmUxZTRiYzgwZTgwYWM1ZDc/jpeg/000/514/280/946_450.jpg"><br>Dirty HUGE-TITTED Step-Mommy Loves MESSY Masturbating</a> 39',
+'<a href="https://xhamster.com/photos/gallery/mommyamp-039-s-re-purposed-used-dildos-hugh-titted-garden-walk-16053694"><img src="https://ic-ph-nss.xhcdn.com/a/ZTlhMmIyYWE3YmNmM2M5NTk3M2U4NTE2YjY1MjI1NzY/jpeg/000/514/813/207_450.jpg"><br>Mommy&amp;amp;#039;s Re-purposed Used Dildos.  Hugh-Titted Garden Walk</a> 38',
+'<a href="https://xhamster.com/photos/gallery/step-mommy-sucks-stepsons-nut-sack-and-tongues-frenulum-cum-16001351"><img src="https://ic-ph-nss.xhcdn.com/a/MzczNTEyMGQ3NzQ0ODY3NTRkZTJhNTRlNTQzODk1Y2Q/jpeg/000/514/080/675_450.jpg"><br>STEP MOMMY Sucks Stepson&#039;s Nut Sack and Tongues Frenulum Cum</a> 37',
+'<a href="https://xhamster.com/photos/gallery/horny-mommy-wants-big-cock-mistress-thursday-loves-all-dick-16092016"><img src="https://ic-ph-nss.xhcdn.com/a/MTRkNGRlYzFlNzJlNjZkZWU5NmY4OThkZmZjZWEwNDU/jpeg/000/515/316/921_450.jpg"><br>HORNY Mommy wants BIG Cock Mistress Thursday loves All Dick</a> 37',
+'<a href="https://xhamster.com/photos/gallery/gaping-cunt-spreading-mistress-thursday-opens-pussy-wide-16098845"><img src="https://ic-ph-nss.xhcdn.com/a/YTE4NGJlYmFkOTNkMGE1ZGM4YTQyMzYyYmEzNzc2YTY/jpeg/000/515/405/747_450.jpg"><br>Gaping CUNT Spreading Mistress Thursday Opens Pussy WIDE</a> 37',
+'<a href="https://xhamster.com/photos/gallery/huge-titted-step-mommy-getting-ready-to-jerk-off-step-son-15999717"><img src="https://ic-ph-nss.xhcdn.com/a/ZmI0YzY4YWY2MmEwZWFhM2U5ZTIzZTE0NjYxYWU0NzM/jpeg/000/514/045/045_450.jpg"><br>Huge Titted Step Mommy getting ready to Jerk-off Step Son</a> 36',
+'<a href="https://xhamster.com/photos/gallery/big-boobs-panda-play-amateur-mature-milf-wife-16160548"><img src="https://ic-ph-nss.xhcdn.com/a/ZDZjM2YzMzk1YWY1N2NiOWQ4NTczY2M5NDZhYzhhZmE/jpeg/000/516/234/971_450.jpg"><br>Big Boobs Panda Play Amateur Mature MILF Wife</a> 34',
+'<a href="https://xhamster.com/photos/gallery/over-50-dirty-stepmommy-makes-stepson-cum-all-over-huge-tits-16003615"><img src="https://ic-ph-nss.xhcdn.com/a/YjEzNjY4MTg4MDNhNWUxZGM2ZTNjNjIwMWFkNTczM2Y/jpeg/000/514/108/945_450.jpg"><br>Over-50 Dirty STEPMOMMY Makes Stepson CUM All over HUGE TITS</a> 32',
+'<a href="https://xhamster.com/photos/gallery/please-cum-on-stepmoms-hugh-tits-cock-milking-stepson-16007150"><img src="https://ic-ph-nss.xhcdn.com/a/YzE5NDkzN2M0NGY4OWNiNjBiZjdlN2JhNDU3NTUwOTE/jpeg/000/514/163/205_450.jpg"><br>PLEASE CUM on Stepmoms HUGH TITS -Cock Milking Stepson </a> 31',
+'<a href="https://xhamster.com/photos/gallery/bad-step-mommy-spreads-cunt-wide-and-stuffs-to-show-stepson-15999925"><img src="https://ic-ph-nss.xhcdn.com/a/NWE2ZjYyY2UzYjdjNjVhOTE5MWRhOTA2NzQzOTRkMGE/jpeg/000/514/047/599_450.jpg"><br>Bad Step Mommy Spreads Cunt Wide and Stuffs to show Stepson</a> 31',
+'<a href="https://xhamster.com/photos/gallery/sloppy-cock-sucking-mature-step-mommy-milf-mistress-thursday-16148541"><img src="https://ic-ph-nss.xhcdn.com/a/Njk3NmY4NmY0NDBhNmIwNjQxY2QyZmNjNzBkODMzYjI/jpeg/000/516/086/312_450.jpg"><br>Sloppy Cock Sucking Mature Step Mommy MILF Mistress Thursday</a> 24',
+'<a href="https://xhamster.com/photos/gallery/dirty-squirting-step-mommy-make-a-wet-pussy-mess-for-stepson-15999410"><img src="https://ic-ph-nss.xhcdn.com/a/MzNjNGU2MzkxYmRlMDNjMGYyNWM4MmY3MDlmMGIyYzY/jpeg/000/514/041/255_450.jpg"><br>Dirty Squirting Step Mommy make a wet Pussy mess for Stepson</a> 22',
+'<a href="https://xhamster.com/photos/gallery/watch-real-amatuer-huge-tit-milf-do-the-laundry-and-toilet-16160736"><img src="https://ic-ph-nss.xhcdn.com/a/MTUwNzFkYjlmOWVhNmZlOTAwMjI0NmUyMTNjZGI5MGI/jpeg/000/516/236/889_450.jpg"><br>Watch Real Amatuer Huge Tit Milf Do the Laundry and Toilet</a> 19',
+'<a href="https://xhamster.com/photos/gallery/voyeur-massive-titties-in-a-cave-mistress-thursday-sneaks-in-16091969"><img src="https://ic-ph-nss.xhcdn.com/a/NDdiNTMzODY5MGI5NGIzOGVhNGUzM2IyODhlOWI4OGQ/jpeg/000/515/316/157_450.jpg"><br>Voyeur MASSIVE TITTIES in a Cave Mistress Thursday Sneaks in</a> 17',
+'<a href="https://xhamster.com/photos/gallery/real-mommy-shows-big-tits-on-the-golf-course-in-out-public-16157307"><img src="https://ic-ph-nss.xhcdn.com/a/Y2NiNDcyMDcxMGI5NGMzMjcxYjJlOWU1ZjE2YjVmZTk/jpeg/000/516/186/340_450.jpg"><br>Real Mommy shows BIG TITS on the Golf Course In Out Public</a> 15',
+'<a href="https://xhamster.com/photos/gallery/huge-tit-step-mom-loves-pulling-out-her-huge-tits-to-play-16016656"><img src="https://ic-ph-nss.xhcdn.com/a/ZWE4YmQyMWUzOTE2NDc0YjM3ZDgzMDMyODdlZDgxNDg/jpeg/000/514/290/452_450.jpg"><br>HUGE TIT STEP-MOM loves pulling out her Huge Tits to play</a> 11',
+'<a href="https://xhamster.com/photos/gallery/huge-titted-mommy-makes-step-son-shoot-cum-in-her-face-15997753"><img src="https://ic-ph-nss.xhcdn.com/a/NDkxNjBiNzY1YzQ0YTk5ZDI4M2M5OTkzMTk3NGQ1NjM/jpeg/000/514/016/763_450.jpg"><br>Huge-Titted Mommy makes Step Son Shoot Cum in her Face</a> 10',
+'',
+];
+lineHeader = ''
+lineTail = ''
+showRange = 46
+bookid = "mistressthursday"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<base target="_blank"><html><head><title>noblelust</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/0324-16126622"><img src="https://ic-ph-nss.xhcdn.com/a/YzI0ZDM4MzMxZjllNGE5NjkwZjQ3OGZhMjhiMzkyNjk/jpeg/000/515/765/973_450.jpg"><br>0324</a> 7',
+'<a href="https://xhamster.com/photos/gallery/housewife-is-willing-to-do-it-all-for-views-link-in-photo-16167130"><img src="https://ic-ph-nss.xhcdn.com/a/YTVjNDEyMTFmY2VmZjJjNDNlM2JhNThmNjQ5NWYyZmU/jpeg/000/516/315/227_450.jpg"><br>Housewife is willing to do it all for views link in photo</a> 5',
+'<a href="https://xhamster.com/photos/gallery/coming-soon-to-1-16168865"><img src="https://ic-ph-nss.xhcdn.com/a/M2Q0YzExZWM3ZTZiOTEyZThlZDU1YmEyMTRiNWJhYzY/jpeg/000/516/335/596_450.jpg"><br>Coming soon to 1</a> 5',
+'<a href="https://xhamster.com/photos/gallery/this-is-what-i-been-up-too-lately-16164988"><img src="https://ic-ph-nss.xhcdn.com/a/MWVkZmNmNjkxNTRiNTIxMTQ2OTc3MjhiYjdiYjY1Yzk/jpeg/000/516/289/701_450.jpg"><br>This is what I been up too lately</a> 43',
+'<a href="https://xhamster.com/photos/gallery/join-us-for-real-16166095"><img src="https://ic-ph-nss.xhcdn.com/a/MjA1ZDg3M2U3MDI3MTBjZjYzNmMwYjM1OWI0ZmViYzk/jpeg/000/516/302/609_450.jpg"><br>Join us for real</a> 4',
+'<a href="https://xhamster.com/photos/gallery/ps-one-16136424"><img src="https://ic-ph-nss.xhcdn.com/a/MDhlOWM4ODUwNzU5YWMyMmMyNTM2NWNkMDJlY2YzNDM/jpeg/000/515/930/704_450.jpg"><br>Ps one </a> 31',
+'<a href="https://xhamster.com/photos/gallery/remember-this-16167794"><img src="https://ic-ph-nss.xhcdn.com/a/N2ZhYmE3OTA3NWE5YWVjOWIxMzE2YjFlMDQ0MTVlOTQ/jpeg/000/516/323/625_450.jpg"><br>Remember this</a> 29',
+'<a href="https://xhamster.com/photos/gallery/plz-sexy-lusties-check-this-one-out-link-on-picture-16166914"><img src="https://ic-ph-nss.xhcdn.com/a/ZWMwMzE2MjA1MWE3YTcxNjU4ZWI5ZTE1YTMxNjI2ZTE/jpeg/000/516/313/428_450.jpg"><br>Plz sexy lusties check this one out link on picture </a> 2',
+'<a href="https://xhamster.com/photos/gallery/check-out-my-slutty-video-with-my-ex-link-on-picture-16166883"><img src="https://ic-ph-nss.xhcdn.com/a/YzMxZmVlNGU5YjQxNjBlOGM1ZDdjN2RmZTQ4NWMwMzU/jpeg/000/516/313/173_450.jpg"><br>Check out my slutty video with my ex link on picture </a> 2',
+'<a href="https://xhamster.com/photos/gallery/lust-for-us-16129330"><img src="https://ic-ph-nss.xhcdn.com/a/NzUzYTYyYTQ3ZTBmYTcwNjVlMTQyMWMzNzkxMGU4YTg/jpeg/000/515/799/310_450.jpg"><br>Lust for us </a> 18',
+'<a href="https://xhamster.com/photos/gallery/playtime-16119868"><img src="https://ic-ph-nss.xhcdn.com/a/YmRhNDZhZGU5YWI0OWM1MjJlNmRmZTNjNmQxZmZhMGQ/jpeg/000/515/679/986_450.jpg"><br>Playtime</a> 10',
+'<a href="https://xhamster.com/photos/gallery/check-out-my-new-video-with-my-x-16166879"><img src="https://ic-ph-nss.xhcdn.com/a/YWQ3YTE5ZDEzZjA1YjgyYzNiYTQxNmI3Y2ExMjc0MDY/jpeg/000/516/313/149_450.jpg"><br>Check out my new video with my x</a> 1',
+'',
+];
+lineHeader = ''
+lineTail = ''
+showRange = 12
+bookid = "noblelust"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>

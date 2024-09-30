@@ -1,0 +1,95 @@
+<base target="_blank"><html><head><title>allisin007</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/allisins007-pussy-face-16074833"><img src="https://ic-ph-nss.xhcdn.com/a/MjAwYjAyNDEwYjU0ZTJlMjFhNWNlMzA0YzkwMTEzZjk/jpeg/000/515/086/970_450.jpg"><br>AlliSins007 pussy face </a> 9',
+'<a href="https://xhamster.com/photos/gallery/allisins007-nude-gifs-16077795"><img src="https://thumb-p4.xhcdn.com/a/TjK5OJII2wvJ56ib8PDP9g/000/515/125/654_240.gif"><br>AlliSins007 nude gifs </a> 9',
+'<a href="https://xhamster.com/photos/gallery/allisin-nude-strip-16044195"><img src="https://ic-ph-nss.xhcdn.com/a/NjQ5YmJiN2Y2YTc4MjNjMjkyNDBlOTg5MWQ1NTc0MjI/jpeg/000/514/672/458_450.jpg"><br>AlliSin nude strip </a> 9',
+'<a href="https://xhamster.com/photos/gallery/allisins007-20s-polaroid-16074642"><img src="https://ic-ph-nss.xhcdn.com/a/OTU1NTNlZTMyYWQ0YjQxN2E5MmI2NWYyYTRhZjQxMzc/jpeg/000/515/084/845_450.jpg"><br>AlliSins007 20s polaroid </a> 8',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16117676"><img src="https://ic-ph-nss.xhcdn.com/a/MTI3ZGUyM2UzMjMxMjUyYWU5MzM1YzVlNTMzNjZiNjk/jpeg/000/515/651/603_450.jpg"><br>AlliSins007</a> 8',
+'<a href="https://xhamster.com/photos/gallery/allisins007-nude-and-annoyed-16082011"><img src="https://ic-ph-nss.xhcdn.com/a/YWNiNGY0NzhiMjJiOWJmZDZiN2FhNDhlOWM2NTYwNzA/jpeg/000/515/182/952_450.jpg"><br>AlliSins007 nude and annoyed </a> 76',
+'<a href="https://xhamster.com/photos/gallery/allisins007-towel-strip-shower-16175392"><img src="https://ic-ph-nss.xhcdn.com/a/NzdkNjJhMDM4ZDAzOTIzZGYwN2ZiZjUxNWE4MjExNzM/jpeg/000/516/405/920_450.jpg"><br>AlliSins007 towel strip &amp; shower</a> 7',
+'<a href="https://xhamster.com/photos/gallery/allisins007-legs-up-lips-out-16055604"><img src="https://ic-ph-nss.xhcdn.com/a/MzNjYWMwYjk2YzI5OTZlMzExODY5YWEyOTQwZjVhNTk/jpeg/000/514/838/090_450.jpg"><br>AlliSins007 legs up lips out </a> 7',
+'<a href="https://xhamster.com/photos/gallery/allisins007-shower-16107723"><img src="https://ic-ph-nss.xhcdn.com/a/ZTRiZDMyZmYwNWRlNGE2NTIzNTA5MGQ4MjgxMDY0ZmY/jpeg/000/515/522/288_450.jpg"><br>AlliSins007 shower</a> 6',
+'<a href="https://xhamster.com/photos/gallery/allisin-tits-flash-16043746"><img src="https://ic-ph-nss.xhcdn.com/a/NDVhYmUwZjVmODU4MGVmOGRkNDQ3YzNjN2U4YWQ1MGU/jpeg/000/514/666/674_450.jpg"><br>AlliSin tits flash </a> 6',
+'<a href="https://xhamster.com/photos/gallery/allisins007-pussy-face-16057442"><img src="https://ic-ph-nss.xhcdn.com/a/N2RlMGVhYmI4NGRiNTVhODgwYjYxMGUxZWZhNDI5ODI/jpeg/000/514/864/347_450.jpg"><br>AlliSins007 pussy face </a> 5',
+'<a href="https://xhamster.com/photos/gallery/allisins0007-red-dress-16103222"><img src="https://ic-ph-nss.xhcdn.com/a/ZWE5ODYxMDM1ZmU2MDRhNWNjMjQzNDcwMzdmZGU4M2I/jpeg/000/515/460/476_450.jpg"><br>AlliSins0007 red dress</a> 5',
+'<a href="https://xhamster.com/photos/gallery/allisin-nude-16044612"><img src="https://ic-ph-nss.xhcdn.com/a/YTY1YzU4MTFiZjQ4Y2U3MTQzMWFlYmVkODdkZDk2MjE/jpeg/000/514/677/176_450.jpg"><br>AlliSin nude</a> 4',
+'<a href="https://xhamster.com/photos/gallery/allisins007-on-off-16059312"><img src="https://ic-ph-nss.xhcdn.com/a/YTZjMTNiY2ZmODI5OTRmZDRhZjlmZTAxMWJlODQ0ODU/jpeg/000/514/886/905_450.jpg"><br>AlliSins007 on/off</a> 36',
+'<a href="https://xhamster.com/photos/gallery/allisins007-shaved-pussy-16062103"><img src="https://ic-ph-nss.xhcdn.com/a/ODNjMzM0ZTI4ZjNjYzdkMjFiMmRhZDk2YzY5YWMyZDM/jpeg/000/514/927/699_450.jpg"><br>AlliSins007 shaved pussy </a> 34',
+'<a href="https://xhamster.com/photos/gallery/allisins007-sloppy-seconds-16065738"><img src="https://ic-ph-nss.xhcdn.com/a/Nzc5MTM0MDI5NDAzMjA3NDY3MmMxODgwOGNmOTQ3NDI/jpeg/000/514/977/315_450.jpg"><br>AlliSins007 sloppy seconds </a> 30',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16058961"><img src="https://ic-ph-nss.xhcdn.com/a/ODkxNDkzYzc2MmU0MGMwYmNmZjVkODdlZDMyMTA4ZTU/jpeg/000/514/883/348_450.jpg"><br>AlliSins007</a> 30',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16190875"><img src="https://ic-ph-nss.xhcdn.com/a/Y2ZiNjJkMzIwNWJlYWQwZjhlZDc3NDhlYmVmZDY4YWE/jpeg/000/516/583/756_450.jpg"><br>AlliSins007</a> 26',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16058967"><img src="https://ic-ph-nss.xhcdn.com/a/N2UwNWU4ZTU0ZjBkYTMzOTk5YTIwMjUyMTYzNzRlOGE/jpeg/000/514/883/462_450.jpg"><br>AlliSins007</a> 25',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16058963"><img src="https://ic-ph-nss.xhcdn.com/a/NzNlZDhhZDU4YzQ2NDJkYjMyNmE0NjU5NjBhOTE0MDY/jpeg/000/514/883/403_450.jpg"><br>AlliSins007</a> 24',
+'<a href="https://xhamster.com/photos/gallery/allisins-hairy-pussy-16052191"><img src="https://ic-ph-nss.xhcdn.com/a/NmZmMmQ2NjFjNzEzMjA5MWEwMGQ3MDkzYTUyMzg2NmM/jpeg/000/514/776/968_450.jpg"><br>AlliSins hairy pussy </a> 24',
+'<a href="https://xhamster.com/photos/gallery/allisins007-trampoline-16087133"><img src="https://ic-ph-nss.xhcdn.com/a/MmZlZjViYTcwYjkxOWE3ODI4YmYyOGVlZGE2MmJiZWE/jpeg/000/515/256/736_450.jpg"><br>AlliSins007 TRAMPoline </a> 22',
+'<a href="https://xhamster.com/photos/gallery/allisin007-16128669"><img src="https://ic-ph-nss.xhcdn.com/a/NzE5Zjg5ODgxY2YzM2QxZjRkNTIyZjdkZjNkMDA5NDk/jpeg/000/515/791/808_450.jpg"><br>AlliSin007</a> 22',
+'<a href="https://xhamster.com/photos/gallery/allisins007-thicc-16090028"><img src="https://ic-ph-nss.xhcdn.com/a/ZTFkN2ZkOWRjNTYyZTdlYmM0YjkxZTg5ZTQyMTU5OTY/jpeg/000/515/292/210_450.jpg"><br>AlliSins007 thicc </a> 21',
+'<a href="https://xhamster.com/photos/gallery/allisins007-sex-pillow-16091112"><img src="https://ic-ph-nss.xhcdn.com/a/MzJkOGM2NjAyMmM5MDczY2QzZDhlMTE0ZGEwNDQzNjY/jpeg/000/515/305/211_450.jpg"><br>AlliSins007 sex pillow </a> 21',
+'<a href="https://xhamster.com/photos/gallery/allisins007-on-off-dildo-16099029"><img src="https://ic-ph-nss.xhcdn.com/a/NjdkZWMxZDY4Yzg3MTZhYjkyMzUzNjBmNTE4YWRhMTA/jpeg/000/515/407/836_450.jpg"><br>AlliSins007 on-off dildo</a> 20',
+'<a href="https://xhamster.com/photos/gallery/allisins007-dog-collar-16197789"><img src="https://ic-ph-nss.xhcdn.com/a/OTQyZTI5MTIwMGM3NGUxZTg3Y2IyNjU0NmE4MzFiNzc/jpeg/000/516/673/614_450.jpg"><br>AlliSIns007 Dog Collar </a> 19',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16133290"><img src="https://ic-ph-nss.xhcdn.com/a/ODlkMGQwNjZkMDFkNjk4MTNkMWNlNDhkMDI5YTIwOWI/jpeg/000/515/863/739_450.jpg"><br>AlliSins007</a> 19',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16107721"><img src="https://ic-ph-nss.xhcdn.com/a/OTgwMGJmODY4YmU3ZTQyMTc2MTIwZTFlMTk2N2M1ZDQ/jpeg/000/515/522/280_450.jpg"><br>AlliSins007 </a> 19',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16117674"><img src="https://ic-ph-nss.xhcdn.com/a/MjYxNWMzMGEzMjViNmYwZTc1MzY1NGI3NjUwY2U4M2M/jpeg/000/515/651/575_450.jpg"><br>AlliSins007</a> 17',
+'<a href="https://xhamster.com/photos/gallery/allisins007-dilldo-penetration-16057219"><img src="https://ic-ph-nss.xhcdn.com/a/NDk4ZWEwMmY0NTVmZGYyNTdjNjdjNDk2NGFmNTQwZjc/jpeg/000/514/862/118_450.jpg"><br>AlliSins007 dilldo penetration </a> 15',
+'<a href="https://xhamster.com/photos/gallery/allisins-16046177"><img src="https://ic-ph-nss.xhcdn.com/a/ZWFhNWFmY2ZlOTRlZDMwODkwOGJiODk1MmNkMGQ1OWI/jpeg/000/514/704/839_450.jpg"><br>AlliSins</a> 15',
+'<a href="https://xhamster.com/photos/gallery/allisins007-pigtails-and-butthole-16058964"><img src="https://ic-ph-nss.xhcdn.com/a/MDYyYjA3YjFlYjNkNTY2NGI4ZDcxMDk1M2Y4Zjk5NmI/jpeg/000/514/883/430_450.jpg"><br>AlliSins007 pigtails and butthole</a> 14',
+'<a href="https://xhamster.com/photos/gallery/allisin007-yellow-dress-16138762"><img src="https://ic-ph-nss.xhcdn.com/a/YjUwN2MzOTc2NDEwMjNlMGRjNWFmMTA3MjhhZGYyMzU/jpeg/000/515/962/585_450.jpg"><br>AlliSin007 yellow dress </a> 13',
+'<a href="https://xhamster.com/photos/gallery/allisins007-hairy-holes-16069701"><img src="https://ic-ph-nss.xhcdn.com/a/NzkyMjg1ZmM2YTJhNTIwYzM0NmJjZDc4ZTJkYTYwOTk/jpeg/000/515/025/824_450.jpg"><br>AlliSins007 hairy holes </a> 12',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16117680"><img src="https://ic-ph-nss.xhcdn.com/a/OTcwMDY1MDFjMGIzMmViMzhhZGIyNDU5MjQ4YTI1MDI/jpeg/000/515/651/619_450.jpg"><br>AlliSins007</a> 12',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16177388"><img src="https://ic-ph-nss.xhcdn.com/a/OWE1NzI4YTNjZDE2OTI3MjE5OGUxM2Y4N2IwYTk3NmI/jpeg/000/516/425/058_450.jpg"><br>AlliSins007 </a> 11',
+'<a href="https://xhamster.com/photos/gallery/allisins007-16113902"><img src="https://ic-ph-nss.xhcdn.com/a/M2UyM2YzZGQ0NDJhMzNiZTU1ZTM0NzMyNTJkMGM3NjA/jpeg/000/515/599/444_450.jpg"><br>AlliSins007 </a> 11',
+'<a href="https://xhamster.com/photos/gallery/alllisins007-hairy-pussy-16062104"><img src="https://ic-ph-nss.xhcdn.com/a/NGY5MjJiMzE5MmJlZGRhOGUwNGJkYWY0MmM3NzMyNTY/jpeg/000/514/927/746_450.jpg"><br>AllliSins007 hairy pussy </a> 10',
+'<a href="https://xhamster.com/photos/gallery/allisins-sex-with-a-toothbrush-16052817"><img src="https://ic-ph-nss.xhcdn.com/a/MTFlYzY5YTllNDE0MjQ1YTA2NGMwYTc5ZmE3Y2Y2Yjg/jpeg/000/514/783/573_450.jpg"><br>AlliSins sex with a toothbrush </a> 10',
+'<a href="https://xhamster.com/photos/gallery/allisin007-16042506"><img src="https://ic-ph-nss.xhcdn.com/a/MDJjOTMyNmE3NTUxZWViZTE2YTk1OGY5Yjc0MzE3ZDA/jpeg/000/514/652/153_450.jpg"><br>AlliSin007</a> 1',
+'',
+];
+lineHeader = ''
+lineTail = ''
+showRange = 41
+bookid = "allisin007"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
