@@ -1,0 +1,63 @@
+<base target="_blank"><html><head><title>tumbler videos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://williamkpchan.github.io/lazyload.min.js"></script>
+<script type='text/javascript' src='https://williamkpchan.github.io/mainscript.js'></script>
+<script src="https://williamkpchan.github.io/commonfunctions.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="TumblerVideos.js"></script>
+
+<style>
+body{width:100%;margin-left: 0%; font-size:22px;}
+h1, h2 {color: gold;}
+strong {color: orange;}
+pre{width:100%;}
+#toc{color:cyan; font-size:20px;}
+img {max-width:100%; border-radius:3px; background-color:#044;}
+.stop-scrolling { height: 100%; overflow: hidden; }
+.tip-button {color:red;}
+iframe {width:100%; height:100%;}
+video{vertical-align:text-top;}
+</style></head><body onkeypress="chkKey()"><center>
+<center>
+<h1>tumbler</h1>
+
+<div class="tip-number"></div>
+<div class="js-tip"></div>
+<span class="bluesha" onclick="gotoNum();">jump to</span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+
+<script>
+tipsList = []
+tipsList = imgList.concat(tipsList);
+lineHeader = ''
+lineTail = ''
+bookid = "tumblrList"
+showRange = 100
+initSelectRange = 30000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+
+// $(".js-tip").dblclick(function() { forward(); });
+
+function rm_ignoreLst() {
+  ignoreLst = localStorage.getItem(window["ignoreLstName"]);
+  if(ignoreLst != null){
+     ignoreLst = ignoreLst.split(',');
+     ignoreLst = ignoreLst.map(unaryOp)
+     if(ignoreLst.length > 0 && ignoreLst !=""){
+       for(loop = 0; loop < ignoreLst.length; loop++){
+         ItemIndex = allIdx.indexOf( ignoreLst[loop] );
+         allIdx.splice(ItemIndex, 1)
+       }
+     }
+  }
+}
+
+</script>
+<script src='https://williamkpchan.github.io/LibDocs/readbook.js'></script>
+<script src='../showLongTips.js'></script>
+
