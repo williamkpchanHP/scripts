@@ -3540,6 +3540,15 @@ imgList = [
 '<video controls poster="https://64.media.tumblr.com/tumblr_sinc8d9Mgy1aysx1z_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_sinc8d9Mgy1aysx1z.mp4" type="video/mp4"></source></video>',
 '<video controls poster="https://64.media.tumblr.com/19ca3ca8014fbf0146dea29c10649fe2/5c7d1027cd5c069a-ea/s540x810/bf61f7b7f17377d11e166bffd3ea78c580111bbc.jpg"><source src="https://va.media.tumblr.com/tumblr_simlt46qPp1aysx1z.mp4" type="video/mp4"></source></video>',
 '<video controls poster="https://64.media.tumblr.com/tumblr_sijoc0hr821aysx1z_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_sijoc0hr821aysx1z_720.mp4" type="video/mp4"></source></video>',
+'<video controls loop poster="https://64.media.tumblr.com/tumblr_skd9olPID11aauf9j_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_skd9olPID11aauf9j.mp4" type="video/mp4"></source></video>',
+'<video controls loop poster="https://64.media.tumblr.com/tumblr_skd9mjs5pk1aauf9j_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_skd9mjs5pk1aauf9j.mp4" type="video/mp4"></source></video>',
+'<video controls loop poster="https://64.media.tumblr.com/tumblr_skd9k6lebh1aauf9j_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_skd9k6lebh1aauf9j.mp4" type="video/mp4"></source></video>',
+'<video controls loop poster="https://64.media.tumblr.com/tumblr_skd9i0CDsh1aauf9j_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_skd9i0CDsh1aauf9j.mp4" type="video/mp4"></source></video>',
+'<video controls loop poster="https://64.media.tumblr.com/tumblr_skd9g0hTVF1aauf9j_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_skd9g0hTVF1aauf9j.mp4" type="video/mp4"></source></video>',
+'<video controls loop poster="https://64.media.tumblr.com/tumblr_skd9c4B0oJ1aauf9j_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_skd9c4B0oJ1aauf9j.mp4" type="video/mp4"></source></video>',
+'<video controls loop poster="https://64.media.tumblr.com/tumblr_skd9a16BNL1aauf9j_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_skd9a16BNL1aauf9j.mp4" type="video/mp4"></source></video>',
+'<video controls loop poster="https://64.media.tumblr.com/tumblr_skd98ar3GN1aauf9j_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_skd98ar3GN1aauf9j.mp4" type="video/mp4"></source></video>',
+'<video controls loop poster="https://64.media.tumblr.com/tumblr_skd960NXov1aauf9j_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_skd960NXov1aauf9j.mp4" type="video/mp4"></source></video>',
 
 
 
