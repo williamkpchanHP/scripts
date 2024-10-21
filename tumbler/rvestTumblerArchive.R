@@ -2,7 +2,8 @@
 #Sys.setlocale(category = 'LC_ALL', 'Chinese')	# this must be added to script to show chinese
 # https://www.99csw.com/index.php
 
-setwd("C:/Users/william/Desktop/scripts/tumbler")
+workpath = "C:/Users/william/Desktop/scripts/tumbler"
+setwd(workpath)
 
 library(rvest)
 #https://www.99csw.com/book/3783/129158.htm
@@ -45,7 +46,7 @@ sink(theFilename)
   cat(wholeList, sep="\n")
 sink()
 
-cat(red("\n",theFilename, "created!\n"))
+cat(red("\n",workpath, "/",theFilename, "created!\n"))
 
 ProcessEndTime = Sys.time()
 cat(format(Sys.time(), "%H:%M:%OS"),"\n")
