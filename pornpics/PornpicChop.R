@@ -14,7 +14,7 @@ library(crayon)
  ligSilver <- make_style("#889988")
 
 # ask for cmdFileName
-cat(white("\n\n\nTo screen out lines!\n\n"))
+cat(white("\n\n\nTo filter and rtemove img lines!\n\n"))
 
 imgsrc = readline("Select image src origin, 1 pornpic, 2 xham, 3 freematures, 4 allHtmls: ")
 if(imgsrc == "1"){
@@ -26,6 +26,7 @@ if(imgsrc == "1"){
 }else if(imgsrc == "4"){
   setwd("C:/Users/william/Desktop/scripts/allHtmls")
 }
+cat(red("\n\ncurrent working path: ", getwd(), "\n\n\n"))
 
 cat(yellow("please select command file!\n"))
 choosefile = readline("select command file(txt file, press enter to default, jobcommands.txt): ")

@@ -76,9 +76,9 @@ collectImages <- function(url){
     if(length(lastPageNum)==0){
       lastPageNum = 1
     }else{
-      lastPageIdx = length(lastPageNum) -1
+      lastPageIdx = length(lastPageNum)
       thelastLine = html_nodes(lastPageNum[lastPageIdx], "a")
-      lastPageNum = as.numeric(html_attr(thelastLine, "data-page"))
+      lastPageNum = as.numeric(html_text(lastPageNum[lastPageIdx]))
     }
     
     #if(length(lastPageNum)==0){
@@ -89,7 +89,7 @@ collectImages <- function(url){
     
     addr=1:lastPageNum
     lentocpage = lastPageNum
-    cat(yellow("\nalbum total pages: ",lentocpage,"\n"))
+    cat(yellow("\ntotal pages: ",lentocpage,"\n"))
 
     for(i in 1:length(addr)){
      cat(i, "of", length(addr), " ")
@@ -103,9 +103,10 @@ collectImages <- function(url){
     
      #pagesource <- getlineFile(pageUrl)
      #pagesource <- readLines(pageUrl, warn=F, encoding = "UTF-8")
-     fileIn=file(pageUrl,open="rb",encoding="UTF-8")
-     pagesource = readLines(fileIn, warn = FALSE)
-
+     #fileIn=file(pageUrl,open="rb",encoding="UTF-8")
+     pagesource = retrieveFile(pageUrl)
+     #retrieveFile(pageUrl)
+     pagesource = as.character(pagesource)
      targetLineIdx = grep("photoModel", pagesource)
      targetLine = pagesource[targetLineIdx]
      targetLine = gsub('^.*,"photos":', '', targetLine )
@@ -172,7 +173,7 @@ cat(format(Sys.time(), "%H:%M:%OS"),"\n")
 # main loop here
 urllen = length(urls)
 for(k in 1:urllen){
-  cat(pink("\n",k, " of ", urllen, "\n"))
+  cat(pink("\n",k, " of total", urllen, "albums\n"))
   collectImages(urls[k])
 }
 

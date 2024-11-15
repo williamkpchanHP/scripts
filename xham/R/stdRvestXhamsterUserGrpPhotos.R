@@ -49,7 +49,7 @@ fetchUserFotos = function(userName){
 
   addr=1:lastPageNum
   lentocpage = lastPageNum
-  cat("\nalbum total pages: ",lentocpage,"\n")
+  cat("\ntotal album container pages: ",lentocpage,"\n")
   cat(format(Sys.time(), "%H:%M:%OS"),"\n")
 
 
@@ -111,7 +111,7 @@ fetchUserFotos = function(userName){
       ))
    }
   }
-  saveFile(userName)
+  #saveFile(userName)
 }
 
 saveFile = function(userName){
@@ -201,5 +201,7 @@ if(modetype=="1"){
     wholePage = character()
     fetchUserFotos(i)
   }
+  userName = paste0("collectedimgs", length(allLinks))
 }
 
+saveFile(userName)
