@@ -22,9 +22,9 @@ A:hover {	color: yellow;}
 A:focus {	color: red;}
 code { color: #488838;; background-color: #001010; font-size: 18px;}
 pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-pre img {width: 100%;}
+img {max-width: 100%;text-align:center; margin:auto;}
 video {width: 60%;}
-div {display:inline-block; width:33%; vertical-align:text-top;}
+div {display:inline-block; width:100%; vertical-align:text-top;}
 </style>
 
 <body onkeypress="chkKey()">
@@ -32,7 +32,8 @@ div {display:inline-block; width:33%; vertical-align:text-top;}
 <span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
 <div class="tip-number" onclick="forward()" ondblclick="randomNum()">pussy</div>
 <br>
-<pre class="js-tip"></pre>
+<center>
+<div class="js-tip"></div>
 <button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
 <br>
 
