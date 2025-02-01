@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PPlist</title>
+<link href="https://williamkpchan.github.io/maincss.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<script src="https://williamkpchan.github.io/mainscript.js"></script>
+
+<!--script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script-->
+
+<style>
+body { 
+  background-color: black;
+  color: gray;
+  justify-content: center;
+  align-content: center;
+  font-size: xx-large;
+}
+dt, dd { display: inline-block; float: left; }
+dt { clear: left; }
+p { padding-left: 1.5em; text-indent:-1em;}
+td {color:gray;}
+.question {text-align: left; font-size: 24px; color: gray;}
+.normalsize {font-size: 24px}
+.mainFrame {width:100%; background-color: black}
+#mychoice {font-size: 20px}
+select option { font-size: 18px, line-height: 60%;}
+button {color:white;}
+a, select {font-size: 24px}
+img {max-width:100%}
+#schRst, #markLst {font-size: 20px}
+#jumpButton {font-size: 18px}
+@media only screen and (max-width: 1080px) {
+  .mainFrame {width:100%; font-size: 24px}
+  pre {width:100%; font-size: 24px}
+  img {width:100%}
+  button {margin-top: 5px;}
+  #schRst, #markLst {font-size: 20px}
+  select option { font-size: 18px, line-height: 60%;}
+}
+</style>
+</head>
+
+<body onkeypress="chkKey()">
+<center>
+<h4>Info cards</h4>
+<div class="mainFrame">
+<button id="jumpButton" onclick=jpButClick()>Cards Left: <span class="questionsLeft"></span></button>
+<button onclick=window.scrollTo(0,document.body.scrollHeight)><r>end</r></button>
+<button onclick=window.scrollTo(0,Number(document.body.scrollHeight/4))>quad</button>
+<button onclick=window.scrollTo(0,Number(document.body.scrollHeight/2))>half</button>
+<button onclick=window.scrollTo(0,Number(document.body.scrollHeight*3/4))>3 quad</button>
+<pre class="question"> </pre><br>
+
+<!--button onclick=speak()>speak</button-->
+<button onclick=jpback()>back</button>
+<button onclick=gotoQues()>goto</button>
+<button onclick=ignoreIt()>ignoreIt</button>
+<button onclick=markIt()>markIt</button>
+<button onclick=findkeyword()><y>findkey</y></button>
+</div>
+<span class="normalsize">select card box:</span> <select id="myChoice" onchange="useChosen()">
+<option>imgList</option>
+<option>tumblrList</option>
+<option>8xxxImgsListOK</option>
+<option>TumblerVideos</option>
+<option>auntjudys</option>
+</select>
+<br>
+<button onclick=gototop();><r>top</r></button>
+<button onclick=window.scrollTo(0,Number(document.body.scrollHeight/4))>quad</button>
+<button onclick=window.scrollTo(0,Number(document.body.scrollHeight/2))>half</button>
+<button onclick=window.scrollTo(0,Number(document.body.scrollHeight*3/4))>3 quad</button>
+<br>
+<div id="markLst"></div>
+<div id="schRst"></div>
+<br>
+
+<a href="https://chat.deepseek.com/a/chat/" class="whitebut " target="_blank">deepseek</a>
+</center>
+
+<br><br><br><br>
+<script>
+tipsListName = ""
+suffleTable = []
+ignoreList = [];
+ignoreListname = ""
+markList = [];
+markListname = ""
+topicNo = ""
+actualID = ""
+questionList = []
+
+function init() {
+    listItem = "Array names: "
+     for (variableName in window) { // list all window objects
+        if (window[variableName] instanceof Array) { 
+          listItem = listItem + ", " + variableName; 
+        }
+     }
+
+  topicNo = questionList.length;
+  shuffle(questionList)
+  showTopic()
+}
+
+function shuffle(array) {
+  suffleTable = Array.from(Array(questionList.length).keys()) // cannot use eq sign
+
+  currentIndex = array.length;
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    [suffleTable[currentIndex], suffleTable[randomIndex]] = [suffleTable[randomIndex], suffleTable[currentIndex]];
+  }
+}
+
+function showTopic() {
+  topicNo = topicNo - 1;
+  if (topicNo < 0) { topicNo = questionList.length-1}
+  actualID = suffleTable[topicNo]
+
+  while(ignoreList.includes(actualID)){
+    topicNo = topicNo - 1
+    if (topicNo < 0) { topicNo = questionList.length-1}
+    actualID = suffleTable[topicNo]
+  }
+
+  var pointer = topicNo;
+  var topic = questionList[pointer];
+
+  document.querySelector('.question').innerHTML = topic;
+  document.querySelector('.questionsLeft').innerHTML = topicNo;
+  document.querySelector('body').focus();
+  gototop()
+}
+
+function gotoQues() {
+  pointer = questionList.length+1
+  while(pointer > questionList.length){
+    pointer = Number(prompt("goto item number", topicNo))
+  }
+  showPointerQue(pointer)
+}
+
+function showPointerQue(pointer) {
+  topicNo = pointer;
+  var topic = questionList[pointer];
+  document.querySelector('.question').innerHTML = topic;
+  document.querySelector('.questionsLeft').innerHTML = topicNo;
+  document.querySelector('body').focus();
+  gototop();
+}
+
+function gototop() {
+  window.scrollTo(0,0);
+}
+
+function ignoreIt() {
+  actualID = suffleTable[topicNo]
+  ignoreList.push(actualID);
+  ignoreListStr = ignoreList.join(" ");
+  localStorage.setItem(ignoreListname, ignoreListStr)
+  document.querySelector('#schRst').innerHTML = "<br><y>topic ignored:</y> <r>" + topicNo + "</r>"
+}
+
+function markIt() {
+  actualID = suffleTable[topicNo]
+  markList.push(actualID);
+  markList = [...new Set(markList)];
+  markListStr = markList.join(" ");
+  localStorage.setItem(markListname, markListStr)
+  showmarkList(markList)
+}
+
+function findkeyword() {
+  keyword = ""
+  while(keyword == ""){
+    keyword = prompt("enter keyword to search: ", keyword)
+  }
+
+  keyword = keyword.toLowerCase();
+  targetNum = [];
+
+  for ( i = 0; i < questionList.length; i++) {
+    searchString = questionList[i].toLowerCase();
+
+    if(typeof(searchString)=="string"){
+      searchResult = searchString.indexOf(keyword);
+      if(searchResult >= 0){
+        targetNum.push(i);
+      }
+    }
+  }
+
+  if(targetNum.length >0){
+    targetNumStr = ""
+    for ( i = 0; i < targetNum.length; i++) {
+      targetNumStr = targetNumStr + "<span class='redbut' onclick=showPointerQue("
+      + targetNum[i]
+      + ")>"
+      + targetNum[i]
+      + "</span> "
+    }
+    document.querySelector('#schRst').innerHTML = "<br><y>search result:</y> <r>" + keyword+ "</r><br>" + targetNumStr;
+  }else{
+    document.querySelector('#schRst').innerHTML = "<br><y>search result: <r>None!</r></y><br>";
+  }
+  window.location = '#schRst';
+}
+
+$(".answer").click(function () {
+   $(this).toggleClass("appear");
+});
+
+function jpButClick() {
+  var jpBut = document.querySelector('#jumpButton');
+  if (topicNo >= 0) {
+    showTopic();
+  }else if(topicNo === 0) {
+      jpBut.classList.disabled = true;
+  }else{
+      jpBut.classList.disabled = false;
+  }
+}
+
+function jpback() {
+  topicNo = topicNo + 1;
+  actualID = suffleTable[topicNo]
+  while(ignoreList.includes(actualID)){
+    topicNo = topicNo + 1
+    console.log("\ninside topicNo ",topicNo, "actualID ",actualID)
+    if (topicNo >= questionList.length) { topicNo = 0}
+    actualID = suffleTable[topicNo]
+  }
+  if (topicNo <= questionList.length){
+      showPointerQue(topicNo)
+  } else {
+    topicNo = questionList.length -1;
+      showPointerQue(topicNo)
+  }
+}
+
+function chkKey() {
+  var testkey = getChar(event);
+  if(testkey == 'b'){jpback();}
+  else if(testkey == 'f'){jpButClick();}
+  else if(testkey == 'F'){findkeyword();}
+  else if(testkey == 'i'){ignoreIt();}
+  else if(testkey == 'm'){markIt();}
+  else if(testkey == 'g'){gotoQues();}
+  else if(testkey == 's'){speak();}
+  else if(testkey == 't'){gototop();}
+  else if(testkey == 'e'){window.scrollTo(0,document.body.scrollHeight);}
+  else{chkOtherKeys(testkey)} 
+}
+function getChar(event) {
+  if (event.which!=0 && event.charCode!=0) {
+    return String.fromCharCode(event.which)   // the rest
+  } else {
+    return null // special key
+  }
+}
+
+function useChosen() {
+  var myChoice = document.getElementById("myChoice");
+  var choiceIndex = myChoice.selectedIndex;
+  tipsListName = myChoice.options[choiceIndex].text // first to know the question name
+  loadArray(tipsListName)
+}
+
+
+function loadArray(filename) {
+  if(filename == "8xxxImgsListOK"){
+    url = "allHtmls/8xxxImgsListOK.js"
+  }else if(filename == "auntjudys"){
+    url = "pornpics/auntjudys.js"
+  }else{
+    url = filename + ".js"
+  }
+
+    script = document.createElement('script');
+    script.src = "https://williamkpchanhp.github.io/scripts/"+url
+    script.type = 'text/javascript';
+
+    script.onload = function () { // remember to put all waiting jobs inside here 
+       questionList = eval(filename);
+       ignoreListname = "ignore" + filename
+       markListname = "mark" + filename
+       if (localStorage.getItem(ignoreListname) === null) {
+         ignoreList = [];
+       } else{
+         ignoreList = localStorage.getItem(ignoreListname).split(' ').map(Number);
+       }
+
+       if (localStorage.getItem(markListname) === null) {
+         markList = [];
+       } else{
+         markList = localStorage.getItem(markListname).split(' ').map(Number);
+       }
+       init()  // showTopic
+       showmarkList(markList)
+    };
+
+    document.head.appendChild(script);
+}
+
+function showmarkList(markList) {
+  if(markList.length >0){
+    markListStr = ""
+    markList = [...new Set(markList)];
+
+    for ( i = 0; i < markList.length; i++) {
+      markListStr = markListStr + "<span class='redbut' onclick=showPointerQue("
+      + suffleTable.indexOf(markList[i])
+      + ")>"
+      + suffleTable.indexOf(markList[i])
+      + "</span> "
+    }
+    document.querySelector('#markLst').innerHTML = "<br><y>marked Topics:</y> " + markListStr+ "<br>"
+  }else{
+    document.querySelector('#markLst').innerHTML = "<br><y>marked Topics: <r>None!</r></y><br>";
+  }
+}
+
+$("body").on( "swipeleft", function( event ) {jpback();} );
+$("body").on( "swiperight", function( event ) {jpButClick();});
+
+useChosen()
+
+</script>
+
+</body>
+</html>
