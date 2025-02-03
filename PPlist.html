@@ -281,13 +281,16 @@ function loadArray(filename) {
   }else{
     url = filename + ".js"
   }
-
+console.log(url)
     script = document.createElement('script');
     script.src = "https://williamkpchanhp.github.io/scripts/"+url
     script.type = 'text/javascript';
 
     script.onload = function () { // remember to put all waiting jobs inside here 
        questionList = eval(filename);
+       if(questionList == "8xxxImgsListOK"){
+         questionList = "xxxImgsListOK"
+       }
        ignoreListname = "ignore" + filename
        markListname = "mark" + filename
        if (localStorage.getItem(ignoreListname) === null) {
