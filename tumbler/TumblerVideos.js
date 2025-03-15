@@ -1,5 +1,4 @@
 imgList = [
-'',
 '<video controls loop poster="https://64.media.tumblr.com/tumblr_sk2l77TdQu1aaoc2q_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_sk2l77TdQu1aaoc2q.mp4" type="video/mp4"></source></video>',
 '<video controls loop poster="https://64.media.tumblr.com/tumblr_skc9izEHvo1aaa07x_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_skc9izEHvo1aaa07x_720.mp4" type="video/mp4"></source></video>',
 '<video controls loop poster="https://64.media.tumblr.com/tumblr_sk4llsKBOL1aav3rq_frame1.jpg"><source src="https://va.media.tumblr.com/tumblr_sk4llsKBOL1aav3rq_720.mp4" type="video/mp4"></source></video>',
