@@ -73,6 +73,7 @@ video { width: 100%;}
 <option>phubStars</option>
 <option>pohubVid</option>
 <option>puhbBatch2024</option>
+<option>archivegalleriesImgs01</option>
 <option>booklist</option>
 
 
@@ -141,6 +142,10 @@ function showTopic() {
 
   var pointer = topicNo;
   var topic = questionList[pointer];
+
+  if(tipsListName == "archivegalleriesImgs01"){
+    topic = lineHeader + topic + lineTail
+  }
 
   document.querySelector('.question').innerHTML = topic;
   document.querySelector('.questionsLeft').innerHTML = topicNo;
@@ -302,6 +307,8 @@ function loadArray(filename) {
     url = "pohub/puhbBatch2024.js"
   }else if(filename == "booklist"){
     url = "allHtmls/booklist.js"
+  }else if(filename == "archivegalleriesImgs01"){
+    url = "archivegalleries/archivegalleriesImgs01.js"
   }else{
     url = filename + ".js"
   }
