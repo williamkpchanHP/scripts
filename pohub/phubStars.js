@@ -9090,3 +9090,4 @@ var tipsList = [
 '<a href="https://www.pornhub.com/model/zzsinister"><img src="https://ei.phncdn.com/pics/users/661/038/351/avatar1552283292/(m=eidYGCjadOf)(mh=8-YBekF0jW82ToWq)200x200.jpg"><br>KittyKatty707</a>',
 '<a href="https://www.pornhub.com/model/zzsinister"><img src="https://ei.phncdn.com/pics/users/898/609/731/avatar1562573429/(m=eidYGCjadOf)(mh=vYEIIkpC0A3AzWLF)200x200.jpg"><br>Sophialorenxxx</a>',
 ];
+phubStars = tipsList

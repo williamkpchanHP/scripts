@@ -47,7 +47,7 @@ img {max-width:100%}
 <center>
 <h4>Info cards</h4>
 <div class="mainFrame">
-<button id="jumpButton" onclick=jpButClick()>Cards Left: <span class="questionsLeft"></span></button>
+<button onclick=jpback()>back</button>
 <button onclick=window.scrollTo(0,document.body.scrollHeight)><r>end</r></button>
 <button onclick=window.scrollTo(0,Number(document.body.scrollHeight/4))>quad</button>
 <button onclick=window.scrollTo(0,Number(document.body.scrollHeight/2))>half</button>
@@ -55,7 +55,7 @@ img {max-width:100%}
 <pre class="question"> </pre><br>
 
 <!--button onclick=speak()>speak</button-->
-<button onclick=jpback()>back</button>
+<button id="jumpButton" onclick=jpButClick()>Cards Left: <span class="questionsLeft"></span></button>
 <button onclick=gotoQues()>goto</button>
 <button onclick=ignoreIt()>ignoreIt</button>
 <button onclick=markIt()>markIt</button>
@@ -67,6 +67,12 @@ img {max-width:100%}
 <option>xxxImgsListOK</option>
 <option>TumblerVideos</option>
 <option>auntjudys</option>
+<option>phubStars</option>
+<option>pohubVid</option>
+<option>puhbBatch2024</option>
+
+
+
 </select>
 <br>
 <button onclick=gototop();><r>top</r></button>
@@ -282,6 +288,12 @@ function loadArray(filename) {
     url = "tumbler/TumblerVideos.js"
   }else if(filename == "tumblrList"){
     url = "tumbler/tumblrList.js"
+  }else if(filename == "phubStars"){
+    url = "pohub/phubStars.js"
+  }else if(filename == "pohubVid"){
+    url = "pohub/pohubVid.js"
+  }else if(filename == "puhbBatch2024"){
+    url = "pohub/puhbBatch2024.js"
   }else{
     url = filename + ".js"
   }
