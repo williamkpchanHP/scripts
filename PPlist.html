@@ -63,6 +63,7 @@ img {max-width:100%}
 </div>
 <span class="normalsize">select card box:</span> <select id="myChoice" onchange="useChosen()">
 <option>imgList</option>
+<option>favorites</option>
 <option>tumblrList</option>
 <option>xxxImgsListOK</option>
 <option>TumblerVideos</option>
@@ -285,6 +286,8 @@ function loadArray(filename) {
     url = "allHtmls/xxxImgsListOK.js"
   }else if(filename == "auntjudys"){
     url = "pornpics/auntjudys.js"
+  }else if(filename == "favorites"){
+    url = "pornpics/favorites.js"
   }else if(filename == "TumblerVideos"){
     url = "tumbler/TumblerVideos.js"
   }else if(filename == "tumblrList"){
@@ -295,8 +298,6 @@ function loadArray(filename) {
     url = "pohub/pohubVid.js"
   }else if(filename == "puhbBatch2024"){
     url = "pohub/puhbBatch2024.js"
-  }else if(filename == "booklist"){
-    url = "pohub/booklist.js"
   }else{
     url = filename + ".js"
   }
