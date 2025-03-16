@@ -1,4 +1,4 @@
-var tipsList = [
+var archivegalleriesImgsMOdi01 = [
 '40/2016/08/yx2oJd0/01',
 '40/2016/08/yx2oJd0/02',
 '40/2016/08/yx2oJd0/03',
@@ -41267,4 +41267,3 @@ var tipsList = [
 ];
 lineHeader = '<img src="http://archivegalleries.net/collection/'
 lineTail = '.jpg">'
-archivegalleriesImgs01 = tipsList
