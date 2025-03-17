@@ -83,6 +83,16 @@ video { width: 100%;}
 <option>archivegalleriesImgsMOdi08</option>
 <option>archivegalleriesImgsMOdi09</option>
 <option>archivegalleriesImgsMOdi10</option>
+<option>nudexxxallOver30</option>
+<option>nudexxxanilos</option>
+<option>nudexxxbrazzers</option>
+<option>nudexxxcategories-big-clit0</option>
+<option>nudexxxevil-angel</option>
+<option>nudexxxkarups-hometown-amateurs</option>
+<option>nudexxxmet</option>
+<option>nudexxxmilfs-like</option>
+<option>nudexxxmommy</option>
+<option>nudexxxmy-friends-hot-mom</option>
 <option>booklist</option>
 
 
@@ -151,8 +161,8 @@ function showTopic() {
 
   var pointer = topicNo;
   var topic = questionList[pointer];
-
-  if(tipsListName.substring(0, 8) == "archiveg"){
+  tipsNamesubstr = tipsListName.substring(0, 7)
+  if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx") {
     topic = lineHeader + topic + lineTail
   }
 
@@ -318,6 +328,8 @@ function loadArray(filename) {
     url = "allHtmls/booklist.js"
   }else if(filename.substring(0, 8) == "archiveg"){
     url = "archivegalleries/"+filename+".js"
+  }else if(filename.substring(0, 7) == "nudexxx"){
+    url = "nudexxx/"+filename+".js"
   }else{
     url = filename + ".js"
   }
