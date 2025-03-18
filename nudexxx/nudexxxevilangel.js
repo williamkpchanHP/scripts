@@ -1,4 +1,4 @@
-var nudexxxevil-angel = [
+var nudexxxevilangel = [
 '1/feac62e8d3f08092843d03f68431e749-1',
 '1/feac62e8d3f08092843d03f68431e749-10',
 '1/feac62e8d3f08092843d03f68431e749-11',
