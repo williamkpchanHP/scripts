@@ -6,20 +6,19 @@ Sys.setlocale(category = 'LC_ALL', 'Chinese')
 
 #options("encoding" = "native.enc")
 #options("encoding" = "UTF-8")
-setwd("C:/Users/User/Pictures/sexpage")
+#setwd("C:/Users/User/Pictures/sexpage")
+setwd("C:/Users/william/Desktop/scripts/pornpics")
 
-#library(audio)
 library(rvest)
 library(crayon)
  ligSilver <- make_style("#889988")
 
 pageHeader="https://www.pornpics.com/pornstars/"
-pageTail="/?gender=female&tits=big-tits"
-#pageTail="/?gender=female&tits=big-tits"
 className = ".wookmark-initialised a"
 
-titleName = "pornpicsPornstarsBig-titsList"
-theFilename = paste0(titleName, ".html")
+pornstarName = readline("enter pornstarName: ")
+
+theFilename = paste0(pornstarName, ".html")
 wholePage = character()
 
 # remember to remove &#9;
@@ -89,7 +88,7 @@ for(i in 1:length(addr)){
 #writeClipboard(wholePage)
 templateHead = readLines("templateHead.txt")
 templateTail = readLines("templateTail.txt")
-templateHead = gsub("mom50", titleName, templateHead)
+templateHead = gsub("mom50", pornstarName, templateHead)
 
 sink(theFilename)
 cat(templateHead, sep="\n")

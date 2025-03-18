@@ -1,38 +1,4 @@
-<base target="_blank"><html><head><title>mom50</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-pre img {width: 100%;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number">mom50</div>
-<pre class="js-tip"></pre>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var pornpicsmaturenipples = [
 '1/42/50249264/50249264_001_57cc',
 '1/42/50249264/50249264_002_1350',
 '1/42/50249264/50249264_003_ba07',
@@ -3715,21 +3681,13 @@ var tipsList = [
 '7/82/89631391/89631391_070_187b',
 '7/82/89631391/89631391_072_bc97',
 '7/82/89631391/89631391_077_f3fc',
+'7/655/23252081/23252081_003_d1a9',
+'7/655/23252081/23252081_009_76cf',
+'7/655/23252081/23252081_021_b6a2',
+'7/655/23252081/23252081_027_5314',
+'7/655/23252081/23252081_035_a5e2',
+'7/655/23252081/23252081_048_84ed',
+'7/655/23252081/23252081_049_e519',
 ];
 lineHeader = '<img src="https://cdni.pornpics.com/1280/'
 lineTail = '.jpg">'
-showRange = 28
-bookid = "mom50"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-<script src='https://williamkpchan.github.io/imgControl.js'></script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

@@ -97,6 +97,16 @@ video { width: 100%;}
 <option>nudexxxmilfslike</option>
 <option>nudexxxmommy</option>
 <option>nudexxxmyfriendshotmom</option>
+<option>pornpicsTigger</option>
+<option>pornpicsvagina18001</option>
+<option>pornpicsNicolePeters</option>
+<option>pornpicstigerrbenson</option>
+<option>pornpicsSashaEmm</option>
+<option>pornpicsCzechcasting</option>
+<option>pornpicsmaturenipples</option>
+<option>pornpicsmatureshavedPussy</option>
+<option>pornpicszoebloom</option>
+<option>pornpicsveraking</option>
 <option>booklist</option>
 
 
@@ -168,7 +178,7 @@ function showTopic() {
   var pointer = topicNo;
   topic = questionList[pointer];
   tipsNamesubstr = tipsListName.substring(0, 7)
-  if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx") {
+  if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic") {
     topic = lineHeader + topic + lineTail
   }
 
@@ -358,6 +368,8 @@ function loadArray(filename) {
     url = "archivegalleries/"+filename+".js"
   }else if(filename.substring(0, 7) == "nudexxx"){
     url = "nudexxx/"+filename+".js"
+  }else if(filename.substring(0, 7) == "pornpic"){
+    url = "pornpics/"+filename+".js"
   }else{
     url = filename + ".js"
   }
