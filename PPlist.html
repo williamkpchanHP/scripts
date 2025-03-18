@@ -61,6 +61,10 @@ video { width: 100%;}
 <button onclick=gotoQues()>goto</button>
 <button onclick=ignoreIt()>ignoreIt</button>
 <button onclick=markIt()>markIt</button>
+<button onclick=recordIt() class="red">Rec</button>
+<button onclick=clearIt() class="gold">Clr</button>
+<button onclick=summaryIt() class="white">Show</button>
+
 <button onclick=findkeyword()><y>findkey</y></button>
 </div>
 <span class="normalsize">select card box:</span> <select id="myChoice" onchange="useChosen()">
@@ -110,6 +114,7 @@ video { width: 100%;}
 
 <a href="https://chat.deepseek.com/a/chat/" class="whitebut " target="_blank">deepseek</a>
 </center>
+<div id="localStorageList"></div>
 
 <br><br><br><br>
 <script>
@@ -120,6 +125,7 @@ ignoreListname = ""
 markList = [];
 markListname = ""
 topicNo = ""
+topic = ""
 actualID = ""
 questionList = []
 
@@ -160,7 +166,7 @@ function showTopic() {
   }
 
   var pointer = topicNo;
-  var topic = questionList[pointer];
+  topic = questionList[pointer];
   tipsNamesubstr = tipsListName.substring(0, 7)
   if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx") {
     topic = lineHeader + topic + lineTail
@@ -208,6 +214,28 @@ function markIt() {
   markListStr = markList.join(" ");
   localStorage.setItem(markListname, markListStr)
   showmarkList(markList)
+}
+function recordIt() {
+  let tipsListNamedata = JSON.parse(localStorage.getItem(tipsListName)) || []
+  tipsListNamedata.push(topic)
+  localStorage.setItem(tipsListName, JSON.stringify(tipsListNamedata))
+
+console.log("recordIt: ",tipsListName, topic)
+  //localStorage.setItem(keyname, value)
+}
+function clearIt() {
+  window.localStorage.removeItem(tipsListName);
+console.log("clearIt: ",tipsListName, topic)
+}
+
+function summaryIt() {
+  const value = localStorage.getItem(tipsListName);
+  const itemdiv = document.createElement('div');
+  itemdiv.textContent = `tipsListName: ${tipsListName}, Value: ${value}`;
+
+  const storageList = document.getElementById('localStorageList');
+  storageList.innerHTML = ''; // Clear previous content
+  storageList.appendChild(itemdiv);
 }
 
 function findkeyword() {
