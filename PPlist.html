@@ -66,6 +66,7 @@ video { width: 100%;}
 <button onclick=summaryIt() class="white">Show</button>
 
 <button onclick=findkeyword()><y>findkey</y></button>
+<button onclick="shuffleSW = !shuffleSW";><pk>shufSW</pk></button>
 </div>
 <span class="normalsize">select card box:</span> <select id="myChoice" onchange="useChosen()">
 <option>imgList</option>
@@ -138,7 +139,7 @@ topicNo = ""
 topic = ""
 actualID = ""
 questionList = []
-
+shuffleSW = false
 function init() {
     listItem = "Array names: "
      for (variableName in window) { // list all window objects
@@ -153,15 +154,17 @@ function init() {
 }
 
 function shuffle(array) {
-  suffleTable = Array.from(Array(questionList.length).keys()) // cannot use eq sign
+ suffleTable = Array.from(Array(questionList.length).keys()) // cannot use eq sign
 
-  currentIndex = array.length;
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-    [suffleTable[currentIndex], suffleTable[randomIndex]] = [suffleTable[randomIndex], suffleTable[currentIndex]];
-  }
+ if(shuffleSW){
+   currentIndex = array.length;
+   while (currentIndex != 0) {
+     randomIndex = Math.floor(Math.random() * currentIndex);
+     currentIndex--;
+     [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+     [suffleTable[currentIndex], suffleTable[randomIndex]] = [suffleTable[randomIndex], suffleTable[currentIndex]];
+   }
+ }
 }
 
 function showTopic() {
@@ -421,6 +424,7 @@ function showmarkList(markList) {
 
 $("body").on( "swipeleft", function( event ) {jpback();} );
 $("body").on( "swiperight", function( event ) {jpButClick();});
+$("img").click( "jpButClick()");
 
 useChosen()
 
