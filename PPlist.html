@@ -164,6 +164,8 @@ function shuffle(array) {
      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
      [suffleTable[currentIndex], suffleTable[randomIndex]] = [suffleTable[randomIndex], suffleTable[currentIndex]];
    }
+ }else{
+   topicNo = Math.floor(Math.random()  * questionList.length)
  }
 }
 
@@ -201,10 +203,11 @@ function gotoQues() {
 
 function showPointerQue(pointer) {
   topicNo = pointer;
-  var topic = questionList[pointer];
-  document.querySelector('.question').innerHTML = topic;
-  document.querySelector('.questionsLeft').innerHTML = topicNo;
-  document.querySelector('body').focus();
+  showTopic()
+  //var topic = questionList[pointer];
+  //document.querySelector('.question').innerHTML = topic;
+  //document.querySelector('.questionsLeft').innerHTML = topicNo;
+  //document.querySelector('body').focus();
   gototop();
 }
 
