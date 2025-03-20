@@ -22,7 +22,7 @@ dt, dd { display: inline-block; float: left; }
 dt { clear: left; }
 p { padding-left: 1.5em; text-indent:-1em;}
 td {color:gray;}
-.question {text-align: center; font-size: 24px; color: gray;}
+#question {text-align: center; font-size: 24px; color: gray;}
 .normalsize {font-size: 24px}
 .mainFrame {width:100%; background-color: black}
 #mychoice {font-size: 20px}
@@ -54,10 +54,10 @@ video { width: 100%;}
 <button onclick=window.scrollTo(0,Number(document.body.scrollHeight/4))>quad</button>
 <button onclick=window.scrollTo(0,Number(document.body.scrollHeight/2))>half</button>
 <button onclick=window.scrollTo(0,Number(document.body.scrollHeight*3/4))>3 quad</button>
-<pre class="question"> </pre><br>
+<pre id="question" onclick="jpButClick()"> </pre><br>
 
 <!--button onclick=speak()>speak</button-->
-<button id="jumpButton" onclick=jpButClick()>Cards Left: <span class="questionsLeft"></span></button>
+<button id="jumpButton" onclick=jpButClick()>Cards Left: <span id="questionsLeft"></span></button>
 <button onclick=gotoQues()>goto</button>
 <button onclick=ignoreIt()>ignoreIt</button>
 <button onclick=markIt()>markIt</button>
@@ -65,6 +65,7 @@ video { width: 100%;}
 <button onclick=clearIt() class="gold">Clr</button>
 <button onclick=summaryIt() class="white">Show</button>
 
+<button onclick=randQues()><o>rand</o></button>
 <button onclick=findkeyword()><y>findkey</y></button>
 <button onclick="shuffleSW = !shuffleSW";><pk>shufSW</pk></button>
 </div>
@@ -129,6 +130,10 @@ video { width: 100%;}
 <option>pornpicsmatureshavedPussy</option>
 <option>pornpicszoebloom</option>
 <option>pornpicsveraking</option>
+<option>xhamFoto3759gif</option>
+<option>xhamFoto94605</option>
+<option>xhamFotocollectedimgs2931</option>
+<option>xhamFotovitgun198</option>
 <option>booklist</option>
 
 
@@ -204,12 +209,12 @@ function showTopic() {
   var pointer = topicNo;
   topic = questionList[pointer];
   tipsNamesubstr = tipsListName.substring(0, 7)
-  if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic") {
+  if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic" || tipsNamesubstr === "xhamFot") {
     topic = lineHeader + topic + lineTail
   }
 
-  document.querySelector('.question').innerHTML = topic;
-  document.querySelector('.questionsLeft').innerHTML = topicNo;
+  document.querySelector('#question').innerHTML = topic;
+  document.querySelector('#questionsLeft').innerHTML = topicNo;
   document.querySelector('body').focus();
   gototop()
 }
@@ -222,12 +227,17 @@ function gotoQues() {
   showPointerQue(pointer)
 }
 
+function randQues() {
+  randomPtr = Math.floor(Math.random() * questionList.length);
+  showPointerQue(randomPtr)
+}
+
 function showPointerQue(pointer) {
   topicNo = pointer;
   showTopic()
   //var topic = questionList[pointer];
-  //document.querySelector('.question').innerHTML = topic;
-  //document.querySelector('.questionsLeft').innerHTML = topicNo;
+  //document.querySelector('#question').innerHTML = topic;
+  //document.querySelector('#questionsLeft').innerHTML = topicNo;
   //document.querySelector('body').focus();
   gototop();
 }
@@ -397,6 +407,8 @@ function loadArray(filename) {
     url = "nudexxx/"+filename+".js"
   }else if(filename.substring(0, 7) == "pornpic"){
     url = "pornpics/"+filename+".js"
+  }else if(filename.substring(0, 7) == "xhamFot"){
+    url = "xham/"+filename+".js"
   }else{
     url = filename + ".js"
   }
