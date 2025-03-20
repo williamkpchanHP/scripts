@@ -1,38 +1,4 @@
-<base target="_blank"><html><head><title>putarankahotmilf1266</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black:; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number {color: #20A020; font-weight: bolder; font-size: 26px;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-img {max-width: 100%;}
-div {width: 100%; display:inline-block; vertical-align:text-top; text-align:center;}
-
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number">putarankahotmilf1266</div>
-<pre class="js-tip"></pre>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotoputarankahotmilf = [
 '1-5-l-bottle-ride-and-wand-on-clit-full-video-on-premium-xhJljwG"><img src="https://thumb-nss.xhcdn.com/a/BU0II6ZnGS5L3GLFJxOTeQ/021/887/461/v2/1280x720.217.jpg"><br>1,5 l bottle ride and wand on clit (full video on premium)',
 '1-5-l-pepsi-bottle-for-the-first-time-xhRJaJ3"><img src="https://thumb-nss.xhcdn.com/a/1qwynIxBJswn3VXoarPBhg/022/055/016/v2/1280x720.201.jpg"><br>1,5 l Pepsi bottle for the first time',
 '1-5l-bottle-ride-close-up-xhN6UQT"><img src="https://thumb-nss.xhcdn.com/a/gQP4YTzAfVIfzNL3r41DfQ/023/596/498/v2/1280x720.203.jpg"><br>1,5l. bottle ride close up',
@@ -1298,17 +1264,3 @@ var tipsList = [
 ];
 lineHeader = '<div><a href="https://xhamster.com/videos/'
 lineTail = '</a></div>'
-showRange = 120
-bookid = "putarankahotmilf1266"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

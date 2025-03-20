@@ -1,36 +1,4 @@
-<base target="_blank"><html><head><title>aunt-judys215</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black:; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-img {max-width: 100%;}
-div {width: 33%; display:inline-block; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number">aunt-judys215</div>
-<pre class="js-tip"></pre>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotoauntjudys = [
 'auntjudys-bathtime-with-busty-bbw-milf-charlie-rae-pov-experience-xhlHlbz"><img src="https://ic-vt-lm.xhcdn.com/a/NzcyYjAzMzRjM2RkMDFmNzM4OTk1OGJlYzFhOTYyMjU/s(w:320,h:180),jpeg/022/470/123/v2/320x180.219.jpg"><br>AuntJudys - Bathtime with Busty BBW MILF Charlie Rae (POV Experience)',
 'auntjudys-foxy-46yo-amateur-milf-lana-bedtime-lingerie-masturbation-xhRZO8H"><img src="https://ic-vt-lm.xhcdn.com/a/M2U1ZTU2YzAyMWM3MTZkY2I0NTdlMzhhNzJkYjJjZDc/s(w:320,h:180),jpeg/022/208/586/v2/320x180.250.jpg"><br>AuntJudys - Foxy 46yo Amateur MILF Lana - Bedtime Lingerie Masturbation',
 'auntjudys-gorgeous-40yo-super-milf-natie-gets-off-in-the-kitchen-xhs2JeP"><img src="https://ic-vt-lm.xhcdn.com/a/YTY2ODMxYTRkZTEwZTMyZDZiMjJlODIyYjA1ZDUyNDY/s(w:320,h:180),jpeg/022/451/303/v2/320x180.204.jpg"><br>AuntJudys - Gorgeous 40yo Super-MILF Natie gets off in the Kitchen',
@@ -249,17 +217,3 @@ var tipsList = [
 ];
 lineHeader = '<div><a href="https://xhamster.com/videos/'
 lineTail = '</a></div>'
-showRange = 60
-bookid = "older-woman-fun4253"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

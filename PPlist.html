@@ -70,72 +70,8 @@ video { width: 100%;}
 <button onclick=findkeyword()><y>findkey</y></button>
 <button onclick="shuffleSW = !shuffleSW";><pk>shufSW</pk></button>
 </div>
-<span class="normalsize">select card box:</span> <select id="myChoice" onchange="useChosen()">
-<option>imgList</option>
-<option>favorites</option>
-<option>tumblrList</option>
-<option>xxxImgsListOK</option>
-<option>TumblerVideos</option>
-<option>auntjudys</option>
-<option>phubStars</option>
-<option>pohubVid</option>
-<option>puhbBatch2024</option>
-<option>archivegalleriesImgsMOdi01</option>
-<option>archivegalleriesImgsMOdi02</option>
-<option>archivegalleriesImgsMOdi03</option>
-<option>archivegalleriesImgsMOdi04</option>
-<option>archivegalleriesImgsMOdi05</option>
-<option>archivegalleriesImgsMOdi06</option>
-<option>archivegalleriesImgsMOdi07</option>
-<option>archivegalleriesImgsMOdi08</option>
-<option>archivegalleriesImgsMOdi09</option>
-<option>archivegalleriesImgsMOdi10</option>
-<option>nudexxxallOver30</option>
-<option>nudexxxanilos</option>
-<option>nudexxxbrazzers</option>
-<option>nudexxxcategoriesbigclit0</option>
-<option>nudexxxevilangel</option>
-<option>nudexxxkarupshometownamateurs</option>
-<option>nudexxxmet</option>
-<option>nudexxxmilfslike</option>
-<option>nudexxxmommy</option>
-<option>nudexxxmyfriendshotmom</option>
-<option>pornpicsTigger</option>
-<option>pornpicsbelindabrush</option>
-<option>pornpicslalabond</option>
-<option>pornpicsdebora</option>
-<option>pornpicsAllOver30</option>
-<option>pornpicsnika</option>
-<option>pornpicsolderwomen</option>
-<option>pornpicsspreadlegspanties</option>
-<option>pornpicsdeewilliams</option>
-<option>pornpicslululush</option>
-<option>pornpicsxlgirls</option>
-<option>pornpicsmilam</option>
-<option>pornpicsvagina18001</option>
-<option>pornpicsnicolelove</option>
-<option>pornpicsAtkPetites</option>
-<option>pornpicsDanielle</option>
-<option>pornpicsdannilynne</option>
-<option>pornpicsseptembercarrino</option>
-<option>pornpicsyoga</option>
-<option>pornpicspussytattoo</option>
-<option>pornpicsNicolePeters</option>
-<option>pornpicstigerrbenson</option>
-<option>pornpicskeishagrey</option>
-<option>pornpicsSashaEmm</option>
-<option>pornpics40somethingmag</option>
-<option>pornpicsddfbusty</option>
-<option>pornpicsCzechcasting</option>
-<option>pornpicsmaturenipples</option>
-<option>pornpicsmatureshavedPussy</option>
-<option>pornpicszoebloom</option>
-<option>pornpicsveraking</option>
-<option>xhamFoto3759gif</option>
-<option>xhamFoto94605</option>
-<option>xhamFotocollectedimgs2931</option>
-<option>xhamFotovitgun198</option>
-<option>booklist</option>
+<span class="normalsize">select card box:</span>
+<select id="myChoice" onchange="useChosen()"></select>
 
 
 
@@ -167,6 +103,16 @@ topic = ""
 actualID = ""
 questionList = []
 shuffleSW = false
+
+const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','TumblerVideos','auntjudys','phubStars','pohubVid','puhbBatch2024','archivegalleriesImgsMOdi01','archivegalleriesImgsMOdi02','archivegalleriesImgsMOdi03','archivegalleriesImgsMOdi04','archivegalleriesImgsMOdi05','archivegalleriesImgsMOdi06','archivegalleriesImgsMOdi07','archivegalleriesImgsMOdi08','archivegalleriesImgsMOdi09','archivegalleriesImgsMOdi10','nudexxxallOver30','nudexxxanilos','nudexxxbrazzers','nudexxxcategoriesbigclit0','nudexxxevilangel','nudexxxkarupshometownamateurs','nudexxxmet','nudexxxmilfslike','nudexxxmommy','nudexxxmyfriendshotmom','pornpicsTigger','pornpicsbelindabrush','pornpicslalabond','pornpicsdebora','pornpicsAllOver30','pornpicsnika','pornpicsolderwomen','pornpicsspreadlegspanties','pornpicsdeewilliams','pornpicslululush','pornpicsxlgirls','pornpicsmilam','pornpicsvagina18001','pornpicsnicolelove','pornpicsAtkPetites','pornpicsDanielle','pornpicsdannilynne','pornpicsseptembercarrino','pornpicsyoga','pornpicspussytattoo','pornpicsNicolePeters','pornpicstigerrbenson','pornpicskeishagrey','pornpicsSashaEmm','pornpics40somethingmag','pornpicsddfbusty','pornpicsCzechcasting','pornpicsmaturenipples','pornpicsmatureshavedPussy','pornpicszoebloom','pornpicsveraking','xhamFoto3759gif','xhamFoto94605','xhamFotocollectedimgs2931','xhamFotovitgun198','xhamFoto7781','xhamFotodaringsex8378','xhamFotolindacaprice26','xhamFotobouncytitsaction4959','xhamFotooldnanny7955','xhamFotolargeAreolas','xhamFotoauntjudys','xhamFotoputarankahotmilf','pornpicsjaylenerio','booklist',];
+const selectElement = document.getElementById('myChoice');
+optionsArray.forEach(optionText => {
+ const option = document.createElement('option');
+ option.value = optionText; // Set the value attribute
+ option.textContent = optionText; // Set the display text
+ selectElement.appendChild(option); // Append the option to the select
+});
+
 function init() {
     listItem = "Array names: "
      for (variableName in window) { // list all window objects
