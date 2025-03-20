@@ -57,7 +57,7 @@ video { width: 100%;}
 <pre id="question" onclick="jpButClick()"> </pre><br>
 
 <!--button onclick=speak()>speak</button-->
-<button id="jumpButton" onclick=jpButClick()>Cards Left: <span id="questionsLeft"></span></button>
+<button id="jumpButton" onclick=jpButClick()>Card Numer: <span id="questionsLeft"></span></button>
 <button onclick=gotoQues()>goto</button>
 <button onclick=ignoreIt()>ignoreIt</button>
 <button onclick=markIt()>markIt</button>
@@ -234,13 +234,13 @@ function randQues() {
 }
 
 function autojp() {
-  var timeStep = Number(prompt("Please enter period in seconds: ", "5")) * 1000; // Convert to milliseconds
-  var cycleNum = Number(prompt("Please enter cycle number: ", "10"));
+  var timeStep = Number(prompt("Please enter period in seconds: ", "7")) * 1000; // Convert to milliseconds
+  var cycleNum = Number(prompt("Please enter cycle number: ", "50"));
 
   if (timeStep > 0 && cycleNum > 0) {
     let count = 0; // Initialize counter
     const intervalId = setInterval(() => {
-      jpButClick();
+      jpback();
       count++;
       if (count >= cycleNum) {
         clearInterval(intervalId); // Stop the interval
