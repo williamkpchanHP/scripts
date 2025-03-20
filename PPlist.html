@@ -65,6 +65,7 @@ video { width: 100%;}
 <button onclick=clearIt() class="gold">Clr</button>
 <button onclick=summaryIt() class="white">Show</button>
 
+<button onclick=autojp()><lg>autoF</lg></button>
 <button onclick=randQues()><o>rand</o></button>
 <button onclick=findkeyword()><y>findkey</y></button>
 <button onclick="shuffleSW = !shuffleSW";><pk>shufSW</pk></button>
@@ -230,6 +231,22 @@ function gotoQues() {
 function randQues() {
   randomPtr = Math.floor(Math.random() * questionList.length);
   showPointerQue(randomPtr)
+}
+
+function autojp() {
+  var timeStep = Number(prompt("Please enter period in seconds: ", "5")) * 1000; // Convert to milliseconds
+  var cycleNum = Number(prompt("Please enter cycle number: ", "10"));
+
+  if (timeStep > 0 && cycleNum > 0) {
+    let count = 0; // Initialize counter
+    const intervalId = setInterval(() => {
+      jpButClick();
+      count++;
+      if (count >= cycleNum) {
+        clearInterval(intervalId); // Stop the interval
+      }
+    }, timeStep);
+  }
 }
 
 function showPointerQue(pointer) {
