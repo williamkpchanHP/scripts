@@ -1,5 +1,3 @@
-# this download cannot download full page and reason unknown
-
 # this must be added to setting chinese
 Sys.setlocale(category = 'LC_ALL', 'Chinese')
 #Sys.setlocale(, 'English')  

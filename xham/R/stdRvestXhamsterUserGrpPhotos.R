@@ -164,10 +164,12 @@ modetype = readline("batch mode or single user? 0/1 ")
 if(modetype=="1"){
   userName = "olderwomanfun"
   userName = readline(prompt="enter userName: ")
-  userOrCreat = readline(prompt="user or creator? 0/1: ")
+  userOrCreat = readline(prompt="pornstars, user or creator? 0/1/2: ")
   if(userOrCreat==0){
+    userHeader="https://xhamster.com/pornstars/"
+  }else if(userOrCreat==1){
     userHeader="https://xhamster.com/users/"
-  }else{
+  }else if(userOrCreat==2){
     userHeader="https://xhamster.com/creators/"
   }
   ProcessStartTime <<- Sys.time()

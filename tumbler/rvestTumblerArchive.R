@@ -1,6 +1,4 @@
-# this download cannot download full page and reason unknown
-#Sys.setlocale(category = 'LC_ALL', 'Chinese')	# this must be added to script to show chinese
-# https://www.99csw.com/index.php
+# rvest Tumbler Archive from tumblrAddr.txt
 
 workpath = "C:/Users/william/Desktop/scripts/tumbler"
 setwd(workpath)
@@ -9,7 +7,8 @@ library(rvest)
 #https://www.99csw.com/book/3783/129158.htm
 pageHeader = ""
 pageTail = ""
-className = "video, img.RoN4R, .tmblr-full"
+className = "video, img.RoN4R, .tmblr-full, RoN4R, tPU70, xhGbM, img"
+
 source("../retrieveFile.R")
 
 addr = readLines("tumblrAddr.txt")
@@ -29,7 +28,7 @@ for(i in 1:lentocpage){
   counter = counter +1
   url = paste0(pageHeader, addr[i], pageTail)
   cat(counter, "of",lentocpage, url, "\n\n")
-
+  
   pagesource <- retrieveFile(url)
   if(!is.character(pagesource)){
     itemList <- html_nodes(pagesource, className)
@@ -52,3 +51,4 @@ ProcessEndTime = Sys.time()
 cat(format(Sys.time(), "%H:%M:%OS"),"\n")
 LoopTime = trunc(as.numeric(ProcessEndTime - ProcessStartTime, units="secs"))
 cat("loop time: ",LoopTime,"\n")
+

@@ -6,7 +6,7 @@ Sys.setlocale(category = 'LC_ALL', 'Chinese')
 
 #options("encoding" = "native.enc")
 #options("encoding" = "UTF-8")
-setwd("C:/Users/User/Pictures/sexpage")
+setwd("C:/Users/william/Desktop/scripts/xham")
 
 #library(audio)
 library(rvest)
