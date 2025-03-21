@@ -47,7 +47,7 @@ video { width: 100%;}
 
 <body onkeypress="chkKey()">
 <center>
-<h4>Info cards</h4>
+<h5 id="totalLen">Info cards</h5>
 <div class="mainFrame">
 <button onclick=jpback()>back</button>
 <button onclick=window.scrollTo(0,document.body.scrollHeight)><r>end</r></button>
@@ -121,6 +121,7 @@ function init() {
         }
      }
 
+  $("#totalLen").html(questionList.length);
   topicNo = questionList.length;
   shuffle(questionList)
   showTopic()
