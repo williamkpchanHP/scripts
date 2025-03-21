@@ -51,9 +51,8 @@ video { width: 100%;}
 <div class="mainFrame">
 <button onclick=jpback()>back</button>
 <button onclick=window.scrollTo(0,document.body.scrollHeight)><r>end</r></button>
-<button onclick=window.scrollTo(0,Number(document.body.scrollHeight/4))>quad</button>
-<button onclick=window.scrollTo(0,Number(document.body.scrollHeight/2))>half</button>
-<button onclick=window.scrollTo(0,Number(document.body.scrollHeight*3/4))>3 quad</button>
+<button onclick=randommyChoice()><pk>randL</pk></button>
+
 <pre id="question" onclick="jpButClick()"> </pre><br>
 
 <!--button onclick=speak()>speak</button-->
@@ -121,7 +120,7 @@ function init() {
         }
      }
 
-  $("#totalLen").html(questionList.length);
+  $("#totalLen").html(tipsListName+": "+questionList.length);
   topicNo = questionList.length;
   shuffle(questionList)
   showTopic()
@@ -345,6 +344,11 @@ function useChosen() {
   loadArray(tipsListName)
 }
 
+function randommyChoice() {
+  ArrayPtr = Math.floor(Math.random() * optionsArray.length);
+  tipsListName = myChoice.options[ArrayPtr].text // first to know the question name
+  loadArray(tipsListName)
+}
 
 function loadArray(filename) {
   if(filename == "xxxImgsListOK"){
