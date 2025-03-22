@@ -47,7 +47,7 @@ C:\Users\william\Desktop\scripts\	stdRvestPornpicBatchCombine.R
 C:\Users\william\Desktop\scripts\pornpics\	stdRvestPornpicBatch.R
 C:\Users\william\Desktop\scripts\pornpics\	stdRvestPornpicNew.R
 C:\Users\william\Desktop\scripts\	stdRvestPornpicStars.R
-C:\Users\william\Desktop\scripts\pornpics\	PornpicChop.R
+C:\Users\william\Desktop\scripts\	cleanTargetFile.R
  	 
 C:\Users\william\Desktop\scripts\freematures\	collectfreematuresgalleryImgs.R
 C:\Users\william\Desktop\scripts\	findFiles.r

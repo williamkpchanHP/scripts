@@ -1,4 +1,4 @@
-var xhamsterputarankahotmilf = [
+var xhamFotolargeAreolas = [
 '1.xhcdn.com/a/6XkBEL09APVJYXc60HqEjA/000/497/635/561',
 '3.xhcdn.com/a/5f-Pw_x9LBfLKTbTOMD0FA/000/498/273/703',
 '0.xhcdn.com/a/UFQXNQDBeMer0xJnj0QjTQ/000/498/273/700',
