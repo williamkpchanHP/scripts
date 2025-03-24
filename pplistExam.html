@@ -132,7 +132,7 @@ function init() {
      }
 
   $("#totalLen").html(tipsListName+": "+questionList.length);
-  topicNo = questionList.length;
+  topicNo = -1;
   showTopic()
 }
 
@@ -141,8 +141,8 @@ function showTopic() {
  showlength = 200
  if(questionList.length<200){showlength = questionList.length}
  for( i = 0; i < showlength; i++){
-  topicNo = topicNo - 1;
-  if (topicNo < 0) { topicNo = questionList.length-1}
+  topicNo = topicNo + 1;
+  if (topicNo > questionList.length) { topicNo = 0}
   var pointer = topicNo;
   topic = questionList[pointer];
   tipsNamesubstr = tipsListName.substring(0, 7)
