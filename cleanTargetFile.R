@@ -14,9 +14,9 @@ library(crayon)
  ligSilver <- make_style("#889988")
 
 # ask for cmdFileName
-cat(white("\n\n\nTo filter and rtemove img lines!\n\n"))
+cat(white("\n\n\nTo filter and remove img lines!\n\n"))
 
-imgsrc = readline("Select image src origin, 1 pornpic, 2 xham, 3 freematures, 4 allHtmls: ")
+imgsrc = readline("Select image src path, 1 pornpic, 2 xham, 3 freematures, 4 allHtmls: ")
 if(imgsrc == "1"){
   setwd("C:/Users/william/Desktop/scripts/pornpics")
 }else if(imgsrc == "2"){

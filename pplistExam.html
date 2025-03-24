@@ -138,7 +138,9 @@ function init() {
 
 function showTopic() {
  fullTopic = ""
- for( i = 0; i < 200; i++){
+ showlength = 200
+ if(questionList.length<200){showlength = questionList.length}
+ for( i = 0; i < showlength; i++){
   topicNo = topicNo - 1;
   if (topicNo < 0) { topicNo = questionList.length-1}
   var pointer = topicNo;
