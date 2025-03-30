@@ -2,7 +2,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <style>
 body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
@@ -20,9 +21,10 @@ A:focus {	color: red;}
 code { color: #488838;; background-color: #001010; font-size: 18px;}
 pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
 img {max-width: 100%;}
+#editregion {width: 80%; height:300px; color:#952;  background-color : #010; }
 </style>
 
-<body onkeypress="chkKey()">
+<body>
 <br>
 <span id="totalLen"></span>
 <div>pplistExam <r>Note: must run server</r> </div>
@@ -34,11 +36,13 @@ img {max-width: 100%;}
 <button id="jumpButton" onclick=jpButClick()>Card N0: <span id="questionsLeft"></span></button>
 
 <p class="js-tip"></p>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<button class="tip-button" id="returnLeft">return</button>
 <br>
+<textarea id="editregion"></textarea>
 
 <br>
 <script>
+rememberedPosition = 0;
 tipsListName = ""
 focusSwitch = false
 var tipsList = []
@@ -101,11 +105,11 @@ function loadArray(filename) {
     script = document.createElement('script');
     script.src = "http://192.168.0.89:8000/" + url
     script.type = 'text/javascript';
-    console.log("script.src: ",script.src)
+    console.log("script.src is: ",script.src)
 
     script.onload = function () { // remember to put all waiting jobs inside here 
        questionList = eval(filename);
-       console.log("questionList: ",questionList)
+       //console.log("questionList: ",questionList)
        tipsList = filename
        init()  // showTopic
    };
@@ -160,6 +164,22 @@ function showTopic() {
 function gototop() {
   window.scrollTo(0,0);
 }
+
+$(document).ready(function(){
+    $('#returnLeft').click(function(){
+      window.scrollTo({ top: rememberedPosition });
+    });
+});
+
+$(document).ready(function() {
+  $(document).on('click', 'img', function() {
+    imgsrc = this.src + "\n";
+    rememberedPosition = window.scrollY
+    $("#editregion").focus()
+    document.execCommand("insertText", false, imgsrc)
+  });
+});
+
 
 </script>
 
