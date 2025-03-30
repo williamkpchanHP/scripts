@@ -33,17 +33,18 @@ img {max-width: 100%;}
 <select id="myChoice" onchange="useChosen()"></select>
 <button onclick=randommyChoice()><pk>randL</pk></button>
 <div id="question"> </div><br>
-<button id="jumpButton" onclick=jpButClick()>Card N0: <span id="questionsLeft"></span></button>
+<button id="jumpButton" class="white" onclick=showTopic()>Card N0: <span id="questionsLeft"></span></button>
 
 <p class="js-tip"></p>
-<button class="tip-button" id="returnLeft">return</button>
+<button class="redbut red" onclick=recordLoc()>rec Loc</button>
+<button class="tip-button" id="return">return</button>
+<button class="yellowbut yellow" onclick=gotoLoc()>goto Loc</button>
 <br>
 <textarea id="editregion"></textarea>
 
 <br>
 <script>
 rememberedPosition = 0;
-tipsListName = ""
 focusSwitch = false
 var tipsList = []
 showRange = 200
@@ -54,8 +55,11 @@ noShuffle = true;
 topicLength = tipsList.length
 lineHeader = ''
 lineTail = ''
-
+pointer = 0
+topicNo = 0
 const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','TumblerVideos','auntjudys','phubStars','pohubVid','puhbBatch2024','archivegalleriesImgsMOdi01','archivegalleriesImgsMOdi02','archivegalleriesImgsMOdi03','archivegalleriesImgsMOdi04','archivegalleriesImgsMOdi05','archivegalleriesImgsMOdi06','archivegalleriesImgsMOdi07','archivegalleriesImgsMOdi08','archivegalleriesImgsMOdi09','archivegalleriesImgsMOdi10','nudexxxallOver30','nudexxxanilos','nudexxxbrazzers','nudexxxcategoriesbigclit0','nudexxxevilangel','nudexxxkarupshometownamateurs','nudexxxmet','nudexxxmilfslike','nudexxxmommy','nudexxxmyfriendshotmom','pornpicsTigger','pornpicsbelindabrush','pornpicslalabond','pornpicsdebora','pornpicsAllOver30','pornpicsnika','pornpicsolderwomen','pornpicsspreadlegspanties','pornpicsdeewilliams','pornpicslululush','pornpicsxlgirls','pornpicsmilam','pornpicsvagina18001','pornpicsnicolelove','pornpicsAtkPetites','pornpicsDanielle','pornpicsdannilynne','pornpicsseptembercarrino','pornpicsyoga','pornpicspussytattoo','pornpicsNicolePeters','pornpicstigerrbenson','pornpicskeishagrey','pornpicsSashaEmm','pornpics40somethingmag','pornpicsddfbusty','pornpicsCzechcasting','pornpicsmaturenipples','pornpicsmatureshavedPussy','pornpicszoebloom','pornpicsveraking','xhamFoto3759gif','xhamFoto94605','xhamFotocollectedimgs2931','xhamFotovitgun198','xhamFoto7781','xhamFotodaringsex8378','xhamFotolindacaprice26','xhamFotobouncytitsaction4959','xhamFotooldnanny7955','xhamFotolargeAreolas','xhamFotoauntjudys','xhamFotoputarankahotmilf','pornpicsjaylenerio','pornpicsmeatycunt','pornpicsxxcel','pornpicsxxcelxhr','pornpicsrachelrivers','pornpicskikidaire','pornpicsmaturebaldpussy','pornpicsrileystar','pornpicsroxy','pornpicsopenpussycloseup','pornpicsbentoverpantiesdown','pornpicsatkmature','pornpicsbustybraless','pornpicsatkgirlfriends','pornpicschloesworld','pornpicspussycloseups','pornpicsinescudnaxhr','pornpicsnicoledupapillon','pornpicskellymadisonxhr','xhamFotonicoledupapillon113','pornpicsbigbaldpussy','pornpicsbigbaldpussys','pornpicsstretchvagina489','pornpicsjaydenleexhr','pornpicspuffypussyxhr','pornpicsbaldpussyxhr','pornpicsbigpussylipsxhr','booklist',];
+tipsListName = optionsArray[0]
+
 const selectElement = document.getElementById('myChoice');
 optionsArray.forEach(optionText => {
  const option = document.createElement('option');
@@ -109,7 +113,6 @@ function loadArray(filename) {
 
     script.onload = function () { // remember to put all waiting jobs inside here 
        questionList = eval(filename);
-       //console.log("questionList: ",questionList)
        tipsList = filename
        init()  // showTopic
    };
@@ -144,9 +147,11 @@ function showTopic() {
  fullTopic = ""
  showlength = 200
  if(questionList.length<200){showlength = questionList.length}
+
  for( i = 0; i < showlength; i++){
   topicNo = topicNo + 1;
   if (topicNo > questionList.length) { topicNo = 0}
+
   var pointer = topicNo;
   topic = questionList[pointer];
   tipsNamesubstr = tipsListName.substring(0, 7)
@@ -161,25 +166,40 @@ function showTopic() {
   document.querySelector('body').focus();
   gototop()
 }
+
 function gototop() {
   window.scrollTo(0,0);
 }
 
 $(document).ready(function(){
-    $('#returnLeft').click(function(){
+    $('#return').click(function(){
       window.scrollTo({ top: rememberedPosition });
     });
 });
 
 $(document).ready(function() {
   $(document).on('click', 'img', function() {
-    imgsrc = this.src + "\n";
+    imgsrc = this.src;
+    pointer = questionList.findIndex(question => question.includes(imgsrc));
+    console.log("pointer ",pointer, " imgsrc ", imgsrc)
     rememberedPosition = window.scrollY
     $("#editregion").focus()
-    document.execCommand("insertText", false, imgsrc)
+    document.execCommand("insertText", false, imgsrc + "\n")
   });
 });
 
+function recordLoc() {
+  localStorage.setItem(tipsListName, pointer);
+  console.log("tipsListName ", tipsListName, " pointer ",pointer)
+}
+
+function gotoLoc() {
+  pointer = localStorage.getItem(tipsListName);
+  showPointerQue(pointer)
+}
+
+
+loadArray(tipsListName)
 
 </script>
 
