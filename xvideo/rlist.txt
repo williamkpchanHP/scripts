@@ -1,0 +1,15 @@
+ Volume in drive C is C
+ Volume Serial Number is E81C-D63B
+
+ Directory of C:\Users\william\Desktop\scripts\xvideo
+
+02/19/2022  01:37 PM             3,667 chop xvideoFileInput.R
+06/03/2022  10:21 AM               736 collect xvideoTOC List (2).R
+11/07/2021  10:17 AM               736 collect xvideoTOC List.R
+05/05/2024  04:52 PM             3,436 rvest xvideoSeries.R
+02/28/2024  07:31 PM             3,286 stdRvestXvideos.Pornstars.R
+06/14/2021  08:37 PM             2,485 xvideo rvest extract enter addr 210530.R
+11/03/2021  05:39 PM             3,835 XvideoscollectAllChannels.R
+10/02/2021  04:44 PM             3,634 XvideoscollectAskkeyword.R
+               8 File(s)         21,815 bytes
+               0 Dir(s)  272,319,791,104 bytes free

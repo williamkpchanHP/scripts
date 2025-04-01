@@ -1,0 +1,8 @@
+C:\Users\william\Desktop\scripts\xvideo	chop xvideoFileInput.R
+C:\Users\william\Desktop\scripts\xvideo	rvest xvideoSeries.R
+C:\Users\william\Desktop\scripts\xvideo	stdRvestXvideos.Pornstars.R
+C:\Users\william\Desktop\scripts\xvideo	XvideoscollectAllChannels.R
+C:\Users\william\Desktop\scripts\xvideo	XvideoscollectAskkeyword.R
+C:\Users\william\Desktop\scripts\xvideo	collect xvideoTOC List (2).R
+C:\Users\william\Desktop\scripts\xvideo	collect xvideoTOC List.R
+C:\Users\william\Desktop\scripts\xvideo	xvideo rvest extract enter addr 210530.R

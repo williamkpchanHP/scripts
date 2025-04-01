@@ -190,9 +190,10 @@ function randQues() {
 }
 
 function autojp() {
-  var timeStep = Number(prompt("Please enter period in seconds: ", "7")) * 1000; // Convert to milliseconds
-  var cycleNum = Number(prompt("Please enter cycle number: ", "50"));
-
+  //var timeStep = Number(prompt("Please enter period in seconds: ", "7")) * 1000; // Convert to milliseconds
+  //var cycleNum = Number(prompt("Please enter cycle number: ", "50"));
+  var timeStep = 6
+  var cycleNum = 50
   if (timeStep > 0 && cycleNum > 0) {
     let count = 0; // Initialize counter
     const intervalId = setInterval(() => {
