@@ -1,37 +1,4 @@
-<base target="_blank"><html><head><title>labia+stretch</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
-<script src='../mainscript.js'></script>
-
-</head>
-<style>
-body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-img {width: 100%;}
-.tip-button {color: orange; font-size:16px;}
-
-div {display:inline-block; width: 33%; margin-right:1px;vertical-align: top; }
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
-<div class="tip-number" onclick="forward()" ondblclick="randomNum()">labia+stretch</div>
-<p class="js-tip"></p>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-// List of JavaScript tips
-var tipsList = [
-'',
+var pornhublabiastretch = [
 '63d797e46a285"><img src="https://ei.phncdn.com/videos/202301/30/424417111/original/(m=eafTGgaaaa)(mh=hdkKSzA3dBxmXLvz)6.jpg"><br>Cum on my Hairy Milf Pussy',
 '63ddf5e8cb0da"><img src="https://ei.phncdn.com/videos/202302/04/424764521/original/(m=eafTGgaaaa)(mh=bifZ_aQFBolLT79I)11.jpg"><br>Training my loose whore pussy',
 '63f304bd6b589"><img src="https://ei.phncdn.com/videos/202302/20/425839771/original/(m=eafTGgaaaa)(mh=Le3QsHlzTALxgzfp)3.jpg"><br>Riding a Massive red toy 4K',
@@ -333,22 +300,6 @@ var tipsList = [
 'ph63bf9871366fe"><img src="https://ei.phncdn.com/videos/202301/12/423175812/original/(m=eafTGgaaaa)(mh=iv7rNDG-S-xznkEk)1.jpg"><br>Rubbing Lotion on my Feet 4K',
 'ph63c661e0089cf"><img src="https://ei.phncdn.com/videos/202301/17/423523012/original/(m=eafTGgaaaa)(mh=Y0KwdxBn0CJdYVgd)16.jpg"><br>WHITEBOXXX - BIG & NATURAL - The Big Tits Compilation Part 6',
 'ph63cfbd2fdde36"><img src="https://ei.phncdn.com/videos/202301/24/424012471/original/(m=q8YLG9XbeafTGgaaaa)(mh=zWc2pxm9D6datGBu)0.jpg"><br>A girl with glasses anal orgasm with a big dildo (Gape, Stockings, Wet pussy, Labia, Amateur, Teen)',
-'',
 ];
 lineHeader = '<div><a href="https://www.pornhub.com/embed/'
 lineTail = '</a></div>'
-bookid = "labia+stretch"
-showRange = 84
-initSelectRange = 30000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-
-</body>
-</html>
-
