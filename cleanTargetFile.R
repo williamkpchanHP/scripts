@@ -125,7 +125,10 @@ if(length(emptyIdx)!=0){
   targetFile = targetFile[-emptyIdx] # remove empty lines
 }
 
-outFilename = paste0(targetFileName, " cleaned.txt")
+
+file.rename(targetFileName, paste0(targetFileName, " srcfile.txt"))
+
+outFilename = targetFileName
 sink(outFilename)
   cat(targetFile, sep="\n")
 sink()

@@ -21,7 +21,7 @@ A:focus {	color: red;}
 code { color: #488838;; background-color: #001010; font-size: 18px;}
 pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
 img {max-width: 100%;}
-#editregion {width: 80%; height:300px; color:#952;  background-color : #010; }
+#editregion {width: 80%; height:600px; color:#952;  background-color : #010; }
 </style>
 
 <body>
@@ -32,6 +32,7 @@ img {max-width: 100%;}
 <span class="normalsize">select card box:</span>
 <select id="myChoice" onchange="useChosen()"></select>
 <button onclick=randommyChoice()><pk>randL</pk></button>
+<button onclick=toggleMode() id="toggleMode"><o>toggleMode</o></button>
 <div id="question"> </div><br>
 <button id="jumpButton" class="white" onclick=showTopic()>Card N0: <span id="questionsLeft"></span></button>
 
@@ -57,6 +58,7 @@ lineHeader = ''
 lineTail = ''
 pointer = 0
 topicNo = 0
+addMode = true
 const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','TumblerVideos','auntjudys','phubStars','pohubVid','puhbBatch2024','archivegalleriesImgsMOdi01','archivegalleriesImgsMOdi02','archivegalleriesImgsMOdi03','archivegalleriesImgsMOdi04','archivegalleriesImgsMOdi05','archivegalleriesImgsMOdi06','archivegalleriesImgsMOdi07','archivegalleriesImgsMOdi08','archivegalleriesImgsMOdi09','archivegalleriesImgsMOdi10','nudexxxallOver30','nudexxxanilos','nudexxxbrazzers','nudexxxcategoriesbigclit0','nudexxxevilangel','nudexxxkarupshometownamateurs','nudexxxmet','nudexxxmilfslike','nudexxxmommy','nudexxxmyfriendshotmom','pornpicsTigger','pornpicsbelindabrush','pornpicslalabond','pornpicsdebora','pornpicsAllOver30','pornpicsnika','pornpicsolderwomen','pornpicsspreadlegspanties','pornpicsdeewilliams','pornpicslululush','pornpicsxlgirls','pornpicsmilam','pornpicsvagina18001','pornpicsnicolelove','pornpicsAtkPetites','pornpicsDanielle','pornpicsdannilynne','pornpicsseptembercarrino','pornpicsyoga','pornpicspussytattoo','pornpicsNicolePeters','pornpicstigerrbenson','pornpicskeishagrey','pornpicsSashaEmm','pornpics40somethingmag','pornpicsddfbusty','pornpicsCzechcasting','pornpicsmaturenipples','pornpicsmatureshavedPussy','pornpicszoebloom','pornpicsveraking','xhamFoto3759gif','xhamFoto94605','xhamFotocollectedimgs2931','xhamFotovitgun198','xhamFoto7781','xhamFotodaringsex8378','xhamFotolindacaprice26','xhamFotobouncytitsaction4959','xhamFotooldnanny7955','xhamFotolargeAreolas','xhamFotoauntjudys','xhamFotoputarankahotmilf','pornpicsjaylenerio','pornpicsmeatycunt','pornpicsxxcel','pornpicsxxcelxhr','pornpicsrachelrivers','pornpicskikidaire','pornpicsmaturebaldpussy','pornpicsrileystar','pornpicsroxy','pornpicsopenpussycloseup','pornpicsbentoverpantiesdown','pornpicsatkmature','pornpicsbustybraless','pornpicsatkgirlfriends','pornpicschloesworld','pornpicspussycloseups','pornpicsinescudnaxhr','pornpicsnicoledupapillon','pornpicskellymadisonxhr','xhamFotonicoledupapillon113','pornpicsbigbaldpussy','pornpicsbigbaldpussys','pornpicsstretchvagina489','pornpicsjaydenleexhr','pornpicspuffypussyxhr','pornpicsbaldpussyxhr','pornpicsbigpussylipsxhr','booklist',];
 tipsListName = optionsArray[0]
 
@@ -181,10 +183,16 @@ $(document).ready(function() {
   $(document).on('click', 'img', function() {
     imgsrc = this.src;
     pointer = questionList.findIndex(question => question.includes(imgsrc));
-    console.log("pointer ",pointer, " imgsrc ", imgsrc)
     rememberedPosition = window.scrollY
     $("#editregion").focus()
-    document.execCommand("insertText", false, imgsrc + "\n")
+    if(addMode){
+      document.execCommand("insertText", false, imgsrc + "\n")
+      window.scrollTo({ top: rememberedPosition });
+      document.body.focus();
+
+    }else{
+      document.execCommand("insertText", false, imgsrc + "\n")
+    }
   });
 });
 
@@ -197,6 +205,13 @@ function gotoLoc() {
   pointer = localStorage.getItem(tipsListName);
   showPointerQue(pointer)
 }
+
+function toggleMode() {
+  addMode = !addMode;
+  $("#toggleMode").html("<o>addMode: "+addMode)
+}
+
+
 
 
 loadArray(tipsListName)
