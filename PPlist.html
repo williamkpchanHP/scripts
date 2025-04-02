@@ -79,6 +79,7 @@ video { width: 100%;}
 <button onclick=window.scrollTo(0,Number(document.body.scrollHeight/4))>quad</button>
 <button onclick=window.scrollTo(0,Number(document.body.scrollHeight/2))>half</button>
 <button onclick=window.scrollTo(0,Number(document.body.scrollHeight*3/4))>3 quad</button>
+<button onclick=seekListName();><r>seekListName</r></button>
 <br>
 <div id="markLst"></div>
 <div id="schRst"></div>
@@ -351,6 +352,7 @@ function randommyChoice() {
 }
 
 function loadArray(filename) {
+  tipsListName = filename
   if(filename == "xxxImgsListOK"){
     url = "allHtmls/xxxImgsListOK.js"
   }else if(filename == "auntjudys"){
@@ -382,11 +384,9 @@ function loadArray(filename) {
   }else{
     url = filename + ".js"
   }
-console.log("url: ",url)
     script = document.createElement('script');
     script.src = "https://williamkpchanhp.github.io/scripts/"+url
     script.type = 'text/javascript';
-console.log("script.src: ",script.src)
 
     script.onload = function () { // remember to put all waiting jobs inside here 
        questionList = eval(filename);
@@ -409,6 +409,42 @@ console.log("script.src: ",script.src)
 
     document.head.appendChild(script);
 }
+
+function seekListName() {
+  findkeyword = ""
+  while(findkeyword == ""){
+    findkeyword = prompt("enter list name to search for: ", findkeyword)
+  }
+
+  findkeyword = findkeyword.toLowerCase();
+  targetListNum = [];
+
+  for ( i = 0; i < optionsArray.length; i++) {
+    searchString = optionsArray[i].toLowerCase();
+
+    if(typeof(searchString)=="string"){
+      searchResult = searchString.indexOf(findkeyword);
+      if(searchResult >= 0){
+        targetListNum.push(i);
+      }
+    }
+  }
+
+  if(targetListNum.length >0){
+    targetListNumStr = ""
+    for ( i = 0; i < targetListNum.length; i++) {
+      targetListNumStr = targetListNumStr + "<span class='redbut' onclick=loadArray('"+optionsArray[targetListNum[i]]
+      + "')>"
+      + optionsArray[targetListNum[i]]
+      + "</span> "
+    }
+    document.querySelector('#schRst').innerHTML = "<br><y>search result:</y> <r>" + findkeyword+ "</r><br>" + targetListNumStr;
+  }else{
+    document.querySelector('#schRst').innerHTML = "<br><y>search result: <r>None!</r></y><br>";
+  }
+  window.location = '#schRst';
+}
+
 
 function showmarkList(markList) {
   if(markList.length >0){
