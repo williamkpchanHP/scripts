@@ -58,7 +58,7 @@ if(typeName=="1"){
 }else{
   totalPages = ceiling(totalVideos/40)
 }
-theFilename = paste0('pohub ',titleName, ".html")
+theFilename = paste0('pornhub_',titleName, ".html")
 allLinks = character()
 wholePage = character()
 
