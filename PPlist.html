@@ -5,7 +5,6 @@
 <title>PPlist</title>
 <link href="https://williamkpchan.github.io/maincss.css" rel="stylesheet" type="text/css">
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-optionsArray.js
 <script src="https://williamkpchan.github.io/mainscript.js"></script>
 <script src="optionsArray.js"></script>
 
@@ -50,6 +49,7 @@ video { width: 100%;}
 <center>
 <h5 id="totalLen">Info cards</h5>
 <div class="mainFrame">
+<span id="automode"></span>
 <button onclick=jpback()>back</button>
 <button onclick=window.scrollTo(0,document.body.scrollHeight)><r>end</r></button>
 <button onclick=randommyChoice()><pk>randL</pk></button>
@@ -186,6 +186,7 @@ function autojp() {
   var cycleNum = 50
   if (timeStep > 0 && cycleNum > 0) {
     let count = 0; // Initialize counter
+    //$("#automode").html("<r>Auto:On</r>")
     const intervalId = setInterval(() => {
       jpback();
       count++;
@@ -194,6 +195,7 @@ function autojp() {
       }
     }, timeStep);
   }
+  //$("#automode").html("<lg>Auto:Off</lg>")
 }
 
 function showPointerQue(pointer) {
