@@ -59,7 +59,7 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornhubthelifeerotic','pornhubtheroyalkitty','pornhubtilatotti','pornhubtommywood','pornhubTopNotchCreamQueen',
 'pornhubtouchmywife','pornhubtrulyroger69','pornhubultimatesurrender','pornhubuniquegreen','pornhubvictoria_saint',
 'pornhubvioletfoxy','pornhubvioletmyers','pornhubvxspa','pornhubwetkelly','pornhubwetslavs',
-'pornhubwickedlywet99','pornhubworldrosesent','pornhubwow_adele','pornhubxiaochuan','pornhubdiamond',modpornhub_oldnanny.js',
+'pornhubwickedlywet99','pornhubworldrosesent','pornhubwow_adele','pornhubxiaochuan','pornhubdiamond',
 
 'pornpics40somethingmag','pornpicsabigaildupree','pornpicsalexisavery','pornpicsAllOver30','pornpicsAlyceAnderson',
 'pornpicsariagiovanni','pornpicsatkgirlfriends','pornpicsatkmature','pornpicsAtkPetites','pornpicsaveryblack',
