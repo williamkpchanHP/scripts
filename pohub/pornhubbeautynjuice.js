@@ -1,0 +1,26 @@
+var pornhubbeautynjuice = [
+'64de4d53ae2f2"><img src="https://ei.phncdn.com/videos/202308/17/437615771/original/(m=eafTGgaaaa)(mh=tFrxvC742k-rClnC)10.jpg"><br>Masturbation of fair-skinned busty girl<U+2764><U+FE0F>Japanesegirl<U+2764><U+FE0F>',
+'64eb8a135378b"><img src="https://ei.phncdn.com/videos/202308/27/438250521/original/(m=eafTGgaaaa)(mh=3_IRzEUvnMRviVKA)11.jpg"><br>Masturbation of a busty beauty who is overwhelmed by a petite body of 152 cm tall<U+2764><U+FE0F>Japanesegirl<U+2764><U+FE0F>',
+'662a19ffd911a"><img src="https://ei.phncdn.com/videos/202404/25/451564091/original/(m=q5RH8IZbeafTGgaaaa)(mh=6l9nHgbftzw7MEFh)0.jpg"><br>be a good stepson and make a massage to your stepmother',
+'66338a2fce117"><img src="https://ei.phncdn.com/videos/202405/02/451904151/thumbs_10/(m=eafTGgaaaa)(mh=2HLK95il9BVMuOW0)13.jpg"><br>Oops, this hot stepmom fucked her stepson again',
+'ph5924e8ea4e58a"><img src="https://ei.phncdn.com/videos/201705/24/117614011/original/(m=eafTGgaaaa)(mh=0W37wc8YJqSUWjSf)5.jpg"><br>titty freak',
+'ph5926fab0b3d45"><img src="https://ei.phncdn.com/videos/201705/25/117814331/original/(m=eafTGgaaaWavb)(mh=acAluFu5rQSgF-Rq)2.jpg"><br>Juicy black pussy',
+'ph60512d48739e7"><img src="https://ei.phncdn.com/videos/202103/16/385233391/original/(m=eafTGgaaaWavb)(mh=A-_PWdyjmlE9uvc5)12.jpg"><br>Juicy fat ass twerking after squirting a big load ',
+'ph60536dac84898"><img src="https://ei.phncdn.com/videos/202103/18/385320531/original/(m=eafTGgaaaWavb)(mh=FF6qYfN6UqvTEp-U)8.jpg"><br>Squirting after squirting a big one ',
+'ph60536f93d0e8b"><img src="https://ei.phncdn.com/videos/202103/18/385320961/original/(m=eafTGgaaaa)(mh=pHQffQlBHnc_EhE3)8.jpg"><br>Juicy squirting, pussy talking , juicy pussy ,juicy black pussy',
+'ph6060eb9eb300c"><img src="https://ei.phncdn.com/videos/202103/28/385819901/original/(m=eafTGgaaaa)(mh=o3BdHaxNHdH-grrw)11.jpg"><br>Squirting juicy Pussy ',
+'ph60702fcd99f45"><img src="https://ei.phncdn.com/videos/202104/09/386362731/original/(m=eafTGgaaaWavb)(mh=EJrNb9kwKVXpTi7c)10.jpg"><br>Juicy ass Twerk tease ',
+'ph61edbc6caf5e9"><img src="https://ei.phncdn.com/videos/202201/23/401815011/original/(m=eafTGgaaaWavb)(mh=lTNQrBXFpBMWhTCA)11.jpg"><br>Big chocolate thick juicy ass shaking follow my only fans beautynjuice ',
+'ph61fcaef24ea3d"><img src="https://ei.phncdn.com/videos/202202/04/402475531/original/(m=eafTGgaaaWavb)(mh=Rpsb2qm_WA1bAx-z)2.jpg"><br>Slow dancing',
+'ph6260130e13d32"><img src="https://ei.phncdn.com/videos/202204/20/406690661/original/(m=eafTGgaaaWavb)(mh=bkBsDRUcuzj-KxgI)4.jpg"><br>Naked twerkin juicy ass ',
+'ph626014a5d7ebb"><img src="https://ei.phncdn.com/videos/202204/20/406690881/original/(m=eafTGgaaaWavb)(mh=RYhIqDyDunF1NCGm)15.jpg"><br>Getting ready to squirt ',
+'ph6278577e01d82"><img src="https://ei.phncdn.com/videos/202205/08/407755251/original/(m=eafTGgaaaWavb)(mh=fgThANglY_eFK-8L)10.jpg"><br>New toy strap on ',
+'ph6289707b8d9c6"><img src="https://ei.phncdn.com/videos/202205/21/408523501/original/(m=eafTGgaaaa)(mh=M0T1WUMp_OkiyW0X)8.jpg"><br>Ass shaking twerking comp',
+'ph62897ebd54d32"><img src="https://ei.phncdn.com/videos/202205/22/408525531/original/(m=eafTGgaaaWavb)(mh=uJEy4rM9kIbkQXGP)6.jpg"><br>Bbw Riding dick',
+'ph62afc9d79da9d"><img src="https://ei.phncdn.com/videos/202206/20/410244501/original/(m=eafTGgaaaWavb)(mh=J2TdT_6nkUCzLWw2)4.jpg"><br>Juicy fat pussy fat ass ',
+'ph62ccc033c4415"><img src="https://ei.phncdn.com/videos/202207/12/411583611/original/(m=eafTGgaaaa)(mh=5325NL5f4J8Ww3IM)5.jpg"><br>Black juicy pussy play wet squirt ',
+'ph63b32e16d4297"><img src="https://ei.phncdn.com/videos/202301/02/422534881/original/(m=eafTGgaaaWavb)(mh=lA8SEeVfb57XwP6I)7.jpg"><br>A little try on fun',
+'',
+];
+lineHeader = '<div><a href="https://www.pornhub.com/embed/'
+lineTail = '</a></div>'
