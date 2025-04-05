@@ -21,7 +21,7 @@ titleName = readline(prompt="enter title name: ")
 titleName = gsub(" |\\+", "-", titleName)
 typeName = ""
 while(typeName==""){
-  typeName = readline(prompt="1 channel, 2 star, 3 model, 4 users (1,2,3,4):")
+  typeName = readline(prompt="1 channel, 2 pornstar, 3 model, 4 users (1,2,3,4):")
 }
 
 if(typeName=="1"){
@@ -55,7 +55,7 @@ className = ".phimage"
 totalVideos = as.numeric(readline(prompt="enter totalVideos: "))
 totalPages = ceiling(totalVideos/38)
 totalResults = 0
-theFilename = paste0('pohub ',titleName, ".html")
+
 allLinks = character()
 wholePage = character()
 
@@ -125,14 +125,26 @@ if(i=="1"){
  }
 }
 
-templateHead = readLines("C:/Users/william/Desktop/scripts/pohub/R/templateHeadPohub.txt")
-templateTail = readLines("C:/Users/william/Desktop/scripts/pohub/R/templateTailPohub.txt")
-templateHead = gsub("dreamgirlsmembers", titleName, templateHead)
-templateTail = gsub("dreamgirlsmembers", titleName, templateTail)
+fileName = gsub(" |\\+|\\-", "", titleName)
+#theFilename = paste0('pohub ',titleName, ".html")
+theFilename = paste0('pohub',fileName, ".js")
+
+#templateHead = readLines("C:/Users/william/Desktop/scripts/pohub/R/templateHeadPohub.txt")
+#templateTail = readLines("C:/Users/william/Desktop/scripts/pohub/R/templateTailPohub.txt")
+templateHead = paste0("var ", fileName , "=[")
+templateTail = paste0("];\n", "lineHeader = '<div><a href=\"https://www.pornhub.com/embed/'\n","lineTail = '</a></div>'")
+
+#templateHead = gsub("dreamgirlsmembers", titleName, templateHead)
+#templateTail = gsub("dreamgirlsmembers", titleName, templateTail)
 allLinks = gsub("/view_video.php\\?viewkey=", "", allLinks)
+
 cat(red("length(allLinks) before unique: ",length(allLinks), "\n"))
+cat(pink("duplicated links:\n"))
+cat(green(allLinks[duplicated(allLinks)]), sep="\n")
+
 allLinks = unique(allLinks)
 cat(green("length(allLinks) after unique: ",length(allLinks), "\n"))
+
 allLinks = sort(allLinks)
 
 sink(theFilename)
@@ -146,3 +158,5 @@ cat(format(Sys.time(), "%H:%M:%OS"),"\n")
 LoopTime = trunc(as.numeric(ProcessEndTime - ProcessStartTime, units="secs"))
 cat("Task completed! loop time: ", dhms(LoopTime),"\n\n\n")
 cat(theFilename, "created\n")
+
+source("C:/Users/william/Desktop/scripts/updateoptionsArray.R")

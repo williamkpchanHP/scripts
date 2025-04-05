@@ -2,8 +2,35 @@ setwd("C:/Users/william/Desktop/scripts/pohub")
 library(crayon)
  ligSilver <- make_style("#889988")
 
-noModList = ""
-filelist = readLines("htmllist.txt")
+
+# check lineheader exist in file, if yes rename it
+checklineheader <- function(){
+  setwd("C:/Users/william/Desktop/scripts/pornpics")
+  filelist = readLines("allhtmllist.txt")
+  cat("\ntotal file number: ", length(filelist))
+  for(i in 1:length(filelist)){
+     cat("\n", i, filelist[i])
+     content = readLines(filelist[i])
+     lineheaderIdx = grep("lineheader", content)
+     if(length(lineheaderIdx)>0){
+       newname = paste0(filelist[i], ".line")
+       file.rename(filelist[i], newname)
+       cat(red(" renamed ", filelist[i], " to ", newname))
+     }
+  }
+}
+
+
+
+cat(red("\n\n\n\nDAnger!!! make sure this is correctly coded"))
+continueKey = readline("enter y to continue :")
+if(continueKey != "y"){
+  break
+}else{
+  checklineheader()
+}
+
+
   #for(i in 1:length(filelist)){
   #  oldname = filelist[i]
   #  newname = gsub(" ", "", oldname)
@@ -51,3 +78,4 @@ filelist = readLines("htmllist.txt")
 }
 
 cat(noModList)
+
