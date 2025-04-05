@@ -127,7 +127,7 @@ if(i=="1"){
 
 fileName = gsub(" |\\+|\\-", "", titleName)
 #theFilename = paste0('pohub ',titleName, ".html")
-theFilename = paste0('pohub',fileName, ".js")
+theFilename = paste0('pornhub',fileName, ".js")
 
 #templateHead = readLines("C:/Users/william/Desktop/scripts/pohub/R/templateHeadPohub.txt")
 #templateTail = readLines("C:/Users/william/Desktop/scripts/pohub/R/templateTailPohub.txt")
@@ -140,7 +140,7 @@ allLinks = gsub("/view_video.php\\?viewkey=", "", allLinks)
 
 cat(red("length(allLinks) before unique: ",length(allLinks), "\n"))
 cat(pink("duplicated links:\n"))
-cat(green(allLinks[duplicated(allLinks)]), sep="\n")
+cat(green(allLinks[duplicated(allLinks)]), sep="\n\n")
 
 allLinks = unique(allLinks)
 cat(green("length(allLinks) after unique: ",length(allLinks), "\n"))
@@ -157,6 +157,6 @@ ProcessEndTime = Sys.time()
 cat(format(Sys.time(), "%H:%M:%OS"),"\n")
 LoopTime = trunc(as.numeric(ProcessEndTime - ProcessStartTime, units="secs"))
 cat("Task completed! loop time: ", dhms(LoopTime),"\n\n\n")
-cat(theFilename, "created\n")
+cat(theFilename, "created\n\n")
 
 source("C:/Users/william/Desktop/scripts/updateoptionsArray.R")

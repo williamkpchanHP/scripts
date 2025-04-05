@@ -1,4 +1,8 @@
 setwd("C:/Users/william/Desktop/scripts/")
-optionsArray = readLines("optionsArray.js")
+optionsArrayName = "optionsArray.js"
+optionsArray = readLines(optionsArrayName)
 optionsArray[length(optionsArray)] = paste0("'", fileName, "',\n", "]")
-cat(yellow("optionsArray.js updated!\n"))
+sink(optionsArrayName)
+ cat(optionsArray, sep="\n")
+sink()
+cat(yellow("optionsArray.js updated!\n\n\n"))

@@ -46,7 +46,7 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornhubMzBerlin','pornhubnakednews','pornhubnatashaheller','pornhubnatashanice','pornhubnaughtyangelmia',
 'pornhubnaughtypocahontas','pornhubnewsensations','pornhubnezukojapan','pornhubnicolelove','pornhubnikolettajoy',
 'pornhubninetynoble','pornhubnipplestock','pornhubnofacebae','pornhubnorthernxposurexxx','pornhubnyrieux',
-'pornhuboksanakatysheva','pornhuboliheart','pornhuboriginaljoints','pornhubpantiesqueen','pornhubpantycandy','pohubsussylovex',
+'pornhuboksanakatysheva','pornhuboliheart','pornhuboriginaljoints','pornhubpantiesqueen','pornhubpantycandy','pornhubsussylovex',
 'pornhubparejahub','pornhubpeachesluxe','pornhubpenthouse','pornhubpepeporn','pornhubpervcity',
 'pornhubpervdoctor','pornhubpinupfiles','pornhubpjgirls','pornhubplayback4fun','pornhubplumperpass',
 'pornhubprincess18_ph','pornhubpyperperri','pornhubqueenamore69','pornhubquinnpie','pornhubradicalpainslut',
@@ -60,7 +60,7 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornhubtouchmywife','pornhubtrulyroger69','pornhubultimatesurrender','pornhubuniquegreen','pornhubvictoria_saint',
 'pornhubvioletfoxy','pornhubvioletmyers','pornhubvxspa','pornhubwetkelly','pornhubwetslavs','pornpicsgiannamichaels',
 
-'pornhubwickedlywet99','pornhubworldrosesent','pornhubwow_adele','pornhubxiaochuan','pornhubdiamond','pohubjenniferromeo',
+'pornhubwickedlywet99','pornhubworldrosesent','pornhubwow_adele','pornhubxiaochuan','pornhubdiamond','pornhubjenniferromeo',
 
 'pornpics40somethingmag','pornpicsabigaildupree','pornpicsalexisavery','pornpicsAllOver30','pornpicsAlyceAnderson',
 'pornpicsariagiovanni','pornpicsatkgirlfriends','pornpicsatkmature','pornpicsAtkPetites','pornpicsaveryblack',
@@ -83,5 +83,7 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornpicsyoga','pornpicszoebloom','pornpicslilyrader','pornpicssaraharabic','pornpics36h','pornpicsjesicahot',
 'pornpicsazianiiron','pornpicsmulatka','pornpicsPersiaMonir','pornpicsNatalie','pornpicsteenalipoldino','pornpicsShanaLane','pornpicsknox',
 'booklist',
-'pohubkrystaldavis',
+'pornhubkrystaldavis1','comatozze',
+'pornhubnfbusty','pornhubcomatozze','pornhubjenniferromeo','pornhubsussylovex','pornhubangelymoon',
+'pornhublatikajha','pornhubmontanaraelynn','pornhubangiefaith','pornhubnfbusty','pornhubsandrasweet',
 ];
