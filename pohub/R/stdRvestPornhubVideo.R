@@ -126,8 +126,9 @@ if(i=="1"){
 }
 
 fileName = gsub(" |\\+|\\-", "", titleName)
+fileName = paste0('pornhub',fileName)
 #theFilename = paste0('pohub ',titleName, ".html")
-theFilename = paste0('pornhub',fileName, ".js")
+theFilename = paste0(fileName, ".js")
 
 #templateHead = readLines("C:/Users/william/Desktop/scripts/pohub/R/templateHeadPohub.txt")
 #templateTail = readLines("C:/Users/william/Desktop/scripts/pohub/R/templateTailPohub.txt")

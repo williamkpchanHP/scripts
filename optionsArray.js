@@ -86,4 +86,7 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornhubkrystaldavis1','comatozze',
 'pornhubnfbusty','pornhubcomatozze','pornhubjenniferromeo','pornhubsussylovex','pornhubangelymoon',
 'pornhublatikajha','pornhubmontanaraelynn','pornhubangiefaith','pornhubnfbusty','pornhubsandrasweet',
-];
+'fantasybabe',
+'pornhubimnotyourmommy',
+'pornhubmomlover',
+]
