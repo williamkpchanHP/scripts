@@ -1,4 +1,5 @@
-# this must be added to setting chinese
+# this rvest video links and save as js file
+# and update eoptionsArray by sourcing updateoptionsArray.R
 Sys.setlocale(category = 'LC_ALL', 'Chinese')
 #Sys.setlocale(, 'English')  
 

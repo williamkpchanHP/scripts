@@ -1,0 +1,226 @@
+
+<base target="_blank"><html><head><title>pplistExam</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="optionsArray.js"></script>
+
+</head>
+<style>
+body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {max-width: 100%;}
+#editregion {width: 80%; height:600px; color:#952;  background-color : #010; }
+</style>
+
+<body>
+<br>
+<span id="totalLen"></span>
+<div>pplistExam <r>Note: must run server</r> </div>
+<center>
+<span class="normalsize">select card box:</span>
+<select id="myChoice" onchange="useChosen()"></select>
+<button onclick=randommyChoice()><pk>randL</pk></button>
+<button onclick=toggleMode() id="toggleMode"><o>toggleMode</o></button>
+<div id="question"> </div><br>
+<button id="jumpButton" class="white" onclick=showTopic()>Card N0: <span id="questionsLeft"></span></button>
+
+<p class="js-tip"></p>
+<button class="redbut red" onclick=recordLoc()>rec Loc</button>
+<button class="tip-button" id="return">return</button>
+<button class="yellowbut yellow" onclick=gotoLoc()>goto Loc</button>
+<br>
+<textarea id="editregion"></textarea>
+
+<br>
+<script>
+rememberedPosition = 0;
+focusSwitch = false
+var tipsList = []
+showRange = 200
+bookid = "pplistExam"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+topicLength = tipsList.length
+lineHeader = ''
+lineTail = ''
+pointer = 0
+topicNo = 0
+addMode = true
+tipsListName = optionsArray[0]
+
+const selectElement = document.getElementById('myChoice');
+optionsArray.forEach(optionText => {
+ const option = document.createElement('option');
+ option.value = optionText; // Set the value attribute
+ option.textContent = optionText; // Set the display text
+ selectElement.appendChild(option); // Append the option to the select
+});
+
+function randommyChoice() {
+  ArrayPtr = Math.floor(Math.random() * optionsArray.length);
+  tipsListName = myChoice.options[ArrayPtr].text // first to know the question name
+  console.log("tipsListName: ",tipsListName)
+  loadArray(tipsListName)
+}
+
+function loadArray(filename) {
+  if(filename == "xxxImgsListOK"){
+    url = "allHtmls/xxxImgsListOK.js"
+  }else if(filename == "auntjudys"){
+    url = "pornpics/auntjudys.js"
+  }else if(filename == "favorites"){
+    url = "pornpics/favorites.js"
+  }else if(filename == "TumblerVideos"){
+    url = "tumbler/TumblerVideos.js"
+  }else if(filename == "tumblrList"){
+    url = "tumbler/tumblrList.js"
+  }else if(filename == "phubStars"){
+    url = "pohub/phubStars.js"
+  }else if(filename == "pohubVid"){
+    url = "pohub/pohubVid.js"
+  }else if(filename == "puhbBatch2024"){
+    url = "pohub/puhbBatch2024.js"
+  }else if(filename == "booklist"){
+    url = "allHtmls/booklist.js"
+  }else if(filename.substring(0, 8) == "archiveg"){
+    url = "archivegalleries/"+filename+".js"
+  }else if(filename.substring(0, 7) == "nudexxx"){
+    url = "nudexxx/"+filename+".js"
+  }else if(filename.substring(0, 7) == "pornpic"){
+    url = "pornpics/"+filename+".js"
+  }else if(filename.substring(0, 7) == "xhamFot"){
+    url = "xham/"+filename+".js"
+  }else{
+    url = filename + ".js"
+  }
+
+    script = document.createElement('script');
+    script.src = "http://192.168.0.89:8000/" + url
+    script.type = 'text/javascript';
+    console.log("script.src is: ",script.src)
+
+    script.onload = function () { // remember to put all waiting jobs inside here 
+       questionList = eval(filename);
+       tipsList = filename
+       init()  // showTopic
+   };
+
+    document.head.appendChild(script);
+}
+
+function flipSw() {
+}
+
+function useChosen() {
+  var myChoice = document.getElementById("myChoice");
+  var choiceIndex = myChoice.selectedIndex;
+  tipsListName = myChoice.options[choiceIndex].text // first to know the question name
+  loadArray(tipsListName)
+}
+
+function init() {
+    listItem = "Array names: "
+     for (variableName in window) { // list all window objects
+        if (window[variableName] instanceof Array) { 
+          listItem = listItem + ", " + variableName; 
+        }
+     }
+
+  $("#totalLen").html(tipsListName+": "+questionList.length);
+  topicNo = -1;
+  showTopic()
+}
+
+function showTopic() {
+ fullTopic = ""
+ showlength = 200
+ if(questionList.length<200){showlength = questionList.length}
+
+ for( i = 0; i < showlength; i++){
+  topicNo = topicNo + 1;
+  if (topicNo > questionList.length) { topicNo = 0}
+
+  var pointer = topicNo;
+  topic = questionList[pointer];
+  tipsNamesubstr = tipsListName.substring(0, 7)
+  if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic" || tipsNamesubstr === "xhamFot") {
+    topic = lineHeader + topic + lineTail
+  }
+
+ fullTopic = fullTopic +"<br>"+ topic
+ }
+  document.querySelector('#question').innerHTML = fullTopic;
+  document.querySelector('#questionsLeft').innerHTML = topicNo;
+  document.querySelector('body').focus();
+  gototop()
+}
+
+function gototop() {
+  window.scrollTo(0,0);
+}
+
+$(document).ready(function(){
+    $('#return').click(function(){
+      window.scrollTo({ top: rememberedPosition });
+    });
+});
+
+$(document).ready(function() {
+  $(document).on('click', 'img', function() {
+    imgsrc = this.src;
+    pointer = questionList.findIndex(question => question.includes(imgsrc));
+    rememberedPosition = window.scrollY
+    $("#editregion").focus()
+    if(addMode){
+      document.execCommand("insertText", false, imgsrc + "\n")
+      window.scrollTo({ top: rememberedPosition });
+      document.body.focus();
+
+    }else{
+      document.execCommand("insertText", false, imgsrc + "\n")
+    }
+  });
+});
+
+function recordLoc() {
+  localStorage.setItem(tipsListName, pointer);
+  console.log("tipsListName ", tipsListName, " pointer ",pointer)
+}
+
+function gotoLoc() {
+  pointer = localStorage.getItem(tipsListName);
+  showPointerQue(pointer)
+}
+
+function toggleMode() {
+  addMode = !addMode;
+  $("#toggleMode").html("<o>addMode: "+addMode)
+}
+
+
+
+
+loadArray(tipsListName)
+
+</script>
+
+<!--script src='https://williamkpchan.github.io/showTips.js'></script-->
+<!--script src='https://williamkpchan.github.io/stdrvest/showLongTips.js'></script-->
+
+</body>
+</html>
