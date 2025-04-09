@@ -236,6 +236,8 @@ function chkKey() {
   else if(testkey == 'g'){gotoQues();}
   else if(testkey == 's'){speak();}
   else if(testkey == 't'){gototop();}
+  else if(testkey == 'R'){randommyChoice();}
+  else if(testkey == 'r'){randQues();}
   else if(testkey == 'e'){window.scrollTo(0,document.body.scrollHeight);}
   else{chkOtherKeys(testkey)} 
 }
