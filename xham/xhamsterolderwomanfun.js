@@ -1,40 +1,4 @@
-<base target="_blank"><html><head><title>older-woman-fun4253</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 18px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 18px; width:100%; white-space: pre-wrap; background-image:inherit;}
-pre img {max-width: 100%;}
-div {width: 33%; display:inline-block; vertical-align:text-top;}
-
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
-<div class="tip-number">older-woman-fun4253</div>
-<pre class="js-tip"></pre>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
+var xhamsterolderwomanfun = [
 '42-year-old-soccer-mom-plays-with-her-hairy-pussy-3175349"><img src="https://ic-vt-lm.xhcdn.com/a/ODkxMDU5MjQ3ZTZmMWY1ODc0MzhkODhhZWNhYmRjMDA/s(w:320,h:180),jpeg/003/175/349/1280x720.5.jpg"><br>42 year old soccer mom plays with her hairy pussy',
 '46-year-old-milf-masturbates-in-soaked-panties-3227166"><img src="https://ic-vt-lm.xhcdn.com/a/NmQ4OTYzZjJjNWViZjVhZTFhZTBkMWYwZWEyZWJlYjQ/s(w:320,h:180),jpeg/003/227/166/1280x720.5.jpg"><br>46 year old milf masturbates in soaked panties',
 '47-year-old-british-milf-needs-to-get-off-3149599"><img src="https://ic-vt-lm.xhcdn.com/a/MGU5M2Y4MDcxMDU5OTUyNDhmODdiZDUzMWEyYmJjYzI/s(w:320,h:180),jpeg/003/149/599/1280x720.10.jpg"><br>47 year old british milf needs to get off',
@@ -4291,16 +4255,3 @@ var tipsList = [
 ];
 lineHeader = '<div><a href="https://xhamster.com/videos/'
 lineTail = '</a></div>'
-showRange = 120
-
-bookid = "older-woman-fun4253"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='../showLongTips.js'></script>
-</body>
-</html>

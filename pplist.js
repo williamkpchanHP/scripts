@@ -290,6 +290,8 @@ function loadArray(filename) {
     url = "pornpics/"+filename+".js"
   }else if(filename.substring(0, 7) == "xhamFot"){
     url = "xham/"+filename+".js"
+  }else if(filename.substring(0, 7) == "xhamste"){
+    url = "xham/"+filename+".js"
   }else if(filename.substring(0, 7) == "pornhub"){
     url = "pohub/"+filename+".js"
   }else{
