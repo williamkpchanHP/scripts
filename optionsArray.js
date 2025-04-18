@@ -108,6 +108,10 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornpicstessathomas', 'pornpicsJill', 'pornpicskeishagrey', 'pornpicskellymadisonxhr', 
 'pornpicskelseykage', 'pornpicskikidaire', 'pornpicsveraking', 'pornpicswatch4beauty', 
 'pornpicsxlgirls', 'pornpicsxxcel', 'pornpicsxxcelxhr', 'pornpicsdanicacollins', 
-'pornpicsladysonia',
+'pornpicsladysonia', 'pornpicsatkexotics0', 'pornpicsatkexotics1', 'pornpicsbigClit',
+'pornpicsemma','pornpicsPussy921','pornpicsloosepussy4','pornpicsvagina27628',
+'pornpicsatklatina','pornpicsspreading01','pornpicsspreading0','pornpicsspreading02',
+'pornpicsspreading03','pornpicsatkpremium','pornpicsvagina22631',
+
 'booklist','SEXYPICS',
 ]
