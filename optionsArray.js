@@ -112,6 +112,9 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornpicsemma','pornpicsPussy921','pornpicsloosepussy4','pornpicsvagina27628',
 'pornpicsatklatina','pornpicsspreading01','pornpicsspreading0','pornpicsspreading02',
 'pornpicsspreading03','pornpicsatkpremium','pornpicsvagina22631',
+'pornpicskarupsprivatecollection1','pornpicskarupsprivatecollection2','pornpicskarupsprivatecollection3',
+'pornpicskarupsprivatecollection4','pornpicskarupsprivatecollection5','pornpicskarupsprivatecollection6',
+'pornpicskarupsprivatecollection7','pornpicskarupsprivatecollection8',
 
 'booklist','SEXYPICS',
 ]
