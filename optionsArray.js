@@ -135,6 +135,17 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornpicsmiathonson',
 'pornpicsandijames',
 'pornpicsjennalilin','pornpicsKarinTorres','pornpicsnyomibanxxx',
+'pornpicsjoannabliss',
 
 'pornpicsaudreybitoni',
+'pornhubsasharoan',
+'pornpicssarahgregory',
+'pornpicsbrianabanks',
+'pornpicspennyporsche',
+'pornpicskarinahart',
+'pornpicsLaurenPhillips',
+'pornpicscatbangles',
+'pornpicsamberlynnbach',
+'pornpicslivrevamped',
+'pornpicslunastar',
 ]
