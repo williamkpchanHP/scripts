@@ -9,6 +9,7 @@ pageHeader = ""
 pageTail = ""
 className = "video, img.RoN4R, .tmblr-full, RoN4R, tPU70, xhGbM, img"
 
+cat("\n\n\nNot work!!!\n\n\n")
 source("../retrieveFile.R")
 
 addr = readLines("tumblrAddr.txt")

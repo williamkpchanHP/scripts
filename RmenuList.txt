@@ -65,3 +65,4 @@ C:\Users\william\Desktop\scripts\createloop\	creteImgloop.r
 C:\Users\william\Desktop\scripts\xnxx\	askDtaforum.xnxx.R
 C:\Users\william\Desktop\scripts\hotnakedwomen\	rvestHotnakedwomenNew.R
 C:\Users\william\Desktop\scripts\tumbler\	rvestTumblerArchive.R
+C:\Users\william\Desktop\scripts\tumbler\	extractTumblrTextFile.R
