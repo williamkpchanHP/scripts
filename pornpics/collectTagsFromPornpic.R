@@ -30,16 +30,17 @@ checksearchKeyExist <- function(searchKey){
 }
 
 jumpToTagFunction <- function(){
-  searchKey = readline(prompt="enter searchKey:")
+  searchKey <<- readline(prompt="enter searchKey:")
   chkKey = gsub(" |-", "", searchKey)
   checksearchKeyExist(chkKey)
 
   tagHead = "https://www.pornpics.com/tags/"
   tagtail = "/?offset="
   offset = 1
-  for(i in 1:1000){
+  i = 1
+  while(i>0){
     url = paste0(tagHead, searchKey, tagtail, (i*20+1))
-    cat("\n",url, " ")
+    cat("\n", i,url, " ")
     pagesource <- readLines(url)
 
     if(pagesource !="[]"){
@@ -49,9 +50,20 @@ jumpToTagFunction <- function(){
       itemList = itemList[srcIdx]
       itemList = gsub('^.*?galleries', '', itemList)
       itemList = gsub('","t_url.*', '', itemList)
-      Wholepage = c(Wholepage, itemList)
-      Wholepage = unique(Wholepage)
+      Wholepage <<- c(Wholepage, itemList)
+      Wholepage <<- unique(Wholepage)
       cat("length(Wholepage): ",length(Wholepage), " ")
+      i = i+1
+    }else{
+      cat("\ntotal: ",length(Wholepage), "\n")
+
+      outFilename = paste0(searchKey, "xhr.txt")
+      sink(outFilename)
+        cat(Wholepage, sep="\n")
+      sink()
+      cat(outFilename, " created!\n")
+
+      i = 0
     }
   }
 }
@@ -64,17 +76,7 @@ if(tagKey=="0"){
   jumpToTagFunction()
 }
 
-
-cat("\ntotal: ",length(Wholepage), "\n")
-
-outFilename = paste0(searchKey, "xhr.txt")
-sink(outFilename)
-  cat(Wholepage, sep="\n")
-sink()
-cat(outFilename, " created!\n")
-
 continuekey = readline(prompt="continue to collect all images? yn 0/1: ")
-
 
 dhms <- function(t){
     paste(t %/% (60*60*24), "day" 
@@ -87,12 +89,13 @@ dhms <- function(t){
 }
 
 if(continuekey == "0" |continuekey == ""){
-  searchKey = gsub("\\+|-", "", searchKey)
   pageHeader="https://www.pornpics.com/galleries/"
   pageTail=""
   className = ".thumbwook a" # pornpic
   xhrFileName = searchKey
-  titleName = xhrFileName
+
+  titleName = gsub("\\+|-", "", searchKey)
+
   xhrFileName = paste0(xhrFileName, ".txt")
   xhr = Wholepage
 

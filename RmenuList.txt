@@ -40,6 +40,7 @@ C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterAlbumFoto.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterBatchAlbumFoto.R
  	 
 C:\Users\william\Desktop\scripts\pornpics\	collectPornpicXhr.r
+C:\Users\william\Desktop\scripts\pornpics\	collectTagsFromPornpic.R
 C:\Users\william\Desktop\scripts\	collectPornpicXhrAcer.r
 C:\Users\william\Desktop\scripts\pornpics\	collectPornpicImgFromXhrFile.R
 C:\Users\william\Desktop\scripts\	stdRvestPornpic.R
