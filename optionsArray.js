@@ -120,4 +120,6 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornpicsbrandimae', 'pornpicsselenaadams', 'pornpicslunaamor', 'pornpicsgiavendetti', 'pornpicsbellaquinn', 'pornpicscourtneypage', 'pornpicspenelopereed', 'pornpicsjadejantzen', 'pornpicsscarlitscandal', 'pornpicsgenevievesinn', 'pornpicsalinabelle', 'pornpicscrisbrasil', 'pornpicsaliceecho', 'pornpicsalexisford', 'pornpicsabbyleebrazil', 'pornpicsmiathonson', 'pornpicsandijames', 'pornpicsjennalilin','pornpicsKarinTorres','pornpicsnyomibanxxx',
 'pornpicsjoannabliss', 'pornpicsaudreybitoni', 'pornpicssarahgregory', 'pornpicsbrianabanks', 'pornpicspennyporsche', 'pornpicskarinahart', 'pornpicsLaurenPhillips', 'pornpicscatbangles', 'pornpicsamberlynnbach', 'pornpicslivrevamped', 'pornpicslunastar', 'pornpicsMelissaMandlikova', 'pornpicsKristyKlenot', 'pornpicsterrynova', 'pornpicsstepsissuzie', 'pornpicsJasmineBlack', 'pornpicsChristyMarks', 'pornpicshollyheart', 'pornpicsvictoriaversaci', 'pornpicslogandrae', 'pornpicsaddisonfever', 'pornpicskelseyberneray', 'pornpicskatieblack', 'pornpicsdenisedavies', 'pornpicsromirain',
 'booklist','SEXYPICS',
+'pornpicsmeatypussy',
+'pornpicslatinaspread',
 ]
