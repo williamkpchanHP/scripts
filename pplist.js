@@ -300,7 +300,7 @@ function loadArray(filename) {
     script = document.createElement('script');
     script.src = "https://williamkpchanhp.github.io/scripts/"+url
     script.type = 'text/javascript';
-
+console.log("src ", script.src)
     script.onload = function () { // remember to put all waiting jobs inside here 
        questionList = eval(filename);
        ignoreListname = "ignore" + filename
