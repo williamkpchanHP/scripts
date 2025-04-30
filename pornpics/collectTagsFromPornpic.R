@@ -143,6 +143,7 @@ if(continuekey == "0" |continuekey == ""){
   }
 
   theFilename = paste0("pornpics", titleName, ".js")
+
   sink(theFilename)
   cat("var", paste0("pornpics", titleName), " = [\n")
   cat(allPages, sep="\n")
