@@ -142,9 +142,9 @@ if(continuekey == "0" |continuekey == ""){
     allPages = allPages[-rmidx]
   }
 
-  theFilename = paste0("pornpics", searchKey, ".js")
+  theFilename = paste0("pornpics", titleName, ".js")
   sink(theFilename)
-  cat("var", paste0("pornpics", searchKey), " = [\n")
+  cat("var", paste0("pornpics", titleName), " = [\n")
   cat(allPages, sep="\n")
   cat(templateTail, sep="\n")
   sink()

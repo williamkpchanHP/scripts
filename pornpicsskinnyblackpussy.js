@@ -1,4 +1,4 @@
-var pornpicsskinny-black-pussy  = [
+var pornpicsskinnyblackpussy  = [
 '7/658/28228823/28228823_001_2b31',
 '7/658/28228823/28228823_006_8f36',
 '7/658/28228823/28228823_009_d5f5',
