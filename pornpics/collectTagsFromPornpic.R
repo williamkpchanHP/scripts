@@ -6,6 +6,7 @@ source("../retrieveFile.R")
 
 Wholepage = character()
 searchKey = ""
+tagOrChannelKey = ""
 
 checksearchKeyExist <- function(searchKey){
   setwd("C:/Users/william/Desktop/scripts/")
@@ -34,12 +35,20 @@ jumpToTagFunction <- function(){
   chkKey = gsub(" |-", "", searchKey)
   checksearchKeyExist(chkKey)
 
-  tagHead = "https://www.pornpics.com/tags/"
-  tagtail = "/?offset="
-  offset = 1
+  tagOrChannelKey <<- readline(prompt="tag Or Channel: 0/1 t/c ")
+  if(tagOrChannelKey=="0"){
+    tagHead = "https://www.pornpics.com/tags/"
+    tagtail = "/?offset="
+    offset = 1
+  }else if(tagOrChannelKey=="1"){
+    tagHead = "https://www.pornpics.com/search/srch.php?q="
+    tagtail = "&lang=en&limit=20&offset="
+    offset = 0
+  }
+
   i = 1
   while(i>0){
-    url = paste0(tagHead, searchKey, tagtail, (i*20+1))
+    url = paste0(tagHead, searchKey, tagtail, ( (i-1)*20 + offset) )
     cat("\n", i,url, " ")
     pagesource <- readLines(url)
 
@@ -52,7 +61,7 @@ jumpToTagFunction <- function(){
       itemList = gsub('","t_url.*', '', itemList)
       Wholepage <<- c(Wholepage, itemList)
       Wholepage <<- unique(Wholepage)
-      cat("length(Wholepage): ",length(Wholepage), " ")
+      cat("length(Wholepage): ",length(Wholepage), " ", " itemList ",length(itemList))
       i = i+1
     }else{
       cat("\ntotal: ",length(Wholepage), "\n")
@@ -70,9 +79,11 @@ jumpToTagFunction <- function(){
 
 cat(red("\n\nenter keyword, after xhr.txt created,\nrun collectPornpicImgFromXhrFile.R to collect images\n\n"))
 
-tagKey = readline(prompt="is it tag file? 0/1 y/n ")
+tagKey = readline(prompt="is it tag or channel file? 0/1 y/n ")
 
 if(tagKey=="0"){
+  jumpToTagFunction()
+}else if(tagKey=="1"){
   jumpToTagFunction()
 }
 

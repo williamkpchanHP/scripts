@@ -1,0 +1,77 @@
+C:\Users\william\Desktop\scripts\	checkFileExist.R
+C:\Users\william\Desktop\scripts\	chopBigfile.R
+C:\Users\william\Desktop\scripts\	chopBigfileAgain.R
+C:\Users\william\Desktop\scripts\	filterNremove repeated links.R
+C:\Users\william\Desktop\scripts\	PinkMilfcollectPhotos.R
+ 	 
+C:\Users\william\Desktop\scripts\	rvestTouchmylips.R
+C:\Users\william\Desktop\scripts\	sexPageMenu.R
+C:\Users\william\Desktop\scripts\	stdPostProcessHTMLFiles.R
+C:\Users\william\Desktop\scripts\	stdRvest BU.R
+C:\Users\william\Desktop\scripts\	stdRvest.R
+C:\Users\william\Desktop\scripts\	stdRvestDemo2.R
+C:\Users\william\Desktop\scripts\	stdRvestDemo2Samples.R
+C:\Users\william\Desktop\scripts\	stdRvestFreematuresgallery.R
+C:\Users\william\Desktop\scripts\	stdRvestMom50.R
+C:\Users\william\Desktop\scripts\	stdRvestPhoto.R
+C:\Users\william\Desktop\scripts\	stdRvestPhotoLinks.R
+C:\Users\william\Desktop\scripts\	stdRvestPinkfineart.R
+ 	 
+C:\Users\william\Desktop\scripts\	stdRvestsexhd.pics.R
+C:\Users\william\Desktop\scripts\	stdRvestsexhd.picsBig.R
+C:\Users\william\Desktop\scripts\	stdRvestYoux.R
+C:\Users\william\Desktop\scripts\	stdRvestYouxPicsReadFIle.R
+C:\Users\william\Desktop\scripts\	BATCH Process PHub.R
+ 	 
+C:\Users\william\Desktop\scripts\pohub\R\	stdRvestBatchPHubStars.R
+C:\Users\william\Desktop\scripts\pohub\R\	stdRvestBatchPHubVideos.R
+C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubAllChannelsLst.R
+C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubChannels.R
+C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubChannelsNew.R
+C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubPlaylists.R
+C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubPornstars.R
+C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubVIdeo.R
+C:\Users\william\Desktop\scripts\pohub\R\	PohubBATCHListProcess.R
+ 	 
+C:\Users\william\Desktop\scripts\	stdExtXvideo.R
+C:\Users\william\Desktop\scripts\	stdRvestXvideo.R
+C:\Users\william\Desktop\scripts\	stdRvestXvideos.Pornstars.R
+ 	 
+C:\Users\william\Desktop\scripts\	stdRvestBatchXhamsterVideos.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterAlbumFoto.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterAllCreators.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterAllStarVideos.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterBatchAlbumFoto.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterBatchAlbumFotoNew.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterChannels.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterGrpVideos.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterPornstar.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterPornstarVideos.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterRelatedVideos.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterUserGrpPhotos.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterUsersVideos.R
+C:\Users\william\Desktop\scripts\	stdRvestXhamsterVideos.R
+ 	 
+C:\Users\william\Desktop\scripts\pornpics\	collectPornpicImgFromXhrFile.r
+C:\Users\william\Desktop\scripts\pornpics\	collectPornpicXhr.r
+C:\Users\william\Desktop\scripts\pornpics\	stdRvestPornpic.R
+C:\Users\william\Desktop\scripts\pornpics\	stdRvestPornpicBatch.R
+C:\Users\william\Desktop\scripts\pornpics\	stdRvestPornpicBatchOld.R
+C:\Users\william\Desktop\scripts\pornpics\	stdRvestPornpicChannets.R
+C:\Users\william\Desktop\scripts\pornpics\	stdRvestPornpicNew.R
+C:\Users\william\Desktop\scripts\pornpics\	stdRvestPornpicNewHp.R
+C:\Users\william\Desktop\scripts\pornpics\	stdRvestPornpicStars.R
+C:\Users\william\Desktop\scripts\pornpics\	PornpicChop.R
+ 	 
+C:\Users\william\Desktop\scripts\pornpics\	collectPornpicXhr.r
+C:\Users\william\Desktop\scripts\pornpics\	collectTagsFromPornpic.R
+ 	 
+C:\Users\william\Desktop\scripts\freematuresgallery\	collect freematuresgalleryImgs.R
+C:\Users\william\Desktop\scripts\freematuresgallery\	batchcollect freematuresgalleryImgs.R
+C:\Users\william\Desktop\scripts\archivegalleries\	archivegalleriesImgs.R
+ 	 
+D:\Dropbox\MyDocs\R misc Jobs\webscraping\Text\programs\pohub\scripts\R\	OldProgramsMenu.R
+C:\Users\william\Desktop\scripts\	findFiles.R
+D:\Dropbox\MyDocs\R misc Jobs\	removeduplicates.R
+D:\Dropbox\MyDocs\R misc Jobs\	repairDuplicatedItems.R
+D:\Dropbox\MyDocs\R misc Jobs\	pohub.Batch.R

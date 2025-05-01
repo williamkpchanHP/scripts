@@ -147,4 +147,7 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornpicsbentoverpussy',
 'pornpicsskinnyblackpussy',
 'pornpicsbigblackpussy',
+'pornpicsfivewomen',
+'pornpicsmature-nl',
+'pornpicsmaturenl',
 ]
