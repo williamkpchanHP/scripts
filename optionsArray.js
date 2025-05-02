@@ -150,4 +150,10 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'pornpicsfivewomen',
 'pornpicsmature-nl',
 'pornpicsmaturenl',
+'pornpicsonlyfans',
+'pornhubalexisrain',
+'pornhubnudeyogaporn',
+'pornpicsbigmeatypussy',
+'pornhubUpskirtMILF',
+'pornpicsupskirtcloseup',
 ]

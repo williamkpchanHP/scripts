@@ -32,6 +32,7 @@ C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubPlaylists.R
 C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubPornstars.R
 C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPornhubVIdeo.R
 C:\Users\william\Desktop\scripts\pohub\R\	PohubBATCHListProcess.R
+C:\Users\william\Desktop\scripts\pohub\R\	stdRvestPohubRelatedVideos.R
  	 
 C:\Users\william\Desktop\scripts\	stdExtXvideo.R
 C:\Users\william\Desktop\scripts\	stdRvestXvideo.R
