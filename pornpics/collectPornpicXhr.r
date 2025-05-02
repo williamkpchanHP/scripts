@@ -84,7 +84,7 @@ dhms <- function(t){
 
 if(continuekey == "0" |continuekey == ""){
   schkey = gsub("\\+|-", "", schkey)
-  pageHeader="https://www.pornpics.com/galleries/"
+  pageHeader="https://www.pornpics.com/galleries"
   pageTail=""
   className = ".thumbwook a" # pornpic
   xhrFileName = schkey
@@ -136,7 +136,7 @@ if(continuekey == "0" |continuekey == ""){
   }
 
   theFilename = paste0("pornpics", schkey, ".js")
-
+  setwd("C:/Users/william/Desktop/scripts/pornpics")
   sink(theFilename)
   cat("var", paste0("pornpics", schkey), " = [\n")
   cat(allPages, sep="\n")
