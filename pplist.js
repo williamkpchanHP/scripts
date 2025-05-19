@@ -10,6 +10,7 @@ actualID = ""
 questionList = []
 shuffleSW = false
 showlong = false
+longLength = 100
 
 const selectElement = document.getElementById('myChoice');
 optionsArray.forEach(optionText => {
@@ -214,19 +215,23 @@ function jpButClick() {
 }
 
 function jpback() {
-  topicNo = topicNo + 2;
-  actualID = suffleTable[topicNo]
-  while(ignoreList.includes(actualID)){
-    topicNo = topicNo + 2
-    console.log("\ninside topicNo ",topicNo, "actualID ",actualID)
-    if (topicNo >= questionList.length) { topicNo = 0}
+  if(showlong){
+    showLongTopic()
+  }else{
+    topicNo = topicNo + 2;
     actualID = suffleTable[topicNo]
-  }
-  if (topicNo <= questionList.length){
-      showTopic()
-  } else {
-    topicNo = questionList.length -1;
-      showTopic()
+    while(ignoreList.includes(actualID)){
+      topicNo = topicNo + 2
+      console.log("\ninside topicNo ",topicNo, "actualID ",actualID)
+      if (topicNo >= questionList.length) { topicNo = 0}
+      actualID = suffleTable[topicNo]
+    }
+    if (topicNo <= questionList.length){
+        showTopic()
+    } else {
+      topicNo = questionList.length -1;
+        showTopic()
+    }
   }
 }
 
@@ -384,8 +389,8 @@ function showmarkList(markList) {
 // this is for pplistExam to show long list and put at bottom
 function showLongTopic() {
  fullTopic = ""
- showlength = 200
- if(questionList.length<200){showlength = questionList.length}
+ showlength = longLength
+ if(questionList.length<longLength){showlength = questionList.length}
 
  for( i = 0; i < showlength; i++){
   topicNo = topicNo + 1;
