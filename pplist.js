@@ -9,7 +9,7 @@ topic = ""
 actualID = ""
 questionList = []
 shuffleSW = false
-
+showlong = false
 
 const selectElement = document.getElementById('myChoice');
 optionsArray.forEach(optionText => {
@@ -50,27 +50,31 @@ function shuffle(array) {
 }
 
 function showTopic() {
-  topicNo = topicNo - 1;
-  if (topicNo < 0) { topicNo = questionList.length-1}
-  actualID = suffleTable[topicNo]
-
-  while(ignoreList.includes(actualID)){
-    topicNo = topicNo - 1
+  if(showlong){
+    showLongTopic()
+  }else{
+    topicNo = topicNo - 1;
     if (topicNo < 0) { topicNo = questionList.length-1}
     actualID = suffleTable[topicNo]
+  
+    while(ignoreList.includes(actualID)){
+      topicNo = topicNo - 1
+      if (topicNo < 0) { topicNo = questionList.length-1}
+      actualID = suffleTable[topicNo]
+    }
+  
+    var pointer = topicNo;
+    topic = questionList[pointer];
+    tipsNamesubstr = tipsListName.substring(0, 7)
+    if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic" || tipsNamesubstr === "xhamFot" || tipsNamesubstr === "pornhub"|| tipsNamesubstr === "SEXYPIC"|| tipsNamesubstr === "xhamste") {
+      topic = lineHeader + topic + lineTail
+    }
+  
+    document.querySelector('#question').innerHTML = topic;
+    document.querySelector('#questionsLeft').innerHTML = topicNo;
+    document.querySelector('body').focus();
+    gototop()
   }
-
-  var pointer = topicNo;
-  topic = questionList[pointer];
-  tipsNamesubstr = tipsListName.substring(0, 7)
-  if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic" || tipsNamesubstr === "xhamFot" || tipsNamesubstr === "pornhub"|| tipsNamesubstr === "SEXYPIC"|| tipsNamesubstr === "xhamste") {
-    topic = lineHeader + topic + lineTail
-  }
-
-  document.querySelector('#question').innerHTML = topic;
-  document.querySelector('#questionsLeft').innerHTML = topicNo;
-  document.querySelector('body').focus();
-  gototop()
 }
 
 function gotoQues() {
@@ -376,6 +380,32 @@ function showmarkList(markList) {
     document.querySelector('#markLst').innerHTML = "<br><y>marked Topics: <r>None!</r></y><br>";
   }
 }
+
+// this is for pplistExam to show long list and put at bottom
+function showLongTopic() {
+ fullTopic = ""
+ showlength = 200
+ if(questionList.length<200){showlength = questionList.length}
+
+ for( i = 0; i < showlength; i++){
+  topicNo = topicNo + 1;
+  if (topicNo > questionList.length) { topicNo = 0}
+
+  var pointer = topicNo;
+  topic = questionList[pointer];
+  tipsNamesubstr = tipsListName.substring(0, 7)
+  if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic" || tipsNamesubstr === "xhamFot") {
+    topic = lineHeader + topic + lineTail
+  }
+
+ fullTopic = fullTopic +"<br>"+ topic
+ }
+  document.querySelector('#question').innerHTML = fullTopic;
+  document.querySelector('#questionsLeft').innerHTML = topicNo;
+  document.querySelector('body').focus();
+  gototop()
+}
+
 
 $("body").on( "swipeleft", function( event ) {jpback();} );
 $("body").on( "swiperight", function( event ) {jpButClick();});
