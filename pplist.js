@@ -9,7 +9,7 @@ topic = ""
 actualID = ""
 questionList = []
 shuffleSW = false
-showlong = false
+showlong = true
 longLength = 100
 
 const selectElement = document.getElementById('myChoice');
