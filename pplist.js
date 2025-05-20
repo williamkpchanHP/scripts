@@ -68,9 +68,7 @@ function showTopic() {
     topic = questionList[pointer];
     tipsNamesubstr = tipsListName.substring(0, 7)
     if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic" || tipsNamesubstr === "xhamFot" || tipsNamesubstr === "pornhub"|| tipsNamesubstr === "SEXYPIC"|| tipsNamesubstr === "xhamste") {
-console.log("tipsNamesubstr ". tipsNamesubstr)
       topic = lineHeader + topic + lineTail
-console.log("show topic lineHeader ", lineHeader, lineTail)
     }
   
     document.querySelector('#question').innerHTML = topic;
@@ -399,18 +397,13 @@ function showLongTopic() {
   topicNo = topicNo + 1;
   if (topicNo > questionList.length) { topicNo = 0}
 
-console.log("topicNo ", topicNo)
   var pointer = topicNo;
   topic = questionList[pointer];
   tipsNamesubstr = tipsListName.substring(0, 7)
-  if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic" || tipsNamesubstr === "xhamFot") {
+    if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic" || tipsNamesubstr === "xhamFot" || tipsNamesubstr === "pornhub"|| tipsNamesubstr === "SEXYPIC"|| tipsNamesubstr === "xhamste") {
     topic = lineHeader + topic + lineTail
-
-console.log("show long lineHeader:\n", lineHeader, lineTail)
-console.log("topic ", topic)
   }
-
- fullTopic = fullTopic +"<br>"+ topic
+  fullTopic = fullTopic +"<br>"+ topic
  }
   document.querySelector('#question').innerHTML = fullTopic;
   document.querySelector('#questionsLeft').innerHTML = topicNo;
