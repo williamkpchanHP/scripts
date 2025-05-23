@@ -1,5 +1,6 @@
 
-const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','TumblerVideos','auntjudys','phubStars','archivegalleriesImgsMOdi01','archivegalleriesImgsMOdi02','archivegalleriesImgsMOdi03',
+const optionsArray = [
+'imgList','favorites','tumblrList','xxxImgsListOK','TumblerVideos','auntjudys','phubStars','archivegalleriesImgsMOdi01','archivegalleriesImgsMOdi02','archivegalleriesImgsMOdi03',
 'archivegalleriesImgsMOdi04','archivegalleriesImgsMOdi05','archivegalleriesImgsMOdi06','archivegalleriesImgsMOdi07','archivegalleriesImgsMOdi08','archivegalleriesImgsMOdi09','archivegalleriesImgsMOdi10','nudexxxallOver30','nudexxxanilos','nudexxxbrazzers','nudexxxcategoriesbigclit0','nudexxxevilangel',
 'nudexxxkarupshometownamateurs','nudexxxmet','nudexxxmilfslike','nudexxxmommy','nudexxxmyfriendshotmom',
 'xhamFotocollectedimgs2931','xhamFotovitgun198','xhamFoto7781',
@@ -8,7 +9,7 @@ const optionsArray = ['imgList','favorites','tumblrList','xxxImgsListOK','Tumble
 'xhamFotoputarankahotmilf','xhamster_nadiawhite', 'xhamFotonicoledupapillon113',
 'xhamFoto3759gif','xhamFoto94605','xhamsterolderwomanfun', 'xhamsterChannels', 
 'xhamFototighttini14804', 'xhamFotogonzovideosBatch9447',
-'xhamFotomandy_scholz164',
+'xhamFotomandy_scholz164','xhamFotoerocom','xhamFotoanat666225','xhamFotoanat666Related',
 
 'pohubVid','puhbBatch2024','pornhubtattoogirlalia','pornhubkatiecummings','pornhubanilos','pornhub_dreamgirlsmembers','pornhub_oldnanny','pornhub_evolvedfightslez','pornhub_evolvedfights',
 'pornhub40somethingmag','pornhubabigaiilmorris','pornhubalexadams','pornhubalexawhiteofficial','pornhubaliciacox',

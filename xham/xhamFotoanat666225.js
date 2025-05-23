@@ -1,37 +1,4 @@
-<base target="_blank"><html><head><title>anat666225</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black:; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-img {max-width: 100%;}
-div {width: 33%; display:inline-block; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number">anat666225</div>
-<pre class="js-tip"></pre>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var anat666225 = [
 'andi-moon-pussy-orgasm-14232550"><img src="https://ic-vt-nss.xhcdn.com/a/ODgzZjRlMTNmZjkxMmZjOWE5MDJhMWY3NzFlMWNmOGY/s(w:320,h:180),jpeg/014/232/550/1280x720.1.jpg"><br>Andi Moon pussy orgasm',
 'ariana-grande-beautiful-pussy-14555352"><img src="https://ic-vt-nss.xhcdn.com/a/YWM0OWVkMDQ2NTA0NmEwZGYyMWU4OGIyZWZiMzRiY2U/s(w:320,h:180),jpeg/014/555/352/1280x720.5.jpg"><br>Ariana Grande beautiful pussy',
 'asian-mature-14130763"><img src="https://ic-vt-nss.xhcdn.com/a/NGFmODNlZTk0OTFhYzNlNjZhMjE1OTlmMGVkM2NlNWE/s(w:320,h:180),jpeg/014/130/763/1280x720.6.jpg"><br>Asian mature',
@@ -260,17 +227,3 @@ var tipsList = [
 ];
 lineHeader = '<div><a href="https://xhamster.com/videos/'
 lineTail = '</a></div>'
-showRange = 120
-bookid = "anat666225"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

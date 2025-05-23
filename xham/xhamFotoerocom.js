@@ -1,37 +1,4 @@
-<base target="_blank"><html><head><title>erocom3742</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black:; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-img {max-width: 100%;}
-div {width: 33%; display:inline-block; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number">erocom3742</div>
-<pre class="js-tip"></pre>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotoerocom = [
 'tight-18yo-asian-teen-get-painful-anal-creampie-with-double-penetration-xh7cKcN"><img src="https://ic-vt-lm.xhcdn.com/a/Y2QwYzIzN2EzZWU1MDNjMzU5OWRmMmU4ZTM4YjQwZTU/s(w:320,h:180),jpeg/022/656/563/v2/320x180.280.jpg"><br>Tight 18yo asian teen get painful anal creampie with double penetration',
 'teen-mira-cuckold-fucks-in-creampie-gangbang-with-old-man-12107961"><img src="https://ic-vt-lm.xhcdn.com/a/NTI4NzFmMWQ1ZDA5Mzc3NGRmMDIyOWE3NmM4MTRiMTY/s(w:320,h:180),jpeg/012/107/961/v2/320x180.222.jpg"><br>Teen mira cuckold fucks in creampie gangbang with old man',
 'german-brunette-teen-get-romantic-oil-sex-massage-sedution-xhwArwx"><img src="https://ic-vt-lm.xhcdn.com/a/Y2MzYzc0YmViYzM3ZTBhYTFjNWI0MzRjZTBkYmQxMGE/s(w:320,h:180),jpeg/022/760/534/v2/320x180.232.jpg"><br>German brunette Teen get romantic oil Sex massage sedution',
@@ -3777,17 +3744,3 @@ var tipsList = [
 ];
 lineHeader = '<div><a href="https://xhamster.com/videos/'
 lineTail = '</a></div>'
-showRange = 120
-bookid = "erocom3742"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>
