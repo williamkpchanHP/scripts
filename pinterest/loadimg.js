@@ -13,7 +13,11 @@ function waitForTimeout(ms) {
 }
 
 async function getPinterestImages(url, maxScrolls) {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ 
+    headless: true,
+    executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
   const page = await browser.newPage();
   
   try {
@@ -57,18 +61,6 @@ async function getPinterestImages(url, maxScrolls) {
     const { exec } = require('child_process');
     // Specify the system command you want to execute
     const command = filePath;
-    // Execute the system command
-    exec(command, (error, stdout, stderr) => {
-      if (error) {
-        console.error(`Error executing command: ${error.message}`);
-        return;
-      }
-      if (stderr) {
-        console.error(`Error executing command: ${stderr}`);
-        return;
-      }
-      console.log(`Command output: ${stdout}`);
-    });
 
     return imageUrls;
   } catch (error) {
@@ -93,7 +85,7 @@ async function autoScrollAndCollectImages(page, maxScrolls) {
     const newImagesCount = allImages.size - previousCount;
     console.log(`第 ${scrollCount+1}/${maxScrolls} 次滚动: 新增 ${newImagesCount} 张图片`);
 
-    if(newImagesCount==0){scrollCount = maxScrolls}
+    //if(newImagesCount==0){scrollCount = maxScrolls}
     // 滚动到页面底部
     await page.evaluate('window.scrollTo(0, document.body.scrollHeight)');
     // 等待页面加载新内容
