@@ -412,6 +412,35 @@ function showLongTopic() {
 }
 
 
+function addFav() {
+    let favList = JSON.parse(localStorage.getItem('favList')) || [];
+    if (!favList.includes(tipsListName)) {
+        favList.push(tipsListName);
+        localStorage.setItem('favList', JSON.stringify(favList));
+        alert(`${tipsListName} added to favorites!`);
+    } else {
+        alert(`${tipsListName} is already in favorites.`);
+    }
+}
+
+function rmFav() {
+    let favList = JSON.parse(localStorage.getItem('favList')) || [];
+    if (favList.includes(tipsListName)) {
+        favList = favList.filter(item => item !== tipsListName);
+        localStorage.setItem('favList', JSON.stringify(favList));
+        alert(`${tipsListName} removed from favorites.`);
+    } else {
+        alert(`${tipsListName} is not in favorites.`);
+    }
+}
+
+function showFav() {
+    const favList = JSON.parse(localStorage.getItem('favList')) || [];
+    const favListDiv = document.getElementById('favList');
+    favListDiv.innerHTML = favList.length ? favList.join(' ') : 'No favorites added.';
+}
+
+
 $("body").on( "swipeleft", function( event ) {jpback();} );
 $("body").on( "swiperight", function( event ) {jpButClick();});
 $("img").click( "jpButClick()");
