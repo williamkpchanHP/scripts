@@ -456,6 +456,6 @@ function showFav() {
 
 $("body").on( "swipeleft", function( event ) {jpback();} );
 $("body").on( "swiperight", function( event ) {jpButClick();});
-$("img").click( "jpButClick()");
+//$("img").click( "jpButClick()");
 
 randommyChoice()
