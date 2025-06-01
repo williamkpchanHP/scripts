@@ -205,6 +205,9 @@ $(".answer").click(function () {
 
 function jpButClick() {
   var jpBut = document.querySelector('#jumpButton');
+  if(showlong){
+    topicNo = topicNo - longLength
+  }
   if (topicNo >= 0) {
     showTopic();
   }else if(topicNo === 0) {
@@ -278,7 +281,7 @@ function loadArray(filename) {
   }else if(filename == "auntjudys"){
     url = "pornpics/auntjudys.js"
   }else if(filename == "favorites"){
-    url = "pornpics/favorites.js"
+    url = "favorites.js"
   }else if(filename == "TumblerVideos"){
     url = "tumbler/TumblerVideos.js"
   }else if(filename == "tumblrList"){
