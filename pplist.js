@@ -10,7 +10,7 @@ actualID = ""
 questionList = []
 shuffleSW = false
 showlong = true
-longLength = 100
+longLength = 50
 
 const selectElement = document.getElementById('myChoice');
 optionsArray.forEach(optionText => {
@@ -309,7 +309,7 @@ function loadArray(filename) {
     script = document.createElement('script');
     script.src = "https://williamkpchanhp.github.io/scripts/"+url
     script.type = 'text/javascript';
-console.log("src ", script.src)
+
     script.onload = function () { // remember to put all waiting jobs inside here 
        questionList = eval(filename);
        ignoreListname = "ignore" + filename
@@ -437,7 +437,20 @@ function rmFav() {
 function showFav() {
     const favList = JSON.parse(localStorage.getItem('favList')) || [];
     const favListDiv = document.getElementById('favList');
-    favListDiv.innerHTML = favList.length ? favList.join(' ') : 'No favorites added.';
+    //favListDiv.innerHTML = favList.length ? favList.join(' ') : 'No favorites added.';
+    if(favList.length >0){
+      favListStr = ""
+      for ( i = 0; i < favList.length; i++) {
+        favListStr = favListStr + "<span class='redbut' onclick=loadArray('" + favList[i]
+        + "')>"
+        + favList[i]
+        + "</span> "
+      }
+      document.querySelector('#favList').innerHTML = favListStr;
+    }else{
+      document.querySelector('#favList').innerHTML = "<br><y>search result: <r>None!</r></y><br>";
+    }
+
 }
 
 
