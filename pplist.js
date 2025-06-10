@@ -219,6 +219,8 @@ function jpButClick() {
 
 function jpback() {
   if(showlong){
+    topicNo = topicNo - longLength
+    if(topicNo<0){topicNo = 0}
     showLongTopic()
   }else{
     topicNo = topicNo + 2;
