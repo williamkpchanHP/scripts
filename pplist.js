@@ -52,6 +52,7 @@ function shuffle(array) {
 
 function showTopic() {
   if(showlong){
+    topicNo = topicNo + longLength
     showLongTopic()
   }else{
     topicNo = topicNo - 1;
@@ -219,7 +220,7 @@ function jpButClick() {
 
 function jpback() {
   if(showlong){
-    topicNo = topicNo - longLength
+    topicNo = topicNo - longLength *2
     if(topicNo<0){topicNo = 0}
     showLongTopic()
   }else{
@@ -397,7 +398,7 @@ function showLongTopic() {
  fullTopic = ""
  showlength = longLength
  if(questionList.length<longLength){showlength = questionList.length}
-
+console.log("\n\nshowLongTopic topicNo: ",topicNo)
  for( i = 0; i < showlength; i++){
   topicNo = topicNo + 1;
   if (topicNo > questionList.length) { topicNo = 0}
