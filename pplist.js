@@ -398,7 +398,8 @@ function showLongTopic() {
  fullTopic = ""
  showlength = longLength
  if(questionList.length<longLength){showlength = questionList.length}
-console.log("\n\nshowLongTopic topicNo: ",topicNo)
+ document.querySelector('#location').innerHTML = topicNo;
+
  for( i = 0; i < showlength; i++){
   topicNo = topicNo + 1;
   if (topicNo > questionList.length) { topicNo = 0}
