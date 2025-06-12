@@ -398,7 +398,13 @@ function showLongTopic() {
  fullTopic = ""
  showlength = longLength
  if(questionList.length<longLength){showlength = questionList.length}
- document.querySelector('#location').innerHTML = topicNo;
+
+ let favList = JSON.parse(localStorage.getItem('favList')) || [];
+ if (favList.includes(tipsListName)) {
+   document.querySelector('#location').innerHTML = "❤️"+topicNo;
+ }else{
+   document.querySelector('#location').innerHTML = topicNo;
+ }
 
  for( i = 0; i < showlength; i++){
   topicNo = topicNo + 1;
