@@ -33,9 +33,9 @@ urlHeader = "https://www.pornpics.com/search/srch.php?q="
 schkey = readline(prompt="enter schkey:")
 schkey = gsub(" |-", "+", schkey)
 
-pageNum = readline(prompt="enter number of pages to collect(max: 500): ")
+pageNum = readline(prompt="enter number of pages to collect(max: 500): 10 ")
 if(pageNum == ""){
-  pageNum = 100
+  pageNum = 10
 }else{
   pageNum = as.numeric(pageNum)
 }
