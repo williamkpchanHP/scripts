@@ -240,8 +240,5 @@ const optionsArray = [
 'pornpicsbiglabia',
 'pornpicsnatashadedov',
 'pornpicselizajane',
-'pornpicsbustybritain',
-'pornpicsnataliewalsh',
-'pornpicssofiasantana',
-'pornpicsdannymountain',
+'pornpicsbustybritain', 'pornpicsnataliewalsh', 'pornpicssofiasantana', 'pornpicsdannymountain', 'pornpicschannels.js',
 ]
