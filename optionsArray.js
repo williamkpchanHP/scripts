@@ -241,5 +241,11 @@ const optionsArray = [
 'pornpicsnatashadedov',
 'pornpicselizajane',
 'pornpicsbustybritain', 'pornpicsnataliewalsh', 'pornpicssofiasantana', 'pornpicsdannymountain', 'pornpicschannels',
-'pornpicspornstars', 'pornpicstenshigao',
+'pornpicspornstars', 'pornpicstenshigao', 'pornpicsshionecooper',
+'pornpicssensualjane',
+'pornpicsbikinicompetition',
+'pornpicssapphireblue',
+'pornpicspussycomparison',
+'pornpicspussycompetition',
+'pornpicskalinaryu',
 ]
