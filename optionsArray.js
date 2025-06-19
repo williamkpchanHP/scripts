@@ -248,4 +248,6 @@ const optionsArray = [
 'pornpicspussycomparison',
 'pornpicspussycompetition',
 'pornpicskalinaryu',
+'pornpicssusyrocks',
+'pornpicsnatashanice',
 ]

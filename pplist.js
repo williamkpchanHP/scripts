@@ -274,6 +274,7 @@ function useChosen() {
 function randommyChoice() {
   ArrayPtr = Math.floor(Math.random() * optionsArray.length);
   tipsListName = myChoice.options[ArrayPtr].text // first to know the question name
+  $("#totalLen").html(tipsListName);
   loadArray(tipsListName)
 }
 
