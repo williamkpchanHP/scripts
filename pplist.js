@@ -448,6 +448,8 @@ function rmFav() {
     }
 }
 
+
+
 function showFav() {
     const favList = JSON.parse(localStorage.getItem('favList')) || [];
     const favListDiv = document.getElementById('favList');
@@ -465,6 +467,10 @@ function showFav() {
       document.querySelector('#favList').innerHTML = "<br><y>search result: <r>None!</r></y><br>";
     }
 
+}
+
+function hideFav() {
+      document.querySelector('#favList').innerHTML = "";
 }
 
 
