@@ -273,4 +273,8 @@ const optionsArray = [
 'pornpicsnamilee',
 'pornpicshitomi',
 'pornpicsopenpussy',
+'pornhub_puba',
+'pornhub_momseduces',
+'pornhub_olderwomanfun',
+'pornhub_angelinacastro',
 ]
