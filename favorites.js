@@ -2805,5 +2805,6 @@ var tipsList = [
 '<img src="https://cdni.pornpics.com/1280/7/125/65635228/65635228_057_4034.jpg">',
 '<img src="https://cdni.pornpics.com/1280/7/125/65635228/65635228_057_4034.jpg">',
 '<img src="https://cdni.pornpics.com/1280/7/125/65635228/65635228_029_2699.jpg">',
+'<img src="https://64.media.tumblr.com/1c75ec2d1297302be3b6a4dbdb0616a3/b557741f6e437809-7a/s1280x1920/2e5a6d1cdd51dc6b026c3f62e25966bb82540653.jpg">',
 ]
 favorites = tipsList
