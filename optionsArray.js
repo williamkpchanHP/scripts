@@ -246,4 +246,6 @@ const optionsArray = [
 'pornpicssadieblooms','pornpicsjadastevens','pornpicsterrijane','pornpicsjulesjordan','pornpicslexingtonsteele',
 'pornpicsalyguzman','pornpicsnicolepeters','pornpicsleandra','pornpicstastyterry','pornpicsvaloryirene','pornpicsnikkydream',
 'pornpicssapphire',
+'pornpicscherylbloss',
+'pornpicsjosephinejackson',
 ]
