@@ -11,6 +11,7 @@ questionList = []
 shuffleSW = false
 showlong = true
 longLength = 50
+favListObj = {};
 
 const selectElement = document.getElementById('myChoice');
 optionsArray.forEach(optionText => {
@@ -332,6 +333,13 @@ function loadArray(filename) {
        } else{
          markList = localStorage.getItem(markListname).split(' ').map(Number);
        }
+
+       if (localStorage.getItem("favListObj") === null) {
+         favListObj = {};
+       } else{
+         favListObj = JSON.parse(localStorage.getItem("favListObj"));
+       }
+
        init()  // showTopic
        showmarkList(markList)
 console.log("url\n",url,"\nlineHeader:\n",lineHeader,"\n\n")
@@ -472,6 +480,25 @@ function showFav() {
 function hideFav() {
       document.querySelector('#favList').innerHTML = "";
 }
+
+function recfavList(modList, modListValue) {
+  if (!favListObj[modList]) {
+    favListObj[modList] = []; // Initialize as empty array if doesn't exist
+  }
+  favListObj[modList].push(modListValue);
+  serializedObj = JSON.stringify(obj);
+  localStorage.setItem("favListObj", serializedObj);
+}
+
+$(document).ready(function() {
+ $("img").dblclick( function() {
+    imgsrc = this.src;
+    pointer = questionList.findIndex(question => question.includes(imgsrc));
+ console.log(imgsrc, pointer)
+    //recfavList(tipsListName, modListValue)
+ });
+});
+
 
 
 $("body").on( "swipeleft", function( event ) {jpback();} );
