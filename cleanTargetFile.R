@@ -1,4 +1,15 @@
 # this interpret the cmdFile and clean the target file
+library(crayon)
+
+cat("\n\n\n\n")
+cat("This script interpret the cmdFile and clean the target file\n")
+cat("command file format: first line specifies the target file\n")
+cat("then a begin img, and then 0 or 1 to specify end or continue\n")
+cat(red("\n\nOriginal src file will be renamed ' srcfile.txt'"))
+cat("\n\n\n\n")
+
+
+
 rm(list = ls())
 
 # this must be added to setting chinese
