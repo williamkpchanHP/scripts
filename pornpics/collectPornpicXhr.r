@@ -24,6 +24,8 @@ checkSchkeyExist <- function(schkey){
     }else{
       break
     }
+  }else{
+    cat("\nschkey NOT exist in optionsArray.js\n")
   }
 }
 
@@ -33,6 +35,8 @@ urlHeader = "https://www.pornpics.com/search/srch.php?q="
 schkey = readline(prompt="enter schkey:")
 schkey = gsub(" |-", "+", schkey)
 
+checkSchkeyExist(schkey)
+
 pageNum = readline(prompt="enter number of pages to collect(max: 500): 10 ")
 if(pageNum == ""){
   pageNum = 10
@@ -40,7 +44,6 @@ if(pageNum == ""){
   pageNum = as.numeric(pageNum)
 }
 
-checkSchkeyExist(schkey)
 
 limitKey = "&lang=en&limit="
 limitNum = 100

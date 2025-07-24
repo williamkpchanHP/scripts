@@ -278,4 +278,6 @@ const optionsArray = [
 'pornpicsBritneyAmber',
 'pornpicsKrissyLynn',
 'pornpicsNikkiBenz',
+'pornpicslizzieryan',
+'pornpicsmadimeadows',
 ]
