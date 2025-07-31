@@ -1,39 +1,4 @@
-<base target="_blank"><html><head><title>allisin007</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-img {max-width: 100%;}
-div {display:inline-block; width:50%; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number"></div>
-<span class="js-tip"></span>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotoallisin007List = [
 '<a href="https://xhamster.com/photos/gallery/allisins007-pussy-face-16074833"><img src="https://ic-ph-nss.xhcdn.com/a/MjAwYjAyNDEwYjU0ZTJlMjFhNWNlMzA0YzkwMTEzZjk/jpeg/000/515/086/970_450.jpg"><br>AlliSins007 pussy face </a> 9',
 '<a href="https://xhamster.com/photos/gallery/allisins007-nude-gifs-16077795"><img src="https://thumb-p4.xhcdn.com/a/TjK5OJII2wvJ56ib8PDP9g/000/515/125/654_240.gif"><br>AlliSins007 nude gifs </a> 9',
 '<a href="https://xhamster.com/photos/gallery/allisin-nude-strip-16044195"><img src="https://ic-ph-nss.xhcdn.com/a/NjQ5YmJiN2Y2YTc4MjNjMjkyNDBlOTg5MWQ1NTc0MjI/jpeg/000/514/672/458_450.jpg"><br>AlliSin nude strip </a> 9',
@@ -75,21 +40,6 @@ var tipsList = [
 '<a href="https://xhamster.com/photos/gallery/alllisins007-hairy-pussy-16062104"><img src="https://ic-ph-nss.xhcdn.com/a/NGY5MjJiMzE5MmJlZGRhOGUwNGJkYWY0MmM3NzMyNTY/jpeg/000/514/927/746_450.jpg"><br>AllliSins007 hairy pussy </a> 10',
 '<a href="https://xhamster.com/photos/gallery/allisins-sex-with-a-toothbrush-16052817"><img src="https://ic-ph-nss.xhcdn.com/a/MTFlYzY5YTllNDE0MjQ1YTA2NGMwYTc5ZmE3Y2Y2Yjg/jpeg/000/514/783/573_450.jpg"><br>AlliSins sex with a toothbrush </a> 10',
 '<a href="https://xhamster.com/photos/gallery/allisin007-16042506"><img src="https://ic-ph-nss.xhcdn.com/a/MDJjOTMyNmE3NTUxZWViZTE2YTk1OGY5Yjc0MzE3ZDA/jpeg/000/514/652/153_450.jpg"><br>AlliSin007</a> 1',
-'',
 ];
 lineHeader = ''
 lineTail = ''
-showRange = 41
-bookid = "allisin007"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

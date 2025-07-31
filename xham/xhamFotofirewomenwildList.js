@@ -1,39 +1,4 @@
-<base target="_blank"><html><head><title>firewomenwild</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-img {max-width: 100%;}
-div {display:inline-block; width:50%; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number"></div>
-<span class="js-tip"></span>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotofirewomenwildList = [
 '<a href="https://xhamster.com/photos/gallery/new-gallery-in-the-end-i-end-up-naked-on-the-balcony-15909791"><img src="https://ic-ph-nss.xhcdn.com/a/OGRkN2FlODIxZmQ0ZGQ1YzhiMjVkYjIzYjM5ZTk5MWE/jpeg/000/512/349/304_450.jpg"><br>new gallery!  in the end I end up naked on the balcony</a> 99',
 '<a href="https://xhamster.com/photos/gallery/gif-love-bodyshot-cumshot-11388224"><img src="https://thumb-p1.xhcdn.com/a/MUZja6q5k7hi-7rCWE5aGQ/000/253/759/881_240.gif"><br>GIF love bodyshot cumshot </a> 9',
 '<a href="https://xhamster.com/photos/gallery/young-wife-loves-getting-fucked-every-night-15795922"><img src="https://ic-ph-nss.xhcdn.com/a/NjM5Y2I2MjRlMzg4NDlmYjE0ZWM2YzJiZGZhNTIwYmU/jpeg/000/500/224/432_450.jpg"><br>Young Wife Loves Getting Fucked Every Night</a> 84',
@@ -69,21 +34,6 @@ var tipsList = [
 '<a href="https://xhamster.com/photos/gallery/fucked-like-a-whore-14266082"><img src="https://thumb-p6.xhcdn.com/a/W3RIkuHSQxZo1ma8jzZwFQ/000/402/416/336_240.gif"><br>Fucked like a Whore</a> 14',
 '<a href="https://xhamster.com/photos/gallery/slutty-wife-13130049"><img src="https://ic-ph-nss.xhcdn.com/a/MGRiNzVjOTE5Y2NjZDQxY2YxZWY5MjZhYmE2YTY2YzA/jpeg/000/371/744/184_450.jpg"><br>Slutty Wife</a> 13',
 '<a href="https://xhamster.com/photos/gallery/before-making-love-10695437"><img src="https://ic-ph-nss.xhcdn.com/a/MmZkM2UxN2ViMTViZGQ3MzkwNzMzMmM2OThjMmQ2YzU/jpeg/000/221/923/401_450.jpg"><br>before making love</a> 13',
-'',
 ];
 lineHeader = ''
 lineTail = ''
-showRange = 35
-bookid = "firewomenwild"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

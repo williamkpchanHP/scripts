@@ -1,39 +1,4 @@
-<base target="_blank"><html><head><title>mylfofficial</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-img {width: 100%;}
-div {display:inline-block; width:50%; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number"></div>
-<span class="js-tip"></span>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotomylfofficialList = [
 '<a href="https://xhamster.com/photos/gallery/riley-reyes-working-up-a-pussy-sweat-15821588"><img src="https://ic-ph-nss.xhcdn.com/a/NmYwYWIxYjM1MzY1ZWIwMGFmY2UxYTA0NGM0OTExOTg/jpeg/000/509/688/930_450.jpg"><br>Riley Reyes - Working Up A Pussy Sweat</a> 99',
 '<a href="https://xhamster.com/photos/gallery/london-river-tour-de-milf-15822063"><img src="https://ic-ph-nss.xhcdn.com/a/YWI5OWZmYTQ1ZDliYjg3NWFlYTgxMmVmYzRkMTA5OTk/jpeg/000/509/760/389_450.jpg"><br>London River - Tour De MILF</a> 92',
 '<a href="https://xhamster.com/photos/gallery/linda-gonzalez-coachs-massage-15806624"><img src="https://ic-ph-nss.xhcdn.com/a/NGY3Mzc1OGExYTA1YjE3MzUyZWY1MDI1NjIxMzMxMjM/jpeg/000/505/634/454_450.jpg"><br>Linda Gonzalez - Coach&#039;s Massage</a> 70',
@@ -86,21 +51,6 @@ var tipsList = [
 '<a href="https://xhamster.com/photos/gallery/nikki-delano-cumplimentary-milf-massage-15817756"><img src="https://ic-ph-nss.xhcdn.com/a/YTMwNTNmYzg3MGQ0OTRhNzk1ODUyMWVkMmFmYTczYmE/jpeg/000/509/056/321_450.jpg"><br>Nikki Delano - Cumplimentary MILF Massage</a> 123',
 '<a href="https://xhamster.com/photos/gallery/sara-jay-pain-and-stuff-her-ing-15804145"><img src="https://ic-ph-nss.xhcdn.com/a/NGNiOTY3ZjJlNTcyNTEyYjE4NmUzMTRiMDVlNWNhYWM/jpeg/000/504/463/828_450.jpg"><br>Sara Jay - Pain and Stuff-Her-ing</a> 115',
 '<a href="https://xhamster.com/photos/gallery/marie-mccray-tending-to-the-poon-15818676"><img src="https://ic-ph-nss.xhcdn.com/a/YjgyMDBhNTI3YzJiNDQ2NDI0MTk0MTBiNzJhOTRiZTQ/jpeg/000/509/301/492_450.jpg"><br>Marie McCray - Tending To The Poon</a> 106',
-'',
 ];
 lineHeader = '<div>'
 lineTail = '</div>'
-showRange = 60
-bookid = "mylfofficial"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

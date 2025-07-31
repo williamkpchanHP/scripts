@@ -1,39 +1,4 @@
-<base target="_blank"><html><head><title>hamsterfist</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-img {max-width: 100%;}
-div {display:inline-block; width:50%; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number"></div>
-<span class="js-tip"></span>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotohamsterfistList = [
 '<a href="https://xhamster.com/photos/gallery/sexy-bbw-wap-photoset-15776758"><img src="https://ic-ph-nss.xhcdn.com/a/MTc0M2U4MzIzNDE3ZDQxZTdhYjZmMmNkYWI2NTUyYjM/jpeg/000/488/936/062_450.jpg"><br>Sexy BBW WAP Photoset</a> 96',
 '<a href="https://xhamster.com/photos/gallery/sexy-bbw-shows-off-her-assets-10908553"><img src="https://ic-ph-nss.xhcdn.com/a/YjZkY2U0MmVmZTAwNmJjYzYzNTY5ZjUzYmM4ZDVmMjA/jpeg/000/231/428/942_450.jpg"><br>Sexy BBW Shows off her Assets</a> 96',
 '<a href="https://xhamster.com/photos/gallery/bbw-wife-bit-tit-preview-10475239"><img src="https://ic-ph-nss.xhcdn.com/a/YjBmZjhkMDY3NmE3ZTRkNmUwYjBjYzY3MGRmNDg4MTI/jpeg/000/212/986/948_450.jpg"><br>BBW Wife Bit Tit Preview</a> 9',
@@ -234,21 +199,6 @@ var tipsList = [
 '<a href="https://xhamster.com/photos/gallery/sexy-bbw-pumped-pussy-and-big-ass-11650848"><img src="https://ic-ph-nss.xhcdn.com/a/NDEzMjZhYmIyOTU1NDUyMGFiYzlhNzQ2N2VjMWFjMDA/jpeg/000/266/205/947_450.jpg"><br>Sexy BBW Pumped Pussy and Big Ass</a> 116',
 '<a href="https://xhamster.com/photos/gallery/sexy-bbw-in-pink-panties-10621725"><img src="https://ic-ph-nss.xhcdn.com/a/ZDNiN2Q3ZmMzNzc3YWYxYWUxNDhjMjRhYjc2MzNlYzI/jpeg/000/218/808/111_450.jpg"><br>Sexy BBW in Pink Panties</a> 10',
 '<a href="https://xhamster.com/photos/gallery/my-creamy-pussy-10518167"><img src="https://ic-ph-nss.xhcdn.com/a/Y2EzOTg3N2I3MjFhNTQ0N2IxMWJmNDcxNDkxMjQyZDU/jpeg/000/214/689/066_450.jpg"><br>My Creamy Pussy</a> 1',
-'',
 ];
 lineHeader = ''
 lineTail = ''
-showRange = 60
-bookid = "hamsterfist"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

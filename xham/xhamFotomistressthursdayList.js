@@ -1,39 +1,4 @@
-<base target="_blank"><html><head><title>mistressthursday</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-img {max-width: 100%;}
-div {display:inline-block; width:50%; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number"></div>
-<span class="js-tip"></span>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotomistressthursdayList = [
 '<a href="https://xhamster.com/photos/gallery/watching-mommy-shower-amatuer-mature-milf-mistress-thursday-16147287"><img src="https://ic-ph-nss.xhcdn.com/a/ZGJhOGVlMGRiODZhMTQwZDA0MDk0NWM1MzQwZmIwZTU/jpeg/000/516/068/029_450.jpg"><br>Watching Mommy Shower -Amatuer Mature MILF Mistress Thursday</a> 8',
 '<a href="https://xhamster.com/photos/gallery/my-mommy-the-cocksucker-mature-huge-tits-mistress-thursday-16101382"><img src="https://ic-ph-nss.xhcdn.com/a/NjQzNmZiYmU2MWVmODkzZDYzNGRmODEyODVkYTJlNmU/jpeg/000/515/435/042_450.jpg"><br>My MOMMY The CockSUCKER  Mature Huge Tits Mistress Thursday </a> 77',
 '<a href="https://xhamster.com/photos/gallery/loves-a-mouth-full-of-big-cock-amateur-homemade-16162177"><img src="https://ic-ph-nss.xhcdn.com/a/ZDRmZjJiYzE0Y2ZlMTIwNjdlYTU3MmM5ZjAzZTgxZDk/jpeg/000/516/257/395_450.jpg"><br> Loves a Mouth Full of BIG Cock  Amateur Homemade </a> 77',
@@ -80,21 +45,6 @@ var tipsList = [
 '<a href="https://xhamster.com/photos/gallery/real-mommy-shows-big-tits-on-the-golf-course-in-out-public-16157307"><img src="https://ic-ph-nss.xhcdn.com/a/Y2NiNDcyMDcxMGI5NGMzMjcxYjJlOWU1ZjE2YjVmZTk/jpeg/000/516/186/340_450.jpg"><br>Real Mommy shows BIG TITS on the Golf Course In Out Public</a> 15',
 '<a href="https://xhamster.com/photos/gallery/huge-tit-step-mom-loves-pulling-out-her-huge-tits-to-play-16016656"><img src="https://ic-ph-nss.xhcdn.com/a/ZWE4YmQyMWUzOTE2NDc0YjM3ZDgzMDMyODdlZDgxNDg/jpeg/000/514/290/452_450.jpg"><br>HUGE TIT STEP-MOM loves pulling out her Huge Tits to play</a> 11',
 '<a href="https://xhamster.com/photos/gallery/huge-titted-mommy-makes-step-son-shoot-cum-in-her-face-15997753"><img src="https://ic-ph-nss.xhcdn.com/a/NDkxNjBiNzY1YzQ0YTk5ZDI4M2M5OTkzMTk3NGQ1NjM/jpeg/000/514/016/763_450.jpg"><br>Huge-Titted Mommy makes Step Son Shoot Cum in her Face</a> 10',
-'',
 ];
 lineHeader = ''
 lineTail = ''
-showRange = 46
-bookid = "mistressthursday"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

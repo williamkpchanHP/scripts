@@ -1,39 +1,4 @@
-<base target="_blank"><html><head><title>protocol</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-img {width: 100%;}
-div {display:inline-block; width:50%; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number"></div>
-<span class="js-tip"></span>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotoprotocolList = [
 '<a href="https://xhamster.com/photos/gallery/olivia-wilder-soles-and-holes-13860137"><img src="https://ic-ph-nss.xhcdn.com/a/YTIzNGU0MGI4YTJhNmI3MWY5Yzg0NzM3ZTVjMDQ1Mjg/jpeg/000/380/552/626_450.jpg"><br>Olivia Wilder Soles and Holes</a> 5',
 '<a href="https://xhamster.com/photos/gallery/veronica-valentine-latina-hottie-14048632"><img src="https://ic-ph-nss.xhcdn.com/a/ZDMzZmVhZDZkN2FhOTVhYTEyZDc4NzhmMzViMDlmZTM/jpeg/000/390/539/663_450.jpg"><br>Veronica Valentine Latina Hottie</a> 15',
 '<a href="https://xhamster.com/photos/gallery/uncontainable-ass-tierra-staxxx-14945010"><img src="https://ic-ph-nss.xhcdn.com/a/MWZlYjI4N2NjYTZjMzNjNTJkNTEyMmNmM2Y0MTgzY2U/jpeg/000/439/528/111_450.jpg"><br>Uncontainable Ass Tierra Staxxx</a> 15',
@@ -77,21 +42,6 @@ var tipsList = [
 '<a href="https://xhamster.com/photos/gallery/beauty-dupree-thick-junk-in-the-trunk-16120670"><img src="https://ic-ph-nss.xhcdn.com/a/NzNlYzlhN2QyNTY4NDI0MjcwMjc5OWU1MWM0YzI5MTM/jpeg/000/515/690/421_450.jpg"><br>Beauty Dupree Thick Junk In The Trunk</a> 14',
 '<a href="https://xhamster.com/photos/gallery/julatto-sexy-body-in-white-15920772"><img src="https://ic-ph-nss.xhcdn.com/a/Zjg5NTU4NmE1MDc1NzIzMzA5NTcwY2QxMDE5NDk4NjA/jpeg/000/512/603/531_450.jpg"><br>Ju&#039;Latto Sexy Body in White</a> 13',
 '<a href="https://xhamster.com/photos/gallery/cheeks-of-tierra-staxxx-14257300"><img src="https://ic-ph-nss.xhcdn.com/a/OGFiMmY0NGFhZDc4ZDBlN2RkM2IyODU0ZmY4MDdlZmQ/jpeg/000/401/919/402_450.jpg"><br>Cheeks of Tierra Staxxx</a> 11',
-'',
 ];
 lineHeader = '<div>'
 lineTail = '</div>'
-showRange = 60
-bookid = "protocol"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

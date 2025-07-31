@@ -1,39 +1,4 @@
-<base target="_blank"><html><head><title>athiel0208</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-img {width: 100%;}
-div {display:inline-block; width:50%; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number"></div>
-<span class="js-tip"></span>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotoathiel0208List = [
 '<a href="https://xhamster.com/photos/gallery/ms-natural-15343228"><img src="https://ic-ph-nss.xhcdn.com/a/NjUzZWUyODVmZTE2MzU1YTAxNTg1YmY1NjNjMDgxZGE/jpeg/000/461/567/316_450.jpg"><br>Ms. Natural </a> 53',
 '<a href="https://xhamster.com/photos/gallery/hairy-armpits-girlfriend-11947995"><img src="https://ic-ph-nss.xhcdn.com/a/MGU1YTRjYmY0NDBmMThiNGMyMWY4NzRkZTZmMmZhNzg/jpeg/000/282/516/674_450.jpg"><br>Hairy armpits girlfriend </a> 5',
 '<a href="https://xhamster.com/photos/gallery/sexy-cloths-14031886"><img src="https://ic-ph-nss.xhcdn.com/a/M2ZmNGE5N2U4MzQ5MjE5MTllNmUwOGUwNzFjZjMyMGI/jpeg/000/393/683/027_450.jpg"><br>Sexy cloths </a> 49',
@@ -52,21 +17,6 @@ var tipsList = [
 '<a href="https://xhamster.com/photos/gallery/just-showing-off-14002380"><img src="https://ic-ph-nss.xhcdn.com/a/NjE1MTFjNzg3ZmQ1NWI1ZGZlYzFlZjExZDZlZmY5ODg/jpeg/000/388/195/074_450.jpg"><br>Just showing off :-)</a> 20',
 '<a href="https://xhamster.com/photos/gallery/ladybug-15512920"><img src="https://ic-ph-nss.xhcdn.com/a/YTBjNzNlNzA5NTA0ZDM5YzNkZDZjNjMxOTA0M2M4Y2E/jpeg/000/471/047/874_450.jpg"><br>Ladybug</a> 13',
 '<a href="https://xhamster.com/photos/gallery/bored-15734617"><img src="https://ic-ph-nss.xhcdn.com/a/M2NhYjI2YzA3NTQwZmYyNTVmNDAwZDNkNzQ3NGM3Njg/jpeg/000/483/815/836_450.jpg"><br>Bored</a> 12',
-'',
 ];
 lineHeader = '<div>'
 lineTail = '</div>'
-showRange = 60
-bookid = "athiel0208"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>

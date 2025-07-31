@@ -1,39 +1,4 @@
-<base target="_blank"><html><head><title>aliprecio</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-</head>
-<style>
-body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-img {max-width: 100%;}
-div {display:inline-block; width:50%; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<div class="tip-number"></div>
-<span class="js-tip"></span>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-var tipsList = [
-'',
+var xhamFotoaliprecioList = [
 '<a href="https://xhamster.com/photos/gallery/my-open-ass-after-an-anal-creampie-15914882"><img src="https://ic-ph-nss.xhcdn.com/a/Y2E1OTZlZmUyNGM2MTFmMGY4YzhhYmQ2OTZmNDdhM2Y/jpeg/000/512/468/242_450.jpg"><br>MY OPEN ASS AFTER AN ANAL CREAMPIE</a> 9',
 '<a href="https://xhamster.com/photos/gallery/stunning-my-new-tights-and-showing-my-pussy-and-ass-for-you-16101875"><img src="https://ic-ph-nss.xhcdn.com/a/MTM3Yjk2YmIxZjkwMmFkYzFlYThjNDVlZDI2ZTBkNTk/jpeg/000/515/441/011_450.jpg"><br>STUNNING MY NEW TIGHTS AND SHOWING MY PUSSY AND ASS FOR YOU</a> 8',
 '<a href="https://xhamster.com/photos/gallery/my-ass-hurts-get-that-black-out-of-my-ass-already-16002165"><img src="https://ic-ph-nss.xhcdn.com/a/M2QwZTIxZDVhZGRmMTA4YTYxMzg3MjJkODk4NmUzOWU/jpeg/000/514/089/233_450.jpg"><br>MY ASS HURTS, GET THAT BLACK OUT OF MY ASS ALREADY</a> 25',
@@ -195,21 +160,6 @@ var tipsList = [
 '<a href="https://xhamster.com/photos/gallery/anal-gaped-by-huge-black-thing-16002098"><img src="https://ic-ph-nss.xhcdn.com/a/OTMzM2Y4YTA2ZTcyMzg4ZDM0ZjZhNjk0ZDVkYzc1YWE/jpeg/000/514/088/439_450.jpg"><br>ANAL GAPED BY HUGE BLACK THING</a> 10',
 '<a href="https://xhamster.com/photos/gallery/anal-fun-with-huge-dildos-in-my-ass-15978983"><img src="https://ic-ph-nss.xhcdn.com/a/YmI3MDc4MzY0NWI4YmYwZjQwZWExZjJiNzg3NTM5NGI/jpeg/000/513/732/661_450.jpg"><br>ANAL FUN WITH HUGE DILDOS IN MY ASS</a> 10',
 '<a href="https://xhamster.com/photos/gallery/a-huge-10-inch-black-dildo-penetrates-into-my-small-pussy-16124534"><img src="https://ic-ph-nss.xhcdn.com/a/YTg1MTQyYmFiNTU5MGViODUwNDQyNDgyODNlNDk1ZTY/jpeg/000/515/741/640_450.jpg"><br>A HUGE 10 INCH BLACK DILDO PENETRATES INTO MY SMALL PUSSY</a> 10',
-'',
 ];
 lineHeader = ''
 lineTail = ''
-showRange = 60
-bookid = "aliprecio"
-initSelectRange = 100000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-topicLength = tipsList.length
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-</body>
-</html>
