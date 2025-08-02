@@ -27,8 +27,8 @@ for(i in 1:length(txtfile)){
   imgURLs = unlist(strsplit(imgline, "w,"))
   lastImg = imgURLs[length(imgURLs)]
   lastImg = gsub(' https', 'https', lastImg)  # remove first space character
-  lastImg = gsub(' .*', '">', lastImg)  # remove space character and after
-  lastImg = gsub('https', '<img src="https', lastImg)  # remove first space character
+  lastImg = gsub(' .*', '">\',', lastImg)  # remove space character and after
+  lastImg = gsub('https', '\'<img src="https', lastImg)  # remove first space character
 
   wholePage = c(wholePage, lastImg)
 }
