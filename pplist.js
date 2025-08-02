@@ -311,6 +311,8 @@ function loadArray(filename) {
     url = "xham/"+filename+".js"
   }else if(filename.substring(0, 7) == "pornhub"){
     url = "pohub/"+filename+".js"
+  }else if(filename.substring(0, 6) == "tumblr"){
+    url = "tumbler/"+filename+".js"
   }else{
     url = filename + ".js"
   }
@@ -422,7 +424,7 @@ function showLongTopic() {
   var pointer = topicNo;
   topic = questionList[pointer];
   tipsNamesubstr = tipsListName.substring(0, 7)
-    if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic" || tipsNamesubstr === "xhamFot"|| tipsNamesubstr === "xhamVid" || tipsNamesubstr === "pornhub"|| tipsNamesubstr === "SEXYPIC"|| tipsNamesubstr === "xhamste") {
+    if (tipsNamesubstr === "archive" || tipsNamesubstr === "nudexxx" || tipsNamesubstr === "pornpic" || tipsNamesubstr === "xhamFot"|| tipsNamesubstr === "xhamVid" || tipsNamesubstr === "pornhub"|| tipsNamesubstr === "SEXYPIC"|| tipsNamesubstr === "tumblr*"|| tipsNamesubstr === "xhamste") {
     topic = lineHeader + topic + lineTail
   }
   fullTopic = fullTopic +"<br>"+ topic
