@@ -329,4 +329,6 @@ const optionsArray = [
 'pornpicsraventac',
 'pornpicsmelaniehicks',
 'pornhubcinematickink',
+'pornpicsmelodywylde',
+'pornpicslexistone',
 ]
