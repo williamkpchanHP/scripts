@@ -1,6 +1,6 @@
 # procedures:
 # save the source string in text file: imgSrcfile.txt
-# usr r to process file
+# use r to process file
 
 # strsplit the img tags
 # extract img lines
