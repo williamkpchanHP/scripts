@@ -42,7 +42,7 @@ jstai11 = "];"
 jstai12 = "lineHeader = '<img src=\"https://64.media.tumblr.com/'"
 jstai13 = "lineTail = '.jpg\">'"
 
-wholePage = gsub("https://64.media.tumblr.com/", "", wholePage)
+#wholePage = gsub("https://64.media.tumblr.com/", "", wholePage)
 
 outFilename = paste0("tumblr_", outFilename, ".js")
 sink(outFilename)
