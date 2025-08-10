@@ -9,15 +9,30 @@
 # strsplit by w,
 # extract last line
 
+# note to extracy video, look for "791348874533076992" and the link with it
+rm(list = ls())
+
 workpath = "C:/Users/william/Desktop/scripts/tumbler"
 setwd(workpath)
-
+cat("\n\n\n")
 cat("\nopen tumble archive, open devtools, copy source string contents,\npaste into srcfile.txt and go ahead!!\n")
 inputFile = "imgSrcfile.txt"
+srcFile = readline("enter src file name without extension, press enter for default: imgSrcfile.txt : ")
+
+if(srcFile != ""){
+  inputFile = paste0(srcFile, ".txt")
+}
+cat(yellow("inputFile: ",inputFile, "\n"))
+
 txtfile <- readLines(inputFile)
+cat(yellow(inputFile, " original line numbers: ", length(txtfile),"\n"))
+
 txtfile <- unlist(strsplit(txtfile, "<img"))
+cat(yellow(inputFile, " after split line numbers: ", length(txtfile),"\n"))
+
 imgIdx <- grep("srcset", txtfile)
 txtfile = txtfile[imgIdx]
+cat(yellow(inputFile, " after grep srcset line numbers: ", length(txtfile),"\n"))
 
 wholePage = character()
 for(i in 1:length(txtfile)){
@@ -26,8 +41,11 @@ for(i in 1:length(txtfile)){
 
   imgURLs = unlist(strsplit(imgline, "w,"))
   lastImg = imgURLs[length(imgURLs)]
-  lastImg = gsub(' https', 'https', lastImg)  # remove first space character
+  #lastImg = gsub('^.*? https', 'https', lastImg)  # remove first space character
+  lastImg = sub(".*?(https.*)", "\\1", lastImg)  # remove first space character
+
   lastImg = gsub(' .*', '">\',', lastImg)  # remove space character and after
+#cat(lastImg, "\n")
   lastImg = gsub('https', '\'<img src="https', lastImg)  # remove first space character
 
   wholePage = c(wholePage, lastImg)
