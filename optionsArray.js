@@ -331,7 +331,4 @@ const optionsArray = [
 'pornpicsmelodywylde',
 'pornpicslexistone',
 'pornpicshotnakedwomen',
-'tumblr_arcangel.js',
-'tumblr_arcangel.js',
-'tumblr_arcangel.js',
 ]

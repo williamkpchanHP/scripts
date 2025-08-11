@@ -11,6 +11,7 @@
 
 # note to extracy video, look for "791348874533076992" and the link with it
 rm(list = ls())
+library(crayon)
 
 workpath = "C:/Users/william/Desktop/scripts/tumbler"
 setwd(workpath)
