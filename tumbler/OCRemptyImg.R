@@ -6,6 +6,7 @@ library(crayon)
 library(httr)
 library(tesseract)
 
+timeList = numeric()
 # URL of the image
 image_url <- "https://66.media.tumblr.com/tumblr_m40q65pLrN1r8xqlio1_1280.jpg"
 
@@ -51,7 +52,7 @@ setwd(workpath)
 cat("\n\n\n")
 cat("\nperform OCR to detect the text 'guideline'\n")
 
-inputFile = "tumblrList.js"
+inputFile = "testimg.txt"
 txtfile <- readLines(inputFile)
 
 # clean file
@@ -64,23 +65,36 @@ txtfile = gsub('">.*', "", txtfile)
 # begin exam
 rmIdx = numeric(0)
 
-for(linNo in 1:length(txtfile)){
+totalLen = length(txtfile)
+for(linNo in 1:totalLen){
   url = txtfile[linNo]
-  cat("\n", linNo, url)
+  cat("\n", linNo, "of", totalLen, url)
+  start_time <- Sys.time()
 
   chkresult = chkEmptyImg(url)
   if(chkresult == "y"){
     rmIdx = c(rmIdx, linNo)
   }
+  end_time <- Sys.time()
+  elapsed_time <- end_time - start_time
+  rounded_time <- round(as.numeric(elapsed_time), 2)
+
+  cat(", Time:", rounded_time, "s")
+  timeList = c(timeList, rounded_time)
 }
 
 cat(yellow("\nJob complete! Total empty images: ", length(rmIdx), "\n"))
 
 txtfile = txtfile[-rmIdx]
+txtfile = paste0("'<img src=\"", txtfile, "\">',")
+
 
 outputfile = "tumblrListBackup.js"
 sink(outputfile)
  cat(txtfile, sep="\n")
 sink()
 
-cat(red(outputfile, " is saved!"))
+maxTime = max(timeList)
+minTime = min(timeList)
+
+cat(red(outputfile, " is saved!"), " maxTime: ", maxTime," minTime: ", minTime)
