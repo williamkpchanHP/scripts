@@ -36,7 +36,7 @@ fetchUserFotos = function(userName){
      stop(red("\nAlready Listed in xhamFotoBatHist.txt History!: ", historyIdx, "\n"))
   }
 
-  cat(red(url, "\n"))
+  cat(red("url: ",url, "\n"))
   pagesource <- read_html(url)
   lastPageclassName = ".xh-paginator-button, .page-button-link"
   lastPageNum <- html_nodes(pagesource, lastPageclassName)
@@ -49,31 +49,28 @@ fetchUserFotos = function(userName){
 
   addr=1:lastPageNum
   lentocpage = lastPageNum
-  cat("\ntotal album container pages: ",lentocpage,"\n")
+  cat("\nAlbum container pages: ",lentocpage,"\n")
   cat(format(Sys.time(), "%H:%M:%OS"),"\n")
 
 
   for(i in addr){
-   cat(i, "of", length(addr), " ")
+   cat("\n",i, "of", length(addr), " ")
    if(i==1){
      url = paste0(userHeader, userName, "/photos/")
    }else{
      url = paste0(userHeader, userName, "/photos/", i)
    }
 
-   cat("url:",url, "\n")
+   cat("url: ",url, "\n")
    pagesource <- readLines(url)
    targetLineIdx = grep(lineSignature, pagesource)
    targetLine = pagesource[targetLineIdx]
    targetLine = gsub('^.*userGalleriesCollection":', '', targetLine )
-   targetLine = gsub(',"favoritesGalleryCollection.*', '', targetLine)
-   targetLine = gsub(',"pagination".*', '', targetLine)
- 
-  # writeClipboard(targetLine)
-   targetLineDf = fromJSON(targetLine)
+   targetLine = gsub(',"maxPhotoPages.*', '', targetLine)
 
-   # "icon":"friends", "privacy":1,
-   # "icon":"lock",
+   targetLineDf = fromJSON(targetLine)
+cat("\nlength targetLineDf: ", length(targetLineDf))
+
    if("icon" %in% colnames(targetLineDf)){
     privacy = unlist(targetLineDf["icon"])
     rmIdx = grep("friends|lock", privacy)
@@ -95,10 +92,10 @@ fetchUserFotos = function(userName){
     result = paste0('<div><a href="', links, '"><img src="', imgSrc, '"><br>', linksTxt, '</a></div>')
    }
 
-   cat("length(resut): ", length(result), "\n")
+   cat("\n\nlength(resut): ", length(result), "\n")
    wholePage <<- c(wholePage, result)
    allLinks <<- c(allLinks, links)
-
+   cat("\nlength allLinks: ", length(allLinks))
    if(i == 10){
      ProcessEndTime = Sys.time()
      LoopTime = as.numeric(ProcessEndTime - ProcessStartTime, units="secs")
@@ -112,6 +109,7 @@ fetchUserFotos = function(userName){
    }
   }
   #saveFile(userName)
+  cat("\n\nfetchUserFotos complete! ", length(allLinks))
 }
 
 saveFile = function(userName){
@@ -151,7 +149,8 @@ saveFile = function(userName){
   LoopTime = trunc(as.numeric(ProcessEndTime - ProcessStartTime, units="secs"))
   cat("Task completed! loop time: ", dhms(LoopTime),"\n\n\n")
   cat(red(theFilename, "created!", "Total links: ", length(wholePage), "\n"))
-  cat(yellow("Total links: ", length(allLinks), " in file: ", paste0(userName, "allLinks.txt")))
+  cat(yellow("Total links: ", length(allLinks), " save in file: ", paste0(userName, "allLinks.txt\n")))
+  cat(red("Please fetch all images using the allLinks.txt"))
 }
 
 # main loop
@@ -162,9 +161,10 @@ userHeader = character()
 
 modetype = readline("batch mode or single user? 0/1 ")
 if(modetype=="1"){
-  userName = "olderwomanfun"
+  userName = "nenagamer"
   userName = readline(prompt="enter userName: ")
   userOrCreat = readline(prompt="pornstars, user or creator? 0/1/2: ")
+
   if(userOrCreat==0){
     userHeader="https://xhamster.com/pornstars/"
   }else if(userOrCreat==1){
@@ -174,6 +174,7 @@ if(modetype=="1"){
   }
   ProcessStartTime <<- Sys.time()
   wholePage = character()
+  cat(yellow("\n\nuserHeader: ", userHeader, "\n\n\n"))
   fetchUserFotos(userName)
 }else{
   batchFilename = readline("enter short file name, press enter for default, batchurl.txt: ")

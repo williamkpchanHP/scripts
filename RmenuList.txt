@@ -38,20 +38,20 @@ C:\Users\william\Desktop\scripts\	stdExtXvideo.R
 C:\Users\william\Desktop\scripts\	stdRvestXvideo.R
 C:\Users\william\Desktop\scripts\	stdRvestXvideos.Pornstars.R
  	 
-C:\Users\william\Desktop\scripts\	stdRvestBatchXhamsterVideos.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterAlbumFoto.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterAllCreators.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterAllStarVideos.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterBatchAlbumFoto.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterBatchAlbumFotoNew.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterChannels.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterGrpVideos.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterPornstar.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterPornstarVideos.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterRelatedVideos.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterUserGrpPhotos.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterUsersVideos.R
-C:\Users\william\Desktop\scripts\	stdRvestXhamsterVideos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestBatchXhamsterVideos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterAlbumFoto.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterAllCreators.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterAllStarVideos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterBatchAlbumFoto.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterBatchAlbumFotoNew.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterChannels.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterGrpVideos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterPornstar.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterPornstarVideos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterRelatedVideos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterUserGrpPhotos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterUsersVideos.R
+C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterVideos.R
  	 
 C:\Users\william\Desktop\scripts\pornpics\	collectPornpicImgFromXhrFile.r
 C:\Users\william\Desktop\scripts\pornpics\	collectPornpicXhr.r
