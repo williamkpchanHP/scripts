@@ -201,7 +201,7 @@ assembly = gsub("</div>", "',", assembly)
 assembly = gsub("<k>", "'<k>", assembly)
 assembly = gsub("</k>", "</k>',", assembly)
 
-asmFilename = paste0("xhamFoto ",batchFilename, length(assembly), ".html")
+asmFilename = paste0("xhamFoto",batchFilename, length(assembly), ".js")
 
 setwd("C:/Users/william/Desktop/scripts/xham")
   sink(asmFilename)
