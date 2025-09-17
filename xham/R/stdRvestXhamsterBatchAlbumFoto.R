@@ -173,24 +173,15 @@ cat(format(Sys.time(), "%H:%M:%OS"),"\n")
 # main loop here
 urllen = length(urls)
 for(k in 1:urllen){
-  cat(pink("\n",k, " of total", urllen, "albums\n"))
+  cat(pink("\n",k, " of total"), red(urllen), "albums\n"))
   collectImages(urls[k])
 }
 
 #writeClipboard(assembly)
 setwd("C:/Users/william/Desktop/scripts/xham/R")
-templateHead = readLines("templateHeadArrayXhamFoto.txt")
-templateTail = readLines("templateTailArrayXhamFoto.txt")
-templateHead = gsub("penny-barber", paste0(titleName, ": ",length(assembly)), templateHead)
-templateTail = gsub("penny-barber", paste0(titleName, ": ",length(assembly)), templateTail)
-templateHead = gsub("img \\{width", "img {max-width", templateHead)
-
-if(length(assembly)<60){
-  showRangeIdx = grep("showRange", templateTail)
-  templateTail[showRangeIdx] = paste0("showRange = ",length(assembly))
-}
-
-templateTail = gsub("penny-barber", paste0(titleName, ": ",length(assembly)), templateTail)
+templateHead = paste0("var ", "xhamFoto", batchFilename, length(assembly), " = [" )
+templateTail = paste0("];\n", "lineHeader = '<img src=\"https://ic-ph-nss.xhcdn.com/a/'\n",
+   "lineTail = '_1000.jpg\">'\n"
 
 assembly = gsub('<img src="https://ic-ph-nss.xhcdn.com/a/', "", assembly)
 assembly = gsub('_1000.jpg">', "", assembly)
@@ -198,8 +189,6 @@ assembly = gsub('_1000.jpg">', "", assembly)
 assembly = gsub("'", ".", assembly)
 assembly = gsub("<div>", "'", assembly)
 assembly = gsub("</div>", "',", assembly)
-assembly = gsub("<k>", "'<k>", assembly)
-assembly = gsub("</k>", "</k>',", assembly)
 
 asmFilename = paste0("xhamFoto",batchFilename, length(assembly), ".js")
 

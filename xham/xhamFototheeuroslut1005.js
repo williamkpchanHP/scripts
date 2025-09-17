@@ -1,46 +1,4 @@
-<base target="_blank"><html><head><title>theeuroslutBatch: 1005</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
-<script src='../mainscript.js'></script>
-
-</head>
-<style>
-body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
-video {width: 60%;}
-div {display:inline-block; width:100%; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
-<div class="tip-number" onclick="forward()" ondblclick="randomNum()">theeuroslutBatch: 1005</div>
-<br>
-<pre class="js-tip"></pre>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-// List of JavaScript tips
-var tipsList = [
-'',
+var xhamFototheeuroslut1005 = [
 '<k>https://xhamster.com/photos/gallery/euroslut-presents-her-big-steroid-enhanced-clit-for-you-10993824</k>',
 'OWFkMjAwOGIzZWJjZTFhYmFjNmJlNjQxODU2YzI0ZmY/jpeg/000/235/394/852',
 'Y2YzYzcxMzcyY2I4YjA5ZmNjZDM5ZWJkMWQzYjc3MmI/jpeg/000/235/394/873',
@@ -1046,22 +1004,6 @@ var tipsList = [
 'MzU4MGQ1MDE3MjdiYTE0Yzc0OTk5NGE2MjJiM2Y2MWY/jpeg/000/239/380/527',
 'ODcxMzE4NjZhYTcyYjYyZjcwMzkxNDQxODRjMDk3ZWU/jpeg/000/239/380/522',
 'NTFjMGRkYzc4YjM1YmNhNDAzMzc3NDY0NDU5OTEyM2I/jpeg/000/239/380/517',
-'',
 ];
 lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
 lineTail = '_1000.jpg">'
-showRange = 60
-bookid = "theeuroslutBatch: 1005"
-initSelectRange = 30000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-
-</body>
-</html>
-

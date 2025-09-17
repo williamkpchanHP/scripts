@@ -1,46 +1,4 @@
-<base target="_blank"><html><head><title>dirtylady007Batch: 579</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
-<script src="https://williamkpchanhp.github.io/LibDocs/literature/proverbs.js"></script>
-<script src='../mainscript.js'></script>
-
-</head>
-<style>
-body { background-color: black; font-size: 18px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
-
-.tip { width: 100%;}
-.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
-.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
-.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
-.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
-.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
-a { text-decoration: none; color: #487878;}
-a:visited { color: #784838;}
-A:hover {	color: yellow;}
-A:focus {	color: red;}
-code { color: #488838;; background-color: #001010; font-size: 18px;}
-pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
-pre img {max-width: 100%; display: block; margin-left: auto; margin-right: auto;}
-video {width: 60%;}
-div {display:inline-block; width:100%; vertical-align:text-top;}
-</style>
-
-<body onkeypress="chkKey()">
-<br>
-<span id="dateAndTime" onclick="showDateAndTime()"><script>showDateAndTime();</script></span>
-<div class="tip-number" onclick="forward()" ondblclick="randomNum()">dirtylady007Batch: 579</div>
-<br>
-<pre class="js-tip"></pre>
-<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
-<br>
-
-<br>
-<script>
-// List of JavaScript tips
-var tipsList = [
-'',
+var xhamFotodirtylady007579 = [
 '<k>https://xhamster.com/photos/gallery/sit-on-my-strapon-babe-11588675</k>',
 'MGFiZGZhOTdkOGFmMTg4YTljOTc1ZDdkYjQ2ZDE0Y2M/jpeg/000/263/183/010',
 'MDczMmNhMWMzYjRlZmQxZDE4OWYxMWIyZTg0OTA1YmM/jpeg/000/263/183/005',
@@ -620,22 +578,6 @@ var tipsList = [
 'NDk4ODUxNGExZjVhNmZjMzNkNGNlNTc2ODU0YmEyZTI/jpeg/000/264/477/096',
 '<k>https://xhamster.com/photos/gallery/beautiful-christmas-gift-15772396</k>',
 'M2ViNDVmNjRmODE1YjZkYjI2NDk5ZjUxN2ZmYjcwMDE/jpeg/000/485/977/776',
-'',
 ];
 lineHeader = '<img src="https://ic-ph-nss.xhcdn.com/a/'
 lineTail = '_1000.jpg">'
-showRange = 60
-bookid = "dirtylady007Batch: 579"
-initSelectRange = 30000
-showSrcSwitch = true
-noShuffle = true;
-showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
-</script>
-
-<script src='https://williamkpchan.github.io/showTips.js'></script>
-<script src='showLongTips.js'></script>
-
-
-</body>
-</html>
-
