@@ -272,9 +272,21 @@ function useChosen() {
   loadArray(tipsListName)
 }
 
-function randommyChoice() {
-  ArrayPtr = Math.floor(Math.random() * optionsArray.length);
-  tipsListName = myChoice.options[ArrayPtr].text // first to know the question name
+
+function randommyFav() {  // choose not from favList
+  let favList = JSON.parse(localStorage.getItem('favList')) || [];
+  ArrayPtr = Math.floor(Math.random() * favList.length);
+  tipsListName = favList[ArrayPtr]
+  $("#totalLen").html(tipsListName);
+  loadArray(tipsListName)
+}
+
+function randommyChoice() {  // choose not from favList
+  let favList = JSON.parse(localStorage.getItem('favList')) || [];
+  let resultArray = optionsArray.filter(item => !favList.includes(item));
+
+  ArrayPtr = Math.floor(Math.random() * resultArray.length);
+  tipsListName = resultArray[ArrayPtr]
   $("#totalLen").html(tipsListName);
   loadArray(tipsListName)
 }
