@@ -173,7 +173,7 @@ cat(format(Sys.time(), "%H:%M:%OS"),"\n")
 # main loop here
 urllen = length(urls)
 for(k in 1:urllen){
-  cat(pink("\n",k, " of total"), red(urllen), "albums\n"))
+  cat(pink("\n",k, " of total"), red(urllen), "albums\n")
   collectImages(urls[k])
 }
 
@@ -181,7 +181,7 @@ for(k in 1:urllen){
 setwd("C:/Users/william/Desktop/scripts/xham/R")
 templateHead = paste0("var ", "xhamFoto", batchFilename, length(assembly), " = [" )
 templateTail = paste0("];\n", "lineHeader = '<img src=\"https://ic-ph-nss.xhcdn.com/a/'\n",
-   "lineTail = '_1000.jpg\">'\n"
+   "lineTail = '_1000.jpg\">'\n")
 
 assembly = gsub('<img src="https://ic-ph-nss.xhcdn.com/a/', "", assembly)
 assembly = gsub('_1000.jpg">', "", assembly)

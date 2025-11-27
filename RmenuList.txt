@@ -43,7 +43,6 @@ C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterAlbumFoto.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterAllCreators.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterAllStarVideos.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterBatchAlbumFoto.R
-C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterBatchAlbumFotoNew.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterChannels.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterGrpVideos.R
 C:\Users\william\Desktop\scripts\xham\R\	stdRvestXhamsterPornstar.R
