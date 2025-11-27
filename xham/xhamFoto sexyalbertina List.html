@@ -1,0 +1,114 @@
+<base target="_blank"><html><head><title>sexyalbertina</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://williamkpchan.github.io/maincss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.js"></script>
+</head>
+<style>
+body { background-color: black; font-family: 'Patrick Hand', sans-serif; font-size: 24px; color: gray; justify-content: center; align-content: center; width: 100%; margin-left: 0%;}
+
+.tip { width: 100%;}
+.code { background-color: #000500; border-radius: 8px; border: 1px solid DarkSlateGray; padding: 5px; }
+.tip-number { margin: auto; color: #20A020; text-transform: uppercase; letter-spacing: 0.1rem; font-weight: bolder; font-size: 26px;}
+.js-tip, .cssTip, .cssExplain { margin: auto; padding: 2px 2px; font-size: 24px; line-height: 1.5;}
+.tip-button { background-color: #003020; outline: none; padding: 10px 10px; display: inline-block; margin: auto; font-size: 1rem; margin-top: 2.5rem; cursor: pointer; font-weight: bolder; border: none; border-radius: 8px; color: #10C030;}
+.disabled { background-color: #D8D8D8 !important; color: #888; cursor: not-allowed !important;}
+a { text-decoration: none; color: #487878;}
+a:visited { color: #784838;}
+A:hover {	color: yellow;}
+A:focus {	color: red;}
+code { color: #488838;; background-color: #001010; font-size: 18px;}
+pre { color: gray; background-color: #000500; font-size: 24px; width:100%; white-space: pre-wrap; background-image:inherit;}
+img {width: 100%;}
+div {display:inline-block; width:50%; vertical-align:text-top;}
+</style>
+
+<body onkeypress="chkKey()">
+<br>
+<div class="tip-number"></div>
+<span class="js-tip"></span>
+<button class="tip-button" onclick="forward()">Tips Left: <span class="tip-limit-count"></span></button>
+<br>
+
+<br>
+<script>
+var tipsList = [
+'',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-ony-tattooed-and-pierced-babes-16226247"><img src="https://ic-ph-nss.xhcdn.com/a/MjZiOWM1ZDdlMmZiYTkzY2ViNWNlYWNkY2EwNTUyODc/jpeg/000/517/025/820_450.jpg"><br>My Sexy Piercings - ony tattooed and pierced babes</a> 9<br>',
+'<a href="https://xhamster.com/photos/gallery/check-out-my-sexy-piercings-and-tattoos-16119889"><img src="https://ic-ph-nss.xhcdn.com/a/MGNmNTQwMTFiNDNkNDJlNDM0MjI4MjRhZjI0MmY2MTY/jpeg/000/515/680/238_450.jpg"><br>Check out my sexy piercings and tattoos</a> 9<br>',
+'<a href="https://xhamster.com/photos/gallery/check-out-my-sexy-piercings-and-tattoos-16116730"><img src="https://ic-ph-nss.xhcdn.com/a/MmM0NmQzNDkwNWY2NTVhYzU3YmEzYWRjZTRmNDkzZjU/jpeg/000/515/640/069_450.jpg"><br>Check out my sexy piercings and tattoos</a> 9<br>',
+'<a href="https://xhamster.com/photos/gallery/milf-flashing-in-a-park-mymilfexposed-com-16116246"><img src="https://ic-ph-nss.xhcdn.com/a/ODgzNDZlNjM1MWU1YjQyMWVlNmY0NGVkYTZkZTBmZmU/jpeg/000/515/632/865_450.jpg"><br>MILF Flashing in a park - MyMILFexposed.com </a> 80<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-outdoor-flasghing-16116719"><img src="https://ic-ph-nss.xhcdn.com/a/OWY3YWMzZDE4MjkzMjNkOGJkYTk5MDc0MzE1Yjg5YmE/jpeg/000/515/639/852_450.jpg"><br>My MILF Exposed - Outdoor flasghing </a> 8<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-swedish-horny-wife-16141759"><img src="https://ic-ph-nss.xhcdn.com/a/OTUyMWZlZjYyOTUxZjMwNTYyYjQ4NjEzYzI1OTc1OTg/jpeg/000/516/002/532_450.jpg"><br>My MILF Exposed - Swedish horny wife</a> 43<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-she-loves-to-tease-16123134"><img src="https://ic-ph-nss.xhcdn.com/a/MTQyMGNkNWEyMmQzNTUzZjI5MGZmYzg1N2M0MDhjMmI/jpeg/000/515/722/330_450.jpg"><br>My MILF Exposed - she loves to tease</a> 41<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-bit-of-public-flashing-16123136"><img src="https://ic-ph-nss.xhcdn.com/a/MDNlZjQzNmI1NGE1ZDRhYmQ4OWYzMmUyOWNiOTMzYmI/jpeg/000/515/722/346_450.jpg"><br>My MILF Exposed - bit of public flashing</a> 39<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-pantyhose-wife-16123137"><img src="https://ic-ph-nss.xhcdn.com/a/YzAyNzE0ZTRmZDVmYTI3ZTQyY2MzOWM4MjYyYWE1NzY/jpeg/000/515/722/413_450.jpg"><br>My MILF Exposed - pantyhose wife</a> 37<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-happy-wife-16141755"><img src="https://ic-ph-nss.xhcdn.com/a/Y2RmODU5ODU4MDU5YmQ4NjExN2ExYTczYzdkN2RkNTY/jpeg/000/516/002/351_450.jpg"><br>My MILF Exposed - Happy wife</a> 37<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-czech-wife-mymilfexposed-com-16116245"><img src="https://ic-ph-nss.xhcdn.com/a/MjNlZjc0MDJjNWViMDBiMTMwZjUzMDgzZWIzZmJkMWY/jpeg/000/515/632/793_450.jpg"><br>My MILF Exposed - My Czech wife - MyMILFexposed.com</a> 35<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-wife-in-stockings-16132470"><img src="https://ic-ph-nss.xhcdn.com/a/YzQ3MjNjNDkxYWY2NTNjNjM0YzIxNWU2ZmExNGE1ZTQ/jpeg/000/515/842/886_450.jpg"><br>My MILF Exposed My wife in stockings</a> 32<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-kinky-wife-loves-sex-16141752"><img src="https://ic-ph-nss.xhcdn.com/a/MzgwM2I2Y2M0NGJhNDYwNzc5YjMzZjBhOGFmZTM2YWU/jpeg/000/516/002/165_450.jpg"><br>My MILF Exposed - Kinky wife loves sex</a> 30<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-stripper-wife-giving-a-little-preview-16153757"><img src="https://ic-ph-nss.xhcdn.com/a/NjAxZDkzMTA4ZmIxZjljZmVkYjQ0MmY0ZjNmMTUxNTY/jpeg/000/516/146/109_450.jpg"><br>My MILF Exposed - My stripper wife giving a little preview </a> 29<br>',
+'<a href="https://xhamster.com/photos/gallery/my-trophy-wife-16153758"><img src="https://ic-ph-nss.xhcdn.com/a/YmJjZWM3ZTQ1MjRlYzM0ZjMwMzYyYzA3NjI4M2UyMDI/jpeg/000/516/146/149_450.jpg"><br>My Trophy wife</a> 27<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-swinger-couple-16123133"><img src="https://ic-ph-nss.xhcdn.com/a/OTQ4ZWI5NzkyM2U0Y2RlMzM5MDIxNGY1MWFkNDFlMDM/jpeg/000/515/722/276_450.jpg"><br>My MILF Exposed - swinger couple </a> 23<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-shy-country-girl-16141753"><img src="https://ic-ph-nss.xhcdn.com/a/NTNiZmQ3M2NjM2E1ZTgzNGMxZDM1M2VjMmIwYmY5M2M/jpeg/000/516/002/232_450.jpg"><br>My MILF Exposed - Shy country girl </a> 23<br>',
+'<a href="https://xhamster.com/photos/gallery/my-wife-on-the-beach-16153765"><img src="https://ic-ph-nss.xhcdn.com/a/YWZiMzgwZjA3YzE1NjVhNzhkNWFlZWQzYjYyZTQ2NTM/jpeg/000/516/146/208_450.jpg"><br>My wife on the beach</a> 22<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-hot-sexy-wife-ready-to-go-16116722"><img src="https://ic-ph-nss.xhcdn.com/a/OTU0ZjJmNGYwMDg2MGM5ZjY5YWRhODRlZGEwNGM4ZGQ/jpeg/000/515/639/909_450.jpg"><br>My MILF Exposed - My hot sexy wife ready to go</a> 21<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-busty-wife-16141756"><img src="https://ic-ph-nss.xhcdn.com/a/NDVkMTI4YWQ0OGNjMDE5ZTc3MzgxMWM1MmYzNDEwZTY/jpeg/000/516/002/414_450.jpg"><br>My MILF Exposed - My busty wife</a> 21<br>',
+'<a href="https://xhamster.com/photos/gallery/mymilfexposed-tanned-mom-mymilfexposed-com-16116249"><img src="https://ic-ph-nss.xhcdn.com/a/MWQwYjM3NzNmZmJhYzUyZGI2ODkzN2NhOTQwODIyMzA/jpeg/000/515/633/048_450.jpg"><br>MyMILFexposed Tanned mom - MyMILFexposed.com</a> 20<br>',
+'<a href="https://xhamster.com/photos/gallery/my-super-hot-wife-mymilfexposed-com-16116251"><img src="https://ic-ph-nss.xhcdn.com/a/YTNmODk5ODRhN2NkMmZkNTJjMDgyNmQ3MDhiMTY5NTQ/jpeg/000/515/633/090_450.jpg"><br>My Super Hot Wife - MyMILFexposed.com </a> 20<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-wife-outdoors-16116724"><img src="https://ic-ph-nss.xhcdn.com/a/ZjI5Y2IyN2I3YWUyYzcwZWU3MDZjMmNmOGY5ZDRiNTc/jpeg/000/515/639/932_450.jpg"><br>My MILF Exposed - My wife outdoors</a> 20<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-pierced-bdsm-granny-slave-16175133"><img src="https://ic-ph-nss.xhcdn.com/a/MjY4MjhkYjMwMzg1YjVjMjY2YTA0MTQ5ZjdkYTU0YWU/jpeg/000/516/402/886_450.jpg"><br>My Sexy Piercings - Pierced BDSM Granny slave</a> 2<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-horny-wife-16116721"><img src="https://ic-ph-nss.xhcdn.com/a/MTEyMDIwNTFjZjdlNjhkM2M0NWE1YjkxZmM4NzA5YTc/jpeg/000/515/639/894_450.jpg"><br>My MILF Exposed - MY horny wife </a> 19<br>',
+'<a href="https://xhamster.com/photos/gallery/my-wife-and-her-swinger-girlfriends-16153766"><img src="https://ic-ph-nss.xhcdn.com/a/MjE4MDVmNThhYTUyZjNhY2U1YzIwM2EwZTZkYTQ5NGY/jpeg/000/516/146/218_450.jpg"><br>My Wife and her swinger girlfriends </a> 18<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-asian-wife-pussy-closeup-16116720"><img src="https://ic-ph-nss.xhcdn.com/a/ODUwNWZmODlhMDE0M2FlMmIxMGE4NzFkMmJmNTM4MmI/jpeg/000/515/639/875_450.jpg"><br>My MILF Exposed - Asian wife pussy closeup</a> 18<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-busty-ex-wife-16132471"><img src="https://ic-ph-nss.xhcdn.com/a/NWM0ZDg4OTE1NmIxZjRiY2QwZDNlMTljYTliMzBiZTQ/jpeg/000/515/842/918_450.jpg"><br>My MILF Exposed My Busty ex Wife</a> 17<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-loves-to-dress-up-for-public-flashing-16153755"><img src="https://ic-ph-nss.xhcdn.com/a/NjEyZThkN2Y3NDUwYWUyNzRkZmUwMWU5ZmIxN2U4NTY/jpeg/000/516/146/080_450.jpg"><br>My MILF Exposed - Loves to dress up for public flashing</a> 17<br>',
+'<a href="https://xhamster.com/photos/gallery/check-out-my-sexy-piercings-and-tattoos-16119887"><img src="https://ic-ph-nss.xhcdn.com/a/MmEwYTQ1ZDY5ZDA1ZTUyMzgwODk1Y2NmZGVlODU0Mjg/jpeg/000/515/680/207_450.jpg"><br>Check out my sexy piercings and tattoos</a> 17<br>',
+'<a href="https://xhamster.com/photos/gallery/check-out-my-sexy-piercings-and-tattoos-16116729"><img src="https://ic-ph-nss.xhcdn.com/a/OWU4ZWZkM2NhMTI0NDJiZGJjNGNjZWQ5N2YyYWMwNmE/jpeg/000/515/640/048_450.jpg"><br>Check out my sexy piercings and tattoos</a> 17<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-posing-around-the-house-16123132"><img src="https://ic-ph-nss.xhcdn.com/a/Mzk1MGY1MDEwMmE4NmMwMWZjYTNjZjA0MDA2YWI1NzA/jpeg/000/515/722/264_450.jpg"><br>My MILF Exposed - posing around the house</a> 16<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-big-girls-love-to-have-fun-too-16132469"><img src="https://ic-ph-nss.xhcdn.com/a/YWQzMjdiYmQ3NDBmYWFkZTkwYzI3YWYzNGM4ZGIwYTE/jpeg/000/515/842/875_450.jpg"><br>My MILF Exposed - big girls love to have fun too</a> 16<br>',
+'<a href="https://xhamster.com/photos/gallery/getting-ready-to-go-out-16153764"><img src="https://ic-ph-nss.xhcdn.com/a/MWMyMmJmNzQxMDQ4ZDE1MzdmZGJlZjViZmM2NmQ2MGM/jpeg/000/516/146/184_450.jpg"><br>Getting ready to go out</a> 16<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-pierced-slut-teasing-16175127"><img src="https://ic-ph-nss.xhcdn.com/a/YTFmNmFlOWEzMjliM2EzOTgwMzE4N2M1MzcyOWEwODM/jpeg/000/516/402/811_450.jpg"><br>My Sexy Piercings - Pierced slut teasing</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-pierced-nipples-mom-16187035"><img src="https://ic-ph-nss.xhcdn.com/a/NDgyZjcwZWUxNWY4ZWEyODM3OWYxNzk2ZjNhZWVmYTE/jpeg/000/516/534/520_450.jpg"><br>My Sexy Piercings - Pierced nipples Mom</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-pierced-milf-slave-16175129"><img src="https://ic-ph-nss.xhcdn.com/a/ZjE2Njg5MDcyNmIwNWJiZGU3OGIxYjk5MzM4NDM3ZWU/jpeg/000/516/402/836_450.jpg"><br>My Sexy Piercings - Pierced MILF slave</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-pierced-dancer-model-16187026"><img src="https://ic-ph-nss.xhcdn.com/a/MjNkMzU2ZDM1OWU5M2RhNjhhMmNkNDlhYWU2ODQ2MGU/jpeg/000/516/534/399_450.jpg"><br>My Sexy Piercings - Pierced dancer model</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-milf-with-pierced-nipples-16187028"><img src="https://ic-ph-nss.xhcdn.com/a/YTg1MWY4ZTY5ZDUxZTk3MTA3MDAzMTM3ZDJiM2VmZmU/jpeg/000/516/534/429_450.jpg"><br>My Sexy Piercings - MILF with pierced nipples</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-milf-with-classy-pierced-pussy-and-nipples-16187030"><img src="https://ic-ph-nss.xhcdn.com/a/Nzk2ZjJhYThhYTVhOGMzYWE5Y2YzOWJjMDU5MzZjMTY/jpeg/000/516/534/458_450.jpg"><br>My Sexy Piercings MILF with classy pierced pussy and nipples</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-mature-gilf-with-pierced-pussy-16187027"><img src="https://ic-ph-nss.xhcdn.com/a/ODBiNWVmOGMxNWFjZDQ4NTllOTdjYTAwNDg2NDJlMmY/jpeg/000/516/534/402_450.jpg"><br>My Sexy Piercings Mature GILF with pierced pussy</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-kinky-pierced-grandma-16187034"><img src="https://ic-ph-nss.xhcdn.com/a/OWM0OGY3NGRkOTU1NDFlN2I0YzMwZGE3MDc0MDc1N2U/jpeg/000/516/534/500_450.jpg"><br>My Sexy Piercings - Kinky pierced grandma</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-hot-pierced-granny-16187029"><img src="https://ic-ph-nss.xhcdn.com/a/OWQ0MDhkZjlmMTdjZWJlODU3MWE3NzAwNTIxYzRlYjY/jpeg/000/516/534/448_450.jpg"><br>My sexy Piercings - Hot pierced granny</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-close-up-of-pierced-pussy-16187033"><img src="https://ic-ph-nss.xhcdn.com/a/ZmU2YjUyZTY5ZDZkNjJiODAwMWI5NTAwMTMxM2NhMDg/jpeg/000/516/534/471_450.jpg"><br>My Sexy Piercings Close up of pierced pussy</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-busty-pierced-and-tattooed-milf-slave-16175134"><img src="https://ic-ph-nss.xhcdn.com/a/YTlkZGM4OTEzN2VlMjhlMWIxYjM2NDFiYThkYjQ1NmQ/jpeg/000/516/402/897_450.jpg"><br>My Sexy Piercings - Busty pierced and tattooed MILF Slave</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-blonde-pierced-slut-16175131"><img src="https://ic-ph-nss.xhcdn.com/a/MmJmNTY3MWU4MTRlODZjZjYxMmM5MThmYWNlNjM2Zjg/jpeg/000/516/402/877_450.jpg"><br>My Sexy Piercings - Blonde pierced slut</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-posing-in-stockings-16132468"><img src="https://ic-ph-nss.xhcdn.com/a/NzI5MjEwODUzYWNhYTM5YTU1NjQwMWMyMGZlMzk4ODc/jpeg/000/515/842/866_450.jpg"><br>My MILF posing in stockings</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-wife-sexy-strip-16116725"><img src="https://ic-ph-nss.xhcdn.com/a/NDcxYjdjNjQwODUzMzYzODM5OWU4MWFlMzIzYjViYTQ/jpeg/000/515/639/971_450.jpg"><br>My MILF Exposed - MY Wife Sexy Strip</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-hot-wife-in-stockings-and-lingerie-16132474"><img src="https://ic-ph-nss.xhcdn.com/a/ZTM4MTZiOWIyZDYzMzI1NGY3Yzc0MjZiZTE5ZjgyYTI/jpeg/000/515/842/949_450.jpg"><br>My MILF Exposed My hot wife in stockings and lingerie </a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-16157454"><img src="https://ic-ph-nss.xhcdn.com/a/ZjAyNmNlNWEzNzYxZWYwZTQ1ODdmZDU3ZmU3ODM4Yjk/jpeg/000/516/187/670_450.jpg"><br>My MILF Exposed</a> 15<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-only-tattooed-and-pierced-babes-16226249"><img src="https://ic-ph-nss.xhcdn.com/a/M2VlOTdjODU2MmIzNzBhOGEyOTM0OWFiOTVmNGUwZTA/jpeg/000/517/025/840_450.jpg"><br>My Sexy Piercings - only tattooed and pierced babes</a> 14<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-my-wife-on-vacation-16141758"><img src="https://ic-ph-nss.xhcdn.com/a/MjEzOGFiOWU3NDQzODZlY2E4MjMzNGUxZTVhYmU1MjE/jpeg/000/516/002/467_450.jpg"><br>My MILF Exposed - My wife on vacation </a> 14<br>',
+'<a href="https://xhamster.com/photos/gallery/my-milf-exposed-busty-vixen-16141751"><img src="https://ic-ph-nss.xhcdn.com/a/ZmE2YzEwYjE4NzMwNDUwZjcyMWIzMDZlMjliMTQxOTA/jpeg/000/516/002/067_450.jpg"><br>My MILF Exposed Busty vixen</a> 14<br>',
+'<a href="https://xhamster.com/photos/gallery/check-out-my-sexy-piercings-and-tattoos-16119884"><img src="https://ic-ph-nss.xhcdn.com/a/ZjkyZGVhMjNhYWIyNmE3ZDc2YTI1OTE2OThmYWY5ZDQ/jpeg/000/515/680/185_450.jpg"><br>Check out my sexy piercings and tattoos</a> 14<br>',
+'<a href="https://xhamster.com/photos/gallery/check-out-my-sexy-piercings-and-tattoos-16119883"><img src="https://ic-ph-nss.xhcdn.com/a/ZWI0MDQyOGIzODNjMzQ4YWJmMjJhMTc3M2NjOThmODk/jpeg/000/515/680/167_450.jpg"><br>Check out my sexy piercings and tattoos</a> 14<br>',
+'<a href="https://xhamster.com/photos/gallery/check-out-my-sexy-piercings-and-tattoos-16116732"><img src="https://ic-ph-nss.xhcdn.com/a/MmJjMzRmOGExZmRmNDkyNTY4YTBmZDFmOTlhMjJmZTM/jpeg/000/515/640/080_450.jpg"><br>Check out my sexy piercings and tattoos</a> 14<br>',
+'<a href="https://xhamster.com/photos/gallery/wife-loves-to-flash-16153756"><img src="https://ic-ph-nss.xhcdn.com/a/OWZjYzQ5Njg2NDRlZDliZDUyMjYyODg1MmY4Yzg2YjE/jpeg/000/516/146/094_450.jpg"><br>Wife loves to flash</a> 13<br>',
+'<a href="https://xhamster.com/photos/gallery/check-out-my-sexy-piercings-and-tattoos-16119882"><img src="https://ic-ph-nss.xhcdn.com/a/MWZjNTY3N2MyNmQwN2ExODEzMjEwMTVkMmZkMzIxMmI/jpeg/000/515/680/164_450.jpg"><br>Check out my sexy piercings and tattoos</a> 13<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-ony-tattooed-and-pierced-babes-16226248"><img src="https://ic-ph-nss.xhcdn.com/a/NTQyYzcxM2JjOWIzZGU4YWJjMjQyYzgwMTBlNjM1ZmY/jpeg/000/517/025/830_450.jpg"><br>My Sexy Piercings - ony tattooed and pierced babes</a> 12<br>',
+'<a href="https://xhamster.com/photos/gallery/my-sexy-piercings-only-tattooed-and-pierced-babes-16226250"><img src="https://ic-ph-nss.xhcdn.com/a/MmMxNjA0ZWIxZGQyMjU0NDI1N2I0Mjc4NGU1NjA0NTE/jpeg/000/517/025/854_450.jpg"><br>My Sexy Piercings - only tattooed and pierced babes </a> 12<br>',
+'',
+];
+lineHeader = ''
+lineTail = ''
+showRange = 60
+bookid = "sexyalbertina"
+initSelectRange = 100000
+showSrcSwitch = true
+noShuffle = true;
+showHelpTxt = `+ addToIgnoreLst\n- removeFmIgnoreLst\n2 setRange\nA toggle_automode\nb backClick\nc callCalculator\ne scrollTo Bottom\nf forward\nH showHelp\nI setInterval\nr randomNum\nR removeNumFmIgnoreLst\ns setRange\nS toggle_showSrcSwitch\nT alertTotal\nt scrollTo Top\nv viewIgnoreLst\nx showAnswer\nz showTenYear`
+topicLength = tipsList.length
+</script>
+
+<script src='https://williamkpchan.github.io/showTips.js'></script>
+<script src='showLongTips.js'></script>
+
+</body>
+</html>
