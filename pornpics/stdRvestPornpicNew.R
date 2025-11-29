@@ -24,10 +24,10 @@ className = ".thumbwook a" # pornpic
 
 #### look for XHR
 schkey = readline(prompt="enter schkey:")
-schkey = gsub(" ", "+", schkey)
+schkey = gsub(" |-", "+", schkey)
 
 schType = "search"
-schType = readline(prompt="1 search, 2, tags, 3, suit: enter schType:")
+schType = readline(prompt="1 search, 2, tags, 3, suit, 4, channels : enter schType:")
 if(is.na(schType))( schType = "1")
 
 if(schType == "3"){
