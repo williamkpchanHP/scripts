@@ -7,9 +7,6 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script src="https://williamkpchan.github.io/mainscript.js"></script>
 <script src="optionsArray.js"></script>
-
-<!--script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script-->
-
 <style>
 body { 
   width: 100%;
@@ -40,28 +37,17 @@ video, img {max-width:100%}
   #schRst, #markLst {font-size: 20px}
   select option { font-size: 18px, line-height: 60%;}
 }
-
-        .collectable {
-            cursor: context-menu;
-            border: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .collected {
-            border: 3px solid #007bff !important;
-            box-shadow: 0 0 10px rgba(0,123,255,0.5);
-        }
-        
-        .status {
-            padding: 10px;
-            background: #f8f9fa;
-            margin: 10px 0;
-            border-radius: 5px;
-        }
-
+.collected {
+    border: 3px solid #007bff !important;
+    box-shadow: 0 0 10px rgba(0,123,255,0.5);
+}
+.status {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
 </style>
 </head>
-
 <body onkeypress="chkKey()">
 <center>
 <h5 id="totalLen">Info cards</h5>
@@ -123,6 +109,7 @@ video, img {max-width:100%}
         <button onclick="downloadCollected()">💾 Save All to TXT</button>
         <button onclick="clearAll()">🧹 Clear All</button>
     </div>
+
 
 <script>
   // Our "buffer" to store image URLs

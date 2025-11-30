@@ -513,6 +513,10 @@ $(document).ready(function() {
  });
 });
 
+// Disable right-click context menu
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
 
 
 $("body").on( "swipeleft", function( event ) {jpback();} );

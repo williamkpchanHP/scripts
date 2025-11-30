@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Collector</title>
+    <style>
+        .collectable {
+            cursor: context-menu;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .collected {
+            border: 3px solid #007bff !important;
+            box-shadow: 0 0 10px rgba(0,123,255,0.5);
+        }
+        
+        .status {
+            padding: 10px;
+            background: #f8f9fa;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Right-click images to collect them! 📸</h2>
+    
+    <!-- Example images -->
+    <img src="https://picsum.photos/200/300?random=1" class="collectable" alt="Sample 1">
+    <img src="https://picsum.photos/200/300?random=2" class="collectable" alt="Sample 2">
+    <img src="https://picsum.photos/200/300?random=3" class="collectable" alt="Sample 3">
+
+    <div class="status">
+        <p>Collected: <span id="count">0</span> images</p>
+        <button onclick="downloadCollected()">💾 Save All to TXT</button>
+        <button onclick="clearAll()">🧹 Clear All</button>
+    </div>
+
+    <script>
+        // Our "buffer" to store image URLs
+        const imageBuffer = [];
+        
+        // Make images collectable
+        document.querySelectorAll('.collectable').forEach(img => {
+            img.addEventListener('contextmenu', function(e) {
+                e.preventDefault(); // Stop default right-click menu
+                
+                const imgUrl = this.src;
+                const index = imageBuffer.indexOf(imgUrl);
+                
+                if (index === -1) {
+                    // Add to buffer
+                    imageBuffer.push(imgUrl);
+                    this.classList.add('collected');
+                    console.log(`✅ Added: ${imgUrl}`);
+                } else {
+                    // Remove from buffer
+                    imageBuffer.splice(index, 1);
+                    this.classList.remove('collected');
+                    console.log(`❌ Removed: ${imgUrl}`);
+                }
+                
+                // Update counter
+                document.getElementById('count').textContent = imageBuffer.length;
+            });
+        });
+
+        // Download function
+        function downloadCollected() {
+            if (imageBuffer.length === 0) {
+                alert('📭 No images collected yet! Right-click some images first.');
+                return;
+            }
+
+            const content = imageBuffer.join('\n');
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `collected-images-${new Date().toISOString().split('T')[0]}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert(`🎉 Success! Saved ${imageBuffer.length} image URLs to file!`);
+        }
+
+        // Clear all
+        function clearAll() {
+            imageBuffer.length = 0;
+            document.querySelectorAll('.collected').forEach(el => {
+                el.classList.remove('collected');
+            });
+            document.getElementById('count').textContent = '0';
+        }
+    </script>
+</body>
+</html>
