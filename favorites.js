@@ -2839,5 +2839,16 @@ var tipsList = [
 '<img src="https://cdni.pornpics.com/1280/7/249/43396087/43396087_028_a00e.jpg">',
 '<img src="https://cdni.pornpics.com/1280/7/249/43396087/43396087_030_a320.jpg">',
 '<img src="https://cdni.pornpics.com/1280/7/249/60890332/60890332_020_8677.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/432/64158970/64158970_267_1888.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/432/64158970/64158970_300_8fe9.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/432/64158970/64158970_297_ee50.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/819/33842566/33842566_023_bd34.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/819/33842566/33842566_026_f3e9.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/819/33842566/33842566_060_2222.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/818/38499002/38499002_030_e9dd.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/818/38499002/38499002_035_25be.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/529/19874695/19874695_101_2e51.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/661/93365677/93365677_069_7b4e.jpg">',
+'<img src="https://cdni.pornpics.com/1280/7/661/93365677/93365677_075_c1ef.jpg">',
 ]
 favorites = tipsList
