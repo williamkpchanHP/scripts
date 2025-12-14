@@ -12,6 +12,17 @@ shuffleSW = false
 showlong = true
 longLength = 50
 favListObj = {};
+MAX_ARRAY_SIZE = 20
+
+// Initialize historyarray with default value or from localStorage
+let historyArray = [];
+const STORAGE_KEY = 'historyArrayData';
+
+loadArrayFromLocalStorage();
+console.log('LocalStorage key:', STORAGE_KEY);
+console.log('Current array:', historyArray);
+displayArray()
+
 
 const selectElement = document.getElementById('myChoice');
 optionsArray.forEach(optionText => {
@@ -293,6 +304,8 @@ function randommyChoice() {  // choose not from favList
 
 function loadArray(filename) {
   tipsListName = filename
+  addItem(tipsListName)
+
   if(filename == "xxxImgsListOK"){
     url = "allHtmls/xxxImgsListOK.js"
   }else if(filename == "auntjudys"){
@@ -360,6 +373,7 @@ console.log("url\n",url,"\nlineHeader:\n",lineHeader,"\n\n")
     };
 
     document.head.appendChild(script);
+
 }
 
 function seekListName() {
@@ -512,6 +526,103 @@ $(document).ready(function() {
     //recfavList(tipsListName, modListValue)
  });
 });
+
+
+// This is localStorage management
+// show status messages
+// display the array
+// load array from localStorage
+// save array to localStorage
+// add a random item to the array
+// clear the array
+// Event listeners
+
+
+// Function to display the array
+function displayArray() {
+  if (historyArray.length === 0) {
+    arrayDisplay.innerHTML = '<span class="empty-array">Array is empty.</span>';
+  } else {
+    arrayDisplay.textContent = JSON.stringify(historyArray, null, 2);
+  }
+}
+
+// Function to load array from localStorage
+function loadArrayFromLocalStorage() {
+  try {
+    const storedData = localStorage.getItem(STORAGE_KEY);
+    
+    if (storedData) {
+        historyArray = JSON.parse(storedData);
+        console.log(`Array loaded from localStorage with ${historyArray.length} items`, 'success');
+    } else {
+        // Initialize with default data if nothing is stored
+        historyArray = [];
+        console.log('No data found in localStorage. Using default array.', 'info');
+    }
+  } catch (error) {
+    console.error('Error loading from localStorage:', error);
+    historyArray = ["Error loading data"];
+    console.log('Error loading data from localStorage. Using empty array.', 'error');
+  }
+  
+  displayArray();
+}
+
+// Function to save array to localStorage
+function saveArrayToLocalStorage() {
+  try {
+    console.log(`historyArray.length to save: ${historyArray.length} items`);
+    console.log("historyArray: ",historyArray);
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(historyArray));
+    console.log(`Array saved to localStorage with ${historyArray.length} items`, 'success');
+  } catch (error) {
+    console.error('Error saving to localStorage:', error);
+    console.log('Error saving data to localStorage', 'error');
+  }
+  displayArray();
+}
+
+// Function to add a random item to the array
+function addRandomItem() {
+  const items = [
+    "Random Item " + Math.floor(Math.random() * 1000),
+    "New Entry " + Date.now().toString().slice(-4),
+    "Sample Data " + Math.floor(Math.random() * 100),
+    "Test Item " + String.fromCharCode(65 + Math.floor(Math.random() * 26)),
+    "Generated at " + new Date().toLocaleTimeString()
+  ];
+  
+  const randomItem = items[Math.floor(Math.random() * items.length)];
+  historyArray.push(randomItem);
+  displayArray();
+  console.log(`Added: "${randomItem}" to the array`, 'info');
+}
+
+// Function to add an item to the array
+function addItem(theItem) {
+  historyArray.push(theItem);
+  if (historyArray.length >= MAX_ARRAY_SIZE) {
+      // Remove the first (oldest) item
+      lastRemovedItem = historyArray.shift();
+      console.log(`Removed oldest item: "${lastRemovedItem}"`, 'warning');
+  }
+console.log("historyArray to save: ", historyArray)
+  saveArrayToLocalStorage();
+}
+
+// Function to clear the array
+function clearArray() {
+  if (historyArray.length > 0) {
+    historyArray = [];
+    displayArray();
+    console.log('Array cleared', 'info');
+  } else {
+    console.log('Array is already empty', 'info');
+  }
+}
+
 
 // Disable right-click context menu
 document.addEventListener('contextmenu', function(e) {

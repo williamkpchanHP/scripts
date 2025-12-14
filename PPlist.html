@@ -52,7 +52,7 @@ video, img {max-width:100%}
             box-shadow: 0 0 10px rgba(0,123,255,0.5);
         }
         
-        .status {
+        .status {font-size:14px;
             padding: 10px;
             background: #f8f9fa;
             margin: 10px 0;
@@ -122,6 +122,9 @@ video, img {max-width:100%}
 <p>Collected: <span id="count">0</span> images</p>
 <button onclick="downloadCollected()">💾 Save All to TXT</button>
 <button onclick="clearAll()">🧹 Clear All</button>
+<br>
+<span id="statusMessage"></span>
+<span id="arrayDisplay"></span>
 </div>
 
 <script>
@@ -184,6 +187,8 @@ video, img {max-width:100%}
     });
     document.getElementById('count').textContent = '0';
   }
+
+
 </script>
 <script src="pplist.js"></script>
 
