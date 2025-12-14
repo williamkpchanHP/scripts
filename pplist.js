@@ -575,6 +575,8 @@ function saveArrayToLocalStorage() {
     console.log(`historyArray.length to save: ${historyArray.length} items`);
     console.log("historyArray: ",historyArray);
 
+    historyArray = [...new Set(historyArray)];
+
     localStorage.setItem(STORAGE_KEY, JSON.stringify(historyArray));
     console.log(`Array saved to localStorage with ${historyArray.length} items`, 'success');
   } catch (error) {
