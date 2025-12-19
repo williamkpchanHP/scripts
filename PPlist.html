@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PPlist</title>
 <link href="https://williamkpchan.github.io/maincss.css" rel="stylesheet" type="text/css">
@@ -63,8 +64,7 @@ video, img {max-width:100%}
 </head>
 
 <body onkeypress="chkKey()">
-<center>
-<h5 id="totalLen">Info cards</h5>
+<center><h5 id="totalLen">Info cards</h5>
 <div class="mainFrame">
 <span id="automode"></span>
 <button onclick=randQues()><o>rand</o></button>
