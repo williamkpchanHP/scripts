@@ -223,10 +223,9 @@ function jpButClick() {
   }
   if (topicNo >= 0) {
     showTopic();
-  }else if(topicNo === 0) {
-      jpBut.classList.disabled = true;
   }else{
-      jpBut.classList.disabled = false;
+    topicNo =0;
+    showTopic();
   }
 }
 
