@@ -4702,5 +4702,19 @@ imgList = [
 '<video controls loop><source src="https://va.media.tumblr.com/tumblr_sv48j7QQmh1sc44fq.mp4" type="video/mp4" autoplay></source></video>',
 '<video controls loop><source src="https://va.media.tumblr.com/tumblr_sv48dpvRvi1sc44fq.mp4" type="video/mp4" autoplay></source></video>',
 '<video controls loop><source src="https://va.media.tumblr.com/tumblr_sv488vP5WU1sc44fq.mp4" type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://64.media.tumblr.com/79445b28dbdd9d0f2810f74b77d3b93b/b40a5f0c78f5db01-e8/s640x960/4b5bf740e376a6546b389fa34d2a3f93b94f9ddd.gifv" type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://64.media.tumblr.com/29b724f6ad9a64e97e2460bfec0c6808/04c860c8475688a5-eb/s500x750/be25c041994454217b8d6a5cd49f0d418546f2a0.gifv" type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://64.media.tumblr.com/a0c989ad0d7b979878b44a3e5da1d885/04c860c8475688a5-cc/s500x750/28673d64e02d98d6dbc4b8e736d0c37f8f6fa239.gifv" type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://64.media.tumblr.com/7694d28f61c8225ab3cbd98e1a5a7441/04c860c8475688a5-41/s500x750/84e6487b1ae372cf7afed1d0bf8e331b8c2d6b02.gifv" type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://64.media.tumblr.com/d8e04905c9ae4c9c46abe4bb27745ed7/58cbf4b97503b458-f2/s1280x1920/3aec7fab877af0485f556a0a54fc4e6e6ecaa1fa.gifv" type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://64.media.tumblr.com/7fddd095527bcb2a06aa14d1b5ed51b5/58cbf4b97503b458-05/s1280x1920/6701149e637427a0567fd902c1e4bcbdccc8431f.gifv" type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://va.media.tumblr.com/tumblr_t7roniCfZK1akhbwp.mp4"  type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://va.media.tumblr.com/tumblr_t8b37a4GOr1adf6tl_720.mp4"  type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://va.media.tumblr.com/tumblr_t7u38ikDKu1adf6tl_720.mp4"  type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://va.media.tumblr.com/tumblr_t81t1jJfOo1adf6tl_720.mp4"  type="video/mp4" autoplay></source></video>',
+'<video controls loop><source src="https://va.media.tumblr.com/tumblr_t7pyu2L2OY1aswoxv.mp4"  type="video/mp4" autoplay></source>cutting</video>',
+
+
 ]
+
 TumblerVideos = imgList
