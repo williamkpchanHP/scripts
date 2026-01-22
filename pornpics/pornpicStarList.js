@@ -18836,4 +18836,4 @@ var pornpicStarList  = [
 'amy-fair">Amy Fair, 10<br><img src="https://cdni.pornpics.com/460/5/125/86563847/86563847_010_254b',
 ];
 lineHeader = '<a href="https://www.pornpics.com/pornstars/'
-lineTail = '.jpg"><br>'
+lineTail = '.jpg" target="_blank"><br>'
