@@ -25,13 +25,16 @@ for(i in pageNum){
   starname <- gsub('^.*?m-name">', "", itemList)
   starname <- gsub('</span.*', "", starname)
   galleryCnt <- gsub('^.*?</i> ', "", itemList)
-  galleryCnt <- as.numeric(gsub('</span.*', "", galleryCnt))
+  galleryCnt <- gsub('</span.*', "", galleryCnt)
+  galleryCnt <- as.numeric(gsub(',', "", galleryCnt))
+
   starUrl <- gsub('^.*?href="', "", itemList)
   starUrl <- gsub('/" tit.*', "", starUrl)
   imgUrl <- gsub('^.*?data-src="', "", itemList)
   imgUrl <- gsub('" alt.*', "", imgUrl)
 
-  fullAdr = paste0('<a href="https://www.pornpics.com', starUrl, '">', starname, ', ', galleryCnt, '<br><img src="', imgUrl, '"><br>')
+  fullAdr = paste0(galleryCnt, "'",starUrl, '">', starname, ', ', galleryCnt, '<br><img src="', imgUrl, '"><br>')
+  fullAdr = sort(fullAdr)
 
   Wholepage = c(Wholepage, fullAdr)
   cat(length(Wholepage), " ")
