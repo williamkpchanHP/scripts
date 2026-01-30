@@ -88,3 +88,5 @@ dhms <- function(t){
   sink()
 
 cat(red("task complete!\n"))
+  fileName = paste0("pornpics", schkey)
+  source("C:/Users/william/Desktop/scripts/updateoptionsArray.R")
